@@ -1,0 +1,25 @@
+% !TEX root = ../main.tex
+
+% \chapter{Appendix A}
+\chapter{Code}
+\label{app:code}
+% \lhead{Appendix A. \emph{Code}}
+
+\section{Clinamen}
+
+\begin{lstlisting}
+def clinamen(word, i):
+    out = set()
+    items = [item for item in froll_dict if dameraulevenshtein(word, item) <= i]
+    for item in items:
+        if item != word:
+            out.add(item)
+    return out
+\end{lstlisting}
+
+
+\section{Damerau Levenshtein}
+
+\lstinputlisting[language=Python,
+                firstline=192, lastline=208]
+                {back/textsurfer.py}

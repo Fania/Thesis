@@ -1,0 +1,329 @@
+% !TEX root = ../main.tex
+
+\chapter{Practical Description of Work}
+\label{ch:practical}
+
+
+
+\section{Algorithms}
+
+\begin{table}[!htbp]
+  \everyrow{\hrule}
+  \tabulinesep = 2mm
+  \begin{tabu}{|X|X|X|X|}
+  % \cline{2-4}
+  &
+  \textbf{clinamen}
+  &
+  \textbf{syzygy}
+  &
+  \textbf{antinomy}
+  \\
+  \textbf{clear}
+  &
+  altar, leaf, pleas, cellar
+  &
+  vanish, allow, bare, pronounce
+  &
+  opaque
+  \\
+  \textbf{solid}
+  &
+  sound, valid, solar, slide
+  &
+  block, form, matter, crystal, powder
+  &
+  liquid, hollow
+  \\
+  \textbf{books}
+  &
+  boot, bones, hooks, rocks, banks
+  &
+  dialogue, authority, record, fact
+  &
+  -
+  \\
+  \textbf{troll}
+  &
+  grill, role, tell
+  &
+  wheel, roll, mouth, speak
+  &
+  -
+  \\
+  \textbf{live}
+  &
+  love, lies, river, wave, size, bite
+  &
+  breathe, people, domicile, taste, see, be
+  &
+  recorded, dead
+  \\
+  \end{tabu}
+\caption[Comparison of algorithms]{Comparison of algorithms}
+\label{algorithmscomp}
+\end{table}
+
+\subsection{Clinamen}
+
+The clinamen is the unpredictable swerve that Bök calls "the smallest possible aberration that can make the greatest possible difference" (Bök 2002).
+
+The clinamen function uses the Damerau-Levenshtein algorithm [10], which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them (see Eq. (1)). While we only return matches that actually appear in the book (i.e. they exist in the index), and by doing so eliminate the introduction of new words like Jarry's merdre, the swerve or aberration is still evident.
+
+\begin{lstlisting}
+  Clinamen(t):
+    matches = {v : 0 < dameraulevenshtein(t, v) <= 2},   for v $\in$ V
+    return matches
+\end{lstlisting}
+
+Line 1 of the algorithm above creates a set of matches, where each match is a word v from our vocabulary V if the Damerau-Levenshtein function computed with query term t returns a value less than or equal to 2 but higher than 0 (not the query term itself).
+
+\begin{equation}
+  clinamen(t) = [v : 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
+\end{equation}
+
+\subsection{Syzygy}
+
+The syzygy surprises and confuses. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose.
+
+For the syzygy function, we made use of WordNet [29] through the NLTK python library [26] to find suitable results. Specifically, as shown in Eq. (2), the algorithm fetches the set of synonyms (synsets) first and then finds any hyponyms, hypernyms or holonyms for each of those (each of which denotes some sort of relationship or membership with its parent synonym). This mimics the syzygy alignment of three words in a line mentioned earlier (query $\to$ synonym $\to$ hypo/hyper/holonym).
+
+This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms for query term t from WordNet. It then loops through all individual items in the list of synonyms in line 2 to 5. Line 3 adds all hyponyms h for the current synonym s if there exists a word in the vocabulary same as the hyponym. Similarly lines 4 and 5 add all hypernyms and holonyms to the results list which is then returned in line 6.
+
+\begin{lstlisting}
+  Syzygy( t ):
+    synonyms = { s $\in$ WordNet-synsets( t ) }
+    for each s in synonyms:
+      hypo   = { h : h $\in$ WordNet-hyponyms( s ) }
+      hyper = { h : h $\in$ WordNet-hypernyms( s ) }
+      holo    = { h : h $\in$ WordNet-holonyms( s ) }
+      union = hypo $\cup$ hyper $\cup$ holo
+      add { h : h $\in$ union and $\exists$ h $\in$ V } to results
+    return results
+\end{lstlisting}
+
+\begin{align}
+  syzygy(t) &= \{ h : h \in union(t) \ and \ \exists \ h \in V \}\notag\\
+  union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\notag\\
+  hypo(t) &= \{ h ∶ h \in hyponyms(s) \}, & for s \in syno(t)\notag\\
+  hyper(t) &= \{ h ∶ h \in hypernyms(s) \}, & for s \in syno(t)\notag\\
+  holo(t) &= \{ h ∶ h \in holonyms(s) \}, & for s \in syno(t)\notag\\
+  syno(t) &= \{ s ∶ s \in synonyms(t) \}
+\end{align}
+
+\subsection{Antinomy}
+
+The antimony, in a pataphysical sense, is the mutually incompatible.
+
+For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). This function exhibits the same problem as mentioned above for the syzygy, just much worse.  Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g. based on more than one book – or, of course, the Web) could improve this method.
+
+This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and returns them if they appear in our dictionary of words.
+
+\begin{lstlisting}
+  Antinomy(t):
+    synonyms = { s $\in$ WordNet-synsets(t) }
+    for each s in synonyms:
+      add { h $\in$ WordNet-antonyms(s) : $\exists$ h $\in$ V } to results
+    return results
+\end{lstlisting}
+
+\begin{align}
+  antinomy( t ) = \{ h : h \in anto( t ) and \exists h \in V \}\notag\\
+  anto( t ) = \{ h : h \in antonyms( s ) \}, for s \in syno( t )\notag\\
+  syno( t ) = \{ s : s \in synonyms( t ) \}
+\end{align}
+
+\section{Implementation}
+
+\begin{comment}
+  Interface (first tier) – application (second tier) – database/corpus (third tier)
+\end{comment}
+
+The general concept of the project described in this paper is pataphysical web searching and the following three points summarize its main aims:
+
+\begin{itemize}
+  \item search the Web for suitable answers to a given query,
+  \item return results as a list or a mixture of data structures, and
+  \item present pataphysical results (rather than relevant ones).
+\end{itemize}
+
+The essence of the proposed search tool lies in its algorithms which make the difference to traditional search engines. The philosophical ideology behind the tool is fundamentally different. Our system will still consist of the main components typically found in Web search engines (crawler, index and ranking) but they will have slightly different inner workings and target a different audience of users.
+
+To link back to some of the creative, pataphysical concepts we have discussed earlier, let us put some of the ideas for our tool into perspective. The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
+
+We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure 1) and influences all areas of the search tool.
+
+Our index will contain what Hendler and Hugill have called patadata [15].  Patadata is to metadata as metadata is to data - inspired by one of the definitions of pataphysics: that which is above that which is after physics [20]. This suggests that patadata provides another layer of information above information.  If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective and that is precisely what pataphysics is for.
+
+\begin{figure}[!htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[height=0.3\textheight]{images/diagram}
+\caption[Pata central]{Pata central}
+\label{fig:pata2}
+\end{figure}
+
+The prototype described here (see Figure 2) was developed as a proof-of-concept tool to demonstrate some example search results using pataphysical algorithms.
+
+It is by no means a fully functioning Web search engine, in fact it does not search the Web at all, and only the main algorithmic functionality is discussed here. The tool searches the text of an example book, namely Alfred Jarry’s Exploits and Opinions of Dr. Faustroll, Pataphysician [20].
+
+In short, the prototype’s workflow can be described as follows:
+\begin{itemize}
+  \item tokenise text and remove stopwords to build index,
+  \item query triggers the three pataphysical functions,
+  \item each function finds matches for query as described above,
+  \item retrieve some words before/after match for context, and
+  \item return list of resulting sentences.
+\end{itemize}
+
+The three functions inspired by pataphysics (clinamen, syzygy and antinomy) are described in more detail in the previous section. Figure 2 shows a screenshot of the resulting list of results for the query clear. The specific results for each of the three methods are simply a few words surrounding the pataphysicalised query term from within the book, which does not necessarily represent complete sentences but provides some context for the result.
+
+The same principles and algorithms can be applied to different types of media, for example images or video and even sound. The complete tool would include a mixture of different types of media in its results with various styles of displaying them (e.g. displaying images ordered as a Fibonacci spiral).
+
+\subsection{Prototype 1}
+
+\begin{figure}[!htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[height=0.6\textheight]{images/clear}
+\caption[Prototype1]{Prototype1}
+\label{fig:Prototype1}
+\end{figure}
+
+\subsection{Prototype 2}
+
+\begin{figure}[!htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\textwidth]{images/pata2}
+\caption[Prototype2]{Prototype2}
+\label{fig:Prototype2}
+\end{figure}
+
+\begin{verbatim}
+# TEXT
+
+## setup
+
+1. read in faustroll book
+2. create `froll_dict` dictionary from text
+3. remove stopwords and numbers from `froll_dict`
+
+## text algorithm
+
+1. get query term
+2. execute three functions:
+
+  2a. syzygy algorithm
+    1. get list of synonyms
+    2. for each synonym do the following:
+      a. find hyponyms; if a hyponym occurs in `froll_dict` then add to the output list
+      b. find hypernyms; if a hypernym occurs in `froll_dict` then add to the output list
+      c. find holonyms; if a holonym occurs in `froll_dict` then add to the output list
+    3. return list of syzygy words
+
+  2b. antinomy algorithm
+    1. get list of synonyms
+    2. for each synonym do the following:
+      a. find antonyms; if a antonym occurs in `froll_dict` then add to the output list
+    3. return list of antinomy words
+
+  2c. clinamen algorithm
+    1. find list of words within `froll_dict` that have a `dameraulevenshtein distance` of 1 or 2 (meaning, there are 1 or 2 spelling errors)
+    2. return list of clinamen words
+
+3. get sentences for all three output lists
+
+  3a. if the word appears in faustroll then find the nearest 5 words before and after the word
+  3b. return list of sentences
+
+4. render results as html
+
+
+---
+
+# IMAGES
+
+## setup
+
+- microsoft translate API key
+- flickr API key
+- (bing image search API key) - not used atm
+
+## image algorithm
+
+1. get query word
+2. get one syzygy word using syzygy algorithm 2a above
+3. translation party
+  3a. translate english to french
+  3b. translate french to japanese
+  3c. translate japanese to english
+4. get images
+  4a. search flickr for 10 matches to english translation
+  4b. get metadata for each
+  4c. add title, thumb, link to output list
+5. return output list
+6. render results as html
+
+---
+
+# VIDEOS
+
+## setup
+
+- microsoft translate API key
+- youtube API stuff
+- (bing video search API key) - not used atm
+
+## video algorithm
+
+1. get query word
+2. get one syzygy word using syzygy algorithm
+3. translation party
+  3a. translate english to french
+  3b. translate french to japanese
+  3c. translate japanese to english
+4. get videos
+  4a. search YouTube for 10 matches to english translation
+  4b. get metadata for each
+  4c. add title, thumb, link to output list
+5. return output list
+6. render as html
+\end{verbatim}
+
+
+\section{Website}
+
+\url{http://pata.fania.eu}
+
+\section{APIs}
+
+\begin{itemize}
+  \item Bing
+  \item YouTube
+  \item Microsoft Translate
+  \item Flickr
+  \item WordNet
+\end{itemize}
+
+\section{Design}
+
+\begin{itemize}
+  \item random sentences
+  \item spiral
+  \item Word Scrable
+  \item $\dots$
+\end{itemize}
+
+\section{Possible applications}
+
+In this section we consider the possible uses and applications for the proposed creative search tool.
+
+Our target audience is not quite as broad as that of a general search engine like Google. Instead, we aim to specifically cater for users who can appreciate creativity or users in need of creative inspiration. Users should generally be educated about the purpose of the search tool so that are not discouraged by what might appear to be nonsensical results. Users could include artists, writers or poets but equally anybody who is looking for out-of-the-box inspirations or simply a refreshingly different search engine to the standard.
+The way we display and label results produced by the tool can influence how the user perceives them. The current prototype for example separates the results into its three components but we could have equally just mixed them all together. The less transparent the processes in the background (e.g. which algorithm was used, how does the result relate to the query precisely, etc.) are for the user, the more difficult it might be to appreciate the search.
+
+\section{Uses}
+
+There are many ways a pataphysical search tool could be used across disciplines.
+In literature, for example, it could be used to write or generate poetry, either practically or as a simple aid for inspiration. We are not limited to poetry either; novels, librettos or plays could benefit from such pataphysicalised inspirations. One can imagine tools using this technology that let you explore books in a different ordering of sentences (a sort of pataphysical journey of paragraph hopping), tools that re-write poems or mix and match them together. Even our simple prototype shows potential in this area and could be even more powerful if we extended it to include more base texts, for example the whole set of books contained in Faustroll’s library ([20] and also [12]). A richer body of texts (by different authors) would produce a larger index which would possibly find many more matches through WordNet and end in a more varied list of results.
+
+From a computer science perspective it could be used as one of the many algorithms used by traditional search engines for purposes like query feedback or expansion (e.g. “did you mean … “or “you might also be interested in … “). Depending on how creative we want the search engine to be, the higher we would rank the importance of this particular algorithm. One of the concepts related to the search tool, namely patadata, could have an impact on the development of the Semantic Web. Just as the Semantic Web is about organizing information semantically through objective metadata, patadata could be used to organize information pataphysically in a subjective way.
+
+The prototype tool is already being used in the creation of an online opera, provisionally entitled from [place] to [place], created in collaboration with The Opera Group , an award-winning, nationally and internationally renowned opera company, specialising in commissioning and producing new operas. In particular, it is being used to create the libretto for one of the virtual islands whose navigation provides the central storyline for the opera. The opera will premiere in 2013, and will continue to develop thereafter, deploying new versions of the tool as they appear.

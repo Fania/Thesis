@@ -1,0 +1,113 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[oneside]{thesis}
+% \documentclass[draft]{thesis}
+
+\title{Web Collider}
+\author{Fania Raczinski}
+\date{March 2015}
+
+\begin{document}
+
+\pagestyle{empty}
+\listoftodos
+\clearpage
+
+\import{front/}{title}
+
+% FRONT
+\pagestyle{plain}
+\frontmatter
+
+\import{front/}{abstract}
+\import{front/}{dedication}
+\import{front/}{declaration}
+\import{front/}{acknowledgements}
+\import{front/}{publications}
+\import{front/}{about}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
+\setcounter{tocdepth}{4}
+\tableofcontents
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Acronyms}
+\printnoidxglossary[type=acronym]
+\clearpage
+
+% GENERAL TODOS
+\pagestyle{empty}
+\ntodo[inline]{Linepsacing}
+\ntodo[inline]{header footer ?}
+\ntodo[inline]{title, abstract design spacing}
+\ntodo[inline]{Finish style}
+\ntodo[inline]{Index?}
+\ntodo[inline]{Colours}
+\ntodo[inline]{Diagrams}
+\ntodo[inline]{Tables}
+\ntodo[inline]{Move usepackage statements out}
+\ntodo[inline]{Footnotes in captions not working}
+\ntodo[inline]{Rewrite equations to match double lines}
+
+% MAIN
+\pagestyle{fancy}
+\mainmatter
+
+\part{\texorpdfstring{IN THE B$\Sigma$GI$\Pi$$\Pi$ING $\ldots$}{IN THE BEGINNING...}}
+\import{main/}{introduction}
+\import{main/}{methodology}
+
+\part{\texorpdfstring{IN A G$\forall$L$\forall$XY F$\forall$R F$\forall$R AW$\forall$Y $\ldots$}{IN A GALAXY FAR FAR AWAY...}}
+\import{main/}{pataphysics}
+\import{main/}{creativity}
+\import{main/}{irnlp}
+
+\part{\texorpdfstring{THE C$\Theta$RE: T$\Sigma$CHN$\Theta$-L$\Theta$GIC}{THE CORE: TECHNO-LOGIC}}
+\import{main/}{foundation}
+\import{main/}{description}
+\import{main/}{caseStudy}
+
+\part{\texorpdfstring{INT$\Sigma$CHN$\Theta$IL-L$\Theta$GIC$\forall$LYSIS}{INTECHNOIL-LOGICALYSIS}}
+\import{main/}{interpretation}
+\import{main/}{analysis}
+
+\part{\texorpdfstring{H$\forall$PPY $\Sigma$ND}{HAPPY END}}
+\import{main/}{aspirations}
+\import{main/}{observations}
+
+% BACK
+\backmatter
+
+\appendix
+
+\part{APPENDIX}
+\import{back/}{code}
+\import{back/}{oulipo}
+\import{back/}{wordnet}
+\import{back/}{jarry}
+\clearpage
+
+\pagestyle{plain}
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{back/bib} % NATBIB
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Glossary}
+\printnoidxglossary
+\clearpage
+
+\end{document}
