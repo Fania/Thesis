@@ -194,3 +194,8 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % \DeclareRobustCommand{\textmirror}{\reflectbox}
 % \newcommand{\copyleft}{\reflectbox}
+
+
+% COMMENTS
+
+% \usepackage{comment}
