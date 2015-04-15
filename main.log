@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.26)  14 APR 2015 10:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.26)  14 APR 2015 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1674,38 +1674,38 @@ Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
 t line 10.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
 line 10.
- (./main.tdo
+ (./main.tdo)
+\tf@tdo=\write5
+\openout5 = `main.tdo'.
+
+
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/se-pdfdoc.def
 File: se-pdfdoc.def 2011/12/02 v1.10 stringenc: PDFDocEncoding
 )
 [1
 
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-\tf@tdo=\write5
-\openout5 = `main.tdo'.
-
-
-[2] (./main.toc [1
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./main.toc [1
 
 
 
-])
+] [2] [3] [4])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [2] (./main.lof)
+ [5] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [3
+ [6
 
 
 ] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [4
+ [7
 
 
 ]
@@ -1714,40 +1714,19 @@ Package glossaries Warning: Empty glossary for \printnoidxglossary[type={acrony
 m}]. Rerun may be required (or you may have forgotten to use commands like \gls
 ). on input line 47.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 52.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5
-
-
-]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
-as been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.81 ...G $\ldots$}{IN THE BE^^FGINN^^E^^EING...}}
                                                    [1
 
 
+
+
 ] (./main/introduction.tex
 Chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.15 
-      [2
+[2
 
 ]
 
@@ -1793,32 +1772,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7] [8
 
-] [9
+] (./main/pataphysics.tex
+Chapter 2.
 
-] [10
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
-] [11
-
-] [12
+ []
 
 
-] (./back/code.tex
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 10.
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 25.
+ []
 
-(./back/textsurfer.py)) (./back/oulipo.tex [13
-
-]) (./back/wordnet.tex [14
-
-])
-(./back/jarry.tex [15
-
-]) [16
+[9
 
 ]
 
@@ -1827,58 +1793,1417 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17] (./main.bbl
+[10]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 62.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+<images/mib.png, id=685, 597.73312pt x 319.94531pt>
+File: images/mib.png Graphic file (type png)
+ <use images/mib.png>
+Package pdftex.def Info: images/mib.png used on input line 66.
+(pdftex.def)             Requested size: 426.79135pt x 228.4467pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11] <images/jarry06.jpg, id=699, 642.4pt x 803.0pt>
+File: images/jarry06.jpg Graphic file (type jpg)
+ <use images/jarry06.jpg>
+Package pdftex.def Info: images/jarry06.jpg used on input line 89.
+(pdftex.def)             Requested size: 117.365pt x 146.7025pt.
+
+<images/jarry01.jpg, id=700, 521.95pt x 628.3475pt>
+File: images/jarry01.jpg Graphic file (type jpg)
+ <use images/jarry01.jpg>
+Package pdftex.def Info: images/jarry01.jpg used on input line 93.
+(pdftex.def)             Requested size: 117.365pt x 141.2858pt.
+
+<images/jarry05.jpg, id=701, 147.4308pt x 166.9437pt>
+File: images/jarry05.jpg Graphic file (type jpg)
+ <use images/jarry05.jpg>
+Package pdftex.def Info: images/jarry05.jpg used on input line 97.
+(pdftex.def)             Requested size: 117.365pt x 132.8979pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./images/mib.png> <./images/jarry06.jpg> <./images/jarry01.jpg> <./images/
+jarry05.jpg>] <images/ubu.png, id=711, 220.6644pt x 352.6776pt>
+File: images/ubu.png Graphic file (type png)
+
+<use images/ubu.png>
+Package pdftex.def Info: images/ubu.png used on input line 115.
+(pdftex.def)             Requested size: 126.578pt x 202.30115pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14 <./images/ubu.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15] <images/faustroll.jpg, id=754, 408.52625pt x 501.875pt>
+File: images/faustroll.jpg Graphic file (type jpg)
+
+<use images/faustroll.jpg>
+Package pdftex.def Info: images/faustroll.jpg used on input line 161.
+(pdftex.def)             Requested size: 164.67302pt x 202.30115pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17 <./images/faustroll.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 208.
+
+<images/lutembi.png, id=817, 68.50594pt x 57.21375pt>
+File: images/lutembi.png Graphic file (type png)
+ <use images/lutembi.png>
+Package pdftex.def Info: images/lutembi.png used on input line 222.
+(pdftex.def)             Requested size: 117.365pt x 98.02681pt.
+
+Underfull \hbox (badness 2486) in paragraph at lines 223--223
+[]\T1/cmr/m/n/10.95 Figure 2.5: []Crocodile
+ []
+
+<images/spiral01.png, id=819, 279.18pt x 296.01pt>
+File: images/spiral01.png Graphic file (type png)
+ <use images/spiral01.png>
+Package pdftex.def Info: images/spiral01.png used on input line 228.
+(pdftex.def)             Requested size: 117.365pt x 124.44078pt.
+
+<images/greencandle.png, id=820, 304.13625pt x 291.0875pt>
+File: images/greencandle.png Graphic file (type png)
+
+<use images/greencandle.png>
+Package pdftex.def Info: images/greencandle.png used on input line 234.
+(pdftex.def)             Requested size: 117.365pt x 112.32886pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 <./images/lutembi.png> <./images/spiral01.png> <./images/greencandle.png (P
+NG copy)>]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 278.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]
+Overfull \hbox (5.96127pt too wide) in paragraph at lines 301--302
+[]\T1/cmr/m/n/10.95 "Oulipian sys-tems of formal con-straint are of-ten based o
+n the al-pha-bet." Fran�ois
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]) (./main/creativity.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
+Chapter 3.
+[24
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
+
+ []
+
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 37.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 37.
+
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 62.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 111.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 134.
+
+<images/4C.png, id=957, 429.10312pt x 356.0803pt>
+File: images/4C.png Graphic file (type png)
+ <use images/4C.png>
+Package pdftex.def Info: images/4C.png used on input line 140.
+(pdftex.def)             Requested size: 426.79135pt x 354.1669pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29 <./images/4C.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 182.
+
+<images/4CBoden.png, id=998, 429.10312pt x 356.0803pt>
+File: images/4CBoden.png Graphic file (type png)
+
+<use images/4CBoden.png>
+Package pdftex.def Info: images/4CBoden.png used on input line 186.
+(pdftex.def)             Requested size: 426.79135pt x 354.1669pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32 <./images/4CBoden.png>]
+
+Package natbib Warning: Multiple citation on page 33: same authors and year
+(natbib)                without distinguishing extra letter,
+(natbib)                appears as question mark.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+[]\T1/cmr/bx/n/10.95 Reproductive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+[]\T1/cmr/bx/n/10.95 Reproductive
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 295--295
+[]\T1/cmr/m/n/10.95 The routine, well-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 socialised per-son
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 who ex-per-i-ences
+ []
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 only in terms of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 taught and who
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+[]\T1/cmr/m/n/10.95 The in-nov-at-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 per-former who
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 ex-per-i-ences only
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 in terms of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 ma-nip-u-late these
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+[]\T1/cmr/m/n/10.95 The per-son who
+ []
+
+
+Underfull \hbox (badness 4805) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 or who can ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 nip-u-late fa-mil-iar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 com-bin-a-tions or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 modes de-velop
+ []
+
+
+Underfull \hbox (badness 5091) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 per-i-ences uniquely
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 and sens-it-ively
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 out-side of game
+ []
+
+
+Underfull \hbox (badness 7869) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 by in-ab-il-ity) but
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 who is un-able to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 com-mu-nic-ate or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 un-in-ter-ested in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 com-mu-nic-at-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+\T1/cmr/m/n/10.95 these ex-per-i-ences
+ []
+
+
+Underfull \hbox (badness 6775) in paragraph at lines 295--295
+[]\T1/cmr/m/n/10.95 Reproductive Per-
+ []
+
+
+Underfull \hbox (badness 6775) in paragraph at lines 295--295
+[]\T1/cmr/m/n/10.95 Reproductive Per-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]\T1/cmr/bx/n/10.95 Reproductive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]\T1/cmr/bx/n/10.95 Reproductive
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 Unimaginative, in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 Reliable ni-hil-ist,
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 in-sens-it-ive, un-suc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 cess-ful in-nov-ator
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 curi-os-ity as fads
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 of per-form-ance
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 The mad cre-at-ive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 genius, the un-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 dis-covered far-out
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 crack-pot cre-ator
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 who is re-cog-nised
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 crank, ec-cent-ric
+ []
+
+
+Underfull \hbox (badness 3713) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 who uses con-ven-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 tional forms for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 Competent, re-
+ []
+
+
+Underfull \hbox (badness 7777) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 spons-ible, re-li-able
+ []
+
+
+Underfull \hbox (badness 4060) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 wins game re-cog-
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 ni-tions but whose
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 fame crumbles as
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 The truly cre-at-ive
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 338--338
+\T1/cmr/m/n/10.95 son with a "deep
+ []
+
+
+Underfull \hbox (badness 6775) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 Reproductive Per-
+ []
+
+
+Underfull \hbox (badness 6775) in paragraph at lines 338--338
+[]\T1/cmr/m/n/10.95 Reproductive Per-
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+
+Package natbib Warning: Multiple citation on page 36: same authors and year
+(natbib)                without distinguishing extra letter,
+(natbib)                appears as question mark.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 399.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 480.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 535.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 608.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[49] [50
+
+] (./main/foundation.tex
+Chapter 4.
+[51
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[52]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[54]
+
+Package natbib Warning: Multiple citation on page 55: same authors and year
+(natbib)                without distinguishing extra letter,
+(natbib)                appears as question mark.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[55]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[56]
+Underfull \hbox (badness 1137) in paragraph at lines 129--129
+[]\T1/cmr/bx/n/10.95 Clinamen\T1/cmr/m/n/10.95 : Un-pre-dict-able swerve, the
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[57] <images/resultexample.png, id=1416, 597.432pt x 113.7048pt>
+File: images/resultexample.png Graphic file (type png)
+
+<use images/resultexample.png>
+Package pdftex.def Info: images/resultexample.png used on input line 140.
+(pdftex.def)             Requested size: 426.79135pt x 81.23064pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[58 <./images/resultexample.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[59] <images/patasearch02.png, id=1433, 363.759pt x 97.5645pt>
+File: images/patasearch02.png Graphic file (type png)
+
+<use images/patasearch02.png>
+Package pdftex.def Info: images/patasearch02.png used on input line 187.
+(pdftex.def)             Requested size: 426.79135pt x 114.47302pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[60]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[61 <./images/patasearch02.png>]
+Overfull \hbox (36.60062pt too wide) in paragraph at lines 200--202
+\T1/cmr/m/n/10.95 Patadata = [Tree(equivalent), Car(opposite), Pa-per(antinomy)
+, Nar-whal(anomaly), Book(syzygy),
+ []
+
+
+Overfull \hbox (37.73537pt too wide) in paragraph at lines 203--205
+\T1/cmr/m/n/10.95 Patadata = [Sun God Ra(equivalent), Slave(opposite), Hol-i-da
+y(antinomy), Blue Bal-loon(anomaly),
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[62]) (./main/description.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[63]
+Chapter 5.
+
+Underfull \hbox (badness 3746) in paragraph at lines 62--62
+[]\T1/cmr/m/n/10.95 altar, leaf, pleas,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]\T1/cmr/m/n/10.95 love, lies, river,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]\T1/cmr/m/n/10.95 breathe, people,
+ []
+
+[64
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[65]
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+! Package inputenc Error: Unicode char \u8:∶ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 \end{align}
+                 
+? 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66] <images/patasearch01.png, id=1498, 289.08pt x 159.9576pt>
+File: images/patasearch01.png Graphic file (type png)
+
+<use images/patasearch01.png>
+Package pdftex.def Info: images/patasearch01.png used on input line 160.
+(pdftex.def)             Requested size: 365.61012pt x 202.30115pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[67] <images/prototype01.png, id=1503, 236.38312pt x 451.6875pt>
+File: images/prototype01.png Graphic file (type png)
+
+<use images/prototype01.png>
+Package pdftex.def Info: images/prototype01.png used on input line 186.
+(pdftex.def)             Requested size: 211.75455pt x 404.6023pt.
+
+<images/prototype02.png, id=1504, 827.09pt x 656.4525pt>
+File: images/prototype02.png Graphic file (type png)
+
+<use images/prototype02.png>
+Package pdftex.def Info: images/prototype02.png used on input line 195.
+(pdftex.def)             Requested size: 426.79135pt x 338.74292pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[68 <./images/patasearch01.png>]
+Overfull \hbox (65.48692pt too wide) in paragraph at lines 289--289
+[]      \T1/cmtt/m/n/10.95 a. find hyponyms; if a hyponym occurs in `froll_dict
+` then add to the output list[] 
+ []
+
+
+Overfull \hbox (76.80367pt too wide) in paragraph at lines 289--289
+[]      \T1/cmtt/m/n/10.95 b. find hypernyms; if a hypernym occurs in `froll_di
+ct` then add to the output list[] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[69 <./images/prototype01.png>]
+Overfull \hbox (65.48692pt too wide) in paragraph at lines 289--289
+[]      \T1/cmtt/m/n/10.95 c. find holonyms; if a holonym occurs in `froll_dict
+` then add to the output list[] 
+ []
+
+
+Overfull \hbox (65.48692pt too wide) in paragraph at lines 289--289
+[]      \T1/cmtt/m/n/10.95 a. find antonyms; if a antonym occurs in `froll_dict
+` then add to the output list[] 
+ []
+
+
+Overfull \hbox (371.03896pt too wide) in paragraph at lines 289--289
+[]    \T1/cmtt/m/n/10.95 1. find list of words within `froll_dict` that have a 
+`dameraulevenshtein distance` of 1 or 2 (meaning, there are 1 or 2 spelling err
+ors)[] 
+ []
+
+
+Overfull \hbox (105.09552pt too wide) in paragraph at lines 289--289
+[]  \T1/cmtt/m/n/10.95 3a. if the word appears in faustroll then find the neare
+st 5 words before and after the word[] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[70 <./images/prototype02.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[71]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[72])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[73]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[74] [75
+
+] (./main/interpretation.tex
+Chapter 6.
+[76
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[77]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 65.
+
+
+Package natbib Warning: Citation `Colton2008b' on page 78 undefined on input li
+ne 69.
+
+
+Package natbib Warning: Citation `Colton2008b' on page 78 undefined on input li
+ne 69.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[78]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[79]
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]\T1/cmr/bx/n/10.95 Ephemeral
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+\T1/cmr/bx/n/10.95 Un-con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+[]\T1/cmr/bx/n/10.95 Temporal
+ []
+
+
+Overfull \hbox (18.57826pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Appropriateness| 
+ []
+
+
+Overfull \hbox (0.88031pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Randomness| 
+ []
+
+
+Overfull \hbox (16.63936pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Communication| 
+ []
+
+
+Overfull \hbox (2.73001pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Appreciation| 
+ []
+
+
+Overfull \hbox (3.18108pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Development| 
+ []
+
+
+Overfull \hbox (4.2449pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Acceptability| 
+ []
+
+
+Overfull \hbox (21.02782pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Experimentation| 
+ []
+
+
+Overfull \hbox (6.05453pt too wide) in paragraph at lines 195--195
+[]\T1/cmr/m/n/10.95 Independence| 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[80]
+
+Package nag Warning: Command \centerline is TeX. 
+(nag)                Use \centering or center environment instead on input line
+ 209.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[81]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[82]
+Overfull \hbox (1.55705pt too wide) in paragraph at lines 292--294
+\T1/cmr/m/n/10.95 ject-ive and ob-ject-ive types (pandh or little-candbig-C) ([
+][]Boden[][] [][]2003[][]; [][]Kauf-man and Beghetto[][]
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[83]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[84]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[85] <images/candy02.png, id=1714, 602.25pt x 417.81094pt>
+File: images/candy02.png Graphic file (type png)
+
+<use images/candy02.png>
+Package pdftex.def Info: images/candy02.png used on input line 361.
+(pdftex.def)             Requested size: 426.79135pt x 296.09956pt.
+
+<images/candy01.png, id=1715, 518.6878pt x 475.02469pt>
+File: images/candy01.png Graphic file (type png)
+
+<use images/candy01.png>
+Package pdftex.def Info: images/candy01.png used on input line 368.
+(pdftex.def)             Requested size: 426.79135pt x 390.88544pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[86 <./images/candy02.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[87 <./images/candy01.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[88]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[89])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[90] [91
+
+] [92
+
+
+] (./back/code.tex
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 25.
+ (./back/textsurfer.py)) (./back/oulipo.tex
+[93
+
+]) (./back/wordnet.tex [94
+
+]) (./back/jarry.tex [95
+
+]) [96
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[97] (./main.bbl
 Underfull \hbox (badness 1102) in paragraph at lines 44--47
 []\T1/cmr/m/n/10.95 Google.  Google Rank-ing, 2012.  URL [][]$\T1/cmtt/m/n/10.9
 5 https : / / www . google . com / intl / en / about /
  []
 
-) [18
+[98
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 122--127
+\T1/cmtt/m/n/10.95 archive / pages / dossier / id975 / pg1 / index . htmlhttp :
+ / / www . blather . net / blather /
+ []
+
+[99]
+Underfull \hbox (badness 1337) in paragraph at lines 207--210
+[]\T1/cmr/m/n/10.95 Tim Berners-Lee.  Se-mantic Web Road Map, 1998.  URL [][]$\
+T1/cmtt/m/n/10.95 http : / / www . w3 . org /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--245
+\T1/cmr/m/n/10.95 URL [][]$\T1/cmtt/m/n/10.95 http : / / www . amazon . co . uk
+ / Creation-[]Picador-[]Books-[]Arthur-[]Koestler / dp /
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 253--259
+[]\T1/cmr/m/n/10.95 Graham Wal-las.  \T1/cmr/m/it/10.95 The Art of Thought\T1/c
+mr/m/n/10.95 .  Jonathan Cape; First Edi-tion edi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--259
+\T1/cmr/m/n/10.95 tion, 1926.  URL [][]$\T1/cmtt/m/n/10.95 http : / / www . ama
+zon . co . uk / art-[]Thought-[]Graham-[]Wallas /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--259
+\T1/cmtt/m/n/10.95 dp / B000O654TC / ref = sr _ 1 _ 1 ? s = books & ie = UTF8 &
+ qid = 1320422010 & sr = 1-[]1http :
+ []
+
+[100]
+Underfull \hbox (badness 3977) in paragraph at lines 362--368
+[]\T1/cmr/m/n/10.95 James C. Kauf-man.  \T1/cmr/m/it/10.95 The In-ter-na-tional
+ Hand-book of Cre-ativ-ity\T1/cmr/m/n/10.95 .  Cam-bridge
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 362--368
+\T1/cmr/m/n/10.95 Uni-ver-sity Press, 2006.  ISBN 0521547318.  URL [][]$\T1/cmt
+t/m/n/10.95 http : / / www . amazon . co . uk /
+ []
+
+[101] [102] [103]) [104]
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls). 
 on input line 124.
 
-No complaints by nag.
+
+Package natbib Warning: There were undefined citations.
+
+
+Package nag Warning: 13 complaints in total.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
 (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 548F09B5EF2C3967AEBDF9D11D5EC1A2;1603.
+(rerunfilecheck)             Checksum: ABE1803B94E453797E3B5E91F1FD4A4C;6310.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 33426 strings out of 493117
- 589984 string characters out of 6135433
- 788550 words of memory out of 5000000
- 36082 multiletter control sequences out of 15000+600000
- 22180 words of font info for 57 fonts, out of 8000000 for 9000
+ 34316 strings out of 493117
+ 602601 string characters out of 6135433
+ 791892 words of memory out of 5000000
+ 36554 multiletter control sequences out of 15000+600000
+ 25386 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,80p,1769b,1248s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (26 pages, 301993 bytes).
+ 69i,15n,87p,1769b,1938s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/cm-super/sftt1095.pfb>
+Output written on main.pdf (112 pages, 2888843 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 426 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2098 PDF objects out of 2487 (max. 8388607)
+ 1914 compressed objects within 20 object streams
+ 503 named destinations out of 1000 (max. 500000)
+ 815 words of extra memory for PDF output out of 10000 (max. 10000000)
 
