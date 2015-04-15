@@ -63,7 +63,8 @@
 %Place notes in left margin where there is more space
 \reversemarginpar
 %Number the todo item according to section numbering
-\newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
+% \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
+\presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
 
 
 % MARGINS
@@ -176,6 +177,8 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % TABLES
 
 \usepackage{tabu}
+\newtabulinestyle{outer=2pt}
+\tabulinesep = 2mm
 
 
 % GLOSSARY & ACRONYMS
@@ -199,3 +202,6 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % COMMENTS
 
 % \usepackage{comment}
+
+
+% MARGIN NOTES
