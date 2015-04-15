@@ -1,5 +1,13 @@
 # Readme
 
+
+## Pre-requistites
+
+- (Mac) MacTex
+- (Win) Tex Live
+
+
+## Compile
 To compile manually via commandline:
 
 1. pdflatex main
@@ -7,8 +15,10 @@ To compile manually via commandline:
 3. pdflatex main
 4. pdflatex main
 
+(Works both on Mac and Win)
 
-# TODO
+
+## TODO
 
 - [ ] Linepsacing
 - [ ] header footer ?
@@ -20,7 +30,7 @@ To compile manually via commandline:
 - [ ] Tables, Figures add [htbp!]
 - [ ] Table style, booktabs style?
 - [ ] Figures images linewidth [h!]
-- [ ] Image file size?
+- [X] Image file size?
 - [ ] Preface?
 - [ ] code listings math symbols?
 - [ ] Code style?
