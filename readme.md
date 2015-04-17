@@ -20,9 +20,9 @@ To compile manually via commandline:
 
 ## TODO
 
-- [X] Linepsacing
-- [ ] header footer ?
-- [ ] title, abstract design spacing
+* [X] Linepsacing
+* [ ] header footer ?
+* [ ] title, abstract design spacing
 - [ ] Finish style
 - [ ] Index?
 - [ ] Colours
