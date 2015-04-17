@@ -46,6 +46,7 @@ To compile manually via commandline:
 - [X] URL line breaks
 - [ ] bit.ly all urls
 - [ ] Fancyhdr Warnings
+- [ ] Finish adding table of equations
 
 
 
