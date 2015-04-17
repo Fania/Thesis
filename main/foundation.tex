@@ -102,14 +102,13 @@ In order to break out of the formal logic and defined parameters of computer sci
 
 To conclude this discussion, consider the following table, which compares some of the key ideas of creativity \citep{Boden2003, Indurkhya, Koestler1964} with the main pataphysical operations. It will be seen that pataphysics succeeds in bringing into sharp relief the more generalised scientific ideas. The pataphysical terms are taken from the natural sciences or philosophy, but always with an ironic twist, betraying their underlying humour. They connect quite strongly with the primary descriptors of creativity, while adding a certain layer of jouissance. \textbf{Pataphysics is self-avowedly useless, but its principles may prove surprisingly useful within this context.}
 
-\begin{table}
-  \everyrow{\hrule}
-  \tabulinesep = 2mm
-  \begin{tabu}{|X|X|}
+\begin{table}[htb]
+  \begin{tabu}{XX}
+  \toprule
   \textbf{CREATIVITY}
   &
   \textbf{PATAPHYSICS}
-  \\
+  \\ \midrule
   \textbf{Combinational}: Juxtaposition of dissimilar, bisociation, deconceptualisation
   &
   \textbf{Antinomy}: Symmetry, duality, mutually incompatible, contradicting, simultaneous existence of mutually exclusive opposites
@@ -117,15 +116,16 @@ To conclude this discussion, consider the following table, which compares some o
   \textbf{Syzygy}: Alignment of three celestial bodies in a
   straight line, pun, conjunction of things, something unexpected
   and surprising
-  \\
+  \\ \midrule
   \textbf{Exploratory}: Noticing new things in old places
   &
   \textbf{Anomaly}: Exceptions, equality
-  \\
+  \\ \midrule
   \textbf{Transformative}: Making new thoughts possible by transforming old conceptual space, altering its own rules
   &
   \textbf{Clinamen}: Unpredictable swerve, the smallest possible aberration that can make the greatest possible difference
   \\
+  \bottomrule
   \end{tabu}
 \caption[Creativity vs Pataphysics]{Creativity vs Pataphysics}
 \label{tab:creatpata}
@@ -135,9 +135,9 @@ To conclude this discussion, consider the following table, which compares some o
 
 Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request 'The Cat in the Hat' after reading a Dr. Seuss book to their child, and the system employs an anomalous method on the query and searched 'sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
 
-\begin{figure}[!htb] % (here, top, bottom, page)
+\begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\textwidth]{images/resultexample}
+  \includegraphics[width=\linewidth]{images/resultexample}
 \caption[Feedback button]{Feedback button}
 \label{fig:feedback}
 \end{figure}
@@ -180,11 +180,11 @@ But what exactly does the process of pataphysicalisation include? The kinds of t
 
 Patadata will allow us to engage with digital knowledge in a more creative way even.  If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective. Drucker also points out that "many information structures have graphical analogies and can be understood as diagrams that organise the relations of elements within the whole. " \citep[p.16]{Drucker2009} So maybe patadata could allow us to represent these graphical analogies in some way? An alphabetical list is a typical model for representing text data sets for example. Or an otherwise ranked list, a tree structure, a matrix, a one-to-many relationship, etc. But is a ranked list really the best way to represent search results? Ranking itself seems unpataphysical. It contradicts the philosophy of pataphysics, although we can argue that this contradiction makes it pataphysical again. Maybe this dilemma can be solved simply by adopting another type of graphical analogy to structure the results such as a tree structure instead of a ranked list.
 
-\ntodo[inline]{redo archticeture diagram}
+\todo{redo archticeture diagram}
 
-\begin{figure}[!htb] % (here, top, bottom, page)
+\begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\textwidth]{images/patasearch02}
+  \includegraphics[width=\linewidth]{images/patasearch02}
 \caption[Pataphysicalisation]{Pataphysicalisation}
 \label{fig:patasearch02}
 \end{figure}
@@ -195,13 +195,14 @@ Ranking can be done at different stages of the search process. Depending on how 
 
 Given a query term X, what is considered a relevant match though? Do we simply return a list of Web pages where X appears in the heading of each page? It is obviously not that easy. Several ranking signals are combined together; Google states that they use over 200 signals including PageRank and they personalise results using signals such as the web history and location (Google n.d.).
 What kinds of ranking signals do we need for our pataphysical Web search tool? We could say that a page Y is relevant if it matches the patadata for query X. So, for example, Y would be a relevant result if it is a clinamen or syzygy to X. The more patadata matches there are the higher the ranking maybe. We don't necessarily have to assign a numerical ranking value to each page. Depending on how we structure our results page that might not be necessary. Shuffling the results list or the results tree could be an option.
+
 Example: Let's say our patadata is represented by a list of keywords that each stands for a pataphysicalisation of the original query term. This list is added to each item in the index.
 
 Query      = 'Tree'\\
-Patadata = [Tree(equivalent),  Car(opposite), Paper(antinomy), Narwhal(anomaly), Book(syzygy), Venus Fly Trap(clinamen)]
+Patadata = [Tree(equivalent),  Car(opposite), Paper(antinomy),\\ Narwhal(anomaly), Book(syzygy), Venus Fly Trap(clinamen)]
 
 Query      = 'Sun God Ra'\\
-Patadata = [Sun God Ra(equivalent),  Slave(opposite), Holiday(antinomy), Blue Balloon(anomaly), Pyramid(syzygy), Sphinx(clinamen)]
+Patadata = [Sun God Ra(equivalent),  Slave(opposite), Holiday(antinomy),\\ Blue Balloon(anomaly), Pyramid(syzygy), Sphinx(clinamen)]
 
 \subsection{Algorithm Formalisation}
 
@@ -287,10 +288,10 @@ By complexity:
 %
 % Most modern Web search engines, excluding semantic search engines, have a similar architecture, irrelevant of the IR model they are based on (see figure 1). The main reason for this is due to the \textbf{generic data-store} at the heart of them, the \textbf{inverted-index}, which is a very efficient method of storing and searching over the contents of documents.
 %
-% \ntodo[inline]{redo archticeture diagram}
-% \begin{figure}[!htb] % (here, top, bottom, page)
+% \todo{redo archticeture diagram}
+% \begin{figure}[htb] % (here, top, bottom, page)
 % \centering
-% \includegraphics[width=\textwidth]{images/patasearch03}
+% \includegraphics[width=\linewidth]{images/patasearch03}
 % \caption[Traditional IR system]{Traditional IR system}
 % \label{fig:patasearch03}
 % \end{figure}

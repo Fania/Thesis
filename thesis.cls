@@ -23,18 +23,42 @@
 \ProcessOptions\relax
 \LoadClass[a4paper]{\baseclass}
 
+\hfuzz=6pt
+\vfuzz=6pt
+
 % ---------------
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+
+\overfullrule=2cm
+
+
 
 \usepackage{import}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+% \usepackage[bitstream-charter]{mathdesign} % TEST
 % \usepackage{lmodern} % load a font with all the characters
 
 \usepackage[main=UKenglish,french]{babel}
 \usepackage[UKenglish]{isodate}
 
+
+% LINKS
+
 \usepackage[pdfencoding=auto,colorlinks=true,linkcolor=blue]{hyperref}
+
+
+% VERBATIM
+
+\usepackage{alltt}
+
 
 % SPACING
 
@@ -59,12 +83,17 @@
 
 % TODONOTES
 
-\usepackage{todonotes}
+\usepackage[colorinlistoftodos]{todonotes}
 %Place notes in left margin where there is more space
 \reversemarginpar
 %Number the todo item according to section numbering
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
+
+% \todoin{}
+\newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
+\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+% \todo[done]{Stuff}
 
 
 % MARGINS
@@ -107,7 +136,6 @@
 \fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0.1pt}
 % \renewcommand{\footrulewidth}{0.1pt}
-
 
 
 % COLOUR STUFF
@@ -176,10 +204,13 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % TABLES
 
+\usepackage{booktabs}
 \usepackage{tabu}
-\newtabulinestyle{outer=2pt}
+\newtabulinestyle{outer=1.2pt}
 \tabulinesep = 2mm
 
+% \usepackage{caption} % for subtables
+% \usepackage{subcaption} % for subtables
 
 % GLOSSARY & ACRONYMS
 
@@ -204,4 +235,21 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{comment}
 
 
-% MARGIN NOTES
+% Epigraphs
+
+\usepackage{epigraph}
+
+% \epigraph{All human things are subject to decay, and when fate summons, Monarchs must obey}{\textit{Mac Flecknoe \\ John Dryden}}
+
+
+% Table of EQUATIONS
+
+\usepackage{tocloft}
+
+%%gmedina solution
+\newcommand{\listequationsname}{List of Equations}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\setlength{\cftmyequationsnumwidth}{2.3em}% Width of equation number in List of Equations
+\setlength{\cftmyequationsindent}{1.5em}% Width of equation number in List of Equations

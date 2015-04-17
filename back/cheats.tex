@@ -7,6 +7,10 @@ pdflatex -aux-directory=build main.tex
 
 ``...''
 
+\marginpar{Test Hello}
+
+http://www.khirevich.com/latex/microtype/
+
 \reflectbox{<stuff>}
 
 \reflectbox{G}
@@ -26,6 +30,7 @@ a + c = 42, \notag \\
 a + d = 666. \label{all}
 \end{align}
 
+% break an equation and to align it in columns, just as if the parts of the equation were in a table
 \begin{equation} \label{eq1}
 \begin{split}
 A & = \frac{\pi r^2}{2} \\
@@ -33,16 +38,20 @@ A & = \frac{\pi r^2}{2} \\
 \end{split}
 \end{equation}
 
+% use * to toggle the equation numbering
+% first part will be aligned to the left and the second part will be displayed in the next line and aligned to the right
 \begin{multline*}
 p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3\\
 - 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
 \end{multline*}
 
+% align vertically
 \begin{align*}
 2x - 5y &=  8 \\
 3x + 9y &=  -12
 \end{align*}
 
+% a set of consecutive equations, centered and with no alignment
 \begin{gather*}
 2x - 5y =  8 \\
 3x^2 + 9y =  3a + c

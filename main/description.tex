@@ -7,10 +7,9 @@
 
 \section{Algorithms}
 
-\begin{table}[!htbp]
-  \everyrow{\hrule}
-  \tabulinesep = 2mm
-  \begin{tabu}{|X|X|X|X|}
+\begin{table}[htb]
+  \begin{tabu}{X[1]|X[3]X[3]X[2]}
+  \toprule
   % \cline{2-4}
   &
   \textbf{clinamen}
@@ -18,7 +17,7 @@
   \textbf{syzygy}
   &
   \textbf{antinomy}
-  \\
+  \\ \midrule
   \textbf{clear}
   &
   altar, leaf, pleas, cellar
@@ -26,7 +25,7 @@
   vanish, allow, bare, pronounce
   &
   opaque
-  \\
+  \\ \midrule
   \textbf{solid}
   &
   sound, valid, solar, slide
@@ -34,7 +33,7 @@
   block, form, matter, crystal, powder
   &
   liquid, hollow
-  \\
+  \\ \midrule
   \textbf{books}
   &
   boot, bones, hooks, rocks, banks
@@ -42,7 +41,7 @@
   dialogue, authority, record, fact
   &
   -
-  \\
+  \\ \midrule
   \textbf{troll}
   &
   grill, role, tell
@@ -50,7 +49,7 @@
   wheel, roll, mouth, speak
   &
   -
-  \\
+  \\ \midrule
   \textbf{live}
   &
   love, lies, river, wave, size, bite
@@ -58,7 +57,7 @@
   breathe, people, domicile, taste, see, be
   &
   recorded, dead
-  \\
+  \\ \bottomrule
   \end{tabu}
 \caption[Comparison of algorithms]{Comparison of algorithms}
 \label{algorithmscomp}
@@ -79,8 +78,10 @@ The clinamen function uses the Damerau-Levenshtein algorithm [10], which measure
 Line 1 of the algorithm above creates a set of matches, where each match is a word v from our vocabulary V if the Damerau-Levenshtein function computed with query term t returns a value less than or equal to 2 but higher than 0 (not the query term itself).
 
 \begin{equation}
-  clinamen(t) = [v : 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
+  clinamen(t) = [v \colon 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
+\label{eq:clinamen}
 \end{equation}
+\myequations{clinamen}
 
 \subsection{Syzygy}
 
@@ -102,14 +103,18 @@ This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms 
     return results
 \end{lstlisting}
 
-\begin{align}
-  syzygy(t) &= \{ h : h \in union(t) \ and \ \exists \ h \in V \}\notag\\
-  union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\notag\\
-  hypo(t) &= \{ h ∶ h \in hyponyms(s) \}, & for s \in syno(t)\notag\\
-  hyper(t) &= \{ h ∶ h \in hypernyms(s) \}, & for s \in syno(t)\notag\\
-  holo(t) &= \{ h ∶ h \in holonyms(s) \}, & for s \in syno(t)\notag\\
-  syno(t) &= \{ s ∶ s \in synonyms(t) \}
-\end{align}
+\begin{equation}
+\begin{split}
+  syzygy(t) &= \{ h \colon h \in union(t) \ \text{and} \ \exists \ h \in V \}\\
+  union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\\
+  hypo(t) &= \{ h \colon h \in hyponyms(s) \}, \text{for} \ s \in syno(t)\\
+  hyper(t) &= \{ h \colon h \in hypernyms(s) \}, \text{for} \ s \in syno(t)\\
+  holo(t) &= \{ h \colon h \in holonyms(s) \}, \text{for} \ s \in syno(t)\\
+  syno(t) &= \{ s \colon s \in synonyms(t) \}
+\end{split}
+\label{eq:syzygy}
+\end{equation}
+\myequations{syzygy}
 
 \subsection{Antinomy}
 
@@ -127,11 +132,15 @@ This algorithm is very similar to the algorithm for the syzygy. It finds all ant
     return results
 \end{lstlisting}
 
-\begin{align}
-  antinomy( t ) = \{ h : h \in anto( t ) and \exists h \in V \}\notag\\
-  anto( t ) = \{ h : h \in antonyms( s ) \}, for s \in syno( t )\notag\\
-  syno( t ) = \{ s : s \in synonyms( t ) \}
-\end{align}
+\begin{equation}
+  \begin{split}
+  antinomy( t ) &= \{ h \colon h \in anto( t ) \ \text{and} \ \exists \ h \in V \}\\
+  anto( t ) &= \{ h \colon h \in antonyms( s ) \}, \text{for} \ s \in syno( t )\\
+  syno( t ) &= \{ s \colon s \in synonyms( t ) \}
+  \end{split}
+\label{eq:antinomy}
+\end{equation}
+\myequations{antinomy}
 
 \section{Implementation}
 
@@ -155,9 +164,9 @@ We developed the idea of pataphysicalising data as the process of applying such 
 
 Our index will contain what Hendler and Hugill have called patadata [15].  Patadata is to metadata as metadata is to data - inspired by one of the definitions of pataphysics: that which is above that which is after physics [20]. This suggests that patadata provides another layer of information above information.  If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective and that is precisely what pataphysics is for.
 
-\begin{figure}[htb!] % (here, top, bottom, page)
+\begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[height=0.3\textheight]{images/patasearch01}
+  \includegraphics[width=\linewidth]{images/patasearch01}
 \caption[Pata central]{Pata central}
 \label{fig:patasearch01}
 \end{figure}
@@ -181,7 +190,7 @@ The same principles and algorithms can be applied to different types of media, f
 
 \subsection{Prototype 1}
 
-\begin{figure}[!htb] % (here, top, bottom, page)
+\begin{figure}[htb] % (here, top, bottom, page)
   \centering
   \includegraphics[height=0.6\textheight]{images/prototype01}
 \caption[Prototype1]{Prototype1}
@@ -190,14 +199,14 @@ The same principles and algorithms can be applied to different types of media, f
 
 \subsection{Prototype 2}
 
-\begin{figure}[!htb] % (here, top, bottom, page)
+\begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\textwidth]{images/prototype02}
+  \includegraphics[width=\linewidth]{images/prototype02}
 \caption[Prototype2]{Prototype2}
 \label{fig:Prototype2}
 \end{figure}
 
-\begin{verbatim}
+\begin{alltt}
 # TEXT
 
 ## setup
@@ -286,7 +295,7 @@ The same principles and algorithms can be applied to different types of media, f
   4c. add title, thumb, link to output list
 5. return output list
 6. render as html
-\end{verbatim}
+\end{alltt}
 
 
 \section{Website}

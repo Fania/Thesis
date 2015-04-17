@@ -10,7 +10,9 @@
 \begin{document}
 
 \pagestyle{empty}
-\listoftodos
+% \begin{singlespacing}
+\listoftodos[List of Todos]
+% \end{singlespacing}
 \clearpage
 
 % \import{front/}{title}
@@ -43,37 +45,33 @@
 \clearpage
 
 \phantomsection
+\listofmyequations
+\clearpage
+
+\phantomsection
 \addcontentsline{toc}{chapter}{Acronyms}
 \printnoidxglossary[type=acronym]
 \clearpage
 
 % GENERAL TODOS
 \pagestyle{empty}
-\todo[inline]{Linepsacing}
-\todo[inline]{header footer ?}
-\todo[inline]{title, abstract design spacing}
-\todo[inline]{Finish style}
-\todo[inline]{Index?}
-\todo[inline]{Colours}
-\todo[inline]{Diagrams}
-\marginpar{Test Hello}
-\todo[inline]{Tables, Figures add [htbp!]}
-\todo[inline]{Table style, booktabs style?}
-\todo[inline]{Figures images linewidth [h!]}
-\todo[inline]{Image file size?}
-\todo[inline]{Preface?}
-\todo[inline]{code listings math symbols?}
-\todo[inline]{Code style?}
-\todo[inline]{Align algorithms}
-\todo[inline]{flow charts per algorithm}
-\todo[inline]{Debugging stuff}
-\todo[inline]{Comment package?}
-\todo[inline]{Tables, Figures add [htbp!]}
-\todo[inline]{Write readme for GitHub}
-\todo[inline]{Align all equations}
-\todo[inline]{Move usepackage statements out}
-\todo[inline]{Footnotes in captions not working}
-\todo[inline]{Rewrite equations to match double lines}
+\todo{header footer ?}
+\todo{title, abstract design spacing}
+\todo{Finish style}
+\todo{Index?}
+\todo{Colours}
+\todo{Diagrams}
+\todo{Preface?}
+\todo{code listings math symbols?}
+\todo{Code style?}
+\todo{flow charts per algorithm}
+\todo{Debugging stuff}
+\todo{Comment package?}
+\todo{Move usepackage statements out}
+\todo{Footnotes in captions not working}
+\todo{bit.ly all urls}
+\todo{Align algorithms}
+\todo{Fancyhdr Warnings}
 
 % MAIN
 \pagestyle{fancy}
@@ -81,25 +79,25 @@
 
 \part{\texorpdfstring{IN THE B$\Sigma$GI$\Pi$$\Pi$ING $\ldots$}{IN THE BEGINNING...}}
 \import{main/}{introduction}
-% \import{main/}{methodology}
+\import{main/}{methodology}
 
 \part{\texorpdfstring{IN A G$\forall$L$\forall$XY F$\forall$R F$\forall$R AW$\forall$Y $\ldots$}{IN A GALAXY FAR FAR AWAY...}}
 \import{main/}{pataphysics}
 \import{main/}{creativity}
-% \import{main/}{irnlp}
+\import{main/}{irnlp}
 
 \part{\texorpdfstring{THE C$\Theta$RE: T$\Sigma$CHN$\Theta$-L$\Theta$GIC}{THE CORE: TECHNO-LOGIC}}
 \import{main/}{foundation}
 \import{main/}{description}
-% \import{main/}{caseStudy}
+\import{main/}{caseStudy}
 
 \part{\texorpdfstring{INT$\Sigma$CHN$\Theta$IL-L$\Theta$GIC$\forall$LYSIS}{INTECHNOIL-LOGICALYSIS}}
 \import{main/}{interpretation}
-% \import{main/}{analysis}
+\import{main/}{analysis}
 
 \part{\texorpdfstring{H$\forall$PPY $\Sigma$ND}{HAPPY END}}
-% \import{main/}{aspirations}
-% \import{main/}{observations}
+\import{main/}{aspirations}
+\import{main/}{observations}
 
 % BACK
 \backmatter
