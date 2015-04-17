@@ -47,6 +47,7 @@ To compile manually via commandline:
 - [ ] bit.ly all urls
 - [ ] Fancyhdr Warnings
 - [ ] Finish adding table of equations
+- [ ] Add Phoenix exhibition LMS showcase
 
 
 
