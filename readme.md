@@ -52,6 +52,10 @@ To compile manually via commandline:
 - [X] preface part and postface part
 - [X] appendix alpha numbering
 - [ ] table spacing before and after
+- [ ] Structure of thesis section in introduction
+- [ ] Remove dotted line from preface and chapter headings in toc
+- [ ] Pataphysical chapter numbering (binary)
+- [ ] Add crotty to methodology see image
 
 
 
