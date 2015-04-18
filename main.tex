@@ -1,4 +1,4 @@
-\RequirePackage[l2tabu, orthodox]{nag}
+% \RequirePackage[l2tabu, orthodox]{nag}
 
 \documentclass[oneside]{thesis}
 % \documentclass[draft]{thesis}
@@ -10,23 +10,23 @@
 \begin{document}
 
 \pagestyle{empty}
-% \begin{singlespacing}
 \listoftodos[List of Todos]
-% \end{singlespacing}
 \clearpage
 
-% \import{front/}{title}
+\import{front/}{title}
 
 % FRONT
 \pagestyle{plain}
 \frontmatter
 
-% \import{front/}{abstract}
-% \import{front/}{dedication}
-% \import{front/}{declaration}
-% \import{front/}{acknowledgements}
-% \import{front/}{publications}
-% \import{front/}{about}
+\part*{\texorpdfstring{PREFACE}{PREFACE}}
+\addcontentsline{toc}{part}{PREFACE}
+\import{front/}{abstract}
+\import{front/}{dedication}
+\import{front/}{declaration}
+\import{front/}{acknowledgements}
+\import{front/}{publications}
+\import{front/}{about}
 
 \phantomsection
 \addcontentsline{toc}{chapter}{Table of Contents}
@@ -45,11 +45,12 @@
 \clearpage
 
 \phantomsection
+\addcontentsline{toc}{chapter}{List of Equations}
 \listofmyequations
 \clearpage
 
 \phantomsection
-\addcontentsline{toc}{chapter}{Acronyms}
+\addcontentsline{toc}{chapter}{List of Acronyms}
 \printnoidxglossary[type=acronym]
 \clearpage
 
@@ -61,24 +62,21 @@
 \todo{Index?}
 \todo{Colours}
 \todo{Diagrams}
-\todo{Preface?}
 \todo{code listings math symbols?}
 \todo{Code style?}
 \todo{flow charts per algorithm}
-\todo{Debugging stuff}
 \todo{Comment package?}
-\todo{Move usepackage statements out}
 \todo{Footnotes in captions not working}
 \todo{bit.ly all urls}
 \todo{Align algorithms}
-\todo{Fancyhdr Warnings}
-\todo{Finish adding table of equations}
+\todo{margin symbols}
+\todo{table spacing before and after}
 
 % MAIN
 \pagestyle{fancy}
 \mainmatter
 
-\part{\texorpdfstring{IN THE B$\Sigma$GI$\Pi$$\Pi$ING $\ldots$}{IN THE BEGINNING...}}
+\part{\texorpdfstring{IN THE B$\Sigma$GI$\Pi$$\Pi$ING $\ldots$}{ONCE UPON A TIME...}}
 \import{main/}{introduction}
 \import{main/}{methodology}
 
@@ -96,16 +94,15 @@
 \import{main/}{interpretation}
 \import{main/}{analysis}
 
-\part{\texorpdfstring{H$\forall$PPY $\Sigma$ND}{HAPPY END}}
+\part{\texorpdfstring{H$\forall$PPY $\Sigma$ND}{HAPPILY EVER AFTER}}
 \import{main/}{aspirations}
 \import{main/}{observations}
 
 % BACK
-\backmatter
-
 \appendix
 
-\part{APPENDIX}
+\part*{\texorpdfstring{POSTFACE}{POSTFACE}}
+\addcontentsline{toc}{part}{POSTFACE}
 \import{back/}{code}
 \import{back/}{oulipo}
 \import{back/}{wordnet}

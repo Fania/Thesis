@@ -23,12 +23,13 @@
 \ProcessOptions\relax
 \LoadClass[a4paper]{\baseclass}
 
-\hfuzz=6pt
-\vfuzz=6pt
+\hfuzz=7pt
+\vfuzz=7pt
 
 % ---------------
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\microtypecontext{spacing=nonfrench}
 % activate={true,nocompatibility} - activate protrusion and expansion
 % final - enable microtype; use "draft" to disable
 % tracking=true, kerning=true, spacing=true - activate these techniques
@@ -71,6 +72,11 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
+
+\setlength{\intextsep}{20pt} % Vertical space above & below [h] floats
+\setlength{\textfloatsep}{20pt} % Vertical space below (above) [t] ([b]) floats
+\setlength{\abovecaptionskip}{10pt}
+\setlength{\belowcaptionskip}{5pt}
 
 
 % LIST SPACING
@@ -136,6 +142,8 @@
 \fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0.1pt}
 % \renewcommand{\footrulewidth}{0.1pt}
+
+\setlength{\headheight}{13.6pt}
 
 
 % COLOUR STUFF
@@ -239,10 +247,10 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 \usepackage{epigraph}
 
-% \epigraph{All human things are subject to decay, and when fate summons, Monarchs must obey}{\textit{Mac Flecknoe \\ John Dryden}}
+% \epigraph{blah blah blah}{\textit{John Do}}
 
 
-% Table of EQUATIONS
+% List of EQUATIONS
 
 \usepackage{tocloft}
 
@@ -253,3 +261,14 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
 \setlength{\cftmyequationsnumwidth}{2.3em}% Width of equation number in List of Equations
 \setlength{\cftmyequationsindent}{1.5em}% Width of equation number in List of Equations
+
+
+% GRAY LINE
+
+\newcommand{\grule}{\textcolor[RGB]{220,220,220}{\rule{\linewidth}{0.2pt}}}
+
+
+% MULTICOLUMN
+
+\usepackage{multicol}
+% \setlength{\columnsep}{1cm}

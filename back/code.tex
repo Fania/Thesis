@@ -1,25 +1,56 @@
 % !TEX root = ../main.tex
 
-% \chapter{Appendix A}
 \chapter{Code}
 \label{app:code}
-% \lhead{Appendix A. \emph{Code}}
+
+setup\\
+ text setup\\
+ video setup\\
+ image setup
+
+Clinamen\\
+ algorithm\\
+ get results\\
+ render results
+
+ etc
+
+\section{Setup}
+
+\lstinputlisting[linerange={1-9,23-23,27-27,30-30,33-33,36-37,68-73}]{back/code/textsurfer.py}
 
 \section{Clinamen}
 
-\begin{lstlisting}
-def clinamen(word, i):
-    out = set()
-    items = [item for item in froll_dict if dameraulevenshtein(word, item) <= i]
-    for item in items:
-        if item != word:
-            out.add(item)
-    return out
-\end{lstlisting}
-
+\lstinputlisting[firstline=154, lastline=160]{back/code/textsurfer.py}
 
 \section{Damerau Levenshtein}
 
-\lstinputlisting[language=Python,
-                firstline=192, lastline=208]
-                {back/textsurfer.py}
+\lstinputlisting[linerange={165-165,192-208}]{back/code/textsurfer.py}
+
+\section{Antinomy}
+
+\lstinputlisting[firstline=110, lastline=119]{back/code/textsurfer.py}
+
+\section{Syzygy}
+
+\lstinputlisting[firstline=81, lastline=107]{back/code/textsurfer.py}
+
+\section{Random Quotes}
+
+\lstinputlisting[firstline=12, lastline=22]{back/code/__init__.py}
+
+\section{Text Results}
+
+\lstinputlisting{back/code/textviews.py}
+
+\section{Pataphysicalise}
+
+\lstinputlisting[firstline=24, lastline=37]{back/code/videosurfer.py}
+
+\section{Getting Videos}
+
+\lstinputlisting[firstline=40, lastline=79]{back/code/videosurfer.py}
+
+\section{Getting Images}
+
+\lstinputlisting[firstline=40, lastline=79]{back/code/videosurfer.py}

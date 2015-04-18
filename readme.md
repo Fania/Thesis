@@ -20,9 +20,9 @@ To compile manually via commandline:
 
 ## TODO
 
-* [X] Linepsacing
-* [ ] header footer ?
-* [ ] title, abstract design spacing
+- [X] Linepsacing
+- [ ] header footer ?
+- [ ] title, abstract design spacing
 - [ ] Finish style
 - [ ] Index?
 - [ ] Colours
@@ -32,22 +32,26 @@ To compile manually via commandline:
 - [X] Table style, booktabs style?
 - [X] Figures images linewidth [h!]
 - [X] Image file size?
-- [ ] Preface?
+- [X] Preface?
 - [ ] code listings math symbols?
 - [ ] Code style?
 - [ ] Align algorithms
 - [ ] flow charts per algorithm
-- [ ] Debugging stuff
+- [X] Debugging stuff
 - [ ] Comment package?
 - [X] Align all equations
-- [ ] Move usepackage statements out
+- [X] Move usepackage statements out
 - [ ] Footnotes in captions not working
 - [X] Rewrite equations to match double lines
 - [X] URL line breaks
 - [ ] bit.ly all urls
-- [ ] Fancyhdr Warnings
-- [ ] Finish adding table of equations
-- [ ] Add Phoenix exhibition LMS showcase
+- [X] Fancyhdr Warnings
+- [X] Finish adding table of equations
+- [X] Add Phoenix exhibition LMS showcase
+- [ ] margin symbols
+- [X] preface part and postface part
+- [X] appendix alpha numbering
+- [ ] table spacing before and after
 
 
 

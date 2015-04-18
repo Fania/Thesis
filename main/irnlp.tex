@@ -3,6 +3,10 @@
 \chapter{IR and NLP}
 \label{ch:irnlp}
 
+\emph{Part of this research has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.}
+
+\grule
+
 \section{Information Retrieval}
 
 \begin{quote}
@@ -66,8 +70,6 @@ IR models describe ranking algorithms formally. There are different models for d
 
 The notation for IR models is as follows (quoted from \citep[p.58]{Baeza-Yates2011}):
 
-\todo{Sort out Table of Equations 1}
-
 An IR model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:\\
 \itab{$D$} \tab{the set of documents,}\\
 \itab{$Q$} \tab{the set of queries,}\\
@@ -92,6 +94,7 @@ The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is 
                 k_3 & f_{3,1} & f_{3,2} \cr}
 \label{eq:tdm}
 \end{equation}
+\myequations{tdm}
 
 This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
 
@@ -136,6 +139,7 @@ PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Go
   \sum_{i=1}^{n} \frac{PR(p_i)}{L(p_i)}
   \label{eq:PR}
 \end{equation}
+\myequations{PR}
 
 Where,\\
 \itab{$L(p)$} \tab{is the number of outgoing links of page $p$}\\
@@ -153,6 +157,7 @@ The HITS algorithm also works on the links between pages. It was first described
   \end{split}
   \label{eq:HITS}
 \end{equation}
+\myequations{HITS}
 
 Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \citep{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their "hub" pages are predefined.
 
@@ -174,6 +179,7 @@ Precision is defined as the fraction of retrieved documents that are relevant.
   Precision = \frac{relevant documents retrieved}{retrieved documents}
   \label{eq:precision}
 \end{equation}
+\myequations{precision}
 
 Recall is defined as the fraction of relevant documents that are retrieved.
 
@@ -181,6 +187,7 @@ Recall is defined as the fraction of relevant documents that are retrieved.
   Recall = \frac{relevant documents retrieved}{relevant documents}
   \label{eq:recall}
 \end{equation}
+\myequations{recall}
 
 Note the slight difference between the two. Precision tells us how many of all retrieved results were actually relevant (of course this should preferable be very high) and recall simply indicates how many of all possible relevant documents we managed to retrieve. This can be easily visualised as follows.
 
@@ -213,6 +220,7 @@ Precision is typically more important than recall in web search while it is the 
   MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
   \label{eq:MAP}
 \end{equation}
+\myequations{MAP}
 
 Where $R_i$ is the set of relevant documents for query $q_i$.
 
@@ -242,6 +250,7 @@ The similarity of document $d_j$ to query $q$ is defined as follows (quoted from
   \end{cases}
   \label{eq:sim}
 \end{equation}
+\myequations{sim}
 
 Sometimes things are not quite black and white though and we need to weigh the importance of words somehow. The easiest way to do that is by looking at the frequency in which a word occurs.
 
@@ -256,6 +265,7 @@ The vector model allows a more flexible scoring since it basically computes the 
   \end{split}
   \label{eq:vector}
 \end{equation}
+\myequations{vector}
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -281,6 +291,7 @@ Where $t$ is the total number of terms in the index and $w_{i,j}$ is the TF-IDF 
   \end{split}
   \label{eq:sim2}
 \end{equation}
+\myequations{sim2}
 
 Here is an example algorithm for computing this score taken from \citep[p.125]{Manning2009}.
 
@@ -322,6 +333,7 @@ There are several other common IR models that I won't discuss in detail here. Th
   F_i = \sum_{j=1}^{N}f_{i,j}
   \label{eq:Fi}
 \end{equation}
+\myequations{Fi}
 
 Where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurance of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
 
@@ -337,6 +349,7 @@ normalised using log function
   \end{cases}
   \label{eq:tfij}
 \end{equation}
+\myequations{tfij}
 
 \subsubsection*{Inverse Document Frequency IDF}
 
@@ -344,6 +357,7 @@ normalised using log function
   idf_j = \log \frac{N}{df_i}
   \label{eq:idfj}
 \end{equation}
+\myequations{idfj}
 
 Where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the IDF of term $k_i$. The more often a term occurs in different documents the lower the IDF.
 
@@ -357,12 +371,15 @@ Where the document frequency $df_i$ is the number of documents in a collection t
   \end{cases}
   \label{eq:wij}
 \end{equation}
+\myequations{wij}
 
 Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. In simpler notation this is:
 
 \begin{equation}
   w_{i,j} = tf_{i,j}\times idf_j
+  \label{eq:wij2}
 \end{equation}
+\myequations{wij2}
 
 This means that rare terms have a higher weight and more so if they occur a lot in one document.
 
@@ -466,6 +483,7 @@ We want to compute the probability for $P(w|h)$ where $w$ is a word and $h$ is a
   P(w \mid h) = \frac{count(hw)}{count(h)}
   \label{eq:Probwh}
 \end{equation}
+\myequations{Probwh}
 
 Using the \textbf{chain rule of probability}:
 
@@ -476,6 +494,7 @@ Using the \textbf{chain rule of probability}:
   \end{split}
   \label{eq:Probw1n}
 \end{equation}
+\myequations{Probw1n}
 
 Using the \textbf{Markov assumption} that probability of a word depends only on the previous word (or $n$ words).
 
@@ -483,6 +502,7 @@ Using the \textbf{Markov assumption} that probability of a word depends only on 
   P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
   \label{eq:Probw1n2}
 \end{equation}
+\myequations{Probw1n2}
 
 Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can normalise counts to be between 0 and 1. $C$ stands for count.
 
@@ -492,6 +512,7 @@ Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can norm
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
   \label{eq:Probwn}
 \end{equation}
+\myequations{Probwn}
 
 Usually instead of calculating the counts based on products we calculate them based on sums of logs.
 
@@ -521,6 +542,7 @@ Extrinsic and intrinsic evaluation.
   PP(W) = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{P(w_i \mid w_{i-1})}}
   \label{eq:ppw}
 \end{equation}
+\myequations{ppw}
 
 \subsection*{Smoothing}
 \subsection*{Add-One : Laplace smoothing  for bigrams}
@@ -529,6 +551,7 @@ Extrinsic and intrinsic evaluation.
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
   \label{eq:padd1}
 \end{equation}
+\myequations{padd1}
 
 \subsection*{Adjusted count}
 
@@ -536,6 +559,7 @@ Extrinsic and intrinsic evaluation.
   c_i^* = (c_i+1)\frac{N}{N+V}
   \label{eq:ci}
 \end{equation}
+\myequations{ci}
 
 Add-1 smoothing is ok for text categorisation but not so much for language modelling.
 
@@ -551,6 +575,7 @@ $N_c$ is the frequency of frequency $c$.
   c^* = (c+1)\frac{N_{c+1}}{N_c}
   \label{eq:cstar}
 \end{equation}
+\myequations{cstar}
 
 \subsection*{Naive Bayes}
 
@@ -575,6 +600,7 @@ Formula below shows how to calculate the probability of class $c$ given an obser
   P(c \mid d, \lambda) = \frac{\exp\sum_i\lambda_i f_i (c,d)}{\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d))}
   \label{eq:pcdlambda}
 \end{equation}
+\myequations{pcdlambda}
 
 To get the single best class with the highest probability we need to compute the following.
 
@@ -582,6 +608,7 @@ To get the single best class with the highest probability we need to compute the
   \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
   \label{eq:hatc}
 \end{equation}
+\myequations{hatc}
 
 \begin{table}[htb]
   \centering
@@ -612,6 +639,7 @@ The empirical expectation is the sum of all occurrences where a feature is true 
   empirical \ E(f_i)= \sum_{(c,d) \ \in \ observed(C,D)}f_i(c,d)
   \label{eq:epirical}
 \end{equation}
+\myequations{epirical}
 
 \subsection*{Evaluation}
 
@@ -619,16 +647,19 @@ The empirical expectation is the sum of all occurrences where a feature is true 
   Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
   \label{eq:preci}
 \end{equation}
+\myequations{preci}
 
 \begin{equation}
   Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
   \label{eq:reca}
 \end{equation}
+\myequations{reca}
 
 \begin{equation}
   F_1 = \frac{2PR}{P+R}
   \label{eq:f1mes}
 \end{equation}
+\myequations{f1mes}
 
 \subsection*{Information Extraction}
 
@@ -686,11 +717,13 @@ Example (first sentence in Faustroll):
   t_1^n = \underset{t_1^n}{\text{argmax}} \ P(w_1^n \mid t_1^n) P(t_1^n)
   \label{eq:tn1}
 \end{equation}
+\myequations{tn1}
 
 \begin{equation}
   P(t_i \mid t_{i-1}) = \frac{C(t_{i-1},t_i)}{C(t_{i-1})}
   \label{eq:pti}
 \end{equation}
+\myequations{pti}
 
 For example: the probability of getting a common noun after a determiner is:
 
@@ -698,6 +731,7 @@ For example: the probability of getting a common noun after a determiner is:
   P(\text{NN} \mid \text{DT}) = \frac{C(\text{DT},\text{NN})}{C(\text{DT})} = \frac{56,509}{116,454} = 0.49
   \label{eq:pnndt}
 \end{equation}
+\myequations{pnndt}
 
 Given that there are 116,454 occurrences of DT in the corpus and of these 56,509 occurrences where a NN follows after the DT.
 
@@ -705,6 +739,7 @@ Given that there are 116,454 occurrences of DT in the corpus and of these 56,509
   P(\text{is} \mid \text{VBZ}) = \frac{C(\text{VBZ},\text{is})}{C(\text{VBZ})} = \frac{10,073}{21,627} = 0.47
   \label{eq:pisvbz}
 \end{equation}
+\myequations{pisvbz}
 
 Or the probability of a third person singular verb being 'is' is 0.47.
 
@@ -733,7 +768,7 @@ A language is modelled using a grammar, specifically a Context-Free-Grammar or C
 
 The parse tree for the previous example sentence from Faustroll is shown below, in horizontal for convenience.
 
-\begin{verbatim}
+\begin{alltt}
 (ROOT
   (S
     (PP (IN In)
@@ -800,7 +835,7 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
                   (NP (NNP Q))))))
           (NN borough))))
     (. .)))
-\end{verbatim}
+\end{alltt}
 
 This particular tree was generated using the Stanford Parser at \url{http://nlp.stanford.edu:8080/parser/index.jsp}.
 Given the rather complicated nature of the words and sentence structure, some of the labels might be wrong.
