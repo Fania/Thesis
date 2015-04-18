@@ -51,11 +51,13 @@ To compile manually via commandline:
 - [ ] margin symbols
 - [X] preface part and postface part
 - [X] appendix alpha numbering
-- [ ] table spacing before and after
+- [X] table spacing before and after
 - [ ] Structure of thesis section in introduction
-- [ ] Remove dotted line from preface and chapter headings in toc
+- [X] Remove dotted line from preface and chapter headings in toc
 - [ ] Pataphysical chapter numbering (binary)
 - [ ] Add crotty to methodology see image
+- [ ] Arty Bollocks
+- [ ] 
 
 
 
@@ -63,10 +65,9 @@ To compile manually via commandline:
 
 When LaTeX finds an error like this, it displays the error message and pauses. You must type one of the following letters to continue:
 
-Key	Meaning
-x	Stop immediately and exit the program.
-q	Carry on quietly as best you can and don't bother me with any more error messages.
-e	Stop the program but re-position the text in my editor at the point where you found the error (This only works if you're using an editor which LaTeX can communicate with).
-h	Try to give me more help.
-i	(followed by a correction) means input the correction in place of the error and carry on (This is only a temporary fix to get the file processed. You still have to make that correction in the editor).
-r	run in non-stop mode. Plow through any errors, unless too many pile up and it fails (100 errors).
+**x**	 Stop and exit
+**q** Carry on quietly
+**e** Stop the program and open editor at error
+**h** Help
+**i** Input correction in place of error and carry on
+**r**	Run in non-stop mode
