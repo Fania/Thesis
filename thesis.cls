@@ -105,10 +105,9 @@
 % MARGINS
 
 \usepackage[a4paper,
-            left=4cm,
-            right=2cm,
-            top=2cm,
-            bottom=4cm]
+            left=4cm,right=2cm,
+            top=2cm,bottom=4cm,
+            showframe, showcrop]
             {geometry}
 % bindingoffset=6mm
 

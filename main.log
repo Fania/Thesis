@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.4.5)  18 APR 2015 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.4.5)  19 APR 2015 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1764,7 +1764,7 @@ e
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: showframe showcrop 
 * h-part:(L,W,R)=(113.81102pt, 426.79135pt, 56.9055pt)
 * v-part:(T,H,B)=(56.9055pt, 674.33032pt, 113.81102pt)
 * \paperwidth=597.50787pt
@@ -2310,14 +2310,14 @@ Underfull \hbox (badness 1024) in paragraph at lines 133--133
  the
  []
 
-<images/resultexample.png, id=2321, 215.8464pt x 40.953pt>
+<images/resultexample.png, id=2323, 215.8464pt x 40.953pt>
 File: images/resultexample.png Graphic file (type png)
 
 <use images/resultexample.png>
 Package pdftex.def Info: images/resultexample.png used on input line 144.
 (pdftex.def)             Requested size: 426.79135pt x 80.97655pt.
  [89] [90 <./images/resultexample.png>] [91]
-<images/patasearch02.png, id=2341, 107.9232pt x 28.908pt>
+<images/patasearch02.png, id=2343, 107.9232pt x 28.908pt>
 File: images/patasearch02.png Graphic file (type png)
 
 <use images/patasearch02.png>
@@ -2328,21 +2328,21 @@ Package pdftex.def Info: images/patasearch02.png used on input line 191.
 Chapter 7.
 [96
 
-] [97] [98] <images/patasearch01.png, id=2397, 215.8464pt x 119.4864pt>
+] [97] [98] <images/patasearch01.png, id=2399, 215.8464pt x 119.4864pt>
 File: images/patasearch01.png Graphic file (type png)
 
 <use images/patasearch01.png>
 Package pdftex.def Info: images/patasearch01.png used on input line 171.
 (pdftex.def)             Requested size: 426.79135pt x 236.26108pt.
  [99] [100 <./images/patasearch01.png>]
-<images/prototype01.png, id=2407, 176.15813pt x 337.26pt>
+<images/prototype01.png, id=2409, 176.15813pt x 337.26pt>
 File: images/prototype01.png Graphic file (type png)
 
 <use images/prototype01.png>
 Package pdftex.def Info: images/prototype01.png used on input line 197.
 (pdftex.def)             Requested size: 211.3376pt x 404.6023pt.
 
-<images/prototype02.png, id=2408, 318.43968pt x 252.945pt>
+<images/prototype02.png, id=2410, 318.43968pt x 252.945pt>
 File: images/prototype02.png Graphic file (type png)
 
 <use images/prototype02.png>
@@ -2446,13 +2446,13 @@ Overfull \hbox (4.94366pt too wide) in paragraph at lines 199--199
  []
 
 [115] [116] [117] [118] [119] [120]
-<images/candy02.png, id=2631, 337.26pt x 234.1247pt>
+<images/candy02.png, id=2633, 337.26pt x 234.1247pt>
 File: images/candy02.png Graphic file (type png)
  <use images/candy02.png>
 Package pdftex.def Info: images/candy02.png used on input line 365.
 (pdftex.def)             Requested size: 426.79135pt x 296.28474pt.
 
-<images/candy01.png, id=2632, 276.28218pt x 252.945pt>
+<images/candy01.png, id=2634, 276.28218pt x 252.945pt>
 File: images/candy01.png Graphic file (type png)
 
 <use images/candy01.png>
@@ -2573,15 +2573,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
  38316 strings out of 493109
  670098 string characters out of 6138588
- 893418 words of memory out of 5000000
+ 893459 words of memory out of 5000000
  39761 multiletter control sequences out of 15000+600000
  42149 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2673,10 +2670,10 @@ c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb><c:/texlive
 /2014/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2014/texm
 f-dist/fonts/type1/public/cm-super/sftt1095.pfb><c:/texlive/2014/texmf-dist/fon
 ts/type1/public/cm-super/sfxc2488.pfb>
-Output written on main.pdf (175 pages, 2121035 bytes).
+Output written on main.pdf (175 pages, 2219123 bytes).
 PDF statistics:
- 3501 PDF objects out of 3580 (max. 8388607)
- 3223 compressed objects within 33 object streams
+ 3503 PDF objects out of 3580 (max. 8388607)
+ 3225 compressed objects within 33 object streams
  1019 named destinations out of 1200 (max. 500000)
  35144 words of extra memory for PDF output out of 35830 (max. 10000000)
 
