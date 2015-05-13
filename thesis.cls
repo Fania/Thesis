@@ -51,6 +51,11 @@
 \usepackage[UKenglish]{isodate}
 
 
+% OVERVIEW
+
+% \usepackage{shorttoc}
+
+
 % LINKS
 
 \usepackage[pdfencoding=auto,colorlinks=true,linkcolor=blue]{hyperref}
@@ -258,8 +263,9 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \newlistof{myequations}{equ}{\listequationsname}
 \newcommand{\myequations}[1]{%
 \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
-\setlength{\cftmyequationsnumwidth}{2.3em}% Width of equation number in List of Equations
-\setlength{\cftmyequationsindent}{1.5em}% Width of equation number in List of Equations
+\setlength{\cftmyequationsnumwidth}{2.3em}
+\setlength{\cftmyequationsindent}{1.5em}
+\setlength{\cftbeforechapskip}{1em}
 
 
 % GRAY LINE

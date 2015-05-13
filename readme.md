@@ -38,7 +38,7 @@ To compile manually via commandline:
 - [ ] Align algorithms
 - [ ] flow charts per algorithm
 - [X] Debugging stuff
-- [ ] Comment package?
+- [X] Comment package
 - [X] Align all equations
 - [X] Move usepackage statements out
 - [ ] Footnotes in captions not working
@@ -57,7 +57,11 @@ To compile manually via commandline:
 - [ ] Pataphysical chapter numbering (binary)
 - [ ] Add crotty to methodology see image
 - [ ] Arty Bollocks
-- [ ] 
+- [ ] Add odd pages, pataphysical stuff. comments. jokes. quotes
+- [ ] Formatting marks on odd pages
+- [ ] Anticipations Introduction chapter rename
+- [ ] Lit Review - Contemplations - !=Ignorance
+- [ ] Analysis - Considerations
 
 
 
