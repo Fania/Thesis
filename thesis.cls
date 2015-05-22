@@ -28,8 +28,8 @@
 
 % ---------------
 
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-\microtypecontext{spacing=nonfrench}
+% \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% \microtypecontext{spacing=nonfrench}
 % activate={true,nocompatibility} - activate protrusion and expansion
 % final - enable microtype; use "draft" to disable
 % tracking=true, kerning=true, spacing=true - activate these techniques
@@ -111,8 +111,8 @@
 
 \usepackage[a4paper,
             left=4cm,right=2cm,
-            top=2cm,bottom=4cm,
-            showframe, showcrop]
+            top=2cm,bottom=4cm % ,showframe, showcrop
+            ]
             {geometry}
 % bindingoffset=6mm
 
