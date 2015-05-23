@@ -57,11 +57,15 @@ To compile manually via commandline:
 - [ ] Pataphysical chapter numbering (binary)
 - [ ] Add crotty to methodology see image
 - [ ] Arty Bollocks
+<<<<<<< Updated upstream
 - [ ] Add odd pages, pataphysical stuff. comments. jokes. quotes
 - [ ] Formatting marks on odd pages
 - [ ] Anticipations Introduction chapter rename
 - [ ] Lit Review - Contemplations - !=Ignorance
 - [ ] Analysis - Considerations
+=======
+- [ ]
+>>>>>>> Stashed changes
 
 
 
@@ -75,3 +79,17 @@ When LaTeX finds an error like this, it displays the error message and pauses. Y
 **h** Help
 **i** Input correction in place of error and carry on
 **r**	Run in non-stop mode
+
+
+## ARTY BOLLOCKS
+
+
+1 My work explores the relationship between multiculturalism and multimedia experiences.
+
+2 With influences as diverse as Kierkegaard and Roy Lichtenstein, new insights are synthesised from both explicit and implicit dialogues.
+
+3 Ever since I was a teenager I have been fascinated by the traditional understanding of the human condition. What starts out as triumph soon becomes debased into a hegemony of defeat, leaving only a sense of what could have been and the unlikelihood of a new synthesis.
+
+4 As shimmering phenomena become frozen through studious and personal practice, the viewer is left with a clue to the limits of our culture.
+
+http://www.artybollocks.com/#abg_full
