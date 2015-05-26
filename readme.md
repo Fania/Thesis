@@ -57,16 +57,12 @@ To compile manually via commandline:
 - [ ] Pataphysical chapter numbering (binary)
 - [ ] Add crotty to methodology see image
 - [ ] Arty Bollocks
-<<<<<<< Updated upstream
 - [ ] Add odd pages, pataphysical stuff. comments. jokes. quotes
 - [ ] Formatting marks on odd pages
 - [ ] Anticipations Introduction chapter rename
 - [ ] Lit Review - Contemplations - !=Ignorance
 - [ ] Analysis - Considerations
-=======
-- [ ]
->>>>>>> Stashed changes
-
+- [ ] Library of Babel
 
 
 ## Errors

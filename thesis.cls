@@ -56,6 +56,18 @@
 % \usepackage{shorttoc}
 
 
+% QUOTES
+% \usepackagee[autostyle,english=british,french=guillemets]{csquotes}
+\renewenvironment{quote}
+               {\list{}{\rightmargin\leftmargin}%
+                \item\relax\sffamily\singlespacing\ignorespaces}
+               {\unskip\unskip\endlist}
+
+
+% MULTICOLUMN
+\usepackage{multicol, ragged2e}
+
+
 % LINKS
 
 \usepackage[pdfencoding=auto,colorlinks=true,linkcolor=blue]{hyperref}

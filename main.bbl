@@ -1,4 +1,4 @@
-\begin{thebibliography}{130}
+\begin{thebibliography}{131}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,11 @@ Jorge~Luis Borges.
   229--232. Penguin Books, London, 2000.
 \newblock URL \url{http://www.entish.org/essays/Wilkins.html}.
 
+\bibitem[Hendler and Hugill(2011)]{Hendler2011}
+Jim Hendler and Andrew Hugill.
+\newblock {The Syzygy Surfer : Creative Technology for the World Wide Web}.
+\newblock In \emph{ACM WebSci'11}, 2011.
+
 \bibitem[Hendler and Hugill(2013)]{Hendler2013}
 Jim Hendler and Andrew Hugill.
 \newblock {The syzygy surfer: (Ab)using the semantic web to inspire
@@ -19,10 +24,11 @@ Jim Hendler and Andrew Hugill.
 \newblock \emph{International Journal of Creative Computing}, 1\penalty0
   (1):\penalty0 20--34, 2013.
 
-\bibitem[Hendler and Hugill(2011)]{Hendler2011}
-Jim Hendler and Andrew Hugill.
-\newblock {The Syzygy Surfer : Creative Technology for the World Wide Web}.
-\newblock In \emph{ACM WebSci'11}, 2011.
+\bibitem[Jarry(1996)]{Jarry1996}
+Alfred Jarry.
+\newblock \emph{{Exploits and Opinions of Dr Faustroll, Pataphysician}}.
+\newblock Exact Change, Cambridge, MA, 1996.
+\newblock ISBN 1878972073.
 
 \bibitem[Singh(2005)]{Singh2005}
 Push Singh.
@@ -64,6 +70,23 @@ Fania Raczinski, Hongji Yang, and Andrew Hugill.
   York, NY, USA.
 \newblock ISBN 978-1-4503-2150-1.
 
+\bibitem[Sawle et~al.(2011)Sawle, Raczinski, and Yang]{Sawle2011}
+James Sawle, Fania Raczinski, and Hongji Yang.
+\newblock {A Framework for Creativity in Search Results}.
+\newblock In \emph{The Third International Conference on Creative Content
+  Technologies}, pages 54--57, Rome, 2011.
+
+\bibitem[Hugill et~al.(2013)Hugill, Yang, Raczinski, and Sawle]{Hugill2013d}
+Andrew Hugill, Hongji Yang, Fania Raczinski, and James Sawle.
+\newblock {The pataphysics of creativity: developing a tool for creative
+  search}.
+\newblock \emph{Digital Creativity}, 24\penalty0 (3):\penalty0 237--251,
+  September 2013.
+\newblock ISSN 1462-6268.
+\newblock \doi{10.1080/14626268.2013.813377}.
+\newblock URL
+  \url{http://www.tandfonline.com/doi/abs/10.1080/14626268.2013.813377}.
+
 \bibitem[Ramesh et~al.(2004)Ramesh, Glass, and Vessey]{Ramesh2004}
 V.~Ramesh, Robert~L. Glass, and Iris Vessey.
 \newblock {Research in computer science: an empirical study}.
@@ -80,30 +103,6 @@ Basarab Nicolescu.
   the Included}.
 \newblock \emph{Transcdisciplinary Journal of Engineering and Science},
   1\penalty0 (1):\penalty0 19--38, 2010.
-
-\bibitem[Vian(2006)]{Vian2006}
-Boris Vian.
-\newblock \emph{{'Pataphysics? What's That?}}
-\newblock Atlas Press, London, 2006.
-\newblock ISBN 1-900565-32-3.
-
-\bibitem[Daumal(2012)]{Daumal2012}
-Rene Daumal.
-\newblock \emph{{Pataphysical Essays}}.
-\newblock Wakefield Press, Cambridge, Massachusetts, 2012.
-\newblock ISBN 978-0-9841155-6-3.
-
-\bibitem[Brotchie(1995)]{Brotchie1995}
-Alistair Brotchie, editor.
-\newblock \emph{{A True History of the College of 'Pataphysics - 1}}.
-\newblock Atlas Press, London, 1995.
-\newblock ISBN 0-947757-78-3.
-
-\bibitem[Jarry(1996)]{Jarry1996}
-Alfred Jarry.
-\newblock \emph{{Exploits and Opinions of Dr Faustroll, Pataphysician}}.
-\newblock Exact Change, Cambridge, MA, 1996.
-\newblock ISBN 1878972073.
 
 \bibitem[Brotchie et~al.(2003)Brotchie, Chapman, Foulc, and
   Jackson]{Brotchie2003}
@@ -174,6 +173,24 @@ Asger Jorn.
 Douglas Cruickshank.
 \newblock {Why Anti-Matter Matters}, nd.
 \newblock URL \url{http://www.ralphmag.org/jarry.html}.
+
+\bibitem[Vian(2006)]{Vian2006}
+Boris Vian.
+\newblock \emph{{'Pataphysics? What's That?}}
+\newblock Atlas Press, London, 2006.
+\newblock ISBN 1-900565-32-3.
+
+\bibitem[Daumal(2012)]{Daumal2012}
+Rene Daumal.
+\newblock \emph{{Pataphysical Essays}}.
+\newblock Wakefield Press, Cambridge, Massachusetts, 2012.
+\newblock ISBN 978-0-9841155-6-3.
+
+\bibitem[Brotchie(1995)]{Brotchie1995}
+Alistair Brotchie, editor.
+\newblock \emph{{A True History of the College of 'Pataphysics - 1}}.
+\newblock Atlas Press, London, 1995.
+\newblock ISBN 0-947757-78-3.
 
 \bibitem[Borges(1964)]{Borges1964}
 Jorge~Luis Borges.
@@ -764,12 +781,6 @@ Mohammad~Mustafa Taye.
 \newblock \emph{{Ontology Alignment Mechanisms for Improving Web-based
   Searching}}.
 \newblock PhD thesis, De Montort University, 2009.
-
-\bibitem[Sawle et~al.(2011)Sawle, Raczinski, and Yang]{Sawle2011}
-James Sawle, Fania Raczinski, and Hongji Yang.
-\newblock {A Framework for Creativity in Search Results}.
-\newblock In \emph{The Third International Conference on Creative Content
-  Technologies}, pages 54--57, Rome, 2011.
 
 \bibitem[Miyamoto(2010)]{Miyamoto2010}
 Sadaaki Miyamoto.
