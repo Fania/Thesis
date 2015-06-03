@@ -51,6 +51,20 @@
 \usepackage[UKenglish]{isodate}
 
 
+% FONTS
+
+% Default font (\familydefault = \rmdefault = Computer Modern Roman)
+% \renewcommand*{\familydefault}{\sfdefault}
+% \renewcommand*\rmdefault{ppl}
+
+% EB Garamond
+\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usepackage{ebgaramond-maths}
+\renewcommand*\rmdefault{mdugm}
+\renewcommand*\sfdefault{mdugm}
+
+
+
 % OVERVIEW
 
 % \usepackage{shorttoc}
@@ -235,6 +249,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % \usepackage{caption} % for subtables
 % \usepackage{subcaption} % for subtables
+
 
 % GLOSSARY & ACRONYMS
 
