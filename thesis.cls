@@ -58,11 +58,34 @@
 % \renewcommand*\rmdefault{ppl}
 
 % EB Garamond
-\usepackage[cmintegrals,cmbraces]{newtxmath}
-\usepackage{ebgaramond-maths}
-\renewcommand*\rmdefault{mdugm}
-\renewcommand*\sfdefault{mdugm}
+% \usepackage[cmintegrals,cmbraces]{newtxmath}
+% \usepackage{garamond}
+% \renewcommand*\rmdefault{garamond}
 
+% \setmainfont{tgschola} % sets the roman font
+% \setsansfont{tgadventor} % sets the sans font
+% \setmonofont{<name of font>} % sets the monospace font
+
+% TEX Gyre Schola
+% \usepackage{tgschola}
+% \renewcommand{\rmdefault}{}
+% \renewcommand*\familydefault{\rmdefault}
+
+% TEX Gyre Adventor
+% \usepackage{tgadventor}
+% \renewcommand*\sfdefault{tgadventor}
+% \renewcommand*\familydefault{\sfdefault}
+
+
+% TITLE STYLES
+
+% \usepackage{titlesec}
+% \titleformat{\chapter}[display]
+%   {\normalfont\sffamily\huge\bfseries}
+%   {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+% \titleformat{\section}
+%   {\normalfont\sffamily\Large\bfseries}
+%   {\thesection}{1em}{}
 
 
 % OVERVIEW
