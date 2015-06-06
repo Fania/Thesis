@@ -21,7 +21,7 @@
 
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
 \ProcessOptions\relax
-\LoadClass[a4paper]{\baseclass}
+\LoadClass[a4paper,oneside]{\baseclass}
 
 \hfuzz=7pt
 \vfuzz=7pt
@@ -56,6 +56,10 @@
 % Default font (\familydefault = \rmdefault = Computer Modern Roman)
 % \renewcommand*{\familydefault}{\sfdefault}
 % \renewcommand*\rmdefault{ppl}
+
+% \usepackage{qagr}
+\renewcommand*\rmdefault{pbk} % Bookman
+\renewcommand*\sfdefault{lmssq} % Latin Modern Sans Extended
 
 % EB Garamond
 % \usepackage[cmintegrals,cmbraces]{newtxmath}
@@ -94,7 +98,9 @@
 
 
 % QUOTES
+
 % \usepackagee[autostyle,english=british,french=guillemets]{csquotes}
+% \usepackage{dirtytalk}
 \renewenvironment{quote}
                {\list{}{\rightmargin\leftmargin}%
                 \item\relax\sffamily\singlespacing\ignorespaces}
@@ -102,12 +108,20 @@
 
 
 % MULTICOLUMN
+
 \usepackage{multicol, ragged2e}
 
 
 % LINKS
 
-\usepackage[pdfencoding=auto,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[pdfencoding=auto,
+            colorlinks=true,
+            linkcolor=blue,
+            pdftex,
+            pdfauthor={Fania Raczinski},
+            pdftitle={PhD Thesis},
+            pdfsubject={Web Collider},
+            pdfkeywords={Pataphysics, Creative Computing, Interdisciplinary Research}]{hyperref}
 
 
 % VERBATIM
@@ -139,6 +153,7 @@
 % or \setlist{noitemsep} to leave space around whole list
 % \setlist{nosep}
 \setlist{noitemsep}
+\setlist[description]{style=nextline}
 
 
 % TODONOTES
@@ -158,9 +173,9 @@
 
 % MARGINS
 
-\usepackage[a4paper,
-            left=4cm,right=2cm,
-            top=2cm,bottom=4cm % ,showframe, showcrop
+\usepackage[a4paper, % twoside=false,
+            left=4cm, right=2cm,
+            top=2cm, bottom=4cm % ,showframe, showcrop
             ]
             {geometry}
 % bindingoffset=6mm
@@ -218,6 +233,8 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \definecolor{creme}{rgb}{1,1,0.9}
+
+\renewcommand\lstlistlistingname{List of Code Snippets}
 
 \lstset{frame=none,
   language=Python,
