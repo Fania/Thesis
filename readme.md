@@ -63,7 +63,8 @@ To compile manually via commandline:
 - [ ] Lit Review - Contemplations - !=Ignorance
 - [ ] Analysis - Considerations
 - [ ] Library of Babel
-- [ ] Hello World
+- [X] Hello World
+- [ ] Remove all page numbers from references
 
 
 ## Errors
