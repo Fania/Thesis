@@ -1,7 +1,7 @@
 % !TEX root = ../main.tex
 
-\chapter{IR and NLP}
-\label{ch:irnlp}
+\chapter{Search}
+\label{ch:search}
 
 \emph{Part of this research has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.}
 
@@ -12,11 +12,14 @@ Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}\\
 First use: \gls{ir}. Second use: \gls{ir}.\\
 First use: \gls{nlp}. Second use: \gls{nlp}.
 
+
 \section{Information Retrieval}
 
 \begin{quote}
   "Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest." \citep{Baeza-Yates2011}
 \end{quote}
+
+\todo{exploratory search section}
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
@@ -68,6 +71,7 @@ Information retrieval does not only refer to the retrieval of online information
 \end{figure}
 
 In simple terms, a typical IR process goes as follows. A user is looking for some information so he types a search term or a question into the text box of a search engine. The system then analyses that query and retrieves any matches from the index, which is always kept up to date by a web crawler in the background of the search engine. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality this involves many more steps and levels of detail but in principle that is all needed to understand how IR systems work.
+
 
 \subsection{IR Systems}
 
@@ -121,8 +125,11 @@ The dictionary is usually processed to eliminate punctuation and stop words (e.g
 For specific domains it even makes sense to build a "controlled vocabulary" which can be seen as a domain specific taxonomy and are very useful for query expansion.
 
 \subsubsection{Architecture}
+
 \subsubsection{Index}
+
 \subsubsection{Search Algorithms}
+
 \subsubsection{Ranking}
 
 Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook "like" button or the Google+ "+1" button which could be seen as direct user relevance feedback as well.
@@ -171,6 +178,7 @@ Another algorithm is the so called Fish search algorithm. It was first described
 There are various algorithms that follow this approach. For example the shark search algorithm \citep{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \citep{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \citep{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \citep{Nick2001}.
 
 Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59](p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
+
 
 \subsection{Evaluation}
 
@@ -235,15 +243,18 @@ The Text REtrieval Conference (TREC) is a conference that provides large test se
 
 There are certain other factors that can be or need be evaluated when looking at the complete search system. For example the time it takes to crawl for data, the time it takes to index data, the amount of storage needed for data and then also how fast the query response is and how many queries the system can handle in a given time period.
 
+
 \subsubsection{Measuring Creative Search Quality}
 
 In this paper \citep{Sawle2011} we have discussed an initial approach to measure the creativity of search results. Based on a definition of creativity by Boden, we attempt to define creativity in a way which could be applied to search results and provide a simple metric to measure it.
+
 
 \subsubsection{Query Expansion and Relevance Feedback}
 
 Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysis the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
-\subsection*{The Boolean Model}
+
+\subsection{The Boolean Model}
 
 The similarity of document $d_j$ to query $q$ is defined as follows (quoted from \citep[p.65]{Baeza-Yates2011})
 
@@ -259,7 +270,8 @@ The similarity of document $d_j$ to query $q$ is defined as follows (quoted from
 
 Sometimes things are not quite black and white though and we need to weigh the importance of words somehow. The easiest way to do that is by looking at the frequency in which a word occurs.
 
-\subsection*{The Vector Model}
+
+\subsection{The Vector Model}
 
 The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents (taken from \citep[p.78]{Baeza-Yates2011}).
 
@@ -332,6 +344,7 @@ Where,\\
 
 There are several other common IR models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set \citep{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986} models or latent semantic indexing \citep{Deerwester1990}, neural network models and others \citep{Macdonald2009, Schuetze1998, Schuetze}.
 
+
 \subsection*{Total Term Frequency}
 
 \begin{equation}
@@ -341,6 +354,7 @@ There are several other common IR models that I won't discuss in detail here. Th
 \myequations{Fi}
 
 Where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurance of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
+
 
 \subsubsection*{Term Frequency TF}
 
@@ -356,6 +370,7 @@ normalised using log function
 \end{equation}
 \myequations{tfij}
 
+
 \subsubsection*{Inverse Document Frequency IDF}
 
 \begin{equation}
@@ -365,6 +380,7 @@ normalised using log function
 \myequations{idfj}
 
 Where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the IDF of term $k_i$. The more often a term occurs in different documents the lower the IDF.
+
 
 \subsubsection*{TF-IDF Weighting}
 
@@ -388,6 +404,7 @@ Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. In simpler notation t
 
 This means that rare terms have a higher weight and more so if they occur a lot in one document.
 
+
 \subsubsection*{Challenges of Web Search}
 
 Other issues that arise when trying to search the World Wide Web are as follows (\citep[p.449]{Baeza-Yates2011}).
@@ -403,6 +420,7 @@ Other issues that arise when trying to search the World Wide Web are as follows 
 
 Since a single query for a popular word can results in  millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \citep[p.459]{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \citep[p.459]{Baeza-Yates2011}. Google for example uses over 15,000 commodity-class PCs that are distributed over several data centres around the world \citep{Dean2003}.
 
+
 \subsubsection*{Summary}
 
 IR refers to the retrieval of information from a collection. In terms of the Internet it is often called Web search. A Web search engine is divided into different components, being the crawler to build an index of the collection and a ranking algorithm which stands between the index and the user.
@@ -414,6 +432,7 @@ Search quality is generally measured using the metrics of precision and recall b
 Challenges are the size of the World Wide Web and ambiguous, unstructured nature of Web pages among others.
 
 Ranking can be done at different stages of the search process. Depending on how the index is formatted and what information can be pre-computed at that stage, the ranking algorithm evaluates every page for relevance and returns them in order. There exist lots of different approaches on ranking, including PageRank and HITS (both analyse the link structure of the WWW), or more dynamic models like Fish search or genetic approaches.
+
 
 \section{Natural Language Processing}
 
@@ -444,7 +463,9 @@ Goals of NLP are to get computers to perform useful tasks involving human langua
 
 e.g. machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
 
+
 \subsection{Damerau-Levensthein}
+
 
 \subsection*{Regular Expressions}
 
@@ -460,6 +481,7 @@ Errors can be false positives (FP) and false negatives (FN).
 \end{itemize}
 
 RE's can be expressed as Finite-State Automata (FSA).
+
 
 \subsection*{Language Models (LM)}
 
@@ -477,6 +499,7 @@ Same lemma but different wordforms.
 \end{itemize}
 
 The process of converting all words in a text to their lemma (e.g. goes $\to$ go) is called lemmatisation and the process of separating out all words in a text is called tokenisation or word segmentation.
+
 
 \subsection*{$N$-Grams}
 
@@ -511,6 +534,7 @@ Using the \textbf{Markov assumption} that probability of a word depends only on 
 
 Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can normalise counts to be between 0 and 1. $C$ stands for count.
 
+
 \subsection*{Maximum likelihood estimation (MLE)}
 
 \begin{equation}
@@ -532,6 +556,7 @@ Google offers its $N$-Gram data for free on:
   \item	\url{http://bit.ly/1G3ZJmX} % http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp?catalogId=LDC2006T13
 \end{itemize}
 
+
 \subsection*{Evaluating N-Grams}
 
 Extrinsic and intrinsic evaluation.
@@ -541,6 +566,7 @@ Extrinsic and intrinsic evaluation.
   \item [Intrinsic]: evaluate independent on any application, e.g. perplexity.
 \end{description}
 
+
 \subsection*{Perplexity}
 
 \begin{equation}
@@ -549,7 +575,10 @@ Extrinsic and intrinsic evaluation.
 \end{equation}
 \myequations{ppw}
 
+
 \subsection*{Smoothing}
+
+
 \subsection*{Add-One : Laplace smoothing  for bigrams}
 
 \begin{equation}
@@ -557,6 +586,7 @@ Extrinsic and intrinsic evaluation.
   \label{eq:padd1}
 \end{equation}
 \myequations{padd1}
+
 
 \subsection*{Adjusted count}
 
@@ -572,6 +602,7 @@ Most commonly used is Kneser-Ney extended interpolated.
 
 For very large N-grams like the Web “Stupid Backoff” is used.
 
+
 \subsection*{Good Turing Discounting}
 
 $N_c$ is the frequency of frequency $c$.
@@ -582,6 +613,7 @@ $N_c$ is the frequency of frequency $c$.
 \end{equation}
 \myequations{cstar}
 
+
 \subsection*{Naive Bayes}
 
 [3] page 234…
@@ -589,6 +621,7 @@ $N_c$ is the frequency of frequency $c$.
 \begin{quote}
   (Wikipedia): "A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be 'independent feature model'."
 \end{quote}
+
 
 \subsection*{Maximum Entropy Models (MaxEnt)}
 
@@ -646,6 +679,7 @@ The empirical expectation is the sum of all occurrences where a feature is true 
 \end{equation}
 \myequations{epirical}
 
+
 \subsection*{Evaluation}
 
 \begin{equation}
@@ -666,6 +700,7 @@ The empirical expectation is the sum of all occurrences where a feature is true 
 \end{equation}
 \myequations{f1mes}
 
+
 \subsection*{Information Extraction}
 
 [1] Chapter 22, p 759…
@@ -673,6 +708,7 @@ The empirical expectation is the sum of all occurrences where a feature is true 
 "The process of information extraction (IE), also called text analytics, turns the unstructured information embedded in texts into structured data."
 
 IE involves named entity recognition (NER), relation detection and classification, event detection and classification and temporal analysis.
+
 
 \subsection*{Named Entity Recognition}
 
@@ -689,6 +725,7 @@ Example (first sentence in Faustroll):
 \end{quote}
 
 Gazetteers (lists of place or person names for example) can help with the detection of these named entities.
+
 
 \subsection*{Part of Speech Tagging}
 
@@ -748,9 +785,11 @@ Given that there are 116,454 occurrences of DT in the corpus and of these 56,509
 
 Or the probability of a third person singular verb being 'is' is 0.47.
 
+
 \subsection*{Parsing}
 
 Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar a parsing algorithm should produce a parse tree for the given sentence.
+
 
 \subsection*{Grammar}
 
@@ -845,6 +884,7 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
 This particular tree was generated using the Stanford Parser at \url{http://nlp.stanford.edu:8080/parser/index.jsp}.
 Given the rather complicated nature of the words and sentence structure, some of the labels might be wrong.
 
+
 \section{Linguistics / WordNet}
 
 I looked into linguistics for the purpose of patadata. This section definitely needs some expanding. Some concepts that might be relevant include (taken from Wikipedia):
@@ -865,10 +905,12 @@ I need to find REFERENCES for this section.
 % For a project of this kind of speciality, it is hard to find directly related work. There is no real  precedent to the idea of a pataphysical search tool.
 % Looking at more broadly related work shows a few worthwhile mentions as follows. They are mostly examples of creative computing in various forms, some of which have pataphysical foundations, whether they are aware of it or not, and others don't. The list could be extended endlessly, so I will only include a selection of the most interesting ones. I have also included some examples of other kinds of projects that have pataphysical elements in them but are not related to computers or searching. Finally, I have added a few examples of current web search engines and ranking algorithms, though they probably cannot be considered creative or pataphysical.
 
+
 \section*{SpecLab}
 
 The projects Johanna Drucker describes in her book SpecLab \citep{Drucker2009}  could certainly be considered related work. Not only in their theoretical foundations but also in some aspects of their implementation. One project in particular is worth mentioning here: the 'Patacritical Demon, an "interactive tool for exposing the structures that underlie our interpretations of text", although it remained a purely conceptual piece of work and was never implemented. Her idea if the "patacritical" method is quite interesting. Pataphysical exceptions and anomalies can thus be justified in a computational system. But it is not just this concept that deserves mention here.
 Her ideas on structured data, metadata and knowledge representation link very nicely into my project. How can we represent and structure data so that it does not lose its subjectivity, context and meaning? Her reference to graphical analogies is inspiring in that regard as well. I am certain I will refer back to her concepts throughout my thesis.
+
 
 \section*{YossarianLives!}
 
