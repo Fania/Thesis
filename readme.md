@@ -21,8 +21,8 @@ To compile manually via commandline:
 ## TODO
 
 - [X] Linepsacing
-- [ ] header footer ?
-- [ ] title, abstract design spacing
+- [ ] Header and Footer style ?
+- [ ] Title, abstract design spacing
 - [ ] Finish style
 - [ ] Index?
 - [ ] Colours
@@ -33,10 +33,10 @@ To compile manually via commandline:
 - [X] Figures images linewidth [h!]
 - [X] Image file size?
 - [X] Preface?
-- [ ] code listings math symbols?
+- [ ] Code listings math symbols?
 - [ ] Code style?
 - [ ] Align algorithms
-- [ ] flow charts per algorithm
+- [ ] Flow charts per algorithm
 - [X] Debugging stuff
 - [X] Comment package
 - [X] Align all equations
@@ -48,10 +48,10 @@ To compile manually via commandline:
 - [X] Fancyhdr Warnings
 - [X] Finish adding table of equations
 - [X] Add Phoenix exhibition LMS showcase
-- [ ] margin symbols
-- [X] preface part and postface part
-- [X] appendix alpha numbering
-- [X] table spacing before and after
+- [ ] Margin symbols
+- [X] Preface part and postface part
+- [X] Appendix alpha numbering
+- [X] Table spacing before and after
 - [ ] Structure of thesis section in introduction
 - [X] Remove dotted line from preface and chapter headings in toc
 - [ ] Pataphysical chapter numbering (binary)
@@ -64,9 +64,10 @@ To compile manually via commandline:
 - [ ] Analysis - Considerations
 - [ ] Library of Babel
 - [X] Hello World
-- [ ] Remove all page numbers from references
+- [ ] Remove all page numbers from references?
 - [ ] Chapter sign §
 - [ ] Check emphasis notes in citations
+- [ ] Conjecture as chapter title in intro?
 
 
 ## Errors

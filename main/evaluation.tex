@@ -7,72 +7,88 @@
 
 \grule
 
-Creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
-
-Evaluating creative software is not an easy task. Pease and Colton [27] divide it into two notions: \\
-•	whether an idea or artefact is valuable or not, and\\
-•	whether a system is acting creatively or not.\\
-We would need to investigate each individual search result in terms of its value and creativity. This could be done by user ratings or satisfaction questionnaires. Rather than measuring the success of individual results we could look at evaluation them as one set instead, similar to the blind side-by-side comparisons by Bing or MillionShort .
-
-The search results produced by our tool can be quite surprising sometimes and it not always clear how they connect to the initial query (especially if the inner workings of the algorithms are unknown), even if we identify through which function a result has been obtained. Obviously these keywords might not be helpful to users unfamiliar with the concept of pataphysics and might therefore appear rather nonsensical. Whilst there is a clear logic to each search result, they might appear anomalous to the user’s expectations if he received these results without knowing the philosophy of the search tool. The results could possibly appear random then, and would therefore likely to be detrimental to the user.
-
-To prevent that, the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the tool. A quick and simple solution to this problem would be to add an icon to the side of each search result, which displays exactly how the original query was pataphysicalised.
-
-\section{Evaluating Computer Creativity}
-
-Current evaluation methodologies have concentrated on only a handful of the points raised above, for example studying only the creative end-product itself (out of context), only judging it by its novelty objectively, assigning an arbitrary thresholds, etc. This also includes the assumption that machines "only" mimic humans and are therefore not judged by full potential.
-
-\begin{comment}
-  What does it mean, how can it be measured?
-
-  Subjectivity vs objectivity is a theme throughout
-
-  How is it defined and measured in humans, what can we just take directly from those concepts and apply them directly to machines and what needs to be completely redefined?
-\end{comment}
-
-\begin{comment}
-  Introduce the difference between human and computer evaluation/creativity?
-\end{comment}
-
-\begin{comment}
-  distinguishing between person’s and product’s creativity \citep[p.258]{Piffer2012}
-  it is concluded that a person’s creativity can only be assessed indirectly (for example with self report questionnaires or official external recognition) but it cannot be measured \citep[p.258]{Piffer2012}
-\end{comment}
-
-\subsection{Output Minus Input}
-
-It has been argued that "creativity may be seen as \textbf{output minus input}." \citep[p.2]{Pease2001}(my emphasis). The output in this case is the creative product but the input is not the process. Rather, it is the \textbf{inspiring set} (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) of a piece of software.
-
-\begin{quote}
-  "The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set." \citep[p.3]{Colton2001}
-\end{quote}
-
-\begin{quote}
-  "We are interested in how a single agent can come up with something that is novel \textbf{relative to its initial state of knowledge}" \citep[p.72]{Ritchie2007}(his emphasis)
-\end{quote}
-
-"Output minus input" might easily be misinterpreted as "product minus process", however, that is not the case. In fact, Pease, Winterstein and Colton argue that "the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity" \citep[p.6]{Pease2001}, and that "two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it." \citep[p.7]{Pease2001}. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative, and they need to be disqualified so to speak.
-
 \begin{shaded}
-  Summary\\
-  •	output – input\\
-  •	novelty + value\\
-  •	product + process
+  Summary
+  \begin{itemize}
+  \item output – input
+  \item novelty + value
+  \item product + process
+  \item Mimicking
+  \item novelty + value + quality
+  \item randomness + serendipity
+  \end{itemize}
 \end{shaded}
 
-\subsection{Measurable Attributes of Creativity}
 
-Simon Colton came up with an evaluation framework called the \textbf{creative tripod}. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent \textbf{skill, appreciation, and imagination} and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception "that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative. \citep[p.5]{Colton2008a} + \citep[p.5]{Colton2008}. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative. \citep[p.5]{Colton2008a} + \citep[p.5]{Colton2008}
+\section{Approaches}
+
+Taking the debates about human creativity \marginpar{see §\ref{ch:creativity}} and directly applying them to machines seems logical but may be the wrong and lazy approach. Adapting Mayer’s five big questions to machines does not seem to capture the real issues at play.
+
+\begin{enumerate}
+  \item Is creativity a property of programmers, users, machines, products, or processes?
+  \item Is creativity a local, a network or an Internet phenomenon?
+  \item Is creativity common or rare? (P or H creativity)
+  \item Is creativity domain-general or domain-specific?
+  \item Is creativity quantitative or qualitative?
+\end{enumerate}
+
+\begin{comment}
+  \begin{itemize}
+  \item Can a machine judge whether a human is creative?
+  \item Is creativity a property of machines (hardware or software?)
+  \item Is mimicking human creativity really enough and appropriate?
+  \item Compare against ``human creativity''? Or define machine creativity from scratch?
+  \item Who is creative? The programmer or the program?
+  \item Can creativity be objectively measured?
+  \item Quantitative or qualitative?
+  \item In respect to P or H creativity?
+  \item Output minus input? (we don’t have the same strict judgement on humans)
+  \item Is it the product or the process or both?
+  \item Does context matter? (Blind deaf dumb person = computer?)
+  \item Does time matter?
+  \item Does purpose or intention matter?
+  \item AGI vs AI? Artificial general creativity vs artificial creativity?
+  \end{itemize}
+\end{comment}
+
+On a more practical level, there are various problems that arise when trying to evaluate computer creativity. Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \citep[p.2, her emphasis]{Jordanous2011}.
+
+Pease and Colton [27] divide it into two notions: \todo{ref}
+
+\begin{itemize}
+  \item whether an idea or artefact is valuable or not, and
+  \item whether a system is acting creatively or not.
+\end{itemize}
+
+
+\section{Output Minus Input}
+
+It has been argued that ``creativity may be seen as \textbf{output minus input}.'' \citep[p.2, my emphasis]{Pease2001}. The output in this case is the creative product but the input is not the process. Rather, it is the \textbf{``inspiring set''} (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) of a piece of software.
 
 \begin{quote}
-  "Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same" \citep{Colton2008a}
+  The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set. \citep[p.3]{Colton2001}
+\end{quote}
+
+\begin{quote}
+  We are interested in how a single agent can come up with something that is novel \textbf{relative to its initial state of knowledge} \citep[p.72, his emphasis]{Ritchie2007}
+\end{quote}
+
+``Output minus input'' might easily be misinterpreted as ``product minus process'', however, that is not the case. In fact, Pease, Winterstein and Colton argue that ``the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity'' \citep[p.6]{Pease2001}, and that ``two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it.'' \citep[p.7]{Pease2001}. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative, and they need to be disqualified so to speak.
+
+
+\section{Measurable Attributes}
+
+Simon Colton came up with an evaluation framework called the ``creative tripod''. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent \textbf{skill, appreciation, and imagination} and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception ``that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative.'' \citep[p.5]{Colton2008a} + \citep[p.5]{Colton2008}. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative. \citep[p.5]{Colton2008a} + \citep[p.5]{Colton2008}
+
+\begin{quote}
+  Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same \citep{Colton2008a}
 \end{quote}
 
 Pease, Winterstein and Colton suggest that all creative products must be \textbf{novel and valuable} \citep[p.1]{Pease2001} and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss \textbf{randomness} as a measurable approach. Elsewhere, Pease et al discuss using \textbf{serendipity} as an approach \citep{Pease2013}.
 
 Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely \textbf{novelty, usefulness/appropriateness and impact/influence}. \citep[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person’s creativity he proposes citation counts \citep[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example \footnote{http://www.artfacts.net seems to provide just that though.}.
 
-Graeme Ritchie identifies three main criteria for creativity as \textbf{novelty, quality and typicality} \citep[p.72-73]{Ritchie2007}, although he argues that "novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality" \citep[p.73]{Ritchie2007} \citep[see also]{Ritchie2001}. He proposes several evaluation criteria which fall under the following categories: \citep[p.91-92]{Ritchie2007} basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those.
+Graeme Ritchie identifies three main criteria for creativity as \textbf{novelty, quality and typicality} \citep[p.72-73]{Ritchie2007}, although he argues that ``novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality'' \citep[p.73]{Ritchie2007} \citep[see also][]{Ritchie2001}. He proposes several evaluation criteria which fall under the following categories: \citep[p.91-92]{Ritchie2007} basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those.
 
 \begin{comment}
   This also somewhat suggests that variety is a criteria for creativity.
@@ -85,7 +101,7 @@ Geraint Wiggins introduced a formal notation and set of rules for the descriptio
 Anna Jordanous proposed 14 key components of creativity, an ontology of creativity \citep[p.104-120]{Jordanous2012}, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics. \citep[p.120]{Jordanous2012}.
 
 \begin{quote}
-  "The themes identified in this linguistic analysis have collectively provided a clearer ‘working’ understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts."  \citep[p.120]{Jordanous2012}
+  The themes identified in this linguistic analysis have collectively provided a clearer ‘working’ understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts. \citep[p.120]{Jordanous2012}
 \end{quote}
 
 The 14 components Jordanous collated are: \citep[p.118-120]{Jordanous2012}
@@ -106,209 +122,14 @@ The 14 components Jordanous collated are: \citep[p.118-120]{Jordanous2012}
   \item Variety, Divergence and Experimentation
 \end{enumerate}
 
-\begin{table}[htb]
-  \begin{tabu}{XXXXXX}
-  \toprule
-  \textbf{Novelty}
-  &
-  \textbf{Value}
-  &
-  \textbf{Quality}
-  &
-  \textbf{Ephemeral Uncontrolled}
-  &
-  \textbf{Temporal Controlled}
-  &
-  \textbf{Purpose}
-  \\ \midrule
-  Originailty
-  &
-  Usefulness
-  &
-  Skill
-  &
-  Serendipity
-  &
-  Persistence
-  &
-  Intention
-  \\ \midrule
-  Newness
-  &
-  Appropriateness
-  &
-  Efficiency
-  &
-  Randomness
-  &
-  Results
-  &
-  Communication
-  \\ \midrule
-  Variety
-  &
-  Appreciation
-  &
-  Competence
-  &
-  Uncertainty
-  &
-  Development
-  &
-  Evaluation
-  \\ \midrule
-  Typicality
-  &
-  Relevance
-  &
-  Intellect
-  &
-  &
-  Progression
-  &
-  Aim
-  \\ \midrule
-  Imagination
-  &
-  Impact
-  &
-  Acceptability
-  &
-  &
-  Spontaneity
-  &
-  \\ \midrule
-  &
-  Influence
-  &
-  &
-  Experimentation
-  &
-  &
-  Independence
-  \\
-  \bottomrule
-  \end{tabu}
-\caption[Creativity attributes]{Summary of all creativity attributes}
-\label{creatt}
-\end{table}
 
-\begin{comment}
-  Temporal, spatial, ephemeral… what else?
-\end{comment}
-
-\begin{shaded}
-  Summary\\
-  •	Mimicking\\
-  •	novelty + value + quality\\
-  •	randomness + serendipity
-\end{shaded}
-
-\section{Problems with Evaluation}
-
-Evaluating \textbf{human creativity} is problematic. Educational psychologist Richard Mayer identified several different approaches to human creativity research and each approach has its own methodologies and goals. \citep[p.453]{Mayer1999}
-
-\begin{description}
-  \item [Psychometric] (creativity as a mental trait): quantitative measurement, controlled environments, ability based analysis
-  \item [Psychological] (creativity as cognitive processing): controlled environments, quantitative measurements, cognitive task analysis
-  \item [Biographical] (creativity as a life story): authentic environments, qualitative descriptions, quantitative measurements
-  \item [Biological] (creativity as a physiological trait): physiological measures
-  \item [Computational] (creativity as a mental computation): formal modelling
-  \item [Contextual] (creativity as a context-based activity): social, cultural and evolutionary context
-\end{description}
-
-There are many debates across the involved disciplines. Specifically, Mayer identified five big questions of human creativity research: \citep[p.450-451]{Mayer1999}
-
-\begin{enumerate}
-  \item Is creativity a property of people, products, or processes?
-  \item Is creativity a personal or social phenomenon?
-  \item Is creativity common or rare?
-  \item Is creativity domain-general or domain-specific?
-  \item Is creativity quantitative or qualitative?
-\end{enumerate}
-
-\begin{quote}
-  "An important challenge for the next 50 years of creativity research is to develop a clearer definition of creativity and to use a combination of research methodologies that will move the field from speculation to specification." \citep[p.459]{Mayer1999}
-\end{quote}
-
-Taking these debates about human creativity and directly applying them to machines seems logical but may be the wrong and lazy approach. Adapting Mayer’s five big questions to machines does not seem to capture the real issues at play.
-
-\begin{enumerate}
-  \item Is creativity a property of programmers, users, machines, products, or processes?
-  \item Is creativity a local, a network or an Internet phenomenon?
-  \item Is creativity common or rare? (P or H creativity)
-  \item Is creativity domain-general or domain-specific?
-  \item Is creativity quantitative or qualitative?
-\end{enumerate}
-
-\begin{comment}
-  \begin{itemize}
-  \item Can a machine judge whether a human is creative?
-  \item Is creativity a property of machines (hardware or software?)
-  \item Is mimicking human creativity really enough and appropriate?
-  \item Compare against "human creativity"? Or define machine creativity from scratch?
-  \item Who is creative? The programmer or the program?
-  \item Can creativity be objectively measured?
-  \item Quantitative or qualitative?
-  \item In respect to P or H creativity?
-  \item Output minus input? (we don’t have the same strict judgement on humans)
-  \item Is it the product or the process or both?
-  \item Does context matter? (Blind deaf dumb person = computer?)
-  \item Does time matter?
-  \item Does purpose or intention matter?
-  \item AGI vs AI? Artificial general creativity vs artificial creativity?
-  \end{itemize}
-\end{comment}
-
-On a more practical level, there are various problems that arise when trying to evaluate computer creativity. Anna Jordanous found that "evaluation of computational creativity is not being performed in a systematic or standard way" \citep[p.2]{Jordanous2011}(her emphasis).
-
-\section{Interpreting Computer Creativity}
-
-\begin{comment}
-(neurological, cognitive and systemic) in the computer sense!
-
-Since most problems with evaluating creativity in computers (and humans alike) stems from the lack of a universal definition it seems logical to try and remedy this first and foremost.
-
-Creativity is studied in many disciplines.
-\begin{itemize}
-  \item understanding the chemical mechanisms within the brain (neurological)
-  \item understanding the thought processes associated with creativity (cognitive)
-  \item understanding creativity in children and adults, novices and professionals
-  \item understanding creativity in individuals and society (holistic)
-\end{itemize}
-
-Creativity is a continuum, which means that being creative and not being creative form the two distinct extreme ends of a scale.
-
-\begin{quote}
-  "a continuous sequence in which adjacent elements are not perceptibly different from each other, but the extremes are quite distinct" [OED]
-\end{quote}
-
-(subjective and objective)
-
-How can we model Koestler’s bisociative creativity in computers?
-Boden/Kaufman: Subjective and objective types (pandh or little-candbig-C) \citep{Boden2003, Kaufman2009} (product+process)
-
-DIGITAL CREATIVITY ?!?!?! Mix between digital humanities and creative computing/computational creativity ---- see Digital Creativity Journal!!!!
-Unified theory of creativity! (Koestler?)
-Unified definition!
-
-\begin{enumerate}
-  \item What is the definition of creativity?
-  \item Who is being creative? WHO
-  \item What was the aim/intention, if any?
-  \item What was the process, approach? HOW
-  \item What factors influenced the person/process? WHERE
-  \item What is the result/product, if any? Is it original, relevant? WHAT
-  \item What is the impact, if any?
-  \item What is the maintenance plan, if any?
-\end{enumerate}
-\end{comment}
-
-\subsection{Linda Candy}
+\section{Linda Candy}
 
 Evaluation is well established in HCI. HCI is not unsimilar to creativity. Design too.
 
-I guess her work is meant mostly for "interactive art" while mine is meant for creative computing, but clearly there are many overlaps.
+\begin{comment}
+  I guess her work is meant mostly for ``interactive art'' while mine is meant for creative computing, but clearly there are many overlaps.
+\end{comment}
 
 In HCI, historically, the focus has been on people as users deploying task oriented systems. The criteria for evaluation has largely been in terms of ease of use, task efficiency and effectiveness- usability. However, attributes such as speed and productivity are, for the most part, meaningless in the context of creative interactive experience. \citep[p.23]{Candy2012}
 
@@ -349,7 +170,7 @@ In HCI, historically, the focus has been on people as users deploying task orien
 \end{quote}
 
 \begin{quote}
-  "The Multi-dimensional Model of Creativity and Evaluation (MMCE) shown in Figure 1 has four elements: people, process, product and context." \citep[p.11]{Candy2012}
+  The Multi-dimensional Model of Creativity and Evaluation (MMCE) shown in Figure 1 has four elements: people, process, product and context. \citep[p.11]{Candy2012}
 \end{quote}
 
 \begin{figure}[htb] % (here, top, bottom, page)
@@ -442,31 +263,6 @@ These included:
 \begin{quote}
   "Measuring success is more likely to be dependent on factors such as whether or not the system has engaged the audience in a playful or immersive way or whether it has elicited curiosity or excitement or concentrated attention and so on." \citep[p.23]{Candy2012}
 \end{quote}
-
-\subsection{5 P’s: product, process, people, place and purpose}
-
-\begin{quote}
-  "One way of characterizing these processes is to use an alliteration that allows us to keep track of some of the core features of RRI in ICT, namely the four P's, which are: product, process, purpose and people. The purpose of using the four P's is to draw attention to the fact that, in addition to the widely recog- nized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation need to be incorporated in RRI." \citep[p.203]{Stahl2013} (my emphasis)
-\end{quote}
-
-\begin{comment}
-  combine the 4 P’s with purpose//
-  5 P’s: product, process, people, place and purpose//
-  Why is the purpose important?//
-  Interpreting or Measuring?//
-  Maybe we should not be looking for metrics but rather guidelines for interpretations of creativity.
-\end{comment}
-
-\begin{draft}
-  In the end I believe it is impossible to measure creativity objectively. I don’t just think it is impossible, I think it is unwise to try and do so. It would be silly to put a percentage on how creative something is just like it would be silly to say a certain product is 50percent ethical. In fact there are lots of parallels between (computer) ethics and (computer) creativity. Both are subjective, both are highly dependent on context.
-
-  What is important is to study and consider the factors that influence our perception of whether something is creative (or ethical) and what the implications are.
-
-  Creativity in a process or product will mean different things to different people, in different environments and contexts.
-  Common sense.
-
-  Just as there are people who just cannot see any creativity in in modern art, there will always be people who wont accept anything produced by a computer as creative.
-\end{draft}
 
 
 % -----------------------------

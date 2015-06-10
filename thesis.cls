@@ -344,3 +344,9 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 \usepackage{multicol}
 % \setlength{\columnsep}{1cm}
+
+
+% EMOTICONS
+
+\usepackage{wasysym}
+% \smiley{} \frownie{} \blacksmiley{}
