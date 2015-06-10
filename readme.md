@@ -65,6 +65,8 @@ To compile manually via commandline:
 - [ ] Library of Babel
 - [X] Hello World
 - [ ] Remove all page numbers from references
+- [ ] Chapter sign §
+- [ ] Check emphasis notes in citations
 
 
 ## Errors

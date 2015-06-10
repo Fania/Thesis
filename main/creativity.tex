@@ -18,7 +18,7 @@ Creativity can be studied at various \textbf{levels} (neurological, cognitive, a
 This chapter introduces relevant models of human and computer creativity and describes the disciplines of computational creativity and creative computing.
 
 \begin{draft}
-  These two simple statements already point to one of the main problems with evaluating creative computer software: do we evaluate the process or the product? See chapter \ref{ch:interpretation}.
+  These two simple statements already point to one of the main problems with evaluating creative computer software: do we evaluate the process or the product? See § \ref{ch:interpretation}.
 \end{draft}
 
 \todo{put summaries at back of chapter or front? styling?}
@@ -49,7 +49,7 @@ This chapter introduces relevant models of human and computer creativity and des
 
 \clearpage
 
-\section{Models of Human Creativity}
+\section{Human Creativity}
 
 \todo{general introduction about human creativity models}
 
@@ -115,41 +115,51 @@ Ross Mooney identified four aspects of creativity in 1963 (as cited in \citep{St
   Figure \ref{fig:4Crea} shows how these aspects relate to each other. The environment influences all others and the person creates the product in a process.
 \end{draft}
 
+
 \subsection{Arthur Koestler}
 
 Arthur Koestler (1905-1983) published his study on creativity entitled ``The Act of Creation'' in 1964 \citep{Koestler1964}. The book still carries influence today. His main contribution to the field is probably the concept of \gls{bisociation}, a term he coined for the idea of two ``self-consistent but habitually incompatible frames of reference'' intersecting to give rise to new creative idea \citep[p.35]{Koestler1964}. It is interesting however to look at some of his other views on creativity as well.
 
-He splits creativity into three domains, a triptych, without sharp boundaries: humour, discovery and art (see table \ref{KHDA}). All creative acts traverse the three domains of this triptych from left to right, that is, the emotional climate of the creator changes ``from an absurd through an abstract to a tragic or lyric view of existence'' during the process \citep[p.27]{Koestler1964}. Central to all three domains is the ``discovery of hidden similarities'', or bisociation. Koestler differentiates between associative thinking and bisociative thinking. He links those broadly to habit and originality, respectively (see table \ref{KAB}).
+He splits creativity into three domains, a triptych, without sharp boundaries: humour, discovery and art (see table \ref{KHDA}). All creative acts traverse the three domains of this triptych from left to right, that is, the emotional climate of the creator changes ``from an absurd through an abstract to a tragic or lyric view of existence'' during the process \citep[p.27]{Koestler1964}. Central to all three domains is the ``discovery of hidden similarities'', or bisociation. Koestler differentiates between associative thinking and bisociative thinking. He links those broadly to habit and originality, respectively. More specifically, associative thinking is conscious, logical, habitual, rigid, repetitive and conservative and bisociative thinking is unconscious, intuitive, original, flexible, novel and destructive/constructive.
 
-\begin{table}[p]
-  \centering
-  \begin{tabu}{cc}
-  \toprule
-  \textbf{Associative} & \textbf{Bisociative}     \\
-  \midrule
-  Conscious            & Unconscious              \\
-  Logic                & Intuition                \\
-  Habit                & Originality              \\
-  Rigid                & Flexible                 \\
-  Repetitive           & Novel                    \\
-  Conservative         & Destructive/Constructive \\
-  \bottomrule
-  \end{tabu}
-\caption[Associative vs Bisociative]{Koestler: Associative vs Bisociative}
-\label{KAB}
-\end{table}
+% \begin{table}[p]
+%   \centering
+%   \begin{tabu}{cc}
+%   \toprule
+%   \textbf{Associative} & \textbf{Bisociative}     \\
+%   \midrule
+%   Conscious            & Unconscious              \\
+%   Logic                & Intuition                \\
+%   Habit                & Originality              \\
+%   Rigid                & Flexible                 \\
+%   Repetitive           & Novel                    \\
+%   Conservative         & Destructive/Constructive \\
+%   \bottomrule
+%   \end{tabu}
+% \caption[Associative vs Bisociative]{Koestler: Associative vs Bisociative}
+% \label{KAB}
+% \end{table}
 
-\begin{table}[p]
+\begin{table}[htbp]
   \centering
-  \begin{tabu}{ccc}
+  \begin{tabu}{ccccc}
   \toprule
-  \textbf{Humour} & \textbf{Discovery} & \textbf{Art} \\
+  \textbf{Humour}
+  &
+  $\Rightarrow$
+  &
+  \textbf{Discovery}
+  &
+  $\Rightarrow$
+  &
+  \textbf{Art}
+  \\
   \midrule
-  Laugh           & Understand         & Marvel       \\
-  Riddle          & Problem            & Allusion     \\
-  Debunking       & Discovering        & Revealing    \\
-  Coincidence     & Trigger            & Fate         \\
-  Aggressive      & Neutral            & Sympathetic  \\
+  Laugh           && Understand         && Marvel       \\
+  Riddle          && Problem            && Allusion     \\
+  Debunking       && Discovering        && Revealing    \\
+  Coincidence     && Trigger            && Fate         \\
+  Aggressive      && Neutral            && Sympathetic  \\
   \bottomrule
   \end{tabu}
 \caption[Creative Triptych]{Koestler: Creative Triptych}
@@ -175,6 +185,9 @@ Weisberg criticises the stages of incubation and illumination \citep[referred to
 
 \subsection{James Kaufman and Ron Beghetto}
 
+\todo{DOB of authors?}
+James C. Kaufman (1974-) and Ronald A. Beghetto (DOB?)...\citep[See][]{Kaufman2009}.
+
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
   \includegraphics[width=\linewidth]{images/4C.png}
@@ -182,21 +195,51 @@ Weisberg criticises the stages of incubation and illumination \citep[referred to
 \label{fig:4C}
 \end{figure}
 
-\todo{DOB of authors?}
-James C. Kaufman (1974-) and Ronald A. Beghetto (DOB?)... \citep[See][]{Kaufman2009}.
+\todo{redo diagram}
+
+\tikzstyle{format} = [draw, thin, fill=blue!20]
+\tikzstyle{medium} = [ellipse, draw, thin, fill=green!20, minimum height=2.5em]
+\begin{figure}[htbp]
+  \centering
+  \framebox{
+\begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
+    % We need to set at bounding box first. Otherwise the diagram
+    % will change position for each frame.
+    \path[use as bounding box] (-1,-4) rectangle (10,2); %(-1,0) rectangle (10,-2);
+    \path[->] node[format] (tex) {Pro-c};
+    \path[->] node[format, right of=tex] (dvi) {Big-C}
+                  (tex) edge node {\TeX} (dvi);
+    \path[->] node[format, right of=dvi] (ps) {mini-c}
+                  node[medium, below of=dvi] (screen) {screen}
+                  (dvi) edge node {dvips} (ps)
+                        edge node[swap] {xdvi} (screen);
+    \path[->] node[format, right of=ps] (pdf) {little-c}
+                  node[medium, below of=ps] (print) {printer}
+                  (ps) edge node {ps2pdf} (pdf)
+                       edge node[swap] {gs} (screen)
+                       edge (print);
+    \path[->] (pdf) edge (screen)
+                        edge (print);
+    \path[->, draw] (tex) -- +(0,1) -| node[near start] {pdf\TeX} (pdf);
+\end{tikzpicture}
+}
+\caption[The 4 C Model2]{The 4 C Model2}
+\label{fig:4C2}
+\end{figure}
+
 
 \begin{description}
   \item [Big-C] Eminent Accomplishments. Big-C creativity consists of clear-cut, eminent creative contributions. Big-C creativity often requires a degree of time. Indeed, most theoretical conceptions of Big-C nearly require a posthumous evaluation.
   \item [Pro-c] Professional Expertise. Pro-c represents the developmental and effortful progression beyond little-c. The concept of Pro-c is consistent with the expertise acquisition approach of creativity. \todo{ref}\textbf{Ericsson1996, Ericsson2007} Propulsion Theory of Creative Contributions \citep{Sternberg1999, Sternberg2006}: Replication, redefinition, forward incrementation, advance forward incrementation. Redirection, Reconstruction, reinitation, integration.
   \item [Little-c] Everyday Innovation. More focused on everyday activities, such as those creative actions in which the non-expert may participate each day.
-  \item [Mini-c] Transformative Learning. The construct of mini-c is useful for recognizing and distinguishing between the genesis of creative expression (mini-c) and the more readily recognizable expressions of creativity (little-c). Encompasses the creativity inherent in the learning process. ``Mini-c is defined as the novel and personally meaningful interpretation of experiences, actions, and events.'' \citep{Beghetto2007} Central to the definition of mini-c creativity is the dynamic, interpretive process of constructing personal knowledge and understanding within a particular sociocultural context. ``a transformation or reorganization of incoming information and mental structures based on the individual's characteristics and existing knowledge'' \textbf{[p.63]Moran2003}\todo{ref} Moreover, mini-c stresses that mental constructions that have not (yet) been expressed in a tangible way can still be considered highly creative. Mini-c highlights the intrapersonal, and more process focused aspects of creativity.
+  \item [Mini-c] Transformative Learning. Encompasses the creativity inherent in the learning process. ``Mini-c is defined as the novel and personally meaningful interpretation of experiences, actions, and events.'' \citep{Beghetto2007} Central to the definition of mini-c creativity is the dynamic, interpretive process of constructing personal knowledge and understanding within a particular sociocultural context. ``a transformation or reorganization of incoming information and mental structures based on the individual's characteristics and existing knowledge'' \textbf{[p.63]Moran2003}\todo{ref} Moreover, mini-c stresses that mental constructions that have not (yet) been expressed in a tangible way can still be considered highly creative. Mini-c highlights the intrapersonal, and more process focused aspects of creativity.
 \end{description}
 
 Applies to all: openness to new experiences, active observation, and willingness to be surprised and explore the unknown.
 
 \subsection{Margaret Boden}
 
-Professor Margaret Boden (1936-) is a prominent figure in the fields of CC and computational creativity. She has a background in medical sciences, psychology and philosophy and currently works as a cognitive scientist in computer science and artificial intelligence. Her main interest is in how the human mind works and how computer models of the mind and specific thinking processes can help us understand both better. She has provided two important contributions to the field. The first is her description of three distinct forms of creativity and the second is her important distinction between two senses of creativity \citep{Boden2003}.
+Professor Margaret Boden (1936-) is a prominent figure in the fields of \gls{cc} and computational creativity. She has a background in medical sciences, psychology and philosophy and currently works as a cognitive scientist in computer science and artificial intelligence. Her main interest is in how the human mind works and how computer models of the mind and specific thinking processes can help us understand both better. She has provided two important contributions to the field. The first is her description of three distinct forms of creativity and the second is her important distinction between two senses of creativity \citep{Boden2003}.
 
 \begin{quote}
   [Creativity is] the ability to come up with ideas or artefacts that are \textbf{new, surprising and valuable}. \citep{Boden2003} (her emphasis).
@@ -334,7 +377,7 @@ Tables \ref{Leary1} and \ref{Leary2} are in Leary's words.
 \label{Leary2}
 \end{table}
 
-\section{Models of Computer Creativity}
+\section{Computer Creativity}
 
 In this section I am summarising a few models that try to implement creative thinking models in computers. It is really just a survey of different concepts and views and does not immediately apply to my specific research on creative search tools unfortunately.
 
@@ -419,9 +462,9 @@ He and his student Push Singh have formalised the idea of a panalogy, which coul
 
 \subsection{Matthew Elton}
 
-Elton explains the concept of ``Artificial Creativity'' which can be seen as a sub-area of Artificial Intelligence (AI). AI research isn't human enough, he argues, it needs to include less abstract ideas like emotions, morals, aesthetic sensibility and creativity. He goes on to explain in detail how production, evaluation and etiology play a role in everything \citep{Elton1995}.
+Elton explains the concept of ``Artificial Creativity'' which can be seen as a sub-area of \gls{ai}. \gls{ai} research isn't human enough, he argues, it needs to include less abstract ideas like emotions, morals, aesthetic sensibility and creativity. He goes on to explain in detail how production, evaluation and etiology play a role in everything \citep{Elton1995}.
 
-Opposed to the tradidtional approach of AI to study  some aspect of the human brain in a specific domain only, he argues that in order to understand creativity we need to look at more than that. Creativtiy arises from a process that is not isolated. The etiology (its history) is essential for something to be classed as creative. Generation (of artefacts or ideas) cannot count as creative if it doesn't undergo evaluation in the process. In order to evaluate we need a sound knowledge of the relevant domain. ``We want creative evaluation to be influenced by a longstanding history of interaction with entities (of whatever kind) in the world.'' Computer systems can be seen in two perspectives: plastic and implastic (resettable). ``All systems can be seen from the implastic perspective since ultimately all systems are built out of physical components that are (statically) well behaved, but for certain explanatory purposes some are best understood plastically.'' Connectionist networks are an example of a plastic system. The brain is a plastic system too.
+Opposed to the tradidtional approach of \gls{ai} to study  some aspect of the human brain in a specific domain only, he argues that in order to understand creativity we need to look at more than that. Creativtiy arises from a process that is not isolated. The etiology (its history) is essential for something to be classed as creative. Generation (of artefacts or ideas) cannot count as creative if it doesn't undergo evaluation in the process. In order to evaluate we need a sound knowledge of the relevant domain. ``We want creative evaluation to be influenced by a longstanding history of interaction with entities (of whatever kind) in the world.'' Computer systems can be seen in two perspectives: plastic and implastic (resettable). ``All systems can be seen from the implastic perspective since ultimately all systems are built out of physical components that are (statically) well behaved, but for certain explanatory purposes some are best understood plastically.'' Connectionist networks are an example of a plastic system. The brain is a plastic system too.
 
 How do we get enough cultural information and background into the machine to train it? ``There is no pure science of creativity, because it is paradigmatically idiographic - it can only be understood against the backdrop of a particular history.''
 
@@ -430,10 +473,6 @@ His comments on evaluation are inspirational. How do I make my system evaluate i
 \section{Computational Creativity and Creative Computing}
 
 Two transdisciplinary fields of study have emerged from the variety of disciplines concerned. These are computational creativity and creative computing. The former lies at the cross section of artificial intelligence and cognitive science and the latter is mostly distinguished by its involvement in art. Creative computing focuses on the process of creativity rather than just the outcome as in computational creativity.
-
-\begin{comment}
-  Computing as the common theme that links creativity and computers.
-\end{comment}
 
 \begin{shaded}
   Summary\\
@@ -455,7 +494,7 @@ It is important to differentiate between the terms creative computing and comput
 
 As a good example of creative computing, consider the International Obfuscated C Code Contest \footnote{\url{http://www.ioccc.org/}}. The competition revolves around writing compilable/runnable code, while visually appearing as obfuscated as possible. They value unusuality, obscurity and creativity but expect contestants to follow the strict rules and constraints of the C programming language.
 
-Examples of computational creativity are Simon Colton's Painting Fool \footnote{\url{http://www.thepaintingfool.com/}} or Harold Cohen's AARON \footnote{\url{http://www.kurzweilcyberart.com/aaron/history.html}}; both are computer programs that paint pictures. Kurzweil's Cybernetic Poet \footnote{\url{http://www.kurzweilcyberart.com/poetry/rkcp_overvie w.php}} is a classic example of a program that produces poetry.
+Examples of computational creativity are Simon Colton's Painting Fool \footnote{\url{http://www.thepaintingfool.com/}} or Harold Cohen's AARON \footnote{\url{http://www.kurzweilcyberart.com/aaron/history.html}}; both are computer programs that paint pictures. Kurzweil's Cybernetic Poet \footnote{\url{http://www.kurzweilcyberart.com/poetry/rkcp_overview.php}} is a classic example of a program that produces poetry.
 
 But how may we apply the insights into creativity described above in computing? One approach is described by Simon Colton \citep{Colton2008}, who suggests we should adopt human skill, appreciation and imagination.
 
@@ -478,19 +517,21 @@ He thinks that evaluating the worth of an idea or product is the biggest challen
 
 \subsection{Computational Creativity}
 
-Computational creativity is a relatively new discipline and as such not well defined. There is no consensus on what it means. Simon Colton, the creator of the Painting Fool, describes it as the discipline of generating artefacts of real value to someone \citep{Colton2008}. This is in contrast to classic artificial intelligence problem solving of course. He identifies that evaluating the worth of such an artefact as the biggest problem of computational creativity. In problem solving, success is when a solution to the problem has been found. In artefact generation a more aesthetic consideration has to be taken into account. He also mentions three types of methods for generating creative artefact.
+Computational creativity is a relatively new discipline and as such not well defined. Simon Colton, the creator of the Painting Fool, describes it as the discipline of generating artefacts of real value to someone \citep{Colton2008}. This is in contrast to classic artificial intelligence problem solving. He identifies that evaluating the worth of such an artefact as the biggest problem of computational creativity. In problem solving, success is when a solution to the problem has been found. In artefact generation a more aesthetic consideration has to be taken into account.
 
-So we could say that computational creativity is the attempt at giving computers the skills, appreciation and imagination needed to produce creative artefacts. Whether or not this makes the computer creative or the programmer is another question that I will not try to answer here.
+\begin{draft}
+  One could say that computational creativity is the attempt at giving computers the skills, appreciation and imagination needed to produce creative artefacts. Whether or not this makes the computer creative or the programmer is another question that I will not try to answer here.
+\end{draft}
 
-Computational creativity has emerged from within artificial intelligence (AI) research. Simon Colton and Geraint Wiggins argue AI falls within a problem solving paradigm: ``an intelligent task, that we desire to automate, is formulated as a particular type of problem to be solved '' \citep[p.2]{Colton2012},  whereas ``in Computational Creativity research, we prefer to work within an artefact generation paradigm, where the automation of an intelligent task is seen as an opportunity to produce something of cultural value. '' \citep[p.2]{Colton2012}(my emphasis)
+Computational creativity has emerged from within \gls{ai} research. Simon Colton and Geraint Wiggins argue \gls{ai} falls within a problem solving paradigm: ``an intelligent task, that we desire to automate, is formulated as a particular type of problem to be solved '' \citep[p.2]{Colton2012}, whereas ``in Computational Creativity research, we prefer to work within an artefact generation paradigm, where the automation of an intelligent task is seen as an opportunity to produce something of cultural value. '' \citep[p.2, my emphasis]{Colton2012}
 
-The recently formed International Association for Computational Creativity (ACC)  promotes the advancement of computational creativity which is defined as follows.
+The International Association for Computational Creativity (ACC)  promotes the advancement of computational creativity which is defined as follows.
 
 \begin{quote}
-  Computational Creativity is the art, science, philosophy and engineering of computational systems which, by taking on particular responsibilities, exhibit behaviours that unbiased observers would deem to be creative. (ICCC14 website)
+  Computational Creativity is the art, science, philosophy and engineering of computational systems which, by taking on particular responsibilities, exhibit behaviours that unbiased observers would deem to be creative. (\gls{iccc}14 website)
 \end{quote}
 
-Computational creativity is multidisciplinary, bringing together researchers from artificial intelligence, cognitive psychology, philosophy, and the arts. Its role within computer science falls under the scientific paradigm \citep[p.8]{Hugill2013}, \citep[see also]{Eden2007}, as opposed to CC in the technocratic paradigm. Its main goal is to model, simulate or replicate human creativity using a computer and it has the following three aims :
+Computational creativity is multidisciplinary, bringing together researchers from artificial intelligence, cognitive psychology, philosophy, and the arts. Its role within computer science falls under the scientific paradigm \citep[p.8]{Hugill2013}, \citep[see also][]{Eden2007}, as opposed to \gls{cc} in the technocratic paradigm. Its main goal is to model, simulate or replicate human creativity using a computer and it has the following three aims:
 
 \begin{itemize}
   \item to construct a program or computer capable of human-level creativity
@@ -498,7 +539,7 @@ Computational creativity is multidisciplinary, bringing together researchers fro
   \item to design programs that can enhance human creativity without necessarily being creative themselves
 \end{itemize}
 
-The ACC manages the annual International Conference on Computational Creativity (ICCC), whose most recent call for papers  (for ICCC 2014) gives a useful insight into their research agenda. It can be broken down as follows:
+The ACC manages the annual \gls{iccc}, whose recent call for papers  (for \gls{iccc} 2014) gives a useful insight into their research agenda. It can be broken down as follows:
 
 \begin{itemize}
   \item Paradigms, metrics, frameworks, formalisms, methodologies, perspectives
@@ -513,13 +554,13 @@ The ACC manages the annual International Conference on Computational Creativity 
 Simon Colton and Geraint Wiggins have also identified several directions for future research in the field: \citep[p.5]{Colton2012}
 
 \begin{enumerate}
-  \item continued integration of systems to increase their creative potential
-  \item usage of web resources as source material and conceptual inspiration for creative acts by computer
-  \item using crowd sourcing and collaborative creative technologies bringing together evaluation methodologies based on product, process, intentionality and the framing of creative acts by software.'' \citep[p.5]{Colton2012}
+  \item Continued integration of systems to increase their creative potential.
+  \item Usage of web resources as source material and conceptual inspiration for creative acts by computer.
+  \item Using crowd sourcing and collaborative creative technologies bringing together evaluation methodologies based on product, process, intentionality and the framing of creative acts by software.
 \end{enumerate}
 
 \begin{draft}
-  This reminds of the 4 P’s, and CC and DH models
+  This reminds of the 4 P’s, and \gls{cc} and DH models
 \end{draft}
 
 \begin{shaded}
@@ -531,99 +572,43 @@ Simon Colton and Geraint Wiggins have also identified several directions for fut
   \end{itemize}
 \end{shaded}
 
-Computational creativity has emerged from within artificial intelligence (AI) research. Simon Colton and Geraint Wiggins argue AI falls within a \textbf{problem solving paradigm}: ``an intelligent task, that we desire to automate, is formulated as a particular type of problem to be solved'' \citep[p.2]{Colton2012},  whereas ``in Computational Creativity research, we prefer to work within an \textbf{artefact generation paradigm}, where the automation of an intelligent task is seen as an opportunity to produce something of cultural value.'' \citep[p.2]{Colton2012}(my emphasis)
-
-The recently formed International Association for Computational Creativity (ACC)  promotes the advancement of computational creativity which is defined as follows.
-
-\begin{quote}
-  Computational Creativity is the art, science, philosophy and engineering of computational systems which, by taking on particular responsibilities, exhibit behaviours that unbiased observers would deem to be creative. (ICCC14 website)\footnote{\url{http://computationalcreativity.net/iccc2014/}}
-\end{quote}
-
-Computational creativity is multidisciplinary, bringing together researchers from artificial intelligence, cognitive psychology, philosophy, and the arts.
-
-\begin{draft}
-  Its role within computer science falls under the scientific paradigm (\citep[p.8]{Hugill2013c}, \citep[see also]{Eden2007}), as opposed to CC in the technocratic paradigm.
-\end{draft}
-
-Its main goal is to \textbf{model, simulate or replicate} human creativity using a computer and it has the following three aims :
-
-\begin{itemize}
-  \item to construct a program or computer capable of human-level creativity
-  \item to better understand human creativity and to formulate an algorithmic perspective on creative behavior in humans
-  \item to design programs that can enhance human creativity without necessarily being creative themselves
-\end{itemize}
-
-The ACC manages the annual International Conference on Computational Creativity (ICCC)\footnote{\url{http://computationalcreativity.net/}}, whose most recent call for papers  (for ICCC 2014) gives a useful insight into their research agenda. It can be broken down as follows:
-
-\begin{itemize}
-  \item Paradigms, metrics, frameworks, formalisms, methodologies, perspectives
-  \item Computational creativity-support tools
-  \item Creativity-oriented computing in education
-  \item Domain-specific vs. generalised creativity
-  \item Process vs. product
-  \item Domain advancement vs. creativity advancement
-  \item Black box vs. accountable systems
-\end{itemize}
-
-Simon Colton and Geraint Wiggins have also identified several directions for future research in the field: \citep[p.5]{Colton2012}
-
-\begin{enumerate}
-  \item continued integration of systems to increase their creative potential
-  \item usage of web resources as source material and conceptual inspiration for creative acts by computer
-  \item using crowd sourcing and collaborative creative technologies
-  bringing together evaluation methodologies based on \textbf{product, process, intentionality and the framing} of creative acts by software." \citep[p.5]{Colton2012}
-\end{enumerate}
-
-\begin{draft}
-  This reminds of the 4 P’s, and CC and DH models.
-\end{draft}
-
-\begin{shaded}
-  Summary\\
-  •	Domain-specific vs. generalised creativity\\
-  •	Process vs. product\\
-  •	Domain advancement vs. creativity advancement\\
-  •	Black box vs. accountable systems
-\end{shaded}
-
-
 \subsection{Creative Computing}
 
 \todo{rewrite and format}
 
-In the recent first issue of the International Journal of Creative Computing (IJCrC) Hugill and Yang introduced creative computing (CC) as a new discipline \citep{Hugill2013c} with an overarching theme of ``unite and conquer'' \citep[p.1]{Yang2013}(his emphasis). Its broad aim is to ``reconcile the objective precision of computer systems (mathesis) with the subjective ambiguity of human creativity (aesthesis).'' \citep[p.5]{Hugill2013c}. Hugill and Yang suggest CC falls within the technocratic paradigm of computing (p.8, see also \citep{Eden2007}), i.e. the discipline is closest related to software engineering, rather than mathematics or natural sciences. They identify five main topics for CC research (p.15-17):
+In the recent first issue of the \gls{ijcrc} Hugill and Yang introduced \gls{cc} as a new discipline \citep{Hugill2013c} with an overarching theme of ``unite and conquer'' \citep[p.1, his emphasis]{Yang2013}. Its broad aim is to ``reconcile the objective precision of computer systems (mathesis) with the subjective ambiguity of human creativity (aesthesis).'' \citep[p.5]{Hugill2013c}. Hugill and Yang suggest \gls{cc} falls within the technocratic paradigm of computing \citep[see also][p.8]{Eden2007}, i.e. the discipline is closest related to software engineering, rather than mathematics or natural sciences. They identify five main topics for \gls{cc} research \citep[p.15-17]{Hugill2013c}:
 
 \begin{description}
-  \item [Challenges]: transdisciplinarity, cross-compatibility, continuity and adaptivity
-  \item [Types]: creative development of a product, development of a CC product and development of tool for creativity support
-  \item [Mechanisms]:	Boden’s combinational, exploratory and transformational creativity
-  \item [Methods]: development of suitable transdisciplinary CC research methodologies
-  \item [Standards]: resist standardisation, novel, continuous user interaction, creative mechanisms
+  \item [Challenges] transdisciplinarity, cross-compatibility, continuity and adaptivity
+  \item [Types] creative development of a product, development of a \gls{cc} product and development of tool for creativity support
+  \item [Mechanisms]	Boden’s combinational, exploratory and transformational creativity
+  \item [Methods] development of suitable transdisciplinary \gls{cc} research methodologies
+  \item [Standards] resist standardisation, novel, continuous user interaction, creative mechanisms
 \end{description}
 
-The main challenge is for technology  to become ``more adaptive, smarter and better engineered to cope with frequent changes of direction, inconsistencies, irrelevancies, messiness and all the other vagaries that characterise the creative process'' (p.5). In part, these issues are due to the transdisciplinary nature of the field and factors such as common semantics, standards, requirements and expectations are typical challenges. Hugill and Yang therefore argue that creative software should be flexible and able to adapt to ever changing requirements, it should be evaluated and re-written continuously and it should be cross-compatible.
+The main challenge is for technology  to become ``more adaptive, smarter and better engineered to cope with frequent changes of direction, inconsistencies, irrelevancies, messiness and all the other vagaries that characterise the creative process'' \citep[p.5]{Hugill2013c}. In part, these issues are due to the transdisciplinary nature of the field and factors such as common semantics, standards, requirements and expectations are typical challenges. Hugill and Yang therefore argue that creative software should be flexible and able to adapt to ever changing requirements, it should be evaluated and re-written continuously and it should be cross-compatible.
 
-The different \textbf{types} of CC highlight the different aspects researcher and practitioners focus on during their work. These are
+The different \textbf{types} of \gls{cc} highlight the different aspects researcher and practitioners focus on during their work. These are
 
 \begin{description}
-  \item [process]:  creative development of a computing product,
-  \item [product]: development of a Creative Computing product and
-  \item [community]: development of computing environment to support creativity.
+  \item [Process]  creative development of a computing product,
+  \item [Product] development of a Creative Computing product and
+  \item [Community] development of computing environment to support creativity.
 \end{description}
 
-The creative computing process should consist of combinational, exploratory and transformational activities (in the sense of Margaret Boden’s theory, reported in the previous chapter).
+The creative computing process should consist of combinational, exploratory and transformational activities (in the sense of Margaret Boden’s theory, as discussed in \todo{cross ref}).
 
 \begin{draft}
-  Broadly speaking, you could say that approaches to CC are therefore either bottom-up (1) or top-down (2).
+  Broadly speaking, you could say that approaches to \gls{cc} are therefore either bottom-up (1) or top-down (2).
 \end{draft}
 
-The third type of CC in a way reflects what Hugill and Yang call the ``local and global levels'', which represent the two types of creativity identified by Boden (P- and H-creativity, see above). It is concerned with developing environments, tools and methods and the management of these.
+The third type of \gls{cc} in a way reflects what Hugill and Yang call the ``local and global levels'', which represent the two types of creativity identified by Boden (P- and H-creativity, see above). It is concerned with developing environments, tools and methods and the management of these.
 
 \begin{draft}
   This includes cross-compatibilty, which directly represents the solution to the personal/local and historical/global issues mentioned by Boden and Hugill and Yang.
 \end{draft}
 
-Similar to the four step model of the creative process by Poincaré and Wallas \citep{Poincare2001, Wallas1926} and the four step model of problem solving by Pólya \citep{Polya1957}, they propose a four step model for the creative computing process. They do this by comparing the acts of artistic creation and software engineering in some detail. They found that the two processes follow essentially the same levels of abstraction (from the abstract to the concrete). The four steps are \citep[p.15]{Polya1957}:
+Similar to the four step model of the creative process by Poincaré and Wallas \citep{Poincare2001, Wallas1926} and the four step model of problem solving by Pólya \citep{Polya1957}, they propose a four step model for the creative computing process. They do this by comparing the acts of artistic creation and software engineering in some detail. They found that the two processes follow essentially the same levels of abstraction (from the abstract to the concrete). The four steps are \citep[p.15]{Hugill2013c}:
 
 \begin{enumerate}
   \item Motivation (digitised thinking)
@@ -633,10 +618,30 @@ Similar to the four step model of the creative process by Poincaré and Wallas \
 \end{enumerate}
 
 \begin{draft}
-  This reminds of the 4 P’s, and CC and DH models.
+  This reminds of the 4 P’s, and \gls{cc} and DH models ??
 \end{draft}
 
-Given the transdisciplinary nature of CC, Hugill and Yang suggest that existing research methodologies are unsuitable and new ones have to be developed. The following is an example of a possible CC research methodology they propose as a starting point \citep[p.17]{Hugill2013c}:
+\todo{comparison table Poincare, Wallas, Polya, CC?}
+
+% \begin{table}[htbp]
+%   \centering
+%   \begin{tabu}{cc}
+%   \toprule
+%   \textbf{Associative} & \textbf{Bisociative}     \\
+%   \midrule
+%   Conscious            & Unconscious              \\
+%   Logic                & Intuition                \\
+%   Habit                & Originality              \\
+%   Rigid                & Flexible                 \\
+%   Repetitive           & Novel                    \\
+%   Conservative         & Destructive/Constructive \\
+%   \bottomrule
+%   \end{tabu}
+% \caption[Associative vs Bisociative]{Koestler: Associative vs Bisociative}
+% \label{KAB}
+% \end{table}
+
+Given the transdisciplinary nature of \gls{cc}, Hugill and Yang suggest that existing research methodologies are unsuitable and new ones have to be developed. The following is an example of a possible \gls{cc} research methodology they propose as a starting point \citep[p.17]{Hugill2013c}:
 
 \begin{enumerate}
   \item Review literature across disciplines
@@ -647,7 +652,7 @@ Given the transdisciplinary nature of CC, Hugill and Yang suggest that existing 
   \item Experiment with the resulting system and propose framework
 \end{enumerate}
 
-Hugill and Yang propose four \textbf{standards} for CC \citep[p.17]{Hugill2013c} namely, resist standardisation, perpetual novelty, continuous user interaction and combinational, exploratory and or transformational.
+Hugill and Yang propose four \textbf{standards} for \gls{cc} \citep[p.17]{Hugill2013c} namely, resist standardisation, perpetual novelty, continuous user interaction and combinational, exploratory and or transformational.
 
 \begin{shaded}
   Summary\\
