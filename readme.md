@@ -68,6 +68,8 @@ To compile manually via commandline:
 - [ ] Chapter sign §
 - [ ] Check emphasis notes in citations
 - [ ] Conjecture as chapter title in intro?
+- [ ] Change note on publications in chapters
+- [ ] Table of contents move from left to right, from creative to precise
 
 
 ## Errors
