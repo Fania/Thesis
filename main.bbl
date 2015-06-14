@@ -1,4 +1,4 @@
-\begin{thebibliography}{120}
+\begin{thebibliography}{123}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -194,14 +194,15 @@ Alistair Brotchie, editor.
 
 \bibitem[Borges(1964)]{Borges1964}
 Jorge~Luis Borges.
-\newblock \emph{{Labyrinths - Selected Stories \& Other Writings}}, volume
-  1958.
-\newblock 1964.
+\newblock \emph{{Labyrinths - Selected Stories \& Other Writings}}.
+\newblock New Directions, New York, 1964.
+\newblock ISBN 978-0811200127.
 
-\bibitem[Borges and Hurley(2004)]{Borges2004}
-Jorge~Luis Borges and Andrew Hurley.
+\bibitem[Borges(1999)]{Borges1999}
+Jorge~Luis Borges.
 \newblock \emph{{Collected fictions}}.
-\newblock 2004.
+\newblock Penguin, 1999.
+\newblock ISBN 9780140286809.
 
 \bibitem[Borges and Guerrero(1957)]{Borges1957}
 Jorge~Luis Borges and Margarita Guerrero.
@@ -245,7 +246,7 @@ Anna~Katerina Jordanous and Bill Keller.
 \newblock {Weaving creativity into the Semantic Web: a language-processing
   approach}.
 \newblock In \emph{Proceedings of the 3rd International Conference on
-  Computational Creativity}, number January, pages 216--220, 2012.
+  Computational Creativity}, pages 216--220, 2012.
 
 \bibitem[Rhodes(1961)]{Rhodes1961}
 Mel Rhodes.
@@ -270,9 +271,7 @@ Arthur Koestler.
 
 \bibitem[Poincare(2001)]{Poincare2001}
 Henri Poincare.
-\newblock \emph{{The Value of Science}}.
-\newblock Modern Library, New York, 2001.
-\newblock ISBN 0375758488.
+\newblock {The Value of Science}, 2001.
 
 \bibitem[Wallas(1926)]{Wallas1926}
 Graham Wallas.
@@ -329,11 +328,14 @@ Ronald~A. Beghetto and James~C. Kaufman.
 Alison Pease, Daniel Winterstein, and Simon Colton.
 \newblock {Evaluating Machine Creativity}.
 \newblock In \emph{Proceedings of ICCBR Workshop on Approaches to Creativity},
-  number~i, pages 129--137, 2001.
+  pages 129--137, 2001.
 
-\bibitem[Indurkhya()]{Indurkhya}
+\bibitem[Indurkhya(1997)]{Indurkhya}
 Bipin Indurkhya.
 \newblock {Computers and creativity}.
+\newblock Unpublished manuscript. Based on the keynote speech “On Modeling
+  Mechanisms of Creativity,” delivered at Mind II: Computational Models of
+  Creative Cognition, 1997.
 
 \bibitem[Minsky(1980)]{Minsky1980}
 Marvin Minsky.
@@ -375,9 +377,10 @@ Geraint~A Wiggins.
 
 \bibitem[Colton(2008{\natexlab{a}})]{Colton2008a}
 Simon Colton.
-\newblock {Creativity Versus the Perception of Creativity in Computational
-  Systems}.
-\newblock Number Colton 2002, 2008{\natexlab{a}}.
+\newblock Creativity versus the perception of creativity in computational
+  systems.
+\newblock In \emph{In Proceedings of the AAAI Spring Symp. on Creative
+  Intelligent Systems}, 2008{\natexlab{a}}.
 
 \bibitem[Ritchie(2001)]{Ritchie2001}
 Graeme Ritchie.
@@ -410,8 +413,7 @@ Dan Ventura.
 \bibitem[Colton(2008{\natexlab{b}})]{Colton2008}
 Simon Colton.
 \newblock {Computational Creativity}.
-\newblock \emph{AISB Quarterly}, \penalty0 (126):\penalty0 6--7,
-  2008{\natexlab{b}}.
+\newblock \emph{AISB Quarterly}, pages 6--7, 2008{\natexlab{b}}.
 
 \bibitem[Colton and Wiggins(2012)]{Colton2012}
 Simon Colton and Geraint~A Wiggins.
@@ -461,6 +463,30 @@ Johanna Drucker and B~Nowviskie.
   2007.
 \newblock URL
   \url{http://www.digitalhumanities.org/companion/view?docId=blackwell/9781405103213/9781405103213.xml}.
+
+\bibitem[Burdick et~al.(2012)Burdick, Drucker, Lunefeld, Presner, and
+  Schnapp]{Burdick2012}
+Anne Burdick, Johanna Drucker, Peter Lunefeld, Todd Presner, and Jeffrey
+  Schnapp.
+\newblock \emph{{Digital\_Humanities}}.
+\newblock MIT Press, Cambridge, Massachusetts, 2012.
+\newblock ISBN 9780262018470.
+\newblock URL
+  \url{http://mitpress.mit.edu/sites/all/modules/pubdlcnt/pubdlcnt.php?file=/sites/default/files/titles/content/9780262018470\_Open\_Access\_Edition.pdf\&nid=196364}.
+
+\bibitem[Thomas et~al.(2007)Thomas, Joseph, Laccetti, Mason, Mills, Perril, and
+  Pullinger]{Thomas2007}
+Sue Thomas, Chris Joseph, Jess Laccetti, Bruce Mason, Simon Mills, Simon
+  Perril, and Kate Pullinger.
+\newblock {Transliteracy: Crossing divides}.
+\newblock \emph{First Monday}, 12\penalty0 (12), 2007.
+\newblock URL
+  \url{http://journals.uic.edu/ojs/index.php/fm/article/view/2060/1908}.
+
+\bibitem[McBride(2013)]{McBride2013}
+Neil McBride.
+\newblock {Robot Ethics: The Boundaries of Machine Ethics}, November 2013.
+\newblock ISSN 1095-9203.
 
 \bibitem[Baeza-Yates and Ribeiro-Neto(2011)]{Baeza-Yates2011}
 Ricardo Baeza-Yates and Berthier Ribeiro-Neto.
@@ -523,7 +549,7 @@ Gary Marchionini and Ben Shneiderman.
 \bibitem[Manning et~al.(2009)Manning, Raghavan, and Schuetze]{Manning2009}
 Christopher Manning, Prabhakar Raghavan, and Hinrich Schuetze.
 \newblock \emph{{Introduction to Information Retrieval}}.
-\newblock Number~c. Cambridge UP, online edi edition, 2009.
+\newblock Cambridge UP, online edi edition, 2009.
 \newblock URL \url{http://informationretrieval.org}.
 
 \bibitem[Kleinberg(1999)]{Kleinberg1999}
@@ -536,10 +562,11 @@ Jon~M Kleinberg.
 \newblock URL \url{http://portal.acm.org/citation.cfm?doid=324133.324140
   http://www.cs.cornell.edu/home/kleinber/auth.pdf}.
 
-\bibitem[Kleinberg et~al.()Kleinberg, Kumar, Raghavan, and Tomkins]{Kleinberg}
+\bibitem[Kleinberg et~al.(1999)Kleinberg, Kumar, Raghavan, and
+  Tomkins]{Kleinberg}
 Jon~M Kleinberg, Ravi Kumar, Prabhakar Raghavan, and Andrew~S Tomkins.
 \newblock {The Web as a graph : measurements , models , and methods}.
-\newblock \emph{Computer}.
+\newblock \emph{Computer}, 1999.
 
 \bibitem[Bharat and Mihaila(2000)]{Bharat2000}
 Krishna Bharat and George Mihaila.
@@ -565,10 +592,10 @@ Paul {De Bra} and Reinier Post.
 \newblock \emph{Mosaic A Journal For The Interdisciplinary Study Of
   Literature}, 1994{\natexlab{b}}.
 
-\bibitem[{De Bra} et~al.(){De Bra}, Houben, Kornatzky, and Post]{Debra}
+\bibitem[{De Bra} et~al.(1994){De Bra}, Houben, Kornatzky, and Post]{Debra}
 Paul {De Bra}, Geert-jan Houben, Yoram Kornatzky, and Reinier Post.
 \newblock {Information Retrieval in Distributed Hypertexts}.
-\newblock \emph{Techniques}.
+\newblock \emph{Techniques}, 1994.
 
 \bibitem[Hersovici et~al.(1998)Hersovici, Jacovi, Maarek, Pelleg, Shtalhaim,
   and Ur]{Hersovici1998}
@@ -634,7 +661,7 @@ Shenghua Bao, Xiaoyuan Wu, Ben Fei, Guirong Xue, Zhong Su, and Yong Yu.
   Gyongyi]{Garcia-Molina2004}
 Hector Garcia-molina, Jan Pedersen, and Zoltan Gyongyi.
 \newblock {Combating Web Spam with TrustRank}.
-\newblock 2004.
+\newblock In \emph{In VLDB}, pages 576--587. Morgan Kaufmann, 2004.
 
 \bibitem[Glover et~al.(2001)Glover, Flake, Lawrence, Birmingham, Kruger, Giles,
   and Pennock]{Glover2001}
@@ -655,15 +682,16 @@ Taher~H Haveliwala.
 \newblock \emph{Knowledge Creation Diffusion Utilization}, 15\penalty0
   (4):\penalty0 784--796, 2003.
 
-\bibitem[Hotho et~al.()Hotho, Robert, Schmitz, and Stumme]{Hotho}
-Andreas Hotho, J~Robert, Christoph Schmitz, and Gerd Stumme.
-\newblock {Information Retrieval in Folksonomies : Search and Ranking}.
-\newblock \emph{Data Engineering}.
+\bibitem[Hotho et~al.(2006)Hotho, Jäschke, Schmitz, and Stumme]{Hotho}
+Andreas Hotho, Robert Jäschke, Christoph Schmitz, and Gerd Stumme.
+\newblock Information retrieval in folksonomies: Search and ranking.
+\newblock In \emph{The Semantic Web: Research and Applications, volume 4011 of
+  LNAI}, pages 411--426. Springer, 2006.
 
-\bibitem[Jeh and Widom()]{Jeh}
+\bibitem[Jeh and Widom(2002)]{Jeh}
 Glen Jeh and Jennifer Widom.
-\newblock {SimRank : A Measure of Structural Context Similarity}.
-\newblock \emph{Science}, pages 1--11.
+\newblock Simrank: A measure of structural-context similarity.
+\newblock In \emph{In KDD}, pages 538--543, 2002.
 
 \bibitem[Shu and Kak(1999)]{Shu1999}
 Bo~Shu and Subhash Kak.
@@ -688,16 +716,19 @@ Zhi-Qiang Du, Jing Hu, Hong-Xia Yi, and Jin-Zhu Hu.
 \newblock URL
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4341098}.
 
-\bibitem[Ding et~al.()Ding, Finin, Joshi, Pan, Cost, Peng, Reddiwari, Doshi,
-  and Sachs]{Ding}
-Li~Ding, Tim Finin, Anupam Joshi, Rong Pan, R.S. Cost, Yun Peng, Pavan
-  Reddiwari, Vishal Doshi, and Joel Sachs.
-\newblock {Swoogle : A Semantic Web Search and Metadata Engine}.
+\bibitem[Ding et~al.(2004)Ding, Finin, Joshi, Pan, Scott, Peng, Reddivari,
+  Doshi, and Sachs]{Ding}
+Li~Ding, Tim Finin, Anupam Joshi, Rong Pan, R.~Scott, Cost~Yun Peng, Pavan
+  Reddivari, Vishal Doshi, and Joel Sachs.
+\newblock Swoogle: A semantic web search and metadata engine.
+\newblock In \emph{In Proceedings of the 13th ACM Conference on Information and
+  Knowledge Management. ACM}, 2004.
 
-\bibitem[Kamps et~al.()Kamps, Kaptein, and Koolen]{Kamps}
+\bibitem[Kamps et~al.(2010)Kamps, Kaptein, and Koolen]{Kamps}
 Jaap Kamps, Rianne Kaptein, and Marijn Koolen.
-\newblock {Using Anchor Text , Spam Filtering and Wikipedia for Web Search and
-  Entity Ranking}.
+\newblock Using anchor text , spam filtering and wikipedia for web search and
+  entity ranking.
+\newblock Technical report, ?, 2010.
 
 \bibitem[Taye(2009)]{Taye2009}
 Mohammad~Mustafa Taye.
@@ -752,9 +783,9 @@ Hinrich Schuetze.
 \newblock {Automatic Word Sense Discrimination}.
 \newblock \emph{Computational Linguistics}, 1998.
 
-\bibitem[Schuetze and Pedersen()]{Schuetze}
+\bibitem[Schuetze and Pedersen(1995)]{Schuetze}
 Hinrich Schuetze and Jan Pedersen.
-\newblock {Information Retrieval Based on Word Senses}.
+\newblock Information retrieval based on word senses, 1995.
 
 \bibitem[Dean et~al.(2003)Dean, Barroso, and Hoelzle]{Dean2003}
 Jeffrey Dean, Luiz~Andre Barroso, and Urs Hoelzle.

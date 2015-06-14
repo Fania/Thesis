@@ -70,7 +70,7 @@ To compile manually via commandline:
 - [ ] Conjecture as chapter title in intro?
 - [ ] Change note on publications in chapters
 - [ ] Table of contents move from left to right, from creative to precise
-
+- [ ] Mini index (summary with page numbers) for each chapter
 
 ## Errors
 

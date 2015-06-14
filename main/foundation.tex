@@ -33,6 +33,47 @@
 
 \todo{comparison table Poincare, Wallas, Polya, CC?}
 
+We had previously differentiated between creative computing and computational creativity:
+
+\begin{quote}
+Intuitively the former is about doing computations in a creative way, while the latter is about achieving creativity through computation. You can think of the latter falling into the artificial intelligence category (using formal computational methods to mimic creativity as a human trait, see also [18]) and the former being a more poetic endeavour of how the computing itself is done, no matter what the actual purpose of the program is. \citep{Hugill2013}
+\end{quote}
+
+The differences are subtle but clear.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|p{5cm}|l|}
+\hline
+\textbf{Creative Computing} & \textbf{Digital Humanities} & \textbf{Computational Creativity} \\ \hline
+Motivation  & Design & Intentionality \\ \hline
+Ideation & Curation, Analysis, Editing, Modeling and Networks, Infrastructure & Framing \\ \hline
+Implementation & Computation, Processing & Process \\ \hline
+Operation & Versioning, Prototyping, Failures & Product \\ \hline
+\end{tabular}
+\caption[Creative Computing vs Digital Humanities vs Computational Creativity]{Comparison of Creative Computing vs Digital Humanities vs Computational Creativity}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{4 step model} & \textbf{4 P Model} & \textbf{Problem Solving} \\ \hline
+Preparation   & Person         & Understand  \\ \hline
+Incubation    & Press/Context  & Plan        \\ \hline
+Illumination  & Process        & Carry Out   \\ \hline
+Verification  & Product        & Look back   \\ \hline
+\end{tabular}
+\caption[4 Step Model vs 4 P Model vs Problem Solving]{Comparison of 4 Step Model vs 4 P Model vs Problem Solving}
+\end{table}
+
+\begin{comment}
+How does ethics fit into this?
+\end{comment}
+
+
+
+
 
 \section{Pataphysics}
 
@@ -130,6 +171,9 @@ For Drucker, aesthesis (ambiguous and subjective knowledge) is fundamentally opp
 
 In order to break out of the formal logic and defined parameters of computer science, she asserts, we need speculative capabilities and pataphysics. ``The goal of pataphysical and speculative computing is to keep digital humanities from falling into mere technical application of standard practices.'' She links interface design with other speculative computing principles, and refers to Kant's idea of art as \textbf{'purposiveness without purpose'}. She says that the appreciation of design as a thing in itself (regardless of utility) is a goal of speculative aesthetics.
 
+The projects Johanna Drucker describes in her book SpecLab \citep{Drucker2009}  could certainly be considered related work. Not only in their theoretical foundations but also in some aspects of their implementation. One project in particular is worth mentioning here: the 'Patacritical Demon, an ``interactive tool for exposing the structures that underlie our interpretations of text'', although it remained a purely conceptual piece of work and was never implemented. Her idea if the "patacritical" method is quite interesting. Pataphysical exceptions and anomalies can thus be justified in a computational system. But it is not just this concept that deserves mention here.
+Her ideas on structured data, metadata and knowledge representation link very nicely into my project. How can we represent and structure data so that it does not lose its subjectivity, context and meaning? Her reference to graphical analogies is inspiring in that regard as well. I am certain I will refer back to her concepts throughout my thesis.
+
 
 \section{Patalgorithms}
 
@@ -189,74 +233,6 @@ Ranking can be done at different stages of the search process. Depending on how 
 
 Given a query term X, what is considered a relevant match though? Do we simply return a list of Web pages where X appears in the heading of each page? It is obviously not that easy. Several ranking signals are combined together; Google states that they use over 200 signals including PageRank and they personalise results using signals such as the web history and location (Google n.d.).
 What kinds of ranking signals do we need for our pataphysical Web search tool? We could say that a page Y is relevant if it matches the patadata for query X. So, for example, Y would be a relevant result if it is a clinamen or syzygy to X. The more patadata matches there are the higher the ranking maybe. We don't necessarily have to assign a numerical ranking value to each page. Depending on how we structure our results page that might not be necessary. Shuffling the results list or the results tree could be an option.
-
-
-\section{Algorithm Formalisation}
-
-Algorithm Classification
-
-\begin{multicols}{2}
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By implementation:}
-  \item Recursive/iterative
-  \item Logical
-  \item Serial/parallel/distributed
-  \item Deterministic/non-deterministic
-  \item Exact/approximate
-  \item Quantum
-\end{itemize}
-
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By design paradigm:}
-  \item Brute-force/exhaustive search
-  \item Divide and conquer
-  \item Dynamic
-  \item Greedy
-  \item Linear
-  \item Reduction
-  \item Search and enumeration
-\end{itemize}
-
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By field of study:}
-  \item Search
-  \item Sorting
-  \item Merge
-  \item Numerical
-  \item Graph
-  \item String
-  \item Computational geometrics
-  \item Combinatorial
-  \item Medical
-  \item Machine learning
-  \item Cryptography
-  \item Data compression
-  \item Parsing
-\end{itemize}
-
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By complexity:}
-  \item Big-O-Notation
-\end{itemize}
-\end{multicols}
-
-\begin{description}
-  \item [High-Level Description] in prose, ignoring implementation details.
-  \item [Implementation Description] in prose, describing implementation in detail.
-  \item [Formal description] lowest level, most detailed.
-\end{description}
-
-\itab{$D = \{d_1, \ldots, d_n\}$} \tab{is the set of documents}\\
-\itab{$Q = \{q_1, \ldots, q_n\}$} \tab{is the set of queries}\\
-\itab{$q = \{t_1, \ldots, t_n\}$} \tab{is the set of query terms}\\
-\itab{$V = \{v_1, \ldots, v_t\}$} \tab{is the set of all distinct index terms in a document collection (the Vocabulary)}\\
-\itab{$R(q_i,d_j)$} \tab{is the ranking function, where $q_i \in Q$ and $d_j  \in D$}\\
-\itab{$N$} \tab{is the total number of documents}\\
-\itab{$w_{t,q}$} \tab{is the weight of the term in the query}\\
-\itab{$tf_{t,d}$} \tab{is the term frequency of $t$ in $d$}\\
-\itab{$wf_{t,d}$} \tab{is the tf-idf weight of $t$ in $d$}\\
-\itab{$P_t$} \tab{is the postings list of all ($d$, $tf_{t,d}$) for a given $t$}
-
 
 
 % -----------------------------------------

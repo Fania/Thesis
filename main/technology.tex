@@ -1,7 +1,7 @@
 % !TEX root = ../main.tex
 
-\chapter{Computing}
-\label{ch:computing}
+\chapter{Technology}
+\label{ch:technology}
 
 \emph{Parts of this chapter have been published in peer-reviewed.}
 
@@ -16,7 +16,7 @@ First use: \gls{nlp}. Second use: \gls{nlp}.
 \section{Information Retrieval}
 
 \begin{quote}
-  "Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest." \citep{Baeza-Yates2011}
+  Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \citep{Baeza-Yates2011}
 \end{quote}
 
 \todo{exploratory search section}
@@ -906,12 +906,68 @@ I need to find REFERENCES for this section.
 % Looking at more broadly related work shows a few worthwhile mentions as follows. They are mostly examples of creative computing in various forms, some of which have pataphysical foundations, whether they are aware of it or not, and others don't. The list could be extended endlessly, so I will only include a selection of the most interesting ones. I have also included some examples of other kinds of projects that have pataphysical elements in them but are not related to computers or searching. Finally, I have added a few examples of current web search engines and ranking algorithms, though they probably cannot be considered creative or pataphysical.
 
 
-\section*{SpecLab}
+\section{Algorithm Formalisation}
 
-The projects Johanna Drucker describes in her book SpecLab \citep{Drucker2009}  could certainly be considered related work. Not only in their theoretical foundations but also in some aspects of their implementation. One project in particular is worth mentioning here: the 'Patacritical Demon, an "interactive tool for exposing the structures that underlie our interpretations of text", although it remained a purely conceptual piece of work and was never implemented. Her idea if the "patacritical" method is quite interesting. Pataphysical exceptions and anomalies can thus be justified in a computational system. But it is not just this concept that deserves mention here.
-Her ideas on structured data, metadata and knowledge representation link very nicely into my project. How can we represent and structure data so that it does not lose its subjectivity, context and meaning? Her reference to graphical analogies is inspiring in that regard as well. I am certain I will refer back to her concepts throughout my thesis.
+Algorithm Classification
 
+\begin{multicols}{2}
+\begin{itemize}
+  {\setlength\itemindent{-26pt} \item[] By implementation:}
+  \item Recursive/iterative
+  \item Logical
+  \item Serial/parallel/distributed
+  \item Deterministic/non-deterministic
+  \item Exact/approximate
+  \item Quantum
+\end{itemize}
 
-\section*{YossarianLives!}
+\begin{itemize}
+  {\setlength\itemindent{-26pt} \item[] By design paradigm:}
+  \item Brute-force/exhaustive search
+  \item Divide and conquer
+  \item Dynamic
+  \item Greedy
+  \item Linear
+  \item Reduction
+  \item Search and enumeration
+\end{itemize}
 
-YossarianLives - methaphorical search engine.
+\begin{itemize}
+  {\setlength\itemindent{-26pt} \item[] By field of study:}
+  \item Search
+  \item Sorting
+  \item Merge
+  \item Numerical
+  \item Graph
+  \item String
+  \item Computational geometrics
+  \item Combinatorial
+  \item Medical
+  \item Machine learning
+  \item Cryptography
+  \item Data compression
+  \item Parsing
+\end{itemize}
+
+\begin{itemize}
+  {\setlength\itemindent{-26pt} \item[] By complexity:}
+  \item Big-O-Notation
+\end{itemize}
+\end{multicols}
+
+\begin{description}
+  \item [High-Level Description] in prose, ignoring implementation details.
+  \item [Implementation Description] in prose, describing implementation in detail.
+  \item [Formal description] lowest level, most detailed.
+\end{description}
+
+\itab{$D = \{d_1, \ldots, d_n\}$} \tab{is the set of documents}\\
+\itab{$Q = \{q_1, \ldots, q_n\}$} \tab{is the set of queries}\\
+\itab{$q = \{t_1, \ldots, t_n\}$} \tab{is the set of query terms}\\
+\itab{$V = \{v_1, \ldots, v_t\}$} \tab{is the set of all distinct index terms in a document collection (the Vocabulary)}\\
+\itab{$R(q_i,d_j)$} \tab{is the ranking function, where $q_i \in Q$ and $d_j  \in D$}\\
+\itab{$N$} \tab{is the total number of documents}\\
+\itab{$w_{t,q}$} \tab{is the weight of the term in the query}\\
+\itab{$tf_{t,d}$} \tab{is the term frequency of $t$ in $d$}\\
+\itab{$wf_{t,d}$} \tab{is the tf-idf weight of $t$ in $d$}\\
+\itab{$P_t$} \tab{is the postings list of all ($d$, $tf_{t,d}$) for a given $t$}
