@@ -71,6 +71,9 @@ To compile manually via commandline:
 - [ ] Change note on publications in chapters
 - [ ] Table of contents move from left to right, from creative to precise
 - [ ] Mini index (summary with page numbers) for each chapter
+- [ ] Word Count?
+
+
 
 ## Errors
 

@@ -350,3 +350,10 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 \usepackage{wasysym}
 % \smiley{} \frownie{} \blacksmiley{}
+
+
+% WORDCOUNT
+
+% \newcommand\wordcount{
+% \immediate\write18{texcount -inc -sum -0 -template={SUM} main.tex > count.txt}
+% (\input{count.txt}words)}

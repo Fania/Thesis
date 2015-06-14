@@ -1,0 +1,21 @@
+### Options to use with TeXcount
+# Counting options
+-sum=1,1,1
+-sub=section
+-inc
+
+# Macro rules
+%macro \url 1
+%envir sourcecode 0 0
+%macroword \TeXcount 1
+
+# Path used in file inclusion (\chapterpath filename)
+%subst \chapterpath chap/
+
+# Output template
+-template=
+  \::: {title} :::\n
+  \Words: {sum}\n
+  \Formulae: {6} + {7}\n
+  \{5?Number of floats: {5}\n?5}
+  \{SUB? - {sum} words in {title}\n?SUB}
