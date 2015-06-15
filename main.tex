@@ -10,7 +10,7 @@
 \listoftodos[List of Todos]
 \clearpage
 
-\import{front/}{title}
+\include{front/title}
 
 % FRONT
 \pagestyle{plain}
@@ -18,12 +18,12 @@
 
 \part*{\texorpdfstring{PRE\smiley{}}{PREFACE}}
 \addcontentsline{toc}{part}{PREFACE}
-\import{front/}{abstract}
-% \import{front/}{dedication}
-% \import{front/}{declaration}
-% \import{front/}{acknowledgements}
-% \import{front/}{publications}
-% \import{front/}{about}
+\include{front/abstract}
+% \include{front/dedication}
+% \include{front/declaration}
+% \include{front/acknowledgements}
+% \include{front/publications}
+% \include{front/about}
 
 % \phantomsection
 % \addcontentsline{toc}{chapter}{List Overview}
@@ -70,27 +70,27 @@
 \mainmatter
 
 \part{\texorpdfstring{H$\Sigma$LL$\Theta$ W$\Theta$RLD}{HELLO WORLD}}
-\import{main/}{introduction}
-\import{main/}{methodology}
+\include{main/introduction}
+\include{main/methodology}
 
 \part{\texorpdfstring{IN A G$\forall$L$\forall$XY F$\forall$R F$\forall$R AW$\forall$Y $\ldots$}{IN A GALAXY FAR FAR AWAY $\ldots$}}
-\import{main/}{pataphysics}
-\import{main/}{creativity}
-\import{main/}{technology}
-\import{main/}{evaluation}
+\include{main/pataphysics}
+\include{main/creativity}
+\include{main/technology}
+\include{main/evaluation}
 
 \part{\texorpdfstring{THE C$\Theta$RE: T$\Sigma$CHN$\Theta$-L$\Theta$GIC}{THE CORE: TECHNO-LOGIC}}
-\import{main/}{foundation}
-\import{main/}{description}
-\import{main/}{caseStudy}
+\include{main/foundation}
+\include{main/description}
+\include{main/caseStudy}
 
 \part{\texorpdfstring{M$\Sigma$T$\forall$-L$\Theta$GIC$\forall$LYSIS}{META-LOGICALYSIS}}
-\import{main/}{interpretation}
-\import{main/}{analysis}
+\include{main/interpretation}
+\include{main/analysis}
 
 \part{\texorpdfstring{H$\forall$PPILY $\Sigma$V$\Sigma$R $\forall$FT$\Sigma$R ?}{HAPPILY EVER AFTER ?}}
-\import{main/}{aspirations}
-\import{main/}{observations}
+\include{main/aspirations}
+\include{main/observations}
 
 % BACK
 \appendix
@@ -98,10 +98,10 @@
 \phantomsection
 \part*{\texorpdfstring{POST\frownie{}}{POSTFACE}}
 \addcontentsline{toc}{part}{POSTFACE}
-\import{back/}{code}
-% \import{back/}{oulipo}
-% \import{back/}{wordnet}
-% \import{back/}{jarry}
+\include{back/code}
+% \include{back/oulipo}
+% \include{back/wordnet}
+% \include{back/jarry}
 \clearpage
 
 \pagestyle{plain}
