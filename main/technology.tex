@@ -12,14 +12,14 @@ Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}\\
 First use: \gls{ir}. Second use: \gls{ir}.\\
 First use: \gls{nlp}. Second use: \gls{nlp}.
 
+\todo{exploratory search section}
+
 
 \section{Information Retrieval}
 
 \begin{quote}
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \citep{Baeza-Yates2011}
 \end{quote}
-
-\todo{exploratory search section}
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
@@ -36,9 +36,9 @@ Searching can be thought of in two ways, information lookup (searching) and expl
 
 Most big search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\citep{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \citep{Google2012} that influence the ranking of web pages including their original PageRank algorithm \citep{Brin1998, Brin1998b}. We can only speculate whether these signals also take into account some creative factors due to their secrecy. Other search engines like YossarianLives (currently in alpha release) \footnote{\url{http://www.yossarianlives.com/}} concentrate on purely abstract concepts like metaphors for their search algorithms.
 
-Any information retrieval process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from web pages).
+Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from web pages).
 
-Information retrieval does not only refer to the retrieval of online information from the Internet but generally also for any offline databases for example. In this survey I will focus on IR for the World Wide Web and whenever I'm speaking of an IR system I will generally refer to a web search engine system unless stated otherwise. The architecture of a search engine is made up of different components so to speak. A crawler, an indexer and a ranking system and the user interface.
+\gls{ir} does not only refer to the retrieval of online information from the Internet but generally also for any offline databases for example. In this survey I will focus on \gls{ir} for the World Wide Web and whenever I'm speaking of an \gls{ir} system I will generally refer to a web search engine system unless stated otherwise. The architecture of a search engine is made up of different components so to speak. A crawler, an indexer and a ranking system and the user interface. See figure \ref{fig:SEA}.
 
 \begin{figure}[htb]
   \centering
@@ -70,29 +70,53 @@ Information retrieval does not only refer to the retrieval of online information
 \label{fig:SEA}
 \end{figure}
 
-In simple terms, a typical IR process goes as follows. A user is looking for some information so he types a search term or a question into the text box of a search engine. The system then analyses that query and retrieves any matches from the index, which is always kept up to date by a web crawler in the background of the search engine. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality this involves many more steps and levels of detail but in principle that is all needed to understand how IR systems work.
+\subsection{IR Models}
 
+\begin{comment}
+  \gls{ir} models describe ranking algorithms formally. ???
+\end{comment}
 
-\subsection{IR Systems}
+There are different models for different needs, for example a multimedia system is going to be different than a text based system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
 
-IR models describe ranking algorithms formally. There are different models for different needs, for example a multimedia IR system is going to be different than a text based IR system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
+The notation for \gls{ir} models is as follows \citep[quoted from][p.58]{Baeza-Yates2011}:
 
-The notation for IR models is as follows (quoted from \citep[p.58]{Baeza-Yates2011}):
-
-An IR model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:\\
-\itab{$D$} \tab{the set of documents,}\\
-\itab{$Q$} \tab{the set of queries,}\\
-\itab{$F$} \tab{the framework (e.g. sets, Boolean relations, vectors, linear algebra\ldots),}\\
+An \gls{ir} model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:\\
+\itab{$D$} \tab{is the set of documents,}\\
+\itab{$Q$} \tab{is the set of queries,}\\
+\itab{$F$} \tab{is the framework (e.g. sets, Boolean relations, vectors,}\\
+\itab{}    \tab{linear algebra\ldots),}\\
 \itab{$R(q_{i}, d_{j})$}
-\tab{the ranking function, where $q_{i} \in Q$ and $d_{j} \in D$,}\\
-\itab{$t$} \tab{the number of index terms in a document collection,}\\
+            \tab{is the ranking function, where $q_{i} \in Q$ and $d_{j} \in D$,}\\
+\itab{$t$} \tab{is the number of index terms in a document collection,}\\
 \itab{$V =\{k_{1},\ldots, k_{t}\}$}
-\tab{is the set of all distinct index terms in a document collection (vocabulary).}
+            \tab{is the set of all distinct index terms in a document}\\
+\itab{}     \tab{collection (vocabulary).}
 
-The term conjunctive component describes which terms occur ina  document and which ones do not. E.g. for $V =\{k_{1},\ldots, k_{t}\}$, if $[ k_{1},k_{2},k_{3}]$ occur in $d_{j}$ then it could be $(1,1,1)$ which means all terms occur, or $(1,0,0)$ which means only term $k_{1}$ appears in $d_{j}$.
+% An \gls{ir} model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:
+% \begin{description}
+%   \item [$D$] is the set of documents
+%   \item [$Q$] is the set of queries
+%   \item [$F$] is the framework (e.g. sets, Boolean relations, vectors, linear algebra\ldots)
+%   \item [$R(q_{i}, d_{j})$] is the ranking function, where $q_{i} \in Q$ and $d_{j} \in D$
+%   \item [$t$] is the number of index terms in document collection
+%   \item [$V =\{k_{1},\ldots, k_{t}\}$] is the set of all distinct index terms in document collection (vocabulary)
+% \end{description}
 
-\itab{$c(d)$} \tab{is the term conjunctive component for document $d$}\\
-\itab{$c(q)$} \tab{is the term conjunctive component for query $q$}
+
+\subsubsection*{Architecture}
+
+
+\subsubsection*{Index}
+
+A 'conjunctive component' describes which terms occur in a  document and which ones do not. E.g. for $V =\{k_{1},\ldots, k_{t}\}$, if $[ k_{1},k_{2},k_{3}]$ occur in $d_{j}$ then it could be $(1,1,1)$ which means all terms occur, or $(1,0,0)$ which means only term $k_{1}$ appears in $d_{j}$.
+
+% \begin{description}
+%   \item [$c(d)$] is the term conjunctive component for document $d$
+%   \item [$c(q)$] is the term conjunctive component for query $q$
+% \end{description}
+
+\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
+\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
 
 The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
@@ -103,34 +127,38 @@ The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is 
                 k_3 & f_{3,1} & f_{3,2} \cr}
 \label{eq:tdm}
 \end{equation}
-\myequations{tdm}
+\myequations{Term-document matrix}
+
+% \begin{gather}
+% \frac{J_1(a k s)}{\sqrt{\pi } s}\\
+% \shortintertext{where}
+% \begin{aligned}
+% &a \text{ is lens radius}\\
+% &k =\frac{2 \pi }{\lambda }\\
+% &s =\sqrt{\left(\frac{u}{z_2}+\frac{x}{z_1}\right){}^2+\left(\frac{v}{z_2}+\frac{y}{z_1}\right){}^2}
+% \end{aligned}\notag
+% \label{eq:xyz}
+% \end{gather}
 
 This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
 
 The dictionary is usually processed to eliminate punctuation and stop words (e.g. a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. Techniques that are useful for this are the following \citep[Ch.2]{Manning2009}.
 
 \begin{description}
-  \item [Tokenisation] \hfill \\
-  discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] \hfill \\
-  making sets of words with same meanings, e.g. car and automobile
-  \item [Case-folding] \hfill \\
-  converting everything to lower case
-  \item [Stemming] \hfill \\
-  removing word endings, e.g. connection, connecting, connected $\to$ connect
-  \item [Lemmatization] \hfill \\
-  returning dictionary form of a word, e.g. went $\to$ go
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
 \end{description}
 
 For specific domains it even makes sense to build a "controlled vocabulary" which can be seen as a domain specific taxonomy and are very useful for query expansion.
 
-\subsubsection{Architecture}
 
-\subsubsection{Index}
+\subsubsection*{Search Algorithms}
 
-\subsubsection{Search Algorithms}
 
-\subsubsection{Ranking}
+\subsubsection*{Ranking}
 
 Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook "like" button or the Google+ "+1" button which could be seen as direct user relevance feedback as well.
 
@@ -154,11 +182,11 @@ PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Go
 \myequations{PR}
 
 Where,\\
-\itab{$L(p)$} \tab{is the number of outgoing links of page $p$}\\
-\itab{$a$} \tab{is the page we want to rank and is pointed to by pages $p_1$ to $p_n$}\\
-\itab{$T$} \tab{is the total number of pages on the Web graph}\\
+\itab{$L(p)$} \tab{is the number of outgoing links of page $p$,}\\
+\itab{$a$} \tab{is the page we want to rank and is pointed to by pages $p_1$ to $p_n$,}\\
+\itab{$T$} \tab{is the total number of pages on the Web graph, and}\\
 \itab{$q$} \tab{is the is a parameter to be set by the system (typically 0.15)}\\
-\itab{} \tab{needed to deal with dead ends in the graph}
+\itab{} \tab{needed to deal with dead ends in the graph.}
 
 The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citep[p.472]{Kleinberg1999, Kleinberg} in 1999. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Again, the following formula is taken from \citep[p.471]{Baeza-Yates2011}. S is the set of pages.
 
@@ -342,7 +370,7 @@ Where,\\
 \itab{$K$} \tab{is the number of results we want}\\
 \itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
 
-There are several other common IR models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set \citep{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986} models or latent semantic indexing \citep{Deerwester1990}, neural network models and others \citep{Macdonald2009, Schuetze1998, Schuetze}.
+There are several other common \gls{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set \citep{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986} models or latent semantic indexing \citep{Deerwester1990}, neural network models and others \citep{Macdonald2009, Schuetze1998, Schuetze}.
 
 
 \subsection*{Total Term Frequency}
@@ -423,7 +451,7 @@ Since a single query for a popular word can results in  millions of retrieved do
 
 \subsubsection*{Summary}
 
-IR refers to the retrieval of information from a collection. In terms of the Internet it is often called Web search. A Web search engine is divided into different components, being the crawler to build an index of the collection and a ranking algorithm which stands between the index and the user.
+\gls{ir} refers to the retrieval of information from a collection. In terms of the Internet it is often called Web search. A Web search engine is divided into different components, being the crawler to build an index of the collection and a ranking algorithm which stands between the index and the user.
 
 Different retrieval models exist including the Boolean and the Vector model. Other methods exist to make search results more accurate, including relevance feedback and query expansion.
 

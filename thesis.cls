@@ -269,7 +269,7 @@
 fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % pathmorphing
 \usepackage{qtree}
-
+\usepackage{mathtools}
 
 % BORDER MATRIX SQUARE
 
