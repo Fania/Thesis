@@ -21,7 +21,7 @@
 
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
 \ProcessOptions\relax
-\LoadClass[a4paper,oneside]{\baseclass}
+\LoadClass[a4paper,oneside,cmyk]{\baseclass}
 
 \hfuzz=7pt
 \vfuzz=7pt
@@ -116,6 +116,7 @@
 
 \usepackage[pdfencoding=auto,
             colorlinks=true,
+            citecolor=green,
             linkcolor=blue,
             pdftex,
             pdfauthor={Fania Raczinski},
@@ -216,9 +217,9 @@
 
 % COLOUR STUFF
 
-\usepackage{xcolor}
-\newenvironment{comment}{\par\color{blue}}{\par}
-\newenvironment{draft}{\par\color{red}}{\par}
+\usepackage[cmyk]{xcolor}
+\newenvironment{comment}{\par\color{cyan}}{\par}
+\newenvironment{draft}{\par\color{magenta}}{\par}
 
 \usepackage{framed}
 \colorlet{shadecolor}{yellow!20}
@@ -227,12 +228,12 @@
 % CODE
 
 \usepackage{listings}
-\usepackage{color}
-
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\definecolor{creme}{rgb}{1,1,0.9}
+% \usepackage{color}
+%
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+% \definecolor{gray}{rgb}{0.5,0.5,0.5}
+% \definecolor{mauve}{rgb}{0.58,0,0.82}
+% \definecolor{creme}{rgb}{1,1,0.9}
 
 \renewcommand\lstlistlistingname{List of Code Snippets}
 
@@ -244,14 +245,14 @@
   columns=flexible,
   basicstyle={\small\ttfamily},
   numbers=left,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
+  numberstyle=\tiny\color{red},
+  keywordstyle=\color{cyan},
+  commentstyle=\color{green},
+  stringstyle=\color{magenta},
   breaklines=true,
   breakatwhitespace=true,
   tabsize=2,
-  backgroundcolor=\color{creme},
+  backgroundcolor=\color{lightgray},
 }
 
 

@@ -3,7 +3,7 @@
 \chapter{Technology}
 \label{ch:technology}
 
-\emph{Parts of this chapter have been published in peer-reviewed.}
+\emph{Parts of this chapter have been published in peer-reviewed...}
 
 \grule
 
@@ -15,21 +15,54 @@ Knowledge needed to understand project:
   \item query - expansion etc
   \item results
   \item searching vs browsing
+  \item web programming
+  \item
+\end{itemize}
+
+\todo{update all graphics with inkscape}
+
+
+\section{Searching vs. Browsing}
+
+\subsection{Information Need}
+
+What do we actually mean by searching? Usually it implies that there is something to be found, an \gls{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
+
+From the users' point of view the search process can be broken down into four activities \citep{Sutcliffe1998} reminiscent of classic problem solving techniques \citep{Polya1957}:
+
+\begin{description}
+  \item [Problem identification] \gls{in},
+  \item [Need articulation] \gls{in} in natural language terms,
+  \item [Query formulation] translate \gls{in} into query terms, and
+  \item [Results evaluation] compare against \gls{in}.
+\end{description}
+
+This model poses problems when we consider a situation where an \gls{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \citep{Marchionini1988} and they laid out a framework with the following main elements.
+
+\begin{itemize}
+  \item Setting (the context of the search and external factors such as time, cost)
+  \item Task domain (the body of knowledge, the subject)
+  \item Search system (the database or web search engine)
+  \item User (the user’s experience)
+  \item Outcomes (the assessment of the results/answers)
 \end{itemize}
 
 
+\subsection{Exploratory Search}
 
-TEST:\\
-Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}\\
-First use: \gls{ir}. Second use: \gls{ir}.\\
-First use: \gls{nlp}. Second use: \gls{nlp}.
+Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \citep{DeVries1993, Marchionini2006}. A situation where an \gls{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
 
-\todo{exploratory search section}
+Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g. fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require certain extend of interpretation or prediction (e.g. analysis, evaluation, forecasting, transformation).
 
+When it comes to exploratory search though, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploring \citep{Marchionini2006}.
 
+\begin{quote}
+  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \citep{Marchionini2006}
+\end{quote}
 
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \citep{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \citep{Boden2003}.
 
-
+All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
 
 \section{Information Retrieval}
@@ -40,17 +73,6 @@ First use: \gls{nlp}. Second use: \gls{nlp}.
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
-From the users' point of view the search process can be broken down into four activities \citep{Sutcliffe1998} reminiscent of classic problem solving techniques \citep{Polya1957}:
-
-\begin{description}
-  \item [Problem identification]: information need (IN),
-  \item [Need articulation]: IN in natural language terms,
-  \item [Query formulation]: translate IN into query terms, and
-  \item [Results evaluation]: compare against IN.
-\end{description}
-
-Searching can be thought of in two ways, information lookup (searching) and exploratory search (browsing) \citep{DeVries1993,Marchionini2006}. A situation where an information need cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool.
-
 Most big search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\citep{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \citep{Google2012} that influence the ranking of web pages including their original PageRank algorithm \citep{Brin1998, Brin1998b}. We can only speculate whether these signals also take into account some creative factors due to their secrecy. Other search engines like YossarianLives (currently in alpha release) \footnote{\url{http://www.yossarianlives.com/}} concentrate on purely abstract concepts like metaphors for their search algorithms.
 
 Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from web pages).
@@ -59,7 +81,6 @@ Any \gls{ir} process is constrained by factors like subject, context, time, cost
 
 \begin{figure}[htbp]
   \centering
-  % \def\svgwidth{\columnwidth}
   \input{images/architecture.pdf_tex}
   \caption[Search Engine Architecture]{Abstract search engine architecture}
   \label{fig:SEA}
@@ -164,8 +185,8 @@ PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Go
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{pagerank}
-\caption[PageRank algorithm]{PageRank algorithm from Wikipedia}
+  \includegraphics[width=.75\linewidth]{pagerank}
+\caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
 \label{fig:pagerank}
 \end{figure}
 
@@ -204,76 +225,7 @@ There are various algorithms that follow this approach. For example the shark se
 Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59](p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
 
 
-\subsection{Evaluation}
-
-\subsubsection{Measuring Search Quality}
-
-Evaluating search results is not easy. The most widely used metric to measure the quality of results is that of precision and recall.
-
-Precision is defined as the fraction of retrieved documents that are relevant.
-
-\begin{equation}
-  Precision = \frac{relevant documents retrieved}{retrieved documents}
-  \label{eq:precision}
-\end{equation}
-\myequations{precision}
-
-Recall is defined as the fraction of relevant documents that are retrieved.
-
-\begin{equation}
-  Recall = \frac{relevant documents retrieved}{relevant documents}
-  \label{eq:recall}
-\end{equation}
-\myequations{recall}
-
-Note the slight difference between the two. Precision tells us how many of all retrieved results were actually relevant (of course this should preferable be very high) and recall simply indicates how many of all possible relevant documents we managed to retrieve. This can be easily visualised as follows.
-
-% Definition of circles
-\def\leftcircle{(0,0) circle (1.5cm)}
-\def\rightcircle{(0:2cm) circle (1.5cm)}
-\colorlet{circle edge}{black!50}
-\colorlet{circle area}{black!20}
-\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
-    outline/.style={draw=circle edge, thick}}
-
-\begin{figure}[htb]
-  \centering
-  \begin{tikzpicture}
-  \begin{scope}
-  \clip \leftcircle;
-  \fill[filled] \rightcircle;
-  \end{scope}
-  \draw[outline] \leftcircle node {$relevant$};
-  \draw[outline] \rightcircle node {$retrieved$};
-  \node[anchor=south] at (current bounding box.north) {$relevant \ documents \ retrieved$};
-  \end{tikzpicture}
-\caption[Precision and Recall]{Precision and Recall}
-\label{fig:PR}
-\end{figure}
-
-Precision is typically more important than recall in web search while it is the other way around in a database search system maybe. The mean average precision value (MAP) can be calculated following this formula (taken from \citep[p.141]{Baeza-Yates2011}:
-
-\begin{equation}
-  MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
-  \label{eq:MAP}
-\end{equation}
-\myequations{MAP}
-
-Where $R_i$ is the set of relevant documents for query $q_i$.
-
-But for many web searches is it not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first 5 to 30 results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called "Precision at n" or "P@n" \citep[p.140]{Baeza-Yates2011}. So for example this could be P@5 or P@10 or P@20. For example, to compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
-
-The Text REtrieval Conference (TREC) is a conference that provides large test sets of data to participants and lets them compare results. They have specific test sets for web search comprised of crawls of .gov web pages for example, but unfortunately they have to paid for to get a copy. \footnote{\url{http://ir.dcs.gla.ac.uk/test_collections/}}
-
-There are certain other factors that can be or need be evaluated when looking at the complete search system. For example the time it takes to crawl for data, the time it takes to index data, the amount of storage needed for data and then also how fast the query response is and how many queries the system can handle in a given time period.
-
-
-\subsubsection{Measuring Creative Search Quality}
-
-In this paper \citep{Sawle2011} we have discussed an initial approach to measure the creativity of search results. Based on a definition of creativity by Boden, we attempt to define creativity in a way which could be applied to search results and provide a simple metric to measure it.
-
-
-\subsubsection{Query Expansion and Relevance Feedback}
+\subsection{Query Expansion and Relevance Feedback}
 
 Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysis the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
@@ -464,7 +416,9 @@ Ranking can be done at different stages of the search process. Depending on how 
   Damerau-Levensthein for clinamen!
 \end{comment}
 
-Bird, S., Klein, E. and Loper, E., 2009. NLP with Python 1st ed., Sebasopol, CA: O'Reilly Media.\citep{Bird2009}
+\gls{nlp} blah blah blah...
+
+Bird, S., Klein, E. and Loper, E., 2009. \gls{nlp} with Python 1st ed., Sebasopol, CA: O'Reilly Media.\citep{Bird2009}
 
 Manning, C., Raghavan, P. and Schuetze, H., 2008. Introduction to Information Retrieval 1st ed., Cambridge: Cambridge University Press.\citep{Manning2009}
 
@@ -473,12 +427,12 @@ Also known as:\\
 \begin{itemize}
   \item Speech and language processing
   \item Human language technology
-  \item Natural language processing (NLP)
+  \item \gls{nlp}
   \item Computational linguistics
   \item Speech recognition and synthesis
 \end{itemize}
 
-Goals of NLP are to get computers to perform useful tasks involving human language like:
+Goals of \gls{nlp} are to get computers to perform useful tasks involving human language like:
 \begin{itemize}
   \item Enabling human-machine communication
   \item Improving human-human communication
@@ -910,6 +864,8 @@ Given the rather complicated nature of the words and sentence structure, some of
 
 
 \section{Linguistics / WordNet}
+
+Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}\\
 
 I looked into linguistics for the purpose of patadata. This section definitely needs some expanding. Some concepts that might be relevant include (taken from Wikipedia):
 

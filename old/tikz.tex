@@ -1,5 +1,13 @@
 % BACKUP OF TIKZ PICTURES
 
+\begin{figure}[htbp]
+  \centering
+  \input{images/architecture.pdf_tex}
+  \caption[Search Engine Architecture]{Abstract search engine architecture}
+  \label{fig:SEA}
+\end{figure}
+
+--------------------------------
 
 \begin{figure}[htbp]
   \centering
@@ -29,4 +37,29 @@
   \end{tikzpicture}
   \caption[Search Engine Architecture]{Very abstract search engine architecture}
   \label{fig:SEA}
+\end{figure}
+
+------------------------------
+
+% Definition of circles
+\def\leftcircle{(0,0) circle (1.5cm)}
+\def\rightcircle{(0:2cm) circle (1.5cm)}
+\colorlet{circle edge}{black!50}
+\colorlet{circle area}{black!20}
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\begin{figure}[htb]
+  \centering
+  \begin{tikzpicture}
+  \begin{scope}
+  \clip \leftcircle;
+  \fill[filled] \rightcircle;
+  \end{scope}
+  \draw[outline] \leftcircle node {$relevant$};
+  \draw[outline] \rightcircle node {$retrieved$};
+  \node[anchor=south] at (current bounding box.north) {$relevant \ documents \ retrieved$};
+  \end{tikzpicture}
+\caption[Precision and Recall]{Precision and Recall}
+\label{fig:PR}
 \end{figure}

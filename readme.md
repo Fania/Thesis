@@ -73,6 +73,7 @@ To compile manually via commandline:
 - [ ] Mini index (summary with page numbers) for each chapter
 - [ ] Word Count?
 - [ ] Inkscape export messes up colour of page?
+- [ ] Make sure rejected papers are included in thesis
 
 
 
