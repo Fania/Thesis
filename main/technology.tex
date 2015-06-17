@@ -7,12 +7,29 @@
 
 \grule
 
+Knowledge needed to understand project:
+\begin{itemize}
+  \item Search engines
+  \item index
+  \item corpus
+  \item query - expansion etc
+  \item results
+  \item searching vs browsing
+\end{itemize}
+
+
+
 TEST:\\
 Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}\\
 First use: \gls{ir}. Second use: \gls{ir}.\\
 First use: \gls{nlp}. Second use: \gls{nlp}.
 
 \todo{exploratory search section}
+
+
+
+
+
 
 
 \section{Information Retrieval}
@@ -40,35 +57,14 @@ Any \gls{ir} process is constrained by factors like subject, context, time, cost
 
 \gls{ir} does not only refer to the retrieval of online information from the Internet but generally also for any offline databases for example. In this survey I will focus on \gls{ir} for the World Wide Web and whenever I'm speaking of an \gls{ir} system I will generally refer to a web search engine system unless stated otherwise. The architecture of a search engine is made up of different components so to speak. A crawler, an indexer and a ranking system and the user interface. See figure \ref{fig:SEA}.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}
-  [every node/.style={node distance=2cm},
-  box/.style={rectangle, draw, fill=black!10, inner sep=5pt, text width=2cm, text badly centered, minimum height=1cm}]
-  % Coordinate Grid for testing
-  % \draw[gray,very thin] (0,0) grid (6,6);
-  % \foreach \x in {0,1,2,3,4,5,6}
-  % \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
-  % \foreach \y in {0,1,2,3,4,5,6}
-  % \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
-  \node [box] (web) {Web};
-  \node [box, below of=web] (crawl) {Crawler};
-  \node [box, below of=crawl] (index) {Index};
-  \node [box, right=1cm of index] (rank) {Ranking};
-  \node [box, above of=rank] (query) {Query};
-  \node [box, above of=query] (user) {User};
-  \path[->,thick]
-  (3.375,1) edge (user.north)
-  (web) edge (crawl)
-  (crawl) edge (index)
-  (index) edge (rank)
-  (query) edge (index)
-  (user) edge (query);
-  \draw [->] (rank.east) -| (5,0) -- (user.east);
-  \end{tikzpicture}
-\caption[Search Engine Architecture]{Very abstract search engine architecture}
-\label{fig:SEA}
+  % \def\svgwidth{\columnwidth}
+  \input{images/architecture.pdf_tex}
+  \caption[Search Engine Architecture]{Abstract search engine architecture}
+  \label{fig:SEA}
 \end{figure}
+
 
 \subsection{IR Models}
 

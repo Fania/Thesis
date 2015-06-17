@@ -72,6 +72,7 @@ To compile manually via commandline:
 - [ ] Table of contents move from left to right, from creative to precise
 - [ ] Mini index (summary with page numbers) for each chapter
 - [ ] Word Count?
+- [ ] Inkscape export messes up colour of page?
 
 
 
