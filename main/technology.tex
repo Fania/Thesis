@@ -24,7 +24,7 @@ Knowledge needed to understand project:
 
 \section{Searching vs. Browsing}
 
-\subsection{Information Need}
+\todo{put section into foundations chapter?}
 
 What do we actually mean by searching? Usually it implies that there is something to be found, an \gls{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
 
@@ -46,9 +46,6 @@ This model poses problems when we consider a situation where an \gls{in} cannot 
   \item User (the user’s experience)
   \item Outcomes (the assessment of the results/answers)
 \end{itemize}
-
-
-\subsection{Exploratory Search}
 
 Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \citep{DeVries1993, Marchionini2006}. A situation where an \gls{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
 
@@ -118,116 +115,6 @@ An \gls{ir} model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:\\
 %   \item [$t$] is the number of index terms in document collection
 %   \item [$V =\{k_{1},\ldots, k_{t}\}$] is the set of all distinct index terms in document collection (vocabulary)
 % \end{description}
-
-
-\subsubsection*{Architecture}
-
-
-\subsubsection*{Index}
-
-A 'conjunctive component' describes which terms occur in a  document and which ones do not. E.g. for $V =\{k_{1},\ldots, k_{t}\}$, if $[ k_{1},k_{2},k_{3}]$ occur in $d_{j}$ then it could be $(1,1,1)$ which means all terms occur, or $(1,0,0)$ which means only term $k_{1}$ appears in $d_{j}$.
-
-% \begin{description}
-%   \item [$c(d)$] is the term conjunctive component for document $d$
-%   \item [$c(q)$] is the term conjunctive component for query $q$
-% \end{description}
-
-\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
-\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
-
-The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
-
-\begin{equation}
-  \bbordermatrix{~ & d_1 & d_2 \cr
-                k_1 & f_{1,1} & f_{1,2} \cr
-                k_2 & f_{2,1} & f_{2,2} \cr
-                k_3 & f_{3,1} & f_{3,2} \cr}
-\label{eq:tdm}
-\end{equation}
-\myequations{Term-document matrix}
-
-% \begin{gather}
-% \frac{J_1(a k s)}{\sqrt{\pi } s}\\
-% \shortintertext{where}
-% \begin{aligned}
-% &a \text{ is lens radius}\\
-% &k =\frac{2 \pi }{\lambda }\\
-% &s =\sqrt{\left(\frac{u}{z_2}+\frac{x}{z_1}\right){}^2+\left(\frac{v}{z_2}+\frac{y}{z_1}\right){}^2}
-% \end{aligned}\notag
-% \label{eq:xyz}
-% \end{gather}
-
-This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
-
-The dictionary is usually processed to eliminate punctuation and stop words (e.g. a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. Techniques that are useful for this are the following \citep[Ch.2]{Manning2009}.
-
-\begin{description}
-  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
-  \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
-\end{description}
-
-For specific domains it even makes sense to build a "controlled vocabulary" which can be seen as a domain specific taxonomy and are very useful for query expansion.
-
-
-\subsubsection*{Search Algorithms}
-
-
-\subsubsection*{Ranking}
-
-Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook "like" button or the Google+ "+1" button which could be seen as direct user relevance feedback as well.
-
-Ranking algorithms are the essence of any web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing \footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
-
-PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \citep{Brin1998b} and they further describe the algorithm here \citep{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \citep[p.472]{Baeza-Yates2011}.
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=.75\linewidth]{pagerank}
-\caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
-\label{fig:pagerank}
-\end{figure}
-
-\begin{equation}
-  PR(a) =
-  \frac{q}{T} + (1 - q)
-  \sum_{i=1}^{n} \frac{PR(p_i)}{L(p_i)}
-  \label{eq:PR}
-\end{equation}
-\myequations{PR}
-
-Where,\\
-\itab{$L(p)$} \tab{is the number of outgoing links of page $p$,}\\
-\itab{$a$} \tab{is the page we want to rank and is pointed to by pages $p_1$ to $p_n$,}\\
-\itab{$T$} \tab{is the total number of pages on the Web graph, and}\\
-\itab{$q$} \tab{is the is a parameter to be set by the system (typically 0.15)}\\
-\itab{} \tab{needed to deal with dead ends in the graph.}
-
-The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citep[p.472]{Kleinberg1999, Kleinberg} in 1999. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Again, the following formula is taken from \citep[p.471]{Baeza-Yates2011}. S is the set of pages.
-
-\begin{equation}
-  \begin{split}
-  H(p) &= \sum_{u\in S \mid p\to u}A(u)\\
-  A(p) &= \sum_{v\in S \mid v\to p}H(v)
-  \end{split}
-  \label{eq:HITS}
-\end{equation}
-\myequations{HITS}
-
-Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \citep{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their "hub" pages are predefined.
-
-Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \citep{Debra1994, Debra1994a, Debra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the "ranking" is done dynamically at query time.
-
-There are various algorithms that follow this approach. For example the shark search algorithm \citep{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \citep{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \citep{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \citep{Nick2001}.
-
-Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59](p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
-
-
-\subsection{Query Expansion and Relevance Feedback}
-
-Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysis the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
 
 \subsection{The Boolean Model}
@@ -379,6 +266,119 @@ Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. In simpler notation t
 \myequations{wij2}
 
 This means that rare terms have a higher weight and more so if they occur a lot in one document.
+
+
+
+
+
+\subsubsection*{Architecture}
+
+
+\subsubsection*{Index}
+
+A 'conjunctive component' describes which terms occur in a  document and which ones do not. E.g. for $V =\{k_{1},\ldots, k_{t}\}$, if $[ k_{1},k_{2},k_{3}]$ occur in $d_{j}$ then it could be $(1,1,1)$ which means all terms occur, or $(1,0,0)$ which means only term $k_{1}$ appears in $d_{j}$.
+
+% \begin{description}
+%   \item [$c(d)$] is the term conjunctive component for document $d$
+%   \item [$c(q)$] is the term conjunctive component for query $q$
+% \end{description}
+
+\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
+\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
+
+The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+
+\begin{equation}
+  \bbordermatrix{~ & d_1 & d_2 \cr
+                k_1 & f_{1,1} & f_{1,2} \cr
+                k_2 & f_{2,1} & f_{2,2} \cr
+                k_3 & f_{3,1} & f_{3,2} \cr}
+\label{eq:tdm}
+\end{equation}
+\myequations{Term-document matrix}
+
+% \begin{gather}
+% \frac{J_1(a k s)}{\sqrt{\pi } s}\\
+% \shortintertext{where}
+% \begin{aligned}
+% &a \text{ is lens radius}\\
+% &k =\frac{2 \pi }{\lambda }\\
+% &s =\sqrt{\left(\frac{u}{z_2}+\frac{x}{z_1}\right){}^2+\left(\frac{v}{z_2}+\frac{y}{z_1}\right){}^2}
+% \end{aligned}\notag
+% \label{eq:xyz}
+% \end{gather}
+
+This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
+
+The dictionary is usually processed to eliminate punctuation and stop words (e.g. a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. Techniques that are useful for this are the following \citep[Ch.2]{Manning2009}.
+
+\begin{description}
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
+\end{description}
+
+For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
+
+
+\subsubsection*{Search Algorithms}
+
+
+\subsection{Ranking}
+
+Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook 'like' button or the Google+ '+1' button which could be seen as direct user relevance feedback as well.
+
+Ranking algorithms are the essence of any web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing \footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
+
+PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \citep{Brin1998b} and they further describe the algorithm here \citep{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \citep[p.472]{Baeza-Yates2011}.
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=.75\linewidth]{pagerank}
+\caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
+\label{fig:pagerank}
+\end{figure}
+
+\begin{equation}
+  PR(a) =
+  \frac{q}{T} + (1 - q)
+  \sum_{i=1}^{n} \frac{PR(p_i)}{L(p_i)}
+  \label{eq:PR}
+\end{equation}
+\myequations{PR}
+
+Where,\\
+\itab{$L(p)$} \tab{is the number of outgoing links of page $p$,}\\
+\itab{$a$} \tab{is the page we want to rank and is pointed to by pages $p_1$ to $p_n$,}\\
+\itab{$T$} \tab{is the total number of pages on the Web graph, and}\\
+\itab{$q$} \tab{is the is a parameter to be set by the system (typically 0.15)}\\
+\itab{} \tab{needed to deal with dead ends in the graph.}
+
+The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citep[p.472]{Kleinberg1999, Kleinberg} in 1999. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Again, the following formula is taken from \citep[p.471]{Baeza-Yates2011}. S is the set of pages.
+
+\begin{equation}
+  \begin{split}
+  H(p) &= \sum_{u\in S \mid p\to u}A(u)\\
+  A(p) &= \sum_{v\in S \mid v\to p}H(v)
+  \end{split}
+  \label{eq:HITS}
+\end{equation}
+\myequations{HITS}
+
+Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \citep{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their "hub" pages are predefined.
+
+Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \citep{Debra1994, Debra1994a, Debra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the "ranking" is done dynamically at query time.
+
+There are various algorithms that follow this approach. For example the shark search algorithm \citep{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \citep{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \citep{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \citep{Nick2001}.
+
+Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59](p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
+
+
+\subsection{Query Expansion and Relevance Feedback}
+
+Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysis the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
 
 \subsubsection*{Challenges of Web Search}

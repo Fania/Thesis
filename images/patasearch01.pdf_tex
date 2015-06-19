@@ -1,6 +1,6 @@
 %% Creator: Inkscape 0.91_64bit, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'architecture.pdf' (pdf, eps, ps)
+%% Accompanies image file 'patasearch01.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -20,7 +20,7 @@
 %%   \import{<path to file>}{<filename>.pdf_tex}
 %% Alternatively, one can specify
 %%   \graphicspath{{<path to file>/}}
-%%
+%% 
 %% For more information, please see info/svg-inkscape on CTAN:
 %%   http://tug.ctan.org/tex-archive/info/svg-inkscape
 %%
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{153.44284908bp}%
+    \setlength{\unitlength}{187.40801001bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,13 +48,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.65152596)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{architecture.pdf}}%
-    \put(0.13368323,0.54672527){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Web}}}%
-    \put(0.06607485,0.30413017){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Crawler}}}%
-    \put(0.10426089,0.04795353){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Index}}}%
-    \put(0.58621668,0.05543799){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Ranking}}}%
-    \put(0.62434544,0.31209196){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Query}}}%
-    \put(0.65149571,0.5480045){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{User}}}%
+  \begin{picture}(1,0.40720279)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{patasearch01.pdf}}%
+    \put(0.10945495,0.31586619){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Web}}}%
+    \put(0.05409968,0.04303585){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Crawler}}}%
+    \put(0.73101081,0.04303585){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Index}}}%
+    \put(0.74815989,0.31796097){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{User}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{patasearch01.pdf}}%
   \end{picture}%
 \endgroup%
