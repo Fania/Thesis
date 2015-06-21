@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.6.10)  19 JUN 2015 14:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.6.10)  21 JUN 2015 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1644,9 +1644,12 @@ LaTeX Warning: Unused global option(s):
 (./main.aux (./front/title.aux) (./front/abstract.aux) (./main/introduction.aux
 ) (./main/methodology.aux) (./main/pataphysics.aux) (./main/creativity.aux)
 (./main/technology.aux) (./main/evaluation.aux) (./main/foundation.aux)
-(./main/description.aux) (./main/caseStudy.aux) (./main/interpretation.aux)
-(./main/analysis.aux) (./main/aspirations.aux) (./main/observations.aux)
-(./back/code.aux))
+(./main/description.aux
+
+LaTeX Warning: Label `fig:patasearch01' multiply defined.
+
+) (./main/caseStudy.aux) (./main/interpretation.aux) (./main/analysis.aux)
+(./main/aspirations.aux) (./main/observations.aux) (./back/code.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1730,7 +1733,8 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Try loading font information for T1+pbk on input line 7.
- (c:/texlive/2014/texmf-dist/tex/latex/psnfss/t1pbk.fd
+
+(c:/texlive/2014/texmf-dist/tex/latex/psnfss/t1pbk.fd
 File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
 )
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10.95> not available
@@ -2056,25 +2060,25 @@ Chapter 3.
 [19
 
 
-] [20] <images/mib.png, id=1233, 337.26pt x 180.675pt>
+] [20] <images/mib.png, id=1264, 337.26pt x 180.675pt>
 File: images/mib.png Graphic file (type png)
  <use images/mib.png>
 Package pdftex.def Info: images/mib.png used on input line 65.
 (pdftex.def)             Requested size: 426.79135pt x 228.64417pt.
 
-<images/jarry06.jpg, id=1238, 337.26pt x 421.575pt>
+<images/jarry06.jpg, id=1269, 337.26pt x 421.575pt>
 File: images/jarry06.jpg Graphic file (type jpg)
  <use images/jarry06.jpg>
 Package pdftex.def Info: images/jarry06.jpg used on input line 85.
 (pdftex.def)             Requested size: 117.365pt x 146.70433pt.
 
-<images/jarry01.jpg, id=1239, 252.945pt x 304.13625pt>
+<images/jarry01.jpg, id=1270, 252.945pt x 304.13625pt>
 File: images/jarry01.jpg Graphic file (type jpg)
 
 <use images/jarry01.jpg>
 Package pdftex.def Info: images/jarry01.jpg used on input line 89.
 (pdftex.def)             Requested size: 117.365pt x 141.12024pt.
- <images/jarry05.jpg, id=1240, 242.8272pt x 274.626pt>
+ <images/jarry05.jpg, id=1271, 242.8272pt x 274.626pt>
 File: images/jarry05.jpg Graphic file (type jpg)
 
 <use images/jarry05.jpg>
@@ -2082,14 +2086,14 @@ Package pdftex.def Info: images/jarry05.jpg used on input line 93.
 (pdftex.def)             Requested size: 117.365pt x 132.73668pt.
  [21] [22 <./images/mib.png> <./images/jarry06.jpg> <./images/jarry01.jpg> <./i
 mages/jarry05.jpg>]
-<images/ubu.png, id=1256, 134.904pt x 215.8464pt>
+<images/ubu.png, id=1288, 134.904pt x 215.8464pt>
 File: images/ubu.png Graphic file (type png)
  <use images/ubu.png>
 Package pdftex.def Info: images/ubu.png used on input line 111.
 (pdftex.def)             Requested size: 126.43925pt x 202.30115pt.
  [23]
 [24 <./images/ubu.png>] [25]
-<images/faustroll.jpg, id=1301, 252.945pt x 310.91156pt>
+<images/faustroll.jpg, id=1332, 252.945pt x 310.91156pt>
 File: images/faustroll.jpg Graphic file (type jpg)
 
 <use images/faustroll.jpg>
@@ -2105,13 +2109,13 @@ Overfull \hbox (7.46031pt too wide) in paragraph at lines 179--180
 hys-ics in his text([][]Baudrillard[][]|
  []
 
-[28] [29] <images/lutembi.png, id=1375, 120.45pt x 100.87688pt>
+[28] [29] <images/lutembi.png, id=1407, 120.45pt x 100.87688pt>
 File: images/lutembi.png Graphic file (type png)
 
 <use images/lutembi.png>
 Package pdftex.def Info: images/lutembi.png used on input line 220.
 (pdftex.def)             Requested size: 117.365pt x 98.29527pt.
- <images/spiral01.png, id=1376, 74.745pt x 79.2pt>
+ <images/spiral01.png, id=1408, 74.745pt x 79.2pt>
 File: images/spiral01.png Graphic file (type png)
 
 <use images/spiral01.png>
@@ -2122,7 +2126,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--227
 []\T1/pbk/l/n/10.95 Figure 3.6: []The
  []
 
-<images/greencandle.png, id=1377, 120.45pt x 115.18031pt>
+<images/greencandle.png, id=1409, 120.45pt x 115.18031pt>
 File: images/greencandle.png Graphic file (type png)
 
 <use images/greencandle.png>
@@ -2142,7 +2146,7 @@ Chapter 4.
 
 ] [38
 
-] [39] [40] <images/4C.png, id=1551, 290.58563pt x 216.81pt>
+] [39] [40] <images/4C.png, id=1582, 290.58563pt x 216.81pt>
 File: images/4C.png Graphic file (type png)
 
 <use images/4C.png>
@@ -2562,7 +2566,7 @@ Overfull \hbox (11.30975pt too wide) in paragraph at lines 769--770
 design. ([][]Burdick|
  []
 
-[61] <images/dh01.png, id=1891, 337.26pt x 213.79875pt>
+[61] <images/dh01.png, id=1922, 337.26pt x 213.79875pt>
 File: images/dh01.png Graphic file (type png)
  <use images/dh01.png>
 Package pdftex.def Info: images/dh01.png used on input line 783.
@@ -2588,58 +2592,63 @@ Chapter 5.
 
 
 ] [69] [70] (./images/architecture.pdf_tex
-<images/architecture.pdf, id=2010, page=1, 154.01826pt x 100.3469pt>
+<images/architecture.pdf, id=2041, page=1, 154.01826pt x 100.3469pt>
 File: images/architecture.pdf Graphic file (type pdf)
 
 <use images/architecture.pdf, page 1>
 Package pdftex.def Info: images/architecture.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 154.01826pt x 100.34818pt.
 ) [71 <./images/architecture.pdf>]
-[72] [73] <images/pagerank.png, id=2052, 449.68pt x 323.2075pt>
+[72]
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 179.
+ [73] [74] [75] [76] <images/pagerank.png, id=2153, 449.68pt x 323.2075pt>
 File: images/pagerank.png Graphic file (type png)
 
 <use images/pagerank.png>
-Package pdftex.def Info: images/pagerank.png used on input line 185.
+Package pdftex.def Info: images/pagerank.png used on input line 345.
 (pdftex.def)             Requested size: 320.0935pt x 230.07567pt.
- [74] [75 <./images/pagerank.png>] [76] [77]
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 289.
- [78]
-[79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 422--425
+ [77] [78 <./images/pagerank.png>] [79] [80] [81]
+Overfull \hbox (7.02242pt too wide) in paragraph at lines 462--463
+[]\T1/pbk/l/n/10.95 Each re-curs-ive call matches one of the cases covered by t
+he Dam-erau^^ULevenshtein|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--482
 
  []
 
-[81] [82] [83] [84] [85]
+[82] [83] [84] [85] [86]
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 645.
-
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 645.
+LaTeX Warning: Command \textendash invalid in math mode on input line 702.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 646.
+LaTeX Warning: Command \textendash invalid in math mode on input line 702.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 647.
+LaTeX Warning: Command \textendash invalid in math mode on input line 703.
 
-[86] [87] [88]
-Overfull \hbox (12.2977pt too wide) in paragraph at lines 730--731
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 704.
+
+[87] [88] [89]
+Overfull \hbox (12.2977pt too wide) in paragraph at lines 787--788
 \T1/lmssq/m/n/10.95 eight/CD,/, the/DT Eighth/CD day/NN of/IN Feb-ru-ary/NNP]$[
 ]$,/|
  []
 
-[89] [90] [91]
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
+[90] [91] [92]
+Underfull \hbox (badness 10000) in paragraph at lines 922--923
 
  []
 
-[92] [93]) [94]
+[93] [94]) [95]
 \openout2 = `main/evaluation.aux'.
 
  (./main/evaluation.tex
 Chapter 6.
-[95
+[96
 
 
 
@@ -2649,38 +2658,38 @@ Overfull \hbox (21.84854pt too wide) in paragraph at lines 38--45
 -nel (an-imal.discovery.com)|
  []
 
-[96] [97] [98] (./images/precrec.pdf_tex
-<images/precrec.pdf, id=2351, page=1, 220.73338pt x 146.06369pt>
+[97] [98] [99] (./images/precrec.pdf_tex
+<images/precrec.pdf, id=2390, page=1, 220.73338pt x 146.06369pt>
 File: images/precrec.pdf Graphic file (type pdf)
 
 <use images/precrec.pdf, page 1>
 Package pdftex.def Info: images/precrec.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 220.73337pt x 146.07224pt.
 
-<images/precrec.pdf, id=2352, page=2, 220.73338pt x 146.06369pt>
+<images/precrec.pdf, id=2391, page=2, 220.73338pt x 146.06369pt>
 File: images/precrec.pdf Graphic file (type pdf)
 
 <use images/precrec.pdf, page 2>
 Package pdftex.def Info: images/precrec.pdf, page2 used on input line 56.
 (pdftex.def)             Requested size: 220.73337pt x 146.07224pt.
-) [99 <./images/precrec.pdf> <./images/precrec.pdf
+) [100 <./images/precrec.pdf> <./images/precrec.pdf
 
 pdfTeX warning: pdflatex.exe (file ./images/precrec.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] [100] [101] [102] [103] [104] [105]
-<images/candy02.png, id=2497, 337.26pt x 234.1247pt>
+>] [101] [102] [103] [104] [105] [106]
+<images/candy02.png, id=2534, 337.26pt x 234.1247pt>
 File: images/candy02.png Graphic file (type png)
  <use images/candy02.png>
 Package pdftex.def Info: images/candy02.png used on input line 279.
 (pdftex.def)             Requested size: 426.79135pt x 296.28474pt.
 
-[106] <images/candy01.png, id=2502, 276.28218pt x 252.945pt>
+[107] <images/candy01.png, id=2539, 276.28218pt x 252.945pt>
 File: images/candy01.png Graphic file (type png)
 
 <use images/candy01.png>
 Package pdftex.def Info: images/candy01.png used on input line 286.
 (pdftex.def)             Requested size: 426.79135pt x 390.7407pt.
- [107 <./images/candy02.png>] [108 <./images/candy01.png>] [109]) [110] [111
+ [108 <./images/candy02.png>] [109 <./images/candy01.png>] [110]) [111] [112
 
 
 ]
@@ -2688,13 +2697,13 @@ Package pdftex.def Info: images/candy01.png used on input line 286.
 
  (./main/foundation.tex
 Chapter 7.
-<images/4CBoden.png, id=2549, 304.88907pt x 252.945pt>
+<images/4CBoden.png, id=2586, 304.88907pt x 252.945pt>
 File: images/4CBoden.png Graphic file (type png)
 
 <use images/4CBoden.png>
 Package pdftex.def Info: images/4CBoden.png used on input line 29.
 (pdftex.def)             Requested size: 426.79135pt x 354.09357pt.
- [112
+ [113
 
 
 ]
@@ -2712,7 +2721,7 @@ Overfull \hbox (12.80394pt too wide) in paragraph at lines 46--54
  [][] |
  []
 
-[113 <./images/4CBoden.png>] [114]
+[114 <./images/4CBoden.png>] [115]
 Underfull \hbox (badness 10000) in paragraph at lines 97--97
 []\T1/pbk/l/n/10.95 see sec-
  []
@@ -2722,13 +2731,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--97
 \T1/pbk/l/n/10.95 tion
  []
 
-[115]
+[116]
 
-Package natbib Warning: Multiple citation on page 116: same authors and year
+Package natbib Warning: Multiple citation on page 117: same authors and year
 (natbib)                without distinguishing extra letter,
 (natbib)                appears as question mark.
 
-[116]
+[117]
 Underfull \hbox (badness 4819) in paragraph at lines 151--151
 \T1/pbk/l/n/10.95 tu-ally in-com-pat-ible, con-tra-dict-ing,
  []
@@ -2743,8 +2752,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--151
 \T1/pbk/l/n/10.95 thoughts pos-sible by trans-form-
  []
 
-[117] [118] [119] [120] (./images/pataphysicalisation.pdf_tex
-<images/pataphysicalisation.pdf, id=2632, page=1, 490.13112pt x 100.3469pt>
+[118] [119] [120] [121] (./images/pataphysicalisation.pdf_tex
+<images/pataphysicalisation.pdf, id=2669, page=1, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 1>
@@ -2752,7 +2761,7 @@ Package pdftex.def Info: images/pataphysicalisation.pdf, page1 used on input li
 ne 52.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
 
-<images/pataphysicalisation.pdf, id=2633, page=2, 490.13112pt x 100.3469pt>
+<images/pataphysicalisation.pdf, id=2670, page=2, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 2>
@@ -2760,7 +2769,7 @@ Package pdftex.def Info: images/pataphysicalisation.pdf, page2 used on input li
 ne 58.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
 
-<images/pataphysicalisation.pdf, id=2634, page=3, 490.13112pt x 100.3469pt>
+<images/pataphysicalisation.pdf, id=2671, page=3, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 3>
@@ -2768,14 +2777,14 @@ Package pdftex.def Info: images/pataphysicalisation.pdf, page3 used on input li
 ne 64.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
 
-<images/pataphysicalisation.pdf, id=2635, page=4, 490.13112pt x 100.3469pt>
+<images/pataphysicalisation.pdf, id=2672, page=4, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 4>
 Package pdftex.def Info: images/pataphysicalisation.pdf, page4 used on input li
 ne 70.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
-) [121 <./images/pataphysicalisation.pdf> <./images/pataphysicalisation.pdf
+) [122 <./images/pataphysicalisation.pdf> <./images/pataphysicalisation.pdf
 
 pdfTeX warning: pdflatex.exe (file ./images/pataphysicalisation.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
@@ -2787,132 +2796,132 @@ sion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./images/pataphysicalisation.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
->] [122]) [123]
+>] [123]) [124]
 \openout2 = `main/description.aux'.
 
  (./main/description.tex
 Chapter 8.
-<images/resultexample.png, id=2659, 215.8464pt x 40.953pt>
-File: images/resultexample.png Graphic file (type png)
-
-<use images/resultexample.png>
-Package pdftex.def Info: images/resultexample.png used on input line 16.
-(pdftex.def)             Requested size: 426.79135pt x 80.97655pt.
- [124
+[125
 
 
 
-]
-Underfull \hbox (badness 7133) in paragraph at lines 78--78
-[]\T1/pbk/l/n/10.95 vanish, al-low, bare,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
-[]\T1/pbk/l/n/10.95 sound, valid, solar,
- []
-
-
-Underfull \hbox (badness 5490) in paragraph at lines 78--78
-[]\T1/pbk/l/n/10.95 block, form, mat-ter,
- []
-
-
-Underfull \hbox (badness 7203) in paragraph at lines 78--78
-[]\T1/pbk/l/n/10.95 boot, bones, hooks,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
-[]\T1/pbk/l/n/10.95 wheel, roll, mouth,
- []
-
-[125 <./images/resultexample.png>] [126] [127] [128]
-<images/patasearch01.png, id=2702, 215.8464pt x 119.4864pt>
+] <images/patasearch01.png, id=2701, 215.8464pt x 119.4864pt>
 File: images/patasearch01.png Graphic file (type png)
 
 <use images/patasearch01.png>
-Package pdftex.def Info: images/patasearch01.png used on input line 188.
+Package pdftex.def Info: images/patasearch01.png used on input line 62.
 (pdftex.def)             Requested size: 426.79135pt x 236.26108pt.
  (./images/patasearch01.pdf_tex
-<images/patasearch01.pdf, id=2703, page=1, 175.26279pt x 70.23439pt>
+<images/patasearch01.pdf, id=2702, page=1, 188.11078pt x 76.59924pt>
 File: images/patasearch01.pdf Graphic file (type pdf)
 
 <use images/patasearch01.pdf, page 1>
 Package pdftex.def Info: images/patasearch01.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 175.26277pt x 70.23848pt.
+(pdftex.def)             Requested size: 188.11078pt x 76.59904pt.
 
-<images/patasearch01.pdf, id=2704, page=2, 175.26279pt x 70.23439pt>
+<images/patasearch01.pdf, id=2703, page=2, 188.11078pt x 76.59924pt>
 File: images/patasearch01.pdf Graphic file (type pdf)
 
 <use images/patasearch01.pdf, page 2>
 Package pdftex.def Info: images/patasearch01.pdf, page2 used on input line 57.
-(pdftex.def)             Requested size: 175.26277pt x 70.23848pt.
-) [129 <./images/patasearch01.png> <./images/patasearch01.pdf> <./images/patase
-arch01.pdf
+(pdftex.def)             Requested size: 188.11078pt x 76.59904pt.
+) [126] [127 <./images/patasearch01.png> <./images/patasearch01.pdf> <./images/
+patasearch01.pdf
 
 pdfTeX warning: pdflatex.exe (file ./images/patasearch01.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] <images/prototype01.png, id=2712, 176.15813pt x 337.26pt>
+>] <images/prototype01.png, id=2716, 176.15813pt x 337.26pt>
 File: images/prototype01.png Graphic file (type png)
 
 <use images/prototype01.png>
-Package pdftex.def Info: images/prototype01.png used on input line 222.
+Package pdftex.def Info: images/prototype01.png used on input line 96.
 (pdftex.def)             Requested size: 211.3376pt x 404.6023pt.
 
-<images/prototype02.png, id=2713, 318.43968pt x 252.945pt>
+<images/prototype02.png, id=2717, 318.43968pt x 252.945pt>
 File: images/prototype02.png Graphic file (type png)
 
 <use images/prototype02.png>
-Package pdftex.def Info: images/prototype02.png used on input line 231.
+Package pdftex.def Info: images/prototype02.png used on input line 105.
 (pdftex.def)             Requested size: 426.79135pt x 339.01015pt.
- [130]
-Overfull \hbox (65.48692pt too wide) in paragraph at lines 253--253
+ [128 <./images/prototype01.png>] [129 <./images/prototype02.png>]
+Overfull \hbox (65.48692pt too wide) in paragraph at lines 127--127
 []      \T1/cmtt/m/n/10.95 a. find hyponyms; if a hyponym occurs in `froll_dict
 ` then add to the output list[] |
  []
 
 
-Overfull \hbox (76.80367pt too wide) in paragraph at lines 254--254
+Overfull \hbox (76.80367pt too wide) in paragraph at lines 128--128
 []      \T1/cmtt/m/n/10.95 b. find hypernyms; if a hypernym occurs in `froll_di
 ct` then add to the output list[] |
  []
 
 
-Overfull \hbox (65.48692pt too wide) in paragraph at lines 255--255
+Overfull \hbox (65.48692pt too wide) in paragraph at lines 129--129
 []      \T1/cmtt/m/n/10.95 c. find holonyms; if a holonym occurs in `froll_dict
 ` then add to the output list[] |
  []
 
-[131 <./images/prototype01.png>]
-Overfull \hbox (65.48692pt too wide) in paragraph at lines 261--261
+
+Overfull \hbox (65.48692pt too wide) in paragraph at lines 135--135
 []      \T1/cmtt/m/n/10.95 a. find antonyms; if a antonym occurs in `froll_dict
 ` then add to the output list[] |
  []
 
 
-Overfull \hbox (371.03896pt too wide) in paragraph at lines 265--265
+Overfull \hbox (371.03896pt too wide) in paragraph at lines 139--139
 []    \T1/cmtt/m/n/10.95 1. find list of words within `froll_dict` that have a 
 `dameraulevenshtein distance` of 1 or 2 (meaning, there are 1 or 2 spelling err
 ors)[] |
  []
 
 
-Overfull \hbox (105.09552pt too wide) in paragraph at lines 270--270
+Overfull \hbox (105.09552pt too wide) in paragraph at lines 144--144
 []  \T1/cmtt/m/n/10.95 3a. if the word appears in faustroll then find the neare
 st 5 words before and after the word[] |
  []
 
-[132 <./images/prototype02.png>] [133]) [134]
+[130] [131] <images/resultexample.png, id=2737, 215.8464pt x 40.953pt>
+File: images/resultexample.png Graphic file (type png)
+
+<use images/resultexample.png>
+Package pdftex.def Info: images/resultexample.png used on input line 208.
+(pdftex.def)             Requested size: 426.79135pt x 80.97655pt.
+
+Underfull \hbox (badness 7133) in paragraph at lines 270--270
+[]\T1/pbk/l/n/10.95 vanish, al-low, bare,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
+[]\T1/pbk/l/n/10.95 sound, valid, solar,
+ []
+
+
+Underfull \hbox (badness 5490) in paragraph at lines 270--270
+[]\T1/pbk/l/n/10.95 block, form, mat-ter,
+ []
+
+
+Underfull \hbox (badness 7203) in paragraph at lines 270--270
+[]\T1/pbk/l/n/10.95 boot, bones, hooks,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
+[]\T1/pbk/l/n/10.95 wheel, roll, mouth,
+ []
+
+[132 <./images/resultexample.png>] [133] [134] [135]) [136]
 \openout2 = `main/caseStudy.aux'.
 
- (./main/caseStudy.tex
+
+(./main/caseStudy.tex
 Chapter 9.
-[135
+[137
 
 
 
-] [136] [137]) [138] [139
+] [138] [139]) [140] [141
 
 
 ]
@@ -2925,10 +2934,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--17
 
  []
 
-[140
+[142
 
 
-] [141]
+] [143]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 54.
@@ -3028,16 +3037,16 @@ Overfull \hbox (15.10843pt too wide) in paragraph at lines 138--138
 []\T1/pbk/l/n/10.95 Independence| |
  []
 
-[142] [143] [144] [145]) [146]
+[144] [145] [146] [147]) [148]
 \openout2 = `main/analysis.aux'.
 
  (./main/analysis.tex
 Chapter 11.
-) [147
+) [149
 
 
 
-] [148
+] [150
 
 
 ]
@@ -3051,19 +3060,19 @@ Overfull \hbox (26.44276pt too wide) in paragraph at lines 29--31
 R-FACE DESIGN |
  []
 
-[149
+[151
 
 
-]) [150]
+]) [152]
 \openout2 = `main/observations.aux'.
 
  (./main/observations.tex
 Chapter 13.
-) [151
+) [153
 
 
 
-] [152
+] [154
 
 
 ]
@@ -3073,15 +3082,15 @@ Chapter 13.
 Appendix A.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 20.
-(./back/code/textsurfer.py [153
+(./back/code/textsurfer.py [155
 
 
 ]) (./back/code/textsurfer.py)
-(./back/code/textsurfer.py) (./back/code/textsurfer.py [154])
-(./back/code/textsurfer.py) (./back/code/__init__.py [155])
-(./back/code/textviews.py [156]) (./back/code/videosurfer.py [157])
-(./back/code/videosurfer.py [158]) (./back/code/videosurfer.py [159])) [160]
-(./main.bbl [161
+(./back/code/textsurfer.py) (./back/code/textsurfer.py [156])
+(./back/code/textsurfer.py) (./back/code/__init__.py [157])
+(./back/code/textviews.py [158]) (./back/code/videosurfer.py [159])
+(./back/code/videosurfer.py [160]) (./back/code/videosurfer.py [161])) [162]
+(./main.bbl [163
 
 
 
@@ -3103,7 +3112,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--133
 / pg1 / index . htmlhttp :
  []
 
-[162]
+[164]
 Underfull \hbox (badness 3138) in paragraph at lines 219--224
 []\T1/pbk/l/n/10.95 Jorge Luis Borges.  \T1/pbk/l/it/10.95 La bib-li-oteca de B
 a-bel\T1/pbk/l/n/10.95 .  Re-clam, 2010.  URL
@@ -3121,7 +3130,7 @@ Underfull \hbox (badness 1142) in paragraph at lines 258--263
 s . google . com / books ? id = d1KTEQpQ6vsC &
  []
 
-[163]
+[165]
 Underfull \hbox (badness 6268) in paragraph at lines 265--271
 []\T1/pbk/l/n/10.95 Arthur Koes-t-ler.  \T1/pbk/l/it/10.95 The Act of Cre-ation
 \T1/pbk/l/n/10.95 .  Hutchin-son & Co, Lon-
@@ -3145,7 +3154,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--283
  qid = 1320422010 & sr = 1-[]1http :
  []
 
-[164]
+[166]
 Underfull \hbox (badness 2418) in paragraph at lines 354--360
 []\T1/pbk/l/n/10.95 David Gel-ernter.  \T1/pbk/l/it/10.95 The Muse in the Ma-ch
 ine\T1/pbk/l/n/10.95 .  Fourth Es-tate Lim-ited,
@@ -3157,7 +3166,7 @@ Underfull \hbox (badness 4013) in paragraph at lines 354--360
 .95 http : / / www . amazon . com /
  []
 
-[165]
+[167]
 Underfull \hbox (badness 1072) in paragraph at lines 469--476
 \T1/pbk/l/n/10.95 2012.  ISBN 9780262018470.  URL [][]$\T1/cmtt/m/n/10.95 http 
 : / / mitpress . mit . edu / sites / all /
@@ -3169,7 +3178,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 469--476
 t / files / titles / content /
  []
 
-[166]
+[168]
 Underfull \hbox (badness 1552) in paragraph at lines 556--564
 []\T1/pbk/l/n/10.95 Jon M Klein-berg.  Au-thor-it-at-ive sources in a hy-per-li
 nked en-vir-on-ment.
@@ -3199,13 +3208,13 @@ Underfull \hbox (badness 1072) in paragraph at lines 602--612
 . com / retrieve / pii / S0169755298000385http : / /
  []
 
-[167] [168]
+[169] [170]
 Underfull \hbox (badness 10000) in paragraph at lines 740--747
 [][]$\T1/cmtt/m/n/10.95 http : / / www . amazon . co . uk / Information-[]Retri
 eval-[]Cluster-[]Analysis-[]Decision /
  []
 
-[169] [170]) [171] [172
+[171] [172]) [173] [174
 
 
 
@@ -3220,9 +3229,15 @@ x) (./main/methodology.aux) (./main/pataphysics.aux)
 (./main/observations.aux) (./back/code.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EE7D6A99E9AA80FD134A86D151EADFC2;9407.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: FC7DE62643F389EB35202B30DA7F33DD;9596
+(rerunfilecheck)             After:  D4106B347EF74237CFF352749FF94E8A;9596.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -3230,20 +3245,23 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 118.
  ) 
 Here is how much of TeX's memory you used:
- 37430 strings out of 493109
- 651247 string characters out of 6138587
- 859720 words of memory out of 5000000
- 38951 multiletter control sequences out of 15000+600000
+ 37483 strings out of 493109
+ 652046 string characters out of 6138587
+ 861321 words of memory out of 5000000
+ 38990 multiletter control sequences out of 15000+600000
  57427 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,82p,1825b,1987s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
 t, replaced by a fixed one
@@ -3302,6 +3320,15 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
+pdfTeX warning (dest): name{section*.85} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.83} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{part*.82} has been referenced but does not exist, r
+eplaced by a fixed one
+
 {c:/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texliv
 e/2014/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2014/texmf-dist/font
 s/enc/dvips/base/8r.enc}<c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
@@ -3323,10 +3350,10 @@ t1000.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
 /texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb><c:/texlive/2014/texmf-dist/font
 s/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/
 wasy2-ps/wasyb10.pfb>
-Output written on main.pdf (188 pages, 1907917 bytes).
+Output written on main.pdf (190 pages, 1909716 bytes).
 PDF statistics:
- 3583 PDF objects out of 4296 (max. 8388607)
- 3299 compressed objects within 33 object streams
- 1034 named destinations out of 1200 (max. 500000)
- 1265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3632 PDF objects out of 4296 (max. 8388607)
+ 3345 compressed objects within 34 object streams
+ 1048 named destinations out of 1200 (max. 500000)
+ 1289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

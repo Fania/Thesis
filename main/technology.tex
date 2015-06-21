@@ -276,6 +276,12 @@ This means that rare terms have a higher weight and more so if they occur a lot 
 
 \subsubsection*{Index}
 
+\todo{describe index}
+An index or inverted index is blah blah blah....
+diagram?
+
+
+
 A 'conjunctive component' describes which terms occur in a  document and which ones do not. E.g. for $V =\{k_{1},\ldots, k_{t}\}$, if $[ k_{1},k_{2},k_{3}]$ occur in $d_{j}$ then it could be $(1,1,1)$ which means all terms occur, or $(1,0,0)$ which means only term $k_{1}$ appears in $d_{j}$.
 
 % \begin{description}
@@ -412,9 +418,57 @@ Ranking can be done at different stages of the search process. Depending on how 
 
 \section{Natural Language Processing}
 
+\todo{describe NLTK and the core functionality}
+\gls{nltk} Python library\footnote{\url{http://www.nltk.org/}}.
+
+\begin{description}
+  \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
+  \item [Text] A wrapper around a sequence of simple (string) tokens, which is intended to support initial exploration of texts (via the interactive console). Its methods perform a variety of analyses on the text’s contexts (e.g., counting, concordancing, collocation discovery), and display the results.
+  \item [index(word)] Find the index of the first occurrence of the word in the text.
+  \item [count(word)] Count the number of times this word appears in the text.
+\end{description}
+
+
+\subsection{Damerau-Levensthein}
+
 \begin{comment}
   Damerau-Levensthein for clinamen!
+  \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
 \end{comment}
+
+The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
+
+\begin{equation}
+  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
+  \textrm{max}(i,j) & \textrm{if min}(i,j)=0\\
+  \textrm{min}\left\{\begin{matrix*}[l]
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
+  d_{a,b}(i-2,j-2)+1
+  \end{matrix*}\right. & \textrm{if}\ i,j > 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
+  \textrm{min}\left\{\begin{matrix*}[l]
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
+\end{matrix*}\right. & \textrm{otherwise.}
+  \end{matrix*}\right.
+  \label{eq:DL}
+\end{equation}
+\myequations{DL}
+
+where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
+
+Each recursive call matches one of the cases covered by the Damerau–Levenshtein distance:
+
+$d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
+$d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
+$d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
+$d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
+
+
+
+
 
 \gls{nlp} blah blah blah...
 

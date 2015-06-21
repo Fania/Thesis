@@ -7,157 +7,31 @@
 
 \grule
 
-\section{User experience}
+\todo{style inline code}
+\todo{run code on laptop and get snippets of all variable contents, e.g. faustroll, froll\_dict, \ldots}
 
-Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request 'The Cat in the Hat' after reading a Dr. Seuss book to their child, and the system employs an anomalous method on the query and searched 'sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
 
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/resultexample}
-\caption[Feedback button]{Feedback button}
-\label{fig:feedback}
-\end{figure}
+\section{Setup}
 
-The above image (figure 3) shows an example of how this could be implemented. The little green candle (a reference to pataphysics in itself by the way) shows a pop-up note when hovered over with the mouse pointer. In this case the original query could have been ‘tree’ and ‘car’ was returned as an opposite to that.
+In TEXTSURFER.PY
 
-In the end, it comes to a point of being able to identify which of these factors will affect how the user perceives the results and which do not, and therefore give the system greater flexibility. This in itself is a huge undertaking, with which large quantities of empirical data will be required and is therefore left for future work on the project.
+Variables:
+\begin{description}
+  \item [book\_list] List of books in library: \lstinline$= PlaintextCorpusReader(corpus_root, '.*\.txt')$
+  \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$
+  \item [faustroll] Faustroll words converted to \gls{nltk} Text: \lstinline$= nltk.Text(troll)$
+  \item [faustroll\_dict] Alphabetical dictionary (list) of words: \lstinline$= sorted(set([w for w in faustroll]))$
+  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() not in sw]$
+\end{description}
 
-\section{Algorithms}
 
-\begin{table}[htb]
-  \begin{tabu}{X[1]|X[3]X[3]X[2]}
-  \toprule
-  % \cline{2-4}
-  &
-  \textbf{clinamen}
-  &
-  \textbf{syzygy}
-  &
-  \textbf{antinomy}
-  \\ \midrule
-  \textbf{clear}
-  &
-  altar, leaf, pleas, cellar
-  &
-  vanish, allow, bare, pronounce
-  &
-  opaque
-  \\ \midrule
-  \textbf{solid}
-  &
-  sound, valid, solar, slide
-  &
-  block, form, matter, crystal, powder
-  &
-  liquid, hollow
-  \\ \midrule
-  \textbf{books}
-  &
-  boot, bones, hooks, rocks, banks
-  &
-  dialogue, authority, record, fact
-  &
-  -
-  \\ \midrule
-  \textbf{troll}
-  &
-  grill, role, tell
-  &
-  wheel, roll, mouth, speak
-  &
-  -
-  \\ \midrule
-  \textbf{live}
-  &
-  love, lies, river, wave, size, bite
-  &
-  breathe, people, domicile, taste, see, be
-  &
-  recorded, dead
-  \\ \bottomrule
-  \end{tabu}
-\caption[Comparison of algorithms]{Comparison of algorithms}
-\label{algorithmscomp}
-\end{table}
 
-\subsection{Clinamen}
 
-The clinamen is the unpredictable swerve that Bök calls "the smallest possible aberration that can make the greatest possible difference" (Bök 2002).
 
-The clinamen function uses the Damerau-Levenshtein algorithm [10], which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them (see Eq. (1)). While we only return matches that actually appear in the book (i.e. they exist in the index), and by doing so eliminate the introduction of new words like Jarry's merdre, the swerve or aberration is still evident.
 
-\begin{lstlisting}
-  Clinamen(t):
-    matches = {v : 0 < dameraulevenshtein(t, v) <= 2},   for v $\in$ V
-    return matches
-\end{lstlisting}
 
-Line 1 of the algorithm above creates a set of matches, where each match is a word v from our vocabulary V if the Damerau-Levenshtein function computed with query term t returns a value less than or equal to 2 but higher than 0 (not the query term itself).
 
-\begin{equation}
-  clinamen(t) = [v \colon 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
-\label{eq:clinamen}
-\end{equation}
-\myequations{clinamen}
 
-\subsection{Syzygy}
-
-The syzygy surprises and confuses. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose.
-
-For the syzygy function, we made use of WordNet [29] through the NLTK python library [26] to find suitable results. Specifically, as shown in Eq. (2), the algorithm fetches the set of synonyms (synsets) first and then finds any hyponyms, hypernyms or holonyms for each of those (each of which denotes some sort of relationship or membership with its parent synonym). This mimics the syzygy alignment of three words in a line mentioned earlier (query $\to$ synonym $\to$ hypo/hyper/holonym).
-
-This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms for query term t from WordNet. It then loops through all individual items in the list of synonyms in line 2 to 5. Line 3 adds all hyponyms h for the current synonym s if there exists a word in the vocabulary same as the hyponym. Similarly lines 4 and 5 add all hypernyms and holonyms to the results list which is then returned in line 6.
-
-\begin{lstlisting}
-  Syzygy( t ):
-    synonyms = { s $\in$ WordNet-synsets( t ) }
-    for each s in synonyms:
-      hypo   = { h : h $\in$ WordNet-hyponyms( s ) }
-      hyper = { h : h $\in$ WordNet-hypernyms( s ) }
-      holo    = { h : h $\in$ WordNet-holonyms( s ) }
-      union = hypo $\cup$ hyper $\cup$ holo
-      add { h : h $\in$ union and $\exists$ h $\in$ V } to results
-    return results
-\end{lstlisting}
-
-\begin{equation}
-\begin{split}
-  syzygy(t) &= \{ h \colon h \in union(t) \ \text{and} \ \exists \ h \in V \}\\
-  union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\\
-  hypo(t) &= \{ h \colon h \in hyponyms(s) \}, \text{for} \ s \in syno(t)\\
-  hyper(t) &= \{ h \colon h \in hypernyms(s) \}, \text{for} \ s \in syno(t)\\
-  holo(t) &= \{ h \colon h \in holonyms(s) \}, \text{for} \ s \in syno(t)\\
-  syno(t) &= \{ s \colon s \in synonyms(t) \}
-\end{split}
-\label{eq:syzygy}
-\end{equation}
-\myequations{syzygy}
-
-\subsection{Antinomy}
-
-The antimony, in a pataphysical sense, is the mutually incompatible.
-
-For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). This function exhibits the same problem as mentioned above for the syzygy, just much worse.  Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g. based on more than one book – or, of course, the Web) could improve this method.
-
-This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and returns them if they appear in our dictionary of words.
-
-\begin{lstlisting}
-  Antinomy(t):
-    synonyms = { s $\in$ WordNet-synsets(t) }
-    for each s in synonyms:
-      add { h $\in$ WordNet-antonyms(s) : $\exists$ h $\in$ V } to results
-    return results
-\end{lstlisting}
-
-\begin{equation}
-  \begin{split}
-  antinomy( t ) &= \{ h \colon h \in anto( t ) \ \text{and} \ \exists \ h \in V \}\\
-  anto( t ) &= \{ h \colon h \in antonyms( s ) \}, \text{for} \ s \in syno( t )\\
-  syno( t ) &= \{ s \colon s \in synonyms( t ) \}
-  \end{split}
-\label{eq:antinomy}
-\end{equation}
-\myequations{antinomy}
 
 \section{Implementation}
 
@@ -325,9 +199,163 @@ The same principles and algorithms can be applied to different types of media, f
 \end{alltt}
 
 
+\section{User experience}
+
+Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request 'The Cat in the Hat' after reading a Dr. Seuss book to their child, and the system employs an anomalous method on the query and searched 'sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/resultexample}
+\caption[Feedback button]{Feedback button}
+\label{fig:feedback}
+\end{figure}
+
+The above image (figure 3) shows an example of how this could be implemented. The little green candle (a reference to pataphysics in itself by the way) shows a pop-up note when hovered over with the mouse pointer. In this case the original query could have been ‘tree’ and ‘car’ was returned as an opposite to that.
+
+In the end, it comes to a point of being able to identify which of these factors will affect how the user perceives the results and which do not, and therefore give the system greater flexibility. This in itself is a huge undertaking, with which large quantities of empirical data will be required and is therefore left for future work on the project.
+
+\section{Algorithms}
+
+\begin{table}[htb]
+  \begin{tabu}{X[1]|X[3]X[3]X[2]}
+  \toprule
+  % \cline{2-4}
+  &
+  \textbf{clinamen}
+  &
+  \textbf{syzygy}
+  &
+  \textbf{antinomy}
+  \\ \midrule
+  \textbf{clear}
+  &
+  altar, leaf, pleas, cellar
+  &
+  vanish, allow, bare, pronounce
+  &
+  opaque
+  \\ \midrule
+  \textbf{solid}
+  &
+  sound, valid, solar, slide
+  &
+  block, form, matter, crystal, powder
+  &
+  liquid, hollow
+  \\ \midrule
+  \textbf{books}
+  &
+  boot, bones, hooks, rocks, banks
+  &
+  dialogue, authority, record, fact
+  &
+  -
+  \\ \midrule
+  \textbf{troll}
+  &
+  grill, role, tell
+  &
+  wheel, roll, mouth, speak
+  &
+  -
+  \\ \midrule
+  \textbf{live}
+  &
+  love, lies, river, wave, size, bite
+  &
+  breathe, people, domicile, taste, see, be
+  &
+  recorded, dead
+  \\ \bottomrule
+  \end{tabu}
+\caption[Comparison of algorithms]{Comparison of algorithms}
+\label{algorithmscomp}
+\end{table}
+
+\subsection{Clinamen}
+
+The clinamen is the unpredictable swerve that Bök calls "the smallest possible aberration that can make the greatest possible difference" (Bök 2002).
+
+The clinamen function uses the Damerau-Levenshtein algorithm [10], which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them (see Eq. (1)). While we only return matches that actually appear in the book (i.e. they exist in the index), and by doing so eliminate the introduction of new words like Jarry's merdre, the swerve or aberration is still evident.
+
+\begin{lstlisting}
+  Clinamen(t):
+    matches = {v : 0 < dameraulevenshtein(t, v) <= 2},   for v $\in$ V
+    return matches
+\end{lstlisting}
+
+Line 1 of the algorithm above creates a set of matches, where each match is a word v from our vocabulary V if the Damerau-Levenshtein function computed with query term t returns a value less than or equal to 2 but higher than 0 (not the query term itself).
+
+\begin{equation}
+  clinamen(t) = [v \colon 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
+\label{eq:clinamen}
+\end{equation}
+\myequations{clinamen}
+
+\subsection{Syzygy}
+
+The syzygy surprises and confuses. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose.
+
+For the syzygy function, we made use of WordNet [29] through the NLTK python library [26] to find suitable results. Specifically, as shown in Eq. (2), the algorithm fetches the set of synonyms (synsets) first and then finds any hyponyms, hypernyms or holonyms for each of those (each of which denotes some sort of relationship or membership with its parent synonym). This mimics the syzygy alignment of three words in a line mentioned earlier (query $\to$ synonym $\to$ hypo/hyper/holonym).
+
+This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms for query term t from WordNet. It then loops through all individual items in the list of synonyms in line 2 to 5. Line 3 adds all hyponyms h for the current synonym s if there exists a word in the vocabulary same as the hyponym. Similarly lines 4 and 5 add all hypernyms and holonyms to the results list which is then returned in line 6.
+
+\begin{lstlisting}
+  Syzygy( t ):
+    synonyms = { s $\in$ WordNet-synsets( t ) }
+    for each s in synonyms:
+      hypo   = { h : h $\in$ WordNet-hyponyms( s ) }
+      hyper = { h : h $\in$ WordNet-hypernyms( s ) }
+      holo    = { h : h $\in$ WordNet-holonyms( s ) }
+      union = hypo $\cup$ hyper $\cup$ holo
+      add { h : h $\in$ union and $\exists$ h $\in$ V } to results
+    return results
+\end{lstlisting}
+
+\begin{equation}
+\begin{split}
+  syzygy(t) &= \{ h \colon h \in union(t) \ \text{and} \ \exists \ h \in V \}\\
+  union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\\
+  hypo(t) &= \{ h \colon h \in hyponyms(s) \}, \text{for} \ s \in syno(t)\\
+  hyper(t) &= \{ h \colon h \in hypernyms(s) \}, \text{for} \ s \in syno(t)\\
+  holo(t) &= \{ h \colon h \in holonyms(s) \}, \text{for} \ s \in syno(t)\\
+  syno(t) &= \{ s \colon s \in synonyms(t) \}
+\end{split}
+\label{eq:syzygy}
+\end{equation}
+\myequations{syzygy}
+
+\subsection{Antinomy}
+
+The antimony, in a pataphysical sense, is the mutually incompatible.
+
+For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). This function exhibits the same problem as mentioned above for the syzygy, just much worse.  Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g. based on more than one book – or, of course, the Web) could improve this method.
+
+This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and returns them if they appear in our dictionary of words.
+
+\begin{lstlisting}
+  Antinomy(t):
+    synonyms = { s $\in$ WordNet-synsets(t) }
+    for each s in synonyms:
+      add { h $\in$ WordNet-antonyms(s) : $\exists$ h $\in$ V } to results
+    return results
+\end{lstlisting}
+
+\begin{equation}
+  \begin{split}
+  antinomy( t ) &= \{ h \colon h \in anto( t ) \ \text{and} \ \exists \ h \in V \}\\
+  anto( t ) &= \{ h \colon h \in antonyms( s ) \}, \text{for} \ s \in syno( t )\\
+  syno( t ) &= \{ s \colon s \in synonyms( t ) \}
+  \end{split}
+\label{eq:antinomy}
+\end{equation}
+\myequations{antinomy}
+
+
 \section{Website}
 
 \url{http://pata.fania.eu}
+
 
 \section{APIs}
 
@@ -338,6 +366,7 @@ The same principles and algorithms can be applied to different types of media, f
   \item Flickr
   \item WordNet
 \end{itemize}
+
 
 \section{Design}
 
