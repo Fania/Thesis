@@ -74,6 +74,7 @@ To compile manually via commandline:
 - [ ] Word Count?
 - [ ] Inkscape export messes up colour of page?
 - [ ] Make sure rejected papers are included in thesis
+- [ ] Chapter headings in IPA [pʌtʌfɪzɪks]
 
 
 
