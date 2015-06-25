@@ -43,9 +43,12 @@
 % \usepackage{import}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage[T3,OT2,T1]{fontenc}
 % \usepackage[bitstream-charter]{mathdesign} % TEST
 % \usepackage{lmodern} % load a font with all the characters
+
+\usepackage[noenc]{tipa} % IPA
+
 
 \usepackage[main=UKenglish,french]{babel}
 \usepackage[UKenglish]{isodate}

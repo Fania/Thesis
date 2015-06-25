@@ -7,6 +7,8 @@
 
 \grule
 
+The prototype developed is described here in detail. It is based on and inspired by the background reading done in preparation for this stage.
+
 \todo{style inline code}
 \todo{run code on laptop and get snippets of all variable contents, e.g. faustroll, froll\_dict, \ldots}
 
@@ -21,14 +23,70 @@ Variables:
   \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$
   \item [faustroll] Faustroll words converted to \gls{nltk} Text: \lstinline$= nltk.Text(troll)$
   \item [faustroll\_dict] Alphabetical dictionary (list) of words: \lstinline$= sorted(set([w for w in faustroll]))$
-  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() not in sw]$
+  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() and w not in sw]$
 \end{description}
 
+book\_list:
+\begin{itemize}
+  \item 01.poe1.txt, 01.poe2.txt, 01.poe3.txt, 01.poe4.txt, 01.poe5.txt
+  \item 02.bergerac.txt
+  \item 03.gospel.txt
+  \item 04.bloy\_french.txt
+  \item 05.coleridge.txt
+  \item 06.darien\_french.txt
+  \item 10.arabiannights.txt
+  \item 11.grabbe\_german.txt
+  \item 13.lautreamont\_french.txt
+  \item 14.maeterlinck.txt
+  \item 15.mallarme\_french.txt
+  \item 17.odyssey.txt
+  \item 19.rabelais.txt
+  \item 22.rimbaud\_french.txt
+  \item 23.schwob\_german.txt
+  \item 24.ubu\_french.txt
+  \item 25.verlaine.txt
+  \item 26.verhaeren.txt
+  \item 27.verne.txt
+  \item faustroll.txt
+  \item phrases-fragments.txt
+  \item quotes.txt
+\end{itemize}
+
+\begin{enumerate}
+\item BAUDELAIRE, a volume of E.A. POE translations.
+\item BERGERAC, \emph{Works}, volume II, containing the \emph{Histrory of the States and Empires of the Sun}, and the \emph{History of Birds}.
+\item \emph{The Gospel according to} SAINT LUKE, in Greek.
+\item BLOY, \emph{The Ungrateful Beggar}.
+\item COLERIDGE, \emph{The Rime of the ancient Mariner}.
+\item DARIEN, \emph{The Thief}.
+\item DESBORDES-VALMORE, \emph{The Oath of the Little Men}.
+\item ELSKAMP, \emph{Illuminated Designs}.
+\item An odd volume of the \emph{Plays} of FLORIAN.
+\item An odd volume of \emph{The Thousand and One Nights}, in the GALLAND translation.
+\item GRABBE, \emph{Scherz, Satire, Ironie und tiefere Bedeutung}, comedy in three acts.
+\item KAHN, \emph{The Tale of Gold and of Silence}.
+\item LAUTREAMONT, \emph{The Lays of Maldoror}.
+\item MAETERLINCK, \emph{Aglavaine and Selysette}.
+\item MALLARME, \emph{Verse and Prose}.
+\item MENDES, \emph{Gog}.
+\item \emph{The Odyssey}, Teubner's edition.
+\item PELADAN, \emph{Babylon}.
+\item RABELAIS.
+\item JEAN DE CHILRA, \emph{The Sexual Hour}.
+\item HENRI DE REGNIER, \emph{The Jasper Cane}.
+\item RIMBAUD, \emph{The Illuminations}.
+\item SCHWOB, \emph{The Childrens' Crusade}.
+\item Ubu Roi.
+\item VERLAINE, \emph{Wisdom}.
+\item VERHAEREN, \emph{The Hallucinated Landscapes}.
+\item VERNE, \emph{Voyage to the Center of the Earth}.
+\end{enumerate}\citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY; and an old pucture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}
 
 sw:
-['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
+[i, me, my, myself, we, our, ours, ourselves, you, your, yours, yourself, yourselves, he, him, his, himself, she, her, hers, herself, it, its, itself, they, them, their, theirs, themselves, what, which, who, whom, this, that, these, those, am, is, are, was, were, be, been, being, have, has, had, having, do, does, did, doing, a, an, the, and, but, if, or, because, as, until, while, of, at, by, for, with, about, against, between, into, through, during, before, after, above, below, to, from, up, down, in, out, on, off, over, under, again, further, then, once, here, there, when, where, why, how, all, any, both, each, few, more, most, other, some, such, no, nor, not, only, own, same, so, than, too, very, s, t, can, will, just, don, should, now]
 
-
+freqdist:
+[(Faustroll, 77), (Bosse, 43), (Nage, 43), (skiff, 35), (time, 34), (ha, 32),  (CONCERNING, 30), (doctor, 30), (water, 29), (little, 28), (bishop, 27), (toward, 27), (without, 27)]
 
 
 
@@ -351,6 +409,304 @@ This algorithm is very similar to the algorithm for the syzygy. It finds all ant
 \label{eq:antinomy}
 \end{equation}
 \myequations{antinomy}
+
+\begin{alltt}
+SYZYGY
+synsets:
+[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+synset item:clear.n.01
+hypernym out:innocence
+[]
+synset item:open.n.01
+hypernym out:area
+hypernym out:country
+hypernym in:country
+[]
+synset item:unclutter.v.01
+hypernym out:change
+hypernym in:change
+hypernym out:alter
+hypernym out:modify
+[]
+synset item:clear.v.02
+hypernym out:make
+hypernym in:make
+hypernym out:create
+[]
+synset item:clear_up.v.04
+[]
+synset item:authorize.v.01
+hyponym out:approbate
+hyponym out:approve
+hyponym out:O.K.
+hyponym out:okay
+hyponym out:sanction
+hyponym out:certificate
+hyponym in:certificate
+hyponym out:commission
+hyponym out:declare
+hyponym in:declare
+hyponym out:license
+hyponym out:licence
+hyponym out:certify
+hyponym out:validate
+hyponym out:formalize
+hyponym out:formalise
+hypernym out:permit
+hypernym in:permit
+hypernym out:allow
+hypernym in:allow
+hypernym out:let
+hypernym in:let
+hypernym out:countenance
+hypernym in:countenance
+[]
+synset item:clear.v.05
+hyponym out:clear-cut
+hyponym out:deforest
+hyponym out:disforest
+hyponym out:disafforest
+hyponym out:denude
+hyponym out:bare
+hyponym in:bare
+hyponym out:denudate
+hyponym out:strip
+hyponym out:stump
+hypernym out:remove
+hypernym out:take
+hypernym in:take
+hypernym out:take_away
+hypernym out:withdraw
+[]
+synset item:pass.v.09
+hyponym out:clear
+hyponym in:clear
+hypernym out:succeed
+hypernym in:succeed
+hypernym out:win
+hypernym out:come_through
+hypernym out:bring_home_the_bacon
+hypernym out:deliver_the_goods
+[]
+synset item:clear.v.07
+[]
+synset item:clear.v.08
+hypernym out:vanish
+hypernym in:vanish
+hypernym out:disappear
+hypernym out:go_away
+[]
+synset item:clear.v.09
+hyponym out:hop
+hypernym out:pass
+hypernym in:pass
+hypernym out:overtake
+hypernym out:overhaul
+[]
+synset item:clear.v.10
+hypernym out:clarify
+hypernym out:clear_up
+hypernym out:elucidate
+[]
+synset item:clear.v.11
+hypernym out:free
+hypernym in:free
+hypernym out:discharge
+[]
+synset item:clear.v.12
+hypernym out:rid
+hypernym out:free
+hypernym in:free
+hypernym out:disembarrass
+[]
+synset item:net.v.02
+hypernym out:yield
+hypernym out:pay
+hypernym in:pay
+hypernym out:bear
+[]
+synset item:net.v.01
+hypernym out:profit
+hypernym out:gain
+hypernym in:gain
+hypernym out:benefit
+hypernym in:benefit
+[]
+synset item:gain.v.08
+hyponym out:eke_out
+hyponym out:squeeze_out
+hyponym out:gross
+hyponym out:profit
+hyponym out:turn_a_profit
+hyponym out:rake_in
+hyponym out:shovel_in
+hyponym out:rake_off
+hyponym out:take_home
+hyponym out:bring_home
+hyponym out:yield
+hyponym out:pay
+hyponym in:pay
+hyponym out:bear
+hypernym out:get
+hypernym out:acquire
+[]
+synset item:clear.v.16
+hypernym out:sell
+[]
+synset item:clear.v.17
+hypernym out:pass
+hypernym in:pass
+hypernym out:clear
+hypernym in:clear
+[]
+synset item:acquit.v.01
+hyponym out:purge
+hyponym out:vindicate
+hyponym out:whitewash
+hypernym out:pronounce
+hypernym in:pronounce
+hypernym out:label
+hypernym out:judge
+hypernym in:judge
+[]
+synset item:clear.v.19
+hypernym out:settle
+hypernym out:square_off
+hypernym out:square_up
+hypernym out:determine
+hypernym in:determine
+[]
+synset item:clear.v.20
+hypernym out:change
+hypernym in:change
+hypernym out:alter
+hypernym out:modify
+[]
+synset item:clear.v.21
+hypernym out:empty
+hypernym in:empty
+[]
+synset item:clear.v.22
+hypernym out:take_out
+hypernym out:move_out
+hypernym out:remove
+[]
+synset item:clear.v.23
+hypernym out:empty
+hypernym in:empty
+[]
+synset item:clear.v.24
+hypernym out:remove
+hypernym out:take
+hypernym in:take
+hypernym out:take_away
+hypernym out:withdraw
+[]
+synset item:clear.a.01
+[]
+synset item:clear.s.02
+[]
+synset item:clear.s.03
+[]
+synset item:clear.a.04
+[]
+synset item:clear.s.05
+[]
+synset item:clear.s.06
+[]
+synset item:clean.s.03
+[]
+synset item:clear.s.08
+[]
+synset item:clear.s.09
+[]
+synset item:well-defined.a.02
+[]
+synset item:clear.a.11
+[]
+synset item:clean.s.02
+[]
+synset item:clear.s.13
+[]
+synset item:clear.s.14
+[]
+synset item:clear.s.15
+[]
+synset item:absolved.s.01
+[]
+synset item:clear.s.17
+[]
+synset item:clear.r.01
+[]
+synset item:clearly.r.04
+[]
+ANTINOMY
+synsets:
+[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+synset item:clear.n.01
+synset item:open.n.01
+synset item:unclutter.v.01
+antonym out:clutter
+antonym in:clutter
+synset item:clear.v.02
+synset item:clear_up.v.04
+antonym out:overcast
+antonym in:overcast
+synset item:authorize.v.01
+synset item:clear.v.05
+synset item:pass.v.09
+synset item:clear.v.07
+antonym out:bounce
+antonym in:bounce
+synset item:clear.v.08
+synset item:clear.v.09
+synset item:clear.v.10
+synset item:clear.v.11
+synset item:clear.v.12
+synset item:net.v.02
+synset item:net.v.01
+synset item:gain.v.08
+synset item:clear.v.16
+synset item:clear.v.17
+synset item:acquit.v.01
+antonym out:convict
+antonym in:convict
+synset item:clear.v.19
+synset item:clear.v.20
+synset item:clear.v.21
+synset item:clear.v.22
+synset item:clear.v.23
+synset item:clear.v.24
+synset item:clear.a.01
+antonym out:unclear
+antonym in:unclear
+synset item:clear.s.02
+synset item:clear.s.03
+synset item:clear.a.04
+antonym out:opaque
+antonym in:opaque
+synset item:clear.s.05
+synset item:clear.s.06
+synset item:clean.s.03
+synset item:clear.s.08
+synset item:clear.s.09
+synset item:well-defined.a.02
+antonym out:ill-defined
+antonym in:ill-defined
+synset item:clear.a.11
+antonym out:cloudy
+antonym in:cloudy
+synset item:clean.s.02
+synset item:clear.s.13
+synset item:clear.s.14
+synset item:clear.s.15
+synset item:absolved.s.01
+synset item:clear.s.17
+synset item:clear.r.01
+synset item:clearly.r.04
+\end{alltt}
+
+
 
 
 \section{Website}
