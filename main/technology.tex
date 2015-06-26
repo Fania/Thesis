@@ -22,46 +22,6 @@ Knowledge needed to understand project:
 \todo{update all graphics with inkscape}
 
 
-\section{Searching vs. Browsing}
-
-\todo{put section into foundations chapter?}
-
-What do we actually mean by searching? Usually it implies that there is something to be found, an \gls{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
-
-From the users' point of view the search process can be broken down into four activities \citep{Sutcliffe1998} reminiscent of classic problem solving techniques \citep{Polya1957}:
-
-\begin{description}
-  \item [Problem identification] \gls{in},
-  \item [Need articulation] \gls{in} in natural language terms,
-  \item [Query formulation] translate \gls{in} into query terms, and
-  \item [Results evaluation] compare against \gls{in}.
-\end{description}
-
-This model poses problems when we consider a situation where an \gls{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \citep{Marchionini1988} and they laid out a framework with the following main elements.
-
-\begin{itemize}
-  \item Setting (the context of the search and external factors such as time, cost)
-  \item Task domain (the body of knowledge, the subject)
-  \item Search system (the database or web search engine)
-  \item User (the user’s experience)
-  \item Outcomes (the assessment of the results/answers)
-\end{itemize}
-
-Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \citep{DeVries1993, Marchionini2006}. A situation where an \gls{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
-
-Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g. fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require certain extend of interpretation or prediction (e.g. analysis, evaluation, forecasting, transformation).
-
-When it comes to exploratory search though, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploring \citep{Marchionini2006}.
-
-\begin{quote}
-  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \citep{Marchionini2006}
-\end{quote}
-
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \citep{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \citep{Boden2003}.
-
-All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
-
-
 \section{Information Retrieval}
 
 \begin{quote}
@@ -94,32 +54,85 @@ There are different models for different needs, for example a multimedia system 
 
 The notation for \gls{ir} models is as follows \citep[quoted from][p.58]{Baeza-Yates2011}:
 
-An \gls{ir} model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:\\
+An \gls{ir} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 \itab{$D$} \tab{is the set of documents,}\\
 \itab{$Q$} \tab{is the set of queries,}\\
 \itab{$F$} \tab{is the framework (e.g. sets, Boolean relations, vectors,}\\
 \itab{}    \tab{linear algebra\ldots),}\\
-\itab{$R(q_{i}, d_{j})$}
-            \tab{is the ranking function, where $q_{i} \in Q$ and $d_{j} \in D$,}\\
+\itab{$R(q_i, d_j)$}
+            \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
 \itab{$t$} \tab{is the number of index terms in a document collection,}\\
-\itab{$V =\{k_{1},\ldots, k_{t}\}$}
+\itab{$V =\{k_1,\ldots, k_t\}$}
             \tab{is the set of all distinct index terms in a document}\\
 \itab{}     \tab{collection (vocabulary).}
 
-% An \gls{ir} model is a quadruple $[D,Q,F,R(q_{i}, d_{j})]$ where:
+\todo{change font again because of ligatures?}
+
+This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
+
+
+\subsubsection{Index}
+
+\todo{describe index}
+An index or inverted index is blah blah blah....
+diagram?
+
+
+
+A 'conjunctive component' describes which terms occur in a document and which ones do not. E.g. for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
+
 % \begin{description}
-%   \item [$D$] is the set of documents
-%   \item [$Q$] is the set of queries
-%   \item [$F$] is the framework (e.g. sets, Boolean relations, vectors, linear algebra\ldots)
-%   \item [$R(q_{i}, d_{j})$] is the ranking function, where $q_{i} \in Q$ and $d_{j} \in D$
-%   \item [$t$] is the number of index terms in document collection
-%   \item [$V =\{k_{1},\ldots, k_{t}\}$] is the set of all distinct index terms in document collection (vocabulary)
+%   \item [$c(d)$] is the term conjunctive component for document $d$
+%   \item [$c(q)$] is the term conjunctive component for query $q$
 % \end{description}
 
+\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
+\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
 
-\subsection{The Boolean Model}
+The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
-The similarity of document $d_j$ to query $q$ is defined as follows (quoted from \citep[p.65]{Baeza-Yates2011})
+\begin{equation}
+  \bbordermatrix{~ & d_1 & d_2 \cr
+                k_1 & f_{1,1} & f_{1,2} \cr
+                k_2 & f_{2,1} & f_{2,2} \cr
+                k_3 & f_{3,1} & f_{3,2} \cr}
+\label{eq:tdm}
+\end{equation}
+\myequations{Term-document matrix}
+
+% \begin{gather}
+% \frac{J_1(a k s)}{\sqrt{\pi } s}\\
+% \shortintertext{where}
+% \begin{aligned}
+% &a \text{ is lens radius}\\
+% &k =\frac{2 \pi }{\lambda }\\
+% &s =\sqrt{\left(\frac{u}{z_2}+\frac{x}{z_1}\right){}^2+\left(\frac{v}{z_2}+\frac{y}{z_1}\right){}^2}
+% \end{aligned}\notag
+% \label{eq:xyz}
+% \end{gather}
+
+This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
+
+The dictionary is usually processed to eliminate punctuation and stop words (e.g. a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. Techniques that are useful for this are the following \citep[Ch.2]{Manning2009}.
+
+\begin{description}
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
+\end{description}
+
+For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
+
+
+
+
+
+
+\subsubsection{The Boolean Model}
+
+One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows (quoted from \citep[p.65]{Baeza-Yates2011})
 
 \begin{equation}
   sim(d_j,q) =
@@ -134,7 +147,13 @@ The similarity of document $d_j$ to query $q$ is defined as follows (quoted from
 Sometimes things are not quite black and white though and we need to weigh the importance of words somehow. The easiest way to do that is by looking at the frequency in which a word occurs.
 
 
-\subsection{The Vector Model}
+
+
+
+
+
+
+\subsubsection{The Vector Model}
 
 The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents (taken from \citep[p.78]{Baeza-Yates2011}).
 
@@ -274,59 +293,7 @@ This means that rare terms have a higher weight and more so if they occur a lot 
 \subsubsection*{Architecture}
 
 
-\subsubsection*{Index}
 
-\todo{describe index}
-An index or inverted index is blah blah blah....
-diagram?
-
-
-
-A 'conjunctive component' describes which terms occur in a  document and which ones do not. E.g. for $V =\{k_{1},\ldots, k_{t}\}$, if $[ k_{1},k_{2},k_{3}]$ occur in $d_{j}$ then it could be $(1,1,1)$ which means all terms occur, or $(1,0,0)$ which means only term $k_{1}$ appears in $d_{j}$.
-
-% \begin{description}
-%   \item [$c(d)$] is the term conjunctive component for document $d$
-%   \item [$c(q)$] is the term conjunctive component for query $q$
-% \end{description}
-
-\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
-\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
-
-The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
-
-\begin{equation}
-  \bbordermatrix{~ & d_1 & d_2 \cr
-                k_1 & f_{1,1} & f_{1,2} \cr
-                k_2 & f_{2,1} & f_{2,2} \cr
-                k_3 & f_{3,1} & f_{3,2} \cr}
-\label{eq:tdm}
-\end{equation}
-\myequations{Term-document matrix}
-
-% \begin{gather}
-% \frac{J_1(a k s)}{\sqrt{\pi } s}\\
-% \shortintertext{where}
-% \begin{aligned}
-% &a \text{ is lens radius}\\
-% &k =\frac{2 \pi }{\lambda }\\
-% &s =\sqrt{\left(\frac{u}{z_2}+\frac{x}{z_1}\right){}^2+\left(\frac{v}{z_2}+\frac{y}{z_1}\right){}^2}
-% \end{aligned}\notag
-% \label{eq:xyz}
-% \end{gather}
-
-This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
-
-The dictionary is usually processed to eliminate punctuation and stop words (e.g. a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. Techniques that are useful for this are the following \citep[Ch.2]{Manning2009}.
-
-\begin{description}
-  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
-  \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
-\end{description}
-
-For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
 
 
 \subsubsection*{Search Algorithms}
