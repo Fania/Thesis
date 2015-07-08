@@ -75,6 +75,8 @@ To compile manually via commandline:
 - [ ] Inkscape export messes up colour of page?
 - [ ] Make sure rejected papers are included in thesis
 - [ ] Chapter headings in IPA [pʌtʌfɪzɪks]
+- [ ] Change numbering order of chapters?
+- [ ] Tools of the Trade?
 
 
 

@@ -28,13 +28,7 @@ Knowledge needed to understand project:
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \citep{Baeza-Yates2011}
 \end{quote}
 
-In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
-
-Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\citep{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \citep{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \citep{Brin1998, Brin1998b}.
-
-Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
-
-\gls{ir} does not only refer to the retrieval of online information from the Internet but generally also for any offline databases for example. In this survey I will focus on \gls{ir} for the World Wide Web and whenever I'm speaking of an \gls{ir} system I will generally refer to a Web search engine system unless stated otherwise. The architecture of a search engine is made up of different components so to speak. A crawler, an indexer and a ranking system and the user interface. See figure \ref{fig:SEA}.
+In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure \ref{fig:SEA}.
 
 \begin{figure}[htbp]
   \centering
@@ -43,6 +37,10 @@ Any \gls{ir} process is constrained by factors like subject, context, time, cost
   \label{fig:SEA}
 \end{figure}
 
+Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\citep{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \citep{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \citep{Brin1998, Brin1998b}.
+
+Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
+
 
 \subsection{IR Models}
 
@@ -50,9 +48,9 @@ Any \gls{ir} process is constrained by factors like subject, context, time, cost
   \gls{ir} models describe ranking algorithms formally. ???
 \end{comment}
 
-There are different models for different needs, for example a multimedia system is going to be different than a text based system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
+There are different models for different needs, for example a multimedia system is going to be different than a text based system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
 
-The notation for \gls{ir} models is as follows \citep[quoted from][p.58]{Baeza-Yates2011}:
+The notation for \gls{ir} models is as follows \citep[adapted from][p.58]{Baeza-Yates2011}:
 
 An \gls{ir} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 \itab{$D$} \tab{is the set of documents,}\\
@@ -71,9 +69,21 @@ An \gls{ir} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
 
 
-\subsubsection{Index}
 
-\todo{describe index}
+\paragraph{Crawler}
+
+The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given 'seed' pages and scraping them for existing hyperlinks. It then follows the links and repeats the process over and over.
+
+The Googlebot is a wellknown example.
+
+\url{https://support.google.com/webmasters/answer/182072} \href{https://support.google.com/webmasters/answer/182072}{Googlebot}
+
+
+
+
+
+\paragraph{Index}
+
 An index or inverted index is blah blah blah....
 diagram?
 
