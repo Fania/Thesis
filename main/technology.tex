@@ -42,6 +42,82 @@ Most big Web search engines like Google, Baidu or Bing focus on usefulness and r
 Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
 
 
+\paragraph{Crawler}
+
+The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given 'seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are wellknown examples.
+
+
+\paragraph{Index}
+
+An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practially implement this is to create a 'term-document matrix'. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+
+\begin{equation}
+  \bbordermatrix{~ & d_1 & d_2 \cr
+                k_1 & f_{1,1} & f_{1,2} \cr
+                k_2 & f_{2,1} & f_{2,2} \cr
+                k_3 & f_{3,1} & f_{3,2} \cr}
+\label{eq:tdm}
+\end{equation}
+\myequations{Term-document matrix}
+
+The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctuation and stop-words (e.g. I, a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
+
+%
+% s3://aws-publicdatasets/cc-index/collections/[CC-MAIN-YYYY-WW]/indexes/
+% s3://aws-publicdatasets/cc-index/collections/[CC-MAIN-2015-22]/indexes/segments/1432207930423.94/warc/CC-MAIN-20150521113210-00247-ip-10-180-206-219.ec2.internal.warc.gz
+%
+% https://gist.github.com/Smerity/e750f0ef0ab9aa366558#file-bbc-wet
+%
+% common-crawl/crawl-data/CC-MAIN-2015-22/segments/1432207930423.94/warc/CC-MAIN-20150521113210-00247-ip-10-180-206-219.ec2.internal.warc.gz
+
+
+\paragraph{Ranking}
+
+Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acrlong{tf}-\acrlong{idf} weighting or \acrshort{tf}-\acrshort{idf} weighting for short. Given a \gls{tf} weight of $tf_{i,j}$ and a \gls{idf} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
+
+\begin{equation}
+  w_{i,j} =
+  \begin{cases}
+  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
+  0 & \text{otherwise}
+  \end{cases}
+  \label{eq:wij}
+\end{equation}
+\myequations{wij}
+
+Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula enusres that rare terms have a higher weight and more so if they occur a lot in one document.
+
+The \gls{tf} $tf_{i,j}$ is calculated and normalised using a log function as:
+$1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
+
+The total \gls{tf} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurance of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
+
+The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \gls{idf} of term $k_i$. The more often a term occurs in different documents the lower the \gls{idf}.
+
+% \begin{equation}
+%   tf_{i,j}=
+%   \begin{cases}
+%   1+\log f_{i,j} & \text{if} \ f_{i,j} > 0\\
+%   0 & \text{otherwise}
+%   \end{cases}
+%   \label{eq:tfij}
+% \end{equation}
+% \myequations{tfij}
+
+% \begin{equation}
+%   F_i = \sum_{j=1}^{N}f_{i,j}
+%   \label{eq:Fi}
+% \end{equation}
+% \myequations{Fi}
+
+% \begin{equation}
+%   idf_j = \log \frac{N}{df_i}
+%   \label{eq:idfj}
+% \end{equation}
+% \myequations{idfj}
+
+
+
 \subsection{IR Models}
 
 \begin{comment}
@@ -70,74 +146,7 @@ This means, given a query $q$ and a set of documents $D$ in which we wish to sea
 
 
 
-\paragraph{Crawler}
-
-The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given 'seed' pages and scraping them for existing hyperlinks. It then follows the links and repeats the process over and over.
-
-The Googlebot is a wellknown example.
-
-\url{https://support.google.com/webmasters/answer/182072} \href{https://support.google.com/webmasters/answer/182072}{Googlebot}
-
-
-
-
-
-\paragraph{Index}
-
-An index or inverted index is blah blah blah....
-diagram?
-
-
-
-A 'conjunctive component' describes which terms occur in a document and which ones do not. E.g. for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
-
-% \begin{description}
-%   \item [$c(d)$] is the term conjunctive component for document $d$
-%   \item [$c(q)$] is the term conjunctive component for query $q$
-% \end{description}
-
-\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
-\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
-
-The \textbf{term-document matrix} can be written as follows, where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
-
-\begin{equation}
-  \bbordermatrix{~ & d_1 & d_2 \cr
-                k_1 & f_{1,1} & f_{1,2} \cr
-                k_2 & f_{2,1} & f_{2,2} \cr
-                k_3 & f_{3,1} & f_{3,2} \cr}
-\label{eq:tdm}
-\end{equation}
-\myequations{Term-document matrix}
-
-% \begin{gather}
-% \frac{J_1(a k s)}{\sqrt{\pi } s}\\
-% \shortintertext{where}
-% \begin{aligned}
-% &a \text{ is lens radius}\\
-% &k =\frac{2 \pi }{\lambda }\\
-% &s =\sqrt{\left(\frac{u}{z_2}+\frac{x}{z_1}\right){}^2+\left(\frac{v}{z_2}+\frac{y}{z_1}\right){}^2}
-% \end{aligned}\notag
-% \label{eq:xyz}
-% \end{gather}
-
-This is how an index could look like (all possible words that occur within a collection of documents), but usually an inverted index is prepared for further calculations. This inverted index is basically a list of words (the so called dictionary or vocabulary) with each word pointing to a list (the so called postings list) that indicates the documents in which the word occurs. The inverted index can include other values such as the document frequency (the number of documents that contain the term).
-
-The dictionary is usually processed to eliminate punctuation and stop words (e.g. a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. Techniques that are useful for this are the following \citep[Ch.2]{Manning2009}.
-
-\begin{description}
-  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
-  \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
-\end{description}
-
-For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
-
-
-
-
+\todo{decide on which method for highlighting words - italic or apostophe}
 
 
 \subsubsection{The Boolean Model}
@@ -154,12 +163,17 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 \myequations{sim}
 
+A 'conjunctive component' describes which terms occur in a document and which ones do not. E.g. for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
+
+% \begin{description}
+%   \item [$c(d)$] is the term conjunctive component for document $d$
+%   \item [$c(q)$] is the term conjunctive component for query $q$
+% \end{description}
+
+\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
+\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
+
 Sometimes things are not quite black and white though and we need to weigh the importance of words somehow. The easiest way to do that is by looking at the frequency in which a word occurs.
-
-
-
-
-
 
 
 
@@ -235,68 +249,6 @@ Where,\\
 \itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
 
 There are several other common \gls{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set \citep{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986} models or latent semantic indexing \citep{Deerwester1990}, neural network models and others \citep{Macdonald2009, Schuetze1998, Schuetze}.
-
-
-\subsection*{Total Term Frequency}
-
-\begin{equation}
-  F_i = \sum_{j=1}^{N}f_{i,j}
-  \label{eq:Fi}
-\end{equation}
-\myequations{Fi}
-
-Where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurance of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
-
-
-\subsubsection*{Term Frequency TF}
-
-normalised using log function
-
-\begin{equation}
-  tf_{i,j}=
-  \begin{cases}
-  1+\log f_{i,j} & \text{if} \ f_{i,j} > 0\\
-  0 & \text{otherwise}
-  \end{cases}
-  \label{eq:tfij}
-\end{equation}
-\myequations{tfij}
-
-
-\subsubsection*{Inverse Document Frequency IDF}
-
-\begin{equation}
-  idf_j = \log \frac{N}{df_i}
-  \label{eq:idfj}
-\end{equation}
-\myequations{idfj}
-
-Where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the IDF of term $k_i$. The more often a term occurs in different documents the lower the IDF.
-
-
-\subsubsection*{TF-IDF Weighting}
-
-\begin{equation}
-  w_{i,j} =
-  \begin{cases}
-  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
-  0 & \text{otherwise}
-  \end{cases}
-  \label{eq:wij}
-\end{equation}
-\myequations{wij}
-
-Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. In simpler notation this is:
-
-\begin{equation}
-  w_{i,j} = tf_{i,j}\times idf_j
-  \label{eq:wij2}
-\end{equation}
-\myequations{wij2}
-
-This means that rare terms have a higher weight and more so if they occur a lot in one document.
-
-
 
 
 
@@ -471,6 +423,17 @@ Goals of \gls{nlp} are to get computers to perform useful tasks involving human 
 \end{itemize}
 
 e.g. machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
+
+
+\hypertarget{stemming}{Techniques} that are useful for this are the following \citep[Ch.2]{Manning2009}.
+
+\begin{description}
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
+\end{description}
 
 
 \subsection*{Regular Expressions}
