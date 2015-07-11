@@ -44,18 +44,18 @@ Any \gls{ir} process is constrained by factors like subject, context, time, cost
 
 \paragraph{Crawler}
 
-The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given 'seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are wellknown examples.
+The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given 'seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are well-known examples.
 
 
 \paragraph{Index}
 
-An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practially implement this is to create a 'term-document matrix'. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a 'term-document matrix'. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
 \begin{equation}
   \bbordermatrix{~ & d_1 & d_2 \cr
-                k_1 & f_{1,1} & f_{1,2} \cr
-                k_2 & f_{2,1} & f_{2,2} \cr
-                k_3 & f_{3,1} & f_{3,2} \cr}
+        k_1 & f_{1,1} & f_{1,2} \cr
+        k_2 & f_{2,1} & f_{2,2} \cr
+        k_3 & f_{3,1} & f_{3,2} \cr}
 \label{eq:tdm}
 \end{equation}
 \myequations{Term-document matrix}
@@ -73,7 +73,7 @@ The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctu
 
 \paragraph{Ranking}
 
-Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acrlong{tf}-\acrlong{idf} weighting or \acrshort{tf}-\acrshort{idf} weighting for short. Given a \gls{tf} weight of $tf_{i,j}$ and a \gls{idf} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
+Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acrlong{tf}-\acrlong{idf} or \acrshort{tf}-\acrshort{idf} for short. Given a \gls{tf} weight of $tf_{i,j}$ and a \gls{idf} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
 
 \begin{equation}
   w_{i,j} =
@@ -83,14 +83,14 @@ Ranking is the process of ordering search results using a given weight. One simp
   \end{cases}
   \label{eq:wij}
 \end{equation}
-\myequations{wij}
+\myequations{TF-IDF Ranking}
 
-Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula enusres that rare terms have a higher weight and more so if they occur a lot in one document.
+Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
 
 The \gls{tf} $tf_{i,j}$ is calculated and normalised using a log function as:
 $1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
 
-The total \gls{tf} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurance of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
+The total \gls{tf} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
 
 The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \gls{idf} of term $k_i$. The more often a term occurs in different documents the lower the \gls{idf}.
 

@@ -76,8 +76,8 @@ To compile manually via commandline:
 - [ ] Make sure rejected papers are included in thesis
 - [ ] Chapter headings in IPA [pʌtʌfɪzɪks]
 - [ ] Change numbering order of chapters?
-- [ ] Tools of the Trade?
-
+- [X] Tools of the Trade?
+- [ ] Academia it's own chapter?
 
 
 ## Errors
