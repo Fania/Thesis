@@ -20,7 +20,7 @@ Knowledge needed to understand project:
 \end{itemize}
 
 \todo{update all graphics with inkscape}
-
+\todo{references for this whole chapter?}
 
 \section{Information Retrieval}
 
@@ -49,7 +49,7 @@ The crawler, sometimes called spider, indexer or bot, is a program that processe
 
 \paragraph{Index}
 
-An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a 'term-document matrix'. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a \gls{tdm}. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
 \begin{equation}
   \bbordermatrix{~ & d_1 & d_2 \cr
@@ -60,6 +60,34 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 \end{equation}
 \myequations{Term-document matrix}
 
+\todo{example TDM for faustroll sentence?}
+
+\begin{figure}[hb]
+\[
+  \bbordermatrix{
+    ~ & Faustroll & Gospel & Voyage \cr
+    Faustroll & 77 & 0 & 0 \cr
+    father & 1 & 28 & 2 \cr
+    time & 34 & 16 & 129 \cr
+    purpose & 2 & 0 & 3 \cr
+    little & 28 & 16 & 81 \cr
+    background & 0 & 0 & 0 \cr
+    water & 29 & 7 & 120 \cr
+    doctor & 30 & 0 & 0 \cr
+    without & 27 & 7 & 117 \cr
+    skiff & 35 & 0 & 0 \cr
+    bishop & 27 & 0 & 2 \cr
+    God & 25 & 123 & 2 \cr
+    substance & 8 & 3 & 1 \cr
+    issue & 0 & 2 & 2 \cr
+    watch & 5 & 3 & 6 \cr
+  }
+\]
+\caption{Total wordcount of files: Faustroll=131891, Gospel=139669, Voyage=497295}
+\end{figure}
+
+
+\todo{cross references with hyperlink hypertarget}
 The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctuation and stop-words (e.g. I, a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
 
 %
