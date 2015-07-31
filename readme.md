@@ -78,6 +78,7 @@ To compile manually via commandline:
 - [ ] Change numbering order of chapters?
 - [X] Tools of the Trade?
 - [ ] Academia it's own chapter?
+- [ ] pata.fania.eu stuff
 
 
 ## Errors
