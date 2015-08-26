@@ -4,9 +4,9 @@ pdflatex -aux-directory=build main.tex
 
 \todo{Plan my thesis structure before writing}
 
-``...''
+``\ldots''
 
-\grule
+\grule{}
 
 \marginpar{Test Hello}
 
@@ -20,7 +20,7 @@ http://www.khirevich.com/latex/microtype/
 
 \begin{CJK}{UTF8}{min}
 \section{これは最初のセクションである}
-日本語で \LaTeX の組版を実証するための導入部分。
+日本語で \LaTeX{} の組版を実証するための導入部分。
 
 フォントはまた、数学的な形態および他の環境で使用することができる
 \end{CJK}
@@ -69,7 +69,7 @@ First use: \gls{nlp}. Second use: \gls{nlp}.
 \end{align}
 
 % COLOUR
-\textcolor{red}{300 words...}
+\textcolor{red}{300 words\ldots}
 
 \begin{comment}
 \end{comment}
@@ -85,7 +85,7 @@ First use: \gls{nlp}. Second use: \gls{nlp}.
 
 \begin{table}[h]
   \everyrow{\hrule}
-  \tabulinesep = 2mm
+  \tabulinesep{2mm}
   \begin{tabu}{|X|X|X|X|}
 
 
@@ -118,7 +118,7 @@ Aggressive      & Neutral            & Sympathetic  \\ \hline
         Sun & 20 & 13
         \end{tabular}
         \caption{First Week}
-        \label{tab:week1}
+\label{tab:week1}
     \end{subtable}
     \hfill
     \begin{subtable}[h]{0.45\textwidth}
@@ -135,10 +135,10 @@ Aggressive      & Neutral            & Sympathetic  \\ \hline
         Sun & 15 & 9
         \end{tabular}
         \caption{Second Week}
-        \label{tab:week2}
+\label{tab:week2}
     \end{subtable}
     \caption{Max and min temps recorded in the first two weeks of July}
-    \label{tab:temps}
+\label{tab:temps}
 \end{table}
 
 % FIGURES
@@ -169,8 +169,8 @@ import javax.swing.JApplet;
 import java.awt.Graphics;
 
 public class Hello extends JApplet {
-    public void paintComponent(Graphics g) {
-        g.drawString("Hello, world!", 65, 95);
+    public void paintComponent (Graphics g) {
+        g.drawString (``Hello, world!'', 65, 95);
     }
 }
 \end{lstlisting}
@@ -188,19 +188,19 @@ public class Hello extends JApplet {
 \begin{minipage}{.275\linewidth}
   \includegraphics[width=\linewidth]{FelixVallotton}
   \caption[figure1]{FelixVallotton}
-  \label{img1}
+\label{img1}
 \end{minipage}
 \hspace{.05\linewidth}
 \begin{minipage}{.275\linewidth}
   \includegraphics[width=\linewidth]{jarry}
   \caption[figure2]{jarry}
-  \label{img2}
+\label{img2}
 \end{minipage}
 \hspace{.05\linewidth}
 \begin{minipage}{.275\linewidth}
   \includegraphics[width=\linewidth]{jpicasso}
   \caption[figure3]{jpicasso}
-  \label{img3}
+\label{img3}
 \end{minipage}
 \end{figure}
 
@@ -214,14 +214,14 @@ public class Hello extends JApplet {
   breaklines=true,                 % sets automatic line breaking
   captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{mygreen},    % comment style
-  deletekeywords={...},            % if you want to delete keywords from the given language
+  deletekeywords={\ldots},            % if you want to delete keywords from the given language
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
   extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
   frame=single,                    % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
   language=Octave,                 % the language of the code
-  otherkeywords={*,...},            % if you want to add more keywords to the set
+  otherkeywords={*,\ldots},            % if you want to add more keywords to the set
   numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
   numbersep=5pt,                   % how far the line-numbers are from the code
   numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
@@ -232,5 +232,5 @@ public class Hello extends JApplet {
   stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{mymauve},     % string literal style
   tabsize=2,                       % sets default tabsize to 2 spaces
-  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  title=\lstname{}                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }

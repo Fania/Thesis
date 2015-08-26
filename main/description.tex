@@ -5,12 +5,12 @@
 
 \emph{Part of this research has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.}
 
-\grule
+\grule{}
 
 The prototype developed is described here in detail. It is based on and inspired by the background reading done in preparation for this stage.
 
 \todo{style inline code}
-\todo{run code on laptop and get snippets of all variable contents, e.g. faustroll, froll\_dict, \ldots}
+\todo{run code on laptop and get snippets of all variable contents, e.g.\ faustroll, froll\_dict, \ldots}
 
 
 \section{Setup}
@@ -19,11 +19,11 @@ In TEXTSURFER.PY
 
 Variables:
 \begin{description}
-  \item [book\_list] List of books in library: \lstinline$= PlaintextCorpusReader(corpus_root, '.*\.txt')$
-  \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$
+  \item [book\_list] List of books in library: \lstinline$= PlaintextCorpusReader(corpus_root, '.*\.txt')$% chktex 25
+  \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$% chktex 25
   \item [faustroll] Faustroll words converted to \gls{nltk} Text: \lstinline$= nltk.Text(troll)$
   \item [faustroll\_dict] Alphabetical dictionary (list) of words: \lstinline$= sorted(set([w for w in faustroll]))$
-  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() and w not in sw]$
+  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() and w not in sw]$% chktex 25
 \end{description}
 
 book\_list:
@@ -61,7 +61,7 @@ book\_list:
 \item DARIEN, \emph{The Thief}.
 \item DESBORDES-VALMORE, \emph{The Oath of the Little Men}.
 \item ELSKAMP, \emph{Illuminated Designs}.
-\item An odd volume of the \emph{Plays} of FLORIAN.
+\item An odd volume of the \emph{Plays} of FLORIAN\@.
 \item An odd volume of \emph{The Thousand and One Nights}, in the GALLAND translation.
 \item GRABBE, \emph{Scherz, Satire, Ironie und tiefere Bedeutung}, comedy in three acts.
 \item KAHN, \emph{The Tale of Gold and of Silence}.
@@ -71,7 +71,7 @@ book\_list:
 \item MENDES, \emph{Gog}.
 \item \emph{The Odyssey}, Teubner's edition.
 \item PELADAN, \emph{Babylon}.
-\item RABELAIS.
+\item RABELAIS\@.
 \item JEAN DE CHILRA, \emph{The Sexual Hour}.
 \item HENRI DE REGNIER, \emph{The Jasper Cane}.
 \item RIMBAUD, \emph{The Illuminations}.
@@ -80,35 +80,35 @@ book\_list:
 \item VERLAINE, \emph{Wisdom}.
 \item VERHAEREN, \emph{The Hallucinated Landscapes}.
 \item VERNE, \emph{Voyage to the Center of the Earth}.
-\end{enumerate}\citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}
+\end{enumerate}\citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}
 
 
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{DocteurFaustroll}
-  \caption[Aubrey Beardsley's 'Docteur Faustroll']{Aubrey Beardsley's 'Docteur Faustroll'}
-  \label{fig:beardsley}
+  \caption[Aubrey Beardsley's `Docteur Faustroll']{Aubrey Beardsley's `Docteur Faustroll'}
+\label{fig:beardsley}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{JaneAvril}
-  \caption[Toulouse-Lautrec's 'Jane Avril']{Toulouse-Lautrec's 'Jane Avril'}
-  \label{fig:toulouse}
+  \caption[Toulouse-Lautrec's `Jane Avril']{Toulouse-Lautrec's `Jane Avril'}
+\label{fig:toulouse}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{RevueBlanche}
-  \caption[Bonnard's 'Revue Blanche']{Bonnard's 'Revue Blanche'}
-  \label{fig:bonnard}
+  \caption[Bonnard's `Revue Blanche']{Bonnard's `Revue Blanche'}
+\label{fig:bonnard}
 \end{figure}
 
 
 
 
-stopwords see \ref{app:code}
+stopwords see~\ref{app:code}
 
 freqdist:
 [(Faustroll, 77), (Bosse, 43), (Nage, 43), (skiff, 35), (time, 34), (ha, 32),  (CONCERNING, 30), (doctor, 30), (water, 29), (little, 28), (bishop, 27), (toward, 27), (without, 27)]
@@ -152,9 +152,9 @@ The essence of the proposed search tool lies in its algorithms which make the di
 
 To link back to some of the creative, pataphysical concepts we have discussed earlier, let us put some of the ideas for our tool into perspective. The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
 
-We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure \ref{fig:patasearch01}) and influences all areas of the search tool.
+We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure~\ref{fig:patasearch01}) and influences all areas of the search tool.
 
-Our index will contain what Hendler and Hugill have called patadata [15].  Patadata is to metadata as metadata is to data - inspired by one of the definitions of pataphysics: that which is above that which is after physics [20]. This suggests that patadata provides another layer of information above information.  If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective and that is precisely what pataphysics is for.
+Our index will contain what Hendler and Hugill have called patadata [15].  Patadata is to metadata as metadata is to data --- inspired by one of the definitions of pataphysics: that which is above that which is after physics [20]. This suggests that patadata provides another layer of information above information.  If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective and that is precisely what pataphysics is for.
 
 \todo{redraw figure}
 
@@ -175,7 +175,7 @@ Our index will contain what Hendler and Hugill have called patadata [15].  Patad
 
 The prototype described here (see Figure 2) was developed as a proof-of-concept tool to demonstrate some example search results using pataphysical algorithms.
 
-It is by no means a fully functioning Web search engine, in fact it does not search the Web at all, and only the main algorithmic functionality is discussed here. The tool searches the text of an example book, namely Alfred Jarry’s Exploits and Opinions of Dr. Faustroll, Pataphysician [20].
+It is by no means a fully functioning Web search engine, in fact it does not search the Web at all, and only the main algorithmic functionality is discussed here. The tool searches the text of an example book, namely Alfred Jarry’s Exploits and Opinions of Dr.\ Faustroll, Pataphysician [20].
 
 In short, the prototype’s workflow can be described as follows:
 \begin{itemize}
@@ -188,7 +188,7 @@ In short, the prototype’s workflow can be described as follows:
 
 The three functions inspired by pataphysics (clinamen, syzygy and antinomy) are described in more detail in the previous section. Figure 2 shows a screenshot of the resulting list of results for the query clear. The specific results for each of the three methods are simply a few words surrounding the pataphysicalised query term from within the book, which does not necessarily represent complete sentences but provides some context for the result.
 
-The same principles and algorithms can be applied to different types of media, for example images or video and even sound. The complete tool would include a mixture of different types of media in its results with various styles of displaying them (e.g. displaying images ordered as a Fibonacci spiral).
+The same principles and algorithms can be applied to different types of media, for example images or video and even sound. The complete tool would include a mixture of different types of media in its results with various styles of displaying them (e.g.\ displaying images ordered as a Fibonacci spiral).
 
 \subsection{Prototype 1}
 
@@ -213,39 +213,39 @@ The same principles and algorithms can be applied to different types of media, f
 
 ## setup
 
-1. read in faustroll book
-2. create `froll_dict` dictionary from text
-3. remove stopwords and numbers from `froll_dict`
+1.\ read in faustroll book
+2.\ create `froll_dict' dictionary from text
+3.\ remove stopwords and numbers from `froll_dict'
 
 ## text algorithm
 
-1. get query term
-2. execute three functions:
+1.\ get query term
+2.\ execute three functions:
 
-  2a. syzygy algorithm
-    1. get list of synonyms
-    2. for each synonym do the following:
-      a. find hyponyms; if a hyponym occurs in `froll_dict` then add to the output list
-      b. find hypernyms; if a hypernym occurs in `froll_dict` then add to the output list
-      c. find holonyms; if a holonym occurs in `froll_dict` then add to the output list
-    3. return list of syzygy words
+  2a.\ syzygy algorithm
+    1.\ get list of synonyms
+    2.\ for each synonym do the following:
+      a.\ find hyponyms; if a hyponym occurs in `froll_dict' then add to the output list
+      b.\ find hypernyms; if a hypernym occurs in `froll_dict' then add to the output list
+      c.\ find holonyms; if a holonym occurs in `froll_dict' then add to the output list
+    3.\ return list of syzygy words
 
-  2b. antinomy algorithm
-    1. get list of synonyms
-    2. for each synonym do the following:
-      a. find antonyms; if a antonym occurs in `froll_dict` then add to the output list
-    3. return list of antinomy words
+  2b.\ antinomy algorithm
+    1.\ get list of synonyms
+    2.\ for each synonym do the following:
+      a.\ find antonyms; if a antonym occurs in `froll_dict' then add to the output list
+    3.\ return list of antinomy words
 
-  2c. clinamen algorithm
-    1. find list of words within `froll_dict` that have a `dameraulevenshtein distance` of 1 or 2 (meaning, there are 1 or 2 spelling errors)
-    2. return list of clinamen words
+  2c.\ clinamen algorithm
+    1.\ find list of words within `froll_dict' that have a `dameraulevenshtein distance' of 1 or 2 (meaning, there are 1 or 2 spelling errors)
+    2.\ return list of clinamen words
 
-3. get sentences for all three output lists
+3.\ get sentences for all three output lists
 
-  3a. if the word appears in faustroll then find the nearest 5 words before and after the word
-  3b. return list of sentences
+  3a.\ if the word appears in faustroll then find the nearest 5 words before and after the word
+  3b.\ return list of sentences
 
-4. render results as html
+4.\ render results as html
 
 
 ---
@@ -256,22 +256,22 @@ The same principles and algorithms can be applied to different types of media, f
 
 - microsoft translate API key
 - flickr API key
-- (bing image search API key) - not used atm
+- (bing image search API key) --- not used atm
 
 ## image algorithm
 
-1. get query word
-2. get one syzygy word using syzygy algorithm 2a above
-3. translation party
-  3a. translate english to french
-  3b. translate french to japanese
-  3c. translate japanese to english
-4. get images
-  4a. search flickr for 10 matches to english translation
-  4b. get metadata for each
-  4c. add title, thumb, link to output list
-5. return output list
-6. render results as html
+1.\ get query word
+2.\ get one syzygy word using syzygy algorithm 2a above
+3.\ translation party
+  3a.\ translate english to french
+  3b.\ translate french to japanese
+  3c.\ translate japanese to english
+4.\ get images
+  4a.\ search flickr for 10 matches to english translation
+  4b.\ get metadata for each
+  4c.\ add title, thumb, link to output list
+5.\ return output list
+6.\ render results as html
 
 ---
 
@@ -281,28 +281,27 @@ The same principles and algorithms can be applied to different types of media, f
 
 - microsoft translate API key
 - youtube API stuff
-- (bing video search API key) - not used atm
+- (bing video search API key) --- not used atm
 
 ## video algorithm
 
-1. get query word
-2. get one syzygy word using syzygy algorithm
-3. translation party
-  3a. translate english to french
-  3b. translate french to japanese
-  3c. translate japanese to english
-4. get videos
-  4a. search YouTube for 10 matches to english translation
-  4b. get metadata for each
-  4c. add title, thumb, link to output list
-5. return output list
-6. render as html
+1.\ get query word
+2.\ get one syzygy word using syzygy algorithm
+3.\ translation party
+  3a.\ translate english to french
+  3b.\ translate french to japanese
+  3c.\ translate japanese to english
+4.\ get videos
+  4a.\ search YouTube for 10 matches to english translation
+  4b.\ get metadata for each
+  4c.\ add title, thumb, link to output list
+5.\ return output list
+6.\ render as html
 \end{alltt}
 
 
 \section{User experience}
-
-Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request 'The Cat in the Hat' after reading a Dr. Seuss book to their child, and the system employs an anomalous method on the query and searched 'sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
+Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request `The Cat in the Hat' after reading a Dr. Seuss book to their child, and the system employs an anomalous method on the query and searched `sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -350,7 +349,7 @@ In the end, it comes to a point of being able to identify which of these factors
   &
   dialogue, authority, record, fact
   &
-  -
+  ---
   \\ \midrule
   \textbf{troll}
   &
@@ -358,7 +357,7 @@ In the end, it comes to a point of being able to identify which of these factors
   &
   wheel, roll, mouth, speak
   &
-  -
+  ---
   \\ \midrule
   \textbf{live}
   &
@@ -375,13 +374,13 @@ In the end, it comes to a point of being able to identify which of these factors
 
 \subsection{Clinamen}
 
-The clinamen is the unpredictable swerve that Bök calls "the smallest possible aberration that can make the greatest possible difference" (Bök 2002).
+The clinamen is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' (Bök 2002).
 
-The clinamen function uses the Damerau-Levenshtein algorithm [10], which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them (see Eq. (1)). While we only return matches that actually appear in the book (i.e. they exist in the index), and by doing so eliminate the introduction of new words like Jarry's merdre, the swerve or aberration is still evident.
+The clinamen function uses the Damerau-Levenshtein algorithm [10], which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them (see Eq. (1)). While we only return matches that actually appear in the book (i.e.\ they exist in the index), and by doing so eliminate the introduction of new words like Jarry's merdre, the swerve or aberration is still evident.
 
 \begin{lstlisting}
-  Clinamen(t):
-    matches = {v : 0 < dameraulevenshtein(t, v) <= 2},   for v $\in$ V
+  Clinamen (t):
+    matches = {v: 0 < dameraulevenshtein (t, v) <= 2},   for v $\in$ V
     return matches
 \end{lstlisting}
 
@@ -402,20 +401,20 @@ For the syzygy function, we made use of WordNet [29] through the NLTK python lib
 This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms for query term t from WordNet. It then loops through all individual items in the list of synonyms in line 2 to 5. Line 3 adds all hyponyms h for the current synonym s if there exists a word in the vocabulary same as the hyponym. Similarly lines 4 and 5 add all hypernyms and holonyms to the results list which is then returned in line 6.
 
 \begin{lstlisting}
-  Syzygy( t ):
-    synonyms = { s $\in$ WordNet-synsets( t ) }
+  Syzygy (t):
+    synonyms = { s $\in$ WordNet-synsets (t) }
     for each s in synonyms:
-      hypo   = { h : h $\in$ WordNet-hyponyms( s ) }
-      hyper = { h : h $\in$ WordNet-hypernyms( s ) }
-      holo    = { h : h $\in$ WordNet-holonyms( s ) }
+      hypo   = { h: h $\in$ WordNet-hyponyms (s) }
+      hyper = { h: h $\in$ WordNet-hypernyms (s) }
+      holo    = { h: h $\in$ WordNet-holonyms (s) }
       union = hypo $\cup$ hyper $\cup$ holo
-      add { h : h $\in$ union and $\exists$ h $\in$ V } to results
+      add { h: h $\in$ union and $\exists$ h $\in$ V } to results
     return results
 \end{lstlisting}
 
 \begin{equation}
 \begin{split}
-  syzygy(t) &= \{ h \colon h \in union(t) \ \text{and} \ \exists \ h \in V \}\\
+  syzygy(t) &= \{ h \colon h \in union(t) \ \text{and} \ \exists \ h \in V \}\\% chktex 21
   union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\\
   hypo(t) &= \{ h \colon h \in hyponyms(s) \}, \text{for} \ s \in syno(t)\\
   hyper(t) &= \{ h \colon h \in hypernyms(s) \}, \text{for} \ s \in syno(t)\\
@@ -430,21 +429,21 @@ This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms 
 
 The antimony, in a pataphysical sense, is the mutually incompatible.
 
-For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). This function exhibits the same problem as mentioned above for the syzygy, just much worse.  Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g. based on more than one book – or, of course, the Web) could improve this method.
+For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). This function exhibits the same problem as mentioned above for the syzygy, just much worse.  Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g.\ based on more than one book – or, of course, the Web) could improve this method.
 
 This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and returns them if they appear in our dictionary of words.
 
 \begin{lstlisting}
-  Antinomy(t):
-    synonyms = { s $\in$ WordNet-synsets(t) }
+  Antinomy (t):
+    synonyms = { s $\in$ WordNet-synsets (t) }
     for each s in synonyms:
-      add { h $\in$ WordNet-antonyms(s) : $\exists$ h $\in$ V } to results
+      add { h $\in$ WordNet-antonyms (s): $\exists$ h $\in$ V } to results
     return results
 \end{lstlisting}
 
 \begin{equation}
   \begin{split}
-  antinomy( t ) &= \{ h \colon h \in anto( t ) \ \text{and} \ \exists \ h \in V \}\\
+  antinomy( t ) &= \{ h \colon h \in anto( t ) \ \text{and} \ \exists \ h \in V \}\\% chktex 21
   anto( t ) &= \{ h \colon h \in antonyms( s ) \}, \text{for} \ s \in syno( t )\\
   syno( t ) &= \{ s \colon s \in synonyms( t ) \}
   \end{split}
@@ -455,7 +454,7 @@ This algorithm is very similar to the algorithm for the syzygy. It finds all ant
 \begin{alltt}
 SYZYGY
 synsets:
-[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]% chktex 36
 synset item:clear.n.01
 hypernym out:innocence
 []
@@ -684,7 +683,7 @@ synset item:clearly.r.04
 []
 ANTINOMY
 synsets:
-[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]% chktex 36
 synset item:clear.n.01
 synset item:open.n.01
 synset item:unclutter.v.01

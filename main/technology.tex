@@ -3,16 +3,16 @@
 \chapter{Technology}
 \label{ch:technology}
 
-\emph{Parts of this chapter have been published in peer-reviewed...}
+\emph{Parts of this chapter have been published in peer-reviewed\ldots}
 
-\grule
+\grule{}
 
 Knowledge needed to understand project:
 \begin{itemize}
   \item Search engines
   \item index
   \item corpus
-  \item query - expansion etc
+  \item query --- expansion etc
   \item results
   \item searching vs browsing
   \item Web programming
@@ -28,23 +28,23 @@ Knowledge needed to understand project:
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \citep{Baeza-Yates2011}
 \end{quote}
 
-In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure \ref{fig:SEA}.
+In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure~\ref{fig:SEA}.
 
 \begin{figure}[htbp]
   \centering
   \input{images/architecture.pdf_tex}
   \caption[Search Engine Architecture]{Abstract search engine architecture}
-  \label{fig:SEA}
+\label{fig:SEA}
 \end{figure}
 
 Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\citep{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \citep{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \citep{Brin1998, Brin1998b}.
 
-Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
+Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
 
 
 \paragraph{Crawler}
 
-The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given 'seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are well-known examples.
+The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are well-known examples.
 
 
 \paragraph{Index}
@@ -52,10 +52,10 @@ The crawler, sometimes called spider, indexer or bot, is a program that processe
 An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a \gls{tdm}. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
 \begin{equation}
-  \bbordermatrix{~ & d_1 & d_2 \cr
-        k_1 & f_{1,1} & f_{1,2} \cr
-        k_2 & f_{2,1} & f_{2,2} \cr
-        k_3 & f_{3,1} & f_{3,2} \cr}
+  \bbordermatrix{~ & d_1 & d_2 \\
+        k_1 & f_{1,1} & f_{1,2} \\
+        k_2 & f_{2,1} & f_{2,2} \\
+        k_3 & f_{3,1} & f_{3,2} \\}
 \label{eq:tdm}
 \end{equation}
 \myequations{Term-document matrix}
@@ -65,22 +65,22 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 \begin{figure}[hb]
 \[
   \bbordermatrix{
-    ~ & Faustroll & Gospel & Voyage \cr
-    Faustroll & 77 & 0 & 0 \cr
-    father & 1 & 28 & 2 \cr
-    time & 34 & 16 & 129 \cr
-    purpose & 2 & 0 & 3 \cr
-    little & 28 & 16 & 81 \cr
-    background & 0 & 0 & 0 \cr
-    water & 29 & 7 & 120 \cr
-    doctor & 30 & 0 & 0 \cr
-    without & 27 & 7 & 117 \cr
-    skiff & 35 & 0 & 0 \cr
-    bishop & 27 & 0 & 2 \cr
-    God & 25 & 123 & 2 \cr
-    substance & 8 & 3 & 1 \cr
-    issue & 0 & 2 & 2 \cr
-    watch & 5 & 3 & 6 \cr
+    ~ & Faustroll & Gospel & Voyage \\
+    Faustroll & 77 & 0 & 0 \\
+    father & 1 & 28 & 2 \\
+    time & 34 & 16 & 129 \\
+    purpose & 2 & 0 & 3 \\
+    little & 28 & 16 & 81 \\
+    background & 0 & 0 & 0 \\
+    water & 29 & 7 & 120 \\
+    doctor & 30 & 0 & 0 \\
+    without & 27 & 7 & 117 \\
+    skiff & 35 & 0 & 0 \\
+    bishop & 27 & 0 & 2 \\
+    God & 25 & 123 & 2 \\
+    substance & 8 & 3 & 1 \\
+    issue & 0 & 2 & 2 \\
+    watch & 5 & 3 & 6 \\
   }
 \]
 \caption{Total wordcount of files: Faustroll=131891, Gospel=139669, Voyage=497295}
@@ -88,7 +88,7 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 
 
 \todo{cross references with hyperlink hypertarget}
-The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctuation and stop-words (e.g. I, a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. For specific domains it even makes sense to build a 'controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
+The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctuation and stop-words (e.g. I, a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
 
 %
 % s3://aws-publicdatasets/cc-index/collections/[CC-MAIN-YYYY-WW]/indexes/
@@ -159,8 +159,8 @@ The notation for \gls{ir} models is as follows \citep[adapted from][p.58]{Baeza-
 An \gls{ir} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 \itab{$D$} \tab{is the set of documents,}\\
 \itab{$Q$} \tab{is the set of queries,}\\
-\itab{$F$} \tab{is the framework (e.g. sets, Boolean relations, vectors,}\\
-\itab{}    \tab{linear algebra\ldots),}\\
+\itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors}\\
+\itab{}    \tab{linear algebra\ldots}\\
 \itab{$R(q_i, d_j)$}
             \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
 \itab{$t$} \tab{is the number of index terms in a document collection,}\\
@@ -174,7 +174,7 @@ This means, given a query $q$ and a set of documents $D$ in which we wish to sea
 
 
 
-\todo{decide on which method for highlighting words - italic or apostophe}
+\todo{decide on which method for highlighting words --- italic or apostophe}
 
 
 \subsubsection{The Boolean Model}
@@ -191,7 +191,7 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 \myequations{sim}
 
-A 'conjunctive component' describes which terms occur in a document and which ones do not. E.g. for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
+A `conjunctive component' describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
 
 % \begin{description}
 %   \item [$c(d)$] is the term conjunctive component for document $d$
@@ -248,13 +248,13 @@ Here is an example algorithm for computing this score taken from \citep[p.125]{M
 
 \begin{figure}[htb]
   \begin{lstlisting}
-  CosineScore(q)
+  CosineScore (q)
     float Scores[N] = 0
     for each d
     do Initialise Length[d] to the length of document d
     for each query term t
     do calculate wt,q and fetch postings list for t
-      for each pair(d, tft,d) in postings list
+      for each pair (d, tft,d) in postings list
       do add wft,d to Scores[d]
     Read the array Length[d]
     for each d
@@ -291,9 +291,9 @@ There are several other common \gls{ir} models that I won't discuss in detail he
 
 \subsection{Ranking}
 
-Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook 'like' button or the Google+ '+1' button which could be seen as direct user relevance feedback as well.
+Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
-Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing \footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
+Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing\footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
 
 PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \citep{Brin1998b} and they further describe the algorithm here \citep{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \citep[p.472]{Baeza-Yates2011}.
 
@@ -330,13 +330,13 @@ The HITS algorithm also works on the links between pages. It was first described
 \end{equation}
 \myequations{HITS}
 
-Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \citep{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their "hub" pages are predefined.
+Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \citep{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ``hub'' pages are predefined.
 
-Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \citep{Debra1994, Debra1994a, Debra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the "ranking" is done dynamically at query time.
+Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \citep{Debra1994, Debra1994a, Debra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ``ranking'' is done dynamically at query time.
 
 There are various algorithms that follow this approach. For example the shark search algorithm \citep{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \citep{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \citep{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \citep{Nick2001}.
 
-Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59](p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic Web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
+Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59] (p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic Web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
 
 
 \subsection{Query Expansion and Relevance Feedback}
@@ -366,7 +366,7 @@ Since a single query for a popular word can results in  millions of retrieved do
 
 Different retrieval models exist including the Boolean and the Vector model. Other methods exist to make search results more accurate, including relevance feedback and query expansion.
 
-Search quality is generally measured using the metrics of precision and recall but for Web search precision is more important and usually a metric called "precision at n" is used for measurements.
+Search quality is generally measured using the metrics of precision and recall but for Web search precision is more important and usually a metric called ``precision at n'' is used for measurements.
 
 Challenges are the size of the World Wide Web and ambiguous, unstructured nature of Web pages among others.
 
@@ -381,8 +381,8 @@ Ranking can be done at different stages of the search process. Depending on how 
 \begin{description}
   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
   \item [Text] A wrapper around a sequence of simple (string) tokens, which is intended to support initial exploration of texts (via the interactive console). Its methods perform a variety of analyses on the text’s contexts (e.g., counting, concordancing, collocation discovery), and display the results.
-  \item [index(word)] Find the index of the first occurrence of the word in the text.
-  \item [count(word)] Count the number of times this word appears in the text.
+  \item [index (word)] Find the index of the first occurrence of the word in the text.
+  \item [count (word)] Count the number of times this word appears in the text.
 \end{description}
 
 
@@ -396,15 +396,15 @@ Ranking can be done at different stages of the search process. Depending on how 
 The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
 
 \begin{equation}
-  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
-  \textrm{max}(i,j) & \textrm{if min}(i,j)=0\\
-  \textrm{min}\left\{\begin{matrix*}[l]
+  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]% chktex 21
+  \max(i,j) & \textrm{if}\min(i,j)=0\\
+  \min\left\{\begin{matrix*}[l]% chktex 21
   d_{a,b}(i-1,j)+1\\
   d_{a,b}(i,j-1)+1\\
   d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
   d_{a,b}(i-2,j-2)+1
   \end{matrix*}\right. & \textrm{if}\ i,j > 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
-  \textrm{min}\left\{\begin{matrix*}[l]
+  \min\left\{\begin{matrix*}[l]% chktex 21
   d_{a,b}(i-1,j)+1\\
   d_{a,b}(i,j-1)+1\\
   d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
@@ -427,9 +427,9 @@ $d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive sy
 
 
 
-\gls{nlp} blah blah blah...
+\gls{nlp} blah blah blah\ldots
 
-Bird, S., Klein, E. and Loper, E., 2009. \gls{nlp} with Python 1st ed., Sebasopol, CA: O'Reilly Media.\citep{Bird2009}
+Bird, S., Klein, E. and Loper, E., 2009. \gls{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\citep{Bird2009}
 
 Manning, C., Raghavan, P. and Schuetze, H., 2008. Introduction to Information Retrieval 1st ed., Cambridge: Cambridge University Press.\citep{Manning2009}
 
@@ -450,17 +450,17 @@ Goals of \gls{nlp} are to get computers to perform useful tasks involving human 
   \item Text and speech processing
 \end{itemize}
 
-e.g. machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
+e.g.\ machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
 
 
 \hypertarget{stemming}{Techniques} that are useful for this are the following \citep[Ch.2]{Manning2009}.
 
 \begin{description}
   \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g. car and automobile
+  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
   \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g. connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g. went $\to$ go
+  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
 \end{description}
 
 
@@ -489,13 +489,13 @@ Cats versus cat?
 Same lemma but different wordforms.
 
 \begin{itemize}
-  \item A lemma is a set of lexical forms that have the same stem. (e.g. go)
-  \item A wordform is the full inflected or derived form of the word. (e.g. goes)
+  \item A lemma is a set of lexical forms that have the same stem. (e.g.\ go)
+  \item A wordform is the full inflected or derived form of the word. (e.g.\ goes)
   \item A word type is a distinct word in a corpus (repetitions are not counted but case sensitive).
   \item A word token is any word (repetitions are counted repeatedly)
 \end{itemize}
 
-The process of converting all words in a text to their lemma (e.g. goes $\to$ go) is called lemmatisation and the process of separating out all words in a text is called tokenisation or word segmentation.
+The process of converting all words in a text to their lemma (e.g.\ goes $\to$ go) is called lemmatisation and the process of separating out all words in a text is called tokenisation or word segmentation.
 
 
 \subsection*{$N$-Grams}
@@ -560,7 +560,7 @@ Extrinsic and intrinsic evaluation.
 
 \begin{description}
   \item [Extrinsic]: evaluate performance of a language model by embedding it into an independent application.
-  \item [Intrinsic]: evaluate independent on any application, e.g. perplexity.
+  \item [Intrinsic]: evaluate independent on any application, e.g.\ perplexity.
 \end{description}
 
 
@@ -576,7 +576,7 @@ Extrinsic and intrinsic evaluation.
 \subsection*{Smoothing}
 
 
-\subsection*{Add-One : Laplace smoothing  for bigrams}
+\subsection*{Add-One: Laplace smoothing for bigrams}
 
 \begin{equation}
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
@@ -616,15 +616,15 @@ $N_c$ is the frequency of frequency $c$.
 [3] page 234…
 
 \begin{quote}
-  (Wikipedia): "A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be 'independent feature model'."
+  (Wikipedia): ``A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be `independent feature model'.''
 \end{quote}
 
 
 \subsection*{Maximum Entropy Models (MaxEnt)}
 
-Page 227 .. in [1]
+Page 227 \ldots in [1]
 
-MaxEnt models are also widely known as \textbf{multinomial logistic regression}. They are used for sequence classification, e.g. part-of-speech tagging. They belong to a family of classifiers known as \textbf{exponential or log-linear classifiers}.
+MaxEnt models are also widely known as \textbf{multinomial logistic regression}. They are used for sequence classification, e.g.\ part-of-speech tagging. They belong to a family of classifiers known as \textbf{exponential or log-linear classifiers}.
 
 The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. A probabilistic classifier also gives the probability of the observation being in that class; it gives a probability distribution over all classes.
 
@@ -632,7 +632,8 @@ MaxEnt works by extracting some set of features from the input, combining them l
 Formula below shows how to calculate the probability of class $c$ given an observed datum (a given data point) $d$ and $\lambda$ is a weight that is assigned to feature $f$. Taking the exponent makes the result always positive. Dividing by the Sum of that for all classes makes it a probability.
 
 \begin{equation}
-  P(c \mid d, \lambda) = \frac{\exp\sum_i\lambda_i f_i (c,d)}{\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d))}
+  P(c \mid d, \lambda) = \frac{\exp\sum_i\lambda_i f_i (c,d)}
+  {\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d)}
   \label{eq:pcdlambda}
 \end{equation}
 \myequations{pcdlambda}
@@ -660,9 +661,9 @@ To get the single best class with the highest probability we need to compute the
 
 Features:
 
-$f1(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ w-1 = \text{``in"} \wedge \ \text{isCapitalized}(w)]$\\
+$f1(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ w-1 = \text{``in''} \wedge \ \text{isCapitalized}(w)]$\\
 $f2(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ \text{hasAccentedLatinChar}(w)]$\\
-$f3(c,d) \equiv [ \ c = \text{DRUG} \ \wedge \ \text{ends}(w,\text{``c"})]$
+$f3(c,d) \equiv [ \ c = \text{DRUG} \ \wedge \ \text{ends}(w,\text{``c''})]$
 
 $P(\text{LOCATION} \mid \text{in Québec}) = \frac{e^{1.8} e^{–0.6}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.586$\\
 $P(\text{DRUG} \mid \text{in Québec}) = \frac{e^{0.3}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.238$\\
@@ -702,7 +703,7 @@ The empirical expectation is the sum of all occurrences where a feature is true 
 
 [1] Chapter 22, p 759…
 
-"The process of information extraction (IE), also called text analytics, turns the unstructured information embedded in texts into structured data."
+``The process of information extraction (IE), also called text analytics, turns the unstructured information embedded in texts into structured data.''
 
 IE involves named entity recognition (NER), relation detection and classification, event detection and classification and temporal analysis.
 
@@ -714,11 +715,11 @@ A named entity can be anything that can be referred to by a proper name, such as
 Example (first sentence in Faustroll):
 
 \begin{quote}
-  "In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough."
+  ``In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough.''
 \end{quote}
 
 \begin{quote}
-  In this $[$year Eighteen Hundred and Ninety-eight, the Eighth day of February$]^{\text{TIME}}$, Pursuant to article $[$819$]^{\text{NUMBER}}$ of the $[$Code of Civil Procedure$]^{\text{DOCUMENT}}$ and at the request of $[$M. and Mme. Bonhomme (Jacques)$]^{\text{PERSON}}$, proprietors of a house situate at $[$Paris, 100 bis, rue Richer$]^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the $[$Town Hall$]^{\text{FACILITY}}$ of $[$Q borough$]^{\text{LOCATION}}$.
+  In this ${[$year Eighteen Hundred and Ninety-eight, the Eighth day of February$]}^{\text{TIME}}$, Pursuant to article ${[$819$]}^{\text{NUMBER}}$ of the ${[$Code of Civil Procedure$]}^{\text{DOCUMENT}}$ and at the request of ${[$M. and Mme. Bonhomme (Jacques)$]}^{\text{PERSON}}$, proprietors of a house situate at ${[$Paris, 100 bis, rue Richer$]}^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the ${[$Town Hall$]}^{\text{FACILITY}}$ of ${[$Q borough$]}^{\text{LOCATION}}$.
 \end{quote}
 
 Gazetteers (lists of place or person names for example) can help with the detection of these named entities.
@@ -737,7 +738,7 @@ Wikipedia:
   \item [Adverb]: any qualifier of an adjective, verb, or other adverb
   \item [Preposition]: any establisher of relation and syntactic context
   \item [Conjunction]: any syntactic connector
-  \item [Interjection]: any emotional greeting (or "exclamation")
+  \item [Interjection]: any emotional greeting (or ``exclamation'')
 \end{description}
 
 Building a Large Annotated Corpus of English \citep{Marcus1993}
@@ -749,7 +750,7 @@ The process of adding tags to the words of a text is called parts-of-speech tagg
 Example (first sentence in Faustroll):
 
 \begin{quote}
-  In\slash IN this\slash DT [year\slash NN Eighteen\slash CD Hundred\slash CD and\slash CC Ninety-eight\slash CD,\slash , the\slash DT Eighth\slash CD day\slash NN of\slash IN February\slash NNP]$^{\text{TIME}}$,\slash , Pursuant\slash JJ to\slash IN article\slash NN [819\slash  CD]$^{\text{NUMBER}}$ of\slash IN the\slash DT [Code\slash NN of\slash IN Civil\slash NNP Procedure\slash NNP]$^{\text{DOCUMENT}}$ and\slash CC at\slash IN the\slash DT request\slash NN of\slash IN [M.\slash NN and\slash CC Mme.\slash NN Bonhomme\slash NNP (\slash (Jacques\slash NNP)\slash )]$^{\text{PERSON}}$,\slash , proprietors\slash NNS of\slash IN a\slash DT house\slash NN situate\slash JJ at\slash IN [Paris\slash NNP,\slash , 100\slash CD bis\slash NN ,\slash , rue\slash NN Richer\slash NNP]$^{\text{LOCATION}}$,\slash , the\slash DT aforementioned\slash JJ having\slash VBG address\slash NN for\slash IN service\slash NN at\slash IN my\slash PRP residence\slash NN and\slash CC further\slash JJ at\slash IN the\slash DT [Town\slash NNP Hall\slash NNP]$^{\text{FACILITY}}$ of\slash IN [Q\slash NNP borough\slash NN]$^{\text{LOCATION}}$.\slash .
+  In\slash{} IN this\slash{} DT [year\slash{} NN Eighteen\slash{} CD Hundred\slash{} CD and\slash{} CC Ninety-eight\slash{} CD,\slash{}, the\slash{} DT Eighth\slash{} CD day\slash{} NN of\slash{} IN February\slash{} NNP]$^{\text{TIME}}$,\slash{}, Pursuant\slash{} JJ to\slash{} IN article\slash{} NN [819\slash{} CD]$^{\text{NUMBER}}$ of\slash{} IN the\slash{} DT [Code\slash{} NN of\slash{} IN Civil\slash{} NNP Procedure\slash{} NNP]$^{\text{DOCUMENT}}$ and\slash{} CC at\slash{} IN the\slash{} DT request\slash{} NN of\slash{} IN [M.\slash{} NN and\slash{} CC Mme.\slash{} NN Bonhomme\slash{} NNP (\slash{} (Jacques\slash{} NNP)\slash{})]$^{\text{PERSON}}$,\slash{}, proprietors\slash{} NNS of\slash{} IN a\slash{} DT house\slash{} NN situate\slash{} JJ at\slash{} IN [Paris\slash{} NNP,\slash{}, 100\slash{} CD bis\slash{} NN,\slash{}, rue\slash{} NN Richer\slash{} NNP]$^{\text{LOCATION}}$,\slash{}, the\slash{} DT aforementioned\slash{} JJ having\slash{} VBG address\slash{} NN for\slash{} IN service\slash{} NN at\slash{} IN my\slash{} PRP residence\slash{} NN and\slash{} CC further\slash{} JJ at\slash{} IN the\slash{} DT [Town\slash{} NNP Hall\slash{} NNP]$^{\text{FACILITY}}$ of\slash{} IN [Q\slash{} NNP borough\slash{} NN]$^{\text{LOCATION}}$.\slash{}.
 \end{quote}
 
 \begin{equation}
@@ -772,7 +773,7 @@ For example: the probability of getting a common noun after a determiner is:
 \end{equation}
 \myequations{pnndt}
 
-Given that there are 116,454 occurrences of DT in the corpus and of these 56,509 occurrences where a NN follows after the DT.
+Given that there are $116,454$ occurrences of DT in the corpus and of these $56,509$ occurrences where a NN follows after the DT.% chktex 13
 
 \begin{equation}
   P(\text{is} \mid \text{VBZ}) = \frac{C(\text{VBZ},\text{is})}{C(\text{VBZ})} = \frac{10,073}{21,627} = 0.47
@@ -780,7 +781,7 @@ Given that there are 116,454 occurrences of DT in the corpus and of these 56,509
 \end{equation}
 \myequations{pisvbz}
 
-Or the probability of a third person singular verb being 'is' is 0.47.
+Or the probability of a third person singular verb being `is' is 0.47.
 
 
 \subsection*{Parsing}
@@ -790,7 +791,7 @@ Parsing is the process of analysing a sentence and assigning a structure to it. 
 
 \subsection*{Grammar}
 
-A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG. Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases "the book" and "a book" only. The two parse trees would then look like this:
+A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG.\@ Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases ``the book'' and ``a book'' only. The two parse trees would then look like this:
 
 \begin{figure}[htb]
   \centering
@@ -816,11 +817,11 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
       (NP (DT this) (NN year) (NNPS Eighteen) (NNP Hundred)
         (CC and)
         (NNP Ninety-eight)))
-    (, ,)
+    (, ,)% chktex 26
     (NP
       (NP (DT the) (JJ Eighth) (NN day))
       (PP (IN of)
-        (NP (NNP February) (, ,) (NNP Pursuant)))
+        (NP (NNP February) (, ,) (NNP Pursuant)))% chktex 26
       (PP
         (PP (TO to)
           (NP
@@ -841,7 +842,7 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
       (PRN (-LRB- -LRB-)
         (NP (NNP Jacques))
         (-RRB- -RRB-))
-      (, ,)
+      (, ,)% chktex 26
       (NP
         (NP (NNS proprietors))
         (PP (IN of)
@@ -849,13 +850,13 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
             (NP (DT a) (NN house) (NN situate))
             (PP (IN at)
               (NP (NNP Paris))))))
-      (, ,)
+      (, ,)% chktex 26
       (NP (CD 100) (NN bis))
-      (, ,))
+      (, ,))% chktex 26
     (VP (VBP rue)
       (NP
         (NP (NNP Richer))
-        (, ,)
+        (, ,)% chktex 26
         (NP (DT the) (JJ aforementioned)
           (UCP
             (S
@@ -875,7 +876,7 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
                 (PP (IN of)
                   (NP (NNP Q))))))
           (NN borough))))
-    (. .)))
+    (. .)))% chktex 26
 \end{alltt}
 
 This particular tree was generated using the Stanford Parser at \url{http://nlp.stanford.edu:8080/parser/index.jsp}.
@@ -964,9 +965,10 @@ Algorithm Classification
 \itab{$Q = \{q_1, \ldots, q_n\}$} \tab{is the set of queries}\\
 \itab{$q = \{t_1, \ldots, t_n\}$} \tab{is the set of query terms}\\
 \itab{$V = \{v_1, \ldots, v_t\}$} \tab{is the set of all distinct index terms in a document collection (the Vocabulary)}\\
-\itab{$R(q_i,d_j)$} \tab{is the ranking function, where $q_i \in Q$ and $d_j  \in D$}\\
+\itab{$R (q_i,d_j)$} \tab{is the ranking function, where $q_i \in{} Q$ and $d_j  \in{} D$}\\
 \itab{$N$} \tab{is the total number of documents}\\
 \itab{$w_{t,q}$} \tab{is the weight of the term in the query}\\
 \itab{$tf_{t,d}$} \tab{is the term frequency of $t$ in $d$}\\
 \itab{$wf_{t,d}$} \tab{is the tf-idf weight of $t$ in $d$}\\
 \itab{$P_t$} \tab{is the postings list of all ($d$, $tf_{t,d}$) for a given $t$}
+% chktex 16

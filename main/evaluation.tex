@@ -5,7 +5,7 @@
 
 \emph{Part of this research has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.}
 
-\grule
+\grule{}
 
 \begin{shaded}
   Summary
@@ -39,17 +39,17 @@ UK action sports lifestyle brand
 (www.animal.co.uk)	List of animals in the Emperor’s possession
 Wikipedia article
 (en.wikipedia.org/wiki/animal)	Instructions about embalming animals
-Animal Planet - Discovery Channel (animal.discovery.com)	Information on a society for animal training
-Table 1 - Results for a query for animal. The relevant results were retrieved from Google. The creative results were inspired by Borges’ “Chinese Encyclopaedia” from The Analytical Language of John Wilkins (1942)
+Animal Planet --- Discovery Channel (animal.discovery.com)	Information on a society for animal training
+Table 1 --- Results for a query for animal. The relevant results were retrieved from Google. The creative results were inspired by Borges’ “Chinese Encyclopaedia” from The Analytical Language of John Wilkins (1942)
 We can link this very nicely to the idea of exploratory search. Lowering expectations or opening the mind implies extending the task domain or problem space. Creativity and exploratory search seem predestined to work with each other.
 
 Biases
 
 Wikipedia defines bias as ``an inclination to present or hold a partial perspective at the expense of (possibly equally valid) alternatives. Anything biased generally is one-sided, and therefore lacks a neutral point of view.'' (2012)
 
-However, biases can be good and bad. It is important to consider the implications of their existence though, especially when trying to measure the success of something objectively. An example of when biases can be advantageous is location signals that the search tool takes into account when producing results. An Englishmen would probably not have much use of a Chinese website and vice-versa, even if the actual content matches the original query (unless of course the user happens to understand both languages perfectly). Another example of this is location queries such as 'Chinese restaurants in Cambridge', which should return web pages about restaurants based in Cambridge, UK or Massachusetts, USA, depending on the user’s I.P. address.  This might seem logical, but in the truest sense it is a bias employed by the search engine to help provide more relevant results to individuals. Truly unbiased search results are probably impossible to come by nowadays.
+However, biases can be good and bad. It is important to consider the implications of their existence though, especially when trying to measure the success of something objectively. An example of when biases can be advantageous is location signals that the search tool takes into account when producing results. An Englishmen would probably not have much use of a Chinese website and vice-versa, even if the actual content matches the original query (unless of course the user happens to understand both languages perfectly). Another example of this is location queries such as `Chinese restaurants in Cambridge', which should return web pages about restaurants based in Cambridge, UK or Massachusetts, USA, depending on the user’s I.P. address.  This might seem logical, but in the truest sense it is a bias employed by the search engine to help provide more relevant results to individuals. Truly unbiased search results are probably impossible to come by nowadays.
 
-There is a general move from objectivity to subjectivity in the sense that users become the subject of search results as much as the query they pose. Instead of neutrally providing results for a query alone, the results are tailored around the information known about the user (e.g. language, location, clickstream, social media likes, bookmarks, etc.) to make up the missing context. The user becomes the subject and context of a query, while the results become an objective list of matches for all those values rather than just the query term(s).
+There is a general move from objectivity to subjectivity in the sense that users become the subject of search results as much as the query they pose. Instead of neutrally providing results for a query alone, the results are tailored around the information known about the user (e.g.\ language, location, clickstream, social media likes, bookmarks, etc.) to make up the missing context. The user becomes the subject and context of a query, while the results become an objective list of matches for all those values rather than just the query term (s).
 
 Standard Web search:  Subject/User  Object/Results
 
@@ -101,10 +101,10 @@ Note the slight difference between the two. Precision tells us how many of all r
   \centering
   \input{images/precrec.pdf_tex}
   \caption[Precision and Recall]{Precision and Recall}
-  \label{fig:PR}
+\label{fig:PR}
 \end{figure}
 
-Precision is typically more important than recall in web search while it is the other way around in a database search system maybe. The mean average precision value (MAP) can be calculated following this formula (taken from \citep[p.141]{Baeza-Yates2011}:
+Precision is typically more important than recall in web search while it is the other way around in a database search system maybe. The mean average precision value (MAP) can be calculated following this formula (taken from \citep[p.141]{Baeza-Yates2011}):
 
 \begin{equation}
   MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
@@ -114,9 +114,9 @@ Precision is typically more important than recall in web search while it is the 
 
 Where $R_i$ is the set of relevant documents for query $q_i$.
 
-But for many web searches is it not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first 5 to 30 results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called "Precision at n" or "P@n" \citep[p.140]{Baeza-Yates2011}. So for example this could be P@5 or P@10 or P@20. For example, to compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
+But for many web searches is it not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first 5 to 30 results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called ``Precision at n'' or ``P@n'' \citep[p.140]{Baeza-Yates2011}. So for example this could be P@5 or P@10 or P@20. For example, to compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
 
-The Text REtrieval Conference (TREC) is a conference that provides large test sets of data to participants and lets them compare results. They have specific test sets for web search comprised of crawls of .gov web pages for example, but unfortunately they have to paid for to get a copy. \footnote{\url{http://ir.dcs.gla.ac.uk/test_collections/}}
+The Text REtrieval Conference (TREC) is a conference that provides large test sets of data to participants and lets them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages for example, but unfortunately they have to paid for to get a copy.\footnote{\url{http://ir.dcs.gla.ac.uk/test_collections/}}% chktex 26
 
 There are certain other factors that can be or need be evaluated when looking at the complete search system. For example the time it takes to crawl for data, the time it takes to index data, the amount of storage needed for data and then also how fast the query response is and how many queries the system can handle in a given time period.
 
@@ -187,7 +187,7 @@ Simon Colton came up with an evaluation framework called the ``creative tripod''
 
 Pease, Winterstein and Colton suggest that all creative products must be \textbf{novel and valuable} \citep[p.1]{Pease2001} and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss \textbf{randomness} as a measurable approach. Elsewhere, Pease et al discuss using \textbf{serendipity} as an approach \citep{Pease2013}.
 
-Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely \textbf{novelty, usefulness/appropriateness and impact/influence}. \citep[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person’s creativity he proposes citation counts \citep[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example \footnote{http://www.artfacts.net seems to provide just that though.}.
+Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely \textbf{novelty, usefulness/appropriateness and impact/influence}. \citep[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person’s creativity he proposes citation counts \citep[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example\footnote{http://www.artfacts.net seems to provide just that though.}.
 
 Graeme Ritchie identifies three main criteria for creativity as \textbf{novelty, quality and typicality} \citep[p.72-73]{Ritchie2007}, although he argues that ``novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality'' \citep[p.73]{Ritchie2007} \citep[see also][]{Ritchie2001}. He proposes several evaluation criteria which fall under the following categories: \citep[p.91-92]{Ritchie2007} basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those.
 
@@ -226,7 +226,7 @@ The 14 components Jordanous collated are: \citep[p.118-120]{Jordanous2012}
 
 \section{Linda Candy}
 
-Evaluation is well established in HCI. HCI is not unsimilar to creativity. Design too.
+Evaluation is well established in HCI.\@ HCI is not unsimilar to creativity. Design too.
 
 \begin{comment}
   I guess her work is meant mostly for ``interactive art'' while mine is meant for creative computing, but clearly there are many overlaps.
@@ -235,39 +235,39 @@ Evaluation is well established in HCI. HCI is not unsimilar to creativity. Desig
 In HCI, historically, the focus has been on people as users deploying task oriented systems. The criteria for evaluation has largely been in terms of ease of use, task efficiency and effectiveness- usability. However, attributes such as speed and productivity are, for the most part, meaningless in the context of creative interactive experience. \citep[p.23]{Candy2012}
 
 \begin{quote}
-  Evaluation "is used to describe assessing and judging the value or worth of a particular idea or artifact both during the creative process and afterwards. Whether the process is systematic or ad hoc, evaluation depends upon criteria and measures that are situated and domain specific." \citep[p.7]{Candy2012}
+  Evaluation ``is used to describe assessing and judging the value or worth of a particular idea or artifact both during the creative process and afterwards. Whether the process is systematic or ad hoc, evaluation depends upon criteria and measures that are situated and domain specific.'' \citep[p.7]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "Whatever the context, evaluation is always tailored to the approach, needs, purpose and methodology of that context." \citep[p.7]{Candy2012}
+  ``Whatever the context, evaluation is always tailored to the approach, needs, purpose and methodology of that context.'' \citep[p.7]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "For evaluation to contribute to a successful outcome, the practitioner needs to have the necessary information including constraints on the options under consideration." \citep[p.7]{Candy2012}
+  ``For evaluation to contribute to a successful outcome, the practitioner needs to have the necessary information including constraints on the options under consideration.'' \citep[p.7]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "The matrix for evaluating creativity represents three standpoints: the capabilities of the creator, the audience, or more accurately, participant, experiences, and the features of the interactive systems as artworks. This initial matrix has been extended to include creative processes for both creator and audience participant (i.e. working practices and interaction experiences) and contextual factors in the form of the physical and technical environment in which the creative acts and events take place, including the influence of physical and technical resources and real world constraints." \citep[p.7-8]{Candy2012}
+  ``The matrix for evaluating creativity represents three standpoints: the capabilities of the creator, the audience, or more accurately, participant, experiences, and the features of the interactive systems as artworks. This initial matrix has been extended to include creative processes for both creator and audience participant (i.e.\ working practices and interaction experiences) and contextual factors in the form of the physical and technical environment in which the creative acts and events take place, including the influence of physical and technical resources and real world constraints.'' \citep[p.7-8]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "Evaluation studies are well established in the field of Human-Computer Interaction (HCI) as well as interaction design contexts in general." \citep[p.8]{Candy2012}
+  ``Evaluation studies are well established in the field of Human-Computer Interaction (HCI) as well as interaction design contexts in general.'' \citep[p.8]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "The evaluation of user, or rather, participant, experience of interactive artworks often involves measurement of aesthetic appreciation and the various engagement qualities which are dependent on personal traits, motivations, expectations, emotions and cognitive states of the audience. Those experiences that involve open-ended activity tend towards the creative end of human activity and, as such, are hardly ever measurable in quantitative ways."  \citep[p.8]{Candy2012}
+  ``The evaluation of user, or rather, participant, experience of interactive artworks often involves measurement of aesthetic appreciation and the various engagement qualities which are dependent on personal traits, motivations, expectations, emotions and cognitive states of the audience. Those experiences that involve open-ended activity tend towards the creative end of human activity and, as such, are hardly ever measurable in quantitative ways.''  \citep[p.8]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "Evaluation is a key activity in creative design that can be revealed through documentation from design rationale. The introduction of rationale has been an important contribution to the quest for clarity and traceability in design decision-making. Design rationale may be thought of as structured records of design that support the understanding of decisions taken and allow designers to give better informed reconsideration to them at a later stage." \citep[p.9]{Candy2012}
+  ``Evaluation is a key activity in creative design that can be revealed through documentation from design rationale. The introduction of rationale has been an important contribution to the quest for clarity and traceability in design decision-making. Design rationale may be thought of as structured records of design that support the understanding of decisions taken and allow designers to give better informed reconsideration to them at a later stage.'' \citep[p.9]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "A software system can be viewed as an artifact that embodies implicit theoretical constructs that are realized as functional and operational requirements (Carroll and Campbell 1989). Structures are chosen because of their ability to achieve the intended functionality, and such choices may be evaluated against various criteria. During the design process, the ideas are modified and there is a clarification and refinement of intended functions and features. There may be additional factors arising from the context of the project that affect the way the design is carried out: for example the need to keep sight of general applicability whilst meeting the domain specific requirements, or the influence of the given hardware platform and software tools. Whatever the situation, the relationship between designers' decision making and the design outcome is not necessarily transparent and this is can be a problem when it comes to system maintenance. The explicit listing of decisions made during a design process, and the reasons why those decisions were made provides a means to record and communicate the reasoning and justification behind a design decision, including alternatives considered and constraints that affected the decision-making including why alternatives were rejected. The successful application of design rationale to software system design can provide a form of communication of intent from the designer to those who are to maintain the system." \citep[p.9]{Candy2012}
+  ``A software system can be viewed as an artifact that embodies implicit theoretical constructs that are realized as functional and operational requirements (Carroll and Campbell 1989). Structures are chosen because of their ability to achieve the intended functionality, and such choices may be evaluated against various criteria. During the design process, the ideas are modified and there is a clarification and refinement of intended functions and features. There may be additional factors arising from the context of the project that affect the way the design is carried out: for example the need to keep sight of general applicability whilst meeting the domain specific requirements, or the influence of the given hardware platform and software tools. Whatever the situation, the relationship between designers' decision making and the design outcome is not necessarily transparent and this is can be a problem when it comes to system maintenance. The explicit listing of decisions made during a design process, and the reasons why those decisions were made provides a means to record and communicate the reasoning and justification behind a design decision, including alternatives considered and constraints that affected the decision-making including why alternatives were rejected. The successful application of design rationale to software system design can provide a form of communication of intent from the designer to those who are to maintain the system.'' \citep[p.9]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "A promising approach to the externalization of decision-making during the design process is being explored within practice-based research in the creative arts in the form of documented reflective practice. The approach builds upon a normal part of creative practice whereby practitioners draw and note ideas, designs and options in their sketch and notebooks. In this way, the documentation of tentative ideas and how they are worked into firmer proposals through testing and evaluation is a familiar and integral part of creativity. In practice-based research, documented reflective practice and empirical studies are frequently brought together." \citep[p.10]{Candy2012}
+  ``A promising approach to the externalization of decision-making during the design process is being explored within practice-based research in the creative arts in the form of documented reflective practice. The approach builds upon a normal part of creative practice whereby practitioners draw and note ideas, designs and options in their sketch and notebooks. In this way, the documentation of tentative ideas and how they are worked into firmer proposals through testing and evaluation is a familiar and integral part of creativity. In practice-based research, documented reflective practice and empirical studies are frequently brought together.'' \citep[p.10]{Candy2012}
 \end{quote}
 
 \begin{quote}
@@ -335,34 +335,34 @@ Establishing a workable living laboratory for interactive art and evaluation inv
 
 These included:
 •	degree of robu\\stness of the art system in expectation of heavy public use
-•	appropriate accessibility in respect of type of audience (e.g. children)\\
+•	appropriate accessibility in respect of type of audience (e.g.\ children)\\
 •	adherence to safety and house rules required by the museum\\
 •	impact of other coinciding exhibits (sound, noise, light impacts)\\
 •	attention to participant orientation and training\\
 •	attention to art system maintenance by creator and technical support
 
 \begin{quote}
-  "we need to apply strategies for generating clear and unambiguous data that can be turned into meaningful information. From meaningful information, we can then derive understandings related to the context of use, the outcome of which might take the form of a coherent model." \citep[p.21]{Candy2012}
+  ``we need to apply strategies for generating clear and unambiguous data that can be turned into meaningful information. From meaningful information, we can then derive understandings related to the context of use, the outcome of which might take the form of a coherent model.'' \citep[p.21]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "Observation as a method for data collection raises issues as to its reliability in creativity evaluation. Data from observing creativity depends upon the interpretation of what the individual observer sees." \citep[p.22]{Candy2012}
+  ``Observation as a method for data collection raises issues as to its reliability in creativity evaluation. Data from observing creativity depends upon the interpretation of what the individual observer sees.'' \citep[p.22]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "However, in order to ‘measure’ creativity, we have to conduct research outside of controlled laboratory conditions, and cannot rely on fixed criteria that can be applied to all cases. The shifting ground and the ever-changing contexts often renders consistency out of reach." \citep[p.22]{Candy2012}
+  ``However, in order to ‘measure’ creativity, we have to conduct research outside of controlled laboratory conditions, and cannot rely on fixed criteria that can be applied to all cases. The shifting ground and the ever-changing contexts often renders consistency out of reach.'' \citep[p.22]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "If the term 'measurement' does not match what we are doing within the creativity domain, then why do we still use this word?" \citep[p.22]{Candy2012}
+  ``If the term `measurement' does not match what we are doing within the creativity domain, then why do we still use this word?'' \citep[p.22]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "Whether an action is successful or unsuccessful depends on whether the intended result is achieved." \citep[p.23]{Candy2012}
+  ``Whether an action is successful or unsuccessful depends on whether the intended result is achieved.'' \citep[p.23]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  "Measuring success is more likely to be dependent on factors such as whether or not the system has engaged the audience in a playful or immersive way or whether it has elicited curiosity or excitement or concentrated attention and so on." \citep[p.23]{Candy2012}
+  ``Measuring success is more likely to be dependent on factors such as whether or not the system has engaged the audience in a playful or immersive way or whether it has elicited curiosity or excitement or concentrated attention and so on.'' \citep[p.23]{Candy2012}
 \end{quote}
 
 
