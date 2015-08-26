@@ -52,10 +52,10 @@ The crawler, sometimes called spider, indexer or bot, is a program that processe
 An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a \gls{tdm}. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
 \begin{equation}
-  \bbordermatrix{~ & d_1 & d_2 \\
-        k_1 & f_{1,1} & f_{1,2} \\
-        k_2 & f_{2,1} & f_{2,2} \\
-        k_3 & f_{3,1} & f_{3,2} \\}
+  \bbordermatrix{~ & d_1 & d_2 \cr % chktex 41
+        k_1 & f_{1,1} & f_{1,2} \cr % chktex 41
+        k_2 & f_{2,1} & f_{2,2} \cr % chktex 41
+        k_3 & f_{3,1} & f_{3,2}}
 \label{eq:tdm}
 \end{equation}
 \myequations{Term-document matrix}
@@ -65,22 +65,22 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 \begin{figure}[hb]
 \[
   \bbordermatrix{
-    ~ & Faustroll & Gospel & Voyage \\
-    Faustroll & 77 & 0 & 0 \\
-    father & 1 & 28 & 2 \\
-    time & 34 & 16 & 129 \\
-    purpose & 2 & 0 & 3 \\
-    little & 28 & 16 & 81 \\
-    background & 0 & 0 & 0 \\
-    water & 29 & 7 & 120 \\
-    doctor & 30 & 0 & 0 \\
-    without & 27 & 7 & 117 \\
-    skiff & 35 & 0 & 0 \\
-    bishop & 27 & 0 & 2 \\
-    God & 25 & 123 & 2 \\
-    substance & 8 & 3 & 1 \\
-    issue & 0 & 2 & 2 \\
-    watch & 5 & 3 & 6 \\
+    ~ & Faustroll & Gospel & Voyage \cr % chktex 41
+    Faustroll & 77 & 0 & 0 \cr % chktex 41
+    father & 1 & 28 & 2 \cr % chktex 41
+    time & 34 & 16 & 129 \cr % chktex 41
+    purpose & 2 & 0 & 3 \cr % chktex 41
+    little & 28 & 16 & 81 \cr % chktex 41
+    background & 0 & 0 & 0 \cr % chktex 41
+    water & 29 & 7 & 120 \cr % chktex 41
+    doctor & 30 & 0 & 0 \cr % chktex 41
+    without & 27 & 7 & 117 \cr % chktex 41
+    skiff & 35 & 0 & 0 \cr % chktex 41
+    bishop & 27 & 0 & 2 \cr % chktex 41
+    God & 25 & 123 & 2 \cr % chktex 41
+    substance & 8 & 3 & 1 \cr % chktex 41
+    issue & 0 & 2 & 2 \cr % chktex 41
+    watch & 5 & 3 & 6
   }
 \]
 \caption{Total wordcount of files: Faustroll=131891, Gospel=139669, Voyage=497295}
@@ -719,7 +719,7 @@ Example (first sentence in Faustroll):
 \end{quote}
 
 \begin{quote}
-  In this ${[$year Eighteen Hundred and Ninety-eight, the Eighth day of February$]}^{\text{TIME}}$, Pursuant to article ${[$819$]}^{\text{NUMBER}}$ of the ${[$Code of Civil Procedure$]}^{\text{DOCUMENT}}$ and at the request of ${[$M. and Mme. Bonhomme (Jacques)$]}^{\text{PERSON}}$, proprietors of a house situate at ${[$Paris, 100 bis, rue Richer$]}^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the ${[$Town Hall$]}^{\text{FACILITY}}$ of ${[$Q borough$]}^{\text{LOCATION}}$.
+  In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]$^{\text{TIME}}$, Pursuant to article [819]$^{\text{NUMBER}}$ of the [Code of Civil Procedure]$^{\text{DOCUMENT}}$ and at the request of [M. and Mme. Bonhomme (Jacques)]$^{\text{PERSON}}$, proprietors of a house situate at [Paris, 100 bis, rue Richer]$^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the [Town Hall]$^{\text{FACILITY}}$ of [Q borough]$^{\text{LOCATION}}$.
 \end{quote}
 
 Gazetteers (lists of place or person names for example) can help with the detection of these named entities.
@@ -750,7 +750,7 @@ The process of adding tags to the words of a text is called parts-of-speech tagg
 Example (first sentence in Faustroll):
 
 \begin{quote}
-  In\slash{} IN this\slash{} DT [year\slash{} NN Eighteen\slash{} CD Hundred\slash{} CD and\slash{} CC Ninety-eight\slash{} CD,\slash{}, the\slash{} DT Eighth\slash{} CD day\slash{} NN of\slash{} IN February\slash{} NNP]$^{\text{TIME}}$,\slash{}, Pursuant\slash{} JJ to\slash{} IN article\slash{} NN [819\slash{} CD]$^{\text{NUMBER}}$ of\slash{} IN the\slash{} DT [Code\slash{} NN of\slash{} IN Civil\slash{} NNP Procedure\slash{} NNP]$^{\text{DOCUMENT}}$ and\slash{} CC at\slash{} IN the\slash{} DT request\slash{} NN of\slash{} IN [M.\slash{} NN and\slash{} CC Mme.\slash{} NN Bonhomme\slash{} NNP (\slash{} (Jacques\slash{} NNP)\slash{})]$^{\text{PERSON}}$,\slash{}, proprietors\slash{} NNS of\slash{} IN a\slash{} DT house\slash{} NN situate\slash{} JJ at\slash{} IN [Paris\slash{} NNP,\slash{}, 100\slash{} CD bis\slash{} NN,\slash{}, rue\slash{} NN Richer\slash{} NNP]$^{\text{LOCATION}}$,\slash{}, the\slash{} DT aforementioned\slash{} JJ having\slash{} VBG address\slash{} NN for\slash{} IN service\slash{} NN at\slash{} IN my\slash{} PRP residence\slash{} NN and\slash{} CC further\slash{} JJ at\slash{} IN the\slash{} DT [Town\slash{} NNP Hall\slash{} NNP]$^{\text{FACILITY}}$ of\slash{} IN [Q\slash{} NNP borough\slash{} NN]$^{\text{LOCATION}}$.\slash{}.
+  In\slash{}IN this\slash{}DT [year\slash{}NN Eighteen\slash{}CD Hundred\slash{}CD and\slash{}CC Ninety-eight\slash{}CD,\slash{}, the\slash{}DT Eighth\slash{}CD day\slash{}NN of\slash{}IN February\slash{}NNP]$^{\text{TIME}}$,\slash{}, Pursuant\slash{}JJ to\slash{}IN article\slash{}NN [819\slash{}CD]$^{\text{NUMBER}}$ of\slash{}IN the\slash{}DT [Code\slash{}NN of\slash{}IN Civil\slash{}NNP Procedure\slash{}NNP]$^{\text{DOCUMENT}}$ and\slash{}CC at\slash{}IN the\slash{}DT request\slash{}NN of\slash{}IN [M.\slash{}NN and\slash{}CC Mme.\slash{}NN Bonhomme\slash{}NNP (\slash{}(Jacques\slash{}NNP)\slash{})]$^{\text{PERSON}}$,\slash{}, proprietors\slash{}NNS of\slash{}IN a\slash{}DT house\slash{}NN situate\slash{}JJ at\slash{}IN [Paris\slash{}NNP,\slash{}, 100\slash{}CD bis\slash{}NN,\slash{}, rue\slash{}NN Richer\slash{}NNP]$^{\text{LOCATION}}$,\slash{}, the\slash{}DT aforementioned\slash{}JJ having\slash{}VBG address\slash{}NN for\slash{}IN service\slash{}NN at\slash{}IN my\slash{}PRP residence\slash{}NN and\slash{}CC further\slash{}JJ at\slash{}IN the\slash{}DT [Town\slash{}NNP Hall\slash{}NNP]$^{\text{FACILITY}}$ of\slash{}IN [Q\slash{}NNP borough\slash{}NN]$^{\text{LOCATION}}$.\slash{}.
 \end{quote}
 
 \begin{equation}

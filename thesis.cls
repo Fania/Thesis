@@ -21,7 +21,7 @@
 
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
 \ProcessOptions\relax
-\LoadClass[a4paper,oneside,cmyk]{\baseclass}
+\LoadClass[a4paper,oneside]{\baseclass}
 
 \hfuzz=7pt
 \vfuzz=7pt
@@ -220,7 +220,8 @@
 
 % COLOUR STUFF
 
-\usepackage[cmyk]{xcolor}
+% \usepackage[cmyk]{xcolor}
+\usepackage{xcolor}
 \newenvironment{comment}{\par\color{cyan}}{\par}
 \newenvironment{draft}{\par\color{magenta}}{\par}
 
