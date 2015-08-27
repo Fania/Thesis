@@ -5,53 +5,51 @@
 
 \emph{Part of this research has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.}
 
-\grule{}
+\grule % chktex 1
 
 The prototype developed is described here in detail. It is based on and inspired by the background reading done in preparation for this stage.
 
 \todo{style inline code}
 \todo{run code on laptop and get snippets of all variable contents, e.g.\ faustroll, froll\_dict, \ldots}
 
+{\Huge \url{pata.physics.wtf}}
 
-\section{Setup}
+\section{Corpus}
 
-In TEXTSURFER.PY
+The corpus used in the text search functionality of the tool resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}. The corpus contents are as follows:
 
-Variables:
-\begin{description}
-  \item [book\_list] List of books in library: \lstinline$= PlaintextCorpusReader(corpus_root, '.*\.txt')$% chktex 25
-  \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$% chktex 25
-  \item [faustroll] Faustroll words converted to \gls{nltk} Text: \lstinline$= nltk.Text(troll)$
-  \item [faustroll\_dict] Alphabetical dictionary (list) of words: \lstinline$= sorted(set([w for w in faustroll]))$
-  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() and w not in sw]$% chktex 25
-\end{description}
+\begin{enumerate}[start=0]
+\item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
+\item Edgar Allen Poe: \emph{Collected Works}
+\item Cyrano de Bergerac: \emph{A Voyage to the Moon}
+\item Saint Luke: \emph{The Gospel}
+\item Leon Bloy: \emph{Le Desespere} (French)
+\item Samuel Taylor Coleridge: \emph{The Rime of the Ancient Mariner}
+\item Georges Darien: \emph{Le Voleur} (French)
+\item Marceline Desbordes-Valmore: \emph{Le Livre des Meres et des Enfants} (French)
+\item Max Elskamp: \emph{Enluminures} (French)
+\item Jean-Pierre Claris de Florian: \emph{Les Deux Billets} (French)
+\item \emph{One Thousand and One Nights}
+\item Christian Grabbe: \emph{Scherz, Satire, Ironie und tiefere Bedeutung} (German)
+\item Gustave Kahn: \emph{Le Conte de l'Or et Du Silence} (French)
+\item Le Comte de Lautreamont: \emph{Les Chants de Maldoror} (French)
+\item Maurice Maeterlinck: \emph{Aglavaine and Selysette}
+\item Stephane Mallarme: \emph{Verse and Prose} (French)
+\item Mendes: \emph{The Mirror} and \emph{la Divina Aventure} (English and Spanish)
+\item Homer: \emph{The Odyssey}
+\item Josephin Peladan: \emph{Babylon} (EMPTY FILE)
+\item Francois Rabelais: \emph{Gargantua and Pantagruel}
+\item Jean de Chilra: \emph{L'Heure Sexuelle} (EMPTY FILE)
+\item Henri de Regnier: \emph{La Canne de Jaspe} (EMPTY FILE)
+\item Arthur Rimbaud: \emph{Poesies Completes} (French)
+\item Marcel Schwob: \emph{Der Kinderkreuzzug} (German)
+\item Alfred Jarry: \emph{Ubu Roi} (French)
+\item Paul Verlaine: \emph{Poems}
+\item Emile Verhaeren: \emph{Poems}
+\item Jules Verne: \emph{A Journey to the Centre of the Earth}
+\end{enumerate}
 
-book\_list:
-\begin{itemize}
-  \item 01.poe1.txt, 01.poe2.txt, 01.poe3.txt, 01.poe4.txt, 01.poe5.txt
-  \item 02.bergerac.txt
-  \item 03.gospel.txt
-  \item 04.bloy\_french.txt
-  \item 05.coleridge.txt
-  \item 06.darien\_french.txt
-  \item 10.arabiannights.txt
-  \item 11.grabbe\_german.txt
-  \item 13.lautreamont\_french.txt
-  \item 14.maeterlinck.txt
-  \item 15.mallarme\_french.txt
-  \item 17.odyssey.txt
-  \item 19.rabelais.txt
-  \item 22.rimbaud\_french.txt
-  \item 23.schwob\_german.txt
-  \item 24.ubu\_french.txt
-  \item 25.verlaine.txt
-  \item 26.verhaeren.txt
-  \item 27.verne.txt
-  \item faustroll.txt
-  \item phrases-fragments.txt
-  \item quotes.txt
-\end{itemize}
-
+The original list as it appears in ``Faustroll'' is this:
 \begin{enumerate}
 \item BAUDELAIRE, a volume of E.A. POE translations.
 \item BERGERAC, \emph{Works}, volume II, containing the \emph{Histrory of the States and Empires of the Sun}, and the \emph{History of Birds}.
@@ -80,35 +78,56 @@ book\_list:
 \item VERLAINE, \emph{Wisdom}.
 \item VERHAEREN, \emph{The Hallucinated Landscapes}.
 \item VERNE, \emph{Voyage to the Center of the Earth}.
-\end{enumerate}\citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}
-
-
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{DocteurFaustroll}
-  \caption[Aubrey Beardsley's `Docteur Faustroll']{Aubrey Beardsley's `Docteur Faustroll'}
-\label{fig:beardsley}
-\end{figure}
+\end{enumerate}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{JaneAvril}
-  \caption[Toulouse-Lautrec's `Jane Avril']{Toulouse-Lautrec's `Jane Avril'}
+  \caption[Toulouse-Lautrec's ``Jane Avril'']{Toulouse-Lautrec's ``Jane Avril''}
 \label{fig:toulouse}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{RevueBlanche}
-  \caption[Bonnard's `Revue Blanche']{Bonnard's `Revue Blanche'}
+  \caption[Bonnard's ``Revue Blanche'']{Bonnard's ``Revue Blanche''}
 \label{fig:bonnard}
 \end{figure}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{DocteurFaustroll}
+  \caption[Aubrey Beardsley's ``Docteur Faustroll'']{Aubrey Beardsley's ``Docteur Faustroll''}
+\label{fig:beardsley}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{SaintCado}
+  \caption[Oberthuer's ``Saint Cado'']{Oberthuer's ``Saint Cado''}
+\label{fig:oberthuer}
+\end{figure}
+
+
+\section{Setup}
+
+In TEXTSURFER.PY
+
+Variables:
+\begin{description}
+  \item [book\_list] List of books in library: \lstinline$= PlaintextCorpusReader(corpus_root, '.*\.txt')$ % chktex 25
+  \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$ % chktex 25
+  \item [faustroll] Faustroll words converted to \gls{nltk} Text: \lstinline$= nltk.Text(troll)$
+  \item [faustroll\_dict] Alphabetical dictionary (list) of words: \lstinline$= sorted(set([w for w in faustroll]))$
+  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() and w not in sw]$ % chktex 25
+\end{description}
 
 
 
-stopwords see~\ref{app:code}
+
+
+
+stopwords see appendix~\ref{app:code}
 
 freqdist:
 [(Faustroll, 77), (Bosse, 43), (Nage, 43), (skiff, 35), (time, 34), (ha, 32),  (CONCERNING, 30), (doctor, 30), (water, 29), (little, 28), (bishop, 27), (toward, 27), (without, 27)]
@@ -190,115 +209,6 @@ In short, the prototype’s workflow can be described as follows:
 The three functions inspired by pataphysics (clinamen, syzygy and antinomy) are described in more detail in the previous section. Figure 2 shows a screenshot of the resulting list of results for the query clear. The specific results for each of the three methods are simply a few words surrounding the pataphysicalised query term from within the book, which does not necessarily represent complete sentences but provides some context for the result.
 
 The same principles and algorithms can be applied to different types of media, for example images or video and even sound. The complete tool would include a mixture of different types of media in its results with various styles of displaying them (e.g.\ displaying images ordered as a Fibonacci spiral).
-
-\subsection{Prototype 1}
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[height=0.6\textheight]{images/prototype01}
-\caption[Prototype1]{Prototype1}
-\label{fig:Prototype1}
-\end{figure}
-
-\subsection{Prototype 2}
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/prototype02}
-\caption[Prototype2]{Prototype2}
-\label{fig:Prototype2}
-\end{figure}
-
-\begin{alltt}
-# TEXT
-
-## setup
-
-1.\ read in faustroll book
-2.\ create `froll_dict' dictionary from text
-3.\ remove stopwords and numbers from `froll_dict'
-
-## text algorithm
-
-1.\ get query term
-2.\ execute three functions:
-
-  2a.\ syzygy algorithm
-    1.\ get list of synonyms
-    2.\ for each synonym do the following:
-      a.\ find hyponyms; if a hyponym occurs in `froll_dict' then add to the output list
-      b.\ find hypernyms; if a hypernym occurs in `froll_dict' then add to the output list
-      c.\ find holonyms; if a holonym occurs in `froll_dict' then add to the output list
-    3.\ return list of syzygy words
-
-  2b.\ antinomy algorithm
-    1.\ get list of synonyms
-    2.\ for each synonym do the following:
-      a.\ find antonyms; if a antonym occurs in `froll_dict' then add to the output list
-    3.\ return list of antinomy words
-
-  2c.\ clinamen algorithm
-    1.\ find list of words within `froll_dict' that have a `dameraulevenshtein distance' of 1 or 2 (meaning, there are 1 or 2 spelling errors)
-    2.\ return list of clinamen words
-
-3.\ get sentences for all three output lists
-
-  3a.\ if the word appears in faustroll then find the nearest 5 words before and after the word
-  3b.\ return list of sentences
-
-4.\ render results as html
-
-
----
-
-# IMAGES
-
-## setup
-
-- microsoft translate API key
-- flickr API key
-- (bing image search API key) --- not used atm
-
-## image algorithm
-
-1.\ get query word
-2.\ get one syzygy word using syzygy algorithm 2a above
-3.\ translation party
-  3a.\ translate english to french
-  3b.\ translate french to japanese
-  3c.\ translate japanese to english
-4.\ get images
-  4a.\ search flickr for 10 matches to english translation
-  4b.\ get metadata for each
-  4c.\ add title, thumb, link to output list
-5.\ return output list
-6.\ render results as html
-
----
-
-# VIDEOS
-
-## setup
-
-- microsoft translate API key
-- youtube API stuff
-- (bing video search API key) --- not used atm
-
-## video algorithm
-
-1.\ get query word
-2.\ get one syzygy word using syzygy algorithm
-3.\ translation party
-  3a.\ translate english to french
-  3b.\ translate french to japanese
-  3c.\ translate japanese to english
-4.\ get videos
-  4a.\ search YouTube for 10 matches to english translation
-  4b.\ get metadata for each
-  4c.\ add title, thumb, link to output list
-5.\ return output list
-6.\ render as html
-\end{alltt}
 
 
 \section{User experience}
@@ -755,6 +665,8 @@ synset item:clearly.r.04
 
 \url{http://pata.fania.eu}
 
+\url{http://pata.physics.wtf}
+
 
 \section{APIs}
 
@@ -775,3 +687,116 @@ synset item:clearly.r.04
   \item Word Scrable
   \item $\dots$
 \end{itemize}
+
+
+\section{Prototype 2}
+
+{\Huge \url{pata.fania.eu}}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/prototype02}
+\caption[Prototype2]{Prototype2}
+\label{fig:Prototype2}
+\end{figure}
+
+\begin{alltt}
+# TEXT
+
+## setup
+
+1.\ read in faustroll book
+2.\ create `froll_dict' dictionary from text
+3.\ remove stopwords and numbers from `froll_dict'
+
+## text algorithm
+
+1.\ get query term
+2.\ execute three functions:
+
+  2a.\ syzygy algorithm
+    1.\ get list of synonyms
+    2.\ for each synonym do the following:
+      a.\ find hyponyms; if a hyponym occurs in `froll_dict' then add to the output list
+      b.\ find hypernyms; if a hypernym occurs in `froll_dict' then add to the output list
+      c.\ find holonyms; if a holonym occurs in `froll_dict' then add to the output list
+    3.\ return list of syzygy words
+
+  2b.\ antinomy algorithm
+    1.\ get list of synonyms
+    2.\ for each synonym do the following:
+      a.\ find antonyms; if a antonym occurs in `froll_dict' then add to the output list
+    3.\ return list of antinomy words
+
+  2c.\ clinamen algorithm
+    1.\ find list of words within `froll_dict' that have a `dameraulevenshtein distance' of 1 or 2 (meaning, there are 1 or 2 spelling errors)
+    2.\ return list of clinamen words
+
+3.\ get sentences for all three output lists
+
+  3a.\ if the word appears in faustroll then find the nearest 5 words before and after the word
+  3b.\ return list of sentences
+
+4.\ render results as html
+
+
+---
+
+# IMAGES
+
+## setup
+
+- microsoft translate API key
+- flickr API key
+- (bing image search API key) --- not used atm
+
+## image algorithm
+
+1.\ get query word
+2.\ get one syzygy word using syzygy algorithm 2a above
+3.\ translation party
+  3a.\ translate english to french
+  3b.\ translate french to japanese
+  3c.\ translate japanese to english
+4.\ get images
+  4a.\ search flickr for 10 matches to english translation
+  4b.\ get metadata for each
+  4c.\ add title, thumb, link to output list
+5.\ return output list
+6.\ render results as html
+
+---
+
+# VIDEOS
+
+## setup
+
+- microsoft translate API key
+- youtube API stuff
+- (bing video search API key) --- not used atm
+
+## video algorithm
+
+1.\ get query word
+2.\ get one syzygy word using syzygy algorithm
+3.\ translation party
+  3a.\ translate english to french
+  3b.\ translate french to japanese
+  3c.\ translate japanese to english
+4.\ get videos
+  4a.\ search YouTube for 10 matches to english translation
+  4b.\ get metadata for each
+  4c.\ add title, thumb, link to output list
+5.\ return output list
+6.\ render as html
+\end{alltt}
+
+
+\section{Prototype 1}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[height=0.6\textheight]{images/prototype01}
+\caption[Prototype1]{Prototype1}
+\label{fig:Prototype1}
+\end{figure}
