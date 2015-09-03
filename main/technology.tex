@@ -25,7 +25,7 @@ Knowledge needed to understand project:
 \section{Information Retrieval}
 
 \begin{quote}
-  Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \citep{Baeza-Yates2011}
+  Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \autocite{Baeza-Yates2011}
 \end{quote}
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure~\ref{fig:SEA}.
@@ -37,9 +37,9 @@ In simple terms, a typical search process can be described as follows. A user is
 \label{fig:SEA}
 \end{figure}
 
-Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\citep{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \citep{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \citep{Brin1998, Brin1998b}.
+Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\autocite{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \autocite{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
 
-Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \citep{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
+Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
 
 
 \paragraph{Crawler}
@@ -154,7 +154,7 @@ The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the d
 
 There are different models for different needs, for example a multimedia system is going to be different than a text based system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
 
-The notation for \gls{ir} models is as follows \citep[adapted from][p.58]{Baeza-Yates2011}:
+The notation for \gls{ir} models is as follows \autocite[adapted from][p.58]{Baeza-Yates2011}:
 
 An \gls{ir} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 \itab{$D$} \tab{is the set of documents,}\\
@@ -179,7 +179,7 @@ This means, given a query $q$ and a set of documents $D$ in which we wish to sea
 
 \subsubsection{The Boolean Model}
 
-One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows (quoted from \citep[p.65]{Baeza-Yates2011})
+One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows (quoted from \autocite[p.65]{Baeza-Yates2011})
 
 \begin{equation}
   sim(d_j,q) =
@@ -207,7 +207,7 @@ Sometimes things are not quite black and white though and we need to weigh the i
 
 \subsubsection{The Vector Model}
 
-The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents (taken from \citep[p.78]{Baeza-Yates2011}).
+The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents (taken from \autocite[p.78]{Baeza-Yates2011}).
 
 \begin{equation}
   \begin{split}
@@ -244,7 +244,7 @@ Where $t$ is the total number of terms in the index and $w_{i,j}$ is the TF-IDF 
 \end{equation}
 \myequations{sim2}
 
-Here is an example algorithm for computing this score taken from \citep[p.125]{Manning2009}.
+Here is an example algorithm for computing this score taken from \autocite[p.125]{Manning2009}.
 
 \begin{figure}[htb]
   \begin{lstlisting}
@@ -276,7 +276,7 @@ Where,\\
 \itab{$K$} \tab{is the number of results we want}\\
 \itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
 
-There are several other common \gls{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set \citep{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986} models or latent semantic indexing \citep{Deerwester1990}, neural network models and others \citep{Macdonald2009, Schuetze1998, Schuetze}.
+There are several other common \gls{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
 
 
 
@@ -295,20 +295,20 @@ Ranking signals contribute to the improvement of the ranking process. These can 
 
 Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing\footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
 
-PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \citep{Brin1998b} and they further describe the algorithm here \citep{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \citep[p.472]{Baeza-Yates2011}.
+PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \autocite{Brin1998b} and they further describe the algorithm here \autocite{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \autocite[p.472]{Baeza-Yates2011}.
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
   \includegraphics[width=.75\linewidth]{pagerank}
 \caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
-\label{fig:pagerank}
+\label{fig:pagerank2}
 \end{figure}
 
 \begin{equation}
   PR(a) =
   \frac{q}{T} + (1 - q)
   \sum_{i=1}^{n} \frac{PR(p_i)}{L(p_i)}
-  \label{eq:PR}
+  \label{eq:PRt}
 \end{equation}
 \myequations{PR}
 
@@ -319,7 +319,7 @@ Where,\\
 \itab{$q$} \tab{is the is a parameter to be set by the system (typically 0.15)}\\
 \itab{} \tab{needed to deal with dead ends in the graph.}
 
-The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citep[p.472]{Kleinberg1999, Kleinberg} in 1999. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Again, the following formula is taken from \citep[p.471]{Baeza-Yates2011}. S is the set of pages.
+The HITS algorithm also works on the links between pages. It was first described by Kleinberg \autocite[p.472]{Kleinberg1999, Kleinberg} in 1999. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Again, the following formula is taken from \autocite[p.471]{Baeza-Yates2011}. S is the set of pages.
 
 \begin{equation}
   \begin{split}
@@ -330,13 +330,13 @@ The HITS algorithm also works on the links between pages. It was first described
 \end{equation}
 \myequations{HITS}
 
-Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \citep{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ``hub'' pages are predefined.
+Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \autocite{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ``hub'' pages are predefined.
 
-Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \citep{Debra1994, Debra1994a, Debra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ``ranking'' is done dynamically at query time.
+Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \autocite{DeBra1994, DeBra1994a, DeBra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ``ranking'' is done dynamically at query time.
 
-There are various algorithms that follow this approach. For example the shark search algorithm \citep{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \citep{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \citep{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \citep{Nick2001}.
+There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \autocite{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
 
-Other variations include the incorporation of user behaviour \citep{Agichtein2006}, social annotations \citep{Bao2007}, trust \citep{Garcia-Molina2004}, query modifications \citep{Glover2001}, topic sensitive PageRank [59] (p430) \citep{Haveliwala2003}, folksonomies \citep{Hotho}, SimRank \citep{Jeh}, neural-networks \citep{Shu1999}, and semantic Web \citep{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
+Other variations include the incorporation of user behaviour \autocite{Agichtein2006}, social annotations \autocite{Bao2007}, trust \autocite{Garcia-Molina2004}, query modifications \autocite{Glover2001}, topic sensitive PageRank [59] (p430) \autocite{Haveliwala2003}, folksonomies \autocite{Hotho}, SimRank \autocite{Jeh}, neural-networks \autocite{Shu1999}, and semantic Web \autocite{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
 
 
 \subsection{Query Expansion and Relevance Feedback}
@@ -346,7 +346,7 @@ Relevance feedback is an idea of improving the search results by explicit or imp
 
 \subsubsection*{Challenges of Web Search}
 
-Other issues that arise when trying to search the World Wide Web are as follows (\citep[p.449]{Baeza-Yates2011}).
+Other issues that arise when trying to search the World Wide Web are as follows (\autocite[p.449]{Baeza-Yates2011}).
 
 \begin{itemize}
   \item Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.
@@ -357,7 +357,7 @@ Other issues that arise when trying to search the World Wide Web are as follows 
   \item Data is not heterogeneous. Different data types (text, images, sound, video) and different languages exist.
 \end{itemize}
 
-Since a single query for a popular word can results in  millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \citep[p.459]{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \citep[p.459]{Baeza-Yates2011}. Google for example uses over 15,000 commodity-class PCs that are distributed over several data centres around the world \citep{Dean2003}.
+Since a single query for a popular word can results in  millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite[p.459]{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite[p.459]{Baeza-Yates2011}. Google for example uses over 15,000 commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
 
 
 \subsubsection*{Summary}
@@ -416,7 +416,7 @@ The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $
 
 where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
 
-Each recursive call matches one of the cases covered by the Damerau–Levenshtein distance:
+Each recursive call matches one of the cases covered by the Dame\-rau-Leven\-shtein distance:
 
 $d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
 $d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
@@ -429,12 +429,11 @@ $d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive sy
 
 \gls{nlp} blah blah blah\ldots
 
-Bird, S., Klein, E. and Loper, E., 2009. \gls{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\citep{Bird2009}
+Bird, S., Klein, E. and Loper, E., 2009. \gls{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\autocite{Bird2009}
 
-Manning, C., Raghavan, P. and Schuetze, H., 2008. Introduction to Information Retrieval 1st ed., Cambridge: Cambridge University Press.\citep{Manning2009}
+Manning, C., Raghavan, P. and Schuetze, H., 2008. Introduction to Information Retrieval 1st ed., Cambridge: Cambridge University Press.\autocite{Manning2009}
 
-Taken from [1]:\citep{Jurafsky2009}\\
-Also known as:\\
+Taken from \autocite{Jurafsky2009}, also known as:
 \begin{itemize}
   \item Speech and language processing
   \item Human language technology
@@ -453,7 +452,7 @@ Goals of \gls{nlp} are to get computers to perform useful tasks involving human 
 e.g.\ machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
 
 
-\hypertarget{stemming}{Techniques} that are useful for this are the following \citep[Ch.2]{Manning2009}.
+\hypertarget{stemming}{Techniques} that are useful for this are the following \autocite[Ch.2]{Manning2009}.
 
 \begin{description}
   \item [Tokenisation] discarding white spaces and punctuation and making every term a token
@@ -536,7 +535,7 @@ Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can norm
 
 \begin{equation}
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
-  \label{eq:Probwn}
+  \label{eq:Probwnt}
 \end{equation}
 \myequations{Probwn}
 
@@ -741,7 +740,7 @@ Wikipedia:
   \item [Interjection]: any emotional greeting (or ``exclamation'')
 \end{description}
 
-Building a Large Annotated Corpus of English \citep{Marcus1993}
+Building a Large Annotated Corpus of English \autocite{Marcus1993}
 
 There exist other sets of tags, like the Penn Treebank with divides those 8 tags into a total of 45, for example $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, etc.
 
@@ -769,7 +768,7 @@ For example: the probability of getting a common noun after a determiner is:
 
 \begin{equation}
   P(\text{NN} \mid \text{DT}) = \frac{C(\text{DT},\text{NN})}{C(\text{DT})} = \frac{56,509}{116,454} = 0.49
-  \label{eq:pnndt}
+  \label{eq:pnndtt}
 \end{equation}
 \myequations{pnndt}
 
@@ -885,7 +884,7 @@ Given the rather complicated nature of the words and sentence structure, some of
 
 \section{Linguistics / WordNet}
 
-Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}\\
+Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}
 
 I looked into linguistics for the purpose of patadata. This section definitely needs some expanding. Some concepts that might be relevant include (taken from Wikipedia):
 

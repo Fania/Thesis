@@ -39,7 +39,7 @@ UK action sports lifestyle brand
 (www.animal.co.uk)	List of animals in the Emperor’s possession
 Wikipedia article
 (en.wikipedia.org/wiki/animal)	Instructions about embalming animals
-Animal Planet --- Discovery Channel (animal.discovery.com)	Information on a society for animal training
+Animal Planet --- Discovery Channel (animal.dis\-covery.com) 	Information on a society for animal training
 Table 1 --- Results for a query for animal. The relevant results were retrieved from Google. The creative results were inspired by Borges’ “Chinese Encyclopaedia” from The Analytical Language of John Wilkins (1942)
 We can link this very nicely to the idea of exploratory search. Lowering expectations or opening the mind implies extending the task domain or problem space. Creativity and exploratory search seem predestined to work with each other.
 
@@ -75,7 +75,7 @@ Depending on these factors and constraints, search results can be viewed as usef
 
 \section{IR Evaluation}
 
-In this paper \citep{Sawle2011} we have discussed an initial approach to measure the creativity of search results. Based on a definition of creativity by Boden, we attempt to define creativity in a way which could be applied to search results and provide a simple metric to measure it.
+In this paper \autocite{Sawle2011} we have discussed an initial approach to measure the creativity of search results. Based on a definition of creativity by Boden, we attempt to define creativity in a way which could be applied to search results and provide a simple metric to measure it.
 
 Evaluating search results is not easy. The most widely used metric to measure the quality of results is that of precision and recall.
 
@@ -104,7 +104,7 @@ Note the slight difference between the two. Precision tells us how many of all r
 \label{fig:PR}
 \end{figure}
 
-Precision is typically more important than recall in web search while it is the other way around in a database search system maybe. The mean average precision value (MAP) can be calculated following this formula (taken from \citep[p.141]{Baeza-Yates2011}):
+Precision is typically more important than recall in web search while it is the other way around in a database search system maybe. The mean average precision value (MAP) can be calculated following this formula (taken from \autocite[p.141]{Baeza-Yates2011}):
 
 \begin{equation}
   MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
@@ -114,7 +114,7 @@ Precision is typically more important than recall in web search while it is the 
 
 Where $R_i$ is the set of relevant documents for query $q_i$.
 
-But for many web searches is it not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first 5 to 30 results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called ``Precision at n'' or ``P@n'' \citep[p.140]{Baeza-Yates2011}. So for example this could be P@5 or P@10 or P@20. For example, to compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
+But for many web searches is it not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first 5 to 30 results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called ``Precision at n'' or ``P@n'' \autocite[p.140]{Baeza-Yates2011}. So for example this could be P@5 or P@10 or P@20. For example, to compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
 
 The Text REtrieval Conference (TREC) is a conference that provides large test sets of data to participants and lets them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages for example, but unfortunately they have to paid for to get a copy.\footnote{\url{http://ir.dcs.gla.ac.uk/test_collections/}}% chktex 26
 
@@ -152,7 +152,7 @@ Taking the debates about human creativity \marginpar{see §\ref{ch:creativity}} 
   \end{itemize}
 \end{comment}
 
-On a more practical level, there are various problems that arise when trying to evaluate computer creativity. Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \citep[p.2, her emphasis]{Jordanous2011}.
+On a more practical level, there are various problems that arise when trying to evaluate computer creativity. Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2, her emphasis]{Jordanous2011}.
 
 Pease and Colton [27] divide it into two notions: \todo{ref}
 
@@ -164,48 +164,48 @@ Pease and Colton [27] divide it into two notions: \todo{ref}
 
 \section{Output Minus Input}
 
-It has been argued that ``creativity may be seen as \textbf{output minus input}.'' \citep[p.2, my emphasis]{Pease2001}. The output in this case is the creative product but the input is not the process. Rather, it is the \textbf{``inspiring set''} (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) of a piece of software.
+It has been argued that ``creativity may be seen as \textbf{output minus input}.'' \autocite[p.2, my emphasis]{Pease2001}. The output in this case is the creative product but the input is not the process. Rather, it is the \textbf{``inspiring set''} (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) of a piece of software.
 
 \begin{quote}
-  The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set. \citep[p.3]{Colton2001}
+  The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set. \autocite[p.3]{Colton2001}
 \end{quote}
 
 \begin{quote}
-  We are interested in how a single agent can come up with something that is novel \textbf{relative to its initial state of knowledge} \citep[p.72, his emphasis]{Ritchie2007}
+  We are interested in how a single agent can come up with something that is novel \textbf{relative to its initial state of knowledge} \autocite[p.72, his emphasis]{Ritchie2007}
 \end{quote}
 
-``Output minus input'' might easily be misinterpreted as ``product minus process'', however, that is not the case. In fact, Pease, Winterstein and Colton argue that ``the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity'' \citep[p.6]{Pease2001}, and that ``two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it.'' \citep[p.7]{Pease2001}. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative, and they need to be disqualified so to speak.
+``Output minus input'' might easily be misinterpreted as ``product minus process'', however, that is not the case. In fact, Pease, Winterstein and Colton argue that ``the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity'' \autocite[p.6]{Pease2001}, and that ``two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it.'' \autocite[p.7]{Pease2001}. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative, and they need to be disqualified so to speak.
 
 
 \section{Measurable Attributes}
 
-Simon Colton came up with an evaluation framework called the ``creative tripod''. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent \textbf{skill, appreciation, and imagination} and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception ``that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative.'' \citep[p.5]{Colton2008a} + \citep[p.5]{Colton2008}. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative. \citep[p.5]{Colton2008a} + \citep[p.5]{Colton2008}
+Simon Colton came up with an evaluation framework called the ``creative tripod''. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent \textbf{skill, appreciation, and imagination} and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception ``that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative.'' \autocite[p.5]{Colton2008a} + \autocite[p.5]{Colton2008}. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative. \autocite[p.5]{Colton2008a} + \autocite[p.5]{Colton2008}
 
 \begin{quote}
-  Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same \citep{Colton2008a}
+  Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same \autocite{Colton2008a}
 \end{quote}
 
-Pease, Winterstein and Colton suggest that all creative products must be \textbf{novel and valuable} \citep[p.1]{Pease2001} and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss \textbf{randomness} as a measurable approach. Elsewhere, Pease et al discuss using \textbf{serendipity} as an approach \citep{Pease2013}.
+Pease, Winterstein and Colton suggest that all creative products must be \textbf{novel and valuable} \autocite[p.1]{Pease2001} and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss \textbf{randomness} as a measurable approach. Elsewhere, Pease et al discuss using \textbf{serendipity} as an approach \autocite{Pease2013}.
 
-Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely \textbf{novelty, usefulness/appropriateness and impact/influence}. \citep[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person’s creativity he proposes citation counts \citep[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example\footnote{http://www.artfacts.net seems to provide just that though.}.
+Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely \textbf{novelty, usefulness/appropriateness and impact/influence}. \autocite[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person’s creativity he proposes citation counts \autocite[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example\footnote{http://www.artfacts.net seems to provide just that though.}.
 
-Graeme Ritchie identifies three main criteria for creativity as \textbf{novelty, quality and typicality} \citep[p.72-73]{Ritchie2007}, although he argues that ``novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality'' \citep[p.73]{Ritchie2007} \citep[see also][]{Ritchie2001}. He proposes several evaluation criteria which fall under the following categories: \citep[p.91-92]{Ritchie2007} basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those.
+Graeme Ritchie identifies three main criteria for creativity as \textbf{novelty, quality and typicality} \autocite[p.72-73]{Ritchie2007}, although he argues that ``novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality'' \autocite[p.73]{Ritchie2007} \autocite[see also][]{Ritchie2001}. He proposes several evaluation criteria which fall under the following categories: \autocite[p.91-92]{Ritchie2007} basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those.
 
 \begin{comment}
   This also somewhat suggests that variety is a criteria for creativity.
 \end{comment}
 
-Dan Ventura later suggested the addition of \textbf{variety and efficiency} to Ritchie’s model \citep[p.7]{Ventura2008}.
+Dan Ventura later suggested the addition of \textbf{variety and efficiency} to Ritchie’s model \autocite[p.7]{Ventura2008}.
 
-Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems \citep{Wiggins2006} which is largely  based on Boden’s theory of creativity \citep{Boden2003}. The framework uses three criteria for measuring creativity: \textbf{relevance, acceptability and quality}.
+Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems \autocite{Wiggins2006} which is largely  based on Boden’s theory of creativity \autocite{Boden2003}. The framework uses three criteria for measuring creativity: \textbf{relevance, acceptability and quality}.
 
-Anna Jordanous proposed 14 key components of creativity, an ontology of creativity \citep[p.104-120]{Jordanous2012}, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics. \citep[p.120]{Jordanous2012}.
+Anna Jordanous proposed 14 key components of creativity, an ontology of creativity \autocite[p.104-120]{Jordanous2012}, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics. \autocite[p.120]{Jordanous2012}.
 
 \begin{quote}
-  The themes identified in this linguistic analysis have collectively provided a clearer ‘working’ understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts. \citep[p.120]{Jordanous2012}
+  The themes identified in this linguistic analysis have collectively provided a clearer ‘working’ understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts. \autocite[p.120]{Jordanous2012}
 \end{quote}
 
-The 14 components Jordanous collated are: \citep[p.118-120]{Jordanous2012}
+The 14 components Jordanous collated are: \autocite[p.118-120]{Jordanous2012}
 \begin{enumerate}
   \item Active Involvement and Persistence
   \item Generation of Results
@@ -232,46 +232,46 @@ Evaluation is well established in HCI.\@ HCI is not unsimilar to creativity. Des
   I guess her work is meant mostly for ``interactive art'' while mine is meant for creative computing, but clearly there are many overlaps.
 \end{comment}
 
-In HCI, historically, the focus has been on people as users deploying task oriented systems. The criteria for evaluation has largely been in terms of ease of use, task efficiency and effectiveness- usability. However, attributes such as speed and productivity are, for the most part, meaningless in the context of creative interactive experience. \citep[p.23]{Candy2012}
+In HCI, historically, the focus has been on people as users deploying task oriented systems. The criteria for evaluation has largely been in terms of ease of use, task efficiency and effectiveness- usability. However, attributes such as speed and productivity are, for the most part, meaningless in the context of creative interactive experience. \autocite[p.23]{Candy2012}
 
 \begin{quote}
-  Evaluation ``is used to describe assessing and judging the value or worth of a particular idea or artifact both during the creative process and afterwards. Whether the process is systematic or ad hoc, evaluation depends upon criteria and measures that are situated and domain specific.'' \citep[p.7]{Candy2012}
+  Evaluation ``is used to describe assessing and judging the value or worth of a particular idea or artifact both during the creative process and afterwards. Whether the process is systematic or ad hoc, evaluation depends upon criteria and measures that are situated and domain specific.'' \autocite[p.7]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``Whatever the context, evaluation is always tailored to the approach, needs, purpose and methodology of that context.'' \citep[p.7]{Candy2012}
+  ``Whatever the context, evaluation is always tailored to the approach, needs, purpose and methodology of that context.'' \autocite[p.7]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``For evaluation to contribute to a successful outcome, the practitioner needs to have the necessary information including constraints on the options under consideration.'' \citep[p.7]{Candy2012}
+  ``For evaluation to contribute to a successful outcome, the practitioner needs to have the necessary information including constraints on the options under consideration.'' \autocite[p.7]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``The matrix for evaluating creativity represents three standpoints: the capabilities of the creator, the audience, or more accurately, participant, experiences, and the features of the interactive systems as artworks. This initial matrix has been extended to include creative processes for both creator and audience participant (i.e.\ working practices and interaction experiences) and contextual factors in the form of the physical and technical environment in which the creative acts and events take place, including the influence of physical and technical resources and real world constraints.'' \citep[p.7-8]{Candy2012}
+  ``The matrix for evaluating creativity represents three standpoints: the capabilities of the creator, the audience, or more accurately, participant, experiences, and the features of the interactive systems as artworks. This initial matrix has been extended to include creative processes for both creator and audience participant (i.e.\ working practices and interaction experiences) and contextual factors in the form of the physical and technical environment in which the creative acts and events take place, including the influence of physical and technical resources and real world constraints.'' \autocite[p.7-8]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``Evaluation studies are well established in the field of Human-Computer Interaction (HCI) as well as interaction design contexts in general.'' \citep[p.8]{Candy2012}
+  ``Evaluation studies are well established in the field of Human-Computer Interaction (HCI) as well as interaction design contexts in general.'' \autocite[p.8]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``The evaluation of user, or rather, participant, experience of interactive artworks often involves measurement of aesthetic appreciation and the various engagement qualities which are dependent on personal traits, motivations, expectations, emotions and cognitive states of the audience. Those experiences that involve open-ended activity tend towards the creative end of human activity and, as such, are hardly ever measurable in quantitative ways.''  \citep[p.8]{Candy2012}
+  ``The evaluation of user, or rather, participant, experience of interactive artworks often involves measurement of aesthetic appreciation and the various engagement qualities which are dependent on personal traits, motivations, expectations, emotions and cognitive states of the audience. Those experiences that involve open-ended activity tend towards the creative end of human activity and, as such, are hardly ever measurable in quantitative ways.''  \autocite[p.8]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``Evaluation is a key activity in creative design that can be revealed through documentation from design rationale. The introduction of rationale has been an important contribution to the quest for clarity and traceability in design decision-making. Design rationale may be thought of as structured records of design that support the understanding of decisions taken and allow designers to give better informed reconsideration to them at a later stage.'' \citep[p.9]{Candy2012}
+  ``Evaluation is a key activity in creative design that can be revealed through documentation from design rationale. The introduction of rationale has been an important contribution to the quest for clarity and traceability in design decision-making. Design rationale may be thought of as structured records of design that support the understanding of decisions taken and allow designers to give better informed reconsideration to them at a later stage.'' \autocite[p.9]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``A software system can be viewed as an artifact that embodies implicit theoretical constructs that are realized as functional and operational requirements (Carroll and Campbell 1989). Structures are chosen because of their ability to achieve the intended functionality, and such choices may be evaluated against various criteria. During the design process, the ideas are modified and there is a clarification and refinement of intended functions and features. There may be additional factors arising from the context of the project that affect the way the design is carried out: for example the need to keep sight of general applicability whilst meeting the domain specific requirements, or the influence of the given hardware platform and software tools. Whatever the situation, the relationship between designers' decision making and the design outcome is not necessarily transparent and this is can be a problem when it comes to system maintenance. The explicit listing of decisions made during a design process, and the reasons why those decisions were made provides a means to record and communicate the reasoning and justification behind a design decision, including alternatives considered and constraints that affected the decision-making including why alternatives were rejected. The successful application of design rationale to software system design can provide a form of communication of intent from the designer to those who are to maintain the system.'' \citep[p.9]{Candy2012}
+  ``A software system can be viewed as an artifact that embodies implicit theoretical constructs that are realized as functional and operational requirements (Carroll and Campbell 1989). Structures are chosen because of their ability to achieve the intended functionality, and such choices may be evaluated against various criteria. During the design process, the ideas are modified and there is a clarification and refinement of intended functions and features. There may be additional factors arising from the context of the project that affect the way the design is carried out: for example the need to keep sight of general applicability whilst meeting the domain specific requirements, or the influence of the given hardware platform and software tools. Whatever the situation, the relationship between designers' decision making and the design outcome is not necessarily transparent and this is can be a problem when it comes to system maintenance. The explicit listing of decisions made during a design process, and the reasons why those decisions were made provides a means to record and communicate the reasoning and justification behind a design decision, including alternatives considered and constraints that affected the decision-making including why alternatives were rejected. The successful application of design rationale to software system design can provide a form of communication of intent from the designer to those who are to maintain the system.'' \autocite[p.9]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``A promising approach to the externalization of decision-making during the design process is being explored within practice-based research in the creative arts in the form of documented reflective practice. The approach builds upon a normal part of creative practice whereby practitioners draw and note ideas, designs and options in their sketch and notebooks. In this way, the documentation of tentative ideas and how they are worked into firmer proposals through testing and evaluation is a familiar and integral part of creativity. In practice-based research, documented reflective practice and empirical studies are frequently brought together.'' \citep[p.10]{Candy2012}
+  ``A promising approach to the externalization of decision-making during the design process is being explored within practice-based research in the creative arts in the form of documented reflective practice. The approach builds upon a normal part of creative practice whereby practitioners draw and note ideas, designs and options in their sketch and notebooks. In this way, the documentation of tentative ideas and how they are worked into firmer proposals through testing and evaluation is a familiar and integral part of creativity. In practice-based research, documented reflective practice and empirical studies are frequently brought together.'' \autocite[p.10]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  The Multi-dimensional Model of Creativity and Evaluation (MMCE) shown in Figure 1 has four elements: people, process, product and context. \citep[p.11]{Candy2012}
+  The Multi-dimensional Model of Creativity and Evaluation (MMCE) shown in Figure 1 has four elements: people, process, product and context. \autocite[p.11]{Candy2012}
 \end{quote}
 
 \begin{figure}[htb] % (here, top, bottom, page)
@@ -288,7 +288,7 @@ In HCI, historically, the focus has been on people as users deploying task orien
 \label{fig:candy01}
 \end{figure}
 
-\textbf{PEOPLE AS CREATORS}: \citep[p.14-15]{Candy2012}
+\textbf{PEOPLE AS CREATORS}: \autocite[p.14-15]{Candy2012}
 
 Criteria for evaluating creator capability:
 \begin{enumerate}
@@ -301,7 +301,7 @@ Criteria for evaluating creator capability:
   •	Respond in an individual and personal way
 \end{enumerate}
 
-\textbf{PROCESS AS INTERACTION}: \citep[p.17]{Candy2012}
+\textbf{PROCESS AS INTERACTION}: \autocite[p.17]{Candy2012}
 
 Criteria for evaluation can be expressed as follows
 1. For a work to be deemed engaging, the participant should exhibit observable responses. There are likely to be different levels of engagement depending on whether or not the audience has had prior experience of this kind of artwork or installation or similar.\\
@@ -310,7 +310,7 @@ Criteria for evaluation can be expressed as follows
 •	Sustained engagement: the work must excite curiosity in the and also be accessible to a general audience.\\
 •	Creative engagement: the work must excite immediate attention and encourage an audience to interact with it in a playful/purposeful way. As attention declines with familiarity and time, changes take place in the work that renew audience engagement.
 
-\textbf{PRODUCT AS OUTCOME}: \citep[p.18]{Candy2012}
+\textbf{PRODUCT AS OUTCOME}: \autocite[p.18]{Candy2012}
 
 Typical features for judging artworks include composition, aesthetic, affect, content, and technique. Criteria for evaluation can be expressed as follows:
 
@@ -329,7 +329,7 @@ Entries are judged by a Jury of experts in the order of their arrival and accord
 •	Compelling conception\\
 •	Innovation in technique of the presentation
 
-\textbf{CONTEXT AS ENVIRONMENT}: \citep[p.21]{Candy2012}
+\textbf{CONTEXT AS ENVIRONMENT}: \autocite[p.21]{Candy2012}
 
 Establishing a workable living laboratory for interactive art and evaluation involved setting down acceptance criteria for assessing whether or not a new interactive art system was ready to be deployed.
 
@@ -342,47 +342,47 @@ These included:
 •	attention to art system maintenance by creator and technical support
 
 \begin{quote}
-  ``we need to apply strategies for generating clear and unambiguous data that can be turned into meaningful information. From meaningful information, we can then derive understandings related to the context of use, the outcome of which might take the form of a coherent model.'' \citep[p.21]{Candy2012}
+  ``we need to apply strategies for generating clear and unambiguous data that can be turned into meaningful information. From meaningful information, we can then derive understandings related to the context of use, the outcome of which might take the form of a coherent model.'' \autocite[p.21]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``Observation as a method for data collection raises issues as to its reliability in creativity evaluation. Data from observing creativity depends upon the interpretation of what the individual observer sees.'' \citep[p.22]{Candy2012}
+  ``Observation as a method for data collection raises issues as to its reliability in creativity evaluation. Data from observing creativity depends upon the interpretation of what the individual observer sees.'' \autocite[p.22]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``However, in order to ‘measure’ creativity, we have to conduct research outside of controlled laboratory conditions, and cannot rely on fixed criteria that can be applied to all cases. The shifting ground and the ever-changing contexts often renders consistency out of reach.'' \citep[p.22]{Candy2012}
+  ``However, in order to ‘measure’ creativity, we have to conduct research outside of controlled laboratory conditions, and cannot rely on fixed criteria that can be applied to all cases. The shifting ground and the ever-changing contexts often renders consistency out of reach.'' \autocite[p.22]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``If the term `measurement' does not match what we are doing within the creativity domain, then why do we still use this word?'' \citep[p.22]{Candy2012}
+  ``If the term `measurement' does not match what we are doing within the creativity domain, then why do we still use this word?'' \autocite[p.22]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``Whether an action is successful or unsuccessful depends on whether the intended result is achieved.'' \citep[p.23]{Candy2012}
+  ``Whether an action is successful or unsuccessful depends on whether the intended result is achieved.'' \autocite[p.23]{Candy2012}
 \end{quote}
 
 \begin{quote}
-  ``Measuring success is more likely to be dependent on factors such as whether or not the system has engaged the audience in a playful or immersive way or whether it has elicited curiosity or excitement or concentrated attention and so on.'' \citep[p.23]{Candy2012}
+  ``Measuring success is more likely to be dependent on factors such as whether or not the system has engaged the audience in a playful or immersive way or whether it has elicited curiosity or excitement or concentrated attention and so on.'' \autocite[p.23]{Candy2012}
 \end{quote}
 
 
 % -----------------------------
 
 % \begin{comment}
-% •	Brain operations per sec 1016 \citep[p.194]{Kurzweil2013}\\
+% •	Brain operations per sec 1016 \autocite[p.194]{Kurzweil2013}\\
 % •	Japan’s K-computer has 1016 calculations per sec (10 petaflops)\\
-% •	Blue brain project: 2023: 1017 bytes memory + 1018 flops \citep[p.125]{Kurzweil2013}
+% •	Blue brain project: 2023: 1017 bytes memory + 1018 flops \autocite[p.125]{Kurzweil2013}
 % \end{comment}
 %
-% Human Brain Project: \citep{Walker2012}
+% Human Brain Project: \autocite{Walker2012}
 %
-% Our brain consumes about 30W, the same as an electric light bulb, thousands of times less than a small supercomputer. \citep[p.17]{Walker2012}
+% Our brain consumes about 30W, the same as an electric light bulb, thousands of times less than a small supercomputer. \autocite[p.17]{Walker2012}
 %
-% For environmental and business reasons, vendors have set themselves the goal of containing energy consumption to a maximum of 20 megawatts  \citep[p.41]{Walker2012}
+% For environmental and business reasons, vendors have set themselves the goal of containing energy consumption to a maximum of 20 megawatts  \autocite[p.41]{Walker2012}
 %
-% the 1 PFlop machine at the Jülich Supercomputing Centre could simulate up to 100 million neurons – roughly the number found in the mouse brain. \citep[p.41]{Walker2012}
+% the 1 PFlop machine at the Jülich Supercomputing Centre could simulate up to 100 million neurons – roughly the number found in the mouse brain. \autocite[p.41]{Walker2012}
 %
-% Cellular-level simulation of the 100 billion neurons of the human brain will require compute power at the exascale (1018 flops). \citep[p.41-42]{Walker2012}
+% Cellular-level simulation of the 100 billion neurons of the human brain will require compute power at the exascale (1018 flops). \autocite[p.41-42]{Walker2012}
 %
 % 2017 petascale 50petabytes memory + 50 petaflops + <=4MW power
 %
@@ -406,7 +406,7 @@ These included:
 % \item	The brain is much, much bigger than any [current] computer
 % \end{enumerate}
 %
-% Why Minds Are Not Like Computers \citep{Schulman2009}
+% Why Minds Are Not Like Computers \autocite{Schulman2009}
 % Software – Hardware == Mind – Brain ??? analogy
 %
 % "The power of the computer derives not from its ability to perform complex operations, but from its ability to perform many simple operations very quickly."
@@ -431,23 +431,23 @@ These included:
 % Computers are faster and better than humans in many tasks already.
 %
 % \begin{quote}
-% "The weaknesses of the computational approach include its assumption that cognition can be reduced to mathematics and the difficulty of including noncognitive factors in creativity." \citep[p.457]{Mayer1999}
+% "The weaknesses of the computational approach include its assumption that cognition can be reduced to mathematics and the difficulty of including noncognitive factors in creativity." \autocite[p.457]{Mayer1999}
 % \end{quote}
 %
 % \subsection{Other}
 %
 % \begin{quote}
-% "Currently many implementors of creative systems follow a creative-practitioner-type approach: produce a system then present it to others, whose critical reaction determines its worth as a creative entity. A creative practitioner’s primary aim, however, is to produce creative work, rather than to critically investigate creativity; in general this investigative aim is important in computational creativity research." \citep{Jordanous2011}
+% "Currently many implementors of creative systems follow a creative-practitioner-type approach: produce a system then present it to others, whose critical reaction determines its worth as a creative entity. A creative practitioner’s primary aim, however, is to produce creative work, rather than to critically investigate creativity; in general this investigative aim is important in computational creativity research." \autocite{Jordanous2011}
 % \end{quote}
 %
 % purpose or intention shifts into focus here over production of products.
 %
 % \begin{quote}
-% "Also, evaluation of novelty (or originality, newness) is often examined in the papers cited above according to how dissimilar the system’s artefacts are to previous output or other existing examples of creative output in that domain. On the other hand, appropriateness is often evaluated according to how similar the system’s output artefacts are to known examples. Hence across the field as a whole, there is a stark inconsistency as to whether to prioritise the generation of artefacts which are dissimilar from existing artefacts, or whether to pursue the generation of artefacts which are similar to existing artefacts, arising directly from the adoption of ‘novelty + value’ as the underlying model of creativity. Such a contradiction is clearly not helping the identification of coherent and consistent strategies to adopt across the field." \citep{Jordanous2012}
+% "Also, evaluation of novelty (or originality, newness) is often examined in the papers cited above according to how dissimilar the system’s artefacts are to previous output or other existing examples of creative output in that domain. On the other hand, appropriateness is often evaluated according to how similar the system’s output artefacts are to known examples. Hence across the field as a whole, there is a stark inconsistency as to whether to prioritise the generation of artefacts which are dissimilar from existing artefacts, or whether to pursue the generation of artefacts which are similar to existing artefacts, arising directly from the adoption of ‘novelty + value’ as the underlying model of creativity. Such a contradiction is clearly not helping the identification of coherent and consistent strategies to adopt across the field." \autocite{Jordanous2012}
 % \end{quote}
 %
 % \begin{quote}
-% "In some cases, evaluative tests are conducted on the system which purportedly evaluate the system’s creativity but which actually only measure the system’s quality." \citep{Jordanous2012}
+% "In some cases, evaluative tests are conducted on the system which purportedly evaluate the system’s creativity but which actually only measure the system’s quality." \autocite{Jordanous2012}
 % \end{quote}
 %
 % But if quality is the "conformance to specifications" and the specification suggested creativity, then a good quality rating of a system would automatically mean it's creative, right?
@@ -462,14 +462,14 @@ These included:
 % \item Less than a quarter of systems applied existing creativity evaluation methodologies.
 % \item Occurrences of evaluation by people outside the system implementation team were rare.
 % \item Few systems were comparatively evaluated, to see if the presented system outperforms existing systems (a useful measurement of research progress).
-% \item General principles of scientific method are not being followed by the community as a whole." \citep{Jordanous2012}
+% \item General principles of scientific method are not being followed by the community as a whole." \autocite{Jordanous2012}
 % \end{itemize}
 % \end{quote}
 %
 % \begin{quote}
-% "Reducing creativity to problem solving works when the creator is searching for an ideal solution which is not obvious, or if there is no single ideal solution but several candidates for a reasonable solution (Boden, 1994b)." \citep{Jordanous2012}
+% "Reducing creativity to problem solving works when the creator is searching for an ideal solution which is not obvious, or if there is no single ideal solution but several candidates for a reasonable solution (Boden, 1994b)." \autocite{Jordanous2012}
 % \end{quote}
 %
 % \begin{quote}
-% "One potential problem with Boden’s three views of creativity is that they all assume the existence of a conceptual space, or constrained set of possibilities, that the creative individual consciously reasons with in order to be creative." \citep{Jordanous2012}
+% "One potential problem with Boden’s three views of creativity is that they all assume the existence of a conceptual space, or constrained set of possibilities, that the creative individual consciously reasons with in order to be creative." \autocite{Jordanous2012}
 % \end{quote}

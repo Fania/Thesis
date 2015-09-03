@@ -10,8 +10,10 @@
 ## Compile
 To compile manually via commandline:
 
+pdflatex --file-line-error main
+
 1. pdflatex main
-2. bibtex main
+2. biber main
 3. pdflatex main
 4. pdflatex main
 
@@ -80,6 +82,12 @@ To compile manually via commandline:
 - [ ] Academia it's own chapter?
 - [ ] pata.fania.eu stuff
 - [ ] Change to biblatex
+- [ ] Add change-log to website
+- [ ] Flowchart of website prototype workflow from query to results
+- [ ] Put inspiration into lit review? Queneau and library of faustroll etc
+- [ ] Explain why I only use the first occurance
+- [ ] PEP20
+- [ ] AVOID: so, in principle,
 
 
 ## Errors

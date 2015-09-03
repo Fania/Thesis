@@ -17,7 +17,7 @@ The various components of the tool are the corpus, web design, algorithms, APIs,
 
 \section{Corpus}
 
-Instead of searching webpages on the Internet the tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
+Instead of searching webpages on the Internet the tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \autocite[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\autocite[p.12]{Jarry1996}}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
 
 \begin{enumerate}[start=0]
 \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
@@ -123,11 +123,13 @@ The original list as it appears in ``Faustroll'' is shown below. Only three of t
 
 In TEXTSURFER.PY
 
-# l_dict structure:
-# {word1: {fileA: [pos1, pos2, ...], fileB: [pos], ...},
-#  word2: {fileC: [pos1, pos2], fileK: [pos], ...},
-#  ...
-# }
+\begin{verbatim}
+l_dict structure:\\
+{word1: {fileA: [pos1, pos2, \ldots], fileB: [pos], \ldots},\\
+ word2: {fileC: [pos1, pos2], fileK: [pos], \ldots},\\
+ \ldots\\
+}
+\end{verbatim}
 
 \lstinputlisting[firstline=62, lastline=66]{back/code/textsurfer.py}
 
@@ -248,7 +250,7 @@ In the end, it comes to a point of being able to identify which of these factors
 \section{Algorithms}
 
 \begin{table}[htb]
-  \begin{tabu}{X[1]|X[3]X[3]X[2]}
+  \begin{tabu}{X[1,L]|X[3,L]X[3,L]X[2,L]}
   \toprule
   % \cline{2-4}
   &
@@ -717,7 +719,7 @@ synset item:clearly.r.04
   \centering
   \includegraphics[width=\linewidth]{images/prototype02}
 \caption[Prototype2]{Prototype2}
-\label{fig:Prototype2}
+\label{fig:Prototype2x}
 \end{figure}
 
 \begin{alltt}
@@ -818,5 +820,5 @@ synset item:clearly.r.04
   \centering
   \includegraphics[height=0.6\textheight]{images/prototype01}
 \caption[Prototype1]{Prototype1}
-\label{fig:Prototype1}
+\label{fig:Prototype1x}
 \end{figure}

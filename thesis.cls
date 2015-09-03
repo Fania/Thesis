@@ -42,8 +42,11 @@
 
 % \usepackage{import}
 
+% \usepackage[T3,OT2,T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[T3,OT2,T1]{fontenc}
+
+\usepackage{textcomp}
 % \usepackage[bitstream-charter]{mathdesign} % TEST
 % \usepackage{lmodern} % load a font with all the characters
 
@@ -52,6 +55,7 @@
 
 \usepackage[main=UKenglish,french]{babel}
 \usepackage[UKenglish]{isodate}
+\usepackage{csquotes}
 
 
 % FONTS
@@ -115,19 +119,6 @@
 \usepackage{multicol, ragged2e}
 
 
-% LINKS
-
-\usepackage[pdfencoding=auto,
-            colorlinks=true,
-            citecolor=green,
-            linkcolor=blue,
-            pdftex,
-            pdfauthor={Fania Raczinski},
-            pdftitle={PhD Thesis},
-            pdfsubject={Web Collider},
-            pdfkeywords={Pataphysics, Creative Computing, Interdisciplinary Research}]{hyperref}
-
-
 % VERBATIM
 
 \usepackage{alltt}
@@ -187,9 +178,25 @@
 
 % BIBLIOGRAPHY
 
-\usepackage[sort&compress]{natbib}
-\bibliographystyle{unsrtnat}
-\setcitestyle{aysep={}}
+\usepackage[style=authoryear,
+              bibencoding=ascii,
+              backref=true,
+              isbn=false,
+              url=false,
+              doi=false,
+              backend=biber]{biblatex}
+\addbibresource{back/new.bib}
+\setcounter{highnamepenalty}{0}
+\setcounter{lownamepenalty}{0}
+
+% \parencite[see][page 12]{latexcompanion}
+
+% \usepackage[sort&compress]{natbib}
+% \bibliographystyle{unsrtnat}
+% \setcitestyle{aysep={}}
+
+% \usepackage{textcomp}
+
 
 % IMAGES
 
@@ -368,3 +375,21 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \newenvironment{fmpage}[1]
 {\begin{lrbox}{\fmbox}\begin{minipage}{#1}}
 {\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}}
+
+
+% LANDSCAPE mode
+\usepackage{pdflscape}
+
+
+% LINKS
+
+% WANTS TO BE RIGHT AT THE BOTTOM
+\usepackage[pdfencoding=auto,
+            colorlinks=true,
+            citecolor=green,
+            linkcolor=blue,
+            pdftex,
+            pdfauthor={Fania Raczinski},
+            pdftitle={PhD Thesis},
+            pdfsubject={Web Collider},
+            pdfkeywords={Pataphysics, Creative Computing, Interdisciplinary Research}]{hyperref}

@@ -1,62 +1,15 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
-The style file: unsrtnat.bst
-A level-1 auxiliary file: front/title.aux
-A level-1 auxiliary file: front/abstract.aux
-A level-1 auxiliary file: main/introduction.aux
-A level-1 auxiliary file: main/methodology.aux
-A level-1 auxiliary file: main/pataphysics.aux
-A level-1 auxiliary file: main/creativity.aux
-A level-1 auxiliary file: main/technology.aux
-A level-1 auxiliary file: main/evaluation.aux
-A level-1 auxiliary file: main/foundation.aux
-A level-1 auxiliary file: main/description.aux
-A level-1 auxiliary file: main/caseStudy.aux
-A level-1 auxiliary file: main/interpretation.aux
-A level-1 auxiliary file: main/analysis.aux
-A level-1 auxiliary file: main/aspirations.aux
-A level-1 auxiliary file: main/observations.aux
-A level-1 auxiliary file: back/code.aux
-Database file #1: back/bib.bib
-You've used 123 entries,
-            2481 wiz_defined-function locations,
-            1442 strings with 26085 characters,
-and the built_in function-call counts, 44705 in all, are:
-= -- 4081
-> -- 1739
-< -- 120
-+ -- 747
-- -- 497
-* -- 3022
-:= -- 7045
-add.period$ -- 493
-call.type$ -- 123
-change.case$ -- 218
-chr.to.int$ -- 119
-cite$ -- 123
-duplicate$ -- 2500
-empty$ -- 4296
-format.name$ -- 674
-if$ -- 9746
-int.to.chr$ -- 5
-int.to.str$ -- 124
-missing$ -- 134
-newline$ -- 734
-num.names$ -- 382
-pop$ -- 1074
-preamble$ -- 1
-purify$ -- 123
-quote$ -- 0
-skip$ -- 1517
-stack$ -- 0
-substring$ -- 1612
-swap$ -- 461
-text.length$ -- 28
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 765
-warning$ -- 0
-while$ -- 381
-width$ -- 0
-write$ -- 1821
+[0] Config.pm:324> INFO - This is Biber 2.1
+[1] Config.pm:327> INFO - Logfile is 'main.blg'
+[194] biber-darwin:276> INFO - === Thu Sep  3, 2015, 20:18:49
+[194] Biber.pm:333> INFO - Reading 'main.bcf'
+[450] Biber.pm:645> INFO - Found 123 citekeys in bib section 0
+[579] Biber.pm:2977> INFO - Processing section 0
+[653] Biber.pm:3115> INFO - Looking for bibtex format file 'back/new.bib' for section 0
+[665] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[676] bibtex.pm:895> INFO - Found BibTeX data source 'back/new.bib'
+[3831] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3831] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3831] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[3832] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-UK'
+[4604] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[4630] bbl.pm:596> INFO - Output to main.bbl
