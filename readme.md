@@ -79,6 +79,7 @@ To compile manually via commandline:
 - [X] Tools of the Trade?
 - [ ] Academia it's own chapter?
 - [ ] pata.fania.eu stuff
+- [ ] Change to biblatex
 
 
 ## Errors

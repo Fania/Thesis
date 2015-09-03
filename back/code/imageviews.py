@@ -1,6 +1,6 @@
-from flask import render_template, url_for, request
+from flask import render_template, request
 from app import app
-from imagesurfer import *
+from imagesurfer import getimages
 
 
 @app.route('/images')
@@ -13,13 +13,18 @@ def imageresults():
 
     query = request.form['query']
 
+    if request.form['img_choice']:
+        choice = request.form['img_choice']
+    else:
+        choice = 'Bing'
+
     if request.method == 'GET':
         print 'imageresults get: ', query
     else:
-        #request was a POST
+        # request was a POST
         print 'imageresults post: ', query
 
-        images_imgs, translations = getimages(query)
+        images_imgs, translations = getimages(query, choice)
         images_len = len(images_imgs)
 
         return render_template('imageresults.html', **locals())

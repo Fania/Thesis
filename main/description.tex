@@ -7,16 +7,17 @@
 
 \grule % chktex 1
 
-The prototype developed is described here in detail. It is based on and inspired by the background reading done in preparation for this stage.
-
 \todo{style inline code}
 \todo{run code on laptop and get snippets of all variable contents, e.g.\ faustroll, froll\_dict, \ldots}
 
-{\Huge \url{pata.physics.wtf}}
+The website \url{http://pata.physics.wtf} showcases the current proof-of-concept algorithms. This chapter gives an overview of the structure of the website and the development process. It explains the core building blocks of the software and details the functionality of the algorithms. The differences to the previous versions of the tool are elaborated later on in the chapter.
+
+The various components of the tool are the corpus, web design, algorithms, APIs, and more.
+
 
 \section{Corpus}
 
-The corpus used in the text search functionality of the tool resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}. The corpus contents are as follows:
+Instead of searching webpages on the Internet the tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citep[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\citep[p.12]{Jarry1996}}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
 
 \begin{enumerate}[start=0]
 \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
@@ -35,12 +36,12 @@ The corpus used in the text search functionality of the tool resembles the ficti
 \item Le Comte de Lautreamont: \emph{Les Chants de Maldoror} (French)
 \item Maurice Maeterlinck: \emph{Aglavaine and Selysette}
 \item Stephane Mallarme: \emph{Verse and Prose} (French)
-\item Mendes: \emph{The Mirror} and \emph{la Divina Aventure} (English and Spanish)
+\item Catulle Mendes: \emph{The Mirror} and \emph{la Divina Aventure} (English and Spanish)
 \item Homer: \emph{The Odyssey}
-\item Josephin Peladan: \emph{Babylon} (EMPTY FILE)
+\item Josephin Peladan: \emph{Babylon} (EMPTY FILE)\footnote{I have not been able to find any source texts online.\label{emptyfile}}
 \item Francois Rabelais: \emph{Gargantua and Pantagruel}
-\item Jean de Chilra: \emph{L'Heure Sexuelle} (EMPTY FILE)
-\item Henri de Regnier: \emph{La Canne de Jaspe} (EMPTY FILE)
+\item Jean de Chilra: \emph{L'Heure Sexuelle} (EMPTY FILE)\textsuperscript{\ref{emptyfile}}
+\item Henri de Regnier: \emph{La Canne de Jaspe} (EMPTY FILE)\textsuperscript{\ref{emptyfile}}
 \item Arthur Rimbaud: \emph{Poesies Completes} (French)
 \item Marcel Schwob: \emph{Der Kinderkreuzzug} (German)
 \item Alfred Jarry: \emph{Ubu Roi} (French)
@@ -49,7 +50,7 @@ The corpus used in the text search functionality of the tool resembles the ficti
 \item Jules Verne: \emph{A Journey to the Centre of the Earth}
 \end{enumerate}
 
-The original list as it appears in ``Faustroll'' is this:
+The original list as it appears in ``Faustroll'' is shown below. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{\url{https://www.gutenberg.org/}} in their original languages.
 \begin{enumerate}
 \item BAUDELAIRE, a volume of E.A. POE translations.
 \item BERGERAC, \emph{Works}, volume II, containing the \emph{Histrory of the States and Empires of the Sun}, and the \emph{History of Birds}.
@@ -79,6 +80,15 @@ The original list as it appears in ``Faustroll'' is this:
 \item VERHAEREN, \emph{The Hallucinated Landscapes}.
 \item VERNE, \emph{Voyage to the Center of the Earth}.
 \end{enumerate}
+
+\begin{fmpage}{\linewidth}
+  \textbf{A note on copyright:}\\
+  §5. Duration of copyright: ``For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.'' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf})
+
+  Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works})
+
+  §7. Mentions \emph{fair dealing}: ``Private and research study purposes'', so for the purposes of this project copyright should not apply.
+\end{fmpage}
 
 \begin{figure}[htbp]
   \centering
@@ -112,6 +122,16 @@ The original list as it appears in ``Faustroll'' is this:
 \section{Setup}
 
 In TEXTSURFER.PY
+
+# l_dict structure:
+# {word1: {fileA: [pos1, pos2, ...], fileB: [pos], ...},
+#  word2: {fileC: [pos1, pos2], fileK: [pos], ...},
+#  ...
+# }
+
+\lstinputlisting[firstline=62, lastline=66]{back/code/textsurfer.py}
+
+
 
 Variables:
 \begin{description}
