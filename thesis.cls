@@ -1,7 +1,7 @@
 % !TEX root = ../main.tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thesis}[2015 DMU Thesis]
+\ProvidesClass{thesis}[2015/09/02 DMU Thesis]
 \def\baseclass{book}
 
 \DeclareOption*{
