@@ -9,15 +9,55 @@
 
 \todo{style inline code}
 \todo{run code on laptop and get snippets of all variable contents, e.g.\ faustroll, froll\_dict, \ldots}
+\todo{give examples of different results if using different base documents!}
+\todo{add section about which pieces of code are not written by me}
 
-The website \url{http://pata.physics.wtf} showcases the current proof-of-concept algorithms. This chapter gives an overview of the structure of the website and the development process. It explains the core building blocks of the software and details the functionality of the algorithms. The differences to the previous versions of the tool are elaborated later on in the chapter.
 
-The various components of the tool are the corpus, web design, algorithms, APIs, and more.
+The website \url{http://pata.physics.wtf} showcases the current proof-of-concept algorithms. This chapter gives an overview of the structure of the website and the development process.
+
+Typically, software development is divided into so-called front and back ends. The frontend includes web design and web development and is meant to provide an interface for the end-user to communicate with the backend which involves a server, an application and a database (although this is not completely true in this project).
+
+The frontend design is created using the \textbf{w3.css} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{Javascript} (e.g. scramble letters, randomise poem, send email and tabbed content).\footnote{frontend links: \url{http://www.w3schools.com/w3css/}, \url{https://www.javascript.com/}}
+
+The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acrshort{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
+
+The folder structure is as follows:
+
+- app\\
+--- static\\
+----- css\\
+----- images\\
+----- corpus\\
+--- templates\\
+- .git\\
+- dev.py\\
+- guni.py\\
+- live.py\\
+- .gitignore\\
+- README.md\\
+- TODO.txt
+
+\todo{folder structure}
+
+\begin{comment}
+  To provide a short overview, the tools’s workflow can be described as follows:
+  \begin{enumerate}
+    \item Tokenise texts and remove stopwords to build index,
+    \item a query triggers the three pataphysical algorithms,
+    \item each algorithm finds results for the query,
+    \item retrieve some words before/after match for context, and
+    \item render the resulting sentences.
+  \end{enumerate}
+\end{comment}
+
+\todo{add audio? update this section depending on what i do}
+
+From the homepage users can choose between text, image and video search. Then they can enter a query --- in the case of text search this should be single words only, image and video search support multi word queries.
 
 
 \section{Corpus}
 
-Instead of searching webpages on the Internet the tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \autocite[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\autocite[p.12]{Jarry1996}}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
+Instead of crawling the Internet the present tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\parencite[p.12]{Jarry1996}}. In principle the \hypertarget{corpus}{corpus}\label{ref:corpus} is just a folder within the tool's directory structure which contains the following files:
 
 \begin{enumerate}[start=0]
 \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
@@ -121,209 +161,62 @@ The original list as it appears in ``Faustroll'' is shown below. Only three of t
 
 \section{Setup}
 
-In TEXTSURFER.PY
+When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field of any of the text, image or video pages.
 
-\begin{verbatim}
-l_dict structure:\\
-{word1: {fileA: [pos1, pos2, \ldots], fileB: [pos], \ldots},\\
- word2: {fileC: [pos1, pos2], fileK: [pos], \ldots},\\
- \ldots\\
-}
-\end{verbatim}
+Each plain text file in the corpus is processed. This means each word is added to a dictionary data structure together with the file ID's they occur in and a list of each position. Stopwords and non-alphabetic words are ignored (for a list of english stopwords see appendix~\ref{app:code}). After all files are read in the index looks like this:
 
-\lstinputlisting[firstline=62, lastline=66]{back/code/textsurfer.py}
+\{\\
+word1: \{fileA: [pos1, pos2, \ldots], fileB: [pos], \ldots\},\\
+word2: \{fileC: [pos1, pos2], fileK: [pos], \ldots\},\\
+\ldots\\
+\}
 
+Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual file can be found in the appendix~\ref{app:code}.
 
+\{\\
+  doctor: \{\\
+    l\_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],\\
+    l\_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921, 384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 458571, 458918, 458998, 459654, 459771, 490749],\\
+    l\_02: [11476, 12098, 28151, 36270],\\
+    l\_10: [53085, 53118, 53220, 53266, 53364, 53469, 53573, 53592, 53621, 53718, 54873, 55262, 55525, 55577, 55614, 55683, 55741, 56058, 62709, 113969, 114131, 114405, 114794],\
+    l\_19: [14928, 15702, 49560, 82710, 167218, 180210, 189817, 189908, 190020, 190235, 190905, 199430, 226663, 275454, 275928, 278097, 287375, 291383, 304731, 306055, 324757, 330488],\\
+    l\_27: [16270, 79245]\\
+  \}, \ldots\\
+\}
 
-Variables:
-\begin{description}
-  \item [book\_list] List of books in library: \lstinline$= PlaintextCorpusReader(corpus_root, '.*\.txt')$ % chktex 25
-  \item [troll] Faustroll text split into words: \lstinline$= book_list.words('faustroll.txt')$ % chktex 25
-  \item [faustroll] Faustroll words converted to \gls{nltk} Text: \lstinline$= nltk.Text(troll)$
-  \item [faustroll\_dict] Alphabetical dictionary (list) of words: \lstinline$= sorted(set([w for w in faustroll]))$
-  \item [froll\_dict] faustroll\_dict minus numbers and stopwords: \lstinline$= [w for w in faustroll_dict if w.isalpha() and w not in sw]$ % chktex 25
-\end{description}
-
-
-
-
-
-
-stopwords see appendix~\ref{app:code}
-
-freqdist:
-[(Faustroll, 77), (Bosse, 43), (Nage, 43), (skiff, 35), (time, 34), (ha, 32),  (CONCERNING, 30), (doctor, 30), (water, 29), (little, 28), (bishop, 27), (toward, 27), (without, 27)]
-
-\lstinputlisting[firstline=154, lastline=160]{back/code/textsurfer.py}
-
-clinamen function uses faustroll as base document. It works in two steps:
-
-1.\ get clinamen words based on dameraulevenshtein and faustroll
-2.\ get sentences from corpus that match clinamen words
-
-\todo{give examples of different results if using different base documents!}
-
-\url{https://en.wikipedia.org/wiki/Golden_ratio_poetry}
-
-\url{https://en.wikipedia.org/wiki/Fib_(poetry)} % chktex 36
-
-
-
-
-
-
-
-
-
-
-\section{Implementation}
-
-\begin{comment}
-  Interface (first tier) – application (second tier) – database/corpus (third tier)
-\end{comment}
-
-The general concept of the project described in this paper is pataphysical web searching and the following three points summarize its main aims:
-
-\begin{itemize}
-  \item search the Web for suitable answers to a given query,
-  \item return results as a list or a mixture of data structures, and
-  \item present pataphysical results (rather than relevant ones).
-\end{itemize}
-
-The essence of the proposed search tool lies in its algorithms which make the difference to traditional search engines. The philosophical ideology behind the tool is fundamentally different. Our system will still consist of the main components typically found in Web search engines (crawler, index and ranking) but they will have slightly different inner workings and target a different audience of users.
-
-To link back to some of the creative, pataphysical concepts we have discussed earlier, let us put some of the ideas for our tool into perspective. The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
-
-We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure~\ref{fig:patasearch01}) and influences all areas of the search tool.
-
-Our index will contain what Hendler and Hugill have called patadata [15].  Patadata is to metadata as metadata is to data --- inspired by one of the definitions of pataphysics: that which is above that which is after physics [20]. This suggests that patadata provides another layer of information above information.  If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective and that is precisely what pataphysics is for.
-
-\todo{redraw figure}
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/patasearch01}
-\caption[Pata central]{Pata central}
-\label{fig:patasearch01}
-\end{figure}
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  % \def\svgwidth{\columnwidth}
-  \input{images/patasearch01.pdf_tex}
-\caption[Pata central]{Pata central}
-\label{fig:patasearch02}
-\end{figure}
-
-The prototype described here (see Figure 2) was developed as a proof-of-concept tool to demonstrate some example search results using pataphysical algorithms.
-
-It is by no means a fully functioning Web search engine, in fact it does not search the Web at all, and only the main algorithmic functionality is discussed here. The tool searches the text of an example book, namely Alfred Jarry’s Exploits and Opinions of Dr.\ Faustroll, Pataphysician [20].
-
-In short, the prototype’s workflow can be described as follows:
-\begin{itemize}
-  \item tokenise text and remove stopwords to build index,
-  \item query triggers the three pataphysical functions,
-  \item each function finds matches for query as described above,
-  \item retrieve some words before/after match for context, and
-  \item return list of resulting sentences.
-\end{itemize}
-
-The three functions inspired by pataphysics (clinamen, syzygy and antinomy) are described in more detail in the previous section. Figure 2 shows a screenshot of the resulting list of results for the query clear. The specific results for each of the three methods are simply a few words surrounding the pataphysicalised query term from within the book, which does not necessarily represent complete sentences but provides some context for the result.
-
-The same principles and algorithms can be applied to different types of media, for example images or video and even sound. The complete tool would include a mixture of different types of media in its results with various styles of displaying them (e.g.\ displaying images ordered as a Fibonacci spiral).
-
-
-\section{User experience}
-Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request `The Cat in the Hat' after reading a Dr.\ Seuss book to their child, and the system employs an anomalous method on the query and searched `sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/resultexample}
-\caption[Feedback button]{Feedback button}
-\label{fig:feedback}
-\end{figure}
-
-The above image (figure 3) shows an example of how this could be implemented. The little green candle (a reference to pataphysics in itself by the way) shows a pop-up note when hovered over with the mouse pointer. In this case the original query could have been ‘tree’ and ‘car’ was returned as an opposite to that.
-
-In the end, it comes to a point of being able to identify which of these factors will affect how the user perceives the results and which do not, and therefore give the system greater flexibility. This in itself is a huge undertaking, with which large quantities of empirical data will be required and is therefore left for future work on the project.
 
 \section{Algorithms}
 
-\begin{table}[htb]
-  \begin{tabu}{X[1,L]|X[3,L]X[3,L]X[2,L]}
-  \toprule
-  % \cline{2-4}
-  &
-  \textbf{clinamen}
-  &
-  \textbf{syzygy}
-  &
-  \textbf{antinomy}
-  \\ \midrule
-  \textbf{clear}
-  &
-  altar, leaf, pleas, cellar
-  &
-  vanish, allow, bare, pronounce
-  &
-  opaque
-  \\ \midrule
-  \textbf{solid}
-  &
-  sound, valid, solar, slide
-  &
-  block, form, matter, crystal, powder
-  &
-  liquid, hollow
-  \\ \midrule
-  \textbf{books}
-  &
-  boot, bones, hooks, rocks, banks
-  &
-  dialogue, authority, record, fact
-  &
-  ---
-  \\ \midrule
-  \textbf{troll}
-  &
-  grill, role, tell
-  &
-  wheel, roll, mouth, speak
-  &
-  ---
-  \\ \midrule
-  \textbf{live}
-  &
-  love, lies, river, wave, size, bite
-  &
-  breathe, people, domicile, taste, see, be
-  &
-  recorded, dead
-  \\ \bottomrule
-  \end{tabu}
-\caption[Comparison of algorithms]{Comparison of algorithms}
-\label{algorithmscomp}
-\end{table}
+After the setup stage is completed and the webpage is fully loaded, user input in the form of a text query is required to trigger the three pataphysical algorithms.
+
+Image and Video search do not use all three algorithms --- where relevant this is highlighted in each section. Generally the following descriptions refer to the text search functionality.
+
 
 \subsection{Clinamen}
 
-The clinamen is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' (Bök 2002).
+The clinamen is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' \parencite{Boek2002}.
 
-The clinamen function uses the Damerau-Levenshtein algorithm [10], which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them (see Eq. (1)). While we only return matches that actually appear in the book (i.e.\ they exist in the index), and by doing so eliminate the introduction of new words like Jarry's merdre, the swerve or aberration is still evident.
+The clinamen algorithm works in two steps:
+\begin{enumerate}
+  \item get clinamen words based on dameraulevenshtein and faustroll
+  \item get sentences from corpus that match clinamen words
+\end{enumerate}
 
-\begin{lstlisting}
-  Clinamen (t):
-    matches = {v: 0 < dameraulevenshtein (t, v) <= 2},   for v $\in$ V
-    return matches
-\end{lstlisting}
+It uses the `faustroll' text by Alfred Jarry as a base document and the Damerau-Levenshtein algorithm \parencite{Damerau1964, Levenshtein1966}, which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
 
-Line 1 of the algorithm above creates a set of matches, where each match is a word v from our vocabulary V if the Damerau-Levenshtein function computed with query term t returns a value less than or equal to 2 but higher than 0 (not the query term itself).
 
 \begin{equation}
   clinamen(t) = [v \colon 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
 \label{eq:clinamen}
 \end{equation}
 \myequations{clinamen}
+
+Where:\\
+\itab{$t$} \tab{is the query term,}\\
+\itab{$V$} \tab{is the vocabulary of `faustroll',}\\
+
+
+
 
 \subsection{Syzygy}
 
@@ -384,301 +277,61 @@ This algorithm is very similar to the algorithm for the syzygy. It finds all ant
 \end{equation}
 \myequations{antinomy}
 
-\begin{alltt}
-SYZYGY
-synsets:
-[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]% chktex 36
-synset item:clear.n.01
-hypernym out:innocence
-[]
-synset item:open.n.01
-hypernym out:area
-hypernym out:country
-hypernym in:country
-[]
-synset item:unclutter.v.01
-hypernym out:change
-hypernym in:change
-hypernym out:alter
-hypernym out:modify
-[]
-synset item:clear.v.02
-hypernym out:make
-hypernym in:make
-hypernym out:create
-[]
-synset item:clear_up.v.04
-[]
-synset item:authorize.v.01
-hyponym out:approbate
-hyponym out:approve
-hyponym out:O.K.
-hyponym out:okay
-hyponym out:sanction
-hyponym out:certificate
-hyponym in:certificate
-hyponym out:commission
-hyponym out:declare
-hyponym in:declare
-hyponym out:license
-hyponym out:licence
-hyponym out:certify
-hyponym out:validate
-hyponym out:formalize
-hyponym out:formalise
-hypernym out:permit
-hypernym in:permit
-hypernym out:allow
-hypernym in:allow
-hypernym out:let
-hypernym in:let
-hypernym out:countenance
-hypernym in:countenance
-[]
-synset item:clear.v.05
-hyponym out:clear-cut
-hyponym out:deforest
-hyponym out:disforest
-hyponym out:disafforest
-hyponym out:denude
-hyponym out:bare
-hyponym in:bare
-hyponym out:denudate
-hyponym out:strip
-hyponym out:stump
-hypernym out:remove
-hypernym out:take
-hypernym in:take
-hypernym out:take_away
-hypernym out:withdraw
-[]
-synset item:pass.v.09
-hyponym out:clear
-hyponym in:clear
-hypernym out:succeed
-hypernym in:succeed
-hypernym out:win
-hypernym out:come_through
-hypernym out:bring_home_the_bacon
-hypernym out:deliver_the_goods
-[]
-synset item:clear.v.07
-[]
-synset item:clear.v.08
-hypernym out:vanish
-hypernym in:vanish
-hypernym out:disappear
-hypernym out:go_away
-[]
-synset item:clear.v.09
-hyponym out:hop
-hypernym out:pass
-hypernym in:pass
-hypernym out:overtake
-hypernym out:overhaul
-[]
-synset item:clear.v.10
-hypernym out:clarify
-hypernym out:clear_up
-hypernym out:elucidate
-[]
-synset item:clear.v.11
-hypernym out:free
-hypernym in:free
-hypernym out:discharge
-[]
-synset item:clear.v.12
-hypernym out:rid
-hypernym out:free
-hypernym in:free
-hypernym out:disembarrass
-[]
-synset item:net.v.02
-hypernym out:yield
-hypernym out:pay
-hypernym in:pay
-hypernym out:bear
-[]
-synset item:net.v.01
-hypernym out:profit
-hypernym out:gain
-hypernym in:gain
-hypernym out:benefit
-hypernym in:benefit
-[]
-synset item:gain.v.08
-hyponym out:eke_out
-hyponym out:squeeze_out
-hyponym out:gross
-hyponym out:profit
-hyponym out:turn_a_profit
-hyponym out:rake_in
-hyponym out:shovel_in
-hyponym out:rake_off
-hyponym out:take_home
-hyponym out:bring_home
-hyponym out:yield
-hyponym out:pay
-hyponym in:pay
-hyponym out:bear
-hypernym out:get
-hypernym out:acquire
-[]
-synset item:clear.v.16
-hypernym out:sell
-[]
-synset item:clear.v.17
-hypernym out:pass
-hypernym in:pass
-hypernym out:clear
-hypernym in:clear
-[]
-synset item:acquit.v.01
-hyponym out:purge
-hyponym out:vindicate
-hyponym out:whitewash
-hypernym out:pronounce
-hypernym in:pronounce
-hypernym out:label
-hypernym out:judge
-hypernym in:judge
-[]
-synset item:clear.v.19
-hypernym out:settle
-hypernym out:square_off
-hypernym out:square_up
-hypernym out:determine
-hypernym in:determine
-[]
-synset item:clear.v.20
-hypernym out:change
-hypernym in:change
-hypernym out:alter
-hypernym out:modify
-[]
-synset item:clear.v.21
-hypernym out:empty
-hypernym in:empty
-[]
-synset item:clear.v.22
-hypernym out:take_out
-hypernym out:move_out
-hypernym out:remove
-[]
-synset item:clear.v.23
-hypernym out:empty
-hypernym in:empty
-[]
-synset item:clear.v.24
-hypernym out:remove
-hypernym out:take
-hypernym in:take
-hypernym out:take_away
-hypernym out:withdraw
-[]
-synset item:clear.a.01
-[]
-synset item:clear.s.02
-[]
-synset item:clear.s.03
-[]
-synset item:clear.a.04
-[]
-synset item:clear.s.05
-[]
-synset item:clear.s.06
-[]
-synset item:clean.s.03
-[]
-synset item:clear.s.08
-[]
-synset item:clear.s.09
-[]
-synset item:well-defined.a.02
-[]
-synset item:clear.a.11
-[]
-synset item:clean.s.02
-[]
-synset item:clear.s.13
-[]
-synset item:clear.s.14
-[]
-synset item:clear.s.15
-[]
-synset item:absolved.s.01
-[]
-synset item:clear.s.17
-[]
-synset item:clear.r.01
-[]
-synset item:clearly.r.04
-[]
-ANTINOMY
-synsets:
-[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]% chktex 36
-synset item:clear.n.01
-synset item:open.n.01
-synset item:unclutter.v.01
-antonym out:clutter
-antonym in:clutter
-synset item:clear.v.02
-synset item:clear_up.v.04
-antonym out:overcast
-antonym in:overcast
-synset item:authorize.v.01
-synset item:clear.v.05
-synset item:pass.v.09
-synset item:clear.v.07
-antonym out:bounce
-antonym in:bounce
-synset item:clear.v.08
-synset item:clear.v.09
-synset item:clear.v.10
-synset item:clear.v.11
-synset item:clear.v.12
-synset item:net.v.02
-synset item:net.v.01
-synset item:gain.v.08
-synset item:clear.v.16
-synset item:clear.v.17
-synset item:acquit.v.01
-antonym out:convict
-antonym in:convict
-synset item:clear.v.19
-synset item:clear.v.20
-synset item:clear.v.21
-synset item:clear.v.22
-synset item:clear.v.23
-synset item:clear.v.24
-synset item:clear.a.01
-antonym out:unclear
-antonym in:unclear
-synset item:clear.s.02
-synset item:clear.s.03
-synset item:clear.a.04
-antonym out:opaque
-antonym in:opaque
-synset item:clear.s.05
-synset item:clear.s.06
-synset item:clean.s.03
-synset item:clear.s.08
-synset item:clear.s.09
-synset item:well-defined.a.02
-antonym out:ill-defined
-antonym in:ill-defined
-synset item:clear.a.11
-antonym out:cloudy
-antonym in:cloudy
-synset item:clean.s.02
-synset item:clear.s.13
-synset item:clear.s.14
-synset item:clear.s.15
-synset item:absolved.s.01
-synset item:clear.s.17
-synset item:clear.r.01
-synset item:clearly.r.04
-\end{alltt}
+
+
+
+
+
+
+\section{Implementation}
+
+Linking back to some of the creative, pataphysical concepts we have discussed earlier, let us put some of the ideas for our tool into perspective. The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
+
+We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure~\ref{fig:patasearch01}) and influences all areas of the search tool.
+
+\todo{redraw figure}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/patasearch01}
+\caption[Pata central]{Pata central}
+\label{fig:patasearch01}
+\end{figure}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  % \def\svgwidth{\columnwidth}
+  \input{images/patasearch01.pdf_tex}
+\caption[Pata central]{Pata central}
+\label{fig:patasearch02}
+\end{figure}
+
+
+\section{User experience}
+
+Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request `The Cat in the Hat' after reading a Dr.\ Seuss book to their child, and the system employs an anomalous method on the query and searched `sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/resultexample}
+\caption[Feedback button]{Feedback button}
+\label{fig:feedback}
+\end{figure}
+
+The above image (figure~\ref{fig:feedback}) shows an example of how this could be implemented. The little green candle (a reference to pataphysics in itself by the way) shows a pop-up note when hovered over with the mouse pointer. In this case the original query could have been `tree' and `car' was returned as an opposite to that.
+
+\textbf{Results design}
+
+Text
+- Poetry
+-- Queneau
+-- Random
+- Sources
+- Algorithms
+
+Images and Videos
+- Spiral
+- List
 
 
 

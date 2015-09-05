@@ -183,13 +183,59 @@
               backref=true,
               isbn=false,
               url=false,
+              hyperref=true,
               doi=false,
               backend=biber]{biblatex}
 \addbibresource{back/new.bib}
 \setcounter{highnamepenalty}{0}
 \setcounter{lownamepenalty}{0}
 
-% \parencite[see][page 12]{latexcompanion}
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printtext[bibhyperref]{\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand*{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand*{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\citeyear}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\citeauthor}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{citeauthor}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% \textcite for "Author (Year)"
+% \citeauthor "Author"
+% \citeyear "Year"
+% \parencite "(Author Year)"
 
 % \usepackage[sort&compress]{natbib}
 % \bibliographystyle{unsrtnat}
@@ -246,6 +292,11 @@
 % \definecolor{mauve}{rgb}{0.58,0,0.82}
 % \definecolor{creme}{rgb}{1,1,0.9}
 
+\definecolor{ghostwhite}{rgb}{0.97, 0.97, 1.0}
+\definecolor{pearl}{rgb}{0.94, 0.92, 0.84}
+\definecolor{mintcream}{rgb}{0.96, 1.0, 0.98}
+\definecolor{magnolia}{rgb}{0.97, 0.96, 1.0}
+
 \renewcommand\lstlistlistingname{List of Code Snippets}
 
 \lstset{frame=none,
@@ -263,7 +314,7 @@
   breaklines=true,
   breakatwhitespace=true,
   tabsize=2,
-  backgroundcolor=\color{lightgray},
+  backgroundcolor=\color{magnolia},
 }
 
 
@@ -349,8 +400,8 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % GRAY LINE
 
-\newcommand{\grule}{\textcolor[RGB]{220,220,220}{\rule{\linewidth}{0.2pt}}}
-
+% \newcommand{\grule}{\color{pearl}{\rule{\linewidth}{0.2pt}}\color{black}}
+\newcommand{\grule}{\textcolor{red}{\rule{\linewidth}{0.3pt}}}
 
 % MULTICOLUMN
 

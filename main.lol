@@ -1,24 +1,20 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{132}{lstlisting.8.-2}
+\contentsline {lstlisting}{back/code/textsurfer.py}{164}{lstlisting.A.-5}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{132}{lstlisting.8.-3}
+\contentsline {lstlisting}{back/code/textsurfer.py}{166}{lstlisting.A.-8}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{170}{lstlisting.A.-7}
+\contentsline {lstlisting}{back/code/textsurfer.py}{166}{lstlisting.A.-9}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{171}{lstlisting.A.-8}
+\contentsline {lstlisting}{back/code/textsurfer.py}{166}{lstlisting.A.-10}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{171}{lstlisting.A.-9}
+\contentsline {lstlisting}{back/code/textsurfer.py}{168}{lstlisting.A.-11}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{172}{lstlisting.A.-10}
+\contentsline {lstlisting}{back/code/\textunderscore \textunderscore init\textunderscore \textunderscore .py}{175}{lstlisting.A.-12}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{172}{lstlisting.A.-11}
+\contentsline {lstlisting}{back/code/textviews.py}{175}{lstlisting.A.-13}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/\textunderscore \textunderscore init\textunderscore \textunderscore .py}{173}{lstlisting.A.-12}
+\contentsline {lstlisting}{back/code/videosurfer.py}{176}{lstlisting.A.-14}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textviews.py}{173}{lstlisting.A.-13}
+\contentsline {lstlisting}{back/code/videosurfer.py}{176}{lstlisting.A.-15}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/videosurfer.py}{174}{lstlisting.A.-14}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/videosurfer.py}{175}{lstlisting.A.-15}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/videosurfer.py}{175}{lstlisting.A.-16}
+\contentsline {lstlisting}{back/code/videosurfer.py}{177}{lstlisting.A.-16}

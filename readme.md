@@ -11,6 +11,7 @@
 To compile manually via commandline:
 
 pdflatex --file-line-error main
+pdflatex -interaction=batchmode --file-line-error main
 
 1. pdflatex main
 2. biber main
