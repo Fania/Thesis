@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYGdefault{n}{Antinomy} \PYGdefault{p}{(}\PYGdefault{n}{t}\PYGdefault{p}{):}
+    \PYGdefault{n}{synonyms} \PYGdefault{o}{=} \PYGdefault{p}{\PYGdefaultZob{}} \PYGdefault{n}{s} \PYGdefault{err}{\PYGdefaultZdl{}}\PYGdefaultZbs{}\PYGdefault{o+ow}{in}\PYGdefault{err}{\PYGdefaultZdl{}} \PYGdefault{n}{WordNet}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{synsets} \PYGdefault{p}{(}\PYGdefault{n}{t}\PYGdefault{p}{)} \PYGdefault{p}{\PYGdefaultZcb{}}
+    \PYGdefault{k}{for} \PYGdefault{n}{each} \PYGdefault{n}{s} \PYGdefault{o+ow}{in} \PYGdefault{n}{synonyms}\PYGdefault{p}{:}
+      \PYGdefault{n}{add} \PYGdefault{p}{\PYGdefaultZob{}} \PYGdefault{n}{h} \PYGdefault{err}{\PYGdefaultZdl{}}\PYGdefaultZbs{}\PYGdefault{o+ow}{in}\PYGdefault{err}{\PYGdefaultZdl{}} \PYGdefault{n}{WordNet}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{antonyms} \PYGdefault{p}{(}\PYGdefault{n}{s}\PYGdefault{p}{):} \PYGdefault{err}{\PYGdefaultZdl{}}\PYGdefaultZbs{}\PYGdefault{n}{exists}\PYGdefault{err}{\PYGdefaultZdl{}} \PYGdefault{n}{h} \PYGdefault{err}{\PYGdefaultZdl{}}\PYGdefaultZbs{}\PYGdefault{o+ow}{in}\PYGdefault{err}{\PYGdefaultZdl{}} \PYGdefault{n}{V} \PYGdefault{p}{\PYGdefaultZcb{}} \PYGdefault{n}{to} \PYGdefault{n}{results}
+    \PYGdefault{k}{return} \PYGdefault{n}{results}
+\end{Verbatim}

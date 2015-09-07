@@ -10,7 +10,7 @@
 ## Compile
 To compile manually via commandline:
 
-pdflatex --file-line-error main
+pdflatex --file-line-error -shell-escape main
 pdflatex -interaction=batchmode --file-line-error main
 
 1. pdflatex main
@@ -117,3 +117,16 @@ To quiet an error of chktex add ```% chktex XX''' to the end of the relevant lin
 4 As shimmering phenomena become frozen through studious and personal practice, the viewer is left with a clue to the limits of our culture.
 
 http://www.artybollocks.com/#abg_full
+
+
+<!-- MINTED  -->
+\begin{minted}{python}
+  def boring(args = None):
+  pass
+\end{minted}
+
+\mintinline
+
+\mint{python}|import this|
+
+\inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}

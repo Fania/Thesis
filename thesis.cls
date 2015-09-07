@@ -281,41 +281,94 @@
 \usepackage{framed}
 \colorlet{shadecolor}{yellow!20}
 
-
-% CODE
-
-\usepackage{listings}
-% \usepackage{color}
-%
-% \definecolor{dkgreen}{rgb}{0,0.6,0}
-% \definecolor{gray}{rgb}{0.5,0.5,0.5}
-% \definecolor{mauve}{rgb}{0.58,0,0.82}
-% \definecolor{creme}{rgb}{1,1,0.9}
-
 \definecolor{ghostwhite}{rgb}{0.97, 0.97, 1.0}
 \definecolor{pearl}{rgb}{0.94, 0.92, 0.84}
 \definecolor{mintcream}{rgb}{0.96, 1.0, 0.98}
 \definecolor{magnolia}{rgb}{0.97, 0.96, 1.0}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\definecolor{gainsboro}{rgb}{0.86, 0.86, 0.86}
+\definecolor{lavendermist}{rgb}{0.9, 0.9, 0.98}
 
-\renewcommand\lstlistlistingname{List of Code Snippets}
 
-\lstset{frame=none,
-  language=Python,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=left,
-  numberstyle=\tiny\color{red},
-  keywordstyle=\color{cyan},
-  commentstyle=\color{green},
-  stringstyle=\color{magenta},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=2,
-  backgroundcolor=\color{magnolia},
-}
+% CODE
+
+% \usepackage{listings}
+\usepackage{minted}
+% \usemintedstyle[python]{monokai}
+
+% \SetupFloatingEnvironment{listing}{name=Program code}
+% \SetupFloatingEnvironment{listing}{listname=List of Program Code}
+\renewcommand{\listingscaption}{Program code}
+\renewcommand{\listoflistingscaption}{List of Program Code}
+
+\setminted[python]{
+  linenos,
+  bgcolor=lavendermist,
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines,
+  xleftmargin=1cm,
+  xrightmargin=1cm,
+  }
+
+\setmintedinline[python]{
+    bgcolor=gainsboro,
+    fontsize=\footnotesize,
+    mathescape=true
+    }
+
+  % \begin{listing}[H]
+  % \mint{cl}/(car (cons 1 '(2)))/
+  % \caption{Example of a listing.}
+  % \label{lst:example}
+  % \end{listing}
+  % Listing \ref{lst:example} contains an example of a listing.
+
+
+
+
+
+
+
+
+
+% \lstdefinestyle{Code}{
+%   frame=none,
+%   language=Python,
+%   aboveskip=3mm,
+%   belowskip=3mm,
+%   showstringspaces=false,
+%   columns=flexible,
+%   basicstyle={\small\ttfamily},
+%   numbers=left,
+%   numberstyle=\tiny,
+%   keywordstyle=\color{cyan},
+%   commentstyle=\color{green},
+%   stringstyle=\color{magenta},
+%   breaklines=true,
+%   breakatwhitespace=true,
+%   tabsize=2,
+%   mathescape=true,
+%   backgroundcolor=\color{lavendermist}
+% }
+%
+% \lstdefinestyle{Pseudo}{
+%   % frame=single,
+%   % framerule=0pt,
+%   aboveskip=3mm,
+%   belowskip=3mm,
+%   xleftmargin=.25in,
+%   xrightmargin=.25in
+%   % frameround=tttt,
+%   framesep=1em,
+%   basicstyle={\small\ttfamily\color{white}},
+%   numbers=none,
+%   mathescape=true,
+%   backgroundcolor=\color{arsenic}
+% }
+%
+% \lstset{style=Code}
 
 
 % TABS

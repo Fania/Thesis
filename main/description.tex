@@ -165,24 +165,39 @@ When the server is first started various setup functions are executed before any
 
 Each plain text file in the corpus is processed. This means each word is added to a dictionary data structure together with the file ID's they occur in and a list of each position. Stopwords and non-alphabetic words are ignored (for a list of english stopwords see appendix~\ref{app:code}). After all files are read in the index looks like this:
 
-\{\\
-word1: \{fileA: [pos1, pos2, \ldots], fileB: [pos], \ldots\},\\
-word2: \{fileC: [pos1, pos2], fileK: [pos], \ldots\},\\
-\ldots\\
-\}
+\begin{minted}{python}
+  {
+    word1: {fileA: [pos1, pos2, $\ldots$], fileB: [pos], $\ldots$},
+    word2: {fileC: [pos1, pos2], fileK: [pos], $\ldots$},
+    $\ldots$
+  }
+\end{minted}
 
 Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual file can be found in the appendix~\ref{app:code}.
 
-\{\\
-  doctor: \{\\
-    l\_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],\\
-    l\_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921, 384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 458571, 458918, 458998, 459654, 459771, 490749],\\
-    l\_02: [11476, 12098, 28151, 36270],\\
-    l\_10: [53085, 53118, 53220, 53266, 53364, 53469, 53573, 53592, 53621, 53718, 54873, 55262, 55525, 55577, 55614, 55683, 55741, 56058, 62709, 113969, 114131, 114405, 114794],\
-    l\_19: [14928, 15702, 49560, 82710, 167218, 180210, 189817, 189908, 190020, 190235, 190905, 199430, 226663, 275454, 275928, 278097, 287375, 291383, 304731, 306055, 324757, 330488],\\
-    l\_27: [16270, 79245]\\
-  \}, \ldots\\
-\}
+\begin{minted}{python}
+  {
+    doctor: {
+      l\_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],
+      l\_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921, 384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 458571, 458918, 458998, 459654, 459771, 490749],
+      l\_02: [11476, 12098, 28151, 36270],
+      l\_10: [53085, 53118, 53220, 53266, 53364, 53469, 53573, 53592, 53621, 53718, 54873, 55262, 55525, 55577, 55614, 55683, 55741, 56058, 62709, 113969, 114131, 114405, 114794],
+      l\_19: [14928, 15702, 49560, 82710, 167218, 180210, 189817, 189908, 190020, 190235, 190905, 199430, 226663, 275454, 275928, 278097, 287375, 291383, 304731, 306055, 324757, 330488],
+      l\_27: [16270, 79245]
+    }, $\ldots$
+  }
+\end{minted}
+
+\begin{minted}{python}
+  def setupcorpus(f, lang):
+      # x = counter, w = word in file f
+      for x, w in enumerate(f):
+          if w.isalpha() and (w.lower() not in lang):
+              y = 'l_' + (re.search(r"((\d\d).(\w)+.txt)", f.fileid)).group(2)
+              l_dict[w.lower()][y].append(x)
+\end{minted}
+
+\mintinline{python}{if w.isalpha() and (w.lower() not in lang)}
 
 
 \section{Algorithms}
@@ -202,8 +217,16 @@ The clinamen algorithm works in two steps:
   \item get sentences from corpus that match clinamen words
 \end{enumerate}
 
+\todo{find ref for dameraulevenshtein in baeza-yates book?}
+
 It uses the `faustroll' text by Alfred Jarry as a base document and the Damerau-Levenshtein algorithm \parencite{Damerau1964, Levenshtein1966}, which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
 
+\begin{minted}{python}
+  Clinamen (t):
+    matches = {v: 0 < dameraulevenshtein (t, v) <= 2},   for v $\in$ V
+    sentences =
+    return matches
+\end{minted}
 
 \begin{equation}
   clinamen(t) = [v \colon 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
@@ -213,7 +236,7 @@ It uses the `faustroll' text by Alfred Jarry as a base document and the Damerau-
 
 Where:\\
 \itab{$t$} \tab{is the query term,}\\
-\itab{$V$} \tab{is the vocabulary of `faustroll',}\\
+\itab{$V$} \tab{is the vocabulary of `faustroll'.}\\
 
 
 
@@ -226,7 +249,7 @@ For the syzygy function, we made use of WordNet [29] through the NLTK python lib
 
 This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms for query term t from WordNet. It then loops through all individual items in the list of synonyms in line 2 to 5. Line 3 adds all hyponyms h for the current synonym s if there exists a word in the vocabulary same as the hyponym. Similarly lines 4 and 5 add all hypernyms and holonyms to the results list which is then returned in line 6.
 
-\begin{lstlisting}
+\begin{minted}{python}
   Syzygy (t):
     synonyms = { s $\in$ WordNet-synsets (t) }
     for each s in synonyms:
@@ -236,7 +259,7 @@ This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms 
       union = hypo $\cup$ hyper $\cup$ holo
       add { h: h $\in$ union and $\exists$ h $\in$ V } to results
     return results
-\end{lstlisting}
+\end{minted}
 
 \begin{equation}
 \begin{split}
@@ -259,13 +282,13 @@ For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). 
 
 This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and returns them if they appear in our dictionary of words.
 
-\begin{lstlisting}
+\begin{minted}{python}
   Antinomy (t):
     synonyms = { s $\in$ WordNet-synsets (t) }
     for each s in synonyms:
       add { h $\in$ WordNet-antonyms (s): $\exists$ h $\in$ V } to results
     return results
-\end{lstlisting}
+\end{minted}
 
 \begin{equation}
   \begin{split}

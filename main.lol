@@ -1,20 +1,2 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{164}{lstlisting.A.-5}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{166}{lstlisting.A.-8}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{166}{lstlisting.A.-9}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{166}{lstlisting.A.-10}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textsurfer.py}{168}{lstlisting.A.-11}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/\textunderscore \textunderscore init\textunderscore \textunderscore .py}{175}{lstlisting.A.-12}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/textviews.py}{175}{lstlisting.A.-13}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/videosurfer.py}{176}{lstlisting.A.-14}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/videosurfer.py}{176}{lstlisting.A.-15}
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{back/code/videosurfer.py}{177}{lstlisting.A.-16}
+\contentsline {listing}{\numberline {1}{\ignorespaces Pseudo-code for computing vector scores}}{74}{listing.1}

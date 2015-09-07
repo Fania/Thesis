@@ -247,24 +247,24 @@ Where $t$ is the total number of terms in the index and $w_{i,j}$ is the TF-IDF 
 
 Here is an example algorithm for computing this score taken from \autocite[p.125]{Manning2009}.
 
-\begin{figure}[htb]
-  \begin{lstlisting}
-  CosineScore (q)
-    float Scores[N] = 0
-    for each d
-    do Initialise Length[d] to the length of document d
-    for each query term t
-    do calculate wt,q and fetch postings list for t
-      for each pair (d, tft,d) in postings list
-      do add wft,d to Scores[d]
-    Read the array Length[d]
-    for each d
-    	do Divide Scores[d] by Length[d]
-    	return Top K components of Scores[]
-  \end{lstlisting}
+\begin{listing}[htb]
+  \begin{minted}{python}
+    CosineScore (q)
+      float Scores[N] = 0
+      for each d
+      do Initialise Length[d] to the length of document d
+      for each query term t
+      do calculate wt,q and fetch postings list for t
+        for each pair (d, tft,d) in postings list
+        do add wft,d to Scores[d]
+      Read the array Length[d]
+      for each d
+      	do Divide Scores[d] by Length[d]
+      	return Top K components of Scores[]
+  \end{minted}
 \caption[Pseudo-code for computing vector scores]{Pseudo-code for computing vector scores}
-\label{fig:VectorScores}
-\end{figure}
+\label{code:VectorScores}
+\end{listing}
 
 Where,\\
 \itab{$q$} \tab{is the query}\\
