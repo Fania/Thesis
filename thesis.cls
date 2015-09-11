@@ -292,14 +292,10 @@
 
 % CODE
 
-% \usepackage{listings}
 \usepackage{minted}
-% \usemintedstyle[python]{monokai}
 
-% \SetupFloatingEnvironment{listing}{name=Program code}
-% \SetupFloatingEnvironment{listing}{listname=List of Program Code}
-\renewcommand{\listingscaption}{Program code}
-\renewcommand{\listoflistingscaption}{List of Program Code}
+\renewcommand{\listingscaption}{Source}
+\renewcommand{\listoflistingscaption}{List of Source Code}
 
 \setminted[python]{
   linenos,
@@ -308,67 +304,32 @@
   mathescape=true,
   framesep=2mm,
   breaklines,
+  % xleftmargin=1cm,
+  % numbersep=24pt,
+  xrightmargin=1cm,
+}
+
+\setminted[c]{ % PSEUDOCODE
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines,
   xleftmargin=1cm,
   xrightmargin=1cm,
-  }
+}
 
 \setmintedinline[python]{
-    bgcolor=gainsboro,
-    fontsize=\footnotesize,
-    mathescape=true
-    }
+  bgcolor={},
+  fontsize=\footnotesize,
+  mathescape=true,
+}
 
-  % \begin{listing}[H]
-  % \mint{cl}/(car (cons 1 '(2)))/
-  % \caption{Example of a listing.}
-  % \label{lst:example}
-  % \end{listing}
-  % Listing \ref{lst:example} contains an example of a listing.
-
-
-
-
-
-
-
-
-
-% \lstdefinestyle{Code}{
-%   frame=none,
-%   language=Python,
-%   aboveskip=3mm,
-%   belowskip=3mm,
-%   showstringspaces=false,
-%   columns=flexible,
-%   basicstyle={\small\ttfamily},
-%   numbers=left,
-%   numberstyle=\tiny,
-%   keywordstyle=\color{cyan},
-%   commentstyle=\color{green},
-%   stringstyle=\color{magenta},
-%   breaklines=true,
-%   breakatwhitespace=true,
-%   tabsize=2,
-%   mathescape=true,
-%   backgroundcolor=\color{lavendermist}
-% }
-%
-% \lstdefinestyle{Pseudo}{
-%   % frame=single,
-%   % framerule=0pt,
-%   aboveskip=3mm,
-%   belowskip=3mm,
-%   xleftmargin=.25in,
-%   xrightmargin=.25in
-%   % frameround=tttt,
-%   framesep=1em,
-%   basicstyle={\small\ttfamily\color{white}},
-%   numbers=none,
-%   mathescape=true,
-%   backgroundcolor=\color{arsenic}
-% }
-%
-% \lstset{style=Code}
+% \begin{listing}[H]
+% \mint{cl}/(car (cons 1 '(2)))/
+% \caption{Example of a listing.}
+% \label{lst:example}
+% \end{listing}
+% Listing \ref{lst:example} contains an example of a listing.
 
 
 % TABS

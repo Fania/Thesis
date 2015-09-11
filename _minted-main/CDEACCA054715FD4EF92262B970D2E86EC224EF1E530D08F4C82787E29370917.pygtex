@@ -1,0 +1,261 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{\PYGdefaultZus{}\PYGdefaultZus{}future\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{k+kn}{import} \PYGdefault{n}{print\PYGdefaultZus{}function}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{nltk.corpus} \PYGdefault{k+kn}{import} \PYGdefault{n}{wordnet} \PYGdefault{k}{as} \PYGdefault{n}{wn}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{nltk.corpus} \PYGdefault{k+kn}{import} \PYGdefault{n}{PlaintextCorpusReader}
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{nltk.corpus} \PYGdefault{k+kn}{import} \PYGdefault{n}{stopwords}
+
+\PYGdefault{k+kn}{from} \PYGdefault{n+nn}{collections} \PYGdefault{k+kn}{import} \PYGdefault{n}{defaultdict}
+
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{os}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{re}
+\PYGdefault{c}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}}
+
+\PYGdefault{n}{root\PYGdefaultZus{}path} \PYGdefault{o}{=} \PYGdefault{n}{os}\PYGdefault{o}{.}\PYGdefault{n}{path}\PYGdefault{o}{.}\PYGdefault{n}{dirname}\PYGdefault{p}{(}\PYGdefault{n}{os}\PYGdefault{o}{.}\PYGdefault{n}{path}\PYGdefault{o}{.}\PYGdefault{n}{abspath}\PYGdefault{p}{(}\PYGdefault{n}{\PYGdefaultZus{}\PYGdefaultZus{}file\PYGdefaultZus{}\PYGdefaultZus{}}\PYGdefault{p}{))}
+\PYGdefault{n}{root\PYGdefaultZus{}path} \PYGdefault{o}{=} \PYGdefault{n}{root\PYGdefaultZus{}path}\PYGdefault{p}{[:}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{4}\PYGdefault{p}{]}
+\PYGdefault{n}{corpus\PYGdefaultZus{}root} \PYGdefault{o}{=} \PYGdefault{n}{root\PYGdefaultZus{}path} \PYGdefault{o}{+} \PYGdefault{l+s}{\PYGdefaultZsq{}/app/static/corpus\PYGdefaultZsq{}}
+\PYGdefault{n}{book\PYGdefaultZus{}list} \PYGdefault{o}{=} \PYGdefault{n}{PlaintextCorpusReader}\PYGdefault{p}{(}\PYGdefault{n}{corpus\PYGdefaultZus{}root}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}.*\PYGdefaultZbs{}.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}  \PYGdefault{c}{\PYGdefaultZsh{} root, fileid}
+
+\PYGdefault{c}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}}
+\PYGdefault{n}{l\PYGdefaultZus{}00} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}00.faustroll.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}01} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}01.poe1.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}02} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}02.bergerac.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}03} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}03.gospel.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}04} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}04.bloy\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}05} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}05.coleridge.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}06} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}06.darien\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}07} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}07.desbordes\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}08} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}08.elskamp\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}09} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}09.florian\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}10} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}10.arabiannights.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}11} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}11.grabbe\PYGdefaultZus{}german.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}12} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}12.kahn\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}13} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}13.lautreamont\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}14} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}14.maeterlinck.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}15} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}15.mallarme\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}16} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}16.mendes.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}17} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}17.odyssey.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}18} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZsq{}}
+\PYGdefault{n}{l\PYGdefaultZus{}19} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}19.rabelais.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}20} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZsq{}}
+\PYGdefault{n}{l\PYGdefaultZus{}21} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZsq{}}
+\PYGdefault{n}{l\PYGdefaultZus{}22} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}22.rimbaud\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}23} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}23.schwob\PYGdefaultZus{}german.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}24} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}24.ubu\PYGdefaultZus{}french.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}25} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}25.verlaine.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}26} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}26.verhaeren.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{l\PYGdefaultZus{}27} \PYGdefault{o}{=} \PYGdefault{n}{book\PYGdefaultZus{}list}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}27.verne.txt\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{c}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}}
+\PYGdefault{n}{en\PYGdefaultZus{}stop} \PYGdefault{o}{=} \PYGdefault{n}{stopwords}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}english\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{fr\PYGdefaultZus{}stop} \PYGdefault{o}{=} \PYGdefault{n}{stopwords}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}french\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{de\PYGdefaultZus{}stop} \PYGdefault{o}{=} \PYGdefault{n}{stopwords}\PYGdefault{o}{.}\PYGdefault{n}{words}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}german\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{c}{\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}\PYGdefaultZsh{}}
+
+\PYGdefault{n}{l\PYGdefaultZus{}dict} \PYGdefault{o}{=} \PYGdefault{n}{defaultdict}\PYGdefault{p}{(}\PYGdefault{k}{lambda}\PYGdefault{p}{:} \PYGdefault{n}{defaultdict}\PYGdefault{p}{(}\PYGdefault{n+nb}{list}\PYGdefault{p}{))}
+
+\PYGdefault{c}{\PYGdefaultZsh{} l\PYGdefaultZus{}dict structure:}
+\PYGdefault{c}{\PYGdefaultZsh{} \PYGdefaultZob{}word1: \PYGdefaultZob{}fileA: [pos1, pos2, ...], fileB: [pos], ...\PYGdefaultZcb{},}
+\PYGdefault{c}{\PYGdefaultZsh{}  word2: \PYGdefaultZob{}fileC: [pos1, pos2], fileK: [pos], ...\PYGdefaultZcb{},}
+\PYGdefault{c}{\PYGdefaultZsh{}  ...}
+\PYGdefault{c}{\PYGdefaultZsh{} \PYGdefaultZcb{}}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{setupcorpus}\PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{lang}\PYGdefault{p}{):}
+    \PYGdefault{k}{for} \PYGdefault{n}{x}\PYGdefault{p}{,} \PYGdefault{n}{w} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{enumerate}\PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{):}
+        \PYGdefault{k}{if} \PYGdefault{n}{w}\PYGdefault{o}{.}\PYGdefault{n}{isalpha}\PYGdefault{p}{()} \PYGdefault{o+ow}{and} \PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{o}{.}\PYGdefault{n}{lower}\PYGdefault{p}{()} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n}{lang}\PYGdefault{p}{):}
+            \PYGdefault{n}{y} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}\PYGdefaultZsq{}} \PYGdefault{o}{+} \PYGdefault{p}{(}\PYGdefault{n}{re}\PYGdefault{o}{.}\PYGdefault{n}{search}\PYGdefault{p}{(}\PYGdefault{l+s}{r\PYGdefaultZdq{}((\PYGdefaultZbs{}d\PYGdefaultZbs{}d).(\PYGdefaultZbs{}w)+.txt)\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{f}\PYGdefault{o}{.}\PYGdefault{n}{fileid}\PYGdefault{p}{))}\PYGdefault{o}{.}\PYGdefault{n}{group}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{2}\PYGdefault{p}{)}
+            \PYGdefault{n}{l\PYGdefaultZus{}dict}\PYGdefault{p}{[}\PYGdefault{n}{w}\PYGdefault{o}{.}\PYGdefault{n}{lower}\PYGdefault{p}{()][}\PYGdefault{n}{y}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{)}
+
+\PYGdefault{n}{setupcorpus}\PYGdefault{p}{(}\PYGdefault{n}{l\PYGdefaultZus{}00}\PYGdefault{p}{,} \PYGdefault{n}{en\PYGdefaultZus{}stop}\PYGdefault{p}{),} \PYGdefault{k}{print}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}added 00\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{setupcorpus}\PYGdefault{p}{(}\PYGdefault{n}{l\PYGdefaultZus{}01}\PYGdefault{p}{,} \PYGdefault{n}{en\PYGdefaultZus{}stop}\PYGdefault{p}{),} \PYGdefault{k}{print}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}added 01\PYGdefaultZsq{}}\PYGdefault{p}{)}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}02, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 02\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}03, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 03\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}04, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 04\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}05, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 05\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}06, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 06\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}07, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 07\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}08, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 08\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}09, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 09\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}10, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 10\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}11, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 11\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}12, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 12\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}13, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 13\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}14, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 14\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}15, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 15\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}16, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 16\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}17, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 17\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}18, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 18\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}19, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 19\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}20, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 20\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}21, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 21\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}22, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 22\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}23, de\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 23\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}24, fr\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 24\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}25, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 25\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}26, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 26\PYGdefaultZsq{})}
+\PYGdefault{c}{\PYGdefaultZsh{} setupcorpus(l\PYGdefaultZus{}27, en\PYGdefaultZus{}stop), print(\PYGdefaultZsq{}added 27\PYGdefaultZsq{})}
+
+\PYGdefault{c}{\PYGdefaultZsh{} print(l\PYGdefaultZus{}dict)}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{algo}\PYGdefault{p}{):}
+    \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}
+    \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{(),} \PYGdefault{n+nb}{set}\PYGdefault{p}{()}
+    \PYGdefault{k}{for} \PYGdefault{n}{r} \PYGdefault{o+ow}{in} \PYGdefault{n}{words}\PYGdefault{p}{:}
+        \PYGdefault{n}{files} \PYGdefault{o}{=} \PYGdefault{n}{l\PYGdefaultZus{}dict}\PYGdefault{p}{[}\PYGdefault{n}{r}\PYGdefault{p}{]}
+        \PYGdefault{k}{for} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{p} \PYGdefault{o+ow}{in} \PYGdefault{n}{files}\PYGdefault{o}{.}\PYGdefault{n}{items}\PYGdefault{p}{():}
+            \PYGdefault{n}{f} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{n}{e}\PYGdefault{p}{)}
+            \PYGdefault{n}{sources}\PYGdefault{o}{.}\PYGdefault{n}{add}\PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{)}
+            \PYGdefault{n}{sent} \PYGdefault{o}{=} \PYGdefault{n}{pp\PYGdefaultZus{}sent}\PYGdefault{p}{(}\PYGdefault{n}{r}\PYGdefault{o}{.}\PYGdefault{n}{lower}\PYGdefault{p}{(),} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{p}\PYGdefault{p}{)}
+            \PYGdefault{n}{o} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{sent}\PYGdefault{p}{,} \PYGdefault{n}{algo}\PYGdefault{p}{)}
+            \PYGdefault{k}{if} \PYGdefault{n}{sent} \PYGdefault{o}{!=} \PYGdefault{p}{[]} \PYGdefault{o+ow}{and} \PYGdefault{n}{o} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n}{out}\PYGdefault{p}{:}
+                \PYGdefault{n}{total} \PYGdefault{o}{+=} \PYGdefault{l+m+mi}{1}
+                \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n}{add}\PYGdefault{p}{(}\PYGdefault{n}{o}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{n}{nym}\PYGdefault{p}{,} \PYGdefault{n}{wset}\PYGdefault{p}{):}
+    \PYGdefault{n}{out} \PYGdefault{o}{=} \PYGdefault{p}{[]}
+    \PYGdefault{n}{hhh} \PYGdefault{o}{=} \PYGdefault{n}{wset}\PYGdefault{o}{.}\PYGdefault{n}{hyponyms}\PYGdefault{p}{()}
+    \PYGdefault{k}{if} \PYGdefault{n}{nym} \PYGdefault{o}{==} \PYGdefault{l+s}{\PYGdefaultZsq{}hypo\PYGdefaultZsq{}}\PYGdefault{p}{:}
+        \PYGdefault{n}{hhh} \PYGdefault{o}{=} \PYGdefault{n}{wset}\PYGdefault{o}{.}\PYGdefault{n}{hyponyms}\PYGdefault{p}{()}
+    \PYGdefault{k}{if} \PYGdefault{n}{nym} \PYGdefault{o}{==} \PYGdefault{l+s}{\PYGdefaultZsq{}hyper\PYGdefaultZsq{}}\PYGdefault{p}{:}
+        \PYGdefault{n}{hhh} \PYGdefault{o}{=} \PYGdefault{n}{wset}\PYGdefault{o}{.}\PYGdefault{n}{hypernyms}\PYGdefault{p}{()}
+    \PYGdefault{k}{if} \PYGdefault{n}{nym} \PYGdefault{o}{==} \PYGdefault{l+s}{\PYGdefaultZsq{}holo\PYGdefaultZsq{}}\PYGdefault{p}{:}
+        \PYGdefault{n}{hhh} \PYGdefault{o}{=} \PYGdefault{n}{wset}\PYGdefault{o}{.}\PYGdefault{n}{member\PYGdefaultZus{}holonyms}\PYGdefault{p}{()}
+    \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{hhh}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{:}
+        \PYGdefault{k}{for} \PYGdefault{n}{h} \PYGdefault{o+ow}{in} \PYGdefault{n}{hhh}\PYGdefault{p}{:}
+            \PYGdefault{k}{for} \PYGdefault{n}{l} \PYGdefault{o+ow}{in} \PYGdefault{n}{h}\PYGdefault{o}{.}\PYGdefault{n}{lemmas}\PYGdefault{p}{():}
+                \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n}{l}\PYGdefault{o}{.}\PYGdefault{n}{name}\PYGdefault{p}{()))}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{clinamen}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{):}
+    \PYGdefault{n}{words} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{([}\PYGdefault{n}{item} \PYGdefault{k}{for} \PYGdefault{n}{item} \PYGdefault{o+ow}{in} \PYGdefault{n}{l\PYGdefaultZus{}00}
+                \PYGdefault{k}{if} \PYGdefault{n}{dameraulevenshtein}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{item}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZlt{}=} \PYGdefault{n}{i}\PYGdefault{p}{])}
+    \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Clinamen\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{syzygy}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{):}
+    \PYGdefault{n}{words} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{()}
+    \PYGdefault{n}{wordsets} \PYGdefault{o}{=} \PYGdefault{n}{wn}\PYGdefault{o}{.}\PYGdefault{n}{synsets}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{)}
+    \PYGdefault{k}{for} \PYGdefault{n}{ws} \PYGdefault{o+ow}{in} \PYGdefault{n}{wordsets}\PYGdefault{p}{:}
+        \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{update}\PYGdefault{p}{(}\PYGdefault{n}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}hypo\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{ws}\PYGdefault{p}{))}
+        \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{update}\PYGdefault{p}{(}\PYGdefault{n}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}hyper\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{ws}\PYGdefault{p}{))}
+        \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{update}\PYGdefault{p}{(}\PYGdefault{n}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}holo\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{ws}\PYGdefault{p}{))}
+    \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Syzygy\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{antinomy}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{):}
+    \PYGdefault{n}{words} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{()}
+    \PYGdefault{n}{wordsets} \PYGdefault{o}{=} \PYGdefault{n}{wn}\PYGdefault{o}{.}\PYGdefault{n}{synsets}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{)}
+    \PYGdefault{k}{for} \PYGdefault{n}{ws} \PYGdefault{o+ow}{in} \PYGdefault{n}{wordsets}\PYGdefault{p}{:}
+        \PYGdefault{n}{anti} \PYGdefault{o}{=} \PYGdefault{n}{ws}\PYGdefault{o}{.}\PYGdefault{n}{lemmas}\PYGdefault{p}{()[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{antonyms}\PYGdefault{p}{()}
+        \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{anti}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{:}
+            \PYGdefault{k}{for} \PYGdefault{n}{a} \PYGdefault{o+ow}{in} \PYGdefault{n}{anti}\PYGdefault{p}{:}
+                \PYGdefault{k}{if} \PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n}{a}\PYGdefault{o}{.}\PYGdefault{n}{name}\PYGdefault{p}{())} \PYGdefault{o}{!=} \PYGdefault{n}{w}\PYGdefault{p}{:}
+                    \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{add}\PYGdefault{p}{(}\PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n}{a}\PYGdefault{o}{.}\PYGdefault{n}{name}\PYGdefault{p}{()))}
+    \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Antinomy\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{get\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{n+nb}{file}\PYGdefault{p}{):}
+    \PYGdefault{k}{return} \PYGdefault{p}{\PYGdefaultZob{}}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}00\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Alfred Jarry: Exploits and Opinions of Dr. Faustroll, Pataphysician\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}01\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Edgar Allen Poe: Collected Works\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}02\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Cyrano de Bergerac: A Voyage to the Moon\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}03\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Saint Luke: The Gospel\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}04\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Leon Bloy: Le Desespere\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}05\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Samuel Taylor Coleridge: The Rime of the Ancient Mariner\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}06\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Georges Darien: Le Voleur\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}07\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Marceline Desbordes\PYGdefaultZhy{}Valmore: Le Livre des Meres et des Enfants\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}08\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Max Elskamp: Enluminures\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}09\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Jean\PYGdefaultZhy{}Pierre Claris de Florian: Les Deux Billets\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}10\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}One Thousand and One Nights\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}11\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Christian Dietrich Grabbe: Scherz, Satire, Ironie und tiefere Bedeutung\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}12\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZdq{}Gustave Kahn: Le Conte de l\PYGdefaultZsq{}Or et Du Silence\PYGdefaultZdq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}13\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Le Comte de Lautreamont: Les Chants de Maldoror\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}14\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Maurice Maeterlinck: Aglavaine and Selysette\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}15\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Stephane Mallarme: Verse and Prose\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}16\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Mendes: The Mirror and la Divina Aventure\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}17\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Homer: The Odyssey\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}18\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Josephin Peladan: Babylon\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}19\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Francois Rabelais: Gargantua and Pantagruel\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}20\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZdq{}Jean de Chilra: L\PYGdefaultZsq{}Heure Sexuelle\PYGdefaultZdq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}21\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Henri de Regnier: La Canne de Jaspe\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}22\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Arthur Rimbaud: Poesies Completes\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}23\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Marcel Schwob: Der Kinderkreuzzug\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}24\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Alfred Jarry: Ubu Roi\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}25\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Paul Verlaine: Poems\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}26\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Emile Verhaeren: Poems\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}l\PYGdefaultZus{}27\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}Jules Verne: A Journey to the Centre of the Earth\PYGdefaultZsq{}}
+    \PYGdefault{p}{\PYGdefaultZcb{}}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n+nb}{file}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Unknown\PYGdefaultZsq{}}\PYGdefault{p}{)}  \PYGdefault{c}{\PYGdefaultZsh{} \PYGdefaultZsq{}Unknown\PYGdefaultZsq{} is default if file not found}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{pp\PYGdefaultZus{}sent}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{p}\PYGdefault{p}{):}  \PYGdefault{c}{\PYGdefaultZsh{} gets w as lower case}
+    \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{pos} \PYGdefault{o}{=} \PYGdefault{p}{[],} \PYGdefault{n}{p}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+    \PYGdefault{n}{ff} \PYGdefault{o}{=} \PYGdefault{n+nb}{eval}\PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{)}
+    \PYGdefault{n}{pos\PYGdefaultZus{}b}\PYGdefault{p}{,} \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos}\PYGdefault{p}{,} \PYGdefault{n}{pos}
+    \PYGdefault{n}{punct} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{},\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}.\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}!\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}?\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}(\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{})\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}:\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{};\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{l+s+se}{\PYGdefaultZbs{}n}\PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZhy{}\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZus{}\PYGdefaultZsq{}}\PYGdefault{p}{]}
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{):}
+        \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o+ow}{in} \PYGdefault{n}{punct}\PYGdefault{p}{:}
+            \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{p}{(}\PYGdefault{n}{i} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+            \PYGdefault{k}{break}
+        \PYGdefault{k}{else}\PYGdefault{p}{:}
+            \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{5}\PYGdefault{p}{]:}
+                \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{5}
+            \PYGdefault{k}{else}\PYGdefault{p}{:}
+                \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{=} \PYGdefault{n}{pos}
+    \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{):}
+        \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{n}{j}\PYGdefault{p}{]} \PYGdefault{o+ow}{in} \PYGdefault{n}{punct}\PYGdefault{p}{:}
+            \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{n}{j}
+            \PYGdefault{k}{break}
+        \PYGdefault{k}{else}\PYGdefault{p}{:}
+            \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{5}\PYGdefault{p}{]:}
+                \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{5}
+            \PYGdefault{k}{else}\PYGdefault{p}{:}
+                \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos}
+    \PYGdefault{k}{if} \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{\PYGdefaultZgt{}=} \PYGdefault{l+m+mi}{0} \PYGdefault{o+ow}{and} \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{\PYGdefaultZlt{}=} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{ff}\PYGdefault{p}{):}
+        \PYGdefault{n}{pre} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{} \PYGdefaultZsq{}}\PYGdefault{o}{.}\PYGdefault{n}{join}\PYGdefault{p}{(}\PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos\PYGdefaultZus{}b}\PYGdefault{p}{:}\PYGdefault{n}{pos}\PYGdefault{p}{])}
+        \PYGdefault{n}{post} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{} \PYGdefaultZsq{}}\PYGdefault{o}{.}\PYGdefault{n}{join}\PYGdefault{p}{(}\PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos}\PYGdefault{o}{+}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{:}\PYGdefault{n}{pos\PYGdefaultZus{}a}\PYGdefault{p}{])}
+        \PYGdefault{n}{out} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{pre}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{post}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}
+
+
+\PYGdefault{c}{\PYGdefaultZsh{} http://mwh.geek.nz/2009/04/26/python\PYGdefaultZhy{}damerau\PYGdefaultZhy{}levenshtein\PYGdefaultZhy{}distance/}
+\PYGdefault{c}{\PYGdefaultZsh{} MIT license.}
+\PYGdefault{k}{def} \PYGdefault{n+nf}{dameraulevenshtein}\PYGdefault{p}{(}\PYGdefault{n}{seq1}\PYGdefault{p}{,} \PYGdefault{n}{seq2}\PYGdefault{p}{):}
+    \PYGdefault{n}{oneago} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{None}
+    \PYGdefault{n}{thisrow} \PYGdefault{o}{=} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{seq2}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+    \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{xrange}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{seq1}\PYGdefault{p}{)):}
+        \PYGdefault{n}{twoago}\PYGdefault{p}{,} \PYGdefault{n}{oneago}\PYGdefault{p}{,} \PYGdefault{n}{thisrow} \PYGdefault{o}{=} \PYGdefault{n}{oneago}\PYGdefault{p}{,} \PYGdefault{n}{thisrow}\PYGdefault{p}{,} \PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]} \PYGdefault{o}{*} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{seq2}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{p}{[}\PYGdefault{n}{x} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}
+        \PYGdefault{k}{for} \PYGdefault{n}{y} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{xrange}\PYGdefault{p}{(}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{seq2}\PYGdefault{p}{)):}
+            \PYGdefault{n}{delcost} \PYGdefault{o}{=} \PYGdefault{n}{oneago}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}
+            \PYGdefault{n}{addcost} \PYGdefault{o}{=} \PYGdefault{n}{thisrow}\PYGdefault{p}{[}\PYGdefault{n}{y} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}
+            \PYGdefault{n}{subcost} \PYGdefault{o}{=} \PYGdefault{n}{oneago}\PYGdefault{p}{[}\PYGdefault{n}{y} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{p}{(}\PYGdefault{n}{seq1}\PYGdefault{p}{[}\PYGdefault{n}{x}\PYGdefault{p}{]} \PYGdefault{o}{!=} \PYGdefault{n}{seq2}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{])}
+            \PYGdefault{n}{thisrow}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb}{min}\PYGdefault{p}{(}\PYGdefault{n}{delcost}\PYGdefault{p}{,} \PYGdefault{n}{addcost}\PYGdefault{p}{,} \PYGdefault{n}{subcost}\PYGdefault{p}{)}
+            \PYGdefault{k}{if} \PYGdefault{p}{(}\PYGdefault{n}{x} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{0} \PYGdefault{o+ow}{and} \PYGdefault{n}{y} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{0} \PYGdefault{o+ow}{and} \PYGdefault{n}{seq1}\PYGdefault{p}{[}\PYGdefault{n}{x}\PYGdefault{p}{]} \PYGdefault{o}{==} \PYGdefault{n}{seq2}\PYGdefault{p}{[}\PYGdefault{n}{y} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o+ow}{and}
+               \PYGdefault{n}{seq1}\PYGdefault{p}{[}\PYGdefault{n}{x} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]} \PYGdefault{o}{==} \PYGdefault{n}{seq2}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{]} \PYGdefault{o+ow}{and} \PYGdefault{n}{seq1}\PYGdefault{p}{[}\PYGdefault{n}{x}\PYGdefault{p}{]} \PYGdefault{o}{!=} \PYGdefault{n}{seq2}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{]):}
+                    \PYGdefault{n}{thisrow}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb}{min}\PYGdefault{p}{(}\PYGdefault{n}{thisrow}\PYGdefault{p}{[}\PYGdefault{n}{y}\PYGdefault{p}{],} \PYGdefault{n}{twoago}\PYGdefault{p}{[}\PYGdefault{n}{y} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{2}\PYGdefault{p}{]} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{thisrow}\PYGdefault{p}{[}\PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{seq2}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{]}
+
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{calc\PYGdefaultZus{}all}\PYGdefault{p}{(}\PYGdefault{n}{sens}\PYGdefault{p}{):}
+    \PYGdefault{n}{all\PYGdefaultZus{}1}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}2}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}3}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}4}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}5}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}6}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}7}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}8}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}9}\PYGdefault{p}{,} \PYGdefaultZbs{}
+        \PYGdefault{n}{all\PYGdefaultZus{}10}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}11}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}12}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}13}\PYGdefault{p}{,} \PYGdefault{n}{all\PYGdefaultZus{}14} \PYGdefault{o}{=} \PYGdefault{p}{[[]} \PYGdefault{k}{for} \PYGdefault{n}{\PYGdefaultZus{}} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{14}\PYGdefault{p}{)]}
+    \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{b}\PYGdefault{p}{,} \PYGdefault{n}{part}\PYGdefault{p}{,} \PYGdefault{n}{mx} \PYGdefault{o}{=} \PYGdefault{p}{[],} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{15}
+    \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{sens}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{l+m+mi}{14} \PYGdefault{o}{\PYGdefaultZgt{}=} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{:}
+        \PYGdefault{n}{part} \PYGdefault{o}{=} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{sens}\PYGdefault{p}{)} \PYGdefault{o}{/} \PYGdefault{l+m+mi}{14}
+    \PYGdefault{k}{else}\PYGdefault{p}{:}
+        \PYGdefault{n}{part} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{1}
+        \PYGdefault{n}{mx} \PYGdefault{o}{=} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{sens}\PYGdefault{p}{)} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}
+    \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{n}{mx}\PYGdefault{p}{):}
+        \PYGdefault{n}{n} \PYGdefault{o}{=} \PYGdefault{n}{b} \PYGdefault{o}{+} \PYGdefault{n}{part}
+        \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n+nb}{eval}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}all\PYGdefaultZus{}\PYGdefaultZsq{}} \PYGdefault{o}{+} \PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n}{i}\PYGdefault{p}{))}
+        \PYGdefault{n}{v} \PYGdefault{o}{=} \PYGdefault{n}{sens}\PYGdefault{p}{[}\PYGdefault{n}{b}\PYGdefault{p}{:}\PYGdefault{n}{n}\PYGdefault{p}{]}
+        \PYGdefault{n}{b} \PYGdefault{o}{+=} \PYGdefault{n}{part}
+        \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{v}\PYGdefault{p}{)}
+    \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{part}\PYGdefault{p}{,} \PYGdefault{p}{(}\PYGdefault{n}{mx} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+\end{Verbatim}
