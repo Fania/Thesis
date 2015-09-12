@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGdefault{c}{\PYGdefaultZsh{} $w$ = input query term}
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{syzygy}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{):}
+        \PYGdefault{n}{words} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{()}
+        \PYGdefault{n}{wordsets} \PYGdefault{o}{=} \PYGdefault{n}{wn}\PYGdefault{o}{.}\PYGdefault{n}{synsets}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{)}
+        \PYGdefault{k}{for} \PYGdefault{n}{ws} \PYGdefault{o+ow}{in} \PYGdefault{n}{wordsets}\PYGdefault{p}{:}
+            \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{update}\PYGdefault{p}{(}\PYGdefault{n}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}hypo\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{ws}\PYGdefault{p}{))}
+            \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{update}\PYGdefault{p}{(}\PYGdefault{n}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}hyper\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{ws}\PYGdefault{p}{))}
+            \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{update}\PYGdefault{p}{(}\PYGdefault{n}{get\PYGdefaultZus{}nym}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}holo\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{ws}\PYGdefault{p}{))}
+        \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Syzygy\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+\end{Verbatim}

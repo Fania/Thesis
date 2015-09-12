@@ -11,7 +11,6 @@
 To compile manually via commandline:
 
 pdflatex --file-line-error -shell-escape main
-pdflatex -interaction=batchmode --file-line-error main
 
 1. pdflatex main
 2. biber main
@@ -89,7 +88,7 @@ pdflatex -interaction=batchmode --file-line-error main
 - [ ] Explain why I only use the first occurance
 - [ ] PEP20
 - [ ] AVOID: so, in principle,
-
+- [ ] double check line numbers in code
 
 ## Errors
 
@@ -125,7 +124,10 @@ http://www.artybollocks.com/#abg_full
   pass
 \end{minted}
 
-\mintinline
+\mininline{python}{xyz}
+
+\newmintinline['macro name']{'language'}{'options'}. If a 'macro name' is not specified, then the created macro is called \'language'inline
+\py{xyz}
 
 \mint{python}|import this|
 

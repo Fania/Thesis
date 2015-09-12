@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGdefault{c}{\PYGdefaultZsh{} $ws$ = list of words}
+    \PYGdefault{c}{\PYGdefaultZsh{} String $a$ = name of algorithm}
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{ws}\PYGdefault{p}{,} \PYGdefault{n}{a}\PYGdefault{p}{):}
+        \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}
+        \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{(),} \PYGdefault{n+nb}{set}\PYGdefault{p}{()}
+        \PYGdefault{k}{for} \PYGdefault{n}{w} \PYGdefault{o+ow}{in} \PYGdefault{n}{ws}\PYGdefault{p}{:}
+            \PYGdefault{n}{files} \PYGdefault{o}{=} \PYGdefault{n}{l\PYGdefaultZus{}dict}\PYGdefault{p}{[}\PYGdefault{n}{w}\PYGdefault{p}{]}
+            \PYGdefault{c}{\PYGdefaultZsh{} file $e$, list of positions $ps$}
+            \PYGdefault{k}{for} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{ps} \PYGdefault{o+ow}{in} \PYGdefault{n}{files}\PYGdefault{o}{.}\PYGdefault{n}{items}\PYGdefault{p}{():}
+                \PYGdefault{n}{f} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}title}\PYGdefault{p}{(}\PYGdefault{n}{e}\PYGdefault{p}{)}
+                \PYGdefault{n}{sources}\PYGdefault{o}{.}\PYGdefault{n}{add}\PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{)}
+                \PYGdefault{n}{sent} \PYGdefault{o}{=} \PYGdefault{n}{pp\PYGdefaultZus{}sent}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{o}{.}\PYGdefault{n}{lower}\PYGdefault{p}{(),} \PYGdefault{n}{e}\PYGdefault{p}{,} \PYGdefault{n}{ps}\PYGdefault{p}{)}
+                \PYGdefault{c}{\PYGdefaultZsh{} $o$ = triple of (file, sentence, algorithm)}
+                \PYGdefault{n}{o} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{sent}\PYGdefault{p}{,} \PYGdefault{n}{a}\PYGdefault{p}{)}
+                \PYGdefault{k}{if} \PYGdefault{n}{sent} \PYGdefault{o}{!=} \PYGdefault{p}{[]} \PYGdefault{o+ow}{and} \PYGdefault{n}{o} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n}{out}\PYGdefault{p}{:}
+                    \PYGdefault{n}{total} \PYGdefault{o}{+=} \PYGdefault{l+m+mi}{1}
+                    \PYGdefault{n}{out}\PYGdefault{o}{.}\PYGdefault{n}{add}\PYGdefault{p}{(}\PYGdefault{n}{o}\PYGdefault{p}{)}
+        \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+\end{Verbatim}

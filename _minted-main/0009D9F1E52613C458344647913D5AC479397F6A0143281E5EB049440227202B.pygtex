@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGdefault{c}{\PYGdefaultZsh{} $w$ = input query term}
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{antinomy}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{):}
+        \PYGdefault{n}{words} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{()}
+        \PYGdefault{n}{wordsets} \PYGdefault{o}{=} \PYGdefault{n}{wn}\PYGdefault{o}{.}\PYGdefault{n}{synsets}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{)}
+        \PYGdefault{k}{for} \PYGdefault{n}{ws} \PYGdefault{o+ow}{in} \PYGdefault{n}{wordsets}\PYGdefault{p}{:}
+            \PYGdefault{n}{anti} \PYGdefault{o}{=} \PYGdefault{n}{ws}\PYGdefault{o}{.}\PYGdefault{n}{lemmas}\PYGdefault{p}{()[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}\PYGdefault{o}{.}\PYGdefault{n}{antonyms}\PYGdefault{p}{()}
+            \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{anti}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{:}
+                \PYGdefault{k}{for} \PYGdefault{n}{a} \PYGdefault{o+ow}{in} \PYGdefault{n}{anti}\PYGdefault{p}{:}
+                    \PYGdefault{k}{if} \PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n}{a}\PYGdefault{o}{.}\PYGdefault{n}{name}\PYGdefault{p}{())} \PYGdefault{o}{!=} \PYGdefault{n}{w}\PYGdefault{p}{:}
+                        \PYGdefault{n}{words}\PYGdefault{o}{.}\PYGdefault{n}{add}\PYGdefault{p}{(}\PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n}{a}\PYGdefault{o}{.}\PYGdefault{n}{name}\PYGdefault{p}{()))}
+        \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Antinomy\PYGdefaultZsq{}}\PYGdefault{p}{)}
+        \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
+\end{Verbatim}

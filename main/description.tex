@@ -90,10 +90,7 @@ Instead of crawling the Internet the present tool uses a local collection of tex
 \item Jules Verne: \emph{A Journey to the Centre of the Earth}
 \end{enumerate}
 
-The original list as it appears in ``Faustroll'' is shown below. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:}\\
-Duration of copyright: §5. ``For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.'' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf})\\
-Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works})\\
-\emph{Fair dealing}: §7. ``Private and research study purposes'', so for the purposes of this project copyright should not apply.} in their original languages.
+The original list as it appears in ``Faustroll'' is shown below. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. ``For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.'' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. ``Private and research study purposes'', so for the purposes of this project copyright should not apply.} in their original languages.
 
 \begin{enumerate}
 \item BAUDELAIRE, a volume of E.A. POE translations.
@@ -155,9 +152,9 @@ Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de C
 
 \section{Setup}
 
-When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field of any of the text, image or video pages.
+When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
 
-Each plain text file in the corpus is processed. Source~\ref{code:addtocorpus} shows how this is done. The `PlaintextCorpusReader' is a feature of the \textbf{NTLK} Python library for \acrlong{nlp}.
+Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \gls{nltk} Python library\footnote{\url{http://www.nltk.org/}} for \acrlong{nlp}.
 
 \begin{listing}
   \begin{minted}{python}
@@ -171,8 +168,31 @@ Each plain text file in the corpus is processed. Source~\ref{code:addtocorpus} s
 \label{code:addtocorpus}
 \end{listing}
 
+The \py{setupcorpus} function (see source~\ref{code:setupcorpus}) is called for each of the text files in the corpus to populate the index data structure \py{l_dict}.
 
-This means each word is added to a dictionary data structure together with the file ID's they occur in and a list of each position. Stopwords and non-alphabetic words are ignored (for a list of english stopwords see appendix~\ref{app:code}). After all files are read in the index looks like this:
+\begin{minted}{c}
+  l_dict = dictionary { dictionary { list [ ] } }
+\end{minted}
+
+A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \textbf{key: value} pairs. The \py{l_dict} used here is a dictionary where each key has another dictionary as it's value. Each nested dictionary has a list as the value for each key.
+
+\begin{listing}
+  \begin{minted}{python}
+    # $f$ = input text file variable
+    # $l$ = stopwords file variable
+    def setupcorpus(f, l):
+        # $x$ = counter/position
+        # $w$ = word in file $f$
+        for x, w in enumerate(f):
+            if w.isalpha() and (w.lower() not in l):
+                y = 'l_' + (re.search(r"((\d\d).(\w)+.txt)", f.fileid)).group(2)
+                l_dict[w.lower()][y].append(x)
+  \end{minted}
+\caption{`setupcorpus' function to process the corpus and create the index.}
+\label{code:setupcorpus}
+\end{listing}
+
+Line 6 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line 7 checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stopword file \py{l} (for a list of english stopwords see appendix~\ref{app:code}). If both of those conditions are true variable \py{y} is created on line 8 (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to \py{l_dict} together with the file \py{y} and the current position \py{x} on line 9. After all files are processed, the index looks like this:
 
 \begin{minted}{c}
   {
@@ -182,7 +202,7 @@ This means each word is added to a dictionary data structure together with the f
   }
 \end{minted}
 
-Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual file can be found in the appendix~\ref{app:code}.
+Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual \py{l_dict} can be found in the appendix~\ref{app:code}.
 
 \begin{minted}{c}
   {
@@ -197,32 +217,6 @@ Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, he
   }
 \end{minted}
 
-The `setupcorpus' function (see source~\ref{code:setupcorpus}) is called for each of the text files in the corpus to populate the index data structure.
-
-\begin{listing}
-  \begin{minted}{python}
-    # $f$ = input text file
-    # $lang$ = language of the text
-    def setupcorpus(file, lang):
-        # $x$ = counter/position
-        for x, word in enumerate(file):
-            if word.isalpha() and (word.lower() not in lang):
-                # Creates names like `l_00' based on `00.faustroll.txt', etc.
-                y = 'l_' + (re.search(r"((\d\d).(\w)+.txt)", file.fileid)).group(2)
-                # Creates/appends an entry for the current word $w$ in the index $l_dict$ and creates/appends an entry for the current file with its new name $y$.
-                # As we go through the file word by word, the counter $x$ represents the words position in the file.
-                # $x$ is added to the list of positions of $w$ in $y$.
-                l_dict[word.lower()][y].append(x)
-  \end{minted}
-\caption{`setupcorpus' function to process the corpus and create the index.}
-\label{code:setupcorpus}
-\end{listing}
-
-
-
-
-% Test \mintinline{python}{if w.isalpha() and (w.lower() not in lang)} stuff
-
 
 \section{Algorithms}
 
@@ -235,100 +229,198 @@ Image and Video search do not use all three algorithms --- where relevant this i
 
 The clinamen is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' \parencite{Boek2002}.
 
-The clinamen algorithm works in two steps:
+In simple terms, the clinamen algorithm works in two steps:
 \begin{enumerate}
-  \item get clinamen words based on dameraulevenshtein and faustroll
-  \item get sentences from corpus that match clinamen words
+  \item get clinamen words based on dameraulevenshtein and faustroll,
+  \item get sentences from corpus that match clinamen words.
 \end{enumerate}
 
 \todo{find ref for dameraulevenshtein in baeza-yates book?}
 
-It uses the `faustroll' text by Alfred Jarry as a base document and the Damerau-Levenshtein algorithm \parencite{Damerau1964, Levenshtein1966}, which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
+It uses the `faustroll' text by Alfred Jarry \citeyear{Jarry1996} as a base document and the Damerau-Levenshtein algorithm \parencite{Damerau1964, Levenshtein1966}, which measures the distance between two strings (with 0 indicating equality), to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
 
-\begin{minted}{python}
-  Clinamen (t):
-    matches = {v: 0 < dameraulevenshtein (t, v) <= 2},   for v $\in$ V
-    sentences =
-    return matches
-\end{minted}
+\begin{listing}
+  \begin{minted}{python}
+    # String $w$ = query word
+    # Int $i$ = assigned distance
+    def clinamen(w, i):
+        words = set([item for item in l_00 if dameraulevenshtein(w, item) <= i])
+        out, sources, total = get_results(words, 'Clinamen')
+        return out, words, sources, total
+  \end{minted}
+\caption{Clinamen function}
+\label{code:clinamen}
+\end{listing}
 
-The key idea here is .... \todo{finish}
+Source~\ref{code:clinamen} line 4 creates the set of clinamen words using a list comprehension. It retrieves matches from the `faustroll' file \py{l_00} with the condition that they are of Damerau-Levenshtein distance \py{i} or less to the query term \py{w} (see appendix~\ref{app:code}). Duplicates are removed. Line 5 then makes a call to the generic \py{get_results} function to get all relevant result sentences, the list of source files and the total number of results.
 
-\begin{equation}
-  clinamen(t) = [v \colon 0 < dameraulevenshtein(t,v) \leq 2] \ \text{for} \ v \in V
-\label{eq:clinamen}
-\end{equation}
-\myequations{clinamen}
+\begin{listing}
+  \begin{minted}{python}
+    # $ws$ = list of words
+    # String $a$ = name of algorithm
+    def get_results(ws, a):
+        total = 0
+        out, sources = set(), set()
+        for w in ws:
+            files = l_dict[w]
+            # file $e$, list of positions $ps$
+            for e, ps in files.items():
+                f = get_title(e)
+                sources.add(f)
+                sent = pp_sent(w.lower(), e, ps)
+                # $o$ = triple of (file, sentence, algorithm)
+                o = (f, sent, a)
+                if sent != [] and o not in out:
+                    total += 1
+                    out.add(o)
+        return out, sources, total
+  \end{minted}
+\caption{`get\_results' function to get all sentences for a list of words.}
+\label{code:getresults}
+\end{listing}
 
-Where:\\
-\itab{$t$} \tab{is the query term,}\\
-\itab{$V$} \tab{is the vocabulary of `faustroll'.}\\
+The \py{get_results} function (see source~\ref{code:getresults}) is used by all three algorithms (clinamen, syzygy and antinomy). Given the nested structure of the index \py{l_dict}, the function loops through each of the words passed to it as parameter \py{ws} first and then each file. Line 7 retrieves the dictionary of files from \py{l_dict}. Line 10 gets the author and full title of file \py{e} and adds it to the list of sources in line 11. Line 12 makes use of yet another function called \py{pp_sent} (see source~\ref{code:ppsent}) to get an actual sentence fragment for the current word \py{w} in file \py{e}, which is then added to the output.
 
+\begin{listing}
+  \begin{minted}{python}
+    # String $w$ = lowercase word
+    # String $f$ = name of the file
+    # List $ps$ = list of positions of $w$ in $f$
+    def pp_sent(w, f, ps):
+        # $pos$ = the FIRST OCCURANCE of $w$ in $f$
+        out, pos = [], ps[0]
+        # $ff$ = the variable for file $f$
+        ff = eval(f)
+        pos_b, pos_a = pos, pos
+        punct = [',', '.', '!', '?', '(', ')', ':', ';', '\n', '-', '_']
+        for i in range(1, 10):
+            if ff[pos - i] in punct:
+                pos_b = pos - (i - 1)
+                break
+            else:
+                if ff[pos - 5]:
+                    pos_b = pos - 5
+                else:
+                    pos_b = pos
+        for j in range(1, 10):
+            if ff[pos + j] in punct:
+                pos_a = pos + j
+                break
+            else:
+                if ff[pos + 5]:
+                    pos_a = pos + 5
+                else:
+                    pos_a = pos
+        if pos_b >= 0 and pos_a <= len(ff):
+            pre = ' '.join(ff[pos_b:pos])
+            post = ' '.join(ff[pos+1:pos_a])
+            out = (pre, w, post)
+        return out
+  \end{minted}
+\caption{`pp\_sent' function to retrieve a sentence from a file.}
+\label{code:ppsent}
+\end{listing}
 
+In function \py{pp_sent} (source~\ref{code:ppsent}) line 6 is important to note because it is a key functionality point. Even though the index \py{l_dict} stores a full list of all possible positions of a given word in each file, the \py{pp_sent} function \textbf{only retrieves the sentence of the very first occurance of the word} rather than each one. This decision was taken to avoid overcrowding of results for the same keyword.
+
+Line 10 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 11--19 and 20--28 set the \py{pos_b} (position \textbf{b}efore) and \py{pos_a} (position \textbf{a}fter) variables respectively. These positions can be up to 10 words before and after the keyword \py{w} depending on the sentence structure. In line 30 the actual sentence fragment up to the keyword is retrieved, while in line 31 the fragment just after the keyword is retrieved. \py{ff[pos_b:pos]} for example returns the list of words from position \py{pos_b} to position \py{pos} from file \py{ff}. The built-in Python \py{.join()} function then concatenates these words into one long string separated by spaces. On line 32 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.
 
 
 \subsection{Syzygy}
 
 The syzygy surprises and confuses. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose.
 
-For the syzygy function, we made use of WordNet [29] through the NLTK python library [26] to find suitable results. Specifically, as shown in Eq. (2), the algorithm fetches the set of synonyms (synsets) first and then finds any hyponyms, hypernyms or holonyms for each of those (each of which denotes some sort of relationship or membership with its parent synonym). This mimics the syzygy alignment of three words in a line mentioned earlier (query $\to$ synonym $\to$ hypo/hyper/holonym).
+In simple terms, the syzygy algorithm works in two steps:
+\begin{enumerate}
+  \item get syzygy words based on synsets and hypo-, hyper- and holonyms from WordNet,
+  \item get sentences from corpus that match syzygy words.
+\end{enumerate}
 
-This algorithm makes heavy use of WordNet. Line 1 creates a set of all synonyms for query term t from WordNet. It then loops through all individual items in the list of synonyms in line 2 to 5. Line 3 adds all hyponyms h for the current synonym s if there exists a word in the vocabulary same as the hyponym. Similarly lines 4 and 5 add all hypernyms and holonyms to the results list which is then returned in line 6.
+\begin{listing}
+  \begin{minted}{python}
+    # $w$ = input query term
+    def syzygy(w):
+        words = set()
+        wordsets = wn.synsets(w)
+        for ws in wordsets:
+            words.update(get_nym('hypo', ws))
+            words.update(get_nym('hyper', ws))
+            words.update(get_nym('holo', ws))
+        out, sources, total = get_results(words, 'Syzygy')
+        return out, words, sources, total
+  \end{minted}
+\caption{Syzygy function.}
+\label{code:syzygy}
+\end{listing}
 
-\begin{minted}{python}
-  Syzygy (t):
-    synonyms = { s $\in$ WordNet-synsets (t) }
-    for each s in synonyms:
-      hypo   = { h: h $\in$ WordNet-hyponyms (s) }
-      hyper = { h: h $\in$ WordNet-hypernyms (s) }
-      holo    = { h: h $\in$ WordNet-holonyms (s) }
-      union = hypo $\cup$ hyper $\cup$ holo
-      add { h: h $\in$ union and $\exists$ h $\in$ V } to results
-    return results
-\end{minted}
+The syzygy function makes heavy use of WordNet \parencite{Miller1995} through the \gls{nltk} Python library to find suitable results. Specifically, as shown in source~\ref{code:syzygy}, the algorithm fetches the set of synonyms (synsets) on line 4. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 5--8. It finds any hyponyms, hypernyms or holonyms for each \py{ws} (each of which denotes some sort of relationship or membership with its parent synonym) using the \py{get_nym} function (see source~\ref{code:getnym}).
 
-\begin{equation}
-\begin{split}
-  syzygy(t) &= \{ h \colon h \in union(t) \ \text{and} \ \exists \ h \in V \}\\% chktex 21
-  union(t) &= hypo(t) \cup hyper(t) \cup holo(t)\\
-  hypo(t) &= \{ h \colon h \in hyponyms(s) \}, \text{for} \ s \in syno(t)\\
-  hyper(t) &= \{ h \colon h \in hypernyms(s) \}, \text{for} \ s \in syno(t)\\
-  holo(t) &= \{ h \colon h \in holonyms(s) \}, \text{for} \ s \in syno(t)\\
-  syno(t) &= \{ s \colon s \in synonyms(t) \}
-\end{split}
-\label{eq:syzygy}
-\end{equation}
-\myequations{syzygy}
+\todo{explain reasoning behind algorithms like this for all:}
+This mimics a syzygy alignment of three words in a line (query $\to$ synonym $\to$ hypo/hyper/holonym).
+
+Line 9 makes use of the \py{get_results} function (see source~\ref{code:getresults}) in the same was as the clinamen function does.
+
+\begin{listing}
+  \begin{minted}{python}
+    # $nym$ = name of requested 'nym'
+    # $wset$ = synset
+    def get_nym(nym, wset):
+        out = []
+        hhh = wset.hyponyms()
+        if nym == 'hypo':
+            hhh = wset.hyponyms()
+        if nym == 'hyper':
+            hhh = wset.hypernyms()
+        if nym == 'holo':
+            hhh = wset.member_holonyms()
+        if len(hhh) > 0:
+            for h in hhh:
+                for l in h.lemmas():
+                    out.append(str(l.name()))
+        return out
+  \end{minted}
+\caption{`get\_nym' function to retrieve hypo-, hyper- and holonyms.}
+\label{code:getnym}
+\end{listing}
+
+Source~\ref{code:getnym} shows the process of retrieving the relevant `nym' using WordNet. Line 15 adds each found word to the output.
+
+\todo{reqrite getnym function to automatically get all three without the ifs}
+
 
 \subsection{Antinomy}
 
 The antimony, in a pataphysical sense, is the mutually incompatible.
 
-For the antinomy we simply used WordNet’s antonyms (opposites) (see Eq. (3)). This function exhibits the same problem as mentioned above for the syzygy, just much worse.  Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g.\ based on more than one book – or, of course, the Web) could improve this method.
+In simple terms, the antinomy algorithm works in two steps:
+\begin{enumerate}
+  \item get antinomy words based on synsets and antonyms from WordNet,
+  \item get sentences from corpus that match antinomy words.
+\end{enumerate}
 
-This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and returns them if they appear in our dictionary of words.
+\begin{listing}
+  \begin{minted}{python}
+    # $w$ = input query term
+    def antinomy(w):
+        words = set()
+        wordsets = wn.synsets(w)
+        for ws in wordsets:
+            anti = ws.lemmas()[0].antonyms()
+            if len(anti) > 0:
+                for a in anti:
+                    if str(a.name()) != w:
+                        words.add(str(a.name()))
+        out, sources, total = get_results(words, 'Antinomy')
+        return out, words, sources, total
+  \end{minted}
+\caption{Antinomy function.}
+\label{code:antinomy}
+\end{listing}
 
-\begin{minted}{python}
-  Antinomy (t):
-    synonyms = { s $\in$ WordNet-synsets (t) }
-    for each s in synonyms:
-      add { h $\in$ WordNet-antonyms (s): $\exists$ h $\in$ V } to results
-    return results
-\end{minted}
+For the antinomy we simply used WordNet's antonyms (opposites) (see source~\ref{code:antinomy}). This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and retrieves result sentences using the \py{get_results} function.
 
-\begin{equation}
-  \begin{split}
-  antinomy( t ) &= \{ h \colon h \in anto( t ) \ \text{and} \ \exists \ h \in V \}\\% chktex 21
-  anto( t ) &= \{ h \colon h \in antonyms( s ) \}, \text{for} \ s \in syno( t )\\
-  syno( t ) &= \{ s \colon s \in synonyms( t ) \}
-  \end{split}
-\label{eq:antinomy}
-\end{equation}
-\myequations{antinomy}
-
-
-
-
+\todo{discuss problems with algorithms, pros and cons...}
+This function exhibits the same problem as mentioned above for the syzygy, just much worse. Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g.\ based on more than one book –-- or, of course, the Web) could improve this method.
 
 
 

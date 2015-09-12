@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGdefault{c}{\PYGdefaultZsh{} String $w$ = lowercase word}
+    \PYGdefault{c}{\PYGdefaultZsh{} String $f$ = name of the file}
+    \PYGdefault{c}{\PYGdefaultZsh{} List $ps$ = list of positions of $w$ in $f$}
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{pp\PYGdefaultZus{}sent}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{f}\PYGdefault{p}{,} \PYGdefault{n}{ps}\PYGdefault{p}{):}
+        \PYGdefault{c}{\PYGdefaultZsh{} $pos$ = the FIRST OCCURANCE of $w$ in $f$}
+        \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{pos} \PYGdefault{o}{=} \PYGdefault{p}{[],} \PYGdefault{n}{ps}\PYGdefault{p}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{]}
+        \PYGdefault{c}{\PYGdefaultZsh{} $ff$ = the variable for file $f$}
+        \PYGdefault{n}{ff} \PYGdefault{o}{=} \PYGdefault{n+nb}{eval}\PYGdefault{p}{(}\PYGdefault{n}{f}\PYGdefault{p}{)}
+        \PYGdefault{n}{pos\PYGdefaultZus{}b}\PYGdefault{p}{,} \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos}\PYGdefault{p}{,} \PYGdefault{n}{pos}
+        \PYGdefault{n}{punct} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{},\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}.\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}!\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}?\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}(\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{})\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}:\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{};\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{l+s+se}{\PYGdefaultZbs{}n}\PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZhy{}\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZus{}\PYGdefaultZsq{}}\PYGdefault{p}{]}
+        \PYGdefault{k}{for} \PYGdefault{n}{i} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{):}
+            \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{n}{i}\PYGdefault{p}{]} \PYGdefault{o+ow}{in} \PYGdefault{n}{punct}\PYGdefault{p}{:}
+                \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{p}{(}\PYGdefault{n}{i} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+                \PYGdefault{k}{break}
+            \PYGdefault{k}{else}\PYGdefault{p}{:}
+                \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{5}\PYGdefault{p}{]:}
+                    \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{5}
+                \PYGdefault{k}{else}\PYGdefault{p}{:}
+                    \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{=} \PYGdefault{n}{pos}
+        \PYGdefault{k}{for} \PYGdefault{n}{j} \PYGdefault{o+ow}{in} \PYGdefault{n+nb}{range}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{):}
+            \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{n}{j}\PYGdefault{p}{]} \PYGdefault{o+ow}{in} \PYGdefault{n}{punct}\PYGdefault{p}{:}
+                \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{n}{j}
+                \PYGdefault{k}{break}
+            \PYGdefault{k}{else}\PYGdefault{p}{:}
+                \PYGdefault{k}{if} \PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{5}\PYGdefault{p}{]:}
+                    \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{5}
+                \PYGdefault{k}{else}\PYGdefault{p}{:}
+                    \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{=} \PYGdefault{n}{pos}
+        \PYGdefault{k}{if} \PYGdefault{n}{pos\PYGdefaultZus{}b} \PYGdefault{o}{\PYGdefaultZgt{}=} \PYGdefault{l+m+mi}{0} \PYGdefault{o+ow}{and} \PYGdefault{n}{pos\PYGdefaultZus{}a} \PYGdefault{o}{\PYGdefaultZlt{}=} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{ff}\PYGdefault{p}{):}
+            \PYGdefault{n}{pre} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{} \PYGdefaultZsq{}}\PYGdefault{o}{.}\PYGdefault{n}{join}\PYGdefault{p}{(}\PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos\PYGdefaultZus{}b}\PYGdefault{p}{:}\PYGdefault{n}{pos}\PYGdefault{p}{])}
+            \PYGdefault{n}{post} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{} \PYGdefaultZsq{}}\PYGdefault{o}{.}\PYGdefault{n}{join}\PYGdefault{p}{(}\PYGdefault{n}{ff}\PYGdefault{p}{[}\PYGdefault{n}{pos}\PYGdefault{o}{+}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{:}\PYGdefault{n}{pos\PYGdefaultZus{}a}\PYGdefault{p}{])}
+            \PYGdefault{n}{out} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{pre}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{post}\PYGdefault{p}{)}
+        \PYGdefault{k}{return} \PYGdefault{n}{out}
+\end{Verbatim}

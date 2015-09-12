@@ -318,6 +318,15 @@
   xrightmargin=1cm,
 }
 
+\newmintinline[py]{python}{
+  bgcolor={lavendermist},
+  fontsize=\footnotesize,
+  mathescape=true,
+}
+% \newmintinline['macro name']{'language'}{'options'}
+% If a 'macro name' is not specified,
+% then the created macro is called \'language'inline
+
 \setmintedinline[python]{
   bgcolor={},
   fontsize=\footnotesize,
