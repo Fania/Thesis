@@ -89,6 +89,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] PEP20
 - [ ] AVOID: so, in principle,
 - [ ] double check line numbers in code
+- [ ] Rhyming pattern for future work
 
 ## Errors
 

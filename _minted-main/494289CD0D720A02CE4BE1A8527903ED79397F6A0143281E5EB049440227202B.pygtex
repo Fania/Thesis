@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGdefault{c}{\PYGdefaultZsh{} $words$ = query terms}
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{pataphysicalise}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{):}
+        \PYGdefault{n}{sys\PYGdefaultZus{}ws} \PYGdefault{o}{=} \PYGdefault{p}{[]}
+        \PYGdefault{k}{for} \PYGdefault{n}{word} \PYGdefault{o+ow}{in} \PYGdefault{n}{words}\PYGdefault{p}{:}
+            \PYGdefault{n}{\PYGdefaultZus{}}\PYGdefault{p}{,} \PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{\PYGdefaultZus{}}\PYGdefault{p}{,} \PYGdefault{n}{\PYGdefaultZus{}} \PYGdefault{o}{=} \PYGdefault{n}{syzygy}\PYGdefault{p}{(}\PYGdefault{n}{word}\PYGdefault{p}{)}
+            \PYGdefault{k}{if} \PYGdefault{n+nb}{len}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{:}
+                \PYGdefault{n}{sys\PYGdefaultZus{}ws}\PYGdefault{o}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n+nb}{list}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{))}
+        \PYGdefault{n}{out} \PYGdefault{o}{=} \PYGdefault{n}{itertools}\PYGdefault{o}{.}\PYGdefault{n}{product}\PYGdefault{p}{(}\PYGdefault{o}{*}\PYGdefault{n}{sys\PYGdefaultZus{}ws}\PYGdefault{p}{)}
+        \PYGdefault{k}{return} \PYGdefault{n+nb}{list}\PYGdefault{p}{(}\PYGdefault{n}{out}\PYGdefault{p}{)}
+\end{Verbatim}

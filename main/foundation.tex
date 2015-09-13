@@ -218,6 +218,28 @@ Her ideas on structured data, metadata and knowledge representation link very ni
 The proposed concept for a pataphysical algorithm requires precise data structures to represent the transformations that have taken place during the pataphysicalisation, such as the patadata. The system’s index has to be adapted to accommodate this new type of data structure. It also needs to be flexible enough to allow algorithms to fit in at different stages or locations of the system, for example the inverted-index, ranking functions or query itself.
 Whilst this new style of algorithm has been proposed, current architectures are not capable of supporting them. As such a new flexible component-based software architecture has been proposed which will allow for a range of different style systems to be developed with little overhead. As such improving the chance of creative outcomes occurring in a different way.
 
+\begin{draft}
+  Linking back to some of the creative, pataphysical concepts we have discussed earlier, let us put some of the ideas for our tool into perspective. The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
+
+  We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure~\ref{fig:patasearch01}) and influences all areas of the search tool.
+
+  \todo{redraw figure}
+
+  \begin{figure}[htb] % (here, top, bottom, page)
+    \centering
+    \includegraphics[width=\linewidth]{images/patasearch01}
+  \caption[Pata central]{Pata central}
+  \label{fig:patasearch01}
+  \end{figure}
+
+  \begin{figure}[htb] % (here, top, bottom, page)
+    \centering
+    % \def\svgwidth{\columnwidth}
+    \input{images/patasearch01.pdf_tex}
+  \caption[Pata central]{Pata central}
+  \label{fig:patasearch02}
+  \end{figure}
+\end{draft}
 
 \subsection{Pataphylicalisation}
 
@@ -270,6 +292,22 @@ Ranking can be done at different stages of the search process. Depending on how 
 
 Given a query term X, what is considered a relevant match though? Do we simply return a list of Web pages where X appears in the heading of each page? It is obviously not that easy. Several ranking signals are combined together; Google states that they use over 200 signals including PageRank and they personalise results using signals such as the web history and location (Google n.d.).
 What kinds of ranking signals do we need for our pataphysical Web search tool? We could say that a page Y is relevant if it matches the patadata for query X. So, for example, Y would be a relevant result if it is a clinamen or syzygy to X. The more patadata matches there are the higher the ranking maybe. We don't necessarily have to assign a numerical ranking value to each page. Depending on how we structure our results page that might not be necessary. Shuffling the results list or the results tree could be an option.
+
+\begin{draft}
+  \section{User experience}
+
+  Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request `The Cat in the Hat' after reading a Dr.\ Seuss book to their child, and the system employs an anomalous method on the query and searched `sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
+
+  \begin{figure}[htb] % (here, top, bottom, page)
+    \centering
+    \includegraphics[width=\linewidth]{images/resultexample}
+  \caption[Feedback button]{Feedback button}
+  \label{fig:feedback}
+  \end{figure}
+
+  The above image (figure~\ref{fig:feedback}) shows an example of how this could be implemented. The little green candle (a reference to pataphysics in itself by the way) shows a pop-up note when hovered over with the mouse pointer. In this case the original query could have been `tree' and `car' was returned as an opposite to that.
+\end{draft}
+
 
 
 % -----------------------------------------

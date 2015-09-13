@@ -249,6 +249,8 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
+% \renewcommand{\listfigurename}{List of Images}
+% \renewcommand{\listtablename}{Tables}
 
 % HEADER & FOOTER
 

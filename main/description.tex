@@ -218,11 +218,13 @@ Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, he
 \end{minted}
 
 
-\section{Algorithms}
+\section{Text}
 
 After the setup stage is completed and the webpage is fully loaded, user input in the form of a text query is required to trigger the three pataphysical algorithms.
 
 Image and Video search do not use all three algorithms --- where relevant this is highlighted in each section. Generally the following descriptions refer to the text search functionality.
+
+\todo{Explain difference in Text, Image and Video}
 
 
 \subsection{Clinamen}
@@ -325,6 +327,8 @@ In function \py{pp_sent} (source~\ref{code:ppsent}) line 6 is important to note 
 
 Line 10 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 11--19 and 20--28 set the \py{pos_b} (position \textbf{b}efore) and \py{pos_a} (position \textbf{a}fter) variables respectively. These positions can be up to 10 words before and after the keyword \py{w} depending on the sentence structure. In line 30 the actual sentence fragment up to the keyword is retrieved, while in line 31 the fragment just after the keyword is retrieved. \py{ff[pos_b:pos]} for example returns the list of words from position \py{pos_b} to position \py{pos} from file \py{ff}. The built-in Python \py{.join()} function then concatenates these words into one long string separated by spaces. On line 32 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.
 
+The image/video searches don't use the clinamen function at all.
+
 
 \subsection{Syzygy}
 
@@ -353,39 +357,16 @@ In simple terms, the syzygy algorithm works in two steps:
 \label{code:syzygy}
 \end{listing}
 
-The syzygy function makes heavy use of WordNet \parencite{Miller1995} through the \gls{nltk} Python library to find suitable results. Specifically, as shown in source~\ref{code:syzygy}, the algorithm fetches the set of synonyms (synsets) on line 4. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 5--8. It finds any hyponyms, hypernyms or holonyms for each \py{ws} (each of which denotes some sort of relationship or membership with its parent synonym) using the \py{get_nym} function (see source~\ref{code:getnym}).
+The syzygy function makes heavy use of WordNet \parencite{Miller1995} through the \gls{nltk} Python library to find suitable results. Specifically, as shown in source~\ref{code:syzygy}, the algorithm fetches the set of synonyms (synsets) on line 4. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 5--8. It finds any hyponyms, hypernyms or holonyms for each \py{ws} (each of which denotes some sort of relationship or membership with its parent synonym) using the \py{get_nym} function.
 
 \todo{explain reasoning behind algorithms like this for all:}
 This mimics a syzygy alignment of three words in a line (query $\to$ synonym $\to$ hypo/hyper/holonym).
 
 Line 9 makes use of the \py{get_results} function (see source~\ref{code:getresults}) in the same was as the clinamen function does.
 
-\begin{listing}
-  \begin{minted}{python}
-    # $nym$ = name of requested 'nym'
-    # $wset$ = synset
-    def get_nym(nym, wset):
-        out = []
-        hhh = wset.hyponyms()
-        if nym == 'hypo':
-            hhh = wset.hyponyms()
-        if nym == 'hyper':
-            hhh = wset.hypernyms()
-        if nym == 'holo':
-            hhh = wset.member_holonyms()
-        if len(hhh) > 0:
-            for h in hhh:
-                for l in h.lemmas():
-                    out.append(str(l.name()))
-        return out
-  \end{minted}
-\caption{`get\_nym' function to retrieve hypo-, hyper- and holonyms.}
-\label{code:getnym}
-\end{listing}
+\todo{rewrite getnym function to automatically get all three without the ifs}
 
-Source~\ref{code:getnym} shows the process of retrieving the relevant `nym' using WordNet. Line 15 adds each found word to the output.
-
-\todo{reqrite getnym function to automatically get all three without the ifs}
+The image and video searches both use the syzygy function as part of their \py{pataphysicalise} function (see source~\ref{code:pataph}).
 
 
 \subsection{Antinomy}
@@ -419,102 +400,117 @@ In simple terms, the antinomy algorithm works in two steps:
 
 For the antinomy we simply used WordNet's antonyms (opposites) (see source~\ref{code:antinomy}). This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and retrieves result sentences using the \py{get_results} function.
 
-\todo{discuss problems with algorithms, pros and cons...}
-This function exhibits the same problem as mentioned above for the syzygy, just much worse. Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g.\ based on more than one book –-- or, of course, the Web) could improve this method.
+
+\section{Image/Video}
+
+In simple terms, the image and video search works in three steps:
+\begin{enumerate}
+  \item pataphysicalise query terms using syzygy algorithm
+  \item translate each pataphysicalised term
+  \item retrieve images/videos using \acrshort{api} calls
+\end{enumerate}
+
+The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the original query terms ready for the next step. In line 5 the \py{syzygy} algorithm (source~\ref{code:syzygy}) is used to make this transformation. Given that the image and video search allows multi-word queries and the \py{syzygy} function returns several new words per query terms, this creates a long list of entries. On top of that the output is the inner product (line 8) of all these results. The purpose of producing so many pataphysicalisations is to find more results using the \glspl{api}.
+
+\begin{listing}
+  \begin{minted}{python}
+    # $words$ = query terms
+    def pataphysicalise(words):
+        sys_ws = []
+        for word in words:
+            _, w, _, _ = syzygy(word)
+            if len(w) > 0:
+                sys_ws.append(list(w))
+        out = itertools.product(*sys_ws)
+        return list(out)
+  \end{minted}
+\caption{Function to pataphysicalise image and video query terms.}
+\label{code:pataph}
+\end{listing}
+
+The next step is to translate the pataphysicalised search terms as shown in source~\ref{code:transent}.
+
+\todo{print examples of pataphysicalise function in action}
+
+\begin{listing}
+  \begin{minted}{python}
+    def transent(sent):
+        translator = Translator(microsoft_id, microsoft_secret)
+        french = translator.translate(sent, "fr")
+        japanese = translator.translate(french, "ja")
+        patawords = translator.translate(japanese, "en")
+        translations = (french, japanese, patawords)
+        return translations
+  \end{minted}
+\caption{Translation function.}
+\label{code:transent}
+\end{listing}
 
 
+\section{Results}
 
-\section{Implementation}
-
-Linking back to some of the creative, pataphysical concepts we have discussed earlier, let us put some of the ideas for our tool into perspective. The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
-
-We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure~\ref{fig:patasearch01}) and influences all areas of the search tool.
-
-\todo{redraw figure}
+Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and HTML.
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/patasearch01}
-\caption[Pata central]{Pata central}
-\label{fig:patasearch01}
+  \includegraphics[height=0.6\textheight]{images/prototype01}
+\caption[Prototype 1 screenshot]{Prototype 1 screenshot}
+\label{img:Prototype1x}
 \end{figure}
+
+The text results page has three options for how the results are presented, with `Poetry --- Queneau' being the default.
+\begin{description}
+  \item [Poetry] Displayed in sonnet style (two quatrains and two tercets) if possible. No rhyming pattern is used.\footnote{\url{https://en.wikipedia.org/wiki/Sonnet}}
+    \begin{itemize}
+      \item Queneau --- Each line can be changed manually.
+      \item Random --- The whole poem can be randomised.
+    \end{itemize}
+  \item [Sources] Ordered by source text.
+  \item [Algorithms] Ordered by algorithm.
+\end{description}
+
+The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default.
+\begin{description}
+  \item [Spiral] Displayed square images/videos as a golden spiral.
+  \item [List] Displayed as a simple list.
+\end{description}
+
+
+\section{Prototypes}
+
+\subsection{Prototype 1}
+
+\todo{get new screenshots for prototype 1}
+\todo{don't mention James?}
+
+The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
+
+Results were displayed in three sets per algorithm. Each keyword was preceded and followed by exactly 5 words respectively.
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  % \def\svgwidth{\columnwidth}
-  \input{images/patasearch01.pdf_tex}
-\caption[Pata central]{Pata central}
-\label{fig:patasearch02}
+  \includegraphics[height=0.6\textheight]{images/prototype01}
+\caption[Prototype 1 screenshot]{Prototype 1 screenshot}
+\label{img:Prototype1x}
 \end{figure}
 
 
-\section{User experience}
-
-Whilst developing a system that returns creative results to the end user has numerous advantages, the assumptions that are made about and the decisions we take for the user must still be considered. For example, presume that the user inputs a search request `The Cat in the Hat' after reading a Dr.\ Seuss book to their child, and the system employs an anomalous method on the query and searched `sunglasses'. Whilst there is logic to the new search request, it is anomalous to the initial request, if the user receives these results without being told what method was used, the results will appear random, and therefore are likely to be detrimental to the user. Therefore the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the search tool. A quick and simple solution to this problem would be to add an icon to the side of each search result which displays how the original query was pataphysicalised.
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/resultexample}
-\caption[Feedback button]{Feedback button}
-\label{fig:feedback}
-\end{figure}
-
-The above image (figure~\ref{fig:feedback}) shows an example of how this could be implemented. The little green candle (a reference to pataphysics in itself by the way) shows a pop-up note when hovered over with the mouse pointer. In this case the original query could have been `tree' and `car' was returned as an opposite to that.
-
-\textbf{Results design}
-
-Text
-- Poetry
--- Queneau
--- Random
-- Sources
-- Algorithms
-
-Images and Videos
-- Spiral
-- List
-
-
-
-
-\section{Website}
-
-\url{http://pata.fania.eu}
-
-\url{http://pata.physics.wtf}
-
-
-\section{APIs}
-
-\begin{itemize}
-  \item Bing
-  \item YouTube
-  \item Microsoft Translate
-  \item Flickr
-  \item WordNet
-\end{itemize}
-
-
-\section{Design}
-
-\begin{itemize}
-  \item random sentences
-  \item spiral
-  \item Word Scrable
-  \item $\dots$
-\end{itemize}
-
-
-\section{Prototype 2}
+\subsection{Prototype 2}
 
 {\Huge \url{pata.fania.eu}}
+
+This version introduced the move from Django to Flask. It also included the first major re-design of the website.
+
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
   \includegraphics[width=\linewidth]{images/prototype02}
-\caption[Prototype2]{Prototype2}
-\label{fig:Prototype2x}
+\caption[Prototype 2 screenshot]{Prototype 2 screenshot}
+\label{img:Prototype2x}
 \end{figure}
+
+
+
 
 \begin{alltt}
 # TEXT
@@ -606,13 +602,3 @@ Images and Videos
 5.\ return output list
 6.\ render as html
 \end{alltt}
-
-
-\section{Prototype 1}
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[height=0.6\textheight]{images/prototype01}
-\caption[Prototype1]{Prototype1}
-\label{fig:Prototype1x}
-\end{figure}
