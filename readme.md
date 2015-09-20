@@ -14,6 +14,7 @@ pdflatex --file-line-error -shell-escape main
 
 1. pdflatex main
 2. biber main
+makeglossaries main
 3. pdflatex main
 4. pdflatex main
 
@@ -81,7 +82,7 @@ pdflatex --file-line-error -shell-escape main
 - [X] Tools of the Trade?
 - [ ] Academia it's own chapter?
 - [ ] pata.fania.eu stuff
-- [ ] Change to biblatex
+- [X] Change to biblatex
 - [ ] Add change-log to website
 - [ ] Flowchart of website prototype workflow from query to results
 - [ ] Put inspiration into lit review? Queneau and library of faustroll etc
@@ -90,6 +91,10 @@ pdflatex --file-line-error -shell-escape main
 - [ ] AVOID: so, in principle,
 - [ ] double check line numbers in code
 - [ ] Rhyming pattern for future work
+- [ ] Go over all table of contents figure captions
+- [ ] glossary entries with back links to pages
+
+
 
 ## Errors
 

@@ -37,28 +37,28 @@
 % \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{Table of Contents}
+% \addcontentsline{toc}{chapter}{Table of Contents}
 \setcounter{tocdepth}{4}
 \tableofcontents
 \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{List of Figures}
+% \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
 \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{List of Tables}
+% \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 \clearpage
 
 \phantomsection{}
 \addcontentsline{toc}{chapter}{List of Equations}
-\listofmyequations{}
+% \listofmyequations{}
 \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{List of Source Code Snippets}
+\addcontentsline{toc}{chapter}{List of Code Snippets}
 \listoflistings{}
 \clearpage
 
@@ -68,7 +68,7 @@
 \clearpage
 
 % MAIN
-\pagestyle{fancy}
+% \pagestyle{fancy}
 \mainmatter{}
 
 \part{\texorpdfstring{H$\Sigma$LL$\Theta$ W$\Theta$RLD}{HELLO WORLD}}
@@ -108,14 +108,15 @@
 
 \pagestyle{plain}
 \phantomsection{}
-\addcontentsline{toc}{chapter}{Bibliography}
+% \addcontentsline{toc}{chapter}{Bibliography}
 % \bibliography{back/bib} % NATBIB
 \printbibliography % BIBLATEX
 \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{Glossary}
+% \addcontentsline{toc}{chapter}{Glossary}
 \printnoidxglossary
+% \printglossary
 \clearpage
 
 \end{document}

@@ -2,7 +2,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}[2015/09/02 DMU Thesis]
-\def\baseclass{book}
+\def\baseclass{memoir}
 
 \DeclareOption*{
   \PassOptionsToClass{\CurrentOption}
@@ -110,7 +110,7 @@
 % \usepackage{dirtytalk}
 \renewenvironment{quote}
                {\list{}{\rightmargin\leftmargin}%
-                \item\relax\sffamily\singlespacing\ignorespaces}
+                \item\relax\sffamily\SingleSpacing\ignorespaces}
                {\unskip\unskip\endlist}
 
 
@@ -126,12 +126,7 @@
 
 % SPACING
 
-% environments: singlespace, onehalfspace, doublespace, spacing
-\usepackage{setspace}
-% \singlespacing
-\onehalfspacing
-% \doublespacing
-% \setstretch{1.1}
+\OnehalfSpacing \OnehalfSpacing*
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
@@ -140,6 +135,19 @@
 \setlength{\textfloatsep}{20pt} % Vertical space below (above) [t] ([b]) floats
 \setlength{\abovecaptionskip}{10pt}
 \setlength{\belowcaptionskip}{5pt}
+
+
+% TABLE OF CONTENTS
+
+\setlength{\cftpartnumwidth}{1.8em}
+\setlength{\cftchapternumwidth}{1.8em}
+\setlength{\cftsectionnumwidth}{2.8em}
+\setlength{\cftfigurenumwidth}{2.8em}
+\setlength{\cfttablenumwidth}{2.8em}
+
+\setsecnumdepth{subsection}
+\settocdepth{section}
+
 
 
 % LIST SPACING
@@ -254,30 +262,30 @@
 
 % HEADER & FOOTER
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-% \pagestyle{empty}
-% Right Odd Left Even Center
-% \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-% \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
-\lhead{\nouppercase{\leftmark}}
-\rhead{\nouppercase{\rightmark}}
-% \fancyhead{}
-% \fancyhead[L]{\chaptermark}
-% \fancyhead[R]{\sectionmark}
-\fancyfoot{}
-\fancyfoot[R]{\thepage}
-\renewcommand{\headrulewidth}{0.1pt}
-% \renewcommand{\footrulewidth}{0.1pt}
-
-\setlength{\headheight}{13.6pt}
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% % \pagestyle{empty}
+% % Right Odd Left Even Center
+% % \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+% % \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+% \lhead{\nouppercase{\leftmark}}
+% \rhead{\nouppercase{\rightmark}}
+% % \fancyhead{}
+% % \fancyhead[L]{\chaptermark}
+% % \fancyhead[R]{\sectionmark}
+% \fancyfoot{}
+% \fancyfoot[R]{\thepage}
+% \renewcommand{\headrulewidth}{0.1pt}
+% % \renewcommand{\footrulewidth}{0.1pt}
+%
+% \setlength{\headheight}{13.6pt}
 
 
 % COLOUR STUFF
 
 % \usepackage[cmyk]{xcolor}
 \usepackage{xcolor}
-\newenvironment{comment}{\par\color{cyan}}{\par}
+\newenvironment{fcom}{\par\color{cyan}}{\par}
 \newenvironment{draft}{\par\color{magenta}}{\par}
 
 \usepackage{framed}
@@ -335,13 +343,6 @@
   mathescape=true,
 }
 
-% \begin{listing}[H]
-% \mint{cl}/(car (cons 1 '(2)))/
-% \caption{Example of a listing.}
-% \label{lst:example}
-% \end{listing}
-% Listing \ref{lst:example} contains an example of a listing.
-
 
 % TABS
 
@@ -381,6 +382,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % GLOSSARY & ACRONYMS
 
+% \makeglossary
 \usepackage[acronyms]{glossaries}
 % \setacronymstyle{long-short}
 \loadglsentries{front/abbreviations}
@@ -411,16 +413,21 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % List of EQUATIONS
 
-\usepackage{tocloft}
+% \usepackage{tocloft}
 
 %%gmedina solution
-\newcommand{\listequationsname}{List of Equations}
-\newlistof{myequations}{equ}{\listequationsname}
-\newcommand{\myequations}[1]{%
-\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
-\setlength{\cftmyequationsnumwidth}{2.3em}
-\setlength{\cftmyequationsindent}{1.5em}
-\setlength{\cftbeforechapskip}{1em}
+% \newcommand{\listequationsname}{List of Equations}
+% \newlistof{myequations}{equ}{\listequationsname}
+% \newcommand{\myequations}[1]{%
+% \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+% \setlength{\cftmyequationsnumwidth}{2.3em}
+% \setlength{\cftmyequationsindent}{1.5em}
+% \setlength{\cftbeforechapskip}{1em}
+
+% \setlength{\cftchapternumwidth}{2em}
+% \setlength{\cftXindent}{1em}
+% \setlength{\cftXnumwidth}{1em}
+
 
 
 % GRAY LINE

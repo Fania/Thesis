@@ -58,7 +58,7 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
         k_3 & f_{3,1} & f_{3,2}}
 \label{eq:tdm}
 \end{equation}
-\myequations{Term-document matrix}
+% \myequations{Term-document matrix}
 
 \todo{example TDM for faustroll sentence?}
 
@@ -112,7 +112,7 @@ Ranking is the process of ordering search results using a given weight. One simp
   \end{cases}
   \label{eq:wij}
 \end{equation}
-\myequations{TF-IDF Ranking}
+% \myequations{TF-IDF Ranking}
 
 Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
 
@@ -131,27 +131,27 @@ The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the d
 %   \end{cases}
 %   \label{eq:tfij}
 % \end{equation}
-% \myequations{tfij}
+% % \myequations{tfij}
 
 % \begin{equation}
 %   F_i = \sum_{j=1}^{N}f_{i,j}
 %   \label{eq:Fi}
 % \end{equation}
-% \myequations{Fi}
+% % \myequations{Fi}
 
 % \begin{equation}
 %   idf_j = \log \frac{N}{df_i}
 %   \label{eq:idfj}
 % \end{equation}
-% \myequations{idfj}
+% % \myequations{idfj}
 
 
 
 \subsection{IR Models}
 
-\begin{comment}
+\begin{fcom}
   \gls{ir} models describe ranking algorithms formally. ???
-\end{comment}
+\end{fcom}
 
 There are different models for different needs, for example a multimedia system is going to be different than a text based system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
 
@@ -190,7 +190,7 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
   \end{cases}
   \label{eq:sim}
 \end{equation}
-\myequations{sim}
+% \myequations{sim}
 
 A `conjunctive component' describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
 
@@ -217,7 +217,7 @@ The vector model allows a more flexible scoring since it basically computes the 
   \end{split}
   \label{eq:vector}
 \end{equation}
-\myequations{vector}
+% \myequations{vector}
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -243,7 +243,7 @@ Where $t$ is the total number of terms in the index and $w_{i,j}$ is the TF-IDF 
   \end{split}
   \label{eq:sim2}
 \end{equation}
-\myequations{sim2}
+% \myequations{sim2}
 
 Here is an example algorithm for computing this score taken from \autocite[p.125]{Manning2009}.
 
@@ -311,7 +311,7 @@ PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Go
   \sum_{i=1}^{n} \frac{PR(p_i)}{L(p_i)}
   \label{eq:PRt}
 \end{equation}
-\myequations{PR}
+% \myequations{PR}
 
 Where,\\
 \itab{$L(p)$} \tab{is the number of outgoing links of page $p$,}\\
@@ -329,7 +329,7 @@ The HITS algorithm also works on the links between pages. It was first described
   \end{split}
   \label{eq:HITS}
 \end{equation}
-\myequations{HITS}
+% \myequations{HITS}
 
 Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \autocite{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ``hub'' pages are predefined.
 
@@ -389,10 +389,10 @@ Ranking can be done at different stages of the search process. Depending on how 
 
 \subsection{Damerau-Levensthein}
 
-\begin{comment}
+\begin{fcom}
   Damerau-Levensthein for clinamen!
   \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
-\end{comment}
+\end{fcom}
 
 The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
 
@@ -413,7 +413,7 @@ The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $
   \end{matrix*}\right.
   \label{eq:DL}
 \end{equation}
-\myequations{DL}
+% \myequations{DL}
 
 where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
 
@@ -508,7 +508,7 @@ We want to compute the probability for $P(w|h)$ where $w$ is a word and $h$ is a
   P(w \mid h) = \frac{count(hw)}{count(h)}
   \label{eq:Probwh}
 \end{equation}
-\myequations{Probwh}
+% \myequations{Probwh}
 
 Using the \textbf{chain rule of probability}:
 
@@ -519,7 +519,7 @@ Using the \textbf{chain rule of probability}:
   \end{split}
   \label{eq:Probw1n}
 \end{equation}
-\myequations{Probw1n}
+% \myequations{Probw1n}
 
 Using the \textbf{Markov assumption} that probability of a word depends only on the previous word (or $n$ words).
 
@@ -527,7 +527,7 @@ Using the \textbf{Markov assumption} that probability of a word depends only on 
   P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
   \label{eq:Probw1n2}
 \end{equation}
-\myequations{Probw1n2}
+% \myequations{Probw1n2}
 
 Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can normalise counts to be between 0 and 1. $C$ stands for count.
 
@@ -538,7 +538,7 @@ Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can norm
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
   \label{eq:Probwnt}
 \end{equation}
-\myequations{Probwn}
+% \myequations{Probwn}
 
 Usually instead of calculating the counts based on products we calculate them based on sums of logs.
 
@@ -570,7 +570,7 @@ Extrinsic and intrinsic evaluation.
   PP(W) = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{P(w_i \mid w_{i-1})}}
   \label{eq:ppw}
 \end{equation}
-\myequations{ppw}
+% \myequations{ppw}
 
 
 \subsection*{Smoothing}
@@ -582,7 +582,7 @@ Extrinsic and intrinsic evaluation.
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
   \label{eq:padd1}
 \end{equation}
-\myequations{padd1}
+% \myequations{padd1}
 
 
 \subsection*{Adjusted count}
@@ -591,7 +591,7 @@ Extrinsic and intrinsic evaluation.
   c_i^* = (c_i+1)\frac{N}{N+V}
   \label{eq:ci}
 \end{equation}
-\myequations{ci}
+% \myequations{ci}
 
 Add-1 smoothing is ok for text categorisation but not so much for language modelling.
 
@@ -608,7 +608,7 @@ $N_c$ is the frequency of frequency $c$.
   c^* = (c+1)\frac{N_{c+1}}{N_c}
   \label{eq:cstar}
 \end{equation}
-\myequations{cstar}
+% \myequations{cstar}
 
 
 \subsection*{Naive Bayes}
@@ -636,7 +636,7 @@ Formula below shows how to calculate the probability of class $c$ given an obser
   {\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d)}
   \label{eq:pcdlambda}
 \end{equation}
-\myequations{pcdlambda}
+% \myequations{pcdlambda}
 
 To get the single best class with the highest probability we need to compute the following.
 
@@ -644,7 +644,7 @@ To get the single best class with the highest probability we need to compute the
   \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
   \label{eq:hatc}
 \end{equation}
-\myequations{hatc}
+% \myequations{hatc}
 
 \begin{table}[htb]
   \centering
@@ -675,7 +675,7 @@ The empirical expectation is the sum of all occurrences where a feature is true 
   empirical \ E(f_i)= \sum_{(c,d) \ \in \ observed(C,D)}f_i(c,d)
   \label{eq:epirical}
 \end{equation}
-\myequations{epirical}
+% \myequations{epirical}
 
 
 \subsection*{Evaluation}
@@ -684,19 +684,19 @@ The empirical expectation is the sum of all occurrences where a feature is true 
   Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
   \label{eq:preci}
 \end{equation}
-\myequations{preci}
+% \myequations{preci}
 
 \begin{equation}
   Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
   \label{eq:reca}
 \end{equation}
-\myequations{reca}
+% \myequations{reca}
 
 \begin{equation}
   F_1 = \frac{2PR}{P+R}
   \label{eq:f1mes}
 \end{equation}
-\myequations{f1mes}
+% \myequations{f1mes}
 
 
 \subsection*{Information Extraction}
@@ -757,13 +757,13 @@ Example (first sentence in Faustroll):
   t_1^n = \underset{t_1^n}{\text{argmax}} \ P(w_1^n \mid t_1^n) P(t_1^n)
   \label{eq:tn1}
 \end{equation}
-\myequations{tn1}
+% \myequations{tn1}
 
 \begin{equation}
   P(t_i \mid t_{i-1}) = \frac{C(t_{i-1},t_i)}{C(t_{i-1})}
   \label{eq:pti}
 \end{equation}
-\myequations{pti}
+% \myequations{pti}
 
 For example: the probability of getting a common noun after a determiner is:
 
@@ -771,7 +771,7 @@ For example: the probability of getting a common noun after a determiner is:
   P(\text{NN} \mid \text{DT}) = \frac{C(\text{DT},\text{NN})}{C(\text{DT})} = \frac{56,509}{116,454} = 0.49
   \label{eq:pnndtt}
 \end{equation}
-\myequations{pnndt}
+% \myequations{pnndt}
 
 Given that there are $116,454$ occurrences of DT in the corpus and of these $56,509$ occurrences where a NN follows after the DT.% chktex 13
 
@@ -779,7 +779,7 @@ Given that there are $116,454$ occurrences of DT in the corpus and of these $56,
   P(\text{is} \mid \text{VBZ}) = \frac{C(\text{VBZ},\text{is})}{C(\text{VBZ})} = \frac{10,073}{21,627} = 0.47
   \label{eq:pisvbz}
 \end{equation}
-\myequations{pisvbz}
+% \myequations{pisvbz}
 
 Or the probability of a third person singular verb being `is' is 0.47.
 
