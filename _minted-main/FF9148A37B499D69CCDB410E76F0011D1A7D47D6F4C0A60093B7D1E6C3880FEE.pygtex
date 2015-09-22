@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{c}{\PYGZsh{} $ws$ = list of words}
+    \PYG{c}{\PYGZsh{} String $a$ = name of algorithm}
+    \PYG{k}{def} \PYG{n+nf}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{ws}\PYG{p}{,} \PYG{n}{a}\PYG{p}{):}
+        \PYG{n}{total} \PYG{o}{=} \PYG{l+m+mi}{0}
+        \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(),} \PYG{n+nb}{set}\PYG{p}{()}
+        \PYG{k}{for} \PYG{n}{w} \PYG{o+ow}{in} \PYG{n}{ws}\PYG{p}{:}
+            \PYG{n}{files} \PYG{o}{=} \PYG{n}{l\PYGZus{}dict}\PYG{p}{[}\PYG{n}{w}\PYG{p}{]}
+            \PYG{c}{\PYGZsh{} file $e$, list of positions $ps$}
+            \PYG{k}{for} \PYG{n}{e}\PYG{p}{,} \PYG{n}{ps} \PYG{o+ow}{in} \PYG{n}{files}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+                \PYG{n}{f} \PYG{o}{=} \PYG{n}{get\PYGZus{}title}\PYG{p}{(}\PYG{n}{e}\PYG{p}{)}
+                \PYG{n}{sources}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+                \PYG{n}{sent} \PYG{o}{=} \PYG{n}{pp\PYGZus{}sent}\PYG{p}{(}\PYG{n}{w}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{(),} \PYG{n}{e}\PYG{p}{,} \PYG{n}{ps}\PYG{p}{)}
+                \PYG{c}{\PYGZsh{} $o$ = triple of (file, sentence, algorithm)}
+                \PYG{n}{o} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{sent}\PYG{p}{,} \PYG{n}{a}\PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{sent} \PYG{o}{!=} \PYG{p}{[]} \PYG{o+ow}{and} \PYG{n}{o} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{out}\PYG{p}{:}
+                    \PYG{n}{total} \PYG{o}{+=} \PYG{l+m+mi}{1}
+                    \PYG{n}{out}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{o}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+\end{Verbatim}

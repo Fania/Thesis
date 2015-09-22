@@ -163,14 +163,14 @@
 
 \usepackage[colorinlistoftodos]{todonotes}
 %Place notes in left margin where there is more space
-\reversemarginpar
+% \reversemarginpar
 %Number the todo item according to section numbering
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
 
 % \todoin{}
-\newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
-\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+% \newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
+% \begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
 % \todo[done]{Stuff}
 
 

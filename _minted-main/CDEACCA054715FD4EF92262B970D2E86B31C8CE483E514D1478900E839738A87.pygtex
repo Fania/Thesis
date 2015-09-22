@@ -1,0 +1,261 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k+kn}{from} \PYG{n+nn}{\PYGZus{}\PYGZus{}future\PYGZus{}\PYGZus{}} \PYG{k+kn}{import} \PYG{n}{print\PYGZus{}function}
+
+\PYG{k+kn}{from} \PYG{n+nn}{nltk.corpus} \PYG{k+kn}{import} \PYG{n}{wordnet} \PYG{k}{as} \PYG{n}{wn}
+\PYG{k+kn}{from} \PYG{n+nn}{nltk.corpus} \PYG{k+kn}{import} \PYG{n}{PlaintextCorpusReader}
+\PYG{k+kn}{from} \PYG{n+nn}{nltk.corpus} \PYG{k+kn}{import} \PYG{n}{stopwords}
+
+\PYG{k+kn}{from} \PYG{n+nn}{collections} \PYG{k+kn}{import} \PYG{n}{defaultdict}
+
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+\PYG{k+kn}{import} \PYG{n+nn}{re}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{n}{root\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{dirname}\PYG{p}{(}\PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{abspath}\PYG{p}{(}\PYG{n}{\PYGZus{}\PYGZus{}file\PYGZus{}\PYGZus{}}\PYG{p}{))}
+\PYG{n}{root\PYGZus{}path} \PYG{o}{=} \PYG{n}{root\PYGZus{}path}\PYG{p}{[:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{]}
+\PYG{n}{corpus\PYGZus{}root} \PYG{o}{=} \PYG{n}{root\PYGZus{}path} \PYG{o}{+} \PYG{l+s}{\PYGZsq{}/app/static/corpus\PYGZsq{}}
+\PYG{n}{book\PYGZus{}list} \PYG{o}{=} \PYG{n}{PlaintextCorpusReader}\PYG{p}{(}\PYG{n}{corpus\PYGZus{}root}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}.*\PYGZbs{}.txt\PYGZsq{}}\PYG{p}{)}  \PYG{c}{\PYGZsh{} root, fileid}
+
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{n}{l\PYGZus{}00} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}00.faustroll.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}01} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}01.poe1.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}02} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}02.bergerac.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}03} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}03.gospel.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}04} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}04.bloy\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}05} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}05.coleridge.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}06} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}06.darien\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}07} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}07.desbordes\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}08} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}08.elskamp\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}09} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}09.florian\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}10} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}10.arabiannights.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}11} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}11.grabbe\PYGZus{}german.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}12} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}12.kahn\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}13} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}13.lautreamont\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}14} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}14.maeterlinck.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}15} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}15.mallarme\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}16} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}16.mendes.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}17} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}17.odyssey.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}18} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}\PYGZsq{}}
+\PYG{n}{l\PYGZus{}19} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}19.rabelais.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}20} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}\PYGZsq{}}
+\PYG{n}{l\PYGZus{}21} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}\PYGZsq{}}
+\PYG{n}{l\PYGZus{}22} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}22.rimbaud\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}23} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}23.schwob\PYGZus{}german.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}24} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}24.ubu\PYGZus{}french.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}25} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}25.verlaine.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}26} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}26.verhaeren.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}27} \PYG{o}{=} \PYG{n}{book\PYGZus{}list}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}27.verne.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{n}{en\PYGZus{}stop} \PYG{o}{=} \PYG{n}{stopwords}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}english\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{fr\PYGZus{}stop} \PYG{o}{=} \PYG{n}{stopwords}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}french\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{de\PYGZus{}stop} \PYG{o}{=} \PYG{n}{stopwords}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}german\PYGZsq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{n}{l\PYGZus{}dict} \PYG{o}{=} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{k}{lambda}\PYG{p}{:} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{))}
+
+\PYG{c}{\PYGZsh{} l\PYGZus{}dict structure:}
+\PYG{c}{\PYGZsh{} \PYGZob{}word1: \PYGZob{}fileA: [pos1, pos2, ...], fileB: [pos], ...\PYGZcb{},}
+\PYG{c}{\PYGZsh{}  word2: \PYGZob{}fileC: [pos1, pos2], fileK: [pos], ...\PYGZcb{},}
+\PYG{c}{\PYGZsh{}  ...}
+\PYG{c}{\PYGZsh{} \PYGZcb{}}
+
+
+\PYG{k}{def} \PYG{n+nf}{setupcorpus}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{lang}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{x}\PYG{p}{,} \PYG{n}{w} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{f}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{w}\PYG{o}{.}\PYG{n}{isalpha}\PYG{p}{()} \PYG{o+ow}{and} \PYG{p}{(}\PYG{n}{w}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{()} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{lang}\PYG{p}{):}
+            \PYG{n}{y} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}l\PYGZus{}\PYGZsq{}} \PYG{o}{+} \PYG{p}{(}\PYG{n}{re}\PYG{o}{.}\PYG{n}{search}\PYG{p}{(}\PYG{l+s}{r\PYGZdq{}((\PYGZbs{}d\PYGZbs{}d).(\PYGZbs{}w)+.txt)\PYGZdq{}}\PYG{p}{,} \PYG{n}{f}\PYG{o}{.}\PYG{n}{fileid}\PYG{p}{))}\PYG{o}{.}\PYG{n}{group}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+            \PYG{n}{l\PYGZus{}dict}\PYG{p}{[}\PYG{n}{w}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{()][}\PYG{n}{y}\PYG{p}{]}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{n}{setupcorpus}\PYG{p}{(}\PYG{n}{l\PYGZus{}00}\PYG{p}{,} \PYG{n}{en\PYGZus{}stop}\PYG{p}{),} \PYG{k}{print}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}added 00\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{setupcorpus}\PYG{p}{(}\PYG{n}{l\PYGZus{}01}\PYG{p}{,} \PYG{n}{en\PYGZus{}stop}\PYG{p}{),} \PYG{k}{print}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}added 01\PYGZsq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}02, en\PYGZus{}stop), print(\PYGZsq{}added 02\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}03, en\PYGZus{}stop), print(\PYGZsq{}added 03\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}04, fr\PYGZus{}stop), print(\PYGZsq{}added 04\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}05, en\PYGZus{}stop), print(\PYGZsq{}added 05\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}06, fr\PYGZus{}stop), print(\PYGZsq{}added 06\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}07, en\PYGZus{}stop), print(\PYGZsq{}added 07\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}08, fr\PYGZus{}stop), print(\PYGZsq{}added 08\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}09, fr\PYGZus{}stop), print(\PYGZsq{}added 09\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}10, en\PYGZus{}stop), print(\PYGZsq{}added 10\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}11, en\PYGZus{}stop), print(\PYGZsq{}added 11\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}12, fr\PYGZus{}stop), print(\PYGZsq{}added 12\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}13, fr\PYGZus{}stop), print(\PYGZsq{}added 13\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}14, en\PYGZus{}stop), print(\PYGZsq{}added 14\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}15, fr\PYGZus{}stop), print(\PYGZsq{}added 15\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}16, en\PYGZus{}stop), print(\PYGZsq{}added 16\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}17, en\PYGZus{}stop), print(\PYGZsq{}added 17\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}18, en\PYGZus{}stop), print(\PYGZsq{}added 18\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}19, en\PYGZus{}stop), print(\PYGZsq{}added 19\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}20, en\PYGZus{}stop), print(\PYGZsq{}added 20\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}21, en\PYGZus{}stop), print(\PYGZsq{}added 21\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}22, fr\PYGZus{}stop), print(\PYGZsq{}added 22\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}23, de\PYGZus{}stop), print(\PYGZsq{}added 23\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}24, fr\PYGZus{}stop), print(\PYGZsq{}added 24\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}25, en\PYGZus{}stop), print(\PYGZsq{}added 25\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}26, en\PYGZus{}stop), print(\PYGZsq{}added 26\PYGZsq{})}
+\PYG{c}{\PYGZsh{} setupcorpus(l\PYGZus{}27, en\PYGZus{}stop), print(\PYGZsq{}added 27\PYGZsq{})}
+
+\PYG{c}{\PYGZsh{} print(l\PYGZus{}dict)}
+
+
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{n}{algo}\PYG{p}{):}
+    \PYG{n}{total} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(),} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{k}{for} \PYG{n}{r} \PYG{o+ow}{in} \PYG{n}{words}\PYG{p}{:}
+        \PYG{n}{files} \PYG{o}{=} \PYG{n}{l\PYGZus{}dict}\PYG{p}{[}\PYG{n}{r}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{e}\PYG{p}{,} \PYG{n}{p} \PYG{o+ow}{in} \PYG{n}{files}\PYG{o}{.}\PYG{n}{items}\PYG{p}{():}
+            \PYG{n}{f} \PYG{o}{=} \PYG{n}{get\PYGZus{}title}\PYG{p}{(}\PYG{n}{e}\PYG{p}{)}
+            \PYG{n}{sources}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+            \PYG{n}{sent} \PYG{o}{=} \PYG{n}{pp\PYGZus{}sent}\PYG{p}{(}\PYG{n}{r}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{(),} \PYG{n}{e}\PYG{p}{,} \PYG{n}{p}\PYG{p}{)}
+            \PYG{n}{o} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{sent}\PYG{p}{,} \PYG{n}{algo}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{sent} \PYG{o}{!=} \PYG{p}{[]} \PYG{o+ow}{and} \PYG{n}{o} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{out}\PYG{p}{:}
+                \PYG{n}{total} \PYG{o}{+=} \PYG{l+m+mi}{1}
+                \PYG{n}{out}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{o}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+
+
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}nym}\PYG{p}{(}\PYG{n}{nym}\PYG{p}{,} \PYG{n}{wset}\PYG{p}{):}
+    \PYG{n}{out} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{hyponyms}\PYG{p}{()}
+    \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}hypo\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{hyponyms}\PYG{p}{()}
+    \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}hyper\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{hypernyms}\PYG{p}{()}
+    \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}holo\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{member\PYGZus{}holonyms}\PYG{p}{()}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{hhh}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{h} \PYG{o+ow}{in} \PYG{n}{hhh}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{l} \PYG{o+ow}{in} \PYG{n}{h}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{():}
+                \PYG{n}{out}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{l}\PYG{o}{.}\PYG{n}{name}\PYG{p}{()))}
+    \PYG{k}{return} \PYG{n}{out}
+
+
+\PYG{k}{def} \PYG{n+nf}{clinamen}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{i}\PYG{p}{):}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{([}\PYG{n}{item} \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{l\PYGZus{}00}
+                \PYG{k}{if} \PYG{n}{dameraulevenshtein}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{item}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{i}\PYG{p}{])}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Clinamen\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+
+
+\PYG{k}{def} \PYG{n+nf}{syzygy}\PYG{p}{(}\PYG{n}{w}\PYG{p}{):}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{n}{wordsets} \PYG{o}{=} \PYG{n}{wn}\PYG{o}{.}\PYG{n}{synsets}\PYG{p}{(}\PYG{n}{w}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{ws} \PYG{o+ow}{in} \PYG{n}{wordsets}\PYG{p}{:}
+        \PYG{n}{words}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{get\PYGZus{}nym}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}hypo\PYGZsq{}}\PYG{p}{,} \PYG{n}{ws}\PYG{p}{))}
+        \PYG{n}{words}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{get\PYGZus{}nym}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}hyper\PYGZsq{}}\PYG{p}{,} \PYG{n}{ws}\PYG{p}{))}
+        \PYG{n}{words}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{get\PYGZus{}nym}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}holo\PYGZsq{}}\PYG{p}{,} \PYG{n}{ws}\PYG{p}{))}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Syzygy\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+
+
+\PYG{k}{def} \PYG{n+nf}{antinomy}\PYG{p}{(}\PYG{n}{w}\PYG{p}{):}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{n}{wordsets} \PYG{o}{=} \PYG{n}{wn}\PYG{o}{.}\PYG{n}{synsets}\PYG{p}{(}\PYG{n}{w}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{ws} \PYG{o+ow}{in} \PYG{n}{wordsets}\PYG{p}{:}
+        \PYG{n}{anti} \PYG{o}{=} \PYG{n}{ws}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{()[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{antonyms}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{anti}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{anti}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{a}\PYG{o}{.}\PYG{n}{name}\PYG{p}{())} \PYG{o}{!=} \PYG{n}{w}\PYG{p}{:}
+                    \PYG{n}{words}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{a}\PYG{o}{.}\PYG{n}{name}\PYG{p}{()))}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Antinomy\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+
+
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}title}\PYG{p}{(}\PYG{n+nb}{file}\PYG{p}{):}
+    \PYG{k}{return} \PYG{p}{\PYGZob{}}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}00\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Alfred Jarry: Exploits and Opinions of Dr. Faustroll, Pataphysician\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}01\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Edgar Allen Poe: Collected Works\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}02\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Cyrano de Bergerac: A Voyage to the Moon\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}03\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Saint Luke: The Gospel\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}04\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Leon Bloy: Le Desespere\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}05\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Samuel Taylor Coleridge: The Rime of the Ancient Mariner\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}06\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Georges Darien: Le Voleur\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}07\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Marceline Desbordes\PYGZhy{}Valmore: Le Livre des Meres et des Enfants\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}08\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Max Elskamp: Enluminures\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}09\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Jean\PYGZhy{}Pierre Claris de Florian: Les Deux Billets\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}10\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}One Thousand and One Nights\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}11\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Christian Dietrich Grabbe: Scherz, Satire, Ironie und tiefere Bedeutung\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}12\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZdq{}Gustave Kahn: Le Conte de l\PYGZsq{}Or et Du Silence\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}13\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Le Comte de Lautreamont: Les Chants de Maldoror\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}14\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Maurice Maeterlinck: Aglavaine and Selysette\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}15\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Stephane Mallarme: Verse and Prose\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}16\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Mendes: The Mirror and la Divina Aventure\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}17\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Homer: The Odyssey\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}18\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Josephin Peladan: Babylon\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}19\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Francois Rabelais: Gargantua and Pantagruel\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}20\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZdq{}Jean de Chilra: L\PYGZsq{}Heure Sexuelle\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}21\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Henri de Regnier: La Canne de Jaspe\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}22\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Arthur Rimbaud: Poesies Completes\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}23\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Marcel Schwob: Der Kinderkreuzzug\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}24\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Alfred Jarry: Ubu Roi\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}25\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Paul Verlaine: Poems\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}26\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Emile Verhaeren: Poems\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s}{\PYGZsq{}l\PYGZus{}27\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}Jules Verne: A Journey to the Centre of the Earth\PYGZsq{}}
+    \PYG{p}{\PYGZcb{}}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n+nb}{file}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Unknown\PYGZsq{}}\PYG{p}{)}  \PYG{c}{\PYGZsh{} \PYGZsq{}Unknown\PYGZsq{} is default if file not found}
+
+
+\PYG{k}{def} \PYG{n+nf}{pp\PYGZus{}sent}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{p}\PYG{p}{):}  \PYG{c}{\PYGZsh{} gets w as lower case}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{pos} \PYG{o}{=} \PYG{p}{[],} \PYG{n}{p}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{ff} \PYG{o}{=} \PYG{n+nb}{eval}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+    \PYG{n}{pos\PYGZus{}b}\PYG{p}{,} \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos}\PYG{p}{,} \PYG{n}{pos}
+    \PYG{n}{punct} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZsq{},\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}.\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}!\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}?\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{})\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}:\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{};\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}\PYGZus{}\PYGZsq{}}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{n}{i}\PYG{p}{]} \PYG{o+ow}{in} \PYG{n}{punct}\PYG{p}{:}
+            \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+            \PYG{k}{break}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{5}\PYG{p}{]:}
+                \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{5}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}\PYG{p}{]} \PYG{o+ow}{in} \PYG{n}{punct}\PYG{p}{:}
+            \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}
+            \PYG{k}{break}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{+} \PYG{l+m+mi}{5}\PYG{p}{]:}
+                \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{+} \PYG{l+m+mi}{5}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos}
+    \PYG{k}{if} \PYG{n}{pos\PYGZus{}b} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{pos\PYGZus{}a} \PYG{o}{\PYGZlt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{):}
+        \PYG{n}{pre} \PYG{o}{=} \PYG{l+s}{\PYGZsq{} \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos\PYGZus{}b}\PYG{p}{:}\PYG{n}{pos}\PYG{p}{])}
+        \PYG{n}{post} \PYG{o}{=} \PYG{l+s}{\PYGZsq{} \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{pos\PYGZus{}a}\PYG{p}{])}
+        \PYG{n}{out} \PYG{o}{=} \PYG{p}{(}\PYG{n}{pre}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{post}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}
+
+
+\PYG{c}{\PYGZsh{} http://mwh.geek.nz/2009/04/26/python\PYGZhy{}damerau\PYGZhy{}levenshtein\PYGZhy{}distance/}
+\PYG{c}{\PYGZsh{} MIT license.}
+\PYG{k}{def} \PYG{n+nf}{dameraulevenshtein}\PYG{p}{(}\PYG{n}{seq1}\PYG{p}{,} \PYG{n}{seq2}\PYG{p}{):}
+    \PYG{n}{oneago} \PYG{o}{=} \PYG{n+nb+bp}{None}
+    \PYG{n}{thisrow} \PYG{o}{=} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{seq2}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{+} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{seq1}\PYG{p}{)):}
+        \PYG{n}{twoago}\PYG{p}{,} \PYG{n}{oneago}\PYG{p}{,} \PYG{n}{thisrow} \PYG{o}{=} \PYG{n}{oneago}\PYG{p}{,} \PYG{n}{thisrow}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{*} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{seq2}\PYG{p}{)} \PYG{o}{+} \PYG{p}{[}\PYG{n}{x} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{]}
+        \PYG{k}{for} \PYG{n}{y} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{seq2}\PYG{p}{)):}
+            \PYG{n}{delcost} \PYG{o}{=} \PYG{n}{oneago}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}
+            \PYG{n}{addcost} \PYG{o}{=} \PYG{n}{thisrow}\PYG{p}{[}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}
+            \PYG{n}{subcost} \PYG{o}{=} \PYG{n}{oneago}\PYG{p}{[}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{p}{(}\PYG{n}{seq1}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{seq2}\PYG{p}{[}\PYG{n}{y}\PYG{p}{])}
+            \PYG{n}{thisrow}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{delcost}\PYG{p}{,} \PYG{n}{addcost}\PYG{p}{,} \PYG{n}{subcost}\PYG{p}{)}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{y} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{seq1}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{==} \PYG{n}{seq2}\PYG{p}{[}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o+ow}{and}
+               \PYG{n}{seq1}\PYG{p}{[}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{==} \PYG{n}{seq2}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o+ow}{and} \PYG{n}{seq1}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{o}{!=} \PYG{n}{seq2}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]):}
+                    \PYG{n}{thisrow}\PYG{p}{[}\PYG{n}{y}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{thisrow}\PYG{p}{[}\PYG{n}{y}\PYG{p}{],} \PYG{n}{twoago}\PYG{p}{[}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{thisrow}\PYG{p}{[}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{seq2}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]}
+
+
+\PYG{k}{def} \PYG{n+nf}{calc\PYGZus{}all}\PYG{p}{(}\PYG{n}{sens}\PYG{p}{):}
+    \PYG{n}{all\PYGZus{}1}\PYG{p}{,} \PYG{n}{all\PYGZus{}2}\PYG{p}{,} \PYG{n}{all\PYGZus{}3}\PYG{p}{,} \PYG{n}{all\PYGZus{}4}\PYG{p}{,} \PYG{n}{all\PYGZus{}5}\PYG{p}{,} \PYG{n}{all\PYGZus{}6}\PYG{p}{,} \PYG{n}{all\PYGZus{}7}\PYG{p}{,} \PYG{n}{all\PYGZus{}8}\PYG{p}{,} \PYG{n}{all\PYGZus{}9}\PYG{p}{,} \PYGZbs{}
+        \PYG{n}{all\PYGZus{}10}\PYG{p}{,} \PYG{n}{all\PYGZus{}11}\PYG{p}{,} \PYG{n}{all\PYGZus{}12}\PYG{p}{,} \PYG{n}{all\PYGZus{}13}\PYG{p}{,} \PYG{n}{all\PYGZus{}14} \PYG{o}{=} \PYG{p}{[[]} \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{14}\PYG{p}{)]}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{part}\PYG{p}{,} \PYG{n}{mx} \PYG{o}{=} \PYG{p}{[],} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{15}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sens}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{14} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{n}{part} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sens}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{14}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{part} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{n}{mx} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sens}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mx}\PYG{p}{):}
+        \PYG{n}{n} \PYG{o}{=} \PYG{n}{b} \PYG{o}{+} \PYG{n}{part}
+        \PYG{n}{v} \PYG{o}{=} \PYG{n+nb}{eval}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}all\PYGZus{}\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{i}\PYG{p}{))}
+        \PYG{n}{v} \PYG{o}{=} \PYG{n}{sens}\PYG{p}{[}\PYG{n}{b}\PYG{p}{:}\PYG{n}{n}\PYG{p}{]}
+        \PYG{n}{b} \PYG{o}{+=} \PYG{n}{part}
+        \PYG{n}{out}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{part}\PYG{p}{,} \PYG{p}{(}\PYG{n}{mx} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{Verbatim}

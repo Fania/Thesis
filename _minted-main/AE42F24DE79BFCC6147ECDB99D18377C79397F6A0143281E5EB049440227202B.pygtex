@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-    \PYGdefault{c}{\PYGdefaultZsh{} String $w$ = query word}
-    \PYGdefault{c}{\PYGdefaultZsh{} Int $i$ = assigned distance}
-    \PYGdefault{k}{def} \PYGdefault{n+nf}{clinamen}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{i}\PYGdefault{p}{):}
-        \PYGdefault{n}{words} \PYGdefault{o}{=} \PYGdefault{n+nb}{set}\PYGdefault{p}{([}\PYGdefault{n}{item} \PYGdefault{k}{for} \PYGdefault{n}{item} \PYGdefault{o+ow}{in} \PYGdefault{n}{l\PYGdefaultZus{}00} \PYGdefault{k}{if} \PYGdefault{n}{dameraulevenshtein}\PYGdefault{p}{(}\PYGdefault{n}{w}\PYGdefault{p}{,} \PYGdefault{n}{item}\PYGdefault{p}{)} \PYGdefault{o}{\PYGdefaultZlt{}=} \PYGdefault{n}{i}\PYGdefault{p}{])}
-        \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total} \PYGdefault{o}{=} \PYGdefault{n}{get\PYGdefaultZus{}results}\PYGdefault{p}{(}\PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}Clinamen\PYGdefaultZsq{}}\PYGdefault{p}{)}
-        \PYGdefault{k}{return} \PYGdefault{n}{out}\PYGdefault{p}{,} \PYGdefault{n}{words}\PYGdefault{p}{,} \PYGdefault{n}{sources}\PYGdefault{p}{,} \PYGdefault{n}{total}
-\end{Verbatim}

@@ -7,6 +7,8 @@
 \begin{document}
 
 \pagestyle{empty}
+\todototoc
+\setcounter{tocdepth}{1}  % needed to display the todos
 \listoftodos[List of Todos]
 \clearpage
 
@@ -16,10 +18,8 @@
 \pagestyle{plain}
 \frontmatter
 
-\todo{preface appears after abstract in toc?}
-
-\part*{\texorpdfstring{PRE\smiley{}}{PREFACE}}
 \addcontentsline{toc}{part}{PREFACE}
+\part*{\texorpdfstring{PRE\smiley{}}{PREFACE}}
 \include{front/abstract}
 % \include{front/dedication}
 % \include{front/declaration}
@@ -36,23 +36,23 @@
 % \tableofcontents
 % \clearpage
 
-\phantomsection{}
+\phantomsection
 % \addcontentsline{toc}{chapter}{Table of Contents}
 \setcounter{tocdepth}{4}
 \tableofcontents
 \clearpage
 
-\phantomsection{}
+\phantomsection
 % \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
 \clearpage
 
-\phantomsection{}
+\phantomsection
 % \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 \clearpage
 
-\phantomsection{}
+\phantomsection
 \addcontentsline{toc}{chapter}{List of Equations}
 % \listofmyequations{}
 \clearpage
@@ -62,14 +62,16 @@
 \listoflistings{}
 \clearpage
 
-\phantomsection{}
+\phantomsection
 \addcontentsline{toc}{chapter}{List of Acronyms}
 \printnoidxglossary[type=acronym]
 \clearpage
 
 % MAIN
 % \pagestyle{fancy}
-\mainmatter{}
+\mainmatter
+
+\todo{double check hyperref links in pdf toc}
 
 \part{\texorpdfstring{H$\Sigma$LL$\Theta$ W$\Theta$RLD}{HELLO WORLD}}
 \include{main/introduction}
@@ -97,7 +99,7 @@
 % BACK
 \appendix
 
-\phantomsection{}
+\phantomsection
 \part*{\texorpdfstring{POST\frownie{}}{POSTFACE}}
 \addcontentsline{toc}{part}{POSTFACE}
 \include{back/code}
@@ -107,13 +109,13 @@
 \clearpage
 
 \pagestyle{plain}
-\phantomsection{}
+\phantomsection
 % \addcontentsline{toc}{chapter}{Bibliography}
 % \bibliography{back/bib} % NATBIB
 \printbibliography % BIBLATEX
 \clearpage
 
-\phantomsection{}
+\phantomsection
 % \addcontentsline{toc}{chapter}{Glossary}
 \printnoidxglossary
 % \printglossary

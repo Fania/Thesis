@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-    \PYGdefault{k}{def} \PYGdefault{n+nf}{transent}\PYGdefault{p}{(}\PYGdefault{n}{sent}\PYGdefault{p}{):}
-        \PYGdefault{n}{translator} \PYGdefault{o}{=} \PYGdefault{n}{Translator}\PYGdefault{p}{(}\PYGdefault{n}{microsoft\PYGdefaultZus{}id}\PYGdefault{p}{,} \PYGdefault{n}{microsoft\PYGdefaultZus{}secret}\PYGdefault{p}{)}
-        \PYGdefault{n}{french} \PYGdefault{o}{=} \PYGdefault{n}{translator}\PYGdefault{o}{.}\PYGdefault{n}{translate}\PYGdefault{p}{(}\PYGdefault{n}{sent}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}fr\PYGdefaultZdq{}}\PYGdefault{p}{)}
-        \PYGdefault{n}{japanese} \PYGdefault{o}{=} \PYGdefault{n}{translator}\PYGdefault{o}{.}\PYGdefault{n}{translate}\PYGdefault{p}{(}\PYGdefault{n}{french}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}ja\PYGdefaultZdq{}}\PYGdefault{p}{)}
-        \PYGdefault{n}{patawords} \PYGdefault{o}{=} \PYGdefault{n}{translator}\PYGdefault{o}{.}\PYGdefault{n}{translate}\PYGdefault{p}{(}\PYGdefault{n}{japanese}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}en\PYGdefaultZdq{}}\PYGdefault{p}{)}
-        \PYGdefault{n}{translations} \PYGdefault{o}{=} \PYGdefault{p}{(}\PYGdefault{n}{french}\PYGdefault{p}{,} \PYGdefault{n}{japanese}\PYGdefault{p}{,} \PYGdefault{n}{patawords}\PYGdefault{p}{)}
-        \PYGdefault{k}{return} \PYGdefault{n}{translations}
-\end{Verbatim}
