@@ -428,9 +428,17 @@ The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the 
 \label{code:pataph}
 \end{listing}
 
-The next step is to translate the pataphysicalised search terms as shown in source~\ref{code:transent}.
+For example, running the pataphysicalise function with the terms `clear' and `sky' will produce two intermediary lists (shortened here for the demonstration) which are then combined into one list using the Cartesian product.
 
-\todo{print examples of pataphysicalise function in action}
+\begin{minted}{c}
+  ["disembarrass", "bear", "judge", "remove", "elucidate", "modify", "free", "approve", "certify", "determine", "strip",  "empty", "purge", "vanish", "disappear", "sell", "pay", "make", "take", "disforest", "formalize", "okay", "allow", ...],
+  ["blue", "atmosphere", "fling", "throw_back", "lag", "blue_sky", "submarine", "toss_back", "blue_air", "mackerel_sky", "wild_blue_yonder"]
+\end{minted}
+\begin{minted}{c}
+  [("disembarrass", "blue"), ("disembarrass", "atmosphere"), ..., ("strip", "fling"), ..., ("empty", "submarine"), ..., ("allow", "mackerel_sky"), ("allow", "wild_blue_yonder")]
+\end{minted}
+
+The next step is to translate the pataphysicalised search terms as shown in source~\ref{code:transent} before any \gls{api} calls are made.
 
 \begin{listing}
   \begin{minted}{python}
@@ -449,13 +457,13 @@ The next step is to translate the pataphysicalised search terms as shown in sour
 
 \section{Results}
 
-Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and HTML.
+Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and HTML (with CSS stylesheets and some JavaScript).
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[height=0.6\textheight]{images/prototype01}
-\caption[Prototype 1 screenshot]{Prototype 1 screenshot}
-\label{img:Prototype1xx}
+  \includegraphics[height=0.6\textheight]{images/screen_rpoetry}
+\caption[Poetry results screenshot]{Poetry results screenshot}
+\label{img:PoetrySS}
 \end{figure}
 
 The text results page has three options for how the results are presented, with `Poetry --- Queneau' being the default.
@@ -469,6 +477,8 @@ The text results page has three options for how the results are presented, with 
   \item [Algorithms] Ordered by algorithm.
 \end{description}
 
+\todo{get proper ref for sonnet style}
+
 The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default.
 \begin{description}
   \item [Spiral] Displayed square images/videos as a golden spiral.
@@ -476,31 +486,22 @@ The image and video results pages work the same way. They both have two display 
 \end{description}
 
 
-\section{Prototypes}
-
-\subsection{Prototype 1}
-
-\todo{get new screenshots for prototype 1}
-\todo{don't mention James?}
-
-The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
-
-Results were displayed in three sets per algorithm. Each keyword was preceded and followed by exactly 5 words respectively.
+The image and video spirals are modelled on the Fibonacci spiral \footnote{Image taken from \url{https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg}}.
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[height=0.6\textheight]{images/prototype01}
-\caption[Prototype 1 screenshot]{Prototype 1 screenshot}
-\label{img:Prototype1x}
+  \includegraphics[width=\linewidth]{images/Fibonacci}
+\caption[Fibonacci Spiral]{Fibonacci Spiral}
+\label{img:Fibonacci}
 \end{figure}
+
+
+\section{Prototypes}
 
 
 \subsection{Prototype 2}
 
-{\Huge \url{pata.fania.eu}}
-
-This version introduced the move from Django to Flask. It also included the first major re-design of the website.
-
+This version introduced the move from Django to Flask. It also included the first major re-design of the website. It is still available online at \url{pata.fania.eu}.
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -509,96 +510,34 @@ This version introduced the move from Django to Flask. It also included the firs
 \label{img:Prototype2x}
 \end{figure}
 
+The main differences between the current version and prototype 2 are:
+\begin{itemize}
+  \item the corpus consisted of the faustroll text only
+  \item results were keyword $\pm$ 5 words per line
+  \item text results were displayed sorted by algorithm only
+  \item image and video results were displayed as spiral only
+\end{itemize}
 
 
+\subsection{Prototype 1}
 
-\begin{alltt}
-# TEXT
+\todo{get new screenshots for prototype 1}
+\todo{don't mention James?}
 
-## setup
+The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
 
-1.\ read in faustroll book
-2.\ create `froll_dict' dictionary from text
-3.\ remove stopwords and numbers from `froll_dict'
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[height=0.6\textheight]{images/prototype01}
+\caption[Prototype 1 screenshot]{Prototype 1 screenshot}
+\label{img:Prototype1x}
+\end{figure}
 
-## text algorithm
-
-1.\ get query term
-2.\ execute three functions:
-
-  2a.\ syzygy algorithm
-    1.\ get list of synonyms
-    2.\ for each synonym do the following:
-      a.\ find hyponyms; if a hyponym occurs in `froll_dict' then add to the output list
-      b.\ find hypernyms; if a hypernym occurs in `froll_dict' then add to the output list
-      c.\ find holonyms; if a holonym occurs in `froll_dict' then add to the output list
-    3.\ return list of syzygy words
-
-  2b.\ antinomy algorithm
-    1.\ get list of synonyms
-    2.\ for each synonym do the following:
-      a.\ find antonyms; if a antonym occurs in `froll_dict' then add to the output list
-    3.\ return list of antinomy words
-
-  2c.\ clinamen algorithm
-    1.\ find list of words within `froll_dict' that have a `dameraulevenshtein distance' of 1 or 2 (meaning, there are 1 or 2 spelling errors)
-    2.\ return list of clinamen words
-
-3.\ get sentences for all three output lists
-
-  3a.\ if the word appears in faustroll then find the nearest 5 words before and after the word
-  3b.\ return list of sentences
-
-4.\ render results as html
-
-
----
-
-# IMAGES
-
-## setup
-
-- microsoft translate API key
-- flickr API key
-- (bing image search API key) --- not used atm
-
-## image algorithm
-
-1.\ get query word
-2.\ get one syzygy word using syzygy algorithm 2a above
-3.\ translation party
-  3a.\ translate english to french
-  3b.\ translate french to japanese
-  3c.\ translate japanese to english
-4.\ get images
-  4a.\ search flickr for 10 matches to english translation
-  4b.\ get metadata for each
-  4c.\ add title, thumb, link to output list
-5.\ return output list
-6.\ render results as html
-
----
-
-# VIDEOS
-
-## setup
-
-- microsoft translate API key
-- youtube API stuff
-- (bing video search API key) --- not used atm
-
-## video algorithm
-
-1.\ get query word
-2.\ get one syzygy word using syzygy algorithm
-3.\ translation party
-  3a.\ translate english to french
-  3b.\ translate french to japanese
-  3c.\ translate japanese to english
-4.\ get videos
-  4a.\ search YouTube for 10 matches to english translation
-  4b.\ get metadata for each
-  4c.\ add title, thumb, link to output list
-5.\ return output list
-6.\ render as html
-\end{alltt}
+The main differences between prototype 1 and prototype 2 are:
+\begin{itemize}
+  \item text results were displayed sorted by algorithm only
+  \item image and video search was not yet supported
+  \item Django backend
+  \item didn't have an about section
+  \item didn't have random quotes
+\end{itemize}

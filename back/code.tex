@@ -20,32 +20,42 @@ Clinamen\\
 
 \section{Setup}
 
-\inputminted[firstline=1,lastline=9]{python}{back/code/textsurfer.py}
-% \lstinputlisting[linerange={1-9,23-23,27-27,30-30,33-33,36-37,68-73}]{back/code/textsurfer.py}% chktex 8
-
-stopwords:
+stopwords:\\
 \begin{minted}{python}
   [i, me, my, myself, we, our, ours, ourselves, you, your, yours, yourself, yourselves, he, him, his, himself, she, her, hers, herself, it, its, itself, they, them, their, theirs, themselves, what, which, who, whom, this, that, these, those, am, is, are, was, were, be, been, being, have, has, had, having, do, does, did, doing, a, an, the, and, but, if, or, because, as, until, while, of, at, by, for, with, about, against, between, into, through, during, before, after, above, below, to, from, up, down, in, out, on, off, over, under, again, further, then, once, here, there, when, where, why, how, all, any, both, each, few, more, most, other, some, such, no, nor, not, only, own, same, so, than, too, very, s, t, can, will, just, don, should, now]
 \end{minted}
 
+index:\\
 \begin{minted}{python}
   defaultdict(<function <lambda> at 0x101d17938>, {u'fawn': defaultdict(<type 'list'>, {u'l_17': [101330, 111976], u'l_19': [345609], u'l_01': [92598, 469332, 469716, 469757, 469830, 469950]}), u'pl\xe4tze': defaultdict(<type 'list'>, {u'l_11': [18287, 35736]}), u'lenitives': defaultdict(<type 'list'>, {u'l_19': [121161]}), u'malheureuses': defaultdict(<type 'list'>, {u'l_06': [18950, 52631, 65053, 65792, 79960, 127861, 176200], u'l_04': [51545, 93611]}), u'\xe9vit\xe2mes': defaultdict(<type 'list'>, {u'l_13': [82999]}), u'nunnery': defaultdict(<type 'list'>, {u'l_19': [38182, 160331]}), u'\xe9difie': defaultdict(<type 'list'>, {u'l_12': [20278]}), u'nuzzing': defaultdict(<type 'list'>, {u'l_19': [147035]}), u'huileux': defaultdict(<type 'list'>, {u'l_04': [69998]}), u'lentuli': defaultdict(<type 'list'>, {u'l_19': [217454]}), u'porphyrogene': defaultdict(<type 'list'>, {u'l_01': [137368, 480308]}), u'woods': defaultdict(<type 'list'>, {u'l_14': [16256], u'l_05': [2890], u'l_17': [11445, 34923, 48413, 59186, 61062, 78084, 78681, 81374, 101319, 137624], u'l_10': [12500, 21691, 33136], u'l_02': [4596, 6221], u'l_01': [63176, 63622, 74535, 74807, 326433, 326464, 326472, 419835, 441374, 467791, 481003, 481113, 500201, 500331, 501595], u'l_27': [60731], u'l_26': [1120, 9622], u'l_19': [149538, 232296, 294503]}), u'clotted': defaultdict(<type 'list'>, {u'l_17': [92418], u'l_01': [53612, 133153, 200952, 241165]}), u'spiders': defaultdict(<type 'list'>, {u'l_19': [285105, 301556], u'l_00': [3085]}), u'hanging': defaultdict(<type 'list'>, {u'l_17': [84239], u'l_10': [35501, 92813, 126657], u'l_02': [6033, 33307, 34297], u'l_01': [10317, 102489, 114549, 134507, 193056, 210178, 251167, 266320, 287765, 311802, 342798, 379707, 417326, 417956, 448394, 469204], u'l_00': [1831, 5490, 6891, 11088, 13846], u'l_27': [19757, 45058, 83470], u'l_26': [6500], u'l_19': [8309, 15850, 17056, 20629, 25899, 47147, 47186, 49544, 108943, 177323, 200639, 252551, 334120, 341621]}), u'woody':
 \end{minted}
 
-\section{Clinamen}
-
-\inputminted[firstline=154,lastline=160]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=154, lastline=160]{back/code/textsurfer.py}
 
 \section{Damerau Levenshtein}
 
-\inputminted[firstline=192,lastline=208]{python}{back/code/textsurfer.py}
-% \lstinputlisting[linerange={165-165,192-208}]{back/code/textsurfer.py}% chktex 8
+\begin{minted}{python}
+  # http://mwh.geek.nz/2009/04/26/python-damerau-levenshtein-distance/
+  # MIT license.
+  def dameraulevenshtein(seq1, seq2):
+      oneago = None
+      thisrow = range(1, len(seq2) + 1) + [0]
+      for x in xrange(len(seq1)):
+          twoago, oneago, thisrow = oneago, thisrow, [0] * len(seq2) + [x + 1]
+          for y in xrange(len(seq2)):
+              delcost = oneago[y] + 1
+              addcost = thisrow[y - 1] + 1
+              subcost = oneago[y - 1] + (seq1[x] != seq2[y])
+              thisrow[y] = min(delcost, addcost, subcost)
+              if (x > 0 and y > 0 and seq1[x] == seq2[y - 1] and
+                 seq1[x - 1] == seq2[y] and seq1[x] != seq2[y]):
+                      thisrow[y] = min(thisrow[y], twoago[y - 2] + 1)
+      return thisrow[len(seq2) - 1]
+\end{minted}
 
-\section{Antinomy}
 
-\inputminted[firstline=110,lastline=119]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=110, lastline=119]{back/code/textsurfer.py}
+\section{WordNet}
+
+\subsection{Antinomy}
 
 \begin{alltt}
 synsets:
@@ -113,10 +123,7 @@ synset item:clear.r.01
 synset item:clearly.r.04
 \end{alltt}
 
-\section{Syzygy}
-
-\inputminted[firstline=81,lastline=107]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=81, lastline=107]{back/code/textsurfer.py}
+\subsection{Syzygy}
 
 \begin{alltt}
 synsets:
@@ -352,24 +359,16 @@ synset item:clearly.r.04
 
 \section{Random Quotes}
 
-\inputminted[firstline=12,lastline=22]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=12, lastline=22]{back/code/__init__.py}
-
-\section{Text Results}
-
-% \lstinputlisting{back/code/textviews.py}
-
-\section{Pataphysicalise}
-
-\inputminted[firstline=24,lastline=37]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=24, lastline=37]{back/code/videosurfer.py}
-
-\section{Getting Videos}
-
-\inputminted[firstline=40,lastline=79]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=40, lastline=79]{back/code/videosurfer.py}
-
-\section{Getting Images}
-
-\inputminted[firstline=40,lastline=79]{python}{back/code/textsurfer.py}
-% \lstinputlisting[firstline=40, lastline=79]{back/code/videosurfer.py}
+\begin{minted}{python}
+  def getrandquote():
+      # RANDOM QUOTES
+      root_path = os.path.dirname(os.path.abspath(__file__))
+      root_path = root_path[:-4]
+      corpus_root = root_path + '/app/static/corpus'
+      path_b = corpus_root + '/quotes.txt'
+      quotes_text = codecs.open(path_b, "r", encoding='utf-8')
+      quotestext = quotes_text.readlines()
+      quotes_text.close()
+      # print random.choice(quotestext)
+      return random.choice(quotestext)
+\end{minted}

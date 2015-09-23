@@ -302,7 +302,7 @@
 
 % CODE
 
-\usepackage{minted}
+\usepackage[chapter]{minted}
 
 \renewcommand{\listingscaption}{Source}
 \renewcommand{\listoflistingscaption}{List of Source Code}
@@ -343,6 +343,12 @@
   mathescape=true,
 }
 
+% no red boxes on parser error:
+\makeatletter
+\expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{{\strut ##1}}}
+\makeatother
+
+
 
 % TABS
 
@@ -380,12 +386,11 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{subcaption} % for subtables
 
 
-% GLOSSARY & ACRONYMS
+% SILENCE WARNINGS
+\usepackage{silence}
+\WarningFilter{glossaries}{Overriding \printglossary}
+\WarningFilter{glossaries}{overriding `theglossary'}
 
-% \makeglossary
-\usepackage[acronyms]{glossaries}
-% \setacronymstyle{long-short}
-\loadglsentries{front/abbreviations}
 
 
 % JAPANESE
@@ -476,3 +481,18 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
             pdftitle={PhD Thesis},
             pdfsubject={Web Collider},
             pdfkeywords={Pataphysics, Creative Computing, Interdisciplinary Research}]{hyperref}
+
+
+% GLOSSARY & ACRONYMS
+% WANTS TO BE AFTER HYPERREF
+
+\let\printglossary\relax
+\let\theglossary\relax
+\let\endtheglossary\relax
+
+% \makeglossary
+\usepackage[acronyms]{glossaries}
+% \setacronymstyle{long-short}
+\loadglsentries{front/abbreviations}
+
+\makenoidxglossaries
