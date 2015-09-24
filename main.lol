@@ -18,3 +18,7 @@
 \contentsline {listing}{\numberline {8.8}{\ignorespaces Function to pataphysicalise image and video query terms.}}{135}{listing.8.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {8.9}{\ignorespaces Translation function.}}{135}{listing.8.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {listing}{\numberline {8.10}{\ignorespaces Code for rendering Queneau style poems.}}{139}{listing.8.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {listing}{\numberline {8.11}{\ignorespaces Code for randomising poems.}}{140}{listing.8.11}

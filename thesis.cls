@@ -122,6 +122,13 @@
 % VERBATIM
 
 \usepackage{alltt}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+
 
 
 % SPACING
@@ -303,11 +310,36 @@
 % CODE
 
 \usepackage[chapter]{minted}
+\usemintedstyle{emacs}
+% css, c, json, hs, lhs, js, py3, py, css+jinja, html+jinja, js+jinja
 
 \renewcommand{\listingscaption}{Source}
 \renewcommand{\listoflistingscaption}{List of Source Code}
 
 \setminted[python]{
+  linenos,
+  bgcolor=lavendermist,
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines,
+  % xleftmargin=1cm,
+  % numbersep=24pt,
+  xrightmargin=1cm,
+}
+
+\setminted[html+jinja]{
+  linenos,
+  bgcolor=lavendermist,
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines,
+  % xleftmargin=1cm,
+  % numbersep=24pt,
+  xrightmargin=1cm,
+}
+\setminted[javascript]{
   linenos,
   bgcolor=lavendermist,
   fontsize=\footnotesize,
@@ -440,10 +472,6 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \newcommand{\grule}{\color{pearl}{\rule{\linewidth}{0.2pt}}\color{black}}
 \newcommand{\grule}{\textcolor{red}{\rule{\linewidth}{0.3pt}}}
 
-% MULTICOLUMN
-
-\usepackage{multicol}
-% \setlength{\columnsep}{1cm}
 
 
 % EMOTICONS

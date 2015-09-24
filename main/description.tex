@@ -461,7 +461,7 @@ Once the three algorithms have produced their respective results, the page displ
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[height=0.6\textheight]{images/screen_rpoetry}
+  \includegraphics[width=\linewidth]{images/screen_rpoetry}
 \caption[Poetry results screenshot]{Poetry results screenshot}
 \label{img:PoetrySS}
 \end{figure}
@@ -495,6 +495,73 @@ The image and video spirals are modelled on the Fibonacci spiral \footnote{Image
 \label{img:Fibonacci}
 \end{figure}
 
+\begin{listing}[h!]
+  \begin{minted}{html+jinja}
+    <div class="subtab_content" id="q_tab">
+      <p class="w3-center">
+        <a class="emailbutton w3-btn w3-blue-grey" href="#" onclick="return getContent(this)">
+          Email this poem!
+        </a>
+      </p>
+      <div class="poetry w3-container w3-theme-l5">
+        {% for n in range(1, lol|length + 1) %}
+          {% set wid = ['wn', n|string]|join %}
+          {% set lid = ['lyr', n|string]|join %}
+          {% set sid = ['scrollLinks', n|string]|join %}
+          {% set aid = lol[n-1] %}
+          <div id="poems">
+            <div id="{{wid}}" class="wn">
+              <div id="{{lid}}" class="lyr">
+                {% for sens in aid %}<span title="{{ sens[0] }}, {{ sens[2] }}">{{ sens[1][0] }} <form class="inform" action="../textresults" method="post"><input class="inlink" type="submit" name="query" value="{{ sens[1][1] }}" onclick="loading();"></input></form> {{ sens[1][2] }}</span>{% endfor %}
+              </div>
+            </div>
+            <div id="{{sid}}" class="scrollLinks"></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  \end{minted}
+\caption{Code for rendering Queneau style poems.}
+\label{code:qpoems}
+\end{listing}
+
+\begin{listing}[h!]
+  \begin{minted}{javascript}
+    var cnt = 0;
+    function shufflePoem() {
+      cnt += 1;
+      var sentences = {{ all_sens|tojson }};
+      // [[file, [s1,s2,s3], algo],...]
+      var n = {{ all_sens|length }};
+      var rlist = [];
+      for (var i = 0; i < 14; i++) {
+        var r = Math.floor(Math.random() * n);
+        var t = sentences[r][0];
+        var al = sentences[r][2];
+        var b = sentences[r][1][0];
+        var m = sentences[r][1][1];
+        var a = sentences[r][1][2];
+        var str1 = "<span title='" + t +', '+ al;
+        var str2 = "'>" + b + " <form class='inform' action='../textresults' method='post'><input class='inlink' type='submit' name='query' value='";
+        var str3 = m + "' onclick='loading();'></input></form> " + a;
+        var str4 = "</span>";
+        var fullsent = str1 + str2 + str3 + str4;
+        rlist[i] = fullsent;
+      }
+      rlist[3] = rlist[3].concat('<br>');
+      rlist[7] = rlist[7].concat('<br>');
+      rlist[10] = rlist[10].concat('<br>');
+      var output = rlist.join('<br>');
+      document.getElementById('clickcount').innerHTML = cnt;
+      document.getElementById('random_poem').innerHTML = output;
+      return false;
+    }
+  \end{minted}
+\caption{Code for randomising poems.}
+\label{code:rpoemsjs}
+\end{listing}
+
+
 
 \section{Prototypes}
 
@@ -503,7 +570,7 @@ The image and video spirals are modelled on the Fibonacci spiral \footnote{Image
 
 This version introduced the move from Django to Flask. It also included the first major re-design of the website. It is still available online at \url{pata.fania.eu}.
 
-\begin{figure}[htb] % (here, top, bottom, page)
+\begin{figure}[htbp] % (here, top, bottom, page)
   \centering
   \includegraphics[width=\linewidth]{images/prototype02}
 \caption[Prototype 2 screenshot]{Prototype 2 screenshot}
@@ -526,7 +593,7 @@ The main differences between the current version and prototype 2 are:
 
 The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
 
-\begin{figure}[htb] % (here, top, bottom, page)
+\begin{figure}[htbp] % (here, top, bottom, page)
   \centering
   \includegraphics[height=0.6\textheight]{images/prototype01}
 \caption[Prototype 1 screenshot]{Prototype 1 screenshot}
