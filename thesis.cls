@@ -153,21 +153,37 @@ breaklines=true
 \setlength{\cfttablenumwidth}{2.8em}
 
 \setsecnumdepth{subsection}
-\settocdepth{section}
+% \settocdepth{section}
+
+
+
+% Division Level
+% \book -2
+% \part -1
+% \chapter 0
+% \section 1
+% \subsection 2
+% \subsubsection 3
+% \paragraph 4
+% \subparagraph 5
+%
+
+
 
 % MINITOC
 
-\usepackage{shorttoc}
+\usepackage[tight]{shorttoc}
 \usepackage{titletoc}
 
-\newcommand\partialtocname{Mini ToC}
-\newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
-\newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
 \makeatletter
-\newcommand\Mprintcontents{%
-  \ToCtitle
-  \ttl@printlist[chapters]{toc}{}{1}{}\par\nobreak
-  \ToCrule}
+\newcommand\minicontents{%
+  \brule
+  \printcontents[chapters]{}{1}{%
+                                  \renewcommand{\baselinestretch}{-1}\normalsize
+                                  \setcounter{tocdepth}{1} %sections
+                                  }
+  \brule
+  }
 \makeatother
 
 
@@ -421,6 +437,15 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \patchcmd{\bbordermatrix}{\left(}{\left[}{}{}
 \patchcmd{\bbordermatrix}{\right)}{\right]}{}{}
 
+% TOC VERTICAL SPACE FIX
+% \makeatletter
+% \patchcmd{\l@section}{%
+% %   \addvspace{1.0em \@plus\p@}% original code line
+% % }{%
+%   \addvspace{0.3em \@plus 0.3\p@}% substitute code line
+% }{}{}
+% \makeatother
+
 
 % TABLES
 
@@ -486,7 +511,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % \newcommand{\grule}{\color{pearl}{\rule{\linewidth}{0.2pt}}\color{black}}
 \newcommand{\grule}{\textcolor{red}{\rule{\linewidth}{0.3pt}}}
-
+\newcommand{\brule}{{\rule{\linewidth}{0.3pt}}}
 
 
 % EMOTICONS

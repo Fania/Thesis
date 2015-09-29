@@ -28,21 +28,18 @@
 % \include{front/publications}
 % \include{front/about}
 
+\begin{SingleSpace}
 % \phantomsection
-% \renewcommand*{\contentsname}{Short contents}
+% \addcontentsline{toc}{chapter}{Short Contents}
 % \setcounter{tocdepth}{0}% chapters and above
-% \tableofcontents
+% \shorttoc{Short Contents}{0}
 % \clearpage
-%
-% \phantomsection
-% % \addcontentsline{toc}{chapter}{Table of Contents}
-% \renewcommand*{\contentsname}{Long contents}
-% \setcounter{tocdepth}{4} % subsections and above
-% \tableofcontents
-% \clearpage
-
-\shorttableofcontents{Short Table of Contents}{0}
+\phantomsection
+% \renewcommand*{\contentsname}{Long Contents}
+\setcounter{tocdepth}{4} % sections and above
 \tableofcontents
+\clearpage
+\end{SingleSpace}
 
 \phantomsection
 % \addcontentsline{toc}{chapter}{List of Figures}
@@ -68,6 +65,7 @@
 \addcontentsline{toc}{chapter}{List of Acronyms}
 \printnoidxglossary[type=acronym]
 \clearpage
+
 
 % MAIN
 % \pagestyle{fancy}
