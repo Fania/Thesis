@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGemacs{c}{\PYGemacsZsh{} $f$ = input text file variable}
+    \PYGemacs{c}{\PYGemacsZsh{} $l$ = stopwords file variable}
+    \PYGemacs{k}{def} \PYGemacs{n+nf}{setupcorpus}\PYGemacs{p}{(}\PYGemacs{n}{f}\PYGemacs{p}{,} \PYGemacs{n}{l}\PYGemacs{p}{):}
+        \PYGemacs{c}{\PYGemacsZsh{} $x$ = counter/position}
+        \PYGemacs{c}{\PYGemacsZsh{} $w$ = word in file $f$}
+        \PYGemacs{k}{for} \PYGemacs{n}{x}\PYGemacs{p}{,} \PYGemacs{n}{w} \PYGemacs{o+ow}{in} \PYGemacs{n+nb}{enumerate}\PYGemacs{p}{(}\PYGemacs{n}{f}\PYGemacs{p}{):}
+            \PYGemacs{k}{if} \PYGemacs{n}{w}\PYGemacs{o}{.}\PYGemacs{n}{isalpha}\PYGemacs{p}{()} \PYGemacs{o+ow}{and} \PYGemacs{p}{(}\PYGemacs{n}{w}\PYGemacs{o}{.}\PYGemacs{n}{lower}\PYGemacs{p}{()} \PYGemacs{o+ow}{not} \PYGemacs{o+ow}{in} \PYGemacs{n}{l}\PYGemacs{p}{):}
+                \PYGemacs{n}{y} \PYGemacs{o}{=} \PYGemacs{l+s}{\PYGemacsZsq{}l\PYGemacsZus{}\PYGemacsZsq{}} \PYGemacs{o}{+} \PYGemacs{p}{(}\PYGemacs{n}{re}\PYGemacs{o}{.}\PYGemacs{n}{search}\PYGemacs{p}{(}\PYGemacs{l+s}{r\PYGemacsZdq{}((\PYGemacsZbs{}d\PYGemacsZbs{}d).(\PYGemacsZbs{}w)+.txt)\PYGemacsZdq{}}\PYGemacs{p}{,} \PYGemacs{n}{f}\PYGemacs{o}{.}\PYGemacs{n}{fileid}\PYGemacs{p}{))}\PYGemacs{o}{.}\PYGemacs{n}{group}\PYGemacs{p}{(}\PYGemacs{l+m+mi}{2}\PYGemacs{p}{)}
+                \PYGemacs{n}{l\PYGemacsZus{}dict}\PYGemacs{p}{[}\PYGemacs{n}{w}\PYGemacs{o}{.}\PYGemacs{n}{lower}\PYGemacs{p}{()][}\PYGemacs{n}{y}\PYGemacs{p}{]}\PYGemacs{o}{.}\PYGemacs{n}{append}\PYGemacs{p}{(}\PYGemacs{n}{x}\PYGemacs{p}{)}
+\end{Verbatim}

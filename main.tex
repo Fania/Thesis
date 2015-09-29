@@ -18,6 +18,7 @@
 \pagestyle{plain}
 \frontmatter
 
+\phantomsection
 \addcontentsline{toc}{part}{PREFACE}
 \part*{\texorpdfstring{PRE\smiley{}}{PREFACE}}
 \include{front/abstract}
@@ -28,19 +29,20 @@
 % \include{front/about}
 
 % \phantomsection
-% \addcontentsline{toc}{chapter}{List Overview}
-% \setcounter{tocdepth}{0}
-% \setlength\cftparskip{-2pt}
-% \setlength\cftbeforesecskip{1pt}
-% \setlength\cftaftertoctitleskip{2pt}
+% \renewcommand*{\contentsname}{Short contents}
+% \setcounter{tocdepth}{0}% chapters and above
+% \tableofcontents
+% \clearpage
+%
+% \phantomsection
+% % \addcontentsline{toc}{chapter}{Table of Contents}
+% \renewcommand*{\contentsname}{Long contents}
+% \setcounter{tocdepth}{4} % subsections and above
 % \tableofcontents
 % \clearpage
 
-\phantomsection
-% \addcontentsline{toc}{chapter}{Table of Contents}
-\setcounter{tocdepth}{4}
+\shorttableofcontents{Short Table of Contents}{0}
 \tableofcontents
-\clearpage
 
 \phantomsection
 % \addcontentsline{toc}{chapter}{List of Figures}
@@ -52,10 +54,10 @@
 \listoftables
 \clearpage
 
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Equations}
+% \phantomsection
+% \addcontentsline{toc}{chapter}{List of Equations}
 % \listofmyequations{}
-\clearpage
+% \clearpage
 
 \phantomsection{}
 \addcontentsline{toc}{chapter}{List of Code Snippets}
@@ -100,8 +102,8 @@
 \appendix
 
 \phantomsection
-\part*{\texorpdfstring{POST\frownie{}}{POSTFACE}}
 \addcontentsline{toc}{part}{POSTFACE}
+\part*{\texorpdfstring{POST\frownie{}}{POSTFACE}}
 \include{back/code}
 % \include{back/oulipo}
 % \include{back/wordnet}

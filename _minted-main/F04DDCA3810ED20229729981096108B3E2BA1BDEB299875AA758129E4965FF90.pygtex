@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGemacs{n}{CosineScore} \PYGemacs{p}{(}\PYGemacs{n}{q}\PYGemacs{p}{)}
+      \PYGemacs{n+nb}{float} \PYGemacs{n}{Scores}\PYGemacs{p}{[}\PYGemacs{n}{N}\PYGemacs{p}{]} \PYGemacs{o}{=} \PYGemacs{l+m+mi}{0}
+      \PYGemacs{k}{for} \PYGemacs{n}{each} \PYGemacs{n}{d}
+      \PYGemacs{n}{do} \PYGemacs{n}{Initialise} \PYGemacs{n}{Length}\PYGemacs{p}{[}\PYGemacs{n}{d}\PYGemacs{p}{]} \PYGemacs{n}{to} \PYGemacs{n}{the} \PYGemacs{n}{length} \PYGemacs{n}{of} \PYGemacs{n}{document} \PYGemacs{n}{d}
+      \PYGemacs{k}{for} \PYGemacs{n}{each} \PYGemacs{n}{query} \PYGemacs{n}{term} \PYGemacs{n}{t}
+      \PYGemacs{n}{do} \PYGemacs{n}{calculate} \PYGemacs{n}{wt}\PYGemacs{p}{,}\PYGemacs{n}{q} \PYGemacs{o+ow}{and} \PYGemacs{n}{fetch} \PYGemacs{n}{postings} \PYGemacs{n+nb}{list} \PYGemacs{k}{for} \PYGemacs{n}{t}
+        \PYGemacs{k}{for} \PYGemacs{n}{each} \PYGemacs{n}{pair} \PYGemacs{p}{(}\PYGemacs{n}{d}\PYGemacs{p}{,} \PYGemacs{n}{tft}\PYGemacs{p}{,}\PYGemacs{n}{d}\PYGemacs{p}{)} \PYGemacs{o+ow}{in} \PYGemacs{n}{postings} \PYGemacs{n+nb}{list}
+        \PYGemacs{n}{do} \PYGemacs{n}{add} \PYGemacs{n}{wft}\PYGemacs{p}{,}\PYGemacs{n}{d} \PYGemacs{n}{to} \PYGemacs{n}{Scores}\PYGemacs{p}{[}\PYGemacs{n}{d}\PYGemacs{p}{]}
+      \PYGemacs{n}{Read} \PYGemacs{n}{the} \PYGemacs{n}{array} \PYGemacs{n}{Length}\PYGemacs{p}{[}\PYGemacs{n}{d}\PYGemacs{p}{]}
+      \PYGemacs{k}{for} \PYGemacs{n}{each} \PYGemacs{n}{d}
+      	\PYGemacs{n}{do} \PYGemacs{n}{Divide} \PYGemacs{n}{Scores}\PYGemacs{p}{[}\PYGemacs{n}{d}\PYGemacs{p}{]} \PYGemacs{n}{by} \PYGemacs{n}{Length}\PYGemacs{p}{[}\PYGemacs{n}{d}\PYGemacs{p}{]}
+      	\PYGemacs{k}{return} \PYGemacs{n}{Top} \PYGemacs{n}{K} \PYGemacs{n}{components} \PYGemacs{n}{of} \PYGemacs{n}{Scores}\PYGemacs{p}{[]}
+\end{Verbatim}

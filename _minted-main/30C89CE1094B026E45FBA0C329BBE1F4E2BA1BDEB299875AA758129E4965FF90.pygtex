@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYGemacs{k}{def} \PYGemacs{n+nf}{getrandquote}\PYGemacs{p}{():}
+      \PYGemacs{c}{\PYGemacsZsh{} RANDOM QUOTES}
+      \PYGemacs{n}{root\PYGemacsZus{}path} \PYGemacs{o}{=} \PYGemacs{n}{os}\PYGemacs{o}{.}\PYGemacs{n}{path}\PYGemacs{o}{.}\PYGemacs{n}{dirname}\PYGemacs{p}{(}\PYGemacs{n}{os}\PYGemacs{o}{.}\PYGemacs{n}{path}\PYGemacs{o}{.}\PYGemacs{n}{abspath}\PYGemacs{p}{(}\PYGemacs{n}{\PYGemacsZus{}\PYGemacsZus{}file\PYGemacsZus{}\PYGemacsZus{}}\PYGemacs{p}{))}
+      \PYGemacs{n}{root\PYGemacsZus{}path} \PYGemacs{o}{=} \PYGemacs{n}{root\PYGemacsZus{}path}\PYGemacs{p}{[:}\PYGemacs{o}{\PYGemacsZhy{}}\PYGemacs{l+m+mi}{4}\PYGemacs{p}{]}
+      \PYGemacs{n}{corpus\PYGemacsZus{}root} \PYGemacs{o}{=} \PYGemacs{n}{root\PYGemacsZus{}path} \PYGemacs{o}{+} \PYGemacs{l+s}{\PYGemacsZsq{}/app/static/corpus\PYGemacsZsq{}}
+      \PYGemacs{n}{path\PYGemacsZus{}b} \PYGemacs{o}{=} \PYGemacs{n}{corpus\PYGemacsZus{}root} \PYGemacs{o}{+} \PYGemacs{l+s}{\PYGemacsZsq{}/quotes.txt\PYGemacsZsq{}}
+      \PYGemacs{n}{quotes\PYGemacsZus{}text} \PYGemacs{o}{=} \PYGemacs{n}{codecs}\PYGemacs{o}{.}\PYGemacs{n}{open}\PYGemacs{p}{(}\PYGemacs{n}{path\PYGemacsZus{}b}\PYGemacs{p}{,} \PYGemacs{l+s}{\PYGemacsZdq{}r\PYGemacsZdq{}}\PYGemacs{p}{,} \PYGemacs{n}{encoding}\PYGemacs{o}{=}\PYGemacs{l+s}{\PYGemacsZsq{}utf\PYGemacsZhy{}8\PYGemacsZsq{}}\PYGemacs{p}{)}
+      \PYGemacs{n}{quotestext} \PYGemacs{o}{=} \PYGemacs{n}{quotes\PYGemacsZus{}text}\PYGemacs{o}{.}\PYGemacs{n}{readlines}\PYGemacs{p}{()}
+      \PYGemacs{n}{quotes\PYGemacsZus{}text}\PYGemacs{o}{.}\PYGemacs{n}{close}\PYGemacs{p}{()}
+      \PYGemacs{c}{\PYGemacsZsh{} print random.choice(quotestext)}
+      \PYGemacs{k}{return} \PYGemacs{n}{random}\PYGemacs{o}{.}\PYGemacs{n}{choice}\PYGemacs{p}{(}\PYGemacs{n}{quotestext}\PYGemacs{p}{)}
+\end{Verbatim}

@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYGemacs{c}{\PYGemacsZsh{} $ws$ = list of words}
+    \PYGemacs{c}{\PYGemacsZsh{} String $a$ = name of algorithm}
+    \PYGemacs{k}{def} \PYGemacs{n+nf}{get\PYGemacsZus{}results}\PYGemacs{p}{(}\PYGemacs{n}{ws}\PYGemacs{p}{,} \PYGemacs{n}{a}\PYGemacs{p}{):}
+        \PYGemacs{n}{total} \PYGemacs{o}{=} \PYGemacs{l+m+mi}{0}
+        \PYGemacs{n}{out}\PYGemacs{p}{,} \PYGemacs{n}{sources} \PYGemacs{o}{=} \PYGemacs{n+nb}{set}\PYGemacs{p}{(),} \PYGemacs{n+nb}{set}\PYGemacs{p}{()}
+        \PYGemacs{k}{for} \PYGemacs{n}{w} \PYGemacs{o+ow}{in} \PYGemacs{n}{ws}\PYGemacs{p}{:}
+            \PYGemacs{n}{files} \PYGemacs{o}{=} \PYGemacs{n}{l\PYGemacsZus{}dict}\PYGemacs{p}{[}\PYGemacs{n}{w}\PYGemacs{p}{]}
+            \PYGemacs{c}{\PYGemacsZsh{} file $e$, list of positions $ps$}
+            \PYGemacs{k}{for} \PYGemacs{n}{e}\PYGemacs{p}{,} \PYGemacs{n}{ps} \PYGemacs{o+ow}{in} \PYGemacs{n}{files}\PYGemacs{o}{.}\PYGemacs{n}{items}\PYGemacs{p}{():}
+                \PYGemacs{n}{f} \PYGemacs{o}{=} \PYGemacs{n}{get\PYGemacsZus{}title}\PYGemacs{p}{(}\PYGemacs{n}{e}\PYGemacs{p}{)}
+                \PYGemacs{n}{sources}\PYGemacs{o}{.}\PYGemacs{n}{add}\PYGemacs{p}{(}\PYGemacs{n}{f}\PYGemacs{p}{)}
+                \PYGemacs{n}{sent} \PYGemacs{o}{=} \PYGemacs{n}{pp\PYGemacsZus{}sent}\PYGemacs{p}{(}\PYGemacs{n}{w}\PYGemacs{o}{.}\PYGemacs{n}{lower}\PYGemacs{p}{(),} \PYGemacs{n}{e}\PYGemacs{p}{,} \PYGemacs{n}{ps}\PYGemacs{p}{)}
+                \PYGemacs{c}{\PYGemacsZsh{} $o$ = triple of (file, sentence, algorithm)}
+                \PYGemacs{n}{o} \PYGemacs{o}{=} \PYGemacs{p}{(}\PYGemacs{n}{f}\PYGemacs{p}{,} \PYGemacs{n}{sent}\PYGemacs{p}{,} \PYGemacs{n}{a}\PYGemacs{p}{)}
+                \PYGemacs{k}{if} \PYGemacs{n}{sent} \PYGemacs{o}{!=} \PYGemacs{p}{[]} \PYGemacs{o+ow}{and} \PYGemacs{n}{o} \PYGemacs{o+ow}{not} \PYGemacs{o+ow}{in} \PYGemacs{n}{out}\PYGemacs{p}{:}
+                    \PYGemacs{n}{total} \PYGemacs{o}{+=} \PYGemacs{l+m+mi}{1}
+                    \PYGemacs{n}{out}\PYGemacs{o}{.}\PYGemacs{n}{add}\PYGemacs{p}{(}\PYGemacs{n}{o}\PYGemacs{p}{)}
+        \PYGemacs{k}{return} \PYGemacs{n}{out}\PYGemacs{p}{,} \PYGemacs{n}{sources}\PYGemacs{p}{,} \PYGemacs{n}{total}
+\end{Verbatim}

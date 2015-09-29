@@ -155,6 +155,21 @@ breaklines=true
 \setsecnumdepth{subsection}
 \settocdepth{section}
 
+% MINITOC
+
+\usepackage{shorttoc}
+\usepackage{titletoc}
+
+\newcommand\partialtocname{Mini ToC}
+\newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
+\newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
+\makeatletter
+\newcommand\Mprintcontents{%
+  \ToCtitle
+  \ttl@printlist[chapters]{toc}{}{1}{}\par\nobreak
+  \ToCrule}
+\makeatother
+
 
 
 % LIST SPACING
