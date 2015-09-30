@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-    \PYGemacs{n}{library} \PYGemacs{o}{=} \PYGemacs{n}{PlaintextCorpusReader}\PYGemacs{p}{(}\PYGemacs{n}{corpus\PYGemacsZus{}root}\PYGemacs{p}{,} \PYGemacs{l+s}{\PYGemacsZsq{}.*\PYGemacsZbs{}.txt\PYGemacsZsq{}}\PYGemacs{p}{)}
-    \PYGemacs{n}{l\PYGemacsZus{}00} \PYGemacs{o}{=} \PYGemacs{n}{library}\PYGemacs{o}{.}\PYGemacs{n}{words}\PYGemacs{p}{(}\PYGemacs{l+s}{\PYGemacsZsq{}00.faustroll.txt\PYGemacsZsq{}}\PYGemacs{p}{)}
-    \PYGemacs{n}{l\PYGemacsZus{}01} \PYGemacs{o}{=} \PYGemacs{n}{library}\PYGemacs{o}{.}\PYGemacs{n}{words}\PYGemacs{p}{(}\PYGemacs{l+s}{\PYGemacsZsq{}01.poe1.txt\PYGemacsZsq{}}\PYGemacs{p}{)}
-    \PYGemacs{o}{...}
-    \PYGemacs{n}{l\PYGemacsZus{}27} \PYGemacs{o}{=} \PYGemacs{n}{library}\PYGemacs{o}{.}\PYGemacs{n}{words}\PYGemacs{p}{(}\PYGemacs{l+s}{\PYGemacsZsq{}27.verne.txt\PYGemacsZsq{}}\PYGemacs{p}{)}
-\end{Verbatim}

@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-    \PYGemacs{k}{def} \PYGemacs{n+nf}{transent}\PYGemacs{p}{(}\PYGemacs{n}{sent}\PYGemacs{p}{):}
-        \PYGemacs{n}{translator} \PYGemacs{o}{=} \PYGemacs{n}{Translator}\PYGemacs{p}{(}\PYGemacs{n}{microsoft\PYGemacsZus{}id}\PYGemacs{p}{,} \PYGemacs{n}{microsoft\PYGemacsZus{}secret}\PYGemacs{p}{)}
-        \PYGemacs{n}{french} \PYGemacs{o}{=} \PYGemacs{n}{translator}\PYGemacs{o}{.}\PYGemacs{n}{translate}\PYGemacs{p}{(}\PYGemacs{n}{sent}\PYGemacs{p}{,} \PYGemacs{l+s}{\PYGemacsZdq{}fr\PYGemacsZdq{}}\PYGemacs{p}{)}
-        \PYGemacs{n}{japanese} \PYGemacs{o}{=} \PYGemacs{n}{translator}\PYGemacs{o}{.}\PYGemacs{n}{translate}\PYGemacs{p}{(}\PYGemacs{n}{french}\PYGemacs{p}{,} \PYGemacs{l+s}{\PYGemacsZdq{}ja\PYGemacsZdq{}}\PYGemacs{p}{)}
-        \PYGemacs{n}{patawords} \PYGemacs{o}{=} \PYGemacs{n}{translator}\PYGemacs{o}{.}\PYGemacs{n}{translate}\PYGemacs{p}{(}\PYGemacs{n}{japanese}\PYGemacs{p}{,} \PYGemacs{l+s}{\PYGemacsZdq{}en\PYGemacsZdq{}}\PYGemacs{p}{)}
-        \PYGemacs{n}{translations} \PYGemacs{o}{=} \PYGemacs{p}{(}\PYGemacs{n}{french}\PYGemacs{p}{,} \PYGemacs{n}{japanese}\PYGemacs{p}{,} \PYGemacs{n}{patawords}\PYGemacs{p}{)}
-        \PYGemacs{k}{return} \PYGemacs{n}{translations}
-\end{Verbatim}

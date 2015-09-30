@@ -123,6 +123,16 @@ To quiet an error of chktex add ```% chktex XX''' to the end of the relevant lin
 
 http://www.artybollocks.com/#abg_full
 
+% MEMOIR Division Level
+% \book -2
+% \part -1
+% \chapter 0
+% \section 1
+% \subsection 2
+% \subsubsection 3
+% \paragraph 4
+% \subparagraph 5
+
 
 <!-- MINTED  -->
 \begin{minted}{python}

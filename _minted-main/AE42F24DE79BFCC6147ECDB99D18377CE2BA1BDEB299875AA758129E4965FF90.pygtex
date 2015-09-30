@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-    \PYGemacs{c}{\PYGemacsZsh{} String $w$ = query word}
-    \PYGemacs{c}{\PYGemacsZsh{} Int $i$ = assigned distance}
-    \PYGemacs{k}{def} \PYGemacs{n+nf}{clinamen}\PYGemacs{p}{(}\PYGemacs{n}{w}\PYGemacs{p}{,} \PYGemacs{n}{i}\PYGemacs{p}{):}
-        \PYGemacs{n}{words} \PYGemacs{o}{=} \PYGemacs{n+nb}{set}\PYGemacs{p}{([}\PYGemacs{n}{item} \PYGemacs{k}{for} \PYGemacs{n}{item} \PYGemacs{o+ow}{in} \PYGemacs{n}{l\PYGemacsZus{}00} \PYGemacs{k}{if} \PYGemacs{n}{dameraulevenshtein}\PYGemacs{p}{(}\PYGemacs{n}{w}\PYGemacs{p}{,} \PYGemacs{n}{item}\PYGemacs{p}{)} \PYGemacs{o}{\PYGemacsZlt{}=} \PYGemacs{n}{i}\PYGemacs{p}{])}
-        \PYGemacs{n}{out}\PYGemacs{p}{,} \PYGemacs{n}{sources}\PYGemacs{p}{,} \PYGemacs{n}{total} \PYGemacs{o}{=} \PYGemacs{n}{get\PYGemacsZus{}results}\PYGemacs{p}{(}\PYGemacs{n}{words}\PYGemacs{p}{,} \PYGemacs{l+s}{\PYGemacsZsq{}Clinamen\PYGemacsZsq{}}\PYGemacs{p}{)}
-        \PYGemacs{k}{return} \PYGemacs{n}{out}\PYGemacs{p}{,} \PYGemacs{n}{words}\PYGemacs{p}{,} \PYGemacs{n}{sources}\PYGemacs{p}{,} \PYGemacs{n}{total}
-\end{Verbatim}

@@ -157,7 +157,7 @@ breaklines=true
 
 
 
-% Division Level
+% MEMOIR Division Level
 % \book -2
 % \part -1
 % \chapter 0
@@ -166,23 +166,29 @@ breaklines=true
 % \subsubsection 3
 % \paragraph 4
 % \subparagraph 5
-%
 
 
 
 % MINITOC
 
-\usepackage[tight]{shorttoc}
+% \usepackage[tight]{shorttoc}
 \usepackage{titletoc}
 
 \makeatletter
+
+\addtocontents{toc}{\protect\setlength{\parskip}{0pt}}
+
+\titlecontents{psection}[2.3em]
+{} {\contentslabel{2.6em}} {} {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{psubsection}[5.5em]
+{} {\contentslabel{3.5em}} {} {\titlerule*[1pc]{.}\contentspage}
+
 \newcommand\minicontents{%
-  \brule
-  \printcontents[chapters]{}{1}{%
-                                  \renewcommand{\baselinestretch}{-1}\normalsize
-                                  \setcounter{tocdepth}{1} %sections
+  % \brule
+  \printcontents[chapters]{p}{1}{%
+                                  % \renewcommand{\baselinestretch}{-2}\normalsize
                                   }
-  \brule
+  % \brule
   }
 \makeatother
 
