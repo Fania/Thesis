@@ -171,7 +171,6 @@ breaklines=true
 
 % MINITOC
 
-% \usepackage[tight]{shorttoc}
 \usepackage{titletoc}
 
 \makeatletter
@@ -185,9 +184,7 @@ breaklines=true
 
 \newcommand\minicontents{%
   % \brule
-  \printcontents[chapters]{p}{1}{%
-                                  % \renewcommand{\baselinestretch}{-2}\normalsize
-                                  }
+  \printcontents[chapters]{p}{1}{\settocdepth{subsection}}
   % \brule
   }
 \makeatother
