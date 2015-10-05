@@ -184,7 +184,9 @@ breaklines=true
 
 \newcommand\minicontents{%
   % \brule
+  \vspace{1cm}
   \printcontents[chapters]{p}{1}{\settocdepth{subsection}}
+  \vspace{1cm}
   % \brule
   }
 \makeatother

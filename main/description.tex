@@ -3,10 +3,8 @@
 \chapter{Practical Implementation}
 \label{ch:practical}
 
-\vspace{1cm}
 \startcontents[chapters]
 \minicontents
-\vspace{1cm}
 
 \emph{Part of this research has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.}
 
@@ -332,7 +330,7 @@ The \py{get_results} function (see source~\ref{code:getresults}) is used by all 
 
 In function \py{pp_sent} (source~\ref{code:ppsent}) line 6 is important to note because it is a key functionality point. Even though the index \py{l_dict} stores a full list of all possible positions of a given word in each file, the \py{pp_sent} function \textbf{only retrieves the sentence of the very first occurance of the word} rather than each one. This decision was taken to avoid overcrowding of results for the same keyword.
 
-Line 10 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 11--19 and 20--28 set the \py{pos_b} (position \textbf{b}efore) and \py{pos_a} (position \textbf{a}fter) variables respectively. These positions can be up to 10 words before and after the keyword \py{w} depending on the sentence structure. In line 30 the actual sentence fragment up to the keyword is retrieved, while in line 31 the fragment just after the keyword is retrieved. \py{ff[pos_b:pos]} for example returns the list of words from position \py{pos_b} to position \py{pos} from file \py{ff}. The built-in Python \py{.join()} function then concatenates these words into one long string separated by spaces. On line 32 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.
+Line 10 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 11--19 and 20--28 set the \py{pos_b} (position before) and \py{pos_a} (position after) variables respectively. These positions can be up to 10 words before and after the keyword \py{w} depending on the sentence structure. In line 30 the actual sentence fragment up to the keyword is retrieved, while in line 31 the fragment just after the keyword is retrieved. \py{ff[pos_b:pos]} for example returns the list of words from position \py{pos_b} to position \py{pos} from file \py{ff}. The built-in Python \py{.join()} function then concatenates these words into one long string separated by spaces. On line 32 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.
 
 The image/video searches don't use the clinamen function at all.
 
@@ -435,7 +433,7 @@ The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the 
 \label{code:pataph}
 \end{listing}
 
-For example, running the pataphysicalise function with the terms `clear' and `sky' will produce two intermediary lists (shortened here for the demonstration) which are then combined into one list using the Cartesian product.
+For example, running the pataphysicalise function with the terms `clear' and `sky' will produce two intermediary lists (shortened here for the demonstration) which are then combined into one list using the Cartesian product:
 
 \begin{minted}{c}
   ["disembarrass", "bear", "judge", "remove", "elucidate", "modify", "free", "approve", "certify", "determine", "strip",  "empty", "purge", "vanish", "disappear", "sell", "pay", "make", "take", "disforest", "formalize", "okay", "allow", ...],
@@ -462,15 +460,22 @@ The next step is to translate the pataphysicalised search terms as shown in sour
 \end{listing}
 
 
-\section{Results}
+\section{Design}
 
 Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and HTML (with CSS stylesheets and some JavaScript).
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/screen_rpoetry}
+  \includegraphics[width=0.6\linewidth]{images/screen_rpoetry_full}
 \caption[Poetry results screenshot]{Poetry results screenshot}
 \label{img:PoetrySS}
+\end{figure}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=0.3\linewidth]{images/screen_rpoetry_mobile}
+\caption[Poetry results mobile screenshot]{Poetry results screenshot for mobile screens}
+\label{img:PoetrySSM}
 \end{figure}
 
 The text results page has three options for how the results are presented, with `Poetry --- Queneau' being the default.
@@ -497,7 +502,7 @@ The image and video spirals are modelled on the Fibonacci spiral \footnote{Image
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/Fibonacci}
+  \includegraphics[width=0.5\linewidth]{images/Fibonacci}
 \caption[Fibonacci Spiral]{Fibonacci Spiral}
 \label{img:Fibonacci}
 \end{figure}
@@ -531,6 +536,17 @@ The image and video spirals are modelled on the Fibonacci spiral \footnote{Image
 \caption{Code for rendering Queneau style poems.}
 \label{code:qpoems}
 \end{listing}
+
+Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Queneau Poetry. Lines 2-6 creates a button for sending the currently showing poem per email. Specifically line 3 calls the Javascript function \py{onclick="return getContent(this)"} which retrieves the content of each line in the poem and sends it to the body of the email. Lines 7-22 render the 4 stanzas of the poem. This is done using two nested Jinja `for' loops (line 8 and line 16). Line 8 loops through the (ideally) 14 lines of the poem. \py{lol} can be considered a masterlist of all sublists for each poem line.
+
+\begin{minted}{c}
+  # all_sens list:
+    [
+      (title, (pre, word, post), algorithm),
+      ...
+    ]
+\end{minted}
+
 
 \begin{listing}[h!]
   \begin{minted}{javascript}
@@ -579,7 +595,7 @@ This version introduced the move from Django to Flask. It also included the firs
 
 \begin{figure}[htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/prototype02}
+  \includegraphics[width=0.6\linewidth]{images/prototype02}
 \caption[Prototype 2 screenshot]{Prototype 2 screenshot}
 \label{img:Prototype2x}
 \end{figure}
