@@ -163,11 +163,11 @@ Each plain text file in the corpus is added to the internal library one by one. 
 
 \begin{listing}
   \begin{minted}{python}
-    library = PlaintextCorpusReader(corpus_root, '.*\.txt')
-    l_00 = library.words('00.faustroll.txt')
-    l_01 = library.words('01.poe1.txt')
-    ...
-    l_27 = library.words('27.verne.txt')
+library = PlaintextCorpusReader(corpus_root, '.*\.txt')
+l_00 = library.words('00.faustroll.txt')
+l_01 = library.words('01.poe1.txt')
+...
+l_27 = library.words('27.verne.txt')
   \end{minted}
 \caption{Adding text files to the corpus library.}
 \label{code:addtocorpus}
@@ -176,22 +176,22 @@ Each plain text file in the corpus is added to the internal library one by one. 
 The \py{setupcorpus} function (see source~\ref{code:setupcorpus}) is called for each of the text files in the corpus to populate the index data structure \py{l_dict}.
 
 \begin{minted}{c}
-  l_dict = dictionary { dictionary { list [ ] } }
+l_dict = dictionary { dictionary { list [ ] } }
 \end{minted}
 
 A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \textbf{key: value} pairs. The \py{l_dict} used here is a dictionary where each key has another dictionary as it's value. Each nested dictionary has a list as the value for each key.
 
 \begin{listing}
   \begin{minted}{python}
-    # $f$ = input text file variable
-    # $l$ = stopwords file variable
-    def setupcorpus(f, l):
-        # $x$ = counter/position
-        # $w$ = word in file $f$
-        for x, w in enumerate(f):
-            if w.isalpha() and (w.lower() not in l):
-                y = 'l_' + (re.search(r"((\d\d).(\w)+.txt)", f.fileid)).group(2)
-                l_dict[w.lower()][y].append(x)
+# $f$ = input text file variable
+# $l$ = stopwords file variable
+def setupcorpus(f, l):
+    # $x$ = counter/position
+    # $w$ = word in file $f$
+    for x, w in enumerate(f):
+        if w.isalpha() and (w.lower() not in l):
+            y = 'l_' + (re.search(r"((\d\d).(\w)+.txt)", f.fileid)).group(2)
+            l_dict[w.lower()][y].append(x)
   \end{minted}
 \caption{`setupcorpus' function to process the corpus and create the index.}
 \label{code:setupcorpus}
@@ -200,26 +200,26 @@ A dictionary in Python is what is known as an `associative array' in other langu
 Line 6 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line 7 checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stopword file \py{l} (for a list of english stopwords see appendix~\ref{app:code}). If both of those conditions are true variable \py{y} is created on line 8 (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to \py{l_dict} together with the file \py{y} and the current position \py{x} on line 9. After all files are processed, the index looks like this:
 
 \begin{minted}{c}
-  {
-    word1: {fileA: [pos1, pos2, ...], fileB: [pos], ...},
-    word2: {fileC: [pos1, pos2], fileK: [pos], ...},
-    ...
-  }
+{
+  word1: {fileA: [pos1, pos2, ...], fileB: [pos], ...},
+  word2: {fileC: [pos1, pos2], fileK: [pos], ...},
+  ...
+}
 \end{minted}
 
 Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual \py{l_dict} can be found in the appendix~\ref{app:code}.
 
 \begin{minted}{c}
-  {
-    doctor: {
-      l_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],
-      l_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921, 384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 458571, 458918, 458998, 459654, 459771, 490749],
-      l_02: [11476, 12098, 28151, 36270],
-      l_10: [53085, 53118, 53220, 53266, 53364, 53469, 53573, 53592, 53621, 53718, 54873, 55262, 55525, 55577, 55614, 55683, 55741, 56058, 62709, 113969, 114131, 114405, 114794],
-      l_19: [14928, 15702, 49560, 82710, 167218, 180210, 189817, 189908, 190020, 190235, 190905, 199430, 226663, 275454, 275928, 278097, 287375, 291383, 304731, 306055, 324757, 330488],
-      l_27: [16270, 79245]
-    }, ...
-  }
+{
+  doctor: {
+    l_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],
+    l_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921, 384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 458571, 458918, 458998, 459654, 459771, 490749],
+    l_02: [11476, 12098, 28151, 36270],
+    l_10: [53085, 53118, 53220, 53266, 53364, 53469, 53573, 53592, 53621, 53718, 54873, 55262, 55525, 55577, 55614, 55683, 55741, 56058, 62709, 113969, 114131, 114405, 114794],
+    l_19: [14928, 15702, 49560, 82710, 167218, 180210, 189817, 189908, 190020, 190235, 190905, 199430, 226663, 275454, 275928, 278097, 287375, 291383, 304731, 306055, 324757, 330488],
+    l_27: [16270, 79245]
+  }, ...
+}
 \end{minted}
 
 
@@ -248,12 +248,12 @@ It uses the `faustroll' text by Alfred Jarry \citeyear{Jarry1996} as a base docu
 
 \begin{listing}
   \begin{minted}{python}
-    # String $w$ = query word
-    # Int $i$ = assigned distance
-    def clinamen(w, i):
-        words = set([item for item in l_00 if dameraulevenshtein(w, item) <= i])
-        out, sources, total = get_results(words, 'Clinamen')
-        return out, words, sources, total
+# String $w$ = query word
+# Int $i$ = assigned distance
+def clinamen(w, i):
+    words = set([item for item in l_00 if dameraulevenshtein(w, item) <= i])
+    out, sources, total = get_results(words, 'Clinamen')
+    return out, words, sources, total
   \end{minted}
 \caption{Clinamen function}
 \label{code:clinamen}
@@ -263,24 +263,24 @@ Source~\ref{code:clinamen} line 4 creates the set of clinamen words using a list
 
 \begin{listing}
   \begin{minted}{python}
-    # $ws$ = list of words
-    # String $a$ = name of algorithm
-    def get_results(ws, a):
-        total = 0
-        out, sources = set(), set()
-        for w in ws:
-            files = l_dict[w]
-            # file $e$, list of positions $ps$
-            for e, ps in files.items():
-                f = get_title(e)
-                sources.add(f)
-                sent = pp_sent(w.lower(), e, ps)
-                # $o$ = triple of (file, sentence, algorithm)
-                o = (f, sent, a)
-                if sent != [] and o not in out:
-                    total += 1
-                    out.add(o)
-        return out, sources, total
+# $ws$ = list of words
+# String $a$ = name of algorithm
+def get_results(ws, a):
+    total = 0
+    out, sources = set(), set()
+    for w in ws:
+        files = l_dict[w]
+        # file $e$, list of positions $ps$
+        for e, ps in files.items():
+            f = get_title(e)
+            sources.add(f)
+            sent = pp_sent(w.lower(), e, ps)
+            # $o$ = triple of (file, sentence, algorithm)
+            o = (f, sent, a)
+            if sent != [] and o not in out:
+                total += 1
+                out.add(o)
+    return out, sources, total
   \end{minted}
 \caption{`get\_results' function to get all sentences for a list of words.}
 \label{code:getresults}
@@ -290,39 +290,39 @@ The \py{get_results} function (see source~\ref{code:getresults}) is used by all 
 
 \begin{listing}
   \begin{minted}{python}
-    # String $w$ = lowercase word
-    # String $f$ = name of the file
-    # List $ps$ = list of positions of $w$ in $f$
-    def pp_sent(w, f, ps):
-        # $pos$ = the FIRST OCCURANCE of $w$ in $f$
-        out, pos = [], ps[0]
-        # $ff$ = the variable for file $f$
-        ff = eval(f)
-        pos_b, pos_a = pos, pos
-        punct = [',', '.', '!', '?', '(', ')', ':', ';', '\n', '-', '_']
-        for i in range(1, 10):
-            if ff[pos - i] in punct:
-                pos_b = pos - (i - 1)
-                break
+# String $w$ = lowercase word
+# String $f$ = name of the file
+# List $ps$ = list of positions of $w$ in $f$
+def pp_sent(w, f, ps):
+    # $pos$ = the FIRST OCCURANCE of $w$ in $f$
+    out, pos = [], ps[0]
+    # $ff$ = the variable for file $f$
+    ff = eval(f)
+    pos_b, pos_a = pos, pos
+    punct = [',', '.', '!', '?', '(', ')', ':', ';', '\n', '-', '_']
+    for i in range(1, 10):
+        if ff[pos - i] in punct:
+            pos_b = pos - (i - 1)
+            break
+        else:
+            if ff[pos - 5]:
+                pos_b = pos - 5
             else:
-                if ff[pos - 5]:
-                    pos_b = pos - 5
-                else:
-                    pos_b = pos
-        for j in range(1, 10):
-            if ff[pos + j] in punct:
-                pos_a = pos + j
-                break
+                pos_b = pos
+    for j in range(1, 10):
+        if ff[pos + j] in punct:
+            pos_a = pos + j
+            break
+        else:
+            if ff[pos + 5]:
+                pos_a = pos + 5
             else:
-                if ff[pos + 5]:
-                    pos_a = pos + 5
-                else:
-                    pos_a = pos
-        if pos_b >= 0 and pos_a <= len(ff):
-            pre = ' '.join(ff[pos_b:pos])
-            post = ' '.join(ff[pos+1:pos_a])
-            out = (pre, w, post)
-        return out
+                pos_a = pos
+    if pos_b >= 0 and pos_a <= len(ff):
+        pre = ' '.join(ff[pos_b:pos])
+        post = ' '.join(ff[pos+1:pos_a])
+        out = (pre, w, post)
+    return out
   \end{minted}
 \caption{`pp\_sent' function to retrieve a sentence from a file.}
 \label{code:ppsent}
@@ -347,16 +347,16 @@ In simple terms, the syzygy algorithm works in two steps:
 
 \begin{listing}
   \begin{minted}{python}
-    # $w$ = input query term
-    def syzygy(w):
-        words = set()
-        wordsets = wn.synsets(w)
-        for ws in wordsets:
-            words.update(get_nym('hypo', ws))
-            words.update(get_nym('hyper', ws))
-            words.update(get_nym('holo', ws))
-        out, sources, total = get_results(words, 'Syzygy')
-        return out, words, sources, total
+# $w$ = input query term
+def syzygy(w):
+    words = set()
+    wordsets = wn.synsets(w)
+    for ws in wordsets:
+        words.update(get_nym('hypo', ws))
+        words.update(get_nym('hyper', ws))
+        words.update(get_nym('holo', ws))
+    out, sources, total = get_results(words, 'Syzygy')
+    return out, words, sources, total
   \end{minted}
 \caption{Syzygy function.}
 \label{code:syzygy}
@@ -386,18 +386,18 @@ In simple terms, the antinomy algorithm works in two steps:
 
 \begin{listing}
   \begin{minted}{python}
-    # $w$ = input query term
-    def antinomy(w):
-        words = set()
-        wordsets = wn.synsets(w)
-        for ws in wordsets:
-            anti = ws.lemmas()[0].antonyms()
-            if len(anti) > 0:
-                for a in anti:
-                    if str(a.name()) != w:
-                        words.add(str(a.name()))
-        out, sources, total = get_results(words, 'Antinomy')
-        return out, words, sources, total
+# $w$ = input query term
+def antinomy(w):
+    words = set()
+    wordsets = wn.synsets(w)
+    for ws in wordsets:
+        anti = ws.lemmas()[0].antonyms()
+        if len(anti) > 0:
+            for a in anti:
+                if str(a.name()) != w:
+                    words.add(str(a.name()))
+    out, sources, total = get_results(words, 'Antinomy')
+    return out, words, sources, total
   \end{minted}
 \caption{Antinomy function.}
 \label{code:antinomy}
@@ -406,7 +406,7 @@ In simple terms, the antinomy algorithm works in two steps:
 For the antinomy we simply used WordNet's antonyms (opposites) (see source~\ref{code:antinomy}). This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and retrieves result sentences using the \py{get_results} function.
 
 
-\section{Image/Video}
+\section{Image \& Video}
 
 In simple terms, the image and video search works in three steps:
 \begin{enumerate}
@@ -419,15 +419,15 @@ The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the 
 
 \begin{listing}
   \begin{minted}{python}
-    # $words$ = query terms
-    def pataphysicalise(words):
-        sys_ws = []
-        for word in words:
-            _, w, _, _ = syzygy(word)
-            if len(w) > 0:
-                sys_ws.append(list(w))
-        out = itertools.product(*sys_ws)
-        return list(out)
+# $words$ = query terms
+def pataphysicalise(words):
+    sys_ws = []
+    for word in words:
+        _, w, _, _ = syzygy(word)
+        if len(w) > 0:
+            sys_ws.append(list(w))
+    out = itertools.product(*sys_ws)
+    return list(out)
   \end{minted}
 \caption{Function to pataphysicalise image and video query terms.}
 \label{code:pataph}
@@ -436,28 +436,105 @@ The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the 
 For example, running the pataphysicalise function with the terms `clear' and `sky' will produce two intermediary lists (shortened here for the demonstration) which are then combined into one list using the Cartesian product:
 
 \begin{minted}{c}
-  ["disembarrass", "bear", "judge", "remove", "elucidate", "modify", "free", "approve", "certify", "determine", "strip",  "empty", "purge", "vanish", "disappear", "sell", "pay", "make", "take", "disforest", "formalize", "okay", "allow", ...],
-  ["blue", "atmosphere", "fling", "throw_back", "lag", "blue_sky", "submarine", "toss_back", "blue_air", "mackerel_sky", "wild_blue_yonder"]
+["disembarrass", "bear", "judge", "remove", "elucidate", "modify", "free", "approve", "certify", "determine", "strip",  "empty", "purge", "vanish", "disappear", "sell", "pay", "make", "take", "disforest", "formalize", "okay", "allow", ...],
+["blue", "atmosphere", "fling", "throw_back", "lag", "blue_sky", "submarine", "toss_back", "blue_air", "mackerel_sky", "wild_blue_yonder"]
 \end{minted}
 \begin{minted}{c}
-  [("disembarrass", "blue"), ("disembarrass", "atmosphere"), ..., ("strip", "fling"), ..., ("empty", "submarine"), ..., ("allow", "mackerel_sky"), ("allow", "wild_blue_yonder")]
+[("disembarrass", "blue"), ("disembarrass", "atmosphere"), ..., ("strip", "fling"), ..., ("empty", "submarine"), ..., ("allow", "mackerel_sky"), ("allow", "wild_blue_yonder")]
 \end{minted}
 
 The next step is to translate the pataphysicalised search terms as shown in source~\ref{code:transent} before any \gls{api} calls are made.
 
 \begin{listing}
   \begin{minted}{python}
-    def transent(sent):
-        translator = Translator(microsoft_id, microsoft_secret)
-        french = translator.translate(sent, "fr")
-        japanese = translator.translate(french, "ja")
-        patawords = translator.translate(japanese, "en")
-        translations = (french, japanese, patawords)
-        return translations
+def transent(sent):
+    translator = Translator(microsoft_id, microsoft_secret)
+    french = translator.translate(sent, "fr")
+    japanese = translator.translate(french, "ja")
+    patawords = translator.translate(japanese, "en")
+    translations = (french, japanese, patawords)
+    return translations
   \end{minted}
 \caption{Translation function.}
 \label{code:transent}
 \end{listing}
+
+
+\subsection{REST \& API}
+
+The image and video search both rely on various \gls{api} calls to produce results. Currently used are Microsoft Translate, Bing Image Search and YouTube.
+
+A \acrshort{rest}ful \gls{api} allows browsers ('clients') to communicate with a web server via \acrshort{http} methods such as GET and POST.
+
+
+For this project I used the Python library \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}.
+
+\url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}
+
+\begin{listing}
+  \begin{minted}{python}
+def get_Bing(words):
+    out = []
+    trans = ''
+    bing_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    base = "https://api.datamarket.azure.com/Bing/Search/"
+    params = "Image?$format=json&Query='"
+    after = "'"
+    for x in words:
+        y = ' '.join(x)
+        z = transent(y)  # (french, japanese, patawords)
+        url = ''.join([base, params, z[2], after])
+        bing_img = requests.get(url, auth=HTTPBasicAuth(None, bing_key))
+        if bing_img.json()['d']['results']:
+            trans = z
+            for result in bing_img.json()['d']['results']:
+                phototitle = result['Title']
+                photoimg = result['MediaUrl']
+                photolink = result['SourceUrl']
+                out.append((phototitle, photoimg, photolink))
+            break
+        else:
+            out = []
+    return out, trans
+  \end{minted}
+\caption{Using the Microsoft Bing API to retrieve images.}
+\label{code:getBing}
+\end{listing}
+
+
+
+
+\begin{minted}{c}
+"d": { "results": [
+  { "__metadata":
+    { "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1",
+      "type": "ImageResult"
+    }, // __metadata
+    "ID": "e09072a2-faf3-47ac-b77d-46a8df8941aa",
+    "Title": "Cute Kittens - Pictures - The Wondrous Pics",
+    "MediaUrl": "http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg",
+    "SourceUrl": "http://wondrouspics.com/cute-kittens-pictures/",
+    "DisplayUrl": "wondrouspics.com/cute-kittens-pictures",
+    "Width": "1440",
+    "Height": "900",
+    "FileSize": "238015",
+    "ContentType": "image/jpeg",
+    "Thumbnail":
+    { "__metadata":
+      { "type": "Bing.Thumbnail"
+      },
+      "MediaUrl": "http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0&pid=15.1",
+      "ContentType": "image/jpg",
+      "Width": "480",
+      "Height": "300",
+      "FileSize": "13856"
+    } // Tumbnail
+  }, ...
+  ], // results
+  "__next": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=50"
+} // d
+\end{minted}
+
 
 
 \section{Design}

@@ -37,7 +37,7 @@ makeglossaries main
 - [X] Image file size?
 - [X] Preface?
 - [ ] Code listings math symbols?
-- [ ] Code style?
+- [X] Code style?
 - [ ] Align algorithms
 - [ ] Flow charts per algorithm
 - [X] Debugging stuff
@@ -55,7 +55,7 @@ makeglossaries main
 - [X] Preface part and postface part
 - [X] Appendix alpha numbering
 - [X] Table spacing before and after
-- [ ] Structure of thesis section in introduction
+- [X] Structure of thesis section in introduction
 - [X] Remove dotted line from preface and chapter headings in toc
 - [ ] Pataphysical chapter numbering (binary)
 - [ ] Add crotty to methodology see image
@@ -73,7 +73,7 @@ makeglossaries main
 - [ ] Conjecture as chapter title in intro?
 - [ ] Change note on publications in chapters
 - [ ] Table of contents move from left to right, from creative to precise
-- [ ] Mini index (summary with page numbers) for each chapter
+- [X] Mini index (summary with page numbers) for each chapter
 - [ ] Word Count?
 - [ ] Inkscape export messes up colour of page?
 - [ ] Make sure rejected papers are included in thesis
@@ -92,7 +92,7 @@ makeglossaries main
 - [ ] double check line numbers in code
 - [ ] Rhyming pattern for future work
 - [ ] Go over all table of contents figure captions
-- [ ] glossary entries with back links to pages
+- [X] glossary entries with back links to pages
 
 
 

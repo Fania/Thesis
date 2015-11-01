@@ -417,6 +417,10 @@ breaklines=true
 \makeatother
 
 
+% PDF
+\usepackage{pdfpages}
+
+
 
 % TABS
 
