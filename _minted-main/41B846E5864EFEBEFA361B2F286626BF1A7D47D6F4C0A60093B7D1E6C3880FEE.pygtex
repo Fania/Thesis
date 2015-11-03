@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{library} \PYG{o}{=} \PYG{n}{PlaintextCorpusReader}\PYG{p}{(}\PYG{n}{corpus\PYGZus{}root}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}.*\PYGZbs{}.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}00} \PYG{o}{=} \PYG{n}{library}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}00.faustroll.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{l\PYGZus{}01} \PYG{o}{=} \PYG{n}{library}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}01.poe1.txt\PYGZsq{}}\PYG{p}{)}
+\PYG{o}{...}
+\PYG{n}{l\PYGZus{}27} \PYG{o}{=} \PYG{n}{library}\PYG{o}{.}\PYG{n}{words}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}27.verne.txt\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

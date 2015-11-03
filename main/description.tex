@@ -464,12 +464,14 @@ def transent(sent):
 
 The image and video search both rely on various \gls{api} calls to produce results. Currently used are Microsoft Translate, Bing Image Search and YouTube.
 
-A \acrshort{rest}ful \gls{api} allows browsers ('clients') to communicate with a web server via \acrshort{http} methods such as GET and POST.
+A \acrshort{rest}ful \gls{api} allows browsers (``clients'') to communicate with a web server via \acrshort{http} methods such as \gls{get} and \gls{post}. The idea is that a given service, like the Microsoft Bing search \gls{api}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
 
-
-For this project I used the Python library \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}.
-
-\url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}
+\begin{enumerate}
+  \item Construct the \gls{url} (see, source~\ref{code:getBing} lines 5,6,7 and 11)
+  \item get an \gls{api} key (see, source~\ref{code:getBing} line 4)
+  \item send \gls{url} and key using \gls{get} method (see, source~\ref{code:getBing} line 12)
+  \item receive and process response in requested format (e.g. \gls{json}\footnote{\url{http://www.json.org/}})
+\end{enumerate}
 
 \begin{listing}
   \begin{minted}{python}
@@ -501,7 +503,8 @@ def get_Bing(words):
 \label{code:getBing}
 \end{listing}
 
-
+An example \gls{url} for the Bing image search with the query term of `kittens' and a requested response format of `JSON' is this:
+\url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}. There are many other parameters that can be specified, such as `Adult' (which can be set to `Moderate' for example) and `ImageFilters' (which allows users to specify size or aspect ratio)\footnote{see \url{https://datamarket.azure.com/dataset/bing/search\#schema}}.
 
 
 \begin{minted}{c}
