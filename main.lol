@@ -21,6 +21,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {8.10}{\ignorespaces Using the Microsoft Bing API to retrieve images.}}{143}{listing.8.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {8.11}{\ignorespaces Code for rendering Queneau style poems.}}{147}{listing.8.11}
+\contentsline {listing}{\numberline {8.11}{\ignorespaces Code for rendering Queneau style poems.}}{146}{listing.8.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {8.12}{\ignorespaces Code for randomising poems.}}{148}{listing.8.12}
+\contentsline {listing}{\numberline {8.12}{\ignorespaces Code for randomising poems.}}{147}{listing.8.12}

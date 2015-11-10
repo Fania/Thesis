@@ -503,9 +503,10 @@ def get_Bing(words):
 \label{code:getBing}
 \end{listing}
 
-An example \gls{url} for the Bing image search with the query term of `kittens' and a requested response format of `JSON' is this:
+An example \gls{url} for the Bing image search with the query term of `kittens' and a requested response format of \gls{json} is this:
 \url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}. There are many other parameters that can be specified, such as `Adult' (which can be set to `Moderate' for example) and `ImageFilters' (which allows users to specify size or aspect ratio)\footnote{see \url{https://datamarket.azure.com/dataset/bing/search\#schema}}.
 
+Bing will then send back the response in \gls{json} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the Title, MediaUrl and SourceUrl and ignores all other data fields.
 
 \begin{minted}{c}
 "d": { "results": [
@@ -539,24 +540,36 @@ An example \gls{url} for the Bing image search with the query term of `kittens' 
 \end{minted}
 
 
-
 \section{Design}
 
-Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and HTML (with CSS stylesheets and some JavaScript).
+Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and \gls{html} (with \gls{css} stylesheets and some JavaScript).
 
-\begin{figure}[htb] % (here, top, bottom, page)
+\begin{figure}[htb]
   \centering
-  \includegraphics[width=0.6\linewidth]{images/screen_rpoetry_full}
-\caption[Poetry results screenshot]{Poetry results screenshot}
-\label{img:PoetrySS}
+  \begin{minipage}{.57\linewidth}
+    \includegraphics[width=\linewidth]{screen_rpoetry_full}
+  \end{minipage}
+  \hspace{.05\linewidth}
+  \begin{minipage}{.27\linewidth}
+    \includegraphics[width=\linewidth]{screen_rpoetry_mobile}
+  \end{minipage}
+  \caption[screenshots]{Poetry results screenshot \& mobile}
+\label{screenshots}
 \end{figure}
 
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=0.3\linewidth]{images/screen_rpoetry_mobile}
-\caption[Poetry results mobile screenshot]{Poetry results screenshot for mobile screens}
-\label{img:PoetrySSM}
-\end{figure}
+% \begin{figure}[htb] % (here, top, bottom, page)
+%   \centering
+%   \includegraphics[width=0.6\linewidth]{images/screen_rpoetry_full}
+% \caption[Poetry results screenshot]{Poetry results screenshot}
+% \label{img:PoetrySS}
+% \end{figure}
+%
+% \begin{figure}[htb] % (here, top, bottom, page)
+%   \centering
+%   \includegraphics[width=0.3\linewidth]{images/screen_rpoetry_mobile}
+% \caption[Poetry results mobile screenshot]{Poetry results screenshot for mobile screens}
+% \label{img:PoetrySSM}
+% \end{figure}
 
 The text results page has three options for how the results are presented, with `Poetry --- Queneau' being the default.
 \begin{description}
@@ -571,21 +584,14 @@ The text results page has three options for how the results are presented, with 
 
 \todo{get proper ref for sonnet style}
 
-The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default.
+The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default. The spirals are modelled on the Fibonacci spiral \footnote{Image taken from \url{https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg}}.
 \begin{description}
   \item [Spiral] Displayed square images/videos as a golden spiral.
   \item [List] Displayed as a simple list.
 \end{description}
 
 
-The image and video spirals are modelled on the Fibonacci spiral \footnote{Image taken from \url{https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg}}.
-
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=0.5\linewidth]{images/Fibonacci}
-\caption[Fibonacci Spiral]{Fibonacci Spiral}
-\label{img:Fibonacci}
-\end{figure}
+\subsection{Poetry}
 
 \begin{listing}[h!]
   \begin{minted}{html+jinja}
@@ -663,6 +669,18 @@ Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Q
 \caption{Code for randomising poems.}
 \label{code:rpoemsjs}
 \end{listing}
+
+
+\subsection{Spiral}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=0.5\linewidth]{images/Fibonacci}
+\caption[Fibonacci Spiral]{Fibonacci Spiral}
+\label{img:Fibonacci}
+\end{figure}
+
+
 
 
 
