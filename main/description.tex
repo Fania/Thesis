@@ -506,7 +506,7 @@ def get_Bing(words):
 An example \gls{url} for the Bing image search with the query term of `kittens' and a requested response format of \gls{json} is this:
 \url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}. There are many other parameters that can be specified, such as `Adult' (which can be set to `Moderate' for example) and `ImageFilters' (which allows users to specify size or aspect ratio)\footnote{see \url{https://datamarket.azure.com/dataset/bing/search\#schema}}.
 
-Bing will then send back the response in \gls{json} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the Title, MediaUrl and SourceUrl and ignores all other data fields.
+Bing will then send back the response in \gls{json} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the \py{Title}, \py{MediaUrl} and \py{SourceUrl} and ignores all other data fields.
 
 \begin{minted}{c}
 "d": { "results": [
@@ -543,6 +543,31 @@ Bing will then send back the response in \gls{json} format. One entry of the lis
 \section{Design}
 
 Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and \gls{html} (with \gls{css} stylesheets and some JavaScript).
+
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/proto3screen}
+\caption[proto3screen]{proto3screen}
+\label{img:proto3screen}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=\linewidth]{proto3screen}
+  \end{minipage}
+  \hspace{.05\linewidth}
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=\linewidth]{proto2screen}
+  \end{minipage}
+  \hspace{.05\linewidth}
+  \begin{minipage}{\linewidth}
+    \includegraphics[width=\linewidth]{proto1screen}
+  \end{minipage}
+  \caption[responsive screenshots]{Responsive Screenshot}
+\label{Respscreenshots}
+\end{figure}
 
 \begin{figure}[htb]
   \centering
@@ -584,7 +609,7 @@ The text results page has three options for how the results are presented, with 
 
 \todo{get proper ref for sonnet style}
 
-The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default. The spirals are modelled on the Fibonacci spiral \footnote{Image taken from \url{https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg}}.
+The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default. The spirals are modelled on the idea of Fibonacci spirals.
 \begin{description}
   \item [Spiral] Displayed square images/videos as a golden spiral.
   \item [List] Displayed as a simple list.
@@ -625,12 +650,13 @@ The image and video results pages work the same way. They both have two display 
 
 Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Queneau Poetry. Lines 2-6 creates a button for sending the currently showing poem per email. Specifically line 3 calls the Javascript function \py{onclick="return getContent(this)"} which retrieves the content of each line in the poem and sends it to the body of the email. Lines 7-22 render the 4 stanzas of the poem. This is done using two nested Jinja `for' loops (line 8 and line 16). Line 8 loops through the (ideally) 14 lines of the poem. \py{lol} can be considered a masterlist of all sublists for each poem line.
 
+\todo{get structure of lol as opposed to all\_sens}
+
 \begin{minted}{c}
   # all_sens list:
-    [
-      (title, (pre, word, post), algorithm),
-      ...
-    ]
+    [(title, (pre, word, post), algorithm), ...]
+  # lol list:
+    [all_sens[0], all_sens[1], ...]
 \end{minted}
 
 
@@ -676,7 +702,7 @@ Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Q
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
   \includegraphics[width=0.5\linewidth]{images/Fibonacci}
-\caption[Fibonacci Spiral]{Fibonacci Spiral}
+\caption[Fibonacci Spiral]{Fibonacci Spiral\footnote{Image taken from \url{https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg}}}
 \label{img:Fibonacci}
 \end{figure}
 
@@ -696,6 +722,13 @@ This version introduced the move from Django to Flask. It also included the firs
   \includegraphics[width=0.6\linewidth]{images/prototype02}
 \caption[Prototype 2 screenshot]{Prototype 2 screenshot}
 \label{img:Prototype2x}
+\end{figure}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/proto2screen}
+\caption[proto2screen]{proto2screen}
+\label{img:proto2screen}
 \end{figure}
 
 The main differences between the current version and prototype 2 are:
@@ -719,6 +752,13 @@ The first version of the prototype was hacked together over a short period of ti
   \includegraphics[height=0.6\textheight]{images/prototype01}
 \caption[Prototype 1 screenshot]{Prototype 1 screenshot}
 \label{img:Prototype1x}
+\end{figure}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/proto1screen}
+\caption[proto1screen]{proto1screen}
+\label{img:proto1screen}
 \end{figure}
 
 The main differences between prototype 1 and prototype 2 are:
