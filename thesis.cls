@@ -99,6 +99,68 @@
 %   {\thesection}{1em}{}
 
 
+\usepackage{tgadventor}
+\usepackage{lipsum}
+\usepackage{xcolor,calc}
+\definecolor{chaptercolor}{gray}{0.8}
+% helper macros
+\newcommand\numlifter[1]{\raisebox{-2cm}[0pt][0pt]{\smash{#1}}}
+\newcommand\numindent{\kern37pt}
+\newlength\chaptertitleboxheight
+\makechapterstyle{fania}{
+\renewcommand\printchaptername{%
+\scshape%
+\sffamily%
+}
+\renewcommand\printchapternum{%
+\begingroup%
+\leavevmode%
+\chapnumfont%
+\strut%
+\numlifter{\thechapter}%
+\numindent%
+\endgroup%
+}
+\renewcommand*{\printchapternonum}{%
+\vphantom{\begingroup%
+\leavevmode%
+\chapnumfont%
+\numlifter{\vphantom{9}}%
+\numindent%
+\endgroup}
+\afterchapternum}
+\setlength\midchapskip{0pt}
+\setlength\beforechapskip{5\baselineskip}
+\setlength{\afterchapskip}{3\baselineskip}
+\renewcommand\chapnumfont{%
+\fontsize{5cm}{0cm}%
+\bfseries%
+\sffamily%
+\color{chaptercolor}%
+}
+\renewcommand\chaptitlefont{%
+\normalfont%
+\huge%
+\bfseries%
+\sffamily%
+\scshape
+\fontsize{60}{50}\selectfont%
+% \raggedleft%
+}%
+\settototalheight\chaptertitleboxheight{%
+\parbox{\textwidth}{\chaptitlefont \strut bg\\bg\strut}}
+\renewcommand\printchaptertitle[1]{%
+\parbox[t][\chaptertitleboxheight][t]{\textwidth}{%
+%\microtypesetup{protrusion=false}% add this if you use microtype
+\chaptitlefont\strut ##1\strut}%
+}
+}
+
+
+\chapterstyle{fania}
+
+
+
 % OVERVIEW
 
 % \usepackage{shorttoc}
@@ -174,14 +236,11 @@ breaklines=true
 \usepackage{titletoc}
 
 \makeatletter
-
 \addtocontents{toc}{\protect\setlength{\parskip}{0pt}}
-
 \titlecontents{psection}[2.3em]
 {} {\contentslabel{2.6em}} {} {\titlerule*[1pc]{.}\contentspage}
 \titlecontents{psubsection}[5.5em]
 {} {\contentslabel{3.5em}} {} {\titlerule*[1pc]{.}\contentspage}
-
 \newcommand\minicontents{%
   % \brule
   \vspace{1cm}
@@ -206,7 +265,7 @@ breaklines=true
 
 \usepackage[colorinlistoftodos]{todonotes}
 %Place notes in left margin where there is more space
-% \reversemarginpar
+\reversemarginpar
 %Number the todo item according to section numbering
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
@@ -304,7 +363,7 @@ breaklines=true
 % \renewcommand{\listtablename}{Tables}
 
 % HEADER & FOOTER
-
+% \pagestyle{plain}
 % \usepackage{fancyhdr}
 % \pagestyle{fancy}
 % % \pagestyle{empty}
@@ -437,6 +496,32 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % pathmorphing
 \usepackage{qtree}
 \usepackage{mathtools}
+
+
+\usetikzlibrary{decorations.text}
+\makeatletter
+\let\pgf@lib@dec@text@dobox@original=\pgf@lib@dec@text@dobox%
+\def\pgf@lib@dec@text@dobox{%
+    \pgf@lib@dec@text@dobox@original%
+    \ifpgfdecorationtextalongpathscaletext%
+    \pgfmathparse{\pgf@lib@dec@text@endscale+(\pgf@lib@dec@text@startscale-\pgf@lib@dec@text@endscale)*\pgfdecoratedremainingdistance/\pgfdecoratedpathlength}%
+    \setbox\pgf@lib@dec@text@box=\hbox{\scalebox{\pgfmathresult}{\box\pgf@lib@dec@text@box}}%
+    \fi%
+}
+\newif\ifpgfdecorationtextalongpathscaletext
+\def\pgf@lib@dec@text@startscale{1}
+\def\pgf@lib@dec@text@endscale{1}
+\pgfkeys{/pgf/decoration/.cd,
+    text path start scale/.code={%
+        \pgfdecorationtextalongpathscaletexttrue%
+        \def\pgf@lib@dec@text@startscale{#1}%
+    },
+    text path end scale/.code={%
+        \pgfdecorationtextalongpathscaletexttrue%
+        \def\pgf@lib@dec@text@endscale{#1}%
+    }
+}
+
 
 % BORDER MATRIX SQUARE
 

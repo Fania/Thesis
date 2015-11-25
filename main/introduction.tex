@@ -6,33 +6,60 @@
 \startcontents[chapters]
 \minicontents
 
-\emph{Part of this chapter has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.} \marginpar{§¶}
+% \emph{Part of this chapter has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.} \marginpar{§¶}
 
-\grule % chktex 1
+\brule % chktex 1
 
-{\color{red} HELLO WORLD}% COLOR RED
+% {\color{red} HELLO WORLD}% COLOR RED
 
-This thesis describes a general study into computer creativity and in particular a pataphysical methodology applied to creative information retrieval.
+% \begin{tikzpicture}
+% \draw [domain=0:25.1327,variable=\t,smooth,samples=55]
+%     plot[mark=*,mark options={fill=white}] ({\t r}: {0.002*\t*\t});
+% \end{tikzpicture}
+%
+% \begin{tikzpicture}[
+%     decoration={
+%     reverse path,
+%     text along path,
+%     text path start scale=1.5,
+%     text path end scale=0,
+%     text={feeling a movement of pity, discovered the induction coil, cette irraisonnee induction, and entered the opening in the wall. only by some recherche movement, apres coup et sous forme d'introduction, opening his seized manuscript, the enemy made within the enclosure of the vineyard. which he had thrown off at the beginning of his labor, in opening so exactly at the, than the thirst of my paternity. We can then start at once, and whose informing voice had consigned me to the hangman, as any person at all conversant with authorship may satisfy himself at.}}
+% ]
+% \draw [decorate]
+%     (0,0)
+%     \foreach \i [evaluate={\r=(\i/2000)^2}] in {0,5,...,2880}{ -- (\i:\r)};
+% \useasboundingbox (-2.75,-2.75) rectangle (2.75,2.75);
+% \end{tikzpicture}
 
-A pataphysical methodology for applying creativity to exploratory search.
 
-{\small $\text{A} \ \underset{1}{\text{semantic}} \ \underset{2}{\text{search}} \ \text{tool based on a} \ \underset{3}{\text{pataphysical}} \ \underset{4}{\text{algorithm}} \ \text{using a} \ \underset{5}{\text{'patadata'}} \ \underset{6}{\text{ontology}}$
-}
 
-\begin{enumerate}
-  \item Semantic Web technologies
-  \item IR techniques
-  \item Pataphysics
-  \item Ranking algorithms
-  \item Data --- metdadata --- patadata
-  \item Ontologies, RDF, OWL, etc
-\end{enumerate}
+
+original idea:
+build pataphysical web search tool using semantic web tech.
+create an ontology of creativity for Computers
+
+why did i not use semantic web stuff?
+semantic web is about agreed ontologies which oppose surprises. a creative ontology would work around that but needs the structure of the semantic web in place (rdf etc) which is hypothetical atm and not realistically implementable. SW is about standards. pataphysics is about breaking standards (exceptions etc).
+
+bridge: how do current search engines work? they prioritise revelvance using pagerank algorithms etc. happens at crawling time. pataphysics isnt about relevance. (index is ranked)
+
+pataphysics cant be ranked. need for neutrality in index but creative ways to retrieve matches for query.
+but then changed to focus on the concept of searching/browsing (in itself, rather than part of a system architecture) and ranking as a creative process.
+pataphysicalisation happens at query time between query and index. (index is neutral)
+
+project was to build a prototype that proves these ideas.
+my eventual approach was to take elemnts from both the ontology idea and the relevance ranking IR way and combine/redeploy them in a new way using pataphysics that would yield results designed to foster/inspire creativity.
+
+automating creative process (randomising poems, writers go through drafts - i automate this process. poems = combinatorial creativity visualised.
+
+
 
 \todo{finish introduction}
 
-In the following chapters, I will examine how pataphysics and creativity map onto one another, give an outline of the field of information retrieval\ldots
 
 \section{Problem / Motivation / Context}
+
+context: creative computing is about a creative process (with a potential creative output) whereas comp creativity is about a creative product using traditional means.
 
 Assumptions: computers can be creative.
 \todo{complete assumptions}
@@ -47,11 +74,17 @@ Pataphysics can provide some useful techniques that are very suitable for creati
   Purposive without purpose (Kant)
 \end{quote}
 
-The aim of this project, in simple words, is to design a tool for creative searching on the Web. It tries to create a fresh way of searching and navigating through information and content on the Internet, to bring back some of the inspirational chance encounters that were so characteristic for libraries.
+``Fourth, through aesthetic judgments, beautiful objects appear to be 'purposive without purpose' (sometimes translated as 'final without end'). An object's purpose is the concept according to which it was made (the concept of a vegetable soup in the mind of the cook, for example); an object is purposive if it appears to have such a purpose; if, in other words, it appears to have been made or designed. But it is part of the experience of beautiful objects, Kant argues, that they should affect us as if they had a purpose, although no particular purpose can be found.''\footnote{Kant, chapter 2a: \url{http://www.iep.utm.edu/kantaest/}}
 
-Current information retrieval systems might be used for creative purposes, however, they do not directly provide creative results to their users, instead they focus on precise and relevant results only. Therefore we argue that a new style of system is required. It is clear that the fundamental problem in this is that standard algorithms are not suited for these problems, with them considering a document to be groupings of words in traditional IR systems, and that an entire document falls under the same classifications in semantic IR systems.
+WHY NOT JUST RANDOMNESS?????
+there has to be an injection of meaning at some point
+random results are easy. but they might not be focused enough.
 
-The tool will challenge the way we understand data and metadata and suggest new meanings between them in accordance with the underlying philosophy. The way we think about information is redefined. It will create new standards or rather get rid of all previous standards and classifications. It will create new links and connections between pieces of information that are not simply based on keyword similarities but rather a more poetic sense of unity. It will be a refreshing new view compared to the structured and standardised thinking of computer scientists. It will challenge the binary logic that dominates the world of programmers and concentrate on what they would view as an illogical and unstructured system going against all standards.
+% The aim of this project, in simple words, is to design a tool for creative searching on the Web. It tries to create a fresh way of searching and navigating through information and content on the Internet, to bring back some of the inspirational chance encounters that were so characteristic for libraries.
+%
+% Current information retrieval systems might be used for creative purposes, however, they do not directly provide creative results to their users, instead they focus on precise and relevant results only. Therefore we argue that a new style of system is required. It is clear that the fundamental problem in this is that standard algorithms are not suited for these problems, with them considering a document to be groupings of words in traditional IR systems, and that an entire document falls under the same classifications in semantic IR systems.
+%
+% The tool will challenge the way we understand data and metadata and suggest new meanings between them in accordance with the underlying philosophy. The way we think about information is redefined. It will create new standards or rather get rid of all previous standards and classifications. It will create new links and connections between pieces of information that are not simply based on keyword similarities but rather a more poetic sense of unity. It will be a refreshing new view compared to the structured and standardised thinking of computer scientists. It will challenge the binary logic that dominates the world of programmers and concentrate on what they would view as an illogical and unstructured system going against all standards.
 
 Jorge Luis Borges `Chinese Encyclopaedia' \autocite{Borges2000} illustrates this idea very well. The encyclopaedia lists the following results under the category of `animal'.
 
@@ -74,11 +107,10 @@ Jorge Luis Borges `Chinese Encyclopaedia' \autocite{Borges2000} illustrates this
 
 Although these are all perfectly valid results, it is clear that they form a more creative, even poetic, view of what an animal might be than the Oxford English Dictionary's prosaic: ``a living organism which feeds on organic matter''.
 
-We have introduced the motivation and concept for a creative Web search tool and discussed some of the major challenges a project like this faces. With Web search being a major research and learning tool nowadays, it is imperative to think about how such a tool could be (ab) used. Ethical issues that arise through the provision of unexpected results, and the misunderstandings this could lead to, will be discussed in future work. Nevertheless, we believe that creative Web search can facilitate inspirational learning through an exploratory search journey and we hope our tool will provide just that.
+% We have introduced the motivation and concept for a creative Web search tool and discussed some of the major challenges a project like this faces. With Web search being a major research and learning tool nowadays, it is imperative to think about how such a tool could be (ab) used. Ethical issues that arise through the provision of unexpected results, and the misunderstandings this could lead to, will be discussed in future work. Nevertheless, we believe that creative Web search can facilitate inspirational learning through an exploratory search journey and we hope our tool will provide just that.
 
 
 \subsection{Related Work}
-
 
 \subsubsection*{The Syzygy Surfer}
 
@@ -143,7 +175,7 @@ Their inspirations come from Borges' ``Chinese Encyclopaedia'' \autocite{Borges2
 \subsection{Research Questions}
 
 \begin{itemize}
-  \item 
+  \item
 \end{itemize}
 
 \begin{itemize}
@@ -199,15 +231,19 @@ In regards to my project:
   \item Propose a framework for evaluating and interpreting creative search results
 \end{itemize}
 
+\url{http://pata.physics.wtf} \marginpar{!!!}
 \url{http://pata.fania.eu} \marginpar{!!!}
 
 \subsection{Contribution to Knowledge}
 
-Compared to the mainstream search engines available publicly, my project's approach to searching will be very different. Google, for example, ranks web pages based on the number and quality of incoming hyperlinks \autocite{Google2012}, while I will be using the concept of patadata (data-metadata-patadata) and semantic web technologies.
+abusing tech in creative ways can yield useful results
+pataphysics = Creativity
 
-There have been interdisciplinary projects like Johanna Drucker's Speclab {\sloppy \autocite{Drucker2009}} which have similar inspirations, and literature on Pataphysics is found in several places \autocite{Boek2002, Hugill2012a} although the idea of using it as an inspiration for a search engine appears to be very new \autocite{Hendler2013}.
-
-A lot of literature exists on how to model creativity on a computer [5] [7], explaining several theories on how the mind works and how to simulate this on a machine. However none of these have any kind of pataphysical inspiration and aren't applicable to search engines, so we have presented a paper on creativity in search results just recently \autocite{Raczinski2013}.
+% Compared to the mainstream search engines available publicly, my project's approach to searching will be very different. Google, for example, ranks web pages based on the number and quality of incoming hyperlinks \autocite{Google2012}, while I will be using the concept of patadata (data-metadata-patadata) and semantic web technologies.
+%
+% There have been interdisciplinary projects like Johanna Drucker's Speclab {\sloppy \autocite{Drucker2009}} which have similar inspirations, and literature on Pataphysics is found in several places \autocite{Boek2002, Hugill2012a} although the idea of using it as an inspiration for a search engine appears to be very new \autocite{Hendler2013}.
+%
+% A lot of literature exists on how to model creativity on a computer [5] [7], explaining several theories on how the mind works and how to simulate this on a machine. However none of these have any kind of pataphysical inspiration and aren't applicable to search engines, so we have presented a paper on creativity in search results just recently \autocite{Raczinski2013}.
 
 \subsection{Publications}
 
@@ -216,6 +252,9 @@ James Sawle, \textbf{Fania Raczinski} and Hongji Yang (2011) \emph{``A Framework
 Andrew Hugill, Hongji Yang, \textbf{Fania Raczinski} and James Sawle (2013) \emph{``The pataphysics of creativity: developing a tool for creative search''}. Routledge: Digital Creativity, Volume 24, Issue 3. Pages 237--251. \autocite{Hugill2013d}
 
 \textbf{Fania Raczinski}, Hongji Yang and Andrew Hugill (2013) \emph{``Creative Search Using Pataphysics''}. Proceedings of the 9th ACM Conference on Creativity and Cognition, CC'13. Sydney, Australia. Pages 274--280. \autocite{Raczinski2013}
+
+Please note that a full list of talks, exhibitions and publications is available at appendix \ref{app:pub}.
+
 
 \section{The Hitchhiker's Guide to this Thesis}
 

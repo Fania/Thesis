@@ -1,7 +1,7 @@
 % !TEX root = ../main.tex
 
-\chapter{Practical Implementation}
-\label{ch:practical}
+\chapter{Implementation}
+\label{ch:implementation}
 
 \startcontents[chapters]
 \minicontents
@@ -707,45 +707,106 @@ Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Q
 \end{figure}
 
 
-
-
-
 \section{Prototypes}
 
+\begin{table}[]
+\centering
+\begin{tabu}{X[2]X[2]X[3]X[3]}
+\toprule
+&
+\textbf{Prototype 1}
+&
+\textbf{Prototype 2}
+&
+\textbf{Prototype 3}
+\\ \midrule
+\textbf{Language(s)}
+&
+Python, Django & Python, Flask
+&
+Python, Flask
+\\
+\textbf{Server}
+&
+Django, Heroku & Flask, Mnemosyne
+&
+Flask, Gunicorn, Mnemosyne
+\\
+\textbf{Features}
+&
+Text
+&
+Text, Image, Video
+&
+Text, Image, Video
+\\
+\textbf{Corpus}
+&
+Faustroll only
+&
+Faustroll only
+&
+Faustroll's Library
+\\
+\textbf{API(s)}
+&
+WordNet
+&
+WordNet, Flickr, Bing, YouTube, Microsoft Translator
+&
+WordNet, Bing, YouTube, Microsoft Translator
+\\
+\textbf{Design}
+&
+Algorithm
+&
+Algorithm, Spiral
+&
+Algorithm, Source, Poetry, Spiral, List
+\\ \bottomrule
+\end{tabu}
+\caption{Comparison of prototypes}
+\label{tab:Compproto}
+\end{table}
 
-\subsection{Prototype 2}
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Prototype   & 1 & 2 & 3 \\ \midrule
+Python      & x           & x           & x           \\
+Django      & x           &             &             \\
+Flask       &             & x           & x           \\
+Faustroll   & x           & x           &             \\
+Library     &             &             & x           \\
+Text        & x           & x           & x           \\
+Image       &             & x           & x           \\
+Video       &             & x           & x           \\
+Poetry      &             &             & x           \\
+plusminus5  & x           & x           &             \\
+punctuation &             &             & x           \\
+            &             &             &             \\
+            &             &             &             \\
+            &             &             &             \\
+            &             &             &             \\
+            &             &             &             \\ \bottomrule
+\end{tabular}
+\end{table}
 
-This version introduced the move from Django to Flask. It also included the first major re-design of the website. It is still available online at \url{pata.fania.eu}.
+The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
 
-\begin{figure}[htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=0.6\linewidth]{images/prototype02}
-\caption[Prototype 2 screenshot]{Prototype 2 screenshot}
-\label{img:Prototype2x}
-\end{figure}
+Results were displayed in three sets per algorithm. Each keyword was preceded and followed by exactly 5 words.
 
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/proto2screen}
-\caption[proto2screen]{proto2screen}
-\label{img:proto2screen}
-\end{figure}
+One of the original ideas was to build a prototype that allowed the user to switch and select from various web search algorithms dynamically. The system architecture was never built. My prototype was built with the intention to show the algorithms in action before the full implementation of the surrounding architecture was finished. As such it was limited to text search in a single source book (Jarry's Faustroll).
 
-The main differences between the current version and prototype 2 are:
-\begin{itemize}
-  \item the corpus consisted of the faustroll text only
-  \item results were keyword $\pm$ 5 words per line
-  \item text results were displayed sorted by algorithm only
-  \item image and video results were displayed as spiral only
-\end{itemize}
+An small update to the prototype included the addition of clickable links for each result keyword which triggered a new search using that keyword as search term.
 
-
-\subsection{Prototype 1}
+The original version ran on Heroku and was written in Python using the Django framework to run a website.
 
 \todo{get new screenshots for prototype 1}
 \todo{don't mention James?}
-
-The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
 
 \begin{figure}[htbp] % (here, top, bottom, page)
   \centering
@@ -769,5 +830,45 @@ The main differences between prototype 1 and prototype 2 are:
   \item didn't have an about section
   \item didn't have random quotes
 \end{itemize}
+
+---
+
+This version introduced the move from Django to Flask. It also included the first major re-design of the website. Flask made things simpler than Django.
+
+It is still available online at \url{pata.fania.eu}.
+
+A responsive design was created.
+Image and video search functionality was added.
+
+Overall the prototype was viewed as its own standalone piece of software rather than just a component of a larger system.
+
+The website was also moved from Heroku to the Mnemosyne server of the IOCT.
+
+\begin{figure}[htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=0.6\linewidth]{images/prototype02}
+\caption[Prototype 2 screenshot]{Prototype 2 screenshot}
+\label{img:Prototype2x}
+\end{figure}
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/proto2screen}
+\caption[proto2screen]{proto2screen}
+\label{img:proto2screen}
+\end{figure}
+
+The main differences between the current version and prototype 2 are:
+\begin{itemize}
+  \item the corpus consisted of the faustroll text only
+  \item results were keyword $\pm$ 5 words per line
+  \item text results were displayed sorted by algorithm only
+  \item image and video results were displayed as spiral only
+\end{itemize}
+
+---
+
+This version introduced major changes to the initial setup stage and a lot of the code was refactored. Another design update was also implemented. To the user the most obvious change will be the presentation of results. There are now various display choices. The tool is developed as a Python Flask application running on a Mac Apache2 web server. The flask development server is started using the `python dev.py` command. This mode is set up for debugging and will give detailed error messages. Starting the live gunicorn server on apache2 use `guni ..... guni.py`. This uses several threads etc. The stylesheet is based on the **w3.css**.
+
 
 \stopcontents[chapters]
