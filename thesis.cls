@@ -619,6 +619,19 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \newcommand\wordcount{
 % \immediate\write18{texcount -inc -sum -0 -template={SUM} main.tex > count.txt}
 % (\input{count.txt}words)}
+% Run texcount on tex-file and write results to a sum-file
+\immediate\write18{texcount -inc -sum -1 -q -out=main.sum main.tex}
+% Define macro \wordcount for including the counts
+% \usepackage{verbatim}
+\newcommand\wordcount{\input{main.sum}}
+
+% \newcommand\wordcount{%
+% \inputminted[]{c}{main.sum}
+% }
+
+
+
+
 
 % FRAMED MINIPAGE
 \newsavebox{\fmbox}

@@ -1,0 +1,63 @@
+%&latex
+\documentclass[a4paper]{book}
+
+%+MakeIndex
+\usepackage{makeidx}
+\makeindex
+%-MakeIndex
+\usepackage{color}
+
+\begin{document}
+
+%+Title
+\title{\Huge\bf Algorithmic Meta-Creativity}
+\author{Author of the Book}
+\date{\today}
+\maketitle
+%-Title
+
+%+Contents
+\tableofcontents
+%+Contents
+
+%+Make Parts
+%\part{First Part}
+%-Make Parts
+
+\chapter{\textsf{\textcolor[rgb]{0.180392,0.333333,0.839216}{Introduction}}}
+There is text in first chapter
+
+\section{About Template}
+This template provides a sample layout of a Standard \LaTeX{} Book.
+
+The front matter has a number of sample entries that you should replace
+with your own. 
+
+\section{Document Class Options}
+The typesetting specification selected by this document template
+uses the default class options. There are a number of class options 
+supported by this document class. The available options include 
+setting the paper size, the point size of the font used in the 
+document body and others.
+
+\subsection{Customizing Class Options}
+Select `Insert', `Document Properties ...', the `Generic' tab
+and then modify desired class options in appeared dialog.
+Changes will be applied after pressing the 'OK' button.
+
+
+
+%+Bibliography
+\begin{thebibliography}{99}
+\bibitem{Label1} ...
+\bibitem{Label2} ...
+\end{thebibliography}
+%-Bibliography
+
+%+MakeIndex
+\printindex
+%-MakeIndex
+
+\end{document}
+
+

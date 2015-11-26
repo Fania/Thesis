@@ -110,6 +110,12 @@ When LaTeX finds an error like this, it displays the error message and pauses. Y
 To quiet an error of chktex add ```% chktex XX''' to the end of the relevant line.
 
 
+## WORDCOUNT
+
+```texcount -inc main.tex > count.txt'''
+
+
+
 ## ARTY BOLLOCKS
 
 
