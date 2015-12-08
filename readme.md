@@ -93,6 +93,7 @@ makeglossaries main
 - [ ] Rhyming pattern for future work
 - [ ] Go over all table of contents figure captions
 - [X] glossary entries with back links to pages
+- [ ] add line with three stars in middle to separate paragraphs
 
 
 
