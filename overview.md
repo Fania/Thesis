@@ -19,48 +19,7 @@ needs writing
 ## I HΣLLΘ WΘRLD 2
 
 ## 1 Introduction 3
-create narrative
-
-original idea:
-build pataphysical web search tool using semantic web tech.
-create an ontology of creativity for Computers
-
-why did i not use semantic web stuff?
-semantic web is about agreed ontologies which oppose surprises. a creative ontology would work around that but needs the structure of the semantic web in place (rdf etc) which is hypothetical atm and not realistically implementable. SW is about standards. pataphysics is about breaking standards (exceptions etc).
-
-bridge: how do current search engines work? they prioritise revelvance using pagerank algorithms etc. happens at crawling time. pataphysics isnt about relevance. (index is ranked)
-
-pataphysics cant be ranked. need for neutrality in index but creative ways to retrieve matches for query.
-but then changed to focus on the concept of searching/browsing (in itself, rather than part of a system architecture) and ranking as a creative process.
-pataphysicalisation happens at query time between query and index. (index is neutral)
-
-project was to build a prototype that proves these ideas.
-my eventual approach was to take elemnts from both the ontology idea and the relevance ranking IR way and combine/redeploy them in a new way using pataphysics that would yield results designed to foster/inspire creativity.
-
-automating creative process (randomising poems, writers go through drafts - i automate this process. poems = combinatorial creativity visualised.
-
-
-WHY NOT JUST RANDOMNESS?????
-there has to be an injection of meaning at some point
-random results are easy. but they might not be focused enough.
-
-## 1.1 Problem/Motivation/Context  4
-context: creative computing is about a creative process (with a potential creative output) whereas comp creativity is about a creative product using traditional means.
-
-
-## 1.1.1 RelatedWork  6
-## 1.1.2 ResearchQuestions  8
-## 1.2 Methodology 9
-## 1.3 Deliverables/Outcomes. 10
-## 1.3.1 ContributiontoKnowledge  10
-abusing tech in creative ways can yield useful results
-pataphysics = Creativity
-
-
-
-## 1.3.2 Publications. 10
-## 1.4 TheHitchhiker’sGuidetothisThesis  11
-
+## 2 Inspirations
 ## 2 Methodology 12
 ## 2.1 IntradisciplinaryResearch 14
 ## 2.1.1 ComputerScienceResearch  14

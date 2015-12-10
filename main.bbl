@@ -39,6 +39,28 @@
       \field{labeltitlesource}{title}
       \field{title}{{About Computing Science Research Methodology}}
     \endentry
+    \entry{Boek2002}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=610c1c5f52703d63c33d33d5d2187e5e}{Boek}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Evanston, Illinois}%
+      }
+      \list{publisher}{1}{%
+        {Northwestern University Press}%
+      }
+      \strng{namehash}{610c1c5f52703d63c33d33d5d2187e5e}
+      \strng{fullhash}{610c1c5f52703d63c33d33d5d2187e5e}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2002}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0810118777}
+      \field{title}{{'Pataphysics: The Poetics of an Imaginary Science}}
+      \field{year}{2002}
+    \endentry
     \entry{Borges2000}{inbook}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
@@ -67,6 +89,28 @@
       \range{pages}{4}
       \verb{url}
       \verb http://www.entish.org/essays/Wilkins.html
+      \endverb
+    \endentry
+    \entry{Burnham2015}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=0c8bb25e77692e2abe47cf18a92bbac4}{Burnham}{B\bibinitperiod}{Douglas}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0c8bb25e77692e2abe47cf18a92bbac4}
+      \strng{fullhash}{0c8bb25e77692e2abe47cf18a92bbac4}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Internet Encyclopedia of Philosophy}
+      \field{title}{Immanuel Kant: Aesthetics}
+      \field{urlday}{09}
+      \field{urlmonth}{12}
+      \field{urlyear}{2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.iep.utm.edu/kantaest/
       \endverb
     \endentry
     \entry{Candy2006}{report}{}
@@ -132,23 +176,6 @@
       \verb 10.2307/40864233
       \endverb
     \endentry
-    \entry{Everitt2011}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=c31712291f16c1f047315bcee073e6fa}{Everitt}{E\bibinitperiod}{Dave}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c31712291f16c1f047315bcee073e6fa}
-      \strng{fullhash}{c31712291f16c1f047315bcee073e6fa}
-      \field{sortinit}{E}
-      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
-      \field{labelyear}{2011}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the 12th International Research Conference Consciousness Reframed: art and consciousness in the post-biological era}
-      \field{number}{12}
-      \field{title}{{Is creativity a 'natural' process?}}
-      \field{year}{2011}
-    \endentry
     \entry{Hendler2011}{inproceedings}{}
       \name{author}{2}{}{%
         {{uniquename=0,hash=bc4f6004ab1c0d06e9b1bef4ead5b4fe}{Hendler}{H\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
@@ -211,14 +238,35 @@
       \field{pages}{96\bibrangedash 114}
       \range{pages}{19}
     \endentry
+    \entry{Hugill2013c}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{Yang}{Y\bibinitperiod}{Hongji}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{7310affd3a07ae0a9043d27296815166}
+      \strng{fullhash}{7310affd3a07ae0a9043d27296815166}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of Creative Computing}
+      \field{number}{1}
+      \field{title}{{The creative turn: new challenges for computing}}
+      \field{volume}{1}
+      \field{year}{2013}
+      \field{pages}{4\bibrangedash 19}
+      \range{pages}{16}
+    \endentry
     \entry{Hugill2013d}{article}{}
-      \name{author}{4}{}{%
+      \name{author}{4}{uniquelist=2}{%
         {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
         {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{Yang}{Y\bibinitperiod}{Hongji}{H\bibinitperiod}{}{}{}{}}%
         {{uniquename=0,hash=7d271056c31f7ff1f45ff6ff1656f189}{Raczinski}{R\bibinitperiod}{Fania}{F\bibinitperiod}{}{}{}{}}%
         {{uniquename=0,hash=ecdca13646908346d5190b2b1cd77dfe}{Sawle}{S\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{50514a44655988170d8617ef73b03c10}
+      \strng{namehash}{71cc5931e42f7fa96dee78b9bccd2f86}
       \strng{fullhash}{7bba13108b178af884069ebbf64b4132}
       \field{sortinit}{H}
       \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}

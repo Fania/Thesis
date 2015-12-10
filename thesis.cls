@@ -612,6 +612,8 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 \usepackage{wasysym}
 % \smiley{} \frownie{} \blacksmiley{}
+\usepackage{marvosym,bclogo,fontawesome}
+
 
 
 % WORDCOUNT

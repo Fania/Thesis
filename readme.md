@@ -74,7 +74,7 @@ makeglossaries main
 - [ ] Change note on publications in chapters
 - [ ] Table of contents move from left to right, from creative to precise
 - [X] Mini index (summary with page numbers) for each chapter
-- [ ] Word Count?
+- [X] Word Count?
 - [ ] Inkscape export messes up colour of page?
 - [ ] Make sure rejected papers are included in thesis
 - [ ] Chapter headings in IPA [pʌtʌfɪzɪks]
@@ -85,7 +85,7 @@ makeglossaries main
 - [X] Change to biblatex
 - [ ] Add change-log to website
 - [ ] Flowchart of website prototype workflow from query to results
-- [ ] Put inspiration into lit review? Queneau and library of faustroll etc
+- [X] Put inspiration into lit review? Queneau and library of faustroll etc
 - [ ] Explain why I only use the first occurance
 - [ ] PEP20
 - [ ] AVOID: so, in principle,
@@ -94,7 +94,8 @@ makeglossaries main
 - [ ] Go over all table of contents figure captions
 - [X] glossary entries with back links to pages
 - [ ] add line with three stars in middle to separate paragraphs
-
+- [ ] state of the art versus state of the science
+- [ ] when to use italics and when quotes
 
 
 ## Errors

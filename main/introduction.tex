@@ -6,9 +6,7 @@
 \startcontents[chapters]
 \minicontents
 
-% \emph{Part of this chapter has been described in a journal article in Digital Creativity in 2013, and I presented a paper at the Creativity and Cognition conference 2013 in Sydney.} \marginpar{§¶}
-
-\brule % chktex 1
+% \brule % chktex 1
 
 % {\color{red} HELLO WORLD}% COLOR RED
 
@@ -37,190 +35,164 @@
 
 \brule % chktex 1
 
-This thesis describes `Algorithmic Meta-Creativity'. More precisely it is about using creative computing to achieve computer creativity.
+This thesis describes \textit{Algorithmic Meta-Creativity}. More precisely it is about using creative computing to achieve computer creativity.
 
-The project is transdisciplinary; it is heavily inspired by the absurd french pseudo-philosophy pataphysics and draws from a wide range of disciplines such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
+The project is transdisciplinary;\marginpar{§~\ref{ch:methodlogy}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\marginpar{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
 
-The research involved includes exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
+The preparatory research\marginpar{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
 
-The outcome is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing Image Search, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015}. It's main purpose is to demonstrate three creative `patalgorithms' in action in the context of exploratory information retrieval. A browsing rather than a search engine, it presents results in various formats such as sonnetts. Immediate inspirations come from fictional character `Doctor Faustroll' created by french absurdist Alfred Jarry, the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges and `A Hundred Thousand Billion Poems' by Pataphysician and Oulipian Raymond Queneau amongst others.
+The outcome\marginpar{§~\ref{ch:description}} is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing Image Search, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
 
-The system behind \url{pata.physics.wtf} partially automates the creative process (generating novel combinations, transforming conceptual spaces, etc).
+It's main purpose is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval that show creative computing in action. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginpar{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others.\todo{add refs}
 
-Using pataphysics as a fuel for creativity through the medium of subjective pataphysical algorithms I fuse objective programming with creativity.
+In a sense the system partially automates the creative process, generating results on demand, which allows users to focus on their own personal artistic evaluation rather than production.
 
+\todo{expand here}
 
-Current literature shows that creativity, specifically in regards to computers, is hard to measure objectively. I argue that the most appropriate way to approach this is by looking at five subjective constraints simultaneously (person, process, product, place, purpose) in a holistic manner.
-
-\begin{fcom}
-  automating creative process (randomising poems, writers go through drafts - i automate this process. poems = combinatorial creativity visualised.
-  From calculated relevance to creative detour.
-\end{fcom}
-
-\begin{fcom}
-  noise\\
-  basins of attraction\\
-  break symmetry\\
-  creativity is not linear\\
-  phase shift\\
-  \autocite{Everitt2011}
-\end{fcom}
-
-\grule
-
-original idea:
-build pataphysical web search tool using semantic web tech.
-create an ontology of creativity for Computers
-
-why did i not use semantic web stuff?
-semantic web is about agreed ontologies which oppose surprises. a creative ontology would work around that but needs the structure of the semantic web in place (rdf etc) which is hypothetical atm and not realistically implementable. SW is about standards. pataphysics is about breaking standards (exceptions etc).
-
-bridge: how do current search engines work? they prioritise revelvance using pagerank algorithms etc. happens at crawling time. pataphysics isnt about relevance. (index is ranked)
-
-pataphysics cant be ranked. need for neutrality in index but creative ways to retrieve matches for query.
-but then changed to focus on the concept of searching/browsing (in itself, rather than part of a system architecture) and ranking as a creative process.
-pataphysicalisation happens at query time between query and index. (index is neutral)
-
-project was to build a prototype that proves these ideas.
-my eventual approach was to take elemnts from both the ontology idea and the relevance ranking IR way and combine/redeploy them in a new way using pataphysics that would yield results designed to foster/inspire creativity.
-
-
-\todo{finish introduction}
+Following on from the development stage of this project, I looked at the problem of objective evaulation and interpretation\marginpar{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I argue that the most appropriate way to approach this is by looking at five subjective constraints (person, process, product, place, purpose) holistically and by understanding that humour and art ``lie in the ear and eye of the beholder''\ldots
 
 
 \section{Motivations}
 
-Assumptions: computers can be creative.
-\todo{complete assumptions, do I have any? or is the point to answer those as research questions?}
+My personal interest in this project comes from a background in computer science and a life-long fascination with art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \gls{dmu}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \gls{ioct} at \gls{dmu} and when he pitched his `Syzygy Surfer' \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
 
-problem: can computers be considered creative? Can pataphysics facilitate creativity? Can computer creativity be objectively measured?
+Computers\marginpar{§~\ref{ch:technology}} are binary machines; the world is black and white to them (0 and 1, on and off). Programmers can run abstract high-level commands which are executed in sequence (fast speed gives the illusion of multitasking). They are precise, structured, logical and generally abide by strict standards. Computers can only be creative if they are given clear instructions as to how. Information retrieval is generally focused on relevance of results in regards to the query.
 
-motivation: personal background? comp sci + arts and creativity
-\todo{do I discuss personal interest in motivation?}
+Pataphysics\marginpar{§~\ref{ch:pataphysics}} came about during the `Belle Époque'\footnote{1871---1914} in France and has directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values expections, the imaginary and the mutually incompatible.
 
-context: creative computing is about a creative process (with a potential creative output) whereas comp creativity is about a creative product using traditional means. comp creativity is on the rise such as AI is `emerging' still.
+Creativity\marginpar{§~\ref{ch:creativity}} is often studied at various levels (neurological, cognitive, and holistic/systemic), from different perspectives (subjective and objective) and characteristics (combinational, exploratory and transformative). It is usually defined in terms of value, originality and skill.
 
-\grule
+Combining computing with pataphysics seems impossible.
 
-Why pataphysics?
-Pataphysics is highly subjective and particular and is as such very suitable for this kind of transformation from relevant to creative.
-Pataphysics can provide some useful techniques that are very suitable for creative computing.
+\begin{itemize}
+  \item Polymorphism (generalisations) oppose particularity.
+  \item Precision (bugs) opposes exceptions and contradictions.
+  \item Logic and structure oppose the imaginary and paradox.
+  \item Cross-compatibility opposes the mutually exclusive.
+  \item Responsiveness opposes the specific.
+  \item Relevance opposes the creative.
+\end{itemize}
+
+Combining pataphysics with creativity\marginpar{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of  combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly.
+
+The apparent dichotomy of computing and pataphysics is alluring. Christian Boek argued that pataphysics ``sets the parameters for the contemporary relationship between science and poetry.'' \autocite{Boek2002} Pataphysics suddenly seems like the perfect choice infusing computers (\~science\~) with creativity (\~poetry\~).
+
+\todo{expand here}
+
+\begin{fcom}
+
+``Chance encounters are fine, but if they have no sense of purpose, they rapidly lose relevance and effectiveness. The key is to retain the element of surprise while at the same time avoiding a succession of complete non-sequiturs and irrelevant content'' \autocite{Hendler2011}
+
+
+Why not just use randomness\footnote{randonmess} you ask? Because there has to be an injection of meaning at some point. Randomness is easy. Andrew Hugill originally suggested that the project should be ``purposive without purpose''.
 
 \begin{quote}
-  Purposive without purpose (Kant)
-
-  ``Fourth, through aesthetic judgments, beautiful objects appear to be 'purposive without purpose' (sometimes translated as 'final without end'). An object's purpose is the concept according to which it was made (the concept of a vegetable soup in the mind of the cook, for example); an object is purposive if it appears to have such a purpose; if, in other words, it appears to have been made or designed. But it is part of the experience of beautiful objects, Kant argues, that they should affect us as if they had a purpose, although no particular purpose can be found.''\footnote{Kant, chapter 2a: \url{http://www.iep.utm.edu/kantaest/}}
+  ``[\ldots] through aesthetic judgments, beautiful objects appear to be 'purposive without purpose' (sometimes translated as 'final without end'). An object's purpose is the concept according to which it was made (the concept of a vegetable soup in the mind of the cook, for example); an object is purposive if it appears to have such a purpose; if, in other words, it appears to have been made or designed. But it is part of the experience of beautiful objects, Kant argues, that they should affect us as if they had a purpose, although no particular purpose can be found.'' \autocite[ch.2a]{Burnham2015}
 \end{quote}
 
+pata is purposeless but i use it to give structure
+im giving structure to something purposeless
+\end{fcom}
 
-WHY NOT JUST RANDOMNESS?????
-there has to be an injection of meaning at some point
-random results are easy. but they might not be focused enough.
+\todo{this conflicts with the idea of using pataphysics really over randomness}
 
-% It will challenge the binary logic that dominates the world of programmers and concentrate on what they would view as an illogical and unstructured system going against all standards.
+\todo{put pointers from intro to the various chapters}
+
+Another motivating factor for this project was the lack of research in the particular area of creative computing\marginpar{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \gls{ai}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
 
 
 \section{Questions}
 
-closed
-\begin{itemize}
-  \item Can a creative process be automated or emulated by a computer?
-  \item
-  \item inspirational rather than informational (procedural)?
-  \item How can we get search results that are unexpected and yet make sense?
-  \item How can we present search results in a creative and pataphysical way?
-  \item How does Pataphysics relate to creative computing?
-  \item How can we use Pataphysics as inspiration for search ranking?
-  \item How can we write a specifically creative algorithm?
-\end{itemize}
+Research dealing with subjective ideas and concepts like creativity throws up a lot of questions. My intention is to adress them all throughout this thesis, although some of them will not have definite binary answers.
 
-open
+\todo{add section refs of answers to each question}
+\todo{add more questions}
+
 \begin{itemize}
-  \item How can we rank search results but still be true to Pataphysics philosophy?
-  \item How can we represent and structure data to reflect its context, meaning and subjectivity?
-  \item What does it mean for search results to be creative/relevant?
-  \item Can computers be creative?
-  \item What does it actually mean to be creative even for a human being, etc
-  \item Is pataphysics creative?
-  \item What is a relevant search result?
-  \item Is creativity irrelevant?
+  \item Can computers or algorithms be considered creative?
+  \item Can pataphysics facilitate creativity?
+  \item Can a creative process be automated or emulated by a computer?
+  \item Can human and computer creativity be objectively measured?
+  \item Can information retrieval be creative?
+  \item Can search results be creative rather than relevant?
 \end{itemize}
 
 \todo{answer research questions in conclusion}
 
 \section{Process-ions}
 
-This project combines research in science and art. It is an interdisciplinary research project.
-
-computational linguistics (wordnet)
-natural language processing (index, dameraulevenshtein)
-creative computing
-literature (pataphysics, oulipo)
-
-
-
-This project has roots in disciplines such as Computer Science and Humanities.
-\begin{description}
-  \item [Information Retrieval]: Software Engineering, Semantic Web
-  \item [Pataphysics]: Literature, Philosophy, Ontology
-  \item [Creativity]: Cognitive Science, Artificial Intelligence
-\end{description}
-
-In regards to my project:
-\begin{itemize}
-  \item A concept implementation method is used with a descriptive-other approach
-  \item A qualitative investigation into if and why the proposed search results are useful will be done
-  \item Following experimental methodologies, to evaluate the proposed new solution to the problem of creative search
-\end{itemize}
+This project combines research\marginpar{§~\ref{ch:methodology}} in science and art making it transdisciplinary.
 
 \begin{description}
-  \item [Epistemology]: Subjective/Argumentative
-  \item [Methodology]: Experimental, Interpretative, Qualitative
-  \item [Methods]: Concept implementation, (Heuristic) Evaluation
+  \item [Pataphysics] Literature, Philosophy
+  \item [Creativity] Cognitive Science, Artificial Intelligence
+  \item [Computing] Software Engineering, Linguistics
 \end{description}
+
+This is practice-based research, meaning that a part of my submission for the degree of Doctor of Philosophy is an artefact demonstrating my original contribution to knowledge. The thesis provides the context of this artefact and critically analyses and discusses the experiemntal process and outcome.
+
+\begin{description}
+  \item [Epistemology] Subjective, Exploratory, Experimental
+  \item [Methodology] Practice-Based
+  \item [Methods] Creative computing, Web Development, Literature Review
+\end{description}
+
+The general process\marginpar{§~\ref{ch:description}} of my project was as follows.
+
+\begin{enumerate}
+  \item Conduct extensive literature review into the various subjects involved,
+  \item develop pataphysical algorithms,
+  \item develop an evaluation framework,
+  \item design a system to demonstrate algorithms,
+  \item develop a website for the tool,
+  \item evaluate website using framework and redevelop as needed and
+  \item write up findings.
+\end{enumerate}
 
 
 \section{Product-ions}
 
-\begin{itemize}
-  \item Design a tool for creative searching on the Web
-  \item Design pataphysics inspired algorithms to model creativity in this tool
-  \item Produce a proof-of-concept prototype
-  \item Propose a framework for evaluating and interpreting creative search results
-\end{itemize}
+The deliverables of this PhD research is as follows.
 
-\url{http://pata.physics.wtf} \marginpar{!!!}
-\url{http://pata.fania.eu} \marginpar{!!!}
+\begin{itemize}
+  \item Three pataphysical search algorithms (clinamen, syzygy and antinomy).
+  \item A creative exploratory search tool demonstrating the algorithms in the form of a website \url{http://pata.physics.wtf}.
+  \item A framework for evaluating and interpreting creative computing artefacts.
+\end{itemize}
 
 
 \section{Contributions}
 
-abusing tech in creative ways can yield useful results
-pataphysics = Creativity
+The key contributions to knowledge described in this thesis are:
 
-combining the pseudo philosophy of pataphysics with sematically structured algorithms which use programming APIs and computational linguistics to produce original creative works.
+\begin{description}
+  \item [Theory] Three pataphysical search algorithms\\
+                   Evaluation framework for creative computing
+  \item [Practice] Creative information retrieval system --- \url{pata.physics.wtf}
+\end{description}
 
-patalgorithms
+\begin{comment}
+  abusing tech in creative ways can yield useful results
+  pataphysics = Creativity
 
-web presence
+  combining the pseudo philosophy of pataphysics with sematically structured algorithms which use programming APIs and computational linguistics to produce original creative works.
 
-overturn expectations
-subvert browsing
-undermine relevance
-corrupt results
-
-5 Ps
+  overturn expectations
+  subvert browsing
+  undermine relevance
+  corrupt results
+\end{comment}
 
 
 \section{Publications}
 
-James Sawle, \textbf{Fania Raczinski} and Hongji Yang (2011) \emph{``A Framework for Creativity in Search Results''}. The 3rd International Conference on Creative Content Technologies, CONTENT'11. Rome, Italy. Pages 54--57. \autocite{Sawle2011}
+James Sawle, \textbf{Fania Raczinski} and Hongji Yang (2011) \emph{``A Framework for Creativity in Search Results''}. The 3rd International Conference on Creative Content Technologies, CONTENT'11. Rome, Italy. Pages 54--57.
 
-Andrew Hugill, Hongji Yang, \textbf{Fania Raczinski} and James Sawle (2013) \emph{``The pataphysics of creativity: developing a tool for creative search''}. Routledge: Digital Creativity, Volume 24, Issue 3. Pages 237--251. \autocite{Hugill2013d}
+Andrew Hugill, Hongji Yang, \textbf{Fania Raczinski} and James Sawle (2013) \emph{``The pataphysics of creativity: developing a tool for creative search''}. Routledge: Digital Creativity, Volume 24, Issue 3. Pages 237--251.
 
-\textbf{Fania Raczinski}, Hongji Yang and Andrew Hugill (2013) \emph{``Creative Search Using Pataphysics''}. Proceedings of the 9th ACM Conference on Creativity and Cognition, CC'13. Sydney, Australia. Pages 274--280. \autocite{Raczinski2013}
+\textbf{Fania Raczinski}, Hongji Yang and Andrew Hugill (2013) \emph{``Creative Search Using Pataphysics''}. Proceedings of the 9th ACM Conference on Creativity and Cognition, CC'13. Sydney, Australia. Pages 274--280.
 
-Please note that a full list of talks, exhibitions and publications is available at appendix \ref{app:pub}.
+Please note that a full list of talks, exhibitions and publications is available in appendix~\ref{app:pub}.
 
 
 \section{The Hitchhiker's Guide to this Thesis}
@@ -229,22 +201,25 @@ Please note that a full list of talks, exhibitions and publications is available
   \item[PREFACE] .
   \item[Part I] IN THE BEGINNING\ldots
   \item[Chapter 1] Introduction
-  \item[Chapter 2] Methodology
+  \item[Chapter 2] Inspirations
+  \item[Chapter 3] Methodology
   \item[Part II] IN A GALAXY FAR FAR AWAY\ldots
-  \item[Chapter 3] Pataphysics
-  \item[Chapter 4] Creativity and Computers
-  \item[Chapter 5] IR and NLP
+  \item[Chapter 4] Pataphysics
+  \item[Chapter 5] Creativity
+  \item[Chapter 6] Technology
   \item[Part III] THE CORE:\@ TECHNO-LOGIC
-  \item[Chapter 6] Theoretical Foundations
-  \item[Chapter 7] Practical Implementation
-  \item[Chapter 8] Impact and Applications --- Case Study
+  \item[Chapter 7] Foundations
+  \item[Chapter 8] Implementation
+  \item[Chapter 9] Applications --- Case Study
   \item[Part IV] INTECHNOIL-LOGICALYSIS
-  \item[Chapter 9] Interpretation / Evaluation
-  \item[Chapter 10] Patacritical Analysis
+  \item[Chapter 10] Interpretation / Evaluation
+  \item[Chapter 11] Patacritical Analysis
   \item[Part V] HAPPY END
-  \item[Chapter 11] Aspirations
-  \item[Chapter 12] Observations
+  \item[Chapter 12] Aspirations
+  \item[Chapter 13] Observations
   \item[POSTFACE] .
 \end{description}
+
+\todo{update and describe each section briefly}
 
 \stopcontents[chapters]
