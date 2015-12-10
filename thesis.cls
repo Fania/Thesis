@@ -104,9 +104,18 @@
 \usepackage{xcolor,calc}
 \definecolor{chaptercolor}{gray}{0.8}
 % helper macros
-\newcommand\numlifter[1]{\raisebox{-2cm}[0pt][0pt]{\smash{#1}}}
+\newcommand\numlifter[1]{\raisebox{-9.4cm}[0pt][0pt]{\smash{#1}}}
 \newcommand\numindent{\kern37pt}
 \newlength\chaptertitleboxheight
+
+% \shifttext{<len>}{<stuff>}
+\makeatletter
+\newcommand*{\shifttext}[2]{%
+  \settowidth{\@tempdima}{#2}%
+  \makebox[\@tempdima]{\hspace*{#1}#2}%
+}
+\makeatother
+
 \makechapterstyle{fania}{
 \renewcommand\printchaptername{%
 \scshape%
@@ -117,7 +126,9 @@
 \leavevmode%
 \chapnumfont%
 \strut%
+\shifttext{20cm}{ % shift the number to the right
 \numlifter{\thechapter}%
+}
 \numindent%
 \endgroup%
 }

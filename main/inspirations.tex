@@ -4,6 +4,30 @@
 \label{ch:inspirations}
 
 \startcontents[chapters]
+
+% \begin{tikzpicture}
+% \draw [domain=0:25.1327,variable=\t,smooth,samples=55]
+%     plot[mark=*,mark options={fill=white}] ({\t r}: {0.002*\t*\t});
+% \end{tikzpicture}
+%
+\begin{tikzpicture}[
+    decoration={
+    reverse path,
+    text along path,
+    text path start scale=1.5,
+    % text path start scale=3,
+    text path end scale=0,
+    text={Thought she would die of mortification, pues jamas tuve la idea de falsificar billetes de banco, engenders God by interior intuition, affinant la curiosite en intuition qu'existe de. the pale motor vessel withdrew its blue breath toward the island's horizon, the work is a hasty and unrevised production of its author, il eut l'intuition d'une sorte d'impuissance divine, how Gargantua was carried eleven months in his mother's belly. And thought himself in honor bound, pale rayon ... -- La source pleure au loin dans, the greatest source of the Icelanders' wealth. I will pull down my barns, nor breath nor motion, but the old man was at his last gasp.}}
+]
+\draw [decorate]
+    (0.8\textwidth, 0) % horizontal. circle then line to side
+    % (0, 0.5\textwidth) % vertical. line from top down to circle
+    % \foreach \i [evaluate={\r=(\i/2000)^2}] in {0,5,...,2880}{ -- (\i:\r)};
+    \foreach \i [evaluate={\r=(\i/2500)^2}] in {0,10,...,3500}{ -- (\i:\r)};
+\useasboundingbox (-2.75,-2.75) rectangle (2.75,2.75);
+% \useasboundingbox (-5,-5) rectangle (5,5);
+\end{tikzpicture}
+
 \minicontents
 
 \brule % chktex 1
@@ -90,7 +114,7 @@ The artefact created to demonstrate the search algorithms uses a collection of t
 \section{100.000.000.000.000 Poems}
 
 The interface design\marginpar{§~\ref{ch:description}} of some of my search results is directly inspired by
-Raymond Queneau's `Cent Mille Milliards de Poèmes', a prime example of Oulipian art.\todo{ref} The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time.
+Raymond Queneau's `Cent Mille Milliards de Poèmes', a prime example of Oulipian art \autocite{Queneau1961}. The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time.
 
 \begin{figure}[h!]
 \centering
@@ -134,31 +158,42 @@ Jorge Luis Borges mentiones a `Chinese Encyclopaedia' called the \textit{Celesti
 Although these are obviously all perfectly valid results, it is clear that they form a more creative, even poetic, view of what an animal might be than the Oxford English Dictionary's prosaic: ``a living organism which feeds on organic matter'' \autocite{OEDanimal}.
 
 
-\section{Yossarian Lives}
+\section{Metaphorical Search Engine Yossarian}
 
-YossarianLives is a creative search engine which claims to return ``diverse and unexpected results''.\autocite{Yossarian2015}
-
-``These types of results are incredably useful for any one who derives value from new ideas.''\autocite{Yossarian2015}
+Yossarian is a creative search engine which claims to return ``diverse and unexpected results'' \autocite{Yossarian2015}. It is porobably the closest thing to `related work' that exists for this project. Being a commercial product it is hard to find reliable details on precisely how their search engine works. The site seems well marketed but its functionality is shrouded in mystery. However, they argue that
 
 \begin{quote}
-\begin{itemize}
-  \item Augmented creativity
-  \item Lateral Discovery
-  \item Metaphorical Search
-  \item Creative Graph
-\end{itemize}
-\end{quote}\footnote{\url{http://about.yossarianlives.com/index.html}}
+  ``Yossarian makes the process of generating new ideas faster, while also improving its quality. This creative search engine helps people discover new perspectives, conceptual directions, creative insights, and allowing collaboration and feedback from a creative global community.'' \autocite{Yossarian2015}
+\end{quote}
+
+They also claim to be inspired by metaphors and that generating lateral connections can diversify users ideas and help understand conceptual relationships between things through a `creative graph'.
+
+The site started in a public alpha release in 2012. At the time it consisted of simple image search. In December 2015 a complete re-design was released \autocite{YossarianEmail} which turned the search engine into more of a mind map tool.
+
+\begin{quote}
+  ``Idea Boards you can now visually jump from idea to idea and build your own custom collection of links. Its a powerful new kind of mind map powered by search, and a radical departure from traditional search engine interfaces.'' \autocite{YossarianEmail}
+\end{quote}
+
+While they do boldly call themselves ``the world's first creative search engine'' \autocite{Yossarian2015} it is impossible to know how their algorithms really work and as such how similar out projects are. The recently released mind map functionality brings up those `lateral connections' in a relationship graph form, in fact there is a slider that lets users adjust how creative they want their results to be - from literal to lateral.
+
+\todo{explain why these things are inspirational to my project in specific}
 
 
 \section{The Library of Babel}
 
-The library of babel is \\
-created by Jonathan Basile.
+The \textit{Library of Babel} is a short story by Jorge Luis Borges \autocite{Borges1964}. It envisions a universe, called `the Library', which is composed of ``an indefinite and perhaps infinite number of hexagonal galleries'' containing every possible book every conceived and not yet conceived.
+
+The specific artefact of inspiration for my project is a website implementing a miniature form of this library\footnote{\url{https://libraryofbabel.info/}} created by Jonathan Basile \autocite{Basile2015}. Instead of containing every single book possible it `only' contains every single page possible --- which is, at 3200 characters per page and 29 possible characters, still \textbf{a lot}.
+
+Basile claims to use a ``pseudo-random number generating algorithm'' (combining modular arithmetic and bit-shifting operations) to produce all $29^{3200}$ pages without needing to store anything on disk.
 
 \begin{quote}
-  The Library of Babel is a place for scholars to do research, for artists and writers to seek inspiration, for anyone with curiosity or a sense of humor to reflect on the weirdness of existence --- in short, it’s just like any other library. If completed, it would contain every possible combination of 1,312,000 characters, including lower case letters, space, comma, and period. Thus, it would contain every book that ever has been written, and every book that ever could be --- including every play, every song, every scientific paper, every legal decision, every constitution, every piece of scripture, and so on. At present it contains all possible pages of 3200 characters, about 104677 books.
-
-  Since I imagine the question will present itself in some visitors’ minds (a certain amount of distrust of the virtual is inevitable) I’ll head off any doubts: any text you find in any location of the library will be in the same place in perpetuity. We do not simply generate and store books as they are requested --- in fact, the storage demands would make that impossible. Every possible permutation of letters is accessible at this very moment in one of the library's books, only awaiting its discovery. We encourage those who find strange concatenations among the variations of letters to write about their discoveries in the forum, so future generations may benefit from their research.\footnote{\url{https://libraryofbabel.info/}}
+  ``The pages of rational text which this algorithm can locate are rarer than a single grain of sand in that collection, yet intrinsically no more meaningful.
+  [\ldots]
+  One can find only text one has already written, and any attempt to find it in among other meaningful prose is certain to fail. The tantalizing promise of the universal library is the potential to discover what hasn’t been written, or what once was written and now is lost. But there is still no way for us to find what we don’t know how to look for.
+  [\ldots]
+  Nonetheless, the library contains its own sort of poetry and revelation, and even this disappointment can provide a moment of clarity.'' \autocite{Basile2015}
 \end{quote}
+
 
 \stopcontents[chapters]
