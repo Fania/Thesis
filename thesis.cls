@@ -65,8 +65,10 @@
 % \renewcommand*\rmdefault{ppl}
 
 % \usepackage{qagr}
-\renewcommand*\rmdefault{pbk} % Bookman
-\renewcommand*\sfdefault{lmssq} % Latin Modern Sans Extended
+% \renewcommand*\rmdefault{pbk} % Bookman
+% \renewcommand*\sfdefault{lmssq} % Latin Modern Sans Extended
+
+\usepackage{bookman}
 
 % EB Garamond
 % \usepackage[cmintegrals,cmbraces]{newtxmath}
@@ -104,7 +106,8 @@
 \usepackage{xcolor,calc}
 \definecolor{chaptercolor}{gray}{0.8}
 % helper macros
-\newcommand\numlifter[1]{\raisebox{-9.4cm}[0pt][0pt]{\smash{#1}}}
+% \raisebox{amount to shift up or down}[][]{}
+\newcommand\numlifter[1]{\raisebox{-6.5cm}[0pt][0pt]{\smash{#1}}}
 \newcommand\numindent{\kern37pt}
 \newlength\chaptertitleboxheight
 
@@ -142,7 +145,7 @@
 \afterchapternum}
 \setlength\midchapskip{0pt}
 \setlength\beforechapskip{5\baselineskip}
-\setlength{\afterchapskip}{3\baselineskip}
+\setlength{\afterchapskip}{0.2\baselineskip} % 3\baselineskip
 \renewcommand\chapnumfont{%
 \fontsize{5cm}{0cm}%
 \bfseries%
@@ -239,6 +242,40 @@ breaklines=true
 % \subsubsection 3
 % \paragraph 4
 % \subparagraph 5
+
+
+% PART IMAGE
+% \makeatletter
+% % define a user command to choose the image
+% % this command also creates an internal command to insert the image
+% % \newcommand{\partimage}[2][]{\gdef\@partimage{\includegraphics[#1]{#2}}}
+% \newcommand{\partimage}[2][]{\gdef\@partimage{\includepdf[#1]{#2}}}
+% \renewcommand{\printparttitle}[1]{\parttitlefont #1\vfil\@partimage\vfil}
+% \makeatother
+% \partimage[width=\textwidth]{bar.png}
+
+\makeatletter
+% define a user command to choose the image
+% this command also creates an internal command to insert the image
+\newcommand{\partimage}[2][]{\gdef\@partimage{\includegraphics[#1]{#2}}}
+% redefine the amsbook part code to include the \@partimage insertion command
+\def\@part[#1]#2{%
+  \ifnum \c@secnumdepth >-2\relax \refstepcounter{part}%
+    % \addcontentsline{toc}{part}{\partname\ \thepart.
+        % \protect\enspace\protect\noindent#1}%
+  \else
+    % \addcontentsline{toc}{part}{#1}
+  \fi
+  \begingroup\centering
+  \ifnum \c@secnumdepth >-2\relax
+       {\fontsize{\@xviipt}{22}\bfseries
+      %  \fontsize{5cm}{0cm}%
+         \partname\ \thepart} \vskip 30\p@
+  \fi
+  \fontsize{2cm}{0}\bfseries
+  % \fontsize{\@xxpt}{25}\bfseries
+      #1\vfil\@partimage\vfil\endgroup \newpage\thispagestyle{empty}}
+\makeatother
 
 
 

@@ -5,32 +5,27 @@
 
 \startcontents[chapters]
 
-% \begin{tikzpicture}
-% \draw [domain=0:25.1327,variable=\t,smooth,samples=55]
-%     plot[mark=*,mark options={fill=white}] ({\t r}: {0.002*\t*\t});
-% \end{tikzpicture}
-%
-\begin{tikzpicture}[
-    decoration={
-    reverse path,
-    text along path,
-    text path start scale=1.5,
-    % text path start scale=3,
-    text path end scale=0,
-    text={Thought she would die of mortification, pues jamas tuve la idea de falsificar billetes de banco, engenders God by interior intuition, affinant la curiosite en intuition qu'existe de. the pale motor vessel withdrew its blue breath toward the island's horizon, the work is a hasty and unrevised production of its author, il eut l'intuition d'une sorte d'impuissance divine, how Gargantua was carried eleven months in his mother's belly. And thought himself in honor bound, pale rayon ... -- La source pleure au loin dans, the greatest source of the Icelanders' wealth. I will pull down my barns, nor breath nor motion, but the old man was at his last gasp.}}
-]
-\draw [decorate]
-    (0.8\textwidth, 0) % horizontal. circle then line to side
-    % (0, 0.5\textwidth) % vertical. line from top down to circle
-    % \foreach \i [evaluate={\r=(\i/2000)^2}] in {0,5,...,2880}{ -- (\i:\r)};
-    \foreach \i [evaluate={\r=(\i/2500)^2}] in {0,10,...,3500}{ -- (\i:\r)};
-\useasboundingbox (-2.75,-2.75) rectangle (2.75,2.75);
-% \useasboundingbox (-5,-5) rectangle (5,5);
-\end{tikzpicture}
+Thought she would die of mortification, \\
+pues jamas tuve la idea de falsificar billetes de banco, \\
+engenders God by interior intuition, \\
+affinant la curiosite en intuition qu'existe de.
 
+The pale motor vessel withdrew its blue breath toward the island's horizon, \\
+the work is a hasty and unrevised production of its author, \\
+il eut l'intuition d'une sorte d'impuissance divine, \\
+how Gargantua was carried eleven months in his mother's belly.
+
+And thought himself in honor bound, \\
+pale rayon ... -- La source pleure au loin dans, \\
+the greatest source of the Icelanders' wealth.
+
+I will pull down my barns, \\
+nor breath nor motion, \\
+but the old man was at his last gasp.
+
+\vfill
 \minicontents
-
-\brule % chktex 1
+\newpage
 
 This research was influenced by a few major inspirations and this chapter introduces them all.
 
@@ -51,7 +46,7 @@ My project has since moved on from the idea of using the Semantic Web to create 
 \section{Faustroll's Library of Equivalent Books}
 \label{se:faustlib}
 
-The artefact created to demonstrate the search algorithms uses a collection of texts rather than the open Web as source material\marginpar{§~\ref{ch:description}}. This corpus is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\parencite[p.12]{Jarry1996}}. The library contains the following books.
+The artefact created to demonstrate the search algorithms uses a collection of texts rather than the open Web as source material\marginpar{§~\ref{ch:implementation}}. This corpus is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\parencite[p.12]{Jarry1996}}. The library contains the following books.
 
 \begin{enumerate}
 \item BAUDELAIRE, a volume of E.A. POE translations.
@@ -113,7 +108,7 @@ The artefact created to demonstrate the search algorithms uses a collection of t
 
 \section{100.000.000.000.000 Poems}
 
-The interface design\marginpar{§~\ref{ch:description}} of some of my search results is directly inspired by
+The interface design\marginpar{§~\ref{ch:implementation}} of some of my search results is directly inspired by
 Raymond Queneau's `Cent Mille Milliards de Poèmes', a prime example of Oulipian art \autocite{Queneau1961}. The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time.
 
 \begin{figure}[h!]

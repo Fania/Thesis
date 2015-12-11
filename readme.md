@@ -96,6 +96,8 @@ makeglossaries main
 - [ ] add line with three stars in middle to separate paragraphs
 - [ ] state of the art versus state of the science
 - [ ] when to use italics and when quotes
+- [ ] Use Avant Garde font
+- [ ] double check hyperref links in pdf toc
 
 
 ## Errors

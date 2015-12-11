@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.22)  10 DEC 2015 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.22)  11 DEC 2015 21:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -811,6 +811,9 @@ Package csquotes Info: ... configuration file loaded successfully.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
 ))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/bookman.sty
+Package: bookman 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tex-gyre/tgadventor.sty
 Package: tgadventor 2009/09/10 v1.2 TeX Gyre Adventor as default sans serif fam
 ily
@@ -874,28 +877,28 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip193
 )
 \chaptertitleboxheight=\skip194
-LaTeX Font Info:    Try loading font information for T1+pbk on input line 171.
+LaTeX Font Info:    Try loading font information for T1+pbk on input line 174.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pbk.fd
 File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
 )
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10.95> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 171.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 174.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <20.74> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 171.
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 174.
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <20.74> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 171.
-LaTeX Font Info:    Try loading font information for T1+qag on input line 171.
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 174.
+LaTeX Font Info:    Try loading font information for T1+qag on input line 174.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tex-gyre/t1qag.fd
 File: t1qag.fd 2009/09/25 v1.2 font definition file for T1/qag
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 171.
+(Font)              <10.95> on input line 174.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 171.
+(Font)              <8> on input line 174.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 171.
+(Font)              <6> on input line 174.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
@@ -1536,10 +1539,10 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
-Package biblatex Info: Redefining '\cite' on input line 314.
-Package biblatex Info: Redefining '\parencite' on input line 328.
-Package biblatex Info: Redefining '\citeyear' on input line 342.
-Package biblatex Info: Redefining '\citeauthor' on input line 349.
+Package biblatex Info: Redefining '\cite' on input line 351.
+Package biblatex Info: Redefining '\parencite' on input line 365.
+Package biblatex Info: Redefining '\citeyear' on input line 379.
+Package biblatex Info: Redefining '\citeauthor' on input line 386.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -1627,10 +1630,9 @@ LaTeX Info: Redefining \\ on input line 3056.
 \FV@BreakSymbolSepLeft=\dimen258
 \FV@BreakSymbolSepRight=\dimen259
 \FV@BreakSymbolIndentLeft=\dimen260
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 688.
-
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 688.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 \FV@BreakSymbolIndentRight=\dimen261
 \c@FancyVerbLineBreakLast=\count372
@@ -2601,7 +2603,13 @@ runsystem(rm "main.aex")...executed.
 
 
 (./main.aux (./front/title.aux) (./front/abstract.aux) (./main/introduction.aux
-) (./main/inspirations.aux) (./main/methodology.aux))
+) (./main/inspirations.aux) (./main/methodology.aux) (./main/pataphysics.aux)
+(./main/creativity.aux) (./main/technology.aux) (./main/evaluation.aux)
+(./main/foundation.aux)
+No file main/description.aux.
+No file main/caseStudy.aux.
+(./main/interpretation.aux) (./main/analysis.aux) (./main/aspirations.aux)
+(./main/observations.aux) (./back/code.aux) (./back/publications.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -2770,7 +2778,15 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
-(./main.bbl)
+(./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Hugill2012
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
  (./_minted-main/default-pyg-prefix.pygstyle)
@@ -2802,7 +2818,7 @@ LaTeX Font Info:    Try loading font information for U+wasy on input line 2.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-)) [1
+) [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -2817,7 +2833,8 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]) [3
+]
 \openout2 = `front/title.aux'.
 
  (./front/title.tex
@@ -2831,31 +2848,40 @@ LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <24.88> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <24.88> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 27.
-
-
-LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
-(Font)              using `T1/cmtt/m/n' instead on input line 27.
-
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
 (Font)              Font shape `T1/pbk/l/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <12> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <12> not available
 (Font)              Font shape `T1/pbk/l/it' tried instead on input line 38.
-(./main.sum)pdfTeX warning (ext4): destination with the same identifier (name{p
-age.1}) has been already used, duplicate ignored
+ (./main.sum)pdfTeX warning (ext4): destination with the same identifier (name{
+page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.46 \end{titlingpage}
                        [1
 
 
-]) [1
+])
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 25.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
+(Font)              size <24.88> substituted on input line 25.
+
+<images/spiral_pre.pdf, id=752, 156.48964pt x 156.48964pt>
+File: images/spiral_pre.pdf Graphic file (type pdf)
+
+<use images/spiral_pre.pdf>
+Package pdftex.def Info: images/spiral_pre.pdf used on input line 25.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
+ [1
 
 
 
 
-]
+ <./images/spiral_pre.pdf>]
 \openout2 = `front/abstract.aux'.
 
  (./front/abstract.tex
@@ -2869,7 +2895,7 @@ LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <9> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <6> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 12.
- [2
+[2
 
 
 ]) (./main.toc
@@ -2880,259 +2906,482 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <12> not available
  [3
 
 
-])
-[4] (./main.lof) [5
+] [4] [5]) [6] (./main.lof [7
 
-] (./main.lot) [6
-
-] (./main.lol) [7
-
-
-] [8
-
-
+]) [8] (./main.lot) [9
 
 ]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 76.
+(./main.lol) [10
+
+
+] [11
+
+
+
+] [12]
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 80.
+LaTeX Font Info:    Calculating math sizes for size <56.9055> on input line 80.
+
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <56.9055> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <39.83366> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <28.45274> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <56.9055> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <39.83366> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <28.45274> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <56.9055> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <39.83366> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <28.45274> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <56.9055> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <39.83366> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <28.45274> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <56.9055> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <39.83366> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <28.45274> not available
+(Font)              size <24.88> substituted on input line 80.
+
+<images/spiral_hello.pdf, id=1183, 156.48964pt x 156.48964pt>
+File: images/spiral_hello.pdf Graphic file (type pdf)
+
+<use images/spiral_hello.pdf>
+Package pdftex.def Info: images/spiral_hello.pdf used on input line 80.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 \part
-          {\texorpdfstring{H$\Sigma$LL$\Theta$ W$\Theta$RLD}{HELLO WORLD}}
-[1
+l.80 ...gma$LL$\Theta$ W$\Theta$RLD}{HELLO WORLD}}
+                                                   [1
 
 
-] [2
 
-]
+ <./images/spiral_hello.pdf>]
 \openout2 = `main/introduction.aux'.
 
  (./main/introduction.tex
 \c@ttl@toc@chapters=\count486
- (./main.ptc)
-
-LaTeX Warning: Reference `ch:methodlogy' on page 3 undefined on input line 39.
-
-
-LaTeX Warning: Reference `ch:pataphysics' on page 3 undefined on input line 39.
-
-
-[3
+ (./main.ptc)pdfTeX warning (ext4): destination with the same identifier (name{
+page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28 \newpage
+              [2
 
 
 ]
 
-LaTeX Warning: Reference `ch:foundations' on page 4 undefined on input line 41.
+LaTeX Warning: Reference `ch:implementation' on page 3 undefined on input line 
+36.
 
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 38.
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 \section
+             {Motivations} [3]
+LaTeX Font Info:    Try loading font information for TS1+pbk on input line 60.
 
-
-LaTeX Warning: Reference `ch:description' on page 4 undefined on input line 43.
-
-
-
-LaTeX Warning: Reference `ch:interpretation' on page 4 undefined on input line 
-51.
-
-[4]
-
-LaTeX Warning: Reference `ch:technology' on page 5 undefined on input line 58.
-
-
-LaTeX Warning: Reference `ch:pataphysics' on page 5 undefined on input line 60.
-
-
-
-LaTeX Warning: Reference `ch:creativity' on page 5 undefined on input line 62.
-
-LaTeX Font Info:    Try loading font information for TS1+pbk on input line 67.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1pbk.fd
 File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
 )
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10.95> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 67.
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 60.
 LaTeX Font Info:    Try loading font information for U+fontawesomethree on inpu
-t line 75.
+t line 68.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2015/07/30 Font definitions for U/fontawesomethree.
-)
-
-LaTeX Warning: Reference `tab:creatpata' on page 5 undefined on input line 75.
-
-[5]
-Overfull \hbox (7.20062pt too wide) in paragraph at lines 89--90
+) [4]
+Overfull \hbox (7.20062pt too wide) in paragraph at lines 82--83
 \T1/qag/m/n/10.95 'pur-pos-ive without pur-pose' (some-times trans-lated as 'fi
 -nal without end').|
  []
 
+[5] [6]
 
-LaTeX Warning: Reference `ch:creativity' on page 6 undefined on input line 100.
+LaTeX Warning: Reference `ch:implementation' on page 7 undefined on input line 
+132.
 
-
-[6]
-
-LaTeX Warning: Reference `ch:methodology' on page 7 undefined on input line 123
-.
-
-[7]
-
-LaTeX Warning: Reference `ch:description' on page 8 undefined on input line 139
-.
-
-[8]
-
-LaTeX Warning: Reference `app:pub' on page 9 undefined on input line 194.
-
-[9]) [10]
+[7] [8]) [9]
 \openout2 = `main/inspirations.aux'.
 
- (./main/inspirations.tex (./main.ptc) [11
+ (./main/inspirations.tex (./main.ptc) [10
 
 
 
 ]
 
-LaTeX Warning: Reference `ch:description' on page 12 undefined on input line 54
-.
+LaTeX Warning: Reference `ch:implementation' on page 11 undefined on input line
+ 49.
 
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <9> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 54.
-[12] <images/JaneAvril.png, id=467, 306.14375pt x 451.6875pt>
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 49.
+[11] <images/JaneAvril.png, id=1346, 306.14375pt x 451.6875pt>
 File: images/JaneAvril.png Graphic file (type png)
 
 <use images/JaneAvril.png>
-Package pdftex.def Info: images/JaneAvril.png used on input line 89.
+Package pdftex.def Info: images/JaneAvril.png used on input line 84.
 (pdftex.def)             Requested size: 192.0548pt x 283.35849pt.
 
-Underfull \hbox (badness 8113) in paragraph at lines 90--90
+Underfull \hbox (badness 8113) in paragraph at lines 85--85
 []\T1/pbk/l/n/10.95 Figure 2.1: []Toulouse-Lautrec's
  []
 
-<images/RevueBlanche.jpg, id=469, 351.3125pt x 451.6875pt>
+<images/RevueBlanche.jpg, id=1348, 351.3125pt x 451.6875pt>
 File: images/RevueBlanche.jpg Graphic file (type jpg)
 
 <use images/RevueBlanche.jpg>
-Package pdftex.def Info: images/RevueBlanche.jpg used on input line 95.
+Package pdftex.def Info: images/RevueBlanche.jpg used on input line 90.
 (pdftex.def)             Requested size: 192.0548pt x 246.93327pt.
 
-Underfull \hbox (badness 6758) in paragraph at lines 96--96
+Underfull \hbox (badness 6758) in paragraph at lines 91--91
 []\T1/pbk/l/n/10.95 Figure 2.2: []Bonnard's ``Re-vue
  []
 
-<images/DocteurFaustroll.jpg, id=470, 302.12875pt x 451.6875pt>
+<images/DocteurFaustroll.jpg, id=1349, 302.12875pt x 451.6875pt>
 File: images/DocteurFaustroll.jpg Graphic file (type jpg)
 
 <use images/DocteurFaustroll.jpg>
-Package pdftex.def Info: images/DocteurFaustroll.jpg used on input line 101.
+Package pdftex.def Info: images/DocteurFaustroll.jpg used on input line 96.
 (pdftex.def)             Requested size: 192.0548pt x 287.12163pt.
 
-Underfull \hbox (badness 3375) in paragraph at lines 102--102
+Underfull \hbox (badness 3375) in paragraph at lines 97--97
 []\T1/pbk/l/n/10.95 Figure 2.3: []Aubrey Beard-s-ley's
  []
 
-<images/SaintCado.jpg, id=471, 355.3275pt x 451.6875pt>
+<images/SaintCado.jpg, id=1350, 355.3275pt x 451.6875pt>
 File: images/SaintCado.jpg Graphic file (type jpg)
 
 <use images/SaintCado.jpg>
-Package pdftex.def Info: images/SaintCado.jpg used on input line 107.
+Package pdftex.def Info: images/SaintCado.jpg used on input line 102.
 (pdftex.def)             Requested size: 192.0548pt x 244.14194pt.
 
-Underfull \hbox (badness 4416) in paragraph at lines 108--108
+Underfull \hbox (badness 4416) in paragraph at lines 103--103
 []\T1/pbk/l/n/10.95 Figure 2.4: []Oberthuer's ``Saint
  []
 
 
-LaTeX Warning: Float too large for page by 14.66377pt on input line 111.
+LaTeX Warning: Float too large for page by 14.66377pt on input line 106.
 
 
-LaTeX Warning: Reference `ch:description' on page 13 undefined on input line 11
-6.
+LaTeX Warning: Reference `ch:implementation' on page 12 undefined on input line
+ 111.
 
-[13] [14 <./images/JaneAvril.png> <./images/RevueBlanche.jpg> <./images/Docteur
+[12] [13 <./images/JaneAvril.png> <./images/RevueBlanche.jpg> <./images/Docteur
 Faustroll.jpg> <./images/SaintCado.jpg>]
-<images/queneau1.jpg, id=512, 344.28625pt x 359.3425pt>
+<images/queneau1.jpg, id=1391, 344.28625pt x 359.3425pt>
 File: images/queneau1.jpg Graphic file (type jpg)
 
 <use images/queneau1.jpg>
-Package pdftex.def Info: images/queneau1.jpg used on input line 122.
+Package pdftex.def Info: images/queneau1.jpg used on input line 117.
 (pdftex.def)             Requested size: 192.0548pt x 200.45181pt.
 
-<images/queneau2.jpg, id=513, 344.28625pt x 359.3425pt>
+<images/queneau2.jpg, id=1392, 344.28625pt x 359.3425pt>
 File: images/queneau2.jpg Graphic file (type jpg)
 
 <use images/queneau2.jpg>
-Package pdftex.def Info: images/queneau2.jpg used on input line 126.
+Package pdftex.def Info: images/queneau2.jpg used on input line 121.
 (pdftex.def)             Requested size: 192.0548pt x 200.45181pt.
- [15 <./images/queneau1.jpg> <./images/queneau2.jpg>]
-[16]) [17]
+ [14 <./images/queneau1.jpg> <./images/queneau2.jpg>]
+[15]) [16]
 \openout2 = `main/methodology.aux'.
 
- (./main/methodology.tex (./main.ptc) [18
+ (./main/methodology.tex (./main.ptc) [17
 
 
 
-] [19] [20]
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 123
-.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [21] [22]
-[23] [24] <images/tmpr.png, id=676, 316.18124pt x 375.4025pt>
+] [18] [19] [20] [21]
+<images/tmpr.png, id=1541, 316.18124pt x 375.4025pt>
 File: images/tmpr.png Graphic file (type png)
-
-<use images/tmpr.png>
-Package pdftex.def Info: images/tmpr.png used on input line 234.
+ <use images/tmpr.png>
+Package pdftex.def Info: images/tmpr.png used on input line 143.
 (pdftex.def)             Requested size: 316.18047pt x 375.40158pt.
 
-Underfull \hbox (badness 1033) in paragraph at lines 278--278
+Underfull \hbox (badness 1033) in paragraph at lines 187--187
 \T1/pbk/l/n/10.95 facts, mu-sical com-pos-i-tions, soft-
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 278--278
+Underfull \hbox (badness 3579) in paragraph at lines 187--187
 []\T1/pbk/l/n/10.95 observe, re-cord, ana-
  []
 
-[25]) [26 <./images/tmpr.png>] [27] [28
+[22]) [23 <./images/tmpr.png>]
+<images/spiral_trade.pdf, id=1554, 156.48964pt x 156.48964pt>
+File: images/spiral_trade.pdf Graphic file (type pdf)
+
+<use images/spiral_trade.pdf>
+Package pdftex.def Info: images/spiral_trade.pdf used on input line 88.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
+ [24
 
 
-]
+ <./images/spiral_trade.pdf>]
+<images/spiral_core.pdf, id=1566, 156.48964pt x 156.48964pt>
+File: images/spiral_core.pdf Graphic file (type pdf)
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\spacefactor' on input line 90.
+<use images/spiral_core.pdf>
+Package pdftex.def Info: images/spiral_core.pdf used on input line 97.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
+ [25
+
+ <./images/spiral_core.pdf>]
+<images/spiral_meta.pdf, id=1576, 156.48964pt x 156.48964pt>
+File: images/spiral_meta.pdf Graphic file (type pdf)
+
+<use images/spiral_meta.pdf>
+Package pdftex.def Info: images/spiral_meta.pdf used on input line 105.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
+ [26
+
+ <./images/spiral_meta.pdf>]
+<images/spiral_after.pdf, id=1586, 156.48964pt x 156.48964pt>
+File: images/spiral_after.pdf Graphic file (type pdf)
+
+<use images/spiral_after.pdf>
+Package pdftex.def Info: images/spiral_after.pdf used on input line 112.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
+ [27
+
+ <./images/spiral_after.pdf>]
+<images/spiral_post.pdf, id=1598, 156.48964pt x 156.48964pt>
+File: images/spiral_post.pdf Graphic file (type pdf)
+
+<use images/spiral_post.pdf>
+Package pdftex.def Info: images/spiral_post.pdf used on input line 122.
+(pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
+ [28
+
+ <./images/spiral_post.pdf>] [29
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@m' on input line 90.
+] [30]
+Overfull \hbox (24.286pt too wide) in paragraph at lines 135--135
+\T1/pcr/m/n/10.95 Entry / 273779 ? isAdvanced = false & result = 1 & rskey = vz
+t13a & #contentWrapper$[][]|
+ []
 
-[29
-
-] [30
-
-] [31
-
-] [32
-
-] [33
-
-
-]
-Overfull \hbox (8.91748pt too wide) in paragraph at lines 121--121
+[31] [32] [33] [34] [35]
+Overfull \hbox (8.91748pt too wide) in paragraph at lines 135--135
 [][]\T1/pbk/l/n/10.95 Singh, Push (2005). `  EM-ONE: An Ar-chi-tec-ture for Ref
 lect-ive Common-sense Think-|
  []
 
-[34]
+[36] [37] [38
 
-Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
-. Rerun may be required (or you may have forgotten to use commands like \gls). 
-on input line 127.
 
+
+]
 \tf@ptc=\write10
 \openout10 = `main.ptc'.
+
+runsystem(rm "_minted-main/F04DDCA3810ED20229729981096108B31A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/B0D06A7CAF1798DA4153306E9311B2B249F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/41B846E5864EFEBEFA361B2F286626BF1A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/C4CCFDCE4D66736E5D897E689CDAAE1149F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/279BE0603F3A9DCCFE92956D8249E7FA9B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/1847CD21597731004C004F64234F8A871A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/9A8AD92C50CAE39AA2C5604FD0AB6D8C49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/12F54A96F64443246930DA001CAFDA8B49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/009520053B00386D1173F3988C55D19249F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/401B30E3B8B5D629635A5C613CDB791949F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/F6A78526957D757FA60F6B7F3AF3D7229B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/E753ED52F3D9869AAB7B3486B56943D59B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/6FF3700C23E5F95C832DEE5A6D1272801A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/63810CCCB1DD5587F229B151486EFB3C49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/372E25F23B5A8AE33C7BA203412ACE3049F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/062A3CA7D0D85E1932755C6D3154ABE149F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/27CDE74D742C9963710E2BD865BE20C71A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/85786589CDBA2466ED61C0AE0BA8F2B149F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/9FFBF43126E33BE52CD2BF7E01D627F949F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/010E0DDED70E4D927D697D34DA98CC0849F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/4BD4440E14055DA822E647739D66D9E11A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/2988A34EFEA940C60FF0538AFBAF82D749F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/3C84E6561BC89D113C4FC172097B194D49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/60A9F47A5EBF1BDBDA2A7721C53C898649F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/DF466DBF27F53937372559F0CB482AB549F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/A3E5B97EE2B0D6A2B73A4C92E303AF8349F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/E0A3494BE84D31CC5A4464CD7D5C5D4349F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/AB91595EBBA51CFA8AEA2E0A085A88891A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/487F35EE6D468580DFF8274E00AA510149F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/5C1C95C45816CE8E7EC016BF5289424C49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/2984444CF1761885FD6AF5E9788D25DD49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/DA0B081A25BE09E0E98CBC740E7D67E01A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/CA5BC26FD26FF36F70ED8973D9107A3F49F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/7447F9E26347A3813C5D7787EB16E04D1A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/7555D7EE26E10BBA25632AAAEC066F1B9B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/415E896F7A6C022B125870C3930C22CC9B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/71FCFC2D3151BB4ED2F63B41067A1B101A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/ECA1995CCD78E4DDBAE38D79D5E49CCB1A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/DE063C99357E6675F1BA05B33635E04449F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/E75F25D76B313861619E745FFC2BA01749F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/D05EC90F320834BAE324933313F29C7149F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/35617E0BA850C9A7ECEC9DE1593D3C399B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/966C0B9E4CFF29574B76352DCAFA456E5CC029F0DAA2E3CD69CE
+F9A556C67700.pygtex")...executed.
+
+runsystem(rm "_minted-main/72635E2A63393C9A989A891AD6306A7249F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/59BCC3AD6775562F845953CF0162422549F87247884C31FB9CF7
+250BD2E27204.pygtex")...executed.
+
+runsystem(rm "_minted-main/5B2A7054BC22D874B9E1B9889EB75C809B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/BB834E2AA3468331EAA75B5BE8C1D900C7C0915BC48AC82EA1C7
+B0DA31A2DAFF.pygtex")...executed.
+
+runsystem(rm "_minted-main/9FCE8721FE9364170AA6AD5C2D60DAF71A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/B9A91FB5490F65B76A073DA8998D44E01A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/B0F8E71E3FEA0EAAFC874142268BA5721A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
+
+runsystem(rm "_minted-main/7A1DD7F1E298883B470A4695CEBF11689B0FD5CD275A6E5E1CF8
+B3D04CF0A433.pygtex")...executed.
+
+runsystem(rm "_minted-main/30C89CE1094B026E45FBA0C329BBE1F41A7D47D6F4C0A60093B7
+D1E6C3880FEE.pygtex")...executed.
 
 \tf@tdo=\write11
 \openout11 = `main.tdo'.
@@ -3149,17 +3398,24 @@ on input line 127.
 \tf@lol=\write15
 \openout15 = `main.lol'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
-(./main.aux (./front/title.aux) (./front/abstract.aux) (./main/introduction.aux
-) (./main/inspirations.aux) (./main/methodology.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FF7B4114C2AA8599399818C607A9A3A6;2445.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+ (./main.aux (./front/title.aux) (./front/abstract.aux)
+(./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 69D2C764D5F663E766670B7E8938D4F9;10283
+(rerunfilecheck)             After:  1D7A97F0E4584BB86D017A54769C9014;2436.
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 32.0255pt have occurred.
 
 
 LaTeX Warning: There were undefined references.
@@ -3168,48 +3424,901 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53983 strings out of 493091
- 946921 string characters out of 6134970
- 1718971 words of memory out of 5000000
- 56227 multiletter control sequences out of 15000+600000
- 72118 words of font info for 106 fonts, out of 8000000 for 9000
+ 53652 strings out of 493091
+ 934657 string characters out of 6134970
+ 1688309 words of memory out of 5000000
+ 55377 multiletter control sequences out of 15000+600000
+ 75112 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,82p,1923b,9275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/lo
-cal/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/loca
-l/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{/us
-r/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive
-/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}</usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/tex-gyre/qagb.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/public/tex-gyre/qagr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
-1/public/cm-super/sftt0900.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/cm-super/sftt1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/cm-super/sftt2488.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
-bookman/ubkd8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookman/
-ubkl8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookman/ubkli8a.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/wasy2-ps/wasyb10.pfb
->
-Output written on main.pdf (44 pages, 961329 bytes).
+ 75i,15n,82p,1923b,2180s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{page.97} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{page.104} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.123} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.56} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.142} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.168} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.43} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.94} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.81} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.47} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.49} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.46} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.169} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.136} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.55} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.121} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.147} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.57} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.130} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.129} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.127} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.126} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.66} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.107} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.108} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.60} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.166} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.115} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.110} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.44} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.73} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.70} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.131} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.41} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.139} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.39} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.170} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.125} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.124} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.120} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.109} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.59} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.53} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.48} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.50} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.122} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.105} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.83} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.80} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.76} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.84} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.86} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.88} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.87} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.85} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.82} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.77} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.119} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.118} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.79} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.78} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.234} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.67} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.65} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.64} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.63} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.62} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.51} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.188} has been referenced but does not exist, r
+eplaced by a fixed one
+
+pdfTeX warning (dest): name{page.61} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.58} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{listing.9.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.11} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.9.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{listing.6.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.14.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{table.11.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{table.9.2} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.9.1} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.8.3} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.8.2} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.8.1} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.6.1} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.5.3} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.5.2} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{table.5.1} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.8} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.7} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.6} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.5} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.9.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.8.5} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.8.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.8.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.8.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.8.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.7.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.7.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.7.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.6.5} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.6.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.6.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.6.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.6.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.5.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.5.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.5.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.5.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.7} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.6} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.5} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.4.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.121} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.120} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.117} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.115} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.114} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.113} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.112} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.111} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.110} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.109} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.108} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.107} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.106} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.105} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.104} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.103} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.102} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.101} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.100} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.99} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.98} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.97} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.95} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.94} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.75} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.68} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.67} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.65} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.64} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.61} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.60} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.52} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.51} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.50} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.49} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.48} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.47} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.46} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.45} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.44} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.40} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.132} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.129} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.128} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.127} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.126} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.125} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.124} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.123} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.122} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.B} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.A.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.A.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.A.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.A.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.A.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.A.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.A.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.A} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.119} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.14.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.14.2} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.14.1} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.14} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.13.5} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.13.4} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.13.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.13.2} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.13.1} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.13} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.118} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.12.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.12.2} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.12.1} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.12} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.11.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.11.2} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.11.1} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.11} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.116} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.3.3} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.3.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.10.3.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.3} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.2} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.10.1} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.10} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.5.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.5.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.3.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.9.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.9.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.9} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.8.4.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.8.4.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.8.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.8.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.8.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.8.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.8} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.96} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.7.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.7} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.2.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.2.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.6} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.5} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.6} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, 
+replaced by a fixed one
+
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/loc
+al/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{/u
+sr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texliv
+e/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}</usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/tex-gyre/qagb.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/tex-gyre/qagr.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/urw/bookman/ubkd8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
+w/bookman/ubkl8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookma
+n/ubkli8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrb8
+a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/wasy2-ps/wasyb10.pfb>
+Output written on main.pdf (54 pages, 1027394 bytes).
 PDF statistics:
- 898 PDF objects out of 1000 (max. 8388607)
- 795 compressed objects within 8 object streams
- 213 named destinations out of 1000 (max. 500000)
- 332 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2256 PDF objects out of 2487 (max. 8388607)
+ 2125 compressed objects within 22 object streams
+ 634 named destinations out of 1000 (max. 500000)
+ 1271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
