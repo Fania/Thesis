@@ -29,6 +29,8 @@ owing to some misunderstanding.
 
 \grule % chktex 1
 
+(PPPP) \autocite{Jordanous2015}
+
 \begin{draft}
   Creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
 \end{draft}
@@ -267,6 +269,32 @@ Unified definition!
 
 
 \section{5 P’s: product, process, people, place and purpose}
+
+
+\begin{figure}[htb] % (here, top, bottom, page)
+  \centering
+  \tikzset{every fit/.append style=text badly centered}
+  \tikzset{class/.style={draw,rectangle},
+           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,node distance=4pt}}
+  \begin{tikzpicture}
+  \node [class] (prod) {Product};
+  \node [label, below=of prod] (proc) {Process};
+  \node [label, below=of proc] (pers) {Person};
+  \node [label, below=of pers] (env) {Environment};
+  \begin{pgfonlayer}{background}
+  \node [class, inner xsep=1em, fit=(prod) (proc)] {};
+  \node [class, inner xsep=2em, fit=(prod) (proc) (pers)] {};
+  \node [class, inner xsep=2em, fit=(prod) (proc) (pers) (env)] {};
+  \end{pgfonlayer}
+  \end{tikzpicture}
+\caption[4 Aspects of Creativity]{4 Aspects of Creativity}
+\label{fig:4Crea}
+\end{figure}
+
+\begin{draft}
+  Figure~\ref{fig:4Crea} shows how these aspects relate to each other. The environment influences all others and the person creates the product in a process.
+\end{draft}
+
 
 \begin{quote}
   One way of characterizing these processes is to use an alliteration that allows us to keep track of some of the core features of RRI in ICT, namely the four P's, which are: product, process, purpose and people. The purpose of using the four P's is to draw attention to the fact that, in addition to the widely recog- nized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation need to be incorporated in RRI.\@ \autocite[p.203, my emphasis]{Stahl2013}

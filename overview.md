@@ -101,6 +101,15 @@ is it gonna be usable?
 ## III THE CΘRE: TΣCHNΘ-LΘGIC 113
 
 ## 7 Theoretical Foundations 114
+
+\item link the various creativity models
+\item link the various creative process models
+\item Creativity and Computing disciplines
+\item link discipline models to creative process models
+\item link pataphysics to creativity
+\item link pataphysics and computers
+\item patalgorithms, pataphysicalisations, patadata, pranking
+
 ## 7.1 Searchingvs.Browsing . 115
 searching = information answering
 browsing = exploratory / detours/ distractions/ leaps/ unexpected

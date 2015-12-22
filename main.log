@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.22)  22 DEC 2015 17:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.22)  22 DEC 2015 23:26
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2608,7 +2608,8 @@ runsystem(rm "main.aex")...executed.
 
 
 (./main.aux (./front/title.aux) (./front/abstract.aux) (./front/dedication.aux)
-(./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux))
+(./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux)
+(./main/foundation.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -2784,15 +2785,7 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
-(./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Jarry1997
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+(./main.bbl)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
  (./_minted-main/default-pyg-prefix.pygstyle)
@@ -2875,7 +2868,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 25.
 
-<images/spiral_pre.pdf, id=217, 156.48964pt x 156.48964pt>
+<images/spiral_pre.pdf, id=273, 156.48964pt x 156.48964pt>
 File: images/spiral_pre.pdf Graphic file (type pdf)
 
 <use images/spiral_pre.pdf>
@@ -2968,7 +2961,7 @@ LaTeX Font Warning: Font shape `T3/pbk/b/n' undefined
 LaTeX Font Warning: Font shape `T3/pbk/m/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 81.
 
-<images/spiral_hello.pdf, id=355, 156.48964pt x 156.48964pt>
+<images/spiral_hello.pdf, id=442, 156.48964pt x 156.48964pt>
 File: images/spiral_hello.pdf Graphic file (type pdf)
 
 <use images/spiral_hello.pdf>
@@ -2999,10 +2992,6 @@ l.28 \newpage
 ]
 
 LaTeX Warning: Reference `ch:pataphysics' on page 3 undefined on input line 32.
-
-
-
-LaTeX Warning: Reference `ch:foundations' on page 3 undefined on input line 34.
 
 
 
@@ -3037,11 +3026,7 @@ t line 68.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2015/07/30 Font definitions for U/fontawesomethree.
-)
-
-LaTeX Warning: Reference `tab:creatpata' on page 4 undefined on input line 68.
-
-[4]
+) [4]
 Overfull \hbox (7.20062pt too wide) in paragraph at lines 82--83
 \T1/qag/m/n/10.95 'pur-pos-ive without pur-pose' (some-times trans-lated as 'fi
 -nal without end').|
@@ -3073,7 +3058,7 @@ LaTeX Warning: Reference `ch:implementation' on page 11 undefined on input line
 
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <9> not available
 (Font)              Font shape `T1/pbk/l/it' tried instead on input line 49.
-[11] <images/JaneAvril.png, id=507, 306.14375pt x 451.6875pt>
+[11] <images/JaneAvril.png, id=597, 306.14375pt x 451.6875pt>
 File: images/JaneAvril.png Graphic file (type png)
 
 <use images/JaneAvril.png>
@@ -3084,7 +3069,7 @@ Underfull \hbox (badness 8113) in paragraph at lines 85--85
 []\T1/pbk/l/n/10.95 Figure 2.1: []Toulouse-Lautrec's
  []
 
-<images/RevueBlanche.jpg, id=509, 351.3125pt x 451.6875pt>
+<images/RevueBlanche.jpg, id=599, 351.3125pt x 451.6875pt>
 File: images/RevueBlanche.jpg Graphic file (type jpg)
 
 <use images/RevueBlanche.jpg>
@@ -3095,7 +3080,7 @@ Underfull \hbox (badness 7981) in paragraph at lines 91--91
 []\T1/pbk/l/n/10.95 Figure 2.2: []Bonnard's `Re-vue
  []
 
-<images/DocteurFaustroll.jpg, id=510, 302.12875pt x 451.6875pt>
+<images/DocteurFaustroll.jpg, id=600, 302.12875pt x 451.6875pt>
 File: images/DocteurFaustroll.jpg Graphic file (type jpg)
 
 <use images/DocteurFaustroll.jpg>
@@ -3106,7 +3091,7 @@ Underfull \hbox (badness 1394) in paragraph at lines 97--97
 []\T1/pbk/l/n/10.95 Figure 2.3: []Beardsley's `Docteur
  []
 
-<images/SaintCado.jpg, id=511, 355.3275pt x 451.6875pt>
+<images/SaintCado.jpg, id=601, 355.3275pt x 451.6875pt>
 File: images/SaintCado.jpg Graphic file (type jpg)
 
 <use images/SaintCado.jpg>
@@ -3122,14 +3107,14 @@ LaTeX Warning: Reference `ch:implementation' on page 12 undefined on input line
 
 [12] [13 <./images/JaneAvril.png> <./images/RevueBlanche.jpg> <./images/Docteur
 Faustroll.jpg> <./images/SaintCado.jpg>]
-<images/queneau1.jpg, id=553, 344.28625pt x 359.3425pt>
+<images/queneau1.jpg, id=643, 344.28625pt x 359.3425pt>
 File: images/queneau1.jpg Graphic file (type jpg)
 
 <use images/queneau1.jpg>
 Package pdftex.def Info: images/queneau1.jpg used on input line 117.
 (pdftex.def)             Requested size: 192.0548pt x 200.45181pt.
 
-<images/queneau2.jpg, id=554, 344.28625pt x 359.3425pt>
+<images/queneau2.jpg, id=644, 344.28625pt x 359.3425pt>
 File: images/queneau2.jpg Graphic file (type jpg)
 
 <use images/queneau2.jpg>
@@ -3144,7 +3129,7 @@ Package pdftex.def Info: images/queneau2.jpg used on input line 121.
 
 
 ] [18]
-Overfull \hbox (12.66109pt too wide) in paragraph at lines 98--99
+Overfull \hbox (12.66109pt too wide) in paragraph at lines 94--95
 \T1/pbk/l/n/10.95 Basarab Nicolescu dis-tin-guished between three dif-fer-ent k
 inds of re-search ``without|
  []
@@ -3152,49 +3137,49 @@ inds of re-search ``without|
 [19]
 
 LaTeX Warning: Reference `ch:pataphysics' on page 20 undefined on input line 10
-8.
+4.
 
-[20] <images/trans.png, id=689, 286.06876pt x 252.945pt>
+[20] <images/trans.png, id=774, 286.06876pt x 252.945pt>
 File: images/trans.png Graphic file (type png)
 
 <use images/trans.png>
-Package pdftex.def Info: images/trans.png used on input line 131.
+Package pdftex.def Info: images/trans.png used on input line 127.
 (pdftex.def)             Requested size: 286.06805pt x 252.94438pt.
 LaTeX Font Info:    Try loading font information for U+fontawesomeone on input 
-line 136.
+line 132.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
 File: ufontawesomeone.fd 2015/07/30 Font definitions for U/fontawesomeone.
 )
-[21 <./images/trans.png>] <images/tmpr.png, id=707, 316.18124pt x 375.4025pt>
+[21 <./images/trans.png>] <images/tmpr.png, id=799, 316.18124pt x 375.4025pt>
 File: images/tmpr.png Graphic file (type png)
 
 <use images/tmpr.png>
-Package pdftex.def Info: images/tmpr.png used on input line 175.
+Package pdftex.def Info: images/tmpr.png used on input line 186.
 (pdftex.def)             Requested size: 213.39568pt x 253.36856pt.
 
-Underfull \hbox (badness 1033) in paragraph at lines 209--209
+Underfull \hbox (badness 1033) in paragraph at lines 220--220
 \T1/pbk/l/n/10.95 facts, mu-sical com-pos-i-tions, soft-
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 209--209
+Underfull \hbox (badness 3579) in paragraph at lines 220--220
 []\T1/pbk/l/n/10.95 observe, re-cord, ana-
  []
 
-<images/spirals.png, id=717, 482.80376pt x 473.77pt>
+<images/spirals.png, id=809, 482.80376pt x 473.77pt>
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 215.
+Package pdftex.def Info: images/spirals.png used on input line 226.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 File: images/spirals.png Graphic file (type png)
 
 <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 215.
+Package pdftex.def Info: images/spirals.png used on input line 226.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 215.
+Package pdftex.def Info: images/spirals.png used on input line 226.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
  [22 <./images/spirals.png>]
 [23 <./images/tmpr.png>]) [24]
@@ -3261,7 +3246,7 @@ LaTeX Font Warning: Font shape `U/wasy/m/n' in size <39.83366> not available
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <28.45274> not available
 (Font)              size <24.88> substituted on input line 89.
 
-<images/spiral_trade.pdf, id=743, 156.48964pt x 156.48964pt>
+<images/spiral_trade.pdf, id=837, 156.48964pt x 156.48964pt>
 File: images/spiral_trade.pdf Graphic file (type pdf)
 
 <use images/spiral_trade.pdf>
@@ -3271,7 +3256,7 @@ Package pdftex.def Info: images/spiral_trade.pdf used on input line 89.
 
 
  <./images/spiral_trade.pdf>]
-<images/spiral_core.pdf, id=756, 156.48964pt x 156.48964pt>
+<images/spiral_core.pdf, id=850, 156.48964pt x 156.48964pt>
 File: images/spiral_core.pdf Graphic file (type pdf)
 
 <use images/spiral_core.pdf>
@@ -3280,42 +3265,181 @@ Package pdftex.def Info: images/spiral_core.pdf used on input line 98.
  [26
 
  <./images/spiral_core.pdf>]
-<images/spiral_meta.pdf, id=766, 156.48964pt x 156.48964pt>
+\openout2 = `main/foundation.aux'.
+
+
+(./main/foundation.tex (./main.ptc [27
+
+
+])
+
+LaTeX Warning: Reference `ch:pataphysics' on page 28 undefined on input line 29
+.
+
+
+LaTeX Warning: Reference `ch:evaluation' on page 28 undefined on input line 29.
+
+
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <9> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 29.
+
+LaTeX Warning: Reference `ch:evaluation' on page 28 undefined on input line 29.
+
+
+
+LaTeX Warning: Reference `ch:interpretation' on page 28 undefined on input line
+ 29.
+
+
+LaTeX Warning: Reference `ch:creativity' on page 28 undefined on input line 46.
+
+
+[28] [29]
+Underfull \hbox (badness 2781) in paragraph at lines 125--125
+\T1/pbk/l/n/10.95 ing, Mod-el-ing and Net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
+[]|\T1/pbk/l/n/10.95 Versioning, Pro-to-typ-ing,
+ []
+
+
+Overfull \hbox (12.80394pt too wide) in paragraph at lines 121--129
+ [][] |
+ []
+
+[30]
+Underfull \hbox (badness 3612) in paragraph at lines 156--156
+[]\T1/pbk/l/n/10.95 see sec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+\T1/pbk/l/n/10.95 tion
+ []
+
+[31] [32] [33]
+Underfull \hbox (badness 4819) in paragraph at lines 210--210
+\T1/pbk/l/n/10.95 tu-ally in-com-pat-ible, con-tra-dict-ing,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]\T1/pbk/db/n/10.95 Transformative\T1/pbk/l/n/10.95 : Mak-ing new
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T1/pbk/l/n/10.95 thoughts pos-sible by trans-form-
+ []
+
+[34] [35] [36] <images/patasearch01.png, id=1008, 215.8464pt x 119.4864pt>
+File: images/patasearch01.png Graphic file (type png)
+
+<use images/patasearch01.png>
+Package pdftex.def Info: images/patasearch01.png used on input line 253.
+(pdftex.def)             Requested size: 426.79135pt x 236.26108pt.
+ (./images/patasearch01.pdf_tex
+<images/patasearch01.pdf, id=1009, page=1, 188.11078pt x 76.59924pt>
+File: images/patasearch01.pdf Graphic file (type pdf)
+
+<use images/patasearch01.pdf, page 1>
+Package pdftex.def Info: images/patasearch01.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 188.11078pt x 76.59904pt.
+
+<images/patasearch01.pdf, id=1010, page=2, 188.11078pt x 76.59924pt>
+File: images/patasearch01.pdf Graphic file (type pdf)
+
+<use images/patasearch01.pdf, page 2>
+Package pdftex.def Info: images/patasearch01.pdf, page2 used on input line 57.
+(pdftex.def)             Requested size: 188.11078pt x 76.59904pt.
+) [37 <./images/patasearch01.png> <./images/patasearch01.pdf> <./images/patasea
+rch01.pdf
+
+pdfTeX warning: pdflatex (file ./images/patasearch01.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>] (./images/pataphysicalisation.pdf_tex
+<images/pataphysicalisation.pdf, id=1019, page=1, 490.13112pt x 100.3469pt>
+File: images/pataphysicalisation.pdf Graphic file (type pdf)
+
+<use images/pataphysicalisation.pdf, page 1>
+Package pdftex.def Info: images/pataphysicalisation.pdf, page1 used on input li
+ne 52.
+(pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
+
+<images/pataphysicalisation.pdf, id=1020, page=2, 490.13112pt x 100.3469pt>
+File: images/pataphysicalisation.pdf Graphic file (type pdf)
+
+<use images/pataphysicalisation.pdf, page 2>
+Package pdftex.def Info: images/pataphysicalisation.pdf, page2 used on input li
+ne 58.
+(pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
+
+<images/pataphysicalisation.pdf, id=1021, page=3, 490.13112pt x 100.3469pt>
+File: images/pataphysicalisation.pdf Graphic file (type pdf)
+
+<use images/pataphysicalisation.pdf, page 3>
+Package pdftex.def Info: images/pataphysicalisation.pdf, page3 used on input li
+ne 64.
+(pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
+
+<images/pataphysicalisation.pdf, id=1022, page=4, 490.13112pt x 100.3469pt>
+File: images/pataphysicalisation.pdf Graphic file (type pdf)
+
+<use images/pataphysicalisation.pdf, page 4>
+Package pdftex.def Info: images/pataphysicalisation.pdf, page4 used on input li
+ne 70.
+(pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
+) [38 <./images/pataphysicalisation.pdf> <./images/pataphysicalisation.pdf
+
+pdfTeX warning: pdflatex (file ./images/pataphysicalisation.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./images/pataphysicalisation.pdf
+
+pdfTeX warning: pdflatex (file ./images/pataphysicalisation.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+> <./images/pataphysicalisation.pdf
+
+pdfTeX warning: pdflatex (file ./images/pataphysicalisation.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>] [39]) [40] <images/spiral_meta.pdf, id=1047, 156.48964pt x 156.48964pt>
 File: images/spiral_meta.pdf Graphic file (type pdf)
 
 <use images/spiral_meta.pdf>
 Package pdftex.def Info: images/spiral_meta.pdf used on input line 106.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [27
+ [41
+
 
  <./images/spiral_meta.pdf>]
-<images/spiral_after.pdf, id=776, 156.48964pt x 156.48964pt>
+<images/spiral_after.pdf, id=1058, 156.48964pt x 156.48964pt>
 File: images/spiral_after.pdf Graphic file (type pdf)
 
 <use images/spiral_after.pdf>
 Package pdftex.def Info: images/spiral_after.pdf used on input line 113.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [28
+ [42
 
  <./images/spiral_after.pdf>]
-<images/spiral_post.pdf, id=787, 156.48964pt x 156.48964pt>
+<images/spiral_post.pdf, id=1068, 156.48964pt x 156.48964pt>
 File: images/spiral_post.pdf Graphic file (type pdf)
 
 <use images/spiral_post.pdf>
 Package pdftex.def Info: images/spiral_post.pdf used on input line 123.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [29
+ [43
 
- <./images/spiral_post.pdf>] [30
+ <./images/spiral_post.pdf>] [44
 
 
-]
+] [45] [46]
 Overfull \hbox (8.91748pt too wide) in paragraph at lines 136--136
 [][]\T1/pbk/l/n/10.95 Singh, Push (2005). `  EM-ONE: An Ar-chi-tec-ture for Ref
 lect-ive Common-sense Think-|
  []
 
-[31]
+[47]
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
 . Rerun may be required (or you may have forgotten to use commands like \gls). 
@@ -3342,11 +3466,12 @@ on input line 142.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
 (./main.aux (./front/title.aux) (./front/abstract.aux) (./front/dedication.aux)
-(./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux))
+(./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux)
+(./main/foundation.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D33E00A00BB49DD89883AE788CF0320;2469.
+(rerunfilecheck)             Checksum: D5A88893197AED2C9E5B95016DF578ED;3392.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -3358,16 +3483,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52902 strings out of 493091
- 921361 string characters out of 6134970
- 1636054 words of memory out of 5000000
- 55064 multiletter control sequences out of 15000+600000
- 83614 words of font info for 142 fonts, out of 8000000 for 9000
+ 53197 strings out of 493091
+ 926616 string characters out of 6134970
+ 1640774 words of memory out of 5000000
+ 55251 multiletter control sequences out of 15000+600000
+ 85118 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,15n,82p,1923b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeon
@@ -3393,10 +3522,10 @@ xlive/2015/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/wasy2-ps/wasyb10.pfb>
-Output written on main.pdf (43 pages, 1033989 bytes).
+Output written on main.pdf (59 pages, 1113625 bytes).
 PDF statistics:
- 966 PDF objects out of 1000 (max. 8388607)
- 847 compressed objects within 9 object streams
- 218 named destinations out of 1000 (max. 500000)
- 397 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1320 PDF objects out of 1440 (max. 8388607)
+ 1163 compressed objects within 12 object streams
+ 308 named destinations out of 1000 (max. 500000)
+ 536 words of extra memory for PDF output out of 10000 (max. 10000000)
 

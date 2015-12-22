@@ -96,10 +96,12 @@ makeglossaries main
 - [ ] add line with three stars in middle to separate paragraphs
 - [ ] state of the art versus state of the science
 - [ ] when to use italics and when quotes
-- [ ] Use Avant Garde font
+- [X] Use Avant Garde font
 - [ ] double check hyperref links in pdf toc
 - [ ] Add stars line where appropriate (\spirals)
-
+- [ ] fix overflow of minicontents for each chapter
+- [ ] make sure I mention everything covered in foundations in the lit review
+- [ ] add some \nameref{ch:test} references instead of just \ref{}
 
 
 ## Errors

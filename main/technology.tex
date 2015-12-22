@@ -169,6 +169,45 @@ The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the d
 % % \myequations{idfj}
 
 
+\subsection{Searching vs. Browsing}
+
+\todo{rewrite to match current style}
+
+What do we actually mean by searching? Usually it implies that there is something to be found, an \gls{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
+
+From the users' point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques \autocite{Polya1957}:
+
+\begin{description}
+  \item [Problem identification] \gls{in},
+  \item [Need articulation] \gls{in} in natural language terms,
+  \item [Query formulation] translate \gls{in} into query terms, and
+  \item [Results evaluation] compare against \gls{in}.
+\end{description}
+
+This model poses problems when we consider a situation where an \gls{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \autocite{Marchionini1988} and they laid out a framework with the following main elements.
+
+\begin{itemize}
+  \item Setting (the context of the search and external factors such as time, cost)
+  \item Task domain (the body of knowledge, the subject)
+  \item Search system (the database or web search engine)
+  \item User (the user’s experience)
+  \item Outcomes (the assessment of the results/answers)
+\end{itemize}
+
+Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \autocite{DeVries1993, Marchionini2006}. A situation where an \gls{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
+
+Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
+
+When it comes to exploratory search though, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploring \autocite{Marchionini2006}.
+
+\begin{quote}
+  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \autocite{Marchionini2006}
+\end{quote}
+
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \autocite{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003}.
+
+All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
+
 
 \subsection{IR Models}
 
