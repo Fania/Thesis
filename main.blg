@@ -1,17 +1,17 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [1] Config.pm:327> INFO - Logfile is 'main.blg'
-[194] biber-darwin:276> INFO - === Fri Dec 11, 2015, 15:14:07
-[194] Biber.pm:333> INFO - Reading 'main.bcf'
-[471] Biber.pm:645> INFO - Found 138 citekeys in bib section 0
-[582] Biber.pm:2977> INFO - Processing section 0
-[653] Biber.pm:3115> INFO - Looking for bibtex format file 'back/new.bib' for section 0
-[666] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[677] bibtex.pm:895> INFO - Found BibTeX data source 'back/new.bib'
-[990] Utils.pm:146> WARN - I didn't find a database entry for 'Hugill2012' (section 0)
-[4183] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[4184] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[4184] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
-[4184] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-UK'
-[5042] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[5073] bbl.pm:596> INFO - Output to main.bbl
-[5073] Biber.pm:106> INFO - WARNINGS: 1
+[92] biber-darwin:276> INFO - === Tue Dec 22, 2015, 13:12:30
+[92] Biber.pm:333> INFO - Reading 'main.bcf'
+[317] Biber.pm:645> INFO - Found 26 citekeys in bib section 0
+[355] Biber.pm:2977> INFO - Processing section 0
+[389] Biber.pm:3115> INFO - Looking for bibtex format file 'back/new.bib' for section 0
+[404] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[416] bibtex.pm:895> INFO - Found BibTeX data source 'back/new.bib'
+[484] Utils.pm:146> WARN - I didn't find a database entry for 'Jarry1997' (section 0)
+[1084] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1084] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1084] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[1084] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-UK'
+[1192] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1197] bbl.pm:596> INFO - Output to main.bbl
+[1197] Biber.pm:106> INFO - WARNINGS: 1

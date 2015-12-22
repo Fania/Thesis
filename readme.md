@@ -98,6 +98,8 @@ makeglossaries main
 - [ ] when to use italics and when quotes
 - [ ] Use Avant Garde font
 - [ ] double check hyperref links in pdf toc
+- [ ] Add stars line where appropriate (\spirals)
+
 
 
 ## Errors

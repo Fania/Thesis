@@ -43,7 +43,7 @@
 % \usepackage{import}
 
 % \usepackage[T3,OT2,T1]{fontenc}
-\usepackage[T1]{fontenc}
+\usepackage[T3,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
 \usepackage{textcomp}
@@ -174,6 +174,23 @@
 \chapterstyle{fania}
 
 
+% Section Break Line
+\newcommand*\spirals{%
+  \begin{center}
+    $\spiral\hspace{1cm}\spiral\hspace{1cm}\spiral$
+  \end{center}}
+
+
+% SPIRAL
+\newcommand{\spiral}[1][]{\includegraphics[
+  height=.7\baselineskip,
+  origin=c,% For rotation purposes, rotate around centre
+  % viewport=154mm 173mm 0mm 194mm,clip,
+  #1% Any other graphicx options
+  ]{spirals}%
+}
+
+
 
 % OVERVIEW
 
@@ -266,15 +283,17 @@ breaklines=true
   \else
     % \addcontentsline{toc}{part}{#1}
   \fi
+  \thispagestyle{empty}
+  \vskip 50\p@
   \begingroup\centering
+  \fontsize{2cm}{0}\bfseries
   \ifnum \c@secnumdepth >-2\relax
        {\fontsize{\@xviipt}{22}\bfseries
       %  \fontsize{5cm}{0cm}%
-         \partname\ \thepart} \vskip 30\p@
+         \partname\ \thepart} \vskip 50\p@
   \fi
-  \fontsize{2cm}{0}\bfseries
   % \fontsize{\@xxpt}{25}\bfseries
-      #1\vfil\@partimage\vfil\endgroup \newpage\thispagestyle{empty}}
+      #1\vfill\@partimage\vfil\endgroup \newpage\thispagestyle{empty}}
 \makeatother
 
 
