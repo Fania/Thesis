@@ -564,6 +564,19 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \usepackage{qtree}
 \usepackage{mathtools}
 
+\usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+
+% \newcommand{\speechthis}[2]{
+%   \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+%   (#1) {\underline{#1}};\node[overlay,ellipse callout,fill=blue!50]
+%   at ($(#1.north)+(-.5cm,0.8cm)$) {#2};}%
+% }
+\newcommand{\pointthis}[2]{
+  \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
+  (#1) {\underline{#1}};\node[overlay,rectangle callout,%
+  callout relative pointer={(0.2cm,0.7cm)},fill=green!50] at ($(#1.north)+(-.5cm,-1.4cm)$) {#2};}%
+}
+
 
 \usetikzlibrary{decorations.text}
 \makeatletter
