@@ -337,6 +337,8 @@ breaklines=true
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
 
+\usepackage{marginnote}
+
 % \todoin{}
 % \newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
 % \begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
@@ -426,8 +428,16 @@ breaklines=true
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
-% \renewcommand{\listfigurename}{List of Images}
-% \renewcommand{\listtablename}{Tables}
+
+\addto\captionsUKenglish{%
+  \renewcommand{\listfigurename}%
+    {Figures}%
+}
+\addto\captionsUKenglish{%
+  \renewcommand{\listtablename}%
+    {Tables}%
+}
+
 
 % HEADER & FOOTER
 % \pagestyle{plain}
@@ -476,7 +486,7 @@ breaklines=true
 % css, c, json, hs, lhs, js, py3, py, css+jinja, html+jinja, js+jinja
 
 \renewcommand{\listingscaption}{Source}
-\renewcommand{\listoflistingscaption}{List of Source Code}
+\renewcommand{\listoflistingscaption}{Source Code}
 
 \setminted[python]{
   linenos,

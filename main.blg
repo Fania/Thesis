@@ -1,15 +1,17 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [1] Config.pm:327> INFO - Logfile is 'main.blg'
-[96] biber-darwin:276> INFO - === Sat Dec 26, 2015, 16:40:19
-[96] Biber.pm:333> INFO - Reading 'main.bcf'
-[354] Biber.pm:645> INFO - Found 46 citekeys in bib section 0
-[395] Biber.pm:2977> INFO - Processing section 0
-[425] Biber.pm:3115> INFO - Looking for bibtex format file 'back/new.bib' for section 0
-[447] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[459] bibtex.pm:895> INFO - Found BibTeX data source 'back/new.bib'
-[1643] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1643] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1644] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
-[1644] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-UK'
-[1880] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1891] bbl.pm:596> INFO - Output to main.bbl
+[181] biber-darwin:276> INFO - === Tue Dec 29, 2015, 14:08:49
+[181] Biber.pm:333> INFO - Reading 'main.bcf'
+[454] Biber.pm:645> INFO - Found 139 citekeys in bib section 0
+[579] Biber.pm:2977> INFO - Processing section 0
+[686] Biber.pm:3115> INFO - Looking for bibtex format file 'back/new.bib' for section 0
+[700] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[712] bibtex.pm:895> INFO - Found BibTeX data source 'back/new.bib'
+[990] Utils.pm:146> WARN - I didn't find a database entry for 'Hugill2012' (section 0)
+[4236] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[4237] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[4237] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[4237] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-UK'
+[5100] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[5126] bbl.pm:596> INFO - Output to main.bbl
+[5126] Biber.pm:106> INFO - WARNINGS: 1

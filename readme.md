@@ -103,6 +103,7 @@ makeglossaries main
 - [ ] make sure I mention everything covered in foundations in the lit review
 - [ ] add some \nameref{ch:test} references instead of just \ref{}
 - [ ] add margin notes for references to my publications
+- [ ] Boden argues ?? Boden argued ??
 
 
 ## Errors

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.22)  27 DEC 2015 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.22)  29 DEC 2015 20:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1325,6 +1325,10 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 \c@@todonotes@numberoftodonotes=\count201
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/marginnote/marginnote.sty
+Package: marginnote 2012/03/29 v1.1i non floating margin notes for LaTeX
+\c@mn@abspage=\count202
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -1332,9 +1336,9 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count202
-\Gm@cntv=\count203
-\c@Gm@tempcnt=\count204
+\Gm@cnth=\count203
+\Gm@cntv=\count204
+\c@Gm@tempcnt=\count205
 \Gm@bindingoffset=\dimen215
 \Gm@wd@mp=\dimen216
 \Gm@odd@mp=\dimen217
@@ -1354,7 +1358,7 @@ B)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count205
+\lrq@indent=\count206
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -1363,44 +1367,44 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count206
-\c@listtotal=\count207
-\c@listcount=\count208
-\c@liststart=\count209
-\c@liststop=\count210
-\c@citecount=\count211
-\c@citetotal=\count212
-\c@multicitecount=\count213
-\c@multicitetotal=\count214
-\c@instcount=\count215
-\c@maxnames=\count216
-\c@minnames=\count217
-\c@maxitems=\count218
-\c@minitems=\count219
-\c@citecounter=\count220
-\c@savedcitecounter=\count221
-\c@uniquelist=\count222
-\c@uniquename=\count223
-\c@refsection=\count224
-\c@refsegment=\count225
-\c@maxextratitle=\count226
-\c@maxextratitleyear=\count227
-\c@maxextrayear=\count228
-\c@maxextraalpha=\count266
-\c@abbrvpenalty=\count267
-\c@highnamepenalty=\count268
-\c@lownamepenalty=\count269
-\c@maxparens=\count270
-\c@parenlevel=\count271
-\blx@tempcnta=\count272
-\blx@tempcntb=\count273
-\blx@tempcntc=\count274
-\blx@maxsection=\count275
-\blx@maxsegment@0=\count276
-\blx@notetype=\count277
-\blx@parenlevel@text=\count278
-\blx@parenlevel@foot=\count279
-\blx@sectionciteorder@0=\count280
+\c@tabx@nest=\count207
+\c@listtotal=\count208
+\c@listcount=\count209
+\c@liststart=\count210
+\c@liststop=\count211
+\c@citecount=\count212
+\c@citetotal=\count213
+\c@multicitecount=\count214
+\c@multicitetotal=\count215
+\c@instcount=\count216
+\c@maxnames=\count217
+\c@minnames=\count218
+\c@maxitems=\count219
+\c@minitems=\count220
+\c@citecounter=\count221
+\c@savedcitecounter=\count222
+\c@uniquelist=\count223
+\c@uniquename=\count224
+\c@refsection=\count225
+\c@refsegment=\count226
+\c@maxextratitle=\count227
+\c@maxextratitleyear=\count228
+\c@maxextrayear=\count266
+\c@maxextraalpha=\count267
+\c@abbrvpenalty=\count268
+\c@highnamepenalty=\count269
+\c@lownamepenalty=\count270
+\c@maxparens=\count271
+\c@parenlevel=\count272
+\blx@tempcnta=\count273
+\blx@tempcntb=\count274
+\blx@tempcntc=\count275
+\blx@maxsection=\count276
+\blx@maxsegment@0=\count277
+\blx@notetype=\count278
+\blx@parenlevel@text=\count279
+\blx@parenlevel@foot=\count280
+\blx@sectionciteorder@0=\count281
 \labelnumberwidth=\skip212
 \labelalphawidth=\skip213
 \biblabelsep=\skip214
@@ -1410,9 +1414,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \bibhang=\skip218
 \blx@bcfin=\read3
 \blx@bcfout=\write5
-\c@mincomprange=\count281
-\c@maxcomprange=\count282
-\c@mincompwidth=\count283
+\c@mincomprange=\count282
+\c@maxcomprange=\count283
+\c@mincompwidth=\count284
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1421,72 +1425,72 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count284
-\c@savedafterword=\count285
-\c@annotator=\count286
-\c@savedannotator=\count287
-\c@author=\count288
-\c@savedauthor=\count289
-\c@bookauthor=\count290
-\c@savedbookauthor=\count291
-\c@commentator=\count292
-\c@savedcommentator=\count293
-\c@editor=\count294
-\c@savededitor=\count295
-\c@editora=\count296
-\c@savededitora=\count297
-\c@editorb=\count298
-\c@savededitorb=\count299
-\c@editorc=\count300
-\c@savededitorc=\count301
-\c@foreword=\count302
-\c@savedforeword=\count303
-\c@holder=\count304
-\c@savedholder=\count305
-\c@introduction=\count306
-\c@savedintroduction=\count307
-\c@namea=\count308
-\c@savednamea=\count309
-\c@nameb=\count310
-\c@savednameb=\count311
-\c@namec=\count312
-\c@savednamec=\count313
-\c@translator=\count314
-\c@savedtranslator=\count315
-\c@shortauthor=\count316
-\c@savedshortauthor=\count317
-\c@shorteditor=\count318
-\c@savedshorteditor=\count319
-\c@labelname=\count320
-\c@savedlabelname=\count321
-\c@institution=\count322
-\c@savedinstitution=\count323
-\c@lista=\count324
-\c@savedlista=\count325
-\c@listb=\count326
-\c@savedlistb=\count327
-\c@listc=\count328
-\c@savedlistc=\count329
-\c@listd=\count330
-\c@savedlistd=\count331
-\c@liste=\count332
-\c@savedliste=\count333
-\c@listf=\count334
-\c@savedlistf=\count335
-\c@location=\count336
-\c@savedlocation=\count337
-\c@organization=\count338
-\c@savedorganization=\count339
-\c@origlocation=\count340
-\c@savedoriglocation=\count341
-\c@origpublisher=\count342
-\c@savedorigpublisher=\count343
-\c@publisher=\count344
-\c@savedpublisher=\count345
-\c@language=\count346
-\c@savedlanguage=\count347
-\c@pageref=\count348
-\c@savedpageref=\count349
+\c@afterword=\count285
+\c@savedafterword=\count286
+\c@annotator=\count287
+\c@savedannotator=\count288
+\c@author=\count289
+\c@savedauthor=\count290
+\c@bookauthor=\count291
+\c@savedbookauthor=\count292
+\c@commentator=\count293
+\c@savedcommentator=\count294
+\c@editor=\count295
+\c@savededitor=\count296
+\c@editora=\count297
+\c@savededitora=\count298
+\c@editorb=\count299
+\c@savededitorb=\count300
+\c@editorc=\count301
+\c@savededitorc=\count302
+\c@foreword=\count303
+\c@savedforeword=\count304
+\c@holder=\count305
+\c@savedholder=\count306
+\c@introduction=\count307
+\c@savedintroduction=\count308
+\c@namea=\count309
+\c@savednamea=\count310
+\c@nameb=\count311
+\c@savednameb=\count312
+\c@namec=\count313
+\c@savednamec=\count314
+\c@translator=\count315
+\c@savedtranslator=\count316
+\c@shortauthor=\count317
+\c@savedshortauthor=\count318
+\c@shorteditor=\count319
+\c@savedshorteditor=\count320
+\c@labelname=\count321
+\c@savedlabelname=\count322
+\c@institution=\count323
+\c@savedinstitution=\count324
+\c@lista=\count325
+\c@savedlista=\count326
+\c@listb=\count327
+\c@savedlistb=\count328
+\c@listc=\count329
+\c@savedlistc=\count330
+\c@listd=\count331
+\c@savedlistd=\count332
+\c@liste=\count333
+\c@savedliste=\count334
+\c@listf=\count335
+\c@savedlistf=\count336
+\c@location=\count337
+\c@savedlocation=\count338
+\c@organization=\count339
+\c@savedorganization=\count340
+\c@origlocation=\count341
+\c@savedoriglocation=\count342
+\c@origpublisher=\count343
+\c@savedorigpublisher=\count344
+\c@publisher=\count345
+\c@savedpublisher=\count346
+\c@language=\count347
+\c@savedlanguage=\count348
+\c@pageref=\count349
+\c@savedpageref=\count350
 \shorthandwidth=\skip219
 \shortjournalwidth=\skip220
 \shortserieswidth=\skip221
@@ -1504,13 +1508,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 
-\c@textcitecount=\count350
-\c@textcitetotal=\count351
-\c@textcitemaxnames=\count352
-\c@biburlnumpenalty=\count353
-\c@biburlucpenalty=\count354
-\c@biburllcpenalty=\count355
-\c@smartand=\count356
+\c@textcitecount=\count351
+\c@textcitetotal=\count352
+\c@textcitemaxnames=\count353
+\c@biburlnumpenalty=\count354
+\c@biburlucpenalty=\count355
+\c@biburllcpenalty=\count356
+\c@smartand=\count357
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
@@ -1522,8 +1526,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count357
-\c@bbx:relatedtotal=\count358
+\c@bbx:relatedcount=\count358
+\c@bbx:relatedtotal=\count359
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -1544,10 +1548,10 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
-Package biblatex Info: Redefining '\cite' on input line 370.
-Package biblatex Info: Redefining '\parencite' on input line 384.
-Package biblatex Info: Redefining '\citeyear' on input line 398.
-Package biblatex Info: Redefining '\citeauthor' on input line 405.
+Package biblatex Info: Redefining '\cite' on input line 372.
+Package biblatex Info: Redefining '\parencite' on input line 386.
+Package biblatex Info: Redefining '\citeyear' on input line 400.
+Package biblatex Info: Redefining '\citeauthor' on input line 407.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -1563,16 +1567,16 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count359
+\FV@CodeLineNo=\count360
 \FV@InFile=\read4
 \FV@TabBox=\box69
-\c@FancyVerbLine=\count360
-\FV@StepNumber=\count361
+\c@FancyVerbLine=\count361
+\FV@StepNumber=\count362
 \FV@OutFile=\write6
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count362
+\c@float@type=\count363
 \float@exts=\toks43
 \float@box=\box70
 \@float@everytoks=\toks44
@@ -1602,23 +1606,23 @@ runsystem(rm -- "main.w18")...executed.
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write7
-\integerpart=\count363
-\decimalpart=\count364
+\integerpart=\count364
+\decimalpart=\count365
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count365
+\linenopenalty=\count366
 \output=\toks45
-\linenoprevgraf=\count366
+\linenoprevgraf=\count367
 \linenumbersep=\dimen225
 \linenumberwidth=\dimen226
-\c@linenumber=\count367
-\c@pagewiselinenumber=\count368
-\c@LN@truepage=\count369
-\c@internallinenumber=\count370
-\c@internallinenumbers=\count371
+\c@linenumber=\count368
+\c@pagewiselinenumber=\count369
+\c@LN@truepage=\count370
+\c@internallinenumber=\count371
+\c@internallinenumbers=\count372
 \quotelinenumbersep=\dimen227
 \bframerule=\dimen228
 \bframesep=\dimen256
@@ -1640,14 +1644,14 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 688.
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 \FV@BreakSymbolIndentRight=\dimen261
-\c@FancyVerbLineBreakLast=\count372
+\c@FancyVerbLineBreakLast=\count373
 \FV@LineBox=\box73
 \FV@LineIndentBox=\box74
 \minted@bgbox=\box75
 \minted@code=\write8
-\c@minted@FancyVerbLineTemp=\count373
+\c@minted@FancyVerbLineTemp=\count374
 \@float@every@listing=\toks46
-\c@listing=\count374
+\c@listing=\count375
 )
 runsystem(mkdir -p "_minted-main")...executed.
 
@@ -1670,7 +1674,7 @@ File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box76
 \AM@toc@title=\toks47
-\c@AM@survey=\count375
+\c@AM@survey=\count376
 \AM@templatesizebox=\box77
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -1693,13 +1697,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count376
+\inf@bad=\count377
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count377
-\leftroot@=\count378
+\uproot@=\count378
+\leftroot@=\count379
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count379
-\DOTSCASE@=\count380
+\classnum@=\count380
+\DOTSCASE@=\count381
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -1708,15 +1712,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen266
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count381
-\c@MaxMatrixCols=\count382
+\macc@depth=\count382
+\c@MaxMatrixCols=\count383
 \dotsspace@=\muskip11
-\c@parentequation=\count383
-\dspbrk@lvl=\count384
+\c@parentequation=\count384
+\dspbrk@lvl=\count385
 \tag@help=\toks49
-\row@=\count385
-\column@=\count386
-\maxfields@=\count387
+\row@=\count386
+\column@=\count387
+\maxfields@=\count388
 \andhelp@=\toks50
 \eqnshift@=\dimen267
 \alignsep@=\dimen268
@@ -1757,7 +1761,7 @@ s.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen276
 \pgfdecoratedinputsegmentremainingdistance=\dimen277
 \pgf@decorate@distancetomove=\dimen278
-\pgf@decorate@repeatstate=\count388
+\pgf@decorate@repeatstate=\count389
 \pgfdecorationsegmentamplitude=\dimen279
 \pgfdecorationsegmentlength=\dimen280
 )
@@ -1873,8 +1877,8 @@ File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
 \@arcrad=\dimen282
 \@tempdimd=\dimen283
 )
-\c@treecount=\count389
-\c@branchcount=\count390
+\c@treecount=\count390
+\c@branchcount=\count391
 \parentbox=\box103
 \treebox=\box104
 \treeboxone=\box105
@@ -1973,9 +1977,9 @@ File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
 \treewidth=\skip329
 \qta=\toks54
 \qtb=\toks55
-\nbranches=\count391
-\qroofx=\count392
-\qroofy=\count393
+\nbranches=\count392
+\qroofx=\count393
+\qroofy=\count394
 \@qrscratchbox=\box125
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
@@ -1988,7 +1992,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count394
+\g_MT_multlinerow_int=\count395
 \l_MT_multwidth_dim=\dimen284
 \origjot=\skip330
 \l_MT_shortvdotswithinadjustabove_dim=\dimen285
@@ -2016,16 +2020,16 @@ Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box128
-\sift@deathcycles=\count395
+\sift@deathcycles=\count396
 \@vwid@loff=\dimen291
 \@vwid@roff=\dimen292
 )
-\c@taburow=\count396
-\tabu@nbcols=\count397
-\tabu@cnt=\count398
-\tabu@Xcol=\count399
-\tabu@alloc=\count400
-\tabu@nested=\count401
+\c@taburow=\count397
+\tabu@nbcols=\count398
+\tabu@cnt=\count399
+\tabu@Xcol=\count400
+\tabu@alloc=\count401
+\tabu@nested=\count402
 \tabu@target=\dimen293
 \tabu@spreadtarget=\dimen294
 \tabu@naturalX=\dimen295
@@ -2046,23 +2050,23 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 (/usr/local/texlive/2015/texmf-dist/tex/latex/silence/silence.sty
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
 sages
-\sl@Save=\count402
-\sl@StateNumber=\count403
-\sl@MessageCount=\count404
-\sl@Casualties=\count405
+\sl@Save=\count403
+\sl@StateNumber=\count404
+\sl@MessageCount=\count405
+\sl@Casualties=\count406
 \sl@Filter=\toks58
 \sl@Message=\toks59
 \sl@UnexpandedMessage=\toks60
 \sl@Mess@ge=\toks61
-\sl@WarningCount=\count406
-\sl@WarningNumber=\count407
-\sl@WarningCasualties=\count408
+\sl@WarningCount=\count407
+\sl@WarningNumber=\count408
+\sl@WarningCasualties=\count409
 \sl@TempBOW=\toks62
 \sl@BankOfWarnings=\toks63
 LaTeX Info: Redefining \GenericWarning on input line 433.
-\sl@ErrorCount=\count409
-\sl@ErrorNumber=\count410
-\sl@ErrorCasualties=\count411
+\sl@ErrorCount=\count410
+\sl@ErrorNumber=\count411
+\sl@ErrorCasualties=\count412
 \sl@TempBOE=\toks64
 \sl@BankOfErrors=\toks65
 LaTeX Info: Redefining \GenericError on input line 601.
@@ -2171,15 +2175,15 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pstricks/pst-fp.tex
 `pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count412
-\pstFP@xia=\count413
-\pstFP@xib=\count414
-\pstFP@xfa=\count415
-\pstFP@xfb=\count416
-\pstFP@rega=\count417
-\pstFP@regb=\count418
-\pstFP@regs=\count419
-\pstFP@times=\count420
+\pstFP@xs=\count413
+\pstFP@xia=\count414
+\pstFP@xib=\count415
+\pstFP@xfa=\count416
+\pstFP@xfb=\count417
+\pstFP@rega=\count418
+\pstFP@regb=\count419
+\pstFP@regs=\count420
+\pstFP@times=\count421
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
@@ -2197,7 +2201,7 @@ sts.tex))
 \pgffor@stack=\toks67
 \pgffor@toks=\toks68
 )
-\psLoopIndex=\count421
+\psLoopIndex=\count422
 
 `PSTricks' v2.63  <2015/09/11> (tvz)
 \pst@dima=\dimen306
@@ -2213,23 +2217,23 @@ sts.tex))
 \pst@hbox=\box134
 \pst@ibox=\box135
 \pst@boxg=\box136
-\pst@cnta=\count422
-\pst@cntb=\count423
-\pst@cntc=\count424
-\pst@cntd=\count425
-\pst@cntg=\count426
-\pst@cnth=\count427
-\pst@cntm=\count428
-\pst@cntn=\count429
-\pst@cnto=\count430
-\pst@cntp=\count431
-\@zero=\count432
+\pst@cnta=\count423
+\pst@cntb=\count424
+\pst@cntc=\count425
+\pst@cntd=\count426
+\pst@cntg=\count427
+\pst@cnth=\count428
+\pst@cntm=\count429
+\pst@cntn=\count430
+\pst@cnto=\count431
+\pst@cntp=\count432
+\@zero=\count433
 \pst@toks=\toks69
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen316
 \psxunit=\dimen317
 \psyunit=\dimen318
-\pst@C@@rType=\count433
+\pst@C@@rType=\count434
 \pslinewidth=\dimen319
 \psk@startLW=\dimen320
 \psk@endLW=\dimen321
@@ -2264,18 +2268,18 @@ Package: pst-coil 2010/02/01 package wrapper for pst-coil.tex (hv)
  v1.06, 2006/11/27
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pst-node/pst-node.tex
  v1.35, 2014/08/04
-\psrow=\count434
-\pscol=\count435
-\psmatrixcnt=\count436
+\psrow=\count435
+\pscol=\count436
+\psmatrixcnt=\count437
 \psrowsep=\skip333
 \pscolsep=\skip334
-\pst@args=\count437
-\num@pts=\count438
-\pst@argcnt=\count439
+\pst@args=\count438
+\num@pts=\count439
+\pst@argcnt=\count440
 ))
 File: pst-coil.tex 2015/05/13 v1.07 `PST-coil' (tvz,hv)
 )
-\c@bclogocompteur=\count440
+\c@bclogocompteur=\count441
 \bcval@epBarre=\skip335
 \bcval@framesep=\skip336
 \bcval@tailleOndu=\skip337
@@ -2341,15 +2345,15 @@ Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen331
-\Hy@linkcounter=\count441
-\Hy@pagecounter=\count442
+\Hy@linkcounter=\count442
+\Hy@pagecounter=\count443
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count443
+\Hy@SavedSpaceFactor=\count444
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -2377,10 +2381,10 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count444
+\c@Hy@tempcnt=\count445
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen332
-\Fld@menulength=\count445
+\Fld@menulength=\count446
 \Field@Width=\dimen333
 \Fld@charsize=\dimen334
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -2392,23 +2396,23 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count446
-\c@Item=\count447
-\c@Hfootnote=\count448
+\Hy@abspage=\count447
+\c@Item=\count448
+\c@Hfootnote=\count449
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/memoir/memhfixc.sty
 Package: memhfixc 2013/05/30 v1.17 nameref/hyperref package fixes for memoir cl
 ass
-\c@memhycontfloat=\count449
-\c@Hpagenote=\count450
+\c@memhycontfloat=\count450
+\c@Hpagenote=\count451
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count451
-\c@bookmark@seq@number=\count452
+\Fld@listcount=\count452
+\c@bookmark@seq@number=\count453
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -2445,19 +2449,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count453
+\actioncount=\count454
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count454
-\FP@xia=\count455
-\FP@xib=\count456
-\FP@xfa=\count457
-\FP@xfb=\count458
-\FP@rega=\count459
-\FP@regb=\count460
-\FP@regs=\count461
-\FP@times=\count462
+\FP@xs=\count455
+\FP@xia=\count456
+\FP@xib=\count457
+\FP@xfa=\count458
+\FP@xfb=\count459
+\FP@rega=\count460
+\FP@regb=\count461
+\FP@regs=\count462
+\FP@times=\count463
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -2476,7 +2480,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count463
+\FPseed=\count464
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -2488,14 +2492,14 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks74
-\@dtl@tmpcount=\count464
+\@dtl@tmpcount=\count465
 \dtl@tmplength=\skip342
-\dtl@sortresult=\count465
-\@dtl@numgrpsepcount=\count466
-\@dtl@datatype=\count467
-\dtl@codeA=\count468
-\dtl@codeB=\count469
-\@dtl@foreach@level=\count470
+\dtl@sortresult=\count466
+\@dtl@numgrpsepcount=\count467
+\@dtl@datatype=\count468
+\dtl@codeA=\count469
+\dtl@codeB=\count470
+\@dtl@foreach@level=\count471
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/glossaries/base/glossaries-compat
 ible-307.sty
@@ -2518,7 +2522,7 @@ File: glossaries-english.ldf 2014/11/23 v1.0
 ch.ldf
 File: glossaries-french.ldf 2014/11/23 v1.0
 )
-\gls@level=\count471
+\gls@level=\count472
 \@gls@tmpb=\toks75
 \gls@tmplen=\skip343
 \glskeylisttok=\toks76
@@ -2544,16 +2548,16 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTright=\skip346
 \LTpre=\skip347
 \LTpost=\skip348
-\LTchunksize=\count472
+\LTchunksize=\count473
 \LTcapwidth=\dimen335
 \LT@head=\box140
 \LT@firsthead=\box141
 \LT@foot=\box142
 \LT@lastfoot=\box143
-\LT@cols=\count473
-\LT@rows=\count474
-\c@LT@tables=\count475
-\c@LT@chunks=\count476
+\LT@cols=\count474
+\LT@rows=\count475
+\c@LT@tables=\count476
+\c@LT@chunks=\count477
 \LT@p@ftn=\toks80
 )
 \glsdescwidth=\skip349
@@ -2564,7 +2568,7 @@ sty
 Package: glossary-super 2015/09/09 v4.18 (NLCT)
  (/usr/local/texlive/2015/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count477
+\c@tracingst=\count478
 \ST@wd=\dimen336
 \ST@rightskip=\skip351
 \ST@leftskip=\skip352
@@ -2611,9 +2615,11 @@ runsystem(which "pygmentize" && touch "main.aex")...executed.
 runsystem(rm "main.aex")...executed.
 
 
-(./main.aux (./front/title.aux) (./front/abstract.aux) (./front/dedication.aux)
-(./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux)
-(./main/foundation.aux))
+(./main.aux (./front/title.aux) (./front/abstract.aux) (./main/introduction.aux
+) (./main/inspirations.aux) (./main/methodology.aux) (./main/foundation.aux)
+(./main/implementation.aux) (./main/applications.aux)
+(./main/interpretation.aux) (./main/analysis.aux) (./main/aspirations.aux)
+(./main/observations.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -2717,20 +2723,20 @@ LaTeX Info: Redefining \up on input line 8.
 isodate: babel.sty has been loaded
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count478
+\scratchcounter=\count479
 \scratchdimen=\dimen347
 \scratchbox=\box145
-\nofMPsegments=\count479
-\nofMParguments=\count480
+\nofMPsegments=\count480
+\nofMParguments=\count481
 \everyMPshowfont=\toks81
-\MPscratchCnt=\count481
+\MPscratchCnt=\count482
 \MPscratchDim=\dimen348
-\MPnumerator=\count482
-\makeMPintoPDFobject=\count483
+\MPnumerator=\count483
+\makeMPintoPDFobject=\count484
 \everyMPtoPDFconversion=\toks82
 ) ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 8.
-\c@lstlisting=\count484
+\c@lstlisting=\count485
 
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -2748,6 +2754,9 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
+(marginnote)             Extended position detection mode activated.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -2789,7 +2798,15 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
-(./main.bbl)
+(./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Hugill2012
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
  (./_minted-main/default-pyg-prefix.pygstyle)
@@ -2802,7 +2819,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count485
+\c@section@level=\count486
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -2836,7 +2853,8 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]) [3
+]
 \openout2 = `front/title.aux'.
 
  (./front/title.tex
@@ -2872,7 +2890,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 25.
 
-<images/spiral_pre.pdf, id=277, 156.48964pt x 156.48964pt>
+<images/spiral_pre.pdf, id=473, 156.48964pt x 156.48964pt>
 File: images/spiral_pre.pdf Graphic file (type pdf)
 
 <use images/spiral_pre.pdf>
@@ -2900,48 +2918,15 @@ LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <6> not available
 [2
 
 
-])
-\openout2 = `front/dedication.aux'.
-
- (./front/dedication.tex
-LaTeX Font Info:    Try loading font information for T3+pbk on input line 17.
-LaTeX Font Info:    No file T3pbk.fd. on input line 17.
-
-
-LaTeX Font Warning: Font shape `T3/pbk/m/n' undefined
-(Font)              using `T3/cmr/m/n' instead on input line 17.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
-File: UTF8.bdg 2015/04/18 4.8.4
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2015/04/18 4.8.4
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2015/04/18 4.8.4
-)
-LaTeX Font Info:    Try loading font information for C70+min on input line 24.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fd
-File: c70min.fd 2015/04/18 4.8.4
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
-File: c70min.fdx 2015/04/18 4.8.4
-)
-[3
-
-
-
-
 ]) (./main.toc
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <10.95> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <12> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 10.
- [4
+ [3
 
 
-]) [5] (./main.lof) [6
+] [4]) [5] (./main.lof) [6
 
 ] (./main.lot) [7
 
@@ -2953,19 +2938,21 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <12> not available
 
 
 
-]
+] [10]
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <17.28> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 81.
+LaTeX Font Info:    Try loading font information for T3+pbk on input line 81.
+LaTeX Font Info:    No file T3pbk.fd. on input line 81.
 
 
 LaTeX Font Warning: Font shape `T3/pbk/b/n' undefined
-(Font)              using `T3/pbk/m/n' instead on input line 81.
+(Font)              using `T3/cmr/m/n' instead on input line 81.
 
 
-LaTeX Font Warning: Font shape `T3/pbk/m/n' in size <56.9055> not available
+LaTeX Font Warning: Font shape `T3/cmr/m/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 81.
 
-<images/spiral_hello.pdf, id=458, 156.48964pt x 156.48964pt>
+<images/spiral_hello.pdf, id=766, 156.48964pt x 156.48964pt>
 File: images/spiral_hello.pdf Graphic file (type pdf)
 
 <use images/spiral_hello.pdf>
@@ -2984,7 +2971,7 @@ l.81 ...tring{\textipa{HELLO WORLD}}{HELLO WORLD}}
 \openout2 = `main/introduction.aux'.
 
  (./main/introduction.tex
-\c@ttl@toc@chapters=\count486
+\c@ttl@toc@chapters=\count487
  (./main.ptc)pdfTeX warning (ext4): destination with the same identifier (name{
 page.2}) has been already used, duplicate ignored
 <to be read again> 
@@ -2998,17 +2985,14 @@ l.28 \newpage
 LaTeX Warning: Reference `ch:pataphysics' on page 3 undefined on input line 32.
 
 
-
-LaTeX Warning: Reference `ch:implementation' on page 3 undefined on input line 
-36.
-
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 38.
-
-LaTeX Warning: Reference `ch:interpretation' on page 3 undefined on input line 
-48.
-
-[3]
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.49 
+      [3]
 
 LaTeX Warning: Reference `ch:technology' on page 4 undefined on input line 55.
 
@@ -3040,12 +3024,7 @@ Overfull \hbox (7.20062pt too wide) in paragraph at lines 86--87
 
 LaTeX Warning: Reference `ch:creativity' on page 5 undefined on input line 97.
 
-[5] [6]
-
-LaTeX Warning: Reference `ch:implementation' on page 7 undefined on input line 
-136.
-
-[7]
+[5] [6] [7]
 
 LaTeX Warning: Reference `app:pub' on page 8 undefined on input line 191.
 
@@ -3079,13 +3058,10 @@ LaTeX Font Warning: Font shape `U/fontawesometwo/b/n' undefined
 
 
 ]
-
-LaTeX Warning: Reference `ch:implementation' on page 12 undefined on input line
- 49.
-
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <9> not available
 (Font)              Font shape `T1/pbk/l/it' tried instead on input line 49.
-[12] <images/JaneAvril.png, id=626, 306.14375pt x 451.6875pt>
+ [12]
+<images/JaneAvril.png, id=939, 306.14375pt x 451.6875pt>
 File: images/JaneAvril.png Graphic file (type png)
 
 <use images/JaneAvril.png>
@@ -3096,7 +3072,7 @@ Underfull \hbox (badness 8113) in paragraph at lines 85--85
 []\T1/pbk/l/n/10.95 Figure 2.1: []Toulouse-Lautrec's
  []
 
-<images/RevueBlanche.jpg, id=628, 351.3125pt x 451.6875pt>
+<images/RevueBlanche.jpg, id=941, 351.3125pt x 451.6875pt>
 File: images/RevueBlanche.jpg Graphic file (type jpg)
 
 <use images/RevueBlanche.jpg>
@@ -3107,7 +3083,7 @@ Underfull \hbox (badness 7981) in paragraph at lines 91--91
 []\T1/pbk/l/n/10.95 Figure 2.2: []Bonnard's `Re-vue
  []
 
-<images/DocteurFaustroll.jpg, id=629, 302.12875pt x 451.6875pt>
+<images/DocteurFaustroll.jpg, id=942, 302.12875pt x 451.6875pt>
 File: images/DocteurFaustroll.jpg Graphic file (type jpg)
 
 <use images/DocteurFaustroll.jpg>
@@ -3118,7 +3094,7 @@ Underfull \hbox (badness 1394) in paragraph at lines 97--97
 []\T1/pbk/l/n/10.95 Figure 2.3: []Beardsley's `Docteur
  []
 
-<images/SaintCado.jpg, id=630, 355.3275pt x 451.6875pt>
+<images/SaintCado.jpg, id=943, 355.3275pt x 451.6875pt>
 File: images/SaintCado.jpg Graphic file (type jpg)
 
 <use images/SaintCado.jpg>
@@ -3128,20 +3104,16 @@ Package pdftex.def Info: images/SaintCado.jpg used on input line 102.
 
 LaTeX Warning: Float too large for page by 14.66377pt on input line 106.
 
-
-LaTeX Warning: Reference `ch:implementation' on page 13 undefined on input line
- 111.
-
 [13] [14 <./images/JaneAvril.png> <./images/RevueBlanche.jpg> <./images/Docteur
 Faustroll.jpg> <./images/SaintCado.jpg>]
-<images/queneau1.jpg, id=672, 344.28625pt x 359.3425pt>
+<images/queneau1.jpg, id=985, 344.28625pt x 359.3425pt>
 File: images/queneau1.jpg Graphic file (type jpg)
 
 <use images/queneau1.jpg>
 Package pdftex.def Info: images/queneau1.jpg used on input line 117.
 (pdftex.def)             Requested size: 192.0548pt x 200.45181pt.
 
-<images/queneau2.jpg, id=673, 344.28625pt x 359.3425pt>
+<images/queneau2.jpg, id=986, 344.28625pt x 359.3425pt>
 File: images/queneau2.jpg Graphic file (type jpg)
 
 <use images/queneau2.jpg>
@@ -3166,14 +3138,14 @@ inds of re-search ``without|
 LaTeX Warning: Reference `ch:pataphysics' on page 21 undefined on input line 10
 4.
 
-[21] <images/trans.png, id=803, 286.06876pt x 252.945pt>
+[21] <images/trans.png, id=1116, 286.06876pt x 252.945pt>
 File: images/trans.png Graphic file (type png)
 
 <use images/trans.png>
 Package pdftex.def Info: images/trans.png used on input line 127.
 (pdftex.def)             Requested size: 286.06805pt x 252.94438pt.
  [22 <./images/trans.png>]
-<images/tmpr.png, id=828, 316.18124pt x 375.4025pt>
+<images/tmpr.png, id=1140, 316.18124pt x 375.4025pt>
 File: images/tmpr.png Graphic file (type png)
  <use images/tmpr.png>
 Package pdftex.def Info: images/tmpr.png used on input line 191.
@@ -3188,7 +3160,7 @@ Underfull \hbox (badness 3579) in paragraph at lines 225--225
 []\T1/pbk/l/n/10.95 observe, re-cord, ana-
  []
 
-<images/spirals.png, id=838, 482.80376pt x 473.77pt>
+<images/spirals.png, id=1150, 482.80376pt x 473.77pt>
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 231.
@@ -3267,7 +3239,7 @@ LaTeX Font Warning: Font shape `U/wasy/m/n' in size <39.83366> not available
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <28.45274> not available
 (Font)              size <24.88> substituted on input line 89.
 
-<images/spiral_trade.pdf, id=869, 156.48964pt x 156.48964pt>
+<images/spiral_trade.pdf, id=1182, 156.48964pt x 156.48964pt>
 File: images/spiral_trade.pdf Graphic file (type pdf)
 
 <use images/spiral_trade.pdf>
@@ -3277,7 +3249,7 @@ Package pdftex.def Info: images/spiral_trade.pdf used on input line 89.
 
 
  <./images/spiral_trade.pdf>]
-<images/spiral_core.pdf, id=881, 156.48964pt x 156.48964pt>
+<images/spiral_core.pdf, id=1194, 156.48964pt x 156.48964pt>
 File: images/spiral_core.pdf Graphic file (type pdf)
 
 <use images/spiral_core.pdf>
@@ -3308,97 +3280,165 @@ LaTeX Warning: Reference `ch:evaluation' on page 29 undefined on input line 29.
 
 
 
-LaTeX Warning: Reference `ch:interpretation' on page 29 undefined on input line
- 29.
-
-
 LaTeX Warning: Reference `ch:creativity' on page 29 undefined on input line 44.
 
 
-[29] [30]
+[29]
+Package marginnote Info: Margin note 44.1 is on absolute page 44
+(marginnote)              on input line 78.
+Package marginnote Info: right page because not two side mode on input line 78.
 
-LaTeX Warning: Reference `ch:creativity' on page 31 undefined on input line 140
+Package marginnote Info: xpos seems to be 172.22821pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 78.
+Package marginnote Info: Margin note 44.2 is on absolute page 44
+(marginnote)              on input line 80.
+Package marginnote Info: right page because not two side mode on input line 80.
+
+Package marginnote Info: xpos seems to be 113.81102pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 80.
+ [30]
+Package marginnote Info: Margin note 45.1 is on absolute page 45
+(marginnote)              on input line 120.
+Package marginnote Info: right page because not two side mode on input line 120
+.
+Package marginnote Info: xpos seems to be 225.35423pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 120.
+Package marginnote Info: Margin note 45.2 is on absolute page 45
+(marginnote)              on input line 120.
+Package marginnote Info: right page because not two side mode on input line 120
+.
+Package marginnote Info: xpos seems to be 336.67897pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 120.
+Package marginnote Info: Margin note 45.3 is on absolute page 45
+(marginnote)              on input line 120.
+Package marginnote Info: right page because not two side mode on input line 120
+.
+Package marginnote Info: xpos seems to be 163.67046pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 120.
+Package marginnote Info: Margin note 45.4 is on absolute page 46
+(marginnote)              on input line 141.
+Package marginnote Info: right page because not two side mode on input line 141
+.
+Package marginnote Info: xpos seems to be 222.31595pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 141.
+Package marginnote Info: Margin note 45.5 is on absolute page 46
+(marginnote)              on input line 141.
+Package marginnote Info: right page because not two side mode on input line 141
 .
 
-[31] [32]
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 188.
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+LaTeX Warning: Reference `ch:creativity' on page 31 undefined on input line 141
+.
+
+Package marginnote Info: xpos seems to be 180.38632pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 141.
+[31]
+Package marginnote Info: Margin note 46.1 is on absolute page 46
+(marginnote)              on input line 168.
+Package marginnote Info: right page because not two side mode on input line 168
+.
+Package marginnote Info: xpos seems to be 168.47903pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 168.
+ [32]
+Package marginnote Info: Margin note 47.1 is on absolute page 47
+(marginnote)              on input line 186.
+Package marginnote Info: right page because not two side mode on input line 186
+.
+Package marginnote Info: xpos seems to be 167.99063pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 186.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 189.
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []\T1/pbk/l/n/10 Dissemi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []\T1/pbk/l/n/10 User
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 \T1/pbk/l/n/10 Require-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []\T1/pbk/l/n/10 System
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []\T1/pbk/l/n/10 Implemen-
  []
 
-
-LaTeX Warning: Marginpar on page 33 moved by 14.36223pt.
-
-[33]
-Underfull \hbox (badness 3612) in paragraph at lines 236--236
-[]\T1/pbk/l/n/10.95 see sec-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
-\T1/pbk/l/n/10.95 tion
- []
-
-[34] [35] [36]
-Underfull \hbox (badness 4819) in paragraph at lines 290--290
+Package marginnote Info: Margin note 47.2 is on absolute page 47
+(marginnote)              on input line 210.
+Package marginnote Info: right page because not two side mode on input line 210
+.
+Package marginnote Info: xpos seems to be 466.95135pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 210.
+Package marginnote Info: Margin note 47.3 is on absolute page 47
+(marginnote)              on input line 210.
+Package marginnote Info: right page because not two side mode on input line 210
+.
+Package marginnote Info: xpos seems to be 244.27864pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 210.
+Package marginnote Info: Margin note 47.4 is on absolute page 47
+(marginnote)              on input line 210.
+Package marginnote Info: right page because not two side mode on input line 210
+.
+Package marginnote Info: xpos seems to be 446.85153pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 210.
+[33] [34] [35] [36]
+Underfull \hbox (badness 4819) in paragraph at lines 327--327
 \T1/pbk/l/n/10.95 tu-ally in-com-pat-ible, con-tra-dict-ing,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
 []\T1/pbk/db/n/10.95 Transformative\T1/pbk/l/n/10.95 : Mak-ing new
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
 \T1/pbk/l/n/10.95 thoughts pos-sible by trans-form-
  []
 
-[37] [38] [39] <images/patasearch01.png, id=1089, 215.8464pt x 119.4864pt>
+Package marginnote Info: Margin note 51.1 is on absolute page 51
+(marginnote)              on input line 333.
+Package marginnote Info: right page because not two side mode on input line 333
+.
+Package marginnote Info: xpos seems to be 178.34003pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 333.
+[37] <images/patasearch01.png, id=1390, 215.8464pt x 119.4864pt>
 File: images/patasearch01.png Graphic file (type png)
 
 <use images/patasearch01.png>
-Package pdftex.def Info: images/patasearch01.png used on input line 333.
+Package pdftex.def Info: images/patasearch01.png used on input line 374.
 (pdftex.def)             Requested size: 426.79135pt x 236.26108pt.
  (./images/patasearch01.pdf_tex
-<images/patasearch01.pdf, id=1090, page=1, 188.11078pt x 76.59924pt>
+<images/patasearch01.pdf, id=1391, page=1, 188.11078pt x 76.59924pt>
 File: images/patasearch01.pdf Graphic file (type pdf)
 
 <use images/patasearch01.pdf, page 1>
 Package pdftex.def Info: images/patasearch01.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 188.11078pt x 76.59904pt.
 
-<images/patasearch01.pdf, id=1091, page=2, 188.11078pt x 76.59924pt>
+<images/patasearch01.pdf, id=1392, page=2, 188.11078pt x 76.59924pt>
 File: images/patasearch01.pdf Graphic file (type pdf)
 
 <use images/patasearch01.pdf, page 2>
 Package pdftex.def Info: images/patasearch01.pdf, page2 used on input line 57.
 (pdftex.def)             Requested size: 188.11078pt x 76.59904pt.
-) [40 <./images/patasearch01.png>]
-(./images/pataphysicalisation.pdf_tex
-<images/pataphysicalisation.pdf, id=1098, page=1, 490.13112pt x 100.3469pt>
+) [38] [39 <./images/patasearch01.png> <./images/patasearch01.pdf> <./images/pa
+tasearch01.pdf
+
+pdfTeX warning: pdflatex (file ./images/patasearch01.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>] (./images/pataphysicalisation.pdf_tex
+<images/pataphysicalisation.pdf, id=1405, page=1, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 1>
@@ -3406,7 +3446,7 @@ Package pdftex.def Info: images/pataphysicalisation.pdf, page1 used on input li
 ne 52.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
 
-<images/pataphysicalisation.pdf, id=1099, page=2, 490.13112pt x 100.3469pt>
+<images/pataphysicalisation.pdf, id=1406, page=2, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 2>
@@ -3414,7 +3454,7 @@ Package pdftex.def Info: images/pataphysicalisation.pdf, page2 used on input li
 ne 58.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
 
-<images/pataphysicalisation.pdf, id=1100, page=3, 490.13112pt x 100.3469pt>
+<images/pataphysicalisation.pdf, id=1407, page=3, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 3>
@@ -3422,18 +3462,14 @@ Package pdftex.def Info: images/pataphysicalisation.pdf, page3 used on input li
 ne 64.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
 
-<images/pataphysicalisation.pdf, id=1101, page=4, 490.13112pt x 100.3469pt>
+<images/pataphysicalisation.pdf, id=1408, page=4, 490.13112pt x 100.3469pt>
 File: images/pataphysicalisation.pdf Graphic file (type pdf)
 
 <use images/pataphysicalisation.pdf, page 4>
 Package pdftex.def Info: images/pataphysicalisation.pdf, page4 used on input li
 ne 70.
 (pdftex.def)             Requested size: 426.79135pt x 87.37918pt.
-) [41 <./images/patasearch01.pdf> <./images/patasearch01.pdf
-
-pdfTeX warning: pdflatex (file ./images/patasearch01.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->] [42 <./images/pataphysicalisation.pdf> <./images/pataphysicalisation.pdf
+) [40 <./images/pataphysicalisation.pdf> <./images/pataphysicalisation.pdf
 
 pdfTeX warning: pdflatex (file ./images/pataphysicalisation.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
@@ -3445,50 +3481,652 @@ pdfTeX warning: pdflatex (file ./images/pataphysicalisation.pdf): PDF inclusion
 
 pdfTeX warning: pdflatex (file ./images/pataphysicalisation.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->]) [43] <images/spiral_meta.pdf, id=1129, 156.48964pt x 156.48964pt>
+>] [41]) [42]
+\openout2 = `main/implementation.aux'.
+
+ (./main/implementation.tex (./main.ptc [43
+
+
+
+]) [44] [45] [46]
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B0D06A7CAF1798DA4153306E9311B2B249F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/41B846E5864EFEBEFA361B2F286626BF1A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 2.
+)
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
+t line 200.
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/C4CCFDCE4D66736E5D897E689CDAAE1149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/279BE0603F3A9DCCFE92956D8249E7FA9B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex [47])
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/1847CD21597731004C004F64234F8A871A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 2.
+)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/9A8AD92C50CAE39AA2C5604FD0AB6D8C49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/12F54A96F64443246930DA001CAFDA8B49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+
+LaTeX Warning: Reference `app:code' on page 48 undefined on input line 228.
+
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/009520053B00386D1173F3988C55D19249F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/009520053B00386D1173F3988C55D19249F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/401B30E3B8B5D629635A5C613CDB791949F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/F6A78526957D757FA60F6B7F3AF3D7229B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex)
+
+LaTeX Warning: Reference `termdocs' on page 48 undefined on input line 238.
+
+
+LaTeX Warning: Reference `termdocs' on page 48 undefined on input line 238.
+
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+
+LaTeX Warning: Reference `app:code' on page 48 undefined on input line 238.
+
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/E753ED52F3D9869AAB7B3486B56943D59B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex [48])
+Overfull \hbox (8.23271pt too wide) in paragraph at lines 275--276
+\T1/pbk/l/n/10.95 Damerau-Levenshtein al-gorithm ([][][][]Dam-erau [][]1964[][]
+[][]; [][][][]Leven-shtein [][]1966[][][][]), which meas-|
+ []
+
+[49]
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/6FF3700C23E5F95C832DEE5A6D1272801A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/63810CCCB1DD5587F229B151486EFB3C49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/372E25F23B5A8AE33C7BA203412ACE3049F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+
+LaTeX Warning: Reference `app:code' on page 50 undefined on input line 290.
+
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/062A3CA7D0D85E1932755C6D3154ABE149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/27CDE74D742C9963710E2BD865BE20C71A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/062A3CA7D0D85E1932755C6D3154ABE149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/85786589CDBA2466ED61C0AE0BA8F2B149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/9FFBF43126E33BE52CD2BF7E01D627F949F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/010E0DDED70E4D927D697D34DA98CC0849F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/9FFBF43126E33BE52CD2BF7E01D627F949F87247884C31FB9CF7250BD2E2720
+4.pygtex) [50]
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/4BD4440E14055DA822E647739D66D9E11A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/010E0DDED70E4D927D697D34DA98CC0849F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/19D800D753EA28EA407F3AF38155A6CD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/010E0DDED70E4D927D697D34DA98CC0849F87247884C31FB9CF7250BD2E2720
+4.pygtex) [51]
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/2988A34EFEA940C60FF0538AFBAF82D749F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/3C84E6561BC89D113C4FC172097B194D49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/B938B801A0BFBD5CA4825715039E757449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/60A9F47A5EBF1BDBDA2A7721C53C898649F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/2988A34EFEA940C60FF0538AFBAF82D749F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/DF466DBF27F53937372559F0CB482AB549F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/A3E5B97EE2B0D6A2B73A4C92E303AF8349F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/E0A3494BE84D31CC5A4464CD7D5C5D4349F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/AB91595EBBA51CFA8AEA2E0A085A88891A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/85786589CDBA2466ED61C0AE0BA8F2B149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/487F35EE6D468580DFF8274E00AA510149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/85786589CDBA2466ED61C0AE0BA8F2B149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/5C1C95C45816CE8E7EC016BF5289424C49F87247884C31FB9CF7250BD2E2720
+4.pygtex) [52]
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/062A3CA7D0D85E1932755C6D3154ABE149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/2984444CF1761885FD6AF5E9788D25DD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/DA0B081A25BE09E0E98CBC740E7D67E01A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/062A3CA7D0D85E1932755C6D3154ABE149F87247884C31FB9CF7250BD2E2720
+4.pygtex) [53]
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/2984444CF1761885FD6AF5E9788D25DD49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/CA5BC26FD26FF36F70ED8973D9107A3F49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/CA5BC26FD26FF36F70ED8973D9107A3F49F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/7447F9E26347A3813C5D7787EB16E04D1A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/7555D7EE26E10BBA25632AAAEC066F1B9B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex [54])
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/415E896F7A6C022B125870C3930C22CC9B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/71FCFC2D3151BB4ED2F63B41067A1B101A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/ECA1995CCD78E4DDBAE38D79D5E49CCB1A7D47D6F4C0A60093B7D1E6C3880FE
+E.pygtex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[55]
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/DE063C99357E6675F1BA05B33635E04449F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/E75F25D76B313861619E745FFC2BA01749F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/D05EC90F320834BAE324933313F29C7149F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/35617E0BA850C9A7ECEC9DE1593D3C399B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex
+Overfull \hbox (217.99347pt too wide) in paragraph at lines 4--4
+[]\T1/pcr/m/n/9 "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Q
+uery=[][]\T1/pcr/b/n/9 \u0027[][]\T1/pcr/m/n/9 kittens[][]\T1/pcr/b/n/9 \u0027[
+][]\T1/pcr/m/n/9 &$skip=0&$top=1"[],|  |
+ []
+
+
+Overfull \hbox (34.39368pt too wide) in paragraph at lines 9--9
+[]\T1/pcr/m/n/9 "http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten
+2.jpg"[],|  |
+ []
+
+[56]
+Overfull \hbox (88.39362pt too wide) in paragraph at lines 20--20
+[]\T1/pcr/m/n/9 "http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639
+316cH0&pid=15.1"[],|  |
+ []
+
+
+Overfull \hbox (180.19351pt too wide) in paragraph at lines 28--28
+[]\T1/pcr/m/n/9 "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Q
+uery=[][]\T1/pcr/b/n/9 \u0027[][]\T1/pcr/m/n/9 kittens[][]\T1/pcr/b/n/9 \u0027[
+][]\T1/pcr/m/n/9 &$skip=50"[]|  |
+ []
+
+) <images/proto3screen.png, id=1670, 926.46124pt x 589.20125pt>
+File: images/proto3screen.png Graphic file (type png)
+
+<use images/proto3screen.png>
+Package pdftex.def Info: images/proto3screen.png used on input line 580.
+(pdftex.def)             Requested size: 426.79135pt x 271.43144pt.
+File: images/proto3screen.png Graphic file (type png)
+ <use images/proto3screen.png>
+Package pdftex.def Info: images/proto3screen.png used on input line 588.
+(pdftex.def)             Requested size: 426.79135pt x 271.43144pt.
+
+<images/proto2screen.png, id=1671, 926.46124pt x 577.15625pt>
+File: images/proto2screen.png Graphic file (type png)
+
+<use images/proto2screen.png>
+Package pdftex.def Info: images/proto2screen.png used on input line 592.
+(pdftex.def)             Requested size: 426.79135pt x 265.88258pt.
+
+<images/proto1screen.png, id=1672, 923.45pt x 574.145pt>
+File: images/proto1screen.png Graphic file (type png)
+
+<use images/proto1screen.png>
+Package pdftex.def Info: images/proto1screen.png used on input line 596.
+(pdftex.def)             Requested size: 426.79135pt x 265.35393pt.
+
+
+LaTeX Warning: Float too large for page by 156.69614pt on input line 600.
+
+<images/screen_rpoetry_full.png, id=1673, 689.57625pt x 923.45pt>
+File: images/screen_rpoetry_full.png Graphic file (type png)
+
+<use images/screen_rpoetry_full.png>
+Package pdftex.def Info: images/screen_rpoetry_full.png used on input line 605.
+
+(pdftex.def)             Requested size: 243.27419pt x 325.77684pt.
+
+<images/screen_rpoetry_mobile.png, id=1674, 400.49625pt x 1173.38374pt>
+File: images/screen_rpoetry_mobile.png Graphic file (type png)
+
+<use images/screen_rpoetry_mobile.png>
+Package pdftex.def Info: images/screen_rpoetry_mobile.png used on input line 60
+9.
+(pdftex.def)             Requested size: 115.23547pt x 337.60481pt.
+ [57]
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/966C0B9E4CFF29574B76352DCAFA456E5CC029F0DAA2E3CD69CEF9A556C6770
+0.pygtex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/72635E2A63393C9A989A891AD6306A7249F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+\openout8 = `main.pyg'.
+
+
+(./_minted-main/59BCC3AD6775562F845953CF0162422549F87247884C31FB9CF7250BD2E2720
+4.pygtex)
+Overfull \hbox (40.33977pt too wide) in paragraph at lines 681--682
+\T1/pbk/l/n/10.95 email. Spe-cific-ally line 3 calls the Javas-cript func-tion 
+[][][][][][]|
+ []
+
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/5B2A7054BC22D874B9E1B9889EB75C809B0FD5CD275A6E5E1CF8B3D04CF0A43
+3.pygtex [58 <./images/proto3screen.png>])
+\openout6 = `main.pyg'.
+
+
+(./_minted-main/BB834E2AA3468331EAA75B5BE8C1D900C7C0915BC48AC82EA1C7B0DA31A2DAF
+F.pygtex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/Fibonacci.png, id=1689, 803.0pt x 507.8975pt>
+File: images/Fibonacci.png Graphic file (type png)
+
+<use images/Fibonacci.png>
+Package pdftex.def Info: images/Fibonacci.png used on input line 734.
+(pdftex.def)             Requested size: 213.39568pt x 134.97194pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--735
+[][] [][][]\T1/pbk/l/n/9 Image taken from [][]$\T1/pcr/m/n/9 https : / / upload
+ . wikimedia . org / wikipedia / commons / 9 / 93 /
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 742.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+[]\T1/pbk/l/n/10.95 Python,
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 797--797
+[]\T1/pbk/l/n/10.95 Django, Her-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+[]\T1/pbk/l/n/10.95 Flask, Gu-ni-corn,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+[]\T1/pbk/l/n/10.95 WordNet, Flickr,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+\T1/pbk/l/n/10.95 Bing, You-Tube,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+\T1/pbk/l/n/10.95 Tube, Mi-crosoft
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+[]\T1/pbk/l/n/10.95 Algorithm, Source,
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 802.
+
+[59] [60] [61] <images/prototype01.png, id=1706, 176.15813pt x 337.26pt>
+File: images/prototype01.png Graphic file (type png)
+
+<use images/prototype01.png>
+Package pdftex.def Info: images/prototype01.png used on input line 843.
+(pdftex.def)             Requested size: 211.3376pt x 404.6023pt.
+File: images/proto1screen.png Graphic file (type png)
+ <use images/proto1screen.png>
+Package pdftex.def Info: images/proto1screen.png used on input line 850.
+(pdftex.def)             Requested size: 426.79135pt x 265.35393pt.
+
+<images/prototype02.png, id=1708, 318.43968pt x 252.945pt>
+File: images/prototype02.png Graphic file (type png)
+
+<use images/prototype02.png>
+Package pdftex.def Info: images/prototype02.png used on input line 879.
+(pdftex.def)             Requested size: 256.07741pt x 203.40608pt.
+File: images/proto2screen.png Graphic file (type png)
+ <use images/proto2screen.png>
+Package pdftex.def Info: images/proto2screen.png used on input line 886.
+(pdftex.def)             Requested size: 426.79135pt x 265.88258pt.
+ [62]) [63] [64 <./images/proto2screen.png> <./images/proto1screen.png>] [65 <.
+/images/screen_rpoetry_full.png> <./images/screen_rpoetry_mobile.png> <./images
+/Fibonacci.png>]
+[66 <./images/prototype01.png>] [67 <./images/prototype02.png>] [68]
+\openout2 = `main/applications.aux'.
+
+
+(./main/applications.tex (./main.ptc) [69
+
+
+
+] [70] [71] [72]) [73]
+<images/spiral_meta.pdf, id=1781, 156.48964pt x 156.48964pt>
 File: images/spiral_meta.pdf Graphic file (type pdf)
 
 <use images/spiral_meta.pdf>
 Package pdftex.def Info: images/spiral_meta.pdf used on input line 106.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [44
+ [74
 
 
  <./images/spiral_meta.pdf>]
-<images/spiral_after.pdf, id=1139, 156.48964pt x 156.48964pt>
+\openout2 = `main/interpretation.aux'.
+
+
+(./main/interpretation.tex (./main.ptc) [75
+
+
+] [76] [77] [78] [79
+
+] [80
+
+] [81]
+[82]) [83]
+\openout2 = `main/analysis.aux'.
+
+ (./main/analysis.tex (./main.ptc)) [84
+
+
+
+] [85]
+<images/spiral_after.pdf, id=1893, 156.48964pt x 156.48964pt>
 File: images/spiral_after.pdf Graphic file (type pdf)
 
 <use images/spiral_after.pdf>
 Package pdftex.def Info: images/spiral_after.pdf used on input line 113.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [45
+ [86
+
 
  <./images/spiral_after.pdf>]
-<images/spiral_post.pdf, id=1149, 156.48964pt x 156.48964pt>
+\openout2 = `main/aspirations.aux'.
+
+
+(./main/aspirations.tex (./main.ptc) [87
+
+
+]) [88]
+\openout2 = `main/observations.aux'.
+
+ (./main/observations.tex
+(./main.ptc) [89
+
+
+
+]) [90]
+<images/spiral_post.pdf, id=1937, 156.48964pt x 156.48964pt>
 File: images/spiral_post.pdf Graphic file (type pdf)
 
 <use images/spiral_post.pdf>
 Package pdftex.def Info: images/spiral_post.pdf used on input line 123.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [46
-
- <./images/spiral_post.pdf>] [47
+ [91
 
 
-] [48]
+ <./images/spiral_post.pdf>] [92
+
+
+] [93] [94]
+[95] [96] [97]
 Overfull \hbox (8.91748pt too wide) in paragraph at lines 136--136
 [][]\T1/pbk/l/n/10.95 Singh, Push (2005). `  EM-ONE: An Ar-chi-tec-ture for Ref
 lect-ive Common-sense Think-|
  []
 
-[49]
+[98] [99] [100
 
-Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
-. Rerun may be required (or you may have forgotten to use commands like \gls). 
-on input line 142.
 
+
+]
 \tf@ptc=\write10
 \openout10 = `main.ptc'.
+
+runsystem(rm "main.pyg")...executed.
 
 \tf@tdo=\write11
 \openout11 = `main.tdo'.
@@ -3507,13 +4145,15 @@ on input line 142.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
-(./main.aux (./front/title.aux) (./front/abstract.aux) (./front/dedication.aux)
+ (./main.aux (./front/title.aux) (./front/abstract.aux)
 (./main/introduction.aux) (./main/inspirations.aux) (./main/methodology.aux)
-(./main/foundation.aux))
+(./main/foundation.aux) (./main/implementation.aux) (./main/applications.aux)
+(./main/interpretation.aux) (./main/analysis.aux) (./main/aspirations.aux)
+(./main/observations.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5C8A8CBB75058E6749D4E176E346D11D;3360.
+(rerunfilecheck)             Checksum: 0220174971777FB73466F62BC7A03F93;5622.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -3530,41 +4170,45 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 53323 strings out of 493091
- 929140 string characters out of 6134970
- 1646584 words of memory out of 5000000
- 55377 multiletter control sequences out of 15000+600000
- 89068 words of font info for 152 fonts, out of 8000000 for 9000
+ 54163 strings out of 493091
+ 964550 string characters out of 6134970
+ 1686177 words of memory out of 5000000
+ 55688 multiletter control sequences out of 15000+600000
+ 85803 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,16n,82p,1923b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometw
-o.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontaweso
-meone.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fonta
-wesomethree.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
-}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/lo
-cal/texlive/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}</usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/wadalab/dmj/dmjhira.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/wadalab/dmj/dmjka.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/wadalab/dmj/dmjkj.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/tex-gyre/qagb.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/tex-gyre/qagr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ti
-pa/tipa10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/tipa/tipa1
-7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/wasy2-ps/wasyb10.pfb>
-Output written on main.pdf (61 pages, 1118839 bytes).
+ 75i,16n,82p,1923b,1976s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/local
+/texlive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{/usr/l
+ocal/texlive/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/local/texl
+ive/2015/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{/usr/loca
+l/texlive/2015/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc}</usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/tex-gyre/qagb.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/tex-gyre/qagr.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/tipa/tipa17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
+rw/bookman/ubkd8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookm
+an/ubkl8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/bookman/ubkli
+8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/wasy2-ps/wasyb10.pfb>
+Output written on main.pdf (114 pages, 2072410 bytes).
 PDF statistics:
- 1384 PDF objects out of 1440 (max. 8388607)
- 1221 compressed objects within 13 object streams
- 298 named destinations out of 1000 (max. 500000)
- 536 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2368 PDF objects out of 2487 (max. 8388607)
+ 2098 compressed objects within 21 object streams
+ 617 named destinations out of 1000 (max. 500000)
+ 860 words of extra memory for PDF output out of 10000 (max. 10000000)
 

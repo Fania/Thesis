@@ -29,13 +29,13 @@ as any person at all conversant with authorship may satisfy himself at.
 
 This thesis describes \textit{Algorithmic Meta-Creativity}. More precisely it is about using creative computing to achieve computer creativity.
 
-The project is transdisciplinary;\marginpar{§~\ref{ch:methodology}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\marginpar{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
+The project is transdisciplinary;\marginnote{§~\ref{ch:methodology}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\marginnote{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
 
-The preparatory research\marginpar{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
+The preparatory research\marginnote{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
 
-The outcome\marginpar{§~\ref{ch:implementation}} is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing Image Search, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
+The outcome\marginnote{§~\ref{ch:implementation}} is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing Image Search, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
 
-It's main purpose is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval that show creative computing in action. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginpar{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others.\todo{add refs}
+It's main purpose is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval that show creative computing in action. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others.\todo{add refs}
 
 In a sense the system partially automates the creative process, generating results on demand, which allows users to focus on their own personal artistic evaluation rather than production.
 
@@ -45,18 +45,18 @@ In a sense the system partially automates the creative process, generating resul
   The creative process or problem solving is a move from the abstract to the concrete. Creative evaluation is a move from subjective to objective (defining the subjective criteria for creating a product in terms of objective understanding).
 \end{draft}
 
-Following on from the development stage of this project, I looked at the problem of objective evaulation and interpretation\marginpar{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I argue that the most appropriate way to approach this is by looking at five subjective constraints (person, process, product, place, purpose) holistically and by understanding that humour and art ``lie in the ear and eye of the beholder''\ldots
+Following on from the development stage of this project, I looked at the problem of objective evaulation and interpretation\marginnote{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I argue that the most appropriate way to approach this is by looking at five subjective constraints (person, process, product, place, purpose) holistically and by understanding that humour and art ``lie in the ear and eye of the beholder''\ldots
 
 
 \section{Motivations}
 
 My personal interest in this project comes from a background in computer science and a life-long fascination with art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \gls{dmu}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \gls{ioct} at \gls{dmu} and when he pitched his `Syzygy Surfer' \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
 
-Computers\marginpar{§~\ref{ch:technology}} are binary machines; the world is black and white to them (0 and 1, on and off). Programmers can run abstract high-level commands which are executed in sequence (fast speed gives the illusion of multitasking). They are precise, structured, logical and generally abide by strict standards. Computers can only be creative if they are given clear instructions as to how. Information retrieval is generally focused on relevance of results in regards to the query.
+Computers\marginnote{§~\ref{ch:technology}} are binary machines; the world is black and white to them (0 and 1, on and off). Programmers can run abstract high-level commands which are executed in sequence (fast speed gives the illusion of multitasking). They are precise, structured, logical and generally abide by strict standards. Computers can only be creative if they are given clear instructions as to how. Information retrieval is generally focused on relevance of results in regards to the query.
 
-Pataphysics\marginpar{§~\ref{ch:pataphysics}} came about during the `Belle Époque'\footnote{1871---1914} in France and has directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values expections, the imaginary and the mutually incompatible.
+Pataphysics\marginnote{§~\ref{ch:pataphysics}} came about during the `Belle Époque'\footnote{1871---1914} in France and has directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values expections, the imaginary and the mutually incompatible.
 
-Creativity\marginpar{§~\ref{ch:creativity}} is often studied at various levels (neurological, cognitive, and holistic/systemic), from different perspectives (subjective and objective) and characteristics (combinational, exploratory and transformative). It is usually defined in terms of value, originality and skill.
+Creativity\marginnote{§~\ref{ch:creativity}} is often studied at various levels (neurological, cognitive, and holistic/systemic), from different perspectives (subjective and objective) and characteristics (combinational, exploratory and transformative). It is usually defined in terms of value, originality and skill.
 
 Combining computing with pataphysics seems impossible.
 
@@ -69,7 +69,7 @@ Combining computing with pataphysics seems impossible.
   \item Relevance opposes the creative.
 \end{itemize}
 
-Combining pataphysics with creativity\marginpar{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of  combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly.
+Combining pataphysics with creativity\marginnote{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of  combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly.
 
 The apparent dichotomy of computing and pataphysics is alluring. Christian Boek argued that pataphysics ``sets the parameters for the contemporary relationship between science and poetry.'' \autocite{Boek2002} Pataphysics suddenly seems like the perfect choice infusing computers (\~science\~) with creativity (\~poetry\~).
 
@@ -94,7 +94,7 @@ im giving structure to something purposeless
 
 \todo{put pointers from intro to the various chapters}
 
-Another motivating factor for this project was the lack of research in the particular area of creative computing\marginpar{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \gls{ai}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
+Another motivating factor for this project was the lack of research in the particular area of creative computing\marginnote{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \gls{ai}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
 
 
 \section{Questions}
@@ -117,7 +117,7 @@ Research dealing with subjective ideas and concepts like creativity throws up a 
 
 \section{Process-ions}
 
-This project combines research\marginpar{§~\ref{ch:methodology}} in science and art making it transdisciplinary.
+This project combines research\marginnote{§~\ref{ch:methodology}} in science and art making it transdisciplinary.
 
 \begin{description}
   \item [Pataphysics] Literature, Philosophy
@@ -133,7 +133,7 @@ This is practice-based research, meaning that a part of my submission for the de
   \item [Methods] Creative computing, Web Development, Literature Review
 \end{description}
 
-The general process\marginpar{§~\ref{ch:implementation}} of my project was as follows.
+The general process\marginnote{§~\ref{ch:implementation}} of my project was as follows.
 
 \begin{enumerate}
   \item Conduct extensive literature review into the various subjects involved,

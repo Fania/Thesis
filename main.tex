@@ -24,7 +24,7 @@
 \partimage[width=\textwidth]{spiral_pre.pdf}
 \part{\texorpdfstring{PRE\smiley{}}{PREFACE}}
 \include{front/abstract}
-\include{front/dedication}
+% \include{front/dedication}
 % \include{front/declaration}
 % \include{front/acknowledgements}
 % \include{front/publications}
@@ -44,12 +44,12 @@
 \end{SingleSpace}
 
 \phantomsection
-% \addcontentsline{toc}{chapter}{List of Figures}
+% \addcontentsline{toc}{chapter}{Figures}
 \listoffigures
 \clearpage
 
 \phantomsection
-% \addcontentsline{toc}{chapter}{List of Tables}
+% \addcontentsline{toc}{chapter}{Tables}
 \listoftables
 \clearpage
 
@@ -59,12 +59,12 @@
 % \clearpage
 
 \phantomsection{}
-\addcontentsline{toc}{chapter}{List of Code Snippets}
+\addcontentsline{toc}{chapter}{Source Code}
 \listoflistings{}
 \clearpage
 
 \phantomsection
-\addcontentsline{toc}{chapter}{List of Acronyms}
+\addcontentsline{toc}{chapter}{Acronyms}
 \printnoidxglossary[type=acronym]
 \clearpage
 
@@ -97,22 +97,22 @@
 \partimage[width=\textwidth]{spiral_core.pdf}
 \part{\texorpdfstring{THE C$\Theta$RE:\@ T$\Sigma$CHN$\Theta$-L$\Theta$GIC}{THE CORE:\@ TECHNO-LOGIC}}
 \include{main/foundation}
-% \include{main/implementation}
-% \include{main/applications}
+\include{main/implementation}
+\include{main/applications}
 
 \phantomsection
 \addcontentsline{toc}{part}{META-LOGICALYSIS}
 \partimage[width=\textwidth]{spiral_meta.pdf}
 \part{\texorpdfstring{M$\Sigma$T$\forall$-L$\Theta$GIC$\forall$LYSIS}{META-LOGICALYSIS}}
-% \include{main/interpretation}
-% \include{main/analysis}
+\include{main/interpretation}
+\include{main/analysis}
 
 \phantomsection
 \addcontentsline{toc}{part}{HAPPILY EVER AFTER}
 \partimage[width=\textwidth]{spiral_after.pdf}
 \part{\texorpdfstring{H$\forall$PPILY $\Sigma$V$\Sigma$R $\forall$FT$\Sigma$R?}{HAPPILY EVER AFTER?}}
-% \include{main/aspirations}
-% \include{main/observations}
+\include{main/aspirations}
+\include{main/observations}
 
 % BACK
 \appendix

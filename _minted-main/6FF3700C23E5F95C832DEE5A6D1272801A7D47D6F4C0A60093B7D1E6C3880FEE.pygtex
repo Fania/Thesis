@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c}{\PYGZsh{} String $w$ = query word}
+\PYG{c}{\PYGZsh{} Int $i$ = assigned distance}
+\PYG{k}{def} \PYG{n+nf}{clinamen}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{i}\PYG{p}{):}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{([}\PYG{n}{item} \PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{l\PYGZus{}00} \PYG{k}{if} \PYG{n}{dameraulevenshtein}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{item}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{i}\PYG{p}{])}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Clinamen\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+\end{Verbatim}
