@@ -224,7 +224,9 @@ The spectrum from abstract to concrete as shown in table~\ref{tab:cpcd}\marginno
 
 \section{Relating Pataphysics}
 
-\subsection{to Creativity}\footnote{Text shown with a left bar is taken from \autocite{Hugill2013d}}
+% \subsection{to Creativity}
+\textbf{Text shown with a left bar is taken from \autocite{Hugill2013d}.}
+\todo{rewrite}
 
 Let's define creativity as ``the ability to use original ideas to create something new and surprising of value''.
 
@@ -334,47 +336,35 @@ Table~\ref{tab:creatpata}\marginnote{\faicon{table}~\ref{tab:creatpata}} compare
 \end{leftbar}
 
 
-% \subsection{to Computers}
-
-% \begin{draft}
-%   ``Since our solutions will be imaginary, our aim is not so much to have the computer generate creative artefacts as to engage in a creative dialogue with the user. Therefore, we do not intend to move as close to artificial intelligence as Colton's framework seems to suggest \autocite{Colton2008}. In the pataphysical universe, ideas such as `human skill', `human imagination' and `human appreciation' are too generalised to be useful. One may very well ask: which human? And when, where and even why? Rather, our project will aim to produce an exceptional computational entity that consistently generates surprising and novel provocations to the users, who in turn may navigate and modify these by deploying their own skills, appreciation and imagination. The relationship between the two will develop quite rapidly into one of mutual subversion since, however apparent the `rules of the game' may become, the outcomes will always be particular or exceptional.'' \autocite{Hugill2013d}
-% \end{draft}
-
-% We are not the first people to attempt to apply pataphysical ideas in computer science. Johanna Drucker focused specifically on the cleft between formal logic and subjective judgement. She introduced the discipline of `Speculative Computing' as a solution to that problem \autocite{Drucker2007}. The concept can be understood as a criticism of mechanistic, logical approaches that distinguish between subject and object.
-%
-% \begin{quote}
-%   ``Speculative computing takes seriously the destabilization of all categories of entity, identity, object, subject, interactivity, process, or instrument. In short, it rejects mechanistic, instrumental, and formally logical approaches, replacing them with concepts of autopoiesis (contingent interdependency), quantum poetics and emergent systems, heteroglossia, indeterminacy and potentiality, intersubjectivity, and deformance. Digital Humanities is focused on texts, images, meanings, and means. Speculative Computing engages with interpretation and aesthetic provocation.'' \autocite[p.29]{Drucker2009}
-% \end{quote}
-%
-% For Drucker, aesthesis (ambiguous and subjective knowledge) is fundamentally opposed to mathesis (formal objective logic) and subjectivity is always in opposition to objectivity. Knowledge is a matter of interpretation of information, which can be represented digitally as data and metadata. She introduces what she calls a \textbf{'patacritical'} method of including exceptions as rules, even if repeatability and reliability are compromised. Bugs and glitches are privileged over functionality, and are ``valuable to speculation in a substantive, not trivial, sense.'' As she says: ``$'$Pataphysics inverts the scientific method, proceeding from and sustaining exceptions and unique cases'' \autocite{Drucker2007}.
-%
-% In order to break out of the formal logic and defined parameters of computer science, she asserts, we need speculative capabilities and pataphysics. ``The goal of pataphysical and speculative computing is to keep digital humanities from falling into mere technical application of standard practices.'' She links interface design with other speculative computing principles, and refers to Kant's idea of art as \textbf{'purposiveness without purpose'}. She says that the appreciation of design as a thing in itself (regardless of utility) is a goal of speculative aesthetics.
-%
-% The projects Johanna Drucker describes in her book SpecLab \autocite{Drucker2009}  could certainly be considered related work. Not only in their theoretical foundations but also in some aspects of their implementation. One project in particular is worth mentioning here: the $'$Patacritical Demon, an ``interactive tool for exposing the structures that underlie our interpretations of text'', although it remained a purely conceptual piece of work and was never implemented. Her idea if the ``patacritical'' method is quite interesting. Pataphysical exceptions and anomalies can thus be justified in a computational system. But it is not just this concept that deserves mention here.
-
-% \begin{draft}
-%   Drucker's ideas on structured data, metadata and knowledge representation link very nicely into my project. How can we represent and structure data so that it does not lose its subjectivity, context and meaning? Her reference to graphical analogies is inspiring in that regard as well.
-% \end{draft}
-
-
 \section{Explaining Concepts}
 
-\subsection{Patalgorithms}
+\begin{description}
+  \item [Patalgorithms] Pataphysical algorithms.
+  \item [Pataphysicalisation] Applying pataphysical transformations to data.
+  \item [Patadata] Data which has been pataphysicalised.
+  \item [Patasaurus] A thesaurus for patadata.
+  \item [Patametric Index] Patadata index.
+  \item [Pranking] Pataphysical ranking.
+\end{description}
+
+\todo{rewrite sections here, integrate into other chapters}
+
+\subsection*{Patalgorithms}
 
 \begin{draft}
   The constraints for our conceptual space are the pataphysical rules that we want to apply to our data. We use those rules to explore, combine and transform our space; giving us the flexibility and freedom we need to find interesting results.
 
-  We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation process forms a central component of our system (see Figure~\ref{fig:patasearch01}) and influences all areas of the search tool.
+  We developed the idea of pataphysicalising data as the process of applying such pataphysical rules in order to produce creative search results. This pataphysicalisation\marginnote{\faicon{object-group}~\ref{fig:patasearch02}} process forms a central component of our system and influences all areas of the search tool.
 \end{draft}
 
 \todo{redraw figure}
 
-\begin{figure}[htb] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{patasearch01}
-\caption[Pata central1]{Pata central1}
-\label{fig:patasearch01}
-\end{figure}
+% \begin{figure}[htb] % (here, top, bottom, page)
+%   \centering
+%   \includegraphics[width=\linewidth]{patasearch01}
+% \caption[Pata central1]{Pata central1}
+% \label{fig:patasearch01}
+% \end{figure}
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -385,7 +375,7 @@ Table~\ref{tab:creatpata}\marginnote{\faicon{table}~\ref{tab:creatpata}} compare
 \end{figure}
 
 
-\subsection{Pataphylicalisation}
+\subsection*{Pataphylicalisation}
 
 % The concept of pataphysicalisation, using pataphysical methods to transform an object/idea, on the search request however, does appear to be an interesting place to start the search for a new architecture. Whilst argued above, it cannot be the end of the process due to the amount it constrains the possible creative outputs, the characteristics of such a system, how you would get users to interactive with such a system, as well as how they would respond to it, will give valuable insight into the areas that need to be addressed by both the algorithms and hence the architecture.
 
@@ -398,7 +388,7 @@ Definitions:
   \item [Patadata] (noun) – any data which has been pataphysicalised
 \end{description}
 
-But what exactly does the process of pataphysicalisation include? The kinds of transformations we are thinking of could be for example replacing or adding to the query term (s) with synonyms, antonyms, opposites, syzygies, clinamens etc. This can be done with the help of thesauri or dictionaries and ontologies. Whether we pataphysicalise our query term (s), the index or the results does not matter at this point. They are all possible and will maybe be done all at the same time (see figure~\ref{fig:patasearch02} below). We can consider the possibility of a `patametric index', rather than a parametric index or a `patasaurus' (pataphysical thesaurus/ontology).
+But what exactly does the process of pataphysicalisation include? The kinds of transformations we are thinking of could be for example replacing or adding to the query term (s) with synonyms, antonyms, opposites, syzygies, clinamens etc. This can be done with the help of thesauri or dictionaries and ontologies. Whether we pataphysicalise our query term (s), the index or the results does not matter at this point. They are all possible and will maybe be done all at the same time\marginnote{\faicon{object-group}~\ref{fig:patasearch02f}}. We can consider the possibility of a `patametric index', rather than a parametric index or a `patasaurus' (pataphysical thesaurus/ontology).
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -413,7 +403,7 @@ But what exactly does the process of pataphysicalisation include? The kinds of t
 \end{quote}
 
 
-\subsection{Patadata}
+\subsection*{Patadata}
 
 The idea of patadata is derived from the idea below:\\
 Physics $\to$ Metaphysics $\to$ Pataphysics\\
@@ -430,7 +420,7 @@ Query      = `Sun God Ra'\\
 Patadata = [Sun God Ra (equivalent), Slave (opposite), Holiday (antinomy),\\ Blue Balloon (anomaly), Pyramid (syzygy), Sphinx (clinamen)]
 
 
-\subsection{Pranking}
+\subsection*{Pranking}
 
 In traditional Web search, ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream. This also includes ideas such as the Facebook `like' button or the Google `+1' button which could be seen as direct user relevance feedback.
 

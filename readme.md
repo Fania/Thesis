@@ -104,6 +104,10 @@ makeglossaries main
 - [ ] add some \nameref{ch:test} references instead of just \ref{}
 - [ ] add margin notes for references to my publications
 - [ ] Boden argues ?? Boden argued ??
+- [ ] Redesign chapter title pages (put toc on new page)
+- [ ] Redesign part title pages (fonts?)
+- [ ] Check spelling of Web/web and Internet/internet
+
 
 
 ## Errors

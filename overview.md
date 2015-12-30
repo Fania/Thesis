@@ -9,7 +9,6 @@ getting pcs to write Poetry
 ## PREFACE i
 
 ## TL;DR ii
-needs writing
 ## Contents iii
 ## List of Figures vii
 ## List of Tables ix
@@ -27,22 +26,6 @@ needs writing
 ## 2.1.3 ArtsResearch 17
 ## 2.2 TransdisciplinaryResearch . 17
 ## 2.3 PracticeBasedResearch. 17
-build proof of concept search tool with algorithms for text only.
-redevelop prototype to also use image and video
-over several iterations... reflections...
-
-used by digital opera
-
-needed refinement
-redevelop prototype for poetry etc
-
-agile methodology, get results early,
-without the artefact its only theory.
-answering these questions:
-is it possible?
-is it gonna be useful?
-is it gonna be usable?
-
 
 
 ## II TΘΘLS ΘF THΣ TR∀DΣ 22
@@ -102,14 +85,6 @@ is it gonna be usable?
 
 ## 7 Theoretical Foundations 114
 
-\item link the various creativity models
-\item link the various creative process models
-\item Creativity and Computing disciplines
-\item link discipline models to creative process models
-\item link pataphysics to creativity
-\item link pataphysics and computers
-\item patalgorithms, pataphysicalisations, patadata, pranking
-
 ## 7.1 Searchingvs.Browsing . 115
 searching = information answering
 browsing = exploratory / detours/ distractions/ leaps/ unexpected
@@ -117,8 +92,6 @@ browsing = exploratory / detours/ distractions/ leaps/ unexpected
 ## 7.2 Creativity 116
 ## 7.3 Pataphysics  117
 ## 7.3.1 andCreativity 117
-pataphysics has methods for creative processes. its justification for using pataphysics (see table)
-
 ## 7.3.2 andComputers. 121
 ## 7.4 Patalgorithms . 124
 ## 7.4.1 Pataphylicalisation. 124
