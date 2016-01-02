@@ -25,35 +25,10 @@ owing to some misunderstanding.
 
 \minicontents
 
-Creativity does not have a universally accepted definition. Creativity is a human quality and definitions don't necessarily lend themselves to be applied to computers as well. There are aspects that come up in many, like novelty and value, but some that rarely pop up, like relevance and variety. Creativity can be studied at various `levels' (neurological, cognitive, and holistic/systemic), from different `perspectives' (subjective and objective) and `characteristics' (combinational, exploratory and transformative). Creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
-
-Linda Candy identified 3 approaches for studying creativity \autocite[p.3]{Candy2012}:
-\begin{description}
-  \item [Research Design] Experimental, psychometric, observational, \ldots
-  \item [Research Focus] Human attributes, cognitive processes or creative outcomes.
-  \item [Research Evidence] Real-time observation, historical data, artificial (laboratory) or natural (real world settings).
-\end{description}
-
-Richard Mayer identified five big questions of human creativity research \autocite[p.450-451]{Mayer1999}:
-
-\begin{enumerate}
-  \item Is creativity a property of people, products, or processes?
-  \item Is creativity a personal or social phenomenon?
-  \item Is creativity common or rare?
-  \item Is creativity domain-general or domain-specific?
-  \item Is creativity quantitative or qualitative?
-\end{enumerate}
-
 
 \section{Problems with Evaluation}
 
-Evaluating human creativity objectively is problematic. There are many debates across the disciplines involved.
-
-\begin{quote}
-  ``An important challenge for the next 50 years of creativity research is to develop a clearer definition of creativity and to use a combination of research methodologies that will move the field from speculation to specification.'' \autocite[p.459]{Mayer1999}
-\end{quote}
-
-Taking the debates about human creativity\marginnote{§~\ref{ch:creativity}} and directly applying them to machines seems logical but may be the wrong and lazy approach. Adapting Mayer's five big questions\marginnote{§~\ref{s:Mayer5questions}} to machines does not seem to capture the real issues at play\marginnote{\faicon{table}~\ref{tab:HCCC}}. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of programmers, users, machines, products, or processes. Similarly we might as if creativity is a local, a network or an Internet phenomenon.
+Evaluating human creativity objectively seems problematic; evaluating computer creativity at all seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity\marginnote{§~\ref{ch:creativity}} and directly applying them to machines seems logical but may be the wrong approach. Adapting Mayer's five big questions\marginnote{§~\ref{s:Mayer5questions}} to machines does not seem to capture the real issues at play\marginnote{\faicon{table}~\ref{tab:HCCC}}. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of programmers, users, machines, products, or processes. Similarly we might ask if creativity is a local, a network or an Internet phenomenon.
 
 \begin{table}[htbp]
   \centering
@@ -62,7 +37,7 @@ Taking the debates about human creativity\marginnote{§~\ref{ch:creativity}} and
   \textbf{Human Creativity} & \textbf{Computer Creativity} \\
   \midrule
   people, products, or processes & programmers, users, machines, products, or processes \\
-  personal or social & local, a network or an Internet \\
+  personal or social & local, network or Internet \\
   common or rare & common or rare \\
   domain-general or domain-specific & domain-general or domain-specific \\
   quantitative or qualitative & quantitative or qualitative \\
@@ -72,9 +47,13 @@ Taking the debates about human creativity\marginnote{§~\ref{ch:creativity}} and
 \label{tab:HCCC}
 \end{table}
 
+\todo{this table is unnecessary really}
+
 Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the points raised in chapter~\ref{ch:evaluation}\marginnote{§~\ref{ch:evaluation}}, for example studying only the creative end-product itself (out of context), only judging it by its novelty objectively, assigning an arbitrary thresholds, etc. This also includes the assumption that machines `mimic' humans and are therefore not judged at their full potential\footnote{Human Brain --- Computer Brain stuff here?}.
 
-\todo{add human brain stuff}
+\todo{add human brain stuff?}
+
+\spirals
 
 Table~\ref{tab:HCCC} also brings up several questions.
 \todo{revise questions here}
@@ -106,161 +85,52 @@ Table~\ref{tab:HCCC} also brings up several questions.
 
 \todo{where are the last few items from??}
 
-On a more practical level, there are various problems that arise when trying to evaluate computer creativity. Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2, her emphasis]{Jordanous2011}.
-
-
-
 \spirals
 
-\begin{draft}
-  Creative evaluation is a move from subjective to objective (defining the subjective criteria for creating a product in terms of objective understanding).
-\end{draft}
-
-\begin{fcom}
-Since most problems with evaluating creativity in computers (and humans alike) stems from the lack of a universal definition it seems logical to try and remedy this first and foremost.
-\end{fcom}
-
-
-
-
-\begin{fcom}
-  ``distinguishing between person’s and product’s creativity'' \autocite[p.258]{Piffer2012}
-  ``it is concluded that a person’s creativity can only be assessed indirectly (for example with self report questionnaires or official external recognition) but it cannot be measured'' \autocite[p.258]{Piffer2012}
-\end{fcom}
-
-
-
-
-
+Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2]{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposes ``\gls{specs}''\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \autocite[p.137-140]{Jordanous2012a}:
 
 \begin{quote}
-  ``Whether the [creative] process is systematic or ad hoc, evaluation depends upon criteria and measures that are situated and domain specific.'' \autocite[p.7]{Candy2012}
+  \begin{enumerate}
+    \item Identify a definition of creativity that your system should satisfy to be considered creative.
+    \item Using Step 1, clearly state what standards you use to evaluate the creativity of your system.
+    \item Test your creative system against the standards stated in Step 2 and report the results.
+  \end{enumerate}
 \end{quote}
 
-
-The participant responses demonstrate active engagement in three ways: Immediate, Sustained or Creative. \autocite{Candy2012}
-
+The \gls{specs} model essentially means that we cannot evaluate a creative computer system objectively, unless steps 1 and 2 are predefined and publically available for external assessors to execute step 3. Creative evaluation can therefore be seen as a move from subjectivity to objectivity, i.e. defining subjective criteria for objectively evaluating a product in terms of the initial criteria.
 
 \begin{quote}
-  ``Whether an action is successful or unsuccessful depends on whether the intended result is achieved.'' \autocite[p.23]{Candy2012}
+  ``For transparent and repeatable evaluative practice, it is necessary to state clearly what standards are used for evaluation, both for appropriate evaluation of a single system and for comparison of multiple systems using common criteria.'' \autocite[p.67]{Jordanous2012a}
 \end{quote}
 
+We need a ``clearer definition of creativity'' \autocite[p.459]{Mayer1999}, with ``criteria and measures [for evaluation] that are situated and domain specific.'' \autocite[p.7]{Candy2012}
+
+\begin{quote}
+  ``[A] person's creativity can only be assessed indirectly (for example with self report questionnaires or official external recognition) but it cannot be measured.'' \autocite[p.258]{Piffer2012}
+\end{quote}
+
+Since many problems with evaluating creativity in computers (and humans alike) seem to stem from a lack of a clear relevant definition it seems logical to try and remedy this first and foremost.
 
 
-% -----------------------------
+\subsection{Defining Creativity}
 
-% \begin{fcom}
-% •	Brain operations per sec 1016 \autocite[p.194]{Kurzweil2013}\\
-% •	Japan’s K-computer has 1016 calculations per sec (10 petaflops)\\
-% •	Blue brain project: 2023: 1017 bytes memory + 1018 flops \autocite[p.125]{Kurzweil2013}
-% \end{fcom}
-%
-% Human Brain Project: \autocite{Walker2012}
-%
-% Our brain consumes about 30W, the same as an electric light bulb, thousands of times less than a small supercomputer. \autocite[p.17]{Walker2012}
-%
-% For environmental and business reasons, vendors have set themselves the goal of containing energy consumption to a maximum of 20 megawatts  \autocite[p.41]{Walker2012}
-%
-% the 1 PFlop machine at the Jülich Supercomputing Centre could simulate up to 100 million neurons – roughly the number found in the mouse brain. \autocite[p.41]{Walker2012}
-%
-% Cellular-level simulation of the 100 billion neurons of the human brain will require compute power at the exascale (1018 flops). \autocite[p.41-42]{Walker2012}
-%
-% 2017 petascale 50petabytes memory + 50 petaflops + <=4MW power
-%
-% 2021 exascale 200petabyte memory + 1exaflop
-%
-% A second, equally important goal will be to prepare the procurement of the HBP Pre-exascale-supercomputer. By 2017/18, Jülich plans to procure a Big Data-centred system with at least 50 PBytes of hierarchical storage-class memory, a peak capability of at least 50 PFlop/s and a power consumption <= 4 MW. The memory and computational speed of the machine will be sufficient to simulate a realistic mouse brain and to develop first-draft models of the human brain. (The rest of the hardware roadmap targets an exascale machine in 2021/2022 with a capability of 1 EFlop/s and a hierarchical storage-class memory of 200 PB).\footnote{https://www.humanbrainproject.eu/high-performance-computing-platform}
-%
-% Chris Chatham: 10 Important Differences Between Brains and Computers \footnote{http://scienceblogs.com/developingintelligence/2007/03/27/why-the-brain-is-not-like-a-co/}
-%
-% \begin{enumerate}
-% \item Brains are analogue; computers are digital
-% \item The brain uses content-addressable memory
-% \item The brain is a massively parallel machine computers are modular and serial
-% \item Processing speed is not fixed in the brain; there is no system clock
-% \item Short-term memory is not like RAM
-% \item No hardware/software distinction can be made with respect to the brain or mind
-% \item Synapses are far more complex than electrical logic gates
-% \item Unlike computers, processing and memory are performed by the same components in the brain
-% \item The brain is a self-organising system
-% \item Brains have bodies
-% \item	The brain is much, much bigger than any [current] computer
-% \end{enumerate}
-%
-% Why Minds Are Not Like Computers \autocite{Schulman2009}
-% Software – Hardware == Mind – Brain ??? analogy
-%
-% "The power of the computer derives not from its ability to perform complex operations, but from its ability to perform many simple operations very quickly."
-%
-% Layers of abstraction in computers:\\
-% 1.	user interface\\
-% 2.	high level programming language\\
-% 3.	machine language\\
-% 4.	proessor microarchitecture\\
-% 5.	Boolean logic gates\\
-% 6.	transistors\\
-%
-% layers of abstraction in brain:\\
-% 1.	personality?\\
-% 2.	Thinking?\\
-% 3.	Chemical /electrical signals/activity?\\
-% 4.	Divided Brain regions/structure\\
-% 5.	Neurons\\
-% 6.	Dendrites (input) and axons (output)?\\
-%
-%
-% Computers are faster and better than humans in many tasks already.
-%
-% \begin{quote}
-% "The weaknesses of the computational approach include its assumption that cognition can be reduced to mathematics and the difficulty of including noncognitive factors in creativity." \autocite[p.457]{Mayer1999}
-% \end{quote}
-%
-% \subsection{Other}
-%
-% \begin{quote}
-% "Currently many implementors of creative systems follow a creative-practitioner-type approach: produce a system then present it to others, whose critical reaction determines its worth as a creative entity. A creative practitioner’s primary aim, however, is to produce creative work, rather than to critically investigate creativity; in general this investigative aim is important in computational creativity research." \autocite{Jordanous2011}
-% \end{quote}
-%
-% purpose or intention shifts into focus here over production of products.
-%
-% \begin{quote}
-% "Also, evaluation of novelty (or originality, newness) is often examined in the papers cited above according to how dissimilar the system’s artefacts are to previous output or other existing examples of creative output in that domain. On the other hand, appropriateness is often evaluated according to how similar the system’s output artefacts are to known examples. Hence across the field as a whole, there is a stark inconsistency as to whether to prioritise the generation of artefacts which are dissimilar from existing artefacts, or whether to pursue the generation of artefacts which are similar to existing artefacts, arising directly from the adoption of ‘novelty + value’ as the underlying model of creativity. Such a contradiction is clearly not helping the identification of coherent and consistent strategies to adopt across the field." \autocite{Jordanous2012}
-% \end{quote}
-%
-% \begin{quote}
-% "In some cases, evaluative tests are conducted on the system which purportedly evaluate the system’s creativity but which actually only measure the system’s quality." \autocite{Jordanous2012}
-% \end{quote}
-%
-% But if quality is the "conformance to specifications" and the specification suggested creativity, then a good quality rating of a system would automatically mean it's creative, right?
-%
-% \begin{quote}
-% "The key conclusion of the survey was that evaluation of computational creativity is not being performed in a scientifically rigorous manner:
-% \begin{itemize}
-% \item The creativity of a third of the 75 ‘creative’ systems was not critically discussed.
-% \item Half the papers surveyed did not contain a section on evaluation.
-% \item Only a third of systems presented as creative were actually evaluated on how creative they are.
-% \item A third of papers did not clearly state or define criteria that their system should be evaluated by.
-% \item Less than a quarter of systems applied existing creativity evaluation methodologies.
-% \item Occurrences of evaluation by people outside the system implementation team were rare.
-% \item Few systems were comparatively evaluated, to see if the presented system outperforms existing systems (a useful measurement of research progress).
-% \item General principles of scientific method are not being followed by the community as a whole." \autocite{Jordanous2012}
-% \end{itemize}
-% \end{quote}
-%
-% \begin{quote}
-% "Reducing creativity to problem solving works when the creator is searching for an ideal solution which is not obvious, or if there is no single ideal solution but several candidates for a reasonable solution (Boden, 1994b)." \autocite{Jordanous2012}
-% \end{quote}
-%
-% \begin{quote}
-% "One potential problem with Boden’s three views of creativity is that they all assume the existence of a conceptual space, or constrained set of possibilities, that the creative individual consciously reasons with in order to be creative." \autocite{Jordanous2012}
-% \end{quote}
+Following Jordanous' \gls{specs} model\marginnote{§~\ref{s:specs}}, we need to state our own definition of creativity in regards to the computer system being evaluated.
 
+Summarising section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}, chapter~\ref{ch:evaluation} and chapter~\ref{ch:creativity} we get the following list of terms used to describe or define creativity.
 
+\begin{description}
+  \item [Margaret Boden] new, surprising, valuable \autocite{Boden2003}
+  \item [Davide Pfiffer] novelty, appropriatness, impact \autocite{Piffer2012}
+  \item [Pease et al] novel, valuable \autocite{Pease2001} and randomness, serendipity \autocite{Pease2013}
+  \item [Graeme Ritchie] novelty, quality, typicality \autocite{Ritchie2007}
+  \item [Dan Ventura] variety, efficiency \autocite{Ventura2008}
+  \item [Simon Colton] skill, appreciation, imagination \autocite{Colton2008a, Colton2008}
+  \item [Geraint Wiggins] relevance, acceptability, quality \autocite{Wiggins2006}
+  \item [Anna Jordanous] active involvement and persistence, generation of results, uncertainty, domain competence, general intellect, independence and freedom, intention and emotional involvement, originality, progression and development, social interaction and communication, spontaneity / subconscious processing, thinking and evaluation, value, variety, divergence and experimentation \autocite{Jordanous2012}
+\end{description}
+\todo{complete summary}
 
-
-\section{Measurable Attributes}
-
-See section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}
+From this we can derive the following 7 key attributes of creativity.
 
 \begin{description}
   \item [Novelty] originality, newness, variety, typicality, imagination
@@ -269,7 +139,7 @@ See section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}
   \item [Ephemeral/Uncontrolled] serendipity, randomness, uncertainty, experimentation
   \item [Temporal/Controlled] persistence, results, development, progression, spontaneity
   \item [Purpose] intention, communication, evaluation, aim, independence
-  \item [Spatial] context, environment, press, background
+  \item [Spatial] context, environment, press
 \end{description}
 
 
@@ -339,48 +209,78 @@ To prevent that, the level of interaction the user has with the system and the f
 
 \todo{reformat, add references etc}
 
-Useless Search Results
-
+\begin{leftbar}
 The word useless is defined as ``not fulfilling or not expected to achieve the intended purpose or desired outcome'' in the Oxford dictionary (2010). Given this definition most of the search results we have in mind would be classed as useless. That is at least if we considered every result individually, outside of context and with an information-lookup query in mind. If we have an exploratory search in mind however things get more interesting and we will explain why in the remainder of the paper.
+\end{leftbar}
 
 Relevant versus Creative
 
+\begin{leftbar}
 When we say relevant results we mean the kind of search results that any mainstream search engine would produce, the kind of results you would immediately understand their connection to the query for, the kind of results that just makes sense. Consider the example results in table 1.
+\end{leftbar}
 
+\begin{leftbar}
 Results which might seem useless at first can be much more creative or even poetic. And creative results support exploratory search. Surprise and user expectations play a big role in creativity according to Boden (2003).
+\end{leftbar}
 
+\begin{leftbar}
 Fewer expectations (an open mind) allow creativity to happen more easily. Empirical experiences form expectations, which hinder our ability to accept creative ideas when they happen. In order to be able to recognise creative ideas we need to be able to see what they all have in common and in what way they differ and not reject unusual, unexpected ones.
+\end{leftbar}
 
+\begin{leftbar}
 We can link this very nicely to the idea of exploratory search. Lowering expectations or opening the mind implies extending the task domain or problem space. Creativity and exploratory search seem predestined to work with each other.
+\end{leftbar}
 
 Biases
 
+\begin{leftbar}
 Wikipedia defines bias as ``an inclination to present or hold a partial perspective at the expense of (possibly equally valid) alternatives. Anything biased generally is one-sided, and therefore lacks a neutral point of view.'' (2012)
+\end{leftbar}
 
+\begin{leftbar}
 However, biases can be good and bad. It is important to consider the implications of their existence though, especially when trying to measure the success of something objectively. An example of when biases can be advantageous is location signals that the search tool takes into account when producing results. An Englishmen would probably not have much use of a Chinese website and vice-versa, even if the actual content matches the original query (unless of course the user happens to understand both languages perfectly). Another example of this is location queries such as `Chinese restaurants in Cambridge', which should return web pages about restaurants based in Cambridge, UK or Massachusetts, USA, depending on the user’s I.P. address.  This might seem logical, but in the truest sense it is a bias employed by the search engine to help provide more relevant results to individuals. Truly unbiased search results are probably impossible to come by nowadays.
+\end{leftbar}
 
+\begin{leftbar}
 There is a general move from objectivity to subjectivity in the sense that users become the subject of search results as much as the query they pose. Instead of neutrally providing results for a query alone, the results are tailored around the information known about the user (e.g.\ language, location, clickstream, social media likes, bookmarks, etc.) to make up the missing context. The user becomes the subject and context of a query, while the results become an objective list of matches for all those values rather than just the query term (s).
+\end{leftbar}
 
 Standard Web search:  Subject/User  Object/Results
 
 Constraints
 
+\begin{leftbar}
 There are certain factors and constraints that influence the perception and success of the results. Some can be taken into account when building a search system but others cannot be avoided. User education is one way to deal with those issues. Earlier we briefly mentioned some external constraints such as the setting in which the search takes place. Is the user operating from a handheld device or a desktop computer? Is he or she in a hurry to find answers or just leisurely browsing for them? Is the search system web-based or is the user querying a database?
+\end{leftbar}
 
+\begin{leftbar}
 User Expectations  It is important to note that ``search systems are not used in isolation from their surrounding context, i.e., they are used by real people who are influenced by environmental and situational constraints such as their current task'' (White and Marchionini 2004). User expectations should be taken into consideration during the evaluation of search results. Users who are hoping to find precise answers to a specific question might not be satisfied by exploratory search results. Someone browsing for inspiration on a broad topic on the other hand could benefit from them. Users should therefore be informed about the nature of the search tool in some way.
+\end{leftbar}
 
+\begin{leftbar}
 User Skill   The searching skills of the user matter. Specifically his or her ability to articulate an information need and any knowledge of special search techniques (use of Boolean modifiers, quotation marks, wildcards, etc.) are two important factors that influence the results obtained greatly. This is very much based on the old idea of garbage-in, garbage-out (Lidwell et al. 2010).
 Visual Representation   The way that results are presented affects how the user perceives them. A diversity of different document types, for example text, images, sound, or video results could improve how well the results are rated (Sawle et al. 2011). Johanna Drucker had already pointed out that ``many information structures have graphical analogies and can be understood as diagrams that organise the relations of elements within the whole'' (2009). An alphabetical list is a typical model for representing text data sets for example. But is a ranked list really the best way to represent search results? Other models could be a differently ranked or ordered list, a tree structure, a matrix, a one-to-many relationship, etc.
+\end{leftbar}
 
+\begin{leftbar}
 Structure of Results  As suggested by Sawle et al (2011) we need to consider different ways to structure and measure search results. A single, perfectly good result might be deemed irrelevant and useless if it is surrounded by several unsuitable results. Therefore there might be certain advantages to measuring and evaluating the value or relevance of individual results over a whole set of results.
+\end{leftbar}
 
+\begin{leftbar}
 Direct User Relevance Feedback   Relevance feedback lets users rate individual results or sets of results either directly (through manual ratings) or indirectly (through click-stream data). This data is then congregated and used for webpage rankings or other purposes such as suggesting other query terms. It can improve results for similar queries in the future but also lets the user stir the direction his search is taking in real-time. Users can adjust their query to manipulate the results; this basically means they adjust some of their own constraints.
+\end{leftbar}
 
+\begin{quote}
 ``Relevance feedback—asking information seekers to make relevance judgments about returned objects and then executing a revised query based on those judgments—is a powerful way to improve retrieval.'' (Marchionini 2006)
+\end{quote}
 
+\begin{leftbar}
 Automatic Query Expansion   As opposed to integrating and involving the user actively in the refinement of a query, in automatic query expansion the improvements are done passively, often completely without the user’s knowledge. Information gathering methods include, for example, the analysis of mouse clicks, so called like buttons (e.g. Facebook, Google+) or eye tracking, etc. How the collected data is then used varies. Simple examples of automatic query expansion are the correction of spelling errors or the hidden inclusion of synonyms when evaluating a query.
+\end{leftbar}
 
+\begin{leftbar}
 Depending on these factors and constraints, search results can be viewed as useful or useless. In a way the usefulness or correctness of an idea or result cannot always be judged fairly – there are always conditions that will affect how the outcome is interpreted. In the scenario of a creative search tool, results could be very useful, while they might be completely useless in another.
+\end{leftbar}
 
 
 \stopcontents[chapters]

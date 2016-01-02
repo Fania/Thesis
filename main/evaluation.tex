@@ -26,7 +26,7 @@ and to draw a judgement from Heaven upon you for the Injustice.
 \minicontents
 
 
-\section{Traditional}
+\section{Evaluating Search}
 
 Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional \gls{ir} is evaluated using two metrics known as precision and recall. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.
 
@@ -91,8 +91,10 @@ Ranking is another issue that could be considered to pre-evaluate web pages at i
 
 % In this paper \autocite{Sawle2011} we have discussed an initial approach to measure the creativity of search results. Based on a definition of creativity by Boden, we attempt to define creativity in a way which could be applied to search results and provide a simple metric to measure it.
 
+\todo{anything else about evaluating search/creative search?}
 
-\section{Creative}
+
+\section{Evaluating Creative Computers}
 \label{s:creattributes}
 
 \todo{bridge over from traditional search evaluation to general creative computing}
@@ -128,22 +130,56 @@ Anna Jordanous proposed 14 key components of creativity (which she calls an  ``o
 \end{quote}
 
 The 14 components Jordanous collated are: \citeyear[p.118-120]{Jordanous2012}
-\begin{enumerate}
-  \item Active Involvement and Persistence
-  \item Generation of Results
-  \item Dealing with Uncertainty
-  \item Domain Competence
-  \item General Intellect
-  \item Independence and Freedom
-  \item Intention and Emotional Involvement
-  \item Originality
-  \item Progression and Development
-  \item Social Interaction and Communication
-  \item Spontaneity / Subconscious Processing
-  \item Thinking and Evaluation
-  \item Value
-  \item Variety, Divergence and Experimentation
-\end{enumerate}
+\begin{quote}
+  \begin{enumerate}
+    \item Active Involvement and Persistence
+    \item Generation of Results
+    \item Dealing with Uncertainty
+    \item Domain Competence
+    \item General Intellect
+    \item Independence and Freedom
+    \item Intention and Emotional Involvement
+    \item Originality
+    \item Progression and Development
+    \item Social Interaction and Communication
+    \item Spontaneity / Subconscious Processing
+    \item Thinking and Evaluation
+    \item Value
+    \item Variety, Divergence and Experimentation
+  \end{enumerate}
+\end{quote}
+
+Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2]{Jordanous2011} and proposed ``\gls{specs}'' \autocite[p.137-140]{Jordanous2012a}:
+\label{s:specs}
+
+\begin{quote}
+  \begin{enumerate}
+    \item Identify a definition of creativity that your system should satisfy to be considered creative:
+      \begin{enumerate}
+        \item What does it mean to be creative in a general context, independent of any domain specifics?
+        \begin{itemize}
+          \item Research and identify a definition of creativity that you feel offers the most suitable definition of creativity.
+          \item The 14 components of creativity identified in Chapter 4 are strongly suggested as a collective definition of creativity.
+        \end{itemize}
+        \item What aspects of creativity are particularly important in the domain your system works in (and what aspects of creativity are less important in that domain)?
+        \begin{itemize}
+          \item Adapt the general definition of creativity from Step 1a so that it accurately reflects how creativity is manifested in the domain your system works in.
+        \end{itemize}
+      \end{enumerate}
+    \item Using Step 1, clearly state what standards you use to evaluate the creativity of your system.
+      \begin{itemize}
+        \item Identify the criteria for creativity included in the definition from Step 1 (a and b) and extract them from the definition, expressing each criterion as a separate standard to be tested.
+        \item If using Chapter 4’s components of creativity, as is strongly recommended, then each component becomes one standard to be tested on the system.
+      \end{itemize}
+    \item Test your creative system against the standards stated in Step 2 and report the results.
+      \begin{itemize}
+        \item For each standard stated in Step 2, devise test(s) to evaluate the system’s performance against that standard.
+        \item The choice of tests to be used is left up to the choice of the individual researcher or research team.
+        \item Consider the test results in terms of how important the associated aspect of creativity is in that domain, with more important aspects of creativity being given greater consideration than less important aspects. It is not necessary, however, to combine all the test results into one aggregate score of creativity.
+      \end{itemize}
+  \end{enumerate}
+\end{quote}
+
 
 \spirals
 
