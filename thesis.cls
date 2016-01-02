@@ -349,11 +349,15 @@ breaklines=true
 
 \usepackage[a4paper, % twoside=false,
             left=4cm, right=2cm,
-            top=2cm, bottom=4cm % ,showframe, showcrop
+            top=2cm, bottom=4cm, % ,showframe, showcrop
+            marginparwidth=3.5cm, marginparsep=3mm
             ]
             {geometry}
 % bindingoffset=6mm
 
+% \usepackage[top=2cm, bottom=1.3cm, left=5cm, right=0.5cm,
+% heightrounded,
+%   marginparwidth=4.6cm, marginparsep=3mm]{geometry}
 
 % BIBLIOGRAPHY
 

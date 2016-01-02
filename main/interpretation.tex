@@ -112,11 +112,11 @@ We need a ``clearer definition of creativity'' \autocite[p.459]{Mayer1999}, with
 Since many problems with evaluating creativity in computers (and humans alike) seem to stem from a lack of a clear relevant definition it seems logical to try and remedy this first and foremost.
 
 
-\subsection{Defining Creativity}
+\section{Defining Creativity}
 
 Following Jordanous' \gls{specs} model\marginnote{§~\ref{s:specs}}, we need to state our own definition of creativity in regards to the computer system being evaluated.
 
-Summarising section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}, chapter~\ref{ch:evaluation} and chapter~\ref{ch:creativity} we get the following list of terms used to describe or define creativity.
+Summarising section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}, chapter~\ref{ch:evaluation} and chapter~\ref{ch:creativity} I have collated the following list of terms used to describe or define creativity.
 
 \begin{description}
   \item [Margaret Boden] new, surprising, valuable \autocite{Boden2003}
@@ -130,42 +130,77 @@ Summarising section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}, 
 \end{description}
 \todo{complete summary}
 
-From this we can derive the following 7 key attributes of creativity.
+From this I derive the following \hypertarget{creadef}{\textit{Creativity Criteria}} --- 3 key criteria of creativity in relation to 4 major factors --- novelty, value, quality and purpose $\to$ spatial, temporal and ephemeral.
 
 \begin{description}
   \item [Novelty] originality, newness, variety, typicality, imagination
   \item [Value] usefulness, appropriateness, appreciation, relevance, impact, influence
   \item [Quality] skill, efficiency, competence, intellect, acceptability
-  \item [Ephemeral/Uncontrolled] serendipity, randomness, uncertainty, experimentation
-  \item [Temporal/Controlled] persistence, results, development, progression, spontaneity
   \item [Purpose] intention, communication, evaluation, aim, independence
   \item [Spatial] context, environment, press
+  \item [Temporal] persistence, results, development, progression, spontaneity
+  \item [Ephemeral] serendipity, randomness, uncertainty, experimentation
 \end{description}
 
+Using these attributes\marginnote{\faicon{eye}~\hyperlink{creadef}{7 Criteria}} I can declare a project-dependent definition of creativity to fulfill step 1 of the \gls{specs} model\marginnote{§~\ref{s:specs}}.
+
+\begin{draft}
+  \begin{description}
+    \item [Novelty] the combination of pataphysics and information retrieval
+    \item [Value] it has been proven useful (digital opera)
+    \item [Quality] custom algorithms
+    \item [Purpose] show that pataphysics can be used as a tool for creativity
+    \item [Spatial] transdisciplinary, creative computing
+    \item [Temporal] various prototypes
+    \item [Ephemeral] openness to try new algorithm ideas and experiment
+  \end{description}
+\end{draft}
+
+Step 2 of the \gls{specs} model is to declare the set of standards used to test the criteria above.
+
+\begin{draft}
+  \begin{description}
+    \item [Novelty] check other publications / websites / algorithms
+    \item [Value] get feedback from users
+    \item [Quality] check functionality / errors
+    \item [Purpose] ?
+    \item [Spatial] ?
+    \item [Temporal] ?
+    \item [Ephemeral] ?
+  \end{description}
+\end{draft}
+
+Step 3 would be to run some quantitative and qualitative tests to check against the criteria from step 1. I have already struggeled to complete step 2 though.
+
+\todo{add more}
 
 
+\section{Evaluation Framework}
 
-\section{5 P’s: product, process, people, place and purpose}
+In tribute to the many kinds of ``4 P'' models\marginnote{§~\ref{ch:creativity}} out there, I propose an evaluation framework called (*surprise surprise*) the ``5 P Model'' --- product, process, people, place and purpose.
 
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
   \tikzset{every fit/.append style=text badly centered}
   \tikzset{class/.style={draw,rectangle},
-           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,node distance=4pt}}
+           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,
+           inner xsep=2pt,outer xsep=2pt, node distance=4pt}}
   \begin{tikzpicture}
   \node [class] (prod) {Product};
-  \node [label, below=of prod] (proc) {Process};
-  \node [label, below=of proc] (pers) {Person};
-  \node [label, below=of pers] (env) {Environment};
+  \node [label, right=1em of prod] (proc) {Process};
+  \node [label, right=6.5em of prod] (purp) {Purpose};
+  \node [label, right=13em of prod] (pers) {Person};
+  \node [label, right=20em of prod] (plac) {Place};
   \begin{pgfonlayer}{background}
-  \node [class, inner xsep=1em, fit=(prod) (proc)] {};
-  \node [class, inner xsep=2em, fit=(prod) (proc) (pers)] {};
-  \node [class, inner xsep=2em, fit=(prod) (proc) (pers) (env)] {};
+  \node [class, inner xsep=1em, inner ysep=1em, fit=(prod) (proc)] {};
+  \node [class, inner xsep=2em, inner ysep=2em, fit=(prod) (proc) (purp)] {};
+  \node [class, inner xsep=3em, inner ysep=3em, fit=(prod) (proc) (purp) (pers)] {};
+  \node [class, inner xsep=4em, inner ysep=4em, fit=(prod) (proc) (purp) (pers) (plac)] {};
   \end{pgfonlayer}
   \end{tikzpicture}
-\caption[4 Aspects of Creativity]{4 Aspects of Creativity}
-\label{fig:4CreaI}
+\caption[5 P Model]{5 P Model}
+\label{fig:5PModel}
 \end{figure}
 
 \begin{draft}
