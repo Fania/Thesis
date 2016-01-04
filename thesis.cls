@@ -50,8 +50,11 @@
 % \usepackage[bitstream-charter]{mathdesign} % TEST
 % \usepackage{lmodern} % load a font with all the characters
 
+% \usepackage{tsipa}
 \usepackage[noenc]{tipa} % IPA
-
+\newcommand{\ipa}{\textipa}
+% \newfontfamily\ipafamily{lmodern}[Scale=MatchLowercase]
+% \DeclareRobustCommand\ipa[1]{{\ipafamily\textipa{#1}}}
 
 \usepackage[main=UKenglish,french]{babel}
 \usepackage[UKenglish]{isodate}
@@ -107,6 +110,7 @@
 \definecolor{chaptercolor}{gray}{0.8}
 % helper macros
 % \raisebox{amount to shift up or down}[][]{}
+% sets vertical position of chapter number
 \newcommand\numlifter[1]{\raisebox{-6.5cm}[0pt][0pt]{\smash{#1}}}
 \newcommand\numindent{\kern37pt}
 \newlength\chaptertitleboxheight
@@ -119,57 +123,42 @@
 }
 \makeatother
 
-\makechapterstyle{fania}{
-\renewcommand\printchaptername{%
-\scshape%
-\sffamily%
-}
+\makechapterstyle{fania}{%
+\renewcommand\printchaptername{\scshape\sffamily}
+
 \renewcommand\printchapternum{%
 \begingroup%
-\leavevmode%
-\chapnumfont%
-\strut%
-\shifttext{20cm}{ % shift the number to the right
-\numlifter{\thechapter}%
-}
-\numindent%
-\endgroup%
-}
+\leavevmode\chapnumfont\strut%
+% sets horizontal position of chapter number
+% 10cm is about the middle, 20cm is right-ish
+% 0cm is left
+\shifttext{0cm}{\numlifter{\thechapter}}\numindent%
+\endgroup}
+
 \renewcommand*{\printchapternonum}{%
 \vphantom{\begingroup%
-\leavevmode%
-\chapnumfont%
-\numlifter{\vphantom{9}}%
-\numindent%
+\leavevmode\chapnumfont\numlifter{\vphantom{9}}\numindent%
 \endgroup}
 \afterchapternum}
+
 \setlength\midchapskip{0pt}
 \setlength\beforechapskip{5\baselineskip}
 \setlength{\afterchapskip}{0.2\baselineskip} % 3\baselineskip
+
 \renewcommand\chapnumfont{%
-\fontsize{5cm}{0cm}%
-\bfseries%
-\sffamily%
-\color{chaptercolor}%
-}
+\fontsize{5cm}{0cm}\bfseries\sffamily\color{chaptercolor}}
+
 \renewcommand\chaptitlefont{%
-\normalfont%
-\huge%
-\bfseries%
-\sffamily%
-\scshape
-\fontsize{60}{50}\selectfont%
+\normalfont\huge\bfseries\sffamily\scshape\fontsize{60}{50}\selectfont}
 % \raggedleft%
-}%
+
 \settototalheight\chaptertitleboxheight{%
 \parbox{\textwidth}{\chaptitlefont \strut bg\\bg\strut}}
+
 \renewcommand\printchaptertitle[1]{%
 \parbox[t][\chaptertitleboxheight][t]{\textwidth}{%
 %\microtypesetup{protrusion=false}% add this if you use microtype
-\chaptitlefont\strut ##1\strut}%
-}
-}
-
+\chaptitlefont\strut ##1\strut}}}
 
 \chapterstyle{fania}
 
@@ -369,7 +358,7 @@ breaklines=true
               hyperref=true,
               doi=false,
               backend=biber]{biblatex}
-\addbibresource{back/new.bib}
+\addbibresource{back/bib.bib}
 \setcounter{highnamepenalty}{0}
 \setcounter{lownamepenalty}{0}
 

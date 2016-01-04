@@ -107,6 +107,7 @@ makeglossaries main
 - [ ] Redesign chapter title pages (put toc on new page)
 - [ ] Redesign part title pages (fonts?)
 - [ ] Check spelling of Web/web and Internet/internet
+- [ ] TODO add new spiral for techno-practice
 
 
 
