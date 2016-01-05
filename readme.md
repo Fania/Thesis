@@ -51,7 +51,7 @@ makeglossaries main
 - [X] Fancyhdr Warnings
 - [X] Finish adding table of equations
 - [X] Add Phoenix exhibition LMS showcase
-- [ ] Margin symbols
+- [X] Margin symbols
 - [X] Preface part and postface part
 - [X] Appendix alpha numbering
 - [X] Table spacing before and after
@@ -62,15 +62,15 @@ makeglossaries main
 - [ ] Arty Bollocks
 - [ ] Add odd pages, pataphysical stuff. comments. jokes. quotes
 - [ ] Formatting marks on odd pages
-- [ ] Anticipations Introduction chapter rename
-- [ ] Lit Review - Contemplations - !=Ignorance
-- [ ] Analysis - Considerations
-- [ ] Library of Babel
+- [X] Anticipations Introduction chapter rename
+- [X] Lit Review - Contemplations - !=Ignorance
+- [X] Analysis - Considerations
+- [X] Library of Babel
 - [X] Hello World
 - [ ] Remove all page numbers from references?
-- [ ] Chapter sign §
+- [X] Chapter sign §
 - [ ] Check emphasis notes in citations
-- [ ] Conjecture as chapter title in intro?
+- [X] Conjecture as chapter title in intro?
 - [ ] Change note on publications in chapters
 - [ ] Table of contents move from left to right, from creative to precise
 - [X] Mini index (summary with page numbers) for each chapter
@@ -99,15 +99,16 @@ makeglossaries main
 - [X] Use Avant Garde font
 - [ ] double check hyperref links in pdf toc
 - [ ] Add stars line where appropriate (\spirals)
-- [ ] fix overflow of minicontents for each chapter
+- [X] fix overflow of minicontents for each chapter
 - [ ] make sure I mention everything covered in foundations in the lit review
 - [ ] add some \nameref{ch:test} references instead of just \ref{}
 - [ ] add margin notes for references to my publications
 - [ ] Boden argues ?? Boden argued ??
-- [ ] Redesign chapter title pages (put toc on new page)
+- [X] Redesign chapter title pages (put toc on new page)
 - [ ] Redesign part title pages (fonts?)
 - [ ] Check spelling of Web/web and Internet/internet
-- [ ] TODO add new spiral for techno-practice
+- [X] TODO add new spiral for techno-practice
+- [ ] Set caption font to sans serif?
 
 
 
