@@ -190,7 +190,7 @@
 
 % \usepackagee[autostyle,english=british,french=guillemets]{csquotes}
 % \usepackage{dirtytalk}
-\renewenvironment{quote}
+\renewenvironment{quotation}
                {\list{}{\rightmargin\leftmargin}%
                 \item\relax\sffamily\SingleSpacing\ignorespaces}
                {\unskip\unskip\endlist}
@@ -236,8 +236,10 @@ breaklines=true
 
 \setsecnumdepth{subsection}
 % \settocdepth{section}
+\setcounter{tocdepth}{1} % sections and above
 
-
+% start section numbering at 0.
+% \setcounter{section}{-1}
 
 % MEMOIR Division Level
 % \book -2

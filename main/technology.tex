@@ -42,13 +42,12 @@ Knowledge needed to understand project:
 \end{itemize}
 
 \todo{update all graphics with inkscape}
-\todo{references for this whole chapter?}
 
 \section{Information Retrieval}
 
-\begin{quote}
-  Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \autocite{Baeza-Yates2011}
-\end{quote}
+\begin{quotation}
+  ``Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest.'' \sourceatright{\autocite{Baeza-Yates2011}}
+\end{quotation}
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure~\ref{fig:SEA}.
 
@@ -200,9 +199,9 @@ Current web search engines are tailored for information lookup. They do really w
 
 When it comes to exploratory search though, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploring \autocite{Marchionini2006}.
 
-\begin{quote}
-  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \autocite{Marchionini2006}
-\end{quote}
+\begin{quotation}
+  ``Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing.'' \sourceatright{\autocite{Marchionini2006}}
+\end{quotation}
 
 De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \autocite{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003}.
 
@@ -231,11 +230,7 @@ An \gls{ir} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
             \tab{is the set of all distinct index terms in a document}\\
 \itab{}     \tab{collection (vocabulary).}
 
-\todo{change font again because of ligatures?}
-
 This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
-
-
 
 \todo{decide on which method for highlighting words --- italic or apostophe}
 

@@ -34,11 +34,13 @@ This research was influenced by a few major inspirations and this chapter introd
 
 \section{The Syzygy Surfer}
 
-This PhD project is directly based on the \textit{Syzygy Surfer} \autocite{Hendler2011, Hendler2013}. Hendler and Hugill suggest the use of three pataphysical principles, namely clinamen, syzygy and anomaly, to create a new type of Web search engine reminiscent of the experience of surfing the Web using Semantic Web technologies. This is in contrast to current Web search engines which value relevant results over creative ones. \todo{is this my opinion or theirs?} `Surfing' used to be a creative interaction between a user and the web of information on the Internet, but the regular use of modern search engines has changed our expectations of this sort of knowledge acquisition. It has drifted away from a learning process by exploring the Web to a straightforward process of information retrieval similar to looking up a word in a dictionary.
+This PhD project is directly based on the \textit{Syzygy Surfer} \autocite{Hendler2011, Hendler2013}. Hendler and Hugill suggest the use of three pataphysical principles, namely clinamen, syzygy and anomaly, to create a new type of Web search engine reminiscent of the experience of surfing the Web using Semantic Web technologies. This is in contrast to current Web search engines which value relevant results over creative ones.
 
-\begin{quote}
-  ``The ambiguity of experience is the hallmark of creativity, that is captured in the essence of pataphysics. Traversing the representations of this ambiguity using algorithms inspired by the syzygy, clinamen and anomaly of pataphysics, using a panalogical mechanism applied to metadata, should be able to humanize and even poeticize the experience of searching the Web.''\autocite{Hendler2013}
-\end{quote}
+`Surfing' used to be a creative interaction between a user and the web of information on the Internet they argue, but the regular use of modern search engines has changed our expectations of this sort of knowledge acquisition. It has drifted away from a learning process by exploring the Web to a straightforward process of information retrieval similar to looking up a word in a dictionary.
+
+\begin{quotation}
+  ``The ambiguity of experience is the hallmark of creativity, that is captured in the essence of pataphysics. Traversing the representations of this ambiguity using algorithms inspired by the syzygy, clinamen and anomaly of pataphysics, using a panalogical mechanism applied to metadata, should be able to humanize and even poeticize the experience of searching the Web.'' \sourceatright{\autocite{Hendler2013}}
+\end{quotation}
 
 Their inspirations come from Borges \autocite{Borges2000} (for the underlying poetic sense of unity), Jarry's pataphysical principles \autocite{Jarry1996} and Singh's panalogies (parallel analogies – to introduce ambiguity, since it allows various descriptions of the same object) \autocite{Singh2005}.
 
@@ -46,11 +48,11 @@ My project has since moved on from the idea of using the Semantic Web to create 
 
 
 \section{Faustroll's Library of Equivalent Books}
-\label{se:faustlib}
+\label{s:faustlib}
 
-The artefact created to demonstrate the search algorithms uses a collection of texts rather than the open Web as source material\marginnote{§~\ref{ch:implementation}}. This corpus is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\parencite[p.12]{Jarry1996}}. The library contains the following books.
+The artefact created to demonstrate the search algorithms\footnote{\url{pata.physics.wtf}} uses a collection of texts rather than the open Web as source material\marginnote{§~\ref{ch:implementation}}. This corpus is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\parencite[p.12]{Jarry1996}}. This library contains the following books.
 
-\begin{quote}
+\begin{quotation}
   \begin{enumerate}
     \item BAUDELAIRE, a volume of E.A. POE translations.
     \item BERGERAC, \emph{Works}, volume II, containing the \emph{Histrory of the States and Empires of the Sun}, and the \emph{History of Birds}.
@@ -80,7 +82,7 @@ The artefact created to demonstrate the search algorithms uses a collection of t
     \item VERHAEREN, \emph{The Hallucinated Landscapes}.
     \item VERNE, \emph{Voyage to the Center of the Earth}.
   \end{enumerate}
-\end{quote}
+\end{quotation}
 
 \begin{figure}
 \centering
@@ -109,13 +111,11 @@ The artefact created to demonstrate the search algorithms uses a collection of t
 \end{minipage}
 \end{figure}
 
-\todo{explain how thos inspired my project}
-
 
 \section{100.000.000.000.000 Poems}
 
-The interface design\marginnote{§~\ref{ch:implementation}} of some of my search results is directly inspired by
-Raymond Queneau's `Cent Mille Milliards de Poèmes', a prime example of Oulipian art \autocite{Queneau1961}. The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time.
+The interface design\marginnote{§~\ref{s:poetry}} of some of my search results is directly inspired by
+Raymond Queneau's `Cent Mille Milliards de Poèmes', a prime example of Oulipian art \autocite{Queneau1961}. The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time. My implementation of this resulted in a sonnet, each line of which can be changed individually using mouse clicks.
 
 \begin{figure}[h!]
 \centering
@@ -132,14 +132,12 @@ Raymond Queneau's `Cent Mille Milliards de Poèmes', a prime example of Oulipian
 \footnotetext{Images of Queneau's book in the Gallimard 2006 edition by Martin Pyper \url{http://www.mestudio.info/2010/02/28/one-hundred-thousand-billion-poems/}}
 \todo{place footnote text on correct page on final runthrough}
 
-\todo{explain a bit more about the design}
-
 
 \section{Celestial Emporium of Benevolent Knowledge}
 
 Jorge Luis Borges mentiones a `Chinese Encyclopaedia' called the \textit{Celestial Emporium of Benevolent Knowledge} in the short story ``The Analytical Language of John Wilkins'' \autocite{Borges2000}. It is a primary inspiration for this project, originally identified by \autocite{Hendler2011, Hendler2013}. It lists the following results under the category of `animal'.
 
-\begin{quote}
+\begin{quotation}
 \begin{enumerate}
   \item those that belong to the Emperor,
   \item embalmed ones,
@@ -156,51 +154,49 @@ Jorge Luis Borges mentiones a `Chinese Encyclopaedia' called the \textit{Celesti
   \item those that have just broken a flower vase,
   \item those that from a long way off look like flies.
 \end{enumerate}
-\end{quote}
+\end{quotation}
 
-Although these are obviously all perfectly valid results, it is clear that they form a more creative, even poetic, view of what an animal might be than the Oxford English Dictionary's prosaic: ``a living organism which feeds on organic matter'' \autocite{OEDanimal}.
-
-\todo{explain how thos inspired my project}
+Although these are obviously all perfectly valid results, it is clear that they form a more creative, even poetic, view of what an animal might be than the Oxford English Dictionary's prosaic: ``a living organism which feeds on organic matter'' \autocite{OEDanimal}. This poetic form of order or structure was a direct inspiration for the results generated by this project's exploratory search tool \url{pata.physics.wtf}.
 
 
 \section{Metaphorical Search Engine Yossarian}
 
 Yossarian is a creative search engine which claims to return ``diverse and unexpected results'' \autocite{Yossarian2015}. It is porobably the closest thing to `related work' that exists for this project. Being a commercial product it is hard to find reliable details on precisely how their search engine works. The site seems well marketed but its functionality is shrouded in mystery. However, they argue that
 
-\begin{quote}
-  ``Yossarian makes the process of generating new ideas faster, while also improving its quality. This creative search engine helps people discover new perspectives, conceptual directions, creative insights, and allowing collaboration and feedback from a creative global community.'' \autocite{Yossarian2015}
-\end{quote}
+\begin{quotation}
+  ``Yossarian makes the process of generating new ideas faster, while also improving its quality. This creative search engine helps people discover new perspectives, conceptual directions, creative insights, and allowing collaboration and feedback from a creative global community.'' \sourceatright{\autocite{Yossarian2015}}
+\end{quotation}
 
 They also claim to be inspired by metaphors and that generating lateral connections can diversify users ideas and help understand conceptual relationships between things through a `creative graph'.
 
 The site started in a public alpha release in 2012. At the time it consisted of simple image search. In December 2015 a complete re-design was released \autocite{YossarianEmail} which turned the search engine into more of a mind map tool.
 
-\begin{quote}
-  ``Idea Boards you can now visually jump from idea to idea and build your own custom collection of links. Its a powerful new kind of mind map powered by search, and a radical departure from traditional search engine interfaces.'' \autocite{YossarianEmail}
-\end{quote}
+\begin{quotation}
+  ``Idea Boards you can now visually jump from idea to idea and build your own custom collection of links. Its a powerful new kind of mind map powered by search, and a radical departure from traditional search engine interfaces.'' \sourceatright{\autocite{YossarianEmail}}
+\end{quotation}
 
 While they do boldly call themselves ``the world's first creative search engine'' \autocite{Yossarian2015} it is impossible to know how their algorithms really work and as such how similar out projects are. The recently released mind map functionality brings up those `lateral connections' in a relationship graph form, in fact there is a slider that lets users adjust how creative they want their results to be - from literal to lateral.
 
-\todo{explain why these things are inspirational to my project in specific}
+This search engine appeared some time after I began my PhD research and has been slow to develop. It was hard to find any concrete inspiration from it due to its secrecy and pre-release status. While the marketing and ``arty bollocks''\footnote{\url{http://www.artybollocks.com/}} is great, their aim seems to be very different from mine.
 
 
 \section{The Library of Babel}
 
 The \textit{Library of Babel} is a short story by Jorge Luis Borges \autocite{Borges1964}. It envisions a universe, called `the Library', which is composed of ``an indefinite and perhaps infinite number of hexagonal galleries'' containing every possible book every conceived and not yet conceived.
 
-The specific artefact of inspiration for my project is a website implementing a miniature form of this library\footnote{\url{https://libraryofbabel.info/}} created by Jonathan Basile \autocite{Basile2015}. Instead of containing every single book possible it `only' contains every single page possible --- which is, at 3200 characters per page and 29 possible characters, still \textbf{a lot}.
+The specific artefact of inspiration for my project is a website implementing a miniature form of this library\footnote{\url{https://libraryofbabel.info/}} created by Jonathan Basile \autocite{Basile2015}. Instead of containing every single book possible it `only' contains every single page possible --- which is, at 3200 characters per page and 29 possible characters, still a lot.
 
 Basile claims to use a ``pseudo-random number generating algorithm'' (combining modular arithmetic and bit-shifting operations) to produce all $29^{3200}$ pages without needing to store anything on disk.
 
-\begin{quote}
+\begin{quotation}
   ``The pages of rational text which this algorithm can locate are rarer than a single grain of sand in that collection, yet intrinsically no more meaningful.
   [\ldots]
   One can find only text one has already written, and any attempt to find it in among other meaningful prose is certain to fail. The tantalizing promise of the universal library is the potential to discover what hasn’t been written, or what once was written and now is lost. But there is still no way for us to find what we don’t know how to look for.
   [\ldots]
-  Nonetheless, the library contains its own sort of poetry and revelation, and even this disappointment can provide a moment of clarity.'' \autocite{Basile2015}
-\end{quote}
+  Nonetheless, the library contains its own sort of poetry and revelation, and even this disappointment can provide a moment of clarity.'' \sourceatright{\autocite{Basile2015}}
+\end{quotation}
 
-\todo{explain how thos inspired my project}
+It is hard to say what exactly influenced my project most. I think the idea of computationally generating this massive library is fantastic --- and absurd. Perhaps this is a feature we share.
 
 
 \stopcontents[chapters]

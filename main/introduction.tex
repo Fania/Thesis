@@ -26,6 +26,8 @@ and whose informing voice had consigned me to the hangman, \\
 as any person at all conversant with authorship may satisfy himself at.
 
 \newpage
+
+{\huge \textbf{Chapter \ref{ch:introduction} Contents}}
 \minicontents
 \spirals
 
@@ -33,13 +35,15 @@ This thesis describes \textit{Algorithmic Meta-Creativity}. More precisely it is
 
 The project is transdisciplinary;\marginnote{§~\ref{ch:methodology}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\marginnote{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
 
-The preparatory research\marginnote{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
+The research\marginnote{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
 
 The outcome\marginnote{§~\ref{ch:implementation}} is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing Image Search, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
 
-It's main purpose is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval that show creative computing in action. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others.\todo{add refs}
+It's main purpose is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval that show creative computing in action. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry \autocite{Jarry1996}, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges \autocite{Borges2000} and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others \autocite{Queneau1961}.
 
 In a sense the system partially automates the creative process, generating results on demand, which allows users to focus on their own personal artistic evaluation rather than production.
+
+\todo{what is the relationship between pata.physics.wtf and my evaluation framework?}
 
 \todo{expand here, say stuff about creating my own definition of creativity to measure against, my own set of critearia for evaluation against the defintion}
 
@@ -48,9 +52,6 @@ In a sense the system partially automates the creative process, generating resul
 \end{draft}
 
 Following on from the development stage of this project, I looked at the problem of objective evaulation and interpretation\marginnote{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I argue that the most appropriate way to approach this is by looking at five subjective constraints (person, process, product, place, purpose) holistically and by understanding that humour and art ``lie in the ear and eye of the beholder''\ldots
-
-\todo{mention focus group etc}
-
 
 
 \section{Motivations}
@@ -87,9 +88,9 @@ The apparent dichotomy of computing and pataphysics is alluring. Christian Boek 
 
 Why not just use randomness\footnote{randonmess} you ask? Because there has to be an injection of meaning at some point. Randomness is easy. Andrew Hugill originally suggested that the project should be ``purposive without purpose''.
 
-\begin{quote}
-  ``[\ldots] through aesthetic judgments, beautiful objects appear to be 'purposive without purpose' (sometimes translated as 'final without end'). An object's purpose is the concept according to which it was made (the concept of a vegetable soup in the mind of the cook, for example); an object is purposive if it appears to have such a purpose; if, in other words, it appears to have been made or designed. But it is part of the experience of beautiful objects, Kant argues, that they should affect us as if they had a purpose, although no particular purpose can be found.'' \autocite[ch.2a]{Burnham2015}
-\end{quote}
+\begin{quotation}
+  ``[\ldots] through aesthetic judgments, beautiful objects appear to be 'purposive without purpose' (sometimes translated as 'final without end'). An object's purpose is the concept according to which it was made (the concept of a vegetable soup in the mind of the cook, for example); an object is purposive if it appears to have such a purpose; if, in other words, it appears to have been made or designed. But it is part of the experience of beautiful objects, Kant argues, that they should affect us as if they had a purpose, although no particular purpose can be found.'' \sourceatright{\autocite[ch.2a]{Burnham2015}}
+\end{quotation}
 
 pata is purposeless but i use it to give structure
 im giving structure to something purposeless
@@ -138,6 +139,8 @@ This is practice-based research, meaning that a part of my submission for the de
   \item [Methods] Creative computing, Web Development, Literature Review
 \end{description}
 
+\todo{mention focus group etc}
+
 The general process\marginnote{§~\ref{ch:implementation}} of my project was as follows.
 
 \begin{enumerate}
@@ -151,9 +154,9 @@ The general process\marginnote{§~\ref{ch:implementation}} of my project was as 
 \end{enumerate}
 
 
-\section{Product-ions}
+\section{Contributions}
 
-The deliverables of this PhD research is as follows.
+The key contributions to knowledge described in this thesis are:
 
 \begin{itemize}
   \item Three pataphysical search algorithms (clinamen, syzygy and antinomy).
@@ -161,17 +164,6 @@ The deliverables of this PhD research is as follows.
   \item A set of subjective parameters for defining creativity.
   \item An objective framework for evaluating creativity.
 \end{itemize}
-
-
-\section{Contributions}
-
-The key contributions to knowledge described in this thesis are:
-
-\begin{description}
-  \item [Theory] Three pataphysical search algorithms\\
-                   Evaluation framework for creative computing
-  \item [Practice] Creative information retrieval system --- \url{pata.physics.wtf}
-\end{description}
 
 \begin{comment}
   abusing tech in creative ways can yield useful results
@@ -199,17 +191,51 @@ Please note that a full list of talks, exhibitions and publications is available
 
 \section{The Hitchhiker's Guide to this Thesis}
 
-See \todo{insert guide.tex here}.
-
 % \begin{framed}
 %   \input{front/guide}
 % \end{framed}
 
 % \includepdf[pages=-, frame,scale=.8, pagecommand={\thispagestyle{plain}}]{guide.pdf}
 
+
+\subsection*{Part Spirals}
+
+Each new thesis part contains a word spiral based on a poem generated by \url{pata.physics.wtf} using the a part of the title as keyword. They represent the pataphysical (Archimedean) spiral.
+
+\begin{enumerate}
+  \item Preface --- \textit{pre}
+  \item Hello World --- \textit{hello}
+  \item Tools of the Trade --- \textit{trade}
+  \item The Core: Techno-Logic --- \textit{core}
+  \item The Core: Techno-Practice --- \textit{practice}
+  \item Meta-Logicalysis --- \textit{meta}
+  \item Happily Ever After --- \textit{after}
+  \item Postface --- \textit{post}
+\end{enumerate}
+
+
 \subsection*{Chapter Poetry}
 
-Each poem is generated using \url{pata.physics.wtf} with the chapter title as keyword.
+Each chapter opens with a poem generated by \url{pata.physics.wtf} using a part of the chapter title as keyword.
+
+\begin{enumerate}
+  \item Introduction --- \textit{intro}
+  \item Inspirations --- \textit{inspiration}
+  \item Methodology --- \textit{method}
+  \item Pataphysics --- \textit{pata}
+  \item Creativity --- \textit{creativity}
+  \item Technology --- \textit{technology}
+  \item Evaluation --- \textit{evaluation}
+  \item Foundations --- \textit{foundation}
+  \item Interpretation --- \textit{interpretation}
+  \item Implementation --- \textit{implementation}
+  \item Applications --- \textit{application}
+  \item Patanalysis --- \textit{patanalysis}
+  \item Aspirations --- \textit{aspirations}
+  \item Observations --- \textit{observations}
+\end{enumerate}
+
+\todo{say more, check keywords, potentially generate new poems}
 
 
 \subsection*{Margin Notes}
@@ -223,36 +249,38 @@ The different symbols used in margin notes are as follows.
   \item [\faicon{picture-o}] Represents an image.
 \end{description}
 
-
-\subsection*{Part Spirals}
-
-Each new thesis part contains a spiral based on a poem generated by \url{pata.physics.wtf} using the part title as keyword.
+\todo{say more, add images to toc?}
 
 
 \subsection*{Thesis Language}
 
 This thesis is written in \LaTeX.
+\todo{say more}
 
+
+\spirals
 
 \begin{description}
   \item[PREFACE] .
-  \item[Part I] IN THE BEGINNING\ldots
+  \item[Part I] HELLO WORLD
   \item[Chapter 1] Introduction
   \item[Chapter 2] Inspirations
   \item[Chapter 3] Methodology
-  \item[Part II] IN A GALAXY FAR FAR AWAY\ldots
+  \item[Part II] TOOLS OF THE TRADE
   \item[Chapter 4] Pataphysics
   \item[Chapter 5] Creativity
   \item[Chapter 6] Technology
-  \item[Part III] THE CORE:\@ TECHNO-LOGIC
+  \item[Chapter 7] Evaluation
+  \item[Part III] THE CORE: TECHNO-LOGIC
   \item[Chapter 7] Foundations
-  \item[Chapter 8] Implementation
-  \item[Chapter 9] Applications --- Case Study
-  \item[Part IV] INTECHNOIL-LOGICALYSIS
-  \item[Chapter 10] Interpretation / Evaluation
-  \item[Chapter 11] Patacritical Analysis
-  \item[Part V] HAPPY END
+  \item[Chapter 8] Interpretation
+  \item[Part IV] THE CORE: TECHNO-PRACTICE
+  \item[Chapter 9] Implementation
+  \item[Chapter 10] Applications
+  \item[Part V] META-LOGICALYSIS
+  \item[Chapter 11] Patanalysis
   \item[Chapter 12] Aspirations
+  \item[Part VI] HAPPY END
   \item[Chapter 13] Observations
   \item[POSTFACE] .
 \end{description}
