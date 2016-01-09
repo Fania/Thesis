@@ -128,7 +128,7 @@ Simon Colton came up with an evaluation framework called the ``creative tripod''
 
 Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely ``novelty, usefulness/appropriateness and impact/influence'' \citeyear[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person's creativity he proposes `citation counts' \autocite[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example\footnote{\url{http://www.artfacts.net} seems to provide just that though.}.
 
-Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems \citeyear{Wiggins2006} which is largely based on Boden's theory of creativity \citeyear{Boden2003}. The framework uses three criteria for measuring creativity: ``relevance, acceptability and quality''.
+\spirals
 
 Anna Jordanous proposed 14 key components of creativity (which she calls an  ``ontology of creativity'') \citeyear[p.104-120]{Jordanous2012}, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics. \citeyear[p.120]{Jordanous2012}.
 
@@ -176,11 +176,11 @@ Anna Jordanous found that ``evaluation of computational creativity is not being 
     \item Using Step 1, clearly state what standards you use to evaluate the creativity of your system.
       \begin{itemize}
         \item Identify the criteria for creativity included in the definition from Step 1 (a and b) and extract them from the definition, expressing each criterion as a separate standard to be tested.
-        \item If using Chapter 4’s components of creativity, as is strongly recommended, then each component becomes one standard to be tested on the system.
+        \item If using Chapter 4's components of creativity, as is strongly recommended, then each component becomes one standard to be tested on the system.
       \end{itemize}
     \item Test your creative system against the standards stated in Step 2 and report the results.
       \begin{itemize}
-        \item For each standard stated in Step 2, devise test(s) to evaluate the system’s performance against that standard.
+        \item For each standard stated in Step 2, devise test(s) to evaluate the system's performance against that standard.
         \item The choice of tests to be used is left up to the choice of the individual researcher or research team.
         \item Consider the test results in terms of how important the associated aspect of creativity is in that domain, with more important aspects of creativity being given greater consideration than less important aspects. It is not necessary, however, to combine all the test results into one aggregate score of creativity.
       \end{itemize}
@@ -231,6 +231,84 @@ Candy proposes the the following values or criterias for measurement \autocite{C
 \end{description}
 
 Furthermore it is interesting to know the judging criteria for the Prix Ars Electronica, an international competition for Cyber Arts to be aesthetics, originality, excellence of execution, compelling conception and innovation in technique of the presentation \autocite[cited in][p.18]{Candy2012}.
+
+\spirals
+
+\todo{rewrite}
+
+Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems \citeyear{Wiggins2006} which is largely based on Boden's theory of creativity \citeyear{Boden2003}. The framework uses three criteria for measuring creativity: ``relevance, acceptability and quality''.
+
+Geraint Wiggins previously described a formal notation and set of rules for the description, analysis and comparison of creative systems in the form of his \gls{csf} \autocite{Wiggins2006} which was largely based on Margaret Boden's theory of creativity \autocite{Boden2003}. Graeme Ritchie then contributed to this framework \autocite{Ritchie2012} and we will base our work on his revised version of this framework. The \gls{csf} provides a formal description for Boden's concepts of exploratory and transformational creativity. Wiggins's R–transformation and T–transformation is akin to Boden's H-creativity and P-creativity respectively. To enable the transition from exploratory to transformational creativity in his framework, Wiggins introduced meta-rules which allow us to redefine our conceptual space in a new way.
+
+It is important to note here that the exploratory search in an information retrieval sense should not be mistaken with what is discussed here. Exploratory search (for a creative solution to a problem) in the Wiggins/Ritchie/Boden sense happens one step before transformational search. This means that we want to end up with transformational tools from this framework (rather than exploratory ones) to use in our exploratory Web search system.
+
+Ritchie described the \gls{csf} as a set of initial concepts, which create ``further concepts one after another, thus `exploring the space''' but also argued that a search system would practically only go through a limited number of steps and therefore proposed some changes and additions to the framework. He summarised Wiggins' original \gls{csf} as consisting of the following basic elements:
+
+\begin{enumerate}
+	\item the universal set of concepts $U$,
+	\item the language for expressing the relevant mappings $L$,
+	\item a symbolic representation of the acceptability map $R$,
+	\item a symbolic representation of the quality mapping $E$,
+  \item a symbolic representation of the search mechanism $T$,
+	\item an interpreter for expressions like 3 and 4 $[ ]$, and
+	\item an interpreter for expressions like 5 $\langle , , \rangle$.
+\end{enumerate}
+
+This set of elements is described as the object-level (enabling exploratory search). The meta-level (enabling transformational search) has the same seven elements with one exception; the universal set of concepts $U$ contains concepts described at the object-level. This allows transformations to happen; concepts from the object-level are searched using criteria and mechanisms (elements 2 to 5) from the meta-level, giving rise to a new and different subset of concepts to those which an object-level search would have produced.
+
+A typical search process would go as follows. We start with an initial set of concepts C that represent our conceptual space and a query. We then explore C and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden's sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden's transformational search) with slightly different quality criteria, as suggested in the next section.
+
+\paragraph{Uncreativity}
+Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework\marginnote{\faicon{table}~\ref{tab:wiggins}}. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \gls{csf}.
+
+\begin{table}[htb]
+  \centering
+  \begin{tabu}{XXX}
+  \toprule
+  Hopeless Uninspiration & $V_\alpha (X) = \emptyset$ & valued set of concepts is empty \\
+  Conceptual Uninspiration & $V_\alpha (N_\alpha (X)) = \emptyset$ & no accepted concepts are valuable \\
+  Generative Uninspiration & $elements(A) = \emptyset$ & set of reachable concepts is empty \\
+  Aberration	& $B$ is the set of reachable concepts not in $[N]_\alpha (X)$ and $B \neq \emptyset$ & search goes outside normal boundaries \\
+  Perfect Aberration & $V_\alpha (B) = B$ & \\
+  Productive Aberration &	$V_\alpha (B) \neq \emptyset$ and $V_\alpha (B) \neq B$ & \\
+  Pointless Aberration & $V_\alpha (B) = \emptyset$ & \\
+  \bottomrule
+  \end{tabu}
+\caption[Wiggins' uncreative concepts]{Wiggins' uncreative concepts in Ritchie's notation}
+\label{tab:wiggins}
+\end{table}
+
+
+% Pataphysical Search Framework
+% We have explained earlier that evaluating creative search results largely depends on the user's understanding of relevance, usefulness and creativity. We can define pataphysical concepts and evaluation criteria in terms of the \gls{csf} to provide a common ground for this understanding. The suggested definitions should provide more suitable criteria for the analysis of creative search results rather than traditional results.
+% Norm	N_α (X)={c ∈X ┤|N(c)> α}
+%  N∈ [0,1]^X
+% Value	V_α (X)={c ∈X ┤|V(c)> α}
+%  V∈ [0,1]^X
+% Pata	P_α (X)={c ∈X ┤|  c∈(CLI(X)∪〖ANT〗_α (X)∪〖ANO〗_α (X)∪SYZ(X)∪ABS(X))}
+%
+% Clinamen	CLI(X)={c ∈X ┤| 〖 N〗_0.9 (N_0.1 (c))} given X ⊆ U
+% (smallest aberration to make biggest difference)
+% Antinomy	〖ANT〗_α (X)={c ∈X ┤|  V(N_0 (c))  > α}
+% given X ⊆ U
+% (reachable  abnormal concepts with value)
+% Anomaly	〖ANO〗_α (X)={c ∈X ┤|N(c)< α}  given X ⊆ U
+% (reachable concepts outside the norm)
+% Syzygy (1)	SYZ(query)= ⋃_(n=0)^3▒〖elements(Q(N,V)^n (query))〗
+% (concepts reachable within 3 steps)
+% Syzygy (2)	SYZ(X)= S'(X)
+% (the transformed set of concepts)
+%  S_obj→ S^meta→ 〖S'〗_obj
+% Absolute	V_1 (N_1 (X))  ≠ \emptyset
+% (criteria for value and norm must be perfectly matched)
+% Table 3 – Extension to the \gls{csf} to provide a notation for pataphysical concepts. Norm and value are defined in a traditional sense, with the other pataphysical concepts being defined around those two.
+% Table 3 shows various definitions for pataphysical principles that can be applied as criteria in search processes. There are of course more ways in which they could be expressed but as a demonstration this should suffice.
+% 	Combined with a set of evaluative rules inspired by Ritchie (2001), this forms an essential part of creative exploratory search systems. Some example evaluative criteria are shown here:
+% 	The norm and value ratings by themselves have lower importance than the pata rating,
+% 	the average pata rating should be suitably high,
+% 	results with good pata rating should form a significant proportion of the results, and
+% 	there should be a good mixture of the different pataphysical concepts present in the results.
+% Producing, interpreting and evaluating search results based on these ideas, together with a healthy knowledge and apprehension about the system's purpose, should be much more suitable and “fair” than trying to apply conventional measures such as precision and recall to something so subjective.
 
 
 \stopcontents[chapters]
