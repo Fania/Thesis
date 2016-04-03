@@ -39,6 +39,8 @@ There is a perceived distinction between human and computer creativity, whereas 
 
 By concatenating and enhancing existing models of creativity, we propose a framework that takes these issues into account, with a view to evaluating creative work that uses the computer as a medium more effectively.
 
+\spirals
+
 Although using computers to generate creative work has its foundations in the 1950s \autocite{Candy2011}, John Maeda's Design By Numbers \autocite{Maeda2001} and from around 2010 a slew of similar initiatives followed Processing's lead. However, due in part to the niche position of artists working with technology, and also because such activity was overlooked or ignored until relatively recently by arts bodies and critics, formal evaluation of the creativity in such work lagged behind.
 
 In this context humans simply use computers as tools for their creativity---no matter how autonomous the machine output may appear, or how far it travels from the original intentions of the programmer, its origins nevertheless reside in the humanly-authored code that produces the output.
@@ -59,26 +61,7 @@ True Artificial Intelligence and true Computational Creativity are equally elusi
 
 \section{Problems with Evaluation}
 
-Evaluating human creativity objectively seems problematic; evaluating computer creativity at all seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity\marginnote{§~\ref{ch:creativity}} and directly applying them to machines seems logical but may be the wrong approach. Adapting Mayer's five big questions\marginnote{§~\ref{s:Mayer5questions}} to machines does not seem to capture the real issues at play\marginnote{\faicon{table}~\ref{tab:HCCC}}. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of programmers, users, machines, products, or processes. Similarly we might ask if creativity is a local, a network or an Internet phenomenon.
-
-\begin{table}[htbp]
-  \centering
-  \begin{tabu}{XX}
-  \toprule
-  \textbf{Human Creativity} & \textbf{Computer Creativity} \\
-  \midrule
-  people, products, or processes & programmers, users, machines, products, or processes \\
-  personal or social & local, network or Internet \\
-  common or rare & common or rare \\
-  domain-general or domain-specific & domain-general or domain-specific \\
-  quantitative or qualitative & quantitative or qualitative \\
-  \bottomrule
-  \end{tabu}
-\caption[Human Creativity vs Computer Creativity]{Human Creativity vs Computer Creativity}
-\label{tab:HCCC}
-\end{table}
-
-\todo{this table is unnecessary really}
+\todo{summarize evaluation techniques?}
 
 Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the points raised in chapter~\ref{ch:evaluation}\marginnote{§~\ref{ch:evaluation}}, for example studying only the creative end-product itself (out of context), only judging it by its novelty objectively, assigning an arbitrary thresholds, etc. This also includes the assumption that machines `mimic' humans and are therefore not judged at their full potential\footnote{Human Brain --- Computer Brain stuff here?}.
 
@@ -129,6 +112,55 @@ Table~\ref{tab:HCCC} also brings up several questions.
 
 \todo{where are the last few items from??}
 
+\begin{leftbar}
+\begin{quotation}
+  ``The uncodifiable must be reduced to the codable in the robot. In reducing a complex moral decision (tacit, intuitive, deriving knowledge from maturity) to the execution of a set of coded instructions, we are throwing away vast stretches of knowledge, socialisation and learning not only built up in the individual, but also in the community and the history of that community, and replacing it with some na{\"i}ve `yes' or `no' decisions.'' \autocite{Mcbride2012}
+\end{quotation}
+
+Neil McBride's observation is echoed by Indurkhya, who argues that because computers don't make decisions based on personal or cultural concepts (even when these are included in code), they are more likely to make connections that humans will perceive as ``creative leaps'' \autocite{Indurkhya}. These leaps \textit{appear} creative only because we are athropomorphising not only the output, but in some cases even also the \textit{intent} behind it, as if this originated in the computer itself rather than as an output from algorithmic processes. This phenomenon is most apparent in the ``uncanny valley'' created by those areas of robotics that seek to create human companions, or where the intent is to imbue the computer with a personality. This is even the case for simple web interfaces, let alone computers that might mimic human creativity:
+
+\begin{quotation}
+  ``Automatic, mindless anthropomorphism is likely to be activated when anthropomorphic cues are present on the interface. [...] it is noteworthy that anthropomorphic cues do not have to be fancy in order to elicit human-like attributions.'' \autocite{Kim2012}
+\end{quotation}
+
+The phenomenon of ascribing human qualities to non-human artefacts and machines depends on the prior associations (concept networks) humans have with certain activities, including creativity. It leads to metaphorical statements such as ``this interface is friendly'', ``a bug snuck into my code'' or ``the computer is being creative'', and appears in media article headlines such as ``Patrick Tresset's robots draw faces and doodle when bored'' \autocite{Wired2011}, as if there were conscious intent behind the code generating such activity in Tresset's sketching bot \textit{Paul}. This tendency has implications for the aimed-for objectivity when evaluating certain creative computing projects, one the most well-established being Harold Cohen's \textit{AARON}, artist-authored software that produces an endless output of images in his own unique style. While documenting the process of coding his system, Cohen asked:
+
+\begin{quotation}
+  ``How far could I justify the claim that my computer program---or any other computer program---is, in fact, creative? I'd try to address those questions if I knew what the word `creative' meant: or if I thought I knew what anyone else meant by it. [...] `Creative' is a word I do my very best never to use if it can be avoided. [...] AARON is an entity, not a person; and its unmistakable artistic style is a product of its entitality, if I may coin a term, not its personality.'' \autocite{Cohen1999}
+\end{quotation}
+
+He goes on to outline four elements of \textit{behaviour X} (his placeholder for creativity): (1) \textbf{emergence} produced from the complexity of a computer program, (2) \textbf{awareness} of what has emerged, (3) \textbf{willingness} to act upon the implications of what has emerged, and (4) \textbf{knowledge} of the kind manifest in expert systems. He identifies three of these properties as programmable (within limits), but ``as to the second element, the program's awareness of properties that emerge, unbidden and unanticipated, from its actions...  well, that's a problem.'' \autocite{Cohen1999}, and concludes that ``it may be true that the program can be written to act upon anything the programmer wants, but surely that's not the same as the individual human acting upon what he wants himself. Isn't free will of the essence when we're talking about the appearance of behaviour X in people?''. In other words, a decision tree in computing is not the same as a human decision-making process. As for whether his life's work is autonomously creative:
+
+\begin{quotation}
+  ``I don't regard AARON as being creative; and I won't, until I see the program doing things it couldn't have done as a direct result of what I had put into it. That isn't currently possible, and I am unable to offer myself any assurances that it will be possible in the future. On the other hand I don't think I've said anything to indicate definitively that it isn't possible.'' \autocite{Cohen1999}
+\end{quotation}
+
+In the same manner as in the field of computer ethics, i.e. ``the ethics of the robot must be the ethics of the maker'' \autocite{Mcbride2012}, the creative computer must ultimately be a product of the creativity of the programmer. To hijack Barthes' conclusion in ``The Death of the Author'': \textit{the birth of the truly creative computer must be ransomed by the death of the programmer} \autocite{Barthes1967}---in other words, a truly creative computer must be able to act without human input, yet any computer process presumes a significant amount of human input in order to produce such so-called autonomous behaviour, so the question is whether that behaviour can ever be regarded as truly autonomous---no matter how independant it appears to be.
+
+Initiatives like the Human Brain Project suggest that we are far from the capacity to reproduce the level of operations necessary to even mimic a human brain ``the 1 PFlop machine at the J{\"u}lich Supercomputing Centre could simulate up to 100 million neurons---roughly the number found in the mouse brain.'' \autocite{Walker2012}. Even if it were possible today to scale this up to the human brain, would the result be an entity capable of truly intelligent creative activity, or would it actually be a \textit{zombie}?
+
+Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets previously discussed, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines ``mimic'' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precicely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers so that they \textit{appear} more human.
+
+\begin{table}
+\renewcommand{\arraystretch}{1.3}
+\caption{Objective Criteria of Creativity}
+\label{table_objcreat}
+\centering
+\begin{tabular}{ll}
+\hline
+\bfseries Criteria & \bfseries Note \\
+\hline\hline
+Product & Algorithmic sketch, poetry, audio, interactive installation\\
+Process & Procedural, Experimental, Heuristic, Systems-based\\
+Purpose & Accidental, Conceptual, Interactive, Time-based\\
+Person & Skill, Aesthetic values, Influences, Collaborations\\
+Place & Culture, Social environment, Education, Peers\\
+\hline
+\end{tabular}
+\end{table}
+
+\end{leftbar}
+
 \spirals
 
 Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2]{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposes ``\gls{specs}''\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \autocite[p.137-140]{Jordanous2012a}:
@@ -160,19 +192,18 @@ Since many problems with evaluating creativity in computers (and humans alike) s
 
 Following Jordanous' \gls{specs} model\marginnote{§~\ref{s:specs}}, we need to state our own definition of creativity in regards to the computer system being evaluated.
 
-Summarising section~\ref{s:creattributes}\marginnote{§~\ref{s:creattributes}}, chapter~\ref{ch:evaluation} and chapter~\ref{ch:creativity} I have collated the following list of terms used to describe or define creativity.
+An overview of recurring keywords in existing approaches suggests the following distillation of seven groups:
 
 \begin{description}
-  \item [Margaret Boden] new, surprising, valuable \autocite{Boden2003}
-  \item [Davide Pfiffer] novelty, appropriatness, impact \autocite{Piffer2012}
-  \item [Pease et al] novel, valuable \autocite{Pease2001} and randomness, serendipity \autocite{Pease2013}
-  \item [Graeme Ritchie] novelty, quality, typicality \autocite{Ritchie2007}
-  \item [Dan Ventura] variety, efficiency \autocite{Ventura2008}
-  \item [Simon Colton] skill, appreciation, imagination \autocite{Colton2008a, Colton2008}
-  \item [Geraint Wiggins] relevance, acceptability, quality \autocite{Wiggins2006}
-  \item [Anna Jordanous] active involvement and persistence, generation of results, uncertainty, domain competence, general intellect, independence and freedom, intention and emotional involvement, originality, progression and development, social interaction and communication, spontaneity / subconscious processing, thinking and evaluation, value, variety, divergence and experimentation \autocite{Jordanous2012}
+  \item [\textbf{Novelty}] originality, newness, variety, typicality, imagination, archetype, surprise
+  \item [\textbf{Value}] usefulness, appropriateness, appreciation, relevance, impact, influence
+  \item [\textbf{Quality}] skill, efficiency, competence, intellect, acceptability, complexity
+  \item [\textbf{Purpose}] intention, communication, evaluation, aim, independence
+  \item [\textbf{Spatial}] context, environment, press
+  \item [\textbf{Temporal}] persistence, results, development, progression, spontaneity
+  \item [\textbf{Ephemeral}] serendipity, randomness, uncertainty, experimentation, emotional response
 \end{description}
-\todo{complete summary}
+
 
 From this I derive the following \hypertarget{creadef}{\textit{Creativity Criteria}} --- 3 key criteria of creativity in relation to 4 major factors --- novelty, value, quality and purpose $\to$ spatial, temporal and ephemeral.
 
@@ -186,43 +217,34 @@ From this I derive the following \hypertarget{creadef}{\textit{Creativity Criter
   \item [Ephemeral] serendipity, randomness, uncertainty, experimentation, emotional response
 \end{description}
 
-Using these attributes\marginnote{\faicon{eye}~\hyperlink{creadef}{7 Criteria}} I can declare a project-dependent definition of creativity to fulfill step 1 of the \gls{specs} model\marginnote{§~\ref{s:specs}}.
 
-\begin{draft}
-  \begin{description}
-    \item [Novelty] the combination of pataphysics and information retrieval
-    \item [Value] it has been proven useful (digital opera)
-    \item [Quality] custom algorithms
-    \item [Purpose] show that pataphysics can be used as a tool for creativity
-    \item [Spatial] transdisciplinary, creative computing
-    \item [Temporal] various prototypes
-    \item [Ephemeral] openness to try new algorithm ideas and experiment
-  \end{description}
-\end{draft}
-
-Step 2 of the \gls{specs} model is to declare the set of standards used to test the criteria above.
-
-\begin{draft}
-  \begin{description}
-    \item [Novelty] check other publications / websites / algorithms
-    \item [Value] get feedback from users
-    \item [Quality] check functionality / errors
-    \item [Purpose] ?
-    \item [Spatial] ?
-    \item [Temporal] ?
-    \item [Ephemeral] ?
-  \end{description}
-\end{draft}
-
-Step 3 would be to run some quantitative and qualitative tests to check against the criteria from step 1. I have already struggeled to complete step 2 though.
-
-\todo{add more}
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Subjective Scales for Creativity}
+\label{table_subcreat}
+\centering
+\begin{tabular}{ll}
+\hline
+\bfseries Keyword & \bfseries Scale \\
+\hline\hline
+Novelty & Established $\leftrightarrow$ Novel \\
+Value & Playful $\leftrightarrow$ Purposive \\
+Quality & Minimal $\leftrightarrow$ Complex \\
+Purpose & Emotive $\leftrightarrow$ Thoughtful \\
+Spatial & Universal $\leftrightarrow$ Specific \\
+Temporal & Instant $\leftrightarrow$ Persistent \\
+Ephemeral & Accidental $\leftrightarrow$ Experimental \\
+\hline
+\end{tabular}
+\end{table}
 
 
-\section{Objective Evaluation Framework}
+
+\section{Objective Evaluation Constraints}
 
 In tribute to the many kinds of ``4 P'' models\marginnote{§~\ref{ch:creativity}} out there, I propose an evaluation framework called (*surprise surprise*) the ``5 P Model'' --- product, process, people, place and purpose.
 
+The ``5 P's''---\textbf{Product, Process, Purpose, Person, Place}---are all components of any creative artefact (see table~\ref{table_objcreat}).
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -274,9 +296,106 @@ In tribute to the many kinds of ``4 P'' models\marginnote{§~\ref{ch:creativity}
 
 
 
-\section{Creative Search Evaluation}
+\section{Creative Interpretation Framework}
+\label{s:framework}
 
-\todo{reformat, add references etc}
+All of the theories of creativity and its evaluation mentioned above have value, but each alone may be incomplete and contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As J{\"u}rgen Schmidhuber suggests in the quote below, evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.
+
+\begin{quote}
+  ``Any objective theory of what is good art must take the subjective observer as a parameter.'' \autocite{Schmidhuber2006}
+\end{quote}
+
+We therefore propose two facets of a new \textit{fuzzy} approach that aims to obtain a more honest measure of the subjective judgements implied when evaluating creativity:
+
+\begin{enumerate}
+  \item a set of scales that can be used to approximate a ``rating'' for the creative value of an artefact,
+  \item a set of criteria to be considered using the scales above.
+\end{enumerate}
+
+The \textbf{criteria} listed in table~\ref{table_objcreat} should be considered objectively, while the \textbf{scales} in table~\ref{table_subcreat} are judged subjectively. The set of scales is directly derived from the various frameworks for evaluating creativity reviewed in the previous sections.
+
+This evaluation framework can apply to any kind of creativity, from the traditional arts to digital works to computational creativity. Because the scale element allows for the measurement of subjective qualities, it circumvents binary yes/no or check-box approaches and therefore makes it possible to gather quantitative values from the subjective judgements involved in evaluating creativity in general.
+
+The terms on each end of the scales are suggestions only and should not be taken as value judgements. Rather, they should be adapted for each project individually. Numeric values can be assigned to the scales if needed according to specific evaulative requirements.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\linewidth]{evalmatrix}
+  \caption[Evaluation Matrix]{Creative Evaluation Matrix}
+\label{evalmatrix}
+\end{figure}
+
+
+\subsection{An example application}
+
+Below is an example assessment for a hypothetical piece of art:\\
+
+\noindent \textbf{PRODUCT}:\\
+\itab{Established} \tab{---------------x-----} \stab{Novel}\\
+\itab{Playful} \tab{--------------x------} \stab{Purposive}\\
+\itab{Minimal} \tab{----x----------------} \stab{Complex}\\
+\itab{Emotive} \tab{----x----------------} \stab{Thoughtful}\\
+\itab{Universal} \tab{----------------x----} \stab{Specific}\\
+\itab{Instant} \tab{--------------x------} \stab{Persistent}\\
+\itab{Accidental} \tab{-------------x-------} \stab{Experimental}\\
+
+\noindent \textbf{PROCESS}:\\
+\itab{Established} \tab{---x-----------------} \stab{Novel}\\
+\itab{Playful} \tab{------------x--------} \stab{Purposive}\\
+\itab{Minimal} \tab{--------x------------} \stab{Complex}\\
+\itab{Emotive} \tab{-------x-------------} \stab{Thoughtful}\\
+\itab{Universal} \tab{----------------x----} \stab{Specific}\\
+\itab{Instant} \tab{----------------x----} \stab{Persistent}\\
+\itab{Accidental} \tab{------------x--------} \stab{Experimental}\\
+
+\noindent \textbf{PURPOSE}:\\
+\itab{Established} \tab{------x--------------} \stab{Novel}\\
+\itab{Playful} \tab{-------------x-------} \stab{Purposive}\\
+\itab{Minimal} \tab{---x-----------------} \stab{Complex}\\
+\itab{Emotive} \tab{----------------x----} \stab{Thoughtful}\\
+\itab{Universal} \tab{-----------------x---} \stab{Specific}\\
+\itab{Instant} \tab{-------------------x-} \stab{Persistent}\\
+\itab{Accidental} \tab{---------------x-----} \stab{Experimental}\\
+
+\noindent \textbf{PERSON}:\\
+\itab{Established} \tab{---x-----------------} \stab{Novel}\\
+\itab{Playful} \tab{-----------------x---} \stab{Purposive}\\
+\itab{Minimal} \tab{---x-----------------} \stab{Complex}\\
+\itab{Emotive} \tab{----------------x----} \stab{Thoughtful}\\
+\itab{Universal} \tab{----x----------------} \stab{Specific}\\
+\itab{Instant} \tab{--------------x------} \stab{Persistent}\\
+\itab{Accidental} \tab{---------x-----------} \stab{Experimental}\\
+
+\noindent \textbf{PLACE}:\\
+\itab{Established} \tab{---x-----------------} \stab{Novel}\\
+\itab{Playful} \tab{------------------x--} \stab{Purposive}\\
+\itab{Minimal} \tab{------------------x--} \stab{Complex}\\
+\itab{Emotive} \tab{---------------x-----} \stab{Thoughtful}\\
+\itab{Universal} \tab{-----------------x---} \stab{Specific}\\
+\itab{Instant} \tab{----------------x----} \stab{Persistent}\\
+\itab{Accidental} \tab{--x------------------} \stab{Experimental}\\
+
+
+Ideally, these scales would need to be applied by several people during the evaluation process, generating an intuitive assessment of the various values (e.g. Playful---Purposive) for each of the criteria (e.g. Product).
+
+
+\spirals
+
+Creativity is a transdisciplinary activity and is apparent in many diverse fields, yet it is often studied from within a single discipline within which other perspectives and theories can be overlooked. Therefore, creative evaluation is subjective, and involves an emotional component related to the satisfaction of a set of judgements. These judgements are mutable when subjected to personal, social and cultural influence, so we can only try to evaluate a creative activity objectively via approximisations.
+
+True AI and Computational Creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimickry), the view that something \textit{is} creative because it \textit{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese Room Argument \autocite{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to ``know'' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimick human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\textit{Zombies} \autocite{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his ``Conversation with Einstein's Brain'' \autocite{Hofstadter1981}. This school of thought is employed to demonstrate that \textit{mind} is not just physical \textit{brain}. We are introducing it here to argue that computers do not \textit{consciously create} as do humans, because they are not conscious.
+
+Edsger Dijkstra pointed out that computer science is infantalised \autocite{Dijkstra1988} and there is a danger that the same thing is happening to creativity research. In other words, it may be an over-simplification to reduce creativity down to a four step process, or a product that is novel, valuable and of high quality. A framework that makes the evaluation of creativity appear to be a matter of checking boxes is surely missing the subjective nature of creativity. The real picture is far more interwoven and---although creativity may spring from a finite set of causes---these can interact in a complex manner that cannot be assessed so neatly.
+
+\begin{quotation}
+  ``User of tools are much more prevelant than makers of tools. This imbalance has traditionally been rooted in the vast difference in skill levels required for using a tool compared to making a tool: To use a tool on a computer, you need to do little more than point and click. To create a tool, you must understand the arcane art of computer programming. A strange reverse phenomenon is in motion today: As programming becomes easier and more accesible, the tools for expression are becoming more complex and diffuclt to use. Programming tools are increasingly oriented toward fill-in-the-blank approaches to the construction of code, making it easy to create programs but resulting in software with less originality and fewer differentiating features.'' \autocite{Maeda2004}
+\end{quotation}
+
+To sum up our approach: rather than a linear or cyclic series, or criteria that can be answered in a binary manner (i.e. present or not) we propose scales or spectra to aid in the evaluation of a creative artefact of any kind, by applying a series of overlapping principles that encourages a more intuitive assessment.
+
+The next stage for this approach would be to test the evaluation framework with real-world examples and individuals responsible for creative output or its assessment, for instance: artists, dancers, musicians, arts administrators, critics, curators and commentators.
+
+If anything that falls short of true computational creativity is considered a \textit{zombie}, then as long as computers continue to be regarded as autonomously creative, we may already be trapped in a \textit{zombie apocalypse}.
 
 % \begin{leftbar}
 % The word useless is defined as ``not fulfilling or not expected to achieve the intended purpose or desired outcome'' in the Oxford dictionary (2010). Given this definition most of the search results we have in mind would be classed as useless. That is at least if we considered every result individually, outside of context and with an information-lookup query in mind. If we have an exploratory search in mind however things get more interesting and we will explain why in the remainder of the paper.

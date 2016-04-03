@@ -37,47 +37,50 @@ The project is transdisciplinary;\marginnote{§~\ref{ch:methodology}} it is heav
 
 The research\marginnote{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines and how pataphysics relates to creativity.
 
-The outcome\marginnote{§~\ref{ch:implementation}} is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing Image Search, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
+The outcome\marginnote{§~\ref{ch:implementation}} is presented as a website -\url{pata.physics.wtf}- written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr, YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
+\todo{update these numbers}
 
-It's main purpose is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval that show creative computing in action. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry \autocite{Jarry1996}, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges \autocite{Borges2000} and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others \autocite{Queneau1961}.
+The main purpose of the system above is to demonstrate three creative \textit{patalgorithms} in the context of exploratory information retrieval. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional character `Doctor Faustroll' created by french absurdist and father of pataphysics Alfred Jarry \autocite{Jarry1996}, the fantastic taxonomy of the `Celestial Emporium of Benevolent Knowledge' by magical realist Jorge Luis Borges \autocite{Borges2000} and `A Hundred Thousand Billion Poems' by pataphysician and Oulipo co-founder Raymond Queneau amongst others \autocite{Queneau1961}.
 
 In a sense the system partially automates the creative process, generating results on demand, which allows users to focus on their own personal artistic evaluation rather than production.
 
-\todo{what is the relationship between pata.physics.wtf and my evaluation framework?}
-
-\todo{expand here, say stuff about creating my own definition of creativity to measure against, my own set of critearia for evaluation against the defintion}
+\todo{what is the relationship between pata.physics.wtf and my evaluation framework? - there isn't any really.}
 
 \begin{draft}
   The creative process or problem solving is a move from the abstract to the concrete. Creative evaluation is a move from subjective to objective (defining the subjective criteria for creating a product in terms of objective understanding).
 \end{draft}
 
-Following on from the development stage of this project, I looked at the problem of objective evaulation and interpretation\marginnote{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I argue that the most appropriate way to approach this is by looking at five subjective constraints (person, process, product, place, purpose) holistically and by understanding that humour and art ``lie in the ear and eye of the beholder''\ldots
+Another area I explored is the problem of objective evaulation and interpretation\marginnote{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I argue that the most appropriate way to approach this is by looking at five objective constraints (person, process, product, place, purpose) and seven subjective criteria (novelty, value, quality, purpose, spatial, temporal, ephemeral) holistically and by understanding that humour and art ``lie in the ear and eye of the beholder''\ldots
+
+This resulted in an \emph{interpretation framework}\marginnote{§~\ref{s:framework}} visualised as an evaluation matrix (5 constraints x 7 criteria) which can be used to quantitatively and qualitatively measure the creativity of a given artefact (be that man-made or machine-made).
 
 
 \section{Motivations}
 
-My personal interest in this project comes from a background in computer science and a life-long fascination with art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \gls{dmu}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \gls{ioct} at \gls{dmu} and when he pitched his `Syzygy Surfer' \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
+My personal interest in this project comes from a background in computer science and a longstanding interest in art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \gls{dmu}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \gls{ioct} at \gls{dmu} and when he pitched his `Syzygy Surfer' \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
+
+\spirals
 
 Computers\marginnote{§~\ref{ch:technology}} are binary machines; the world is black and white to them (0 and 1, on and off). Programmers can run abstract high-level commands which are executed in sequence (fast speed gives the illusion of multitasking). They are precise, structured, logical and generally abide by strict standards. Computers can only be creative if they are given clear instructions as to how. Information retrieval is generally focused on relevance of results in regards to the query.
 
-Pataphysics\marginnote{§~\ref{ch:pataphysics}} came about during the `Belle Époque'\footnote{1871---1914} in France and has directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values expections, the imaginary and the mutually incompatible.
+Pataphysics\marginnote{§~\ref{ch:pataphysics}} emerged during the `Belle Époque'\footnote{1871---1914} in France and has directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values expections, the imaginary and the mutually incompatible.
 
 Creativity\marginnote{§~\ref{ch:creativity}} is often studied at various levels (neurological, cognitive, and holistic/systemic), from different perspectives (subjective and objective) and characteristics (combinational, exploratory and transformative). It is usually defined in terms of value, originality and skill.
 
-Combining computing with pataphysics seems impossible.
+Combining computing with pataphysics seems impossible --- although the points below highlight just how intriguing a possible combination of the two would be.
 
 \begin{itemize}
-  \item Polymorphism (generalisations) oppose particularity.
-  \item Precision (bugs) opposes exceptions and contradictions.
+  \item Polymorphism (generalisation) opposes particularity.
+  \item Precision opposes exceptions and contradictions.
   \item Logic and structure oppose the imaginary and paradox.
   \item Cross-compatibility opposes the mutually exclusive.
   \item Responsiveness opposes the specific.
   \item Relevance opposes the creative.
 \end{itemize}
 
-Combining pataphysics with creativity\marginnote{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of  combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly.
+This apparent dichotomy of computing and pataphysics is alluring. Christian Boek argued that pataphysics ``sets the parameters for the contemporary relationship between science and poetry.'' \autocite{Boek2002} Pataphysics suddenly seems like the perfect choice infusing computers (\~science\~) with creativity (\~poetry\~).
 
-The apparent dichotomy of computing and pataphysics is alluring. Christian Boek argued that pataphysics ``sets the parameters for the contemporary relationship between science and poetry.'' \autocite{Boek2002} Pataphysics suddenly seems like the perfect choice infusing computers (\~science\~) with creativity (\~poetry\~).
+Combining pataphysics with creativity\marginnote{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of  combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly.
 
 \todo{expand here}
 
@@ -180,7 +183,7 @@ The key contributions to knowledge described in this thesis are:
 
 \section{Publications}
 
-\textbf{Fania Raczinski}, Dave Everitt (2016) \emph{``Creative Zombie Apocalypse: A Critique of Computer Creativity Evaluation''}. Proceedings of the 2nd IEEE International Symposium on Creative Computing, ISCC'16. Oxford, UK. Pages ??.
+\textbf{Fania Raczinski}, Dave Everitt (2016) \emph{``Creative Zombie Apocalypse: A Critique of Computer Creativity Evaluation''}. Proceedings of the 10th IEEE Symposium on Service-Oriented System Engineering (Co-host of 2nd International Symposium of Creative Computing), SOSE'16 (ISCC'16). Oxford, UK. Pages 270--276.
 
 \textbf{Fania Raczinski}, Hongji Yang and Andrew Hugill (2013) \emph{``Creative Search Using Pataphysics''}. Proceedings of the 9th ACM Conference on Creativity and Cognition, CC'13. Sydney, Australia. Pages 274--280.
 

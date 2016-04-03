@@ -561,6 +561,8 @@ breaklines=true
 
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\newcommand{\stab}[1]{\hspace{.3\linewidth}\rlap{#1}}
+
 
 
 % MATHS BULLSHIT
