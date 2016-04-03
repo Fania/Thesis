@@ -641,7 +641,7 @@
       \field{volume}{V1}
       \field{year}{2006}
     \endentry
-    \entry{Candy2012}{inbook}{}
+    \entry{Candy2012}{incollection}{}
       \name{author}{1}{}{%
         {{uniquename=2,hash=f3cdb65074a2ecb331165fe1bd97c2c0}{Candy}{C\bibinitperiod}{Linda}{L\bibinitperiod}{}{}{}{}}%
       }
@@ -966,6 +966,27 @@
       \field{year}{2015}
       \verb{url}
       \verb http://www.oed.com/view/Entry/273779
+      \endverb
+    \endentry
+    \entry{Dijkstra1988}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=3fa72084538a27e0e2efc0508856455c}{Dijkstra}{D\bibinitperiod}{Edsger\bibnamedelima W.}{E\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{3fa72084538a27e0e2efc0508856455c}
+      \strng{fullhash}{3fa72084538a27e0e2efc0508856455c}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelyear}{1988}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{On the Cruelty of Really Teaching Computing Science}
+      \field{urlday}{17}
+      \field{urlmonth}{01}
+      \field{urlyear}{2016}
+      \field{year}{1988}
+      \verb{url}
+      \verb http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html
       \endverb
     \endentry
     \entry{Ding}{inproceedings}{}
@@ -2384,7 +2405,7 @@
       \field{pages}{258\bibrangedash 264}
       \range{pages}{7}
     \endentry
-    \entry{Poincare2001}{misc}{}
+    \entry{Poincare2001}{book}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=0348d3e0c0a1e49f06e35787663f29c4}{Poincare}{P\bibinitperiod}{Henri}{H\bibinitperiod}{}{}{}{}}%
       }
@@ -2561,6 +2582,24 @@
       \field{year}{2007}
       \field{pages}{67\bibrangedash 99}
       \range{pages}{33}
+    \endentry
+    \entry{Ritchie2012}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=0504ccf340a1c8204debb5ff8a1d3d56}{Ritchie}{R\bibinitperiod}{Graeme}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0504ccf340a1c8204debb5ff8a1d3d56}
+      \strng{fullhash}{0504ccf340a1c8204debb5ff8a1d3d56}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2012}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Computational Creativity}
+      \field{title}{{A closer look at creativity as search}}
+      \field{year}{2012}
+      \field{pages}{41\bibrangedash 48}
+      \range{pages}{8}
     \endentry
     \entry{Schuetze1998}{article}{}
       \name{author}{1}{}{%
@@ -2946,7 +2985,7 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Know\-ledge Based Sys\-tems}
+      \field{journaltitle}{Knowledge Based Systems}
       \field{number}{7}
       \field{title}{{A preliminary framework for description, analysis and comparison of creative systems}}
       \field{volume}{19}

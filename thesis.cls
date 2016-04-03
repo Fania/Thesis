@@ -364,6 +364,10 @@ breaklines=true
 \setcounter{highnamepenalty}{0}
 \setcounter{lownamepenalty}{0}
 
+\AtBeginDocument{%
+  \renewcommand{\bibname}{References}
+}
+
 \DeclareCiteCommand{\cite}
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%

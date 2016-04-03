@@ -1,15 +1,20 @@
-[1] Config.pm:324> INFO - This is Biber 2.1
-[1] Config.pm:327> INFO - Logfile is 'main.blg'
-[128] biber-darwin:276> INFO - === Tue Jan  5, 2016, 11:16:55
-[128] Biber.pm:333> INFO - Reading 'main.bcf'
-[434] Biber.pm:645> INFO - Found 139 citekeys in bib section 0
-[558] Biber.pm:2977> INFO - Processing section 0
-[617] Biber.pm:3115> INFO - Looking for bibtex format file 'back/bib.bib' for section 0
-[631] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[643] bibtex.pm:895> INFO - Found BibTeX data source 'back/bib.bib'
-[4380] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[4380] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[4381] Biber.pm:2854> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
-[4381] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-UK'
-[5257] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[5285] bbl.pm:596> INFO - Output to main.bbl
+[0] Config.pm:327> INFO - This is Biber 2.3
+[0] Config.pm:330> INFO - Logfile is 'main.blg'
+[36] biber-MSWIN:284> INFO - === 
+[99] Biber.pm:346> INFO - Reading 'main.bcf'
+[220] Biber.pm:689> INFO - Found 141 citekeys in bib section 0
+[226] Biber.pm:3066> INFO - Processing section 0
+[245] Biber.pm:3206> INFO - Looking for bibtex format file 'back/bib.bib' for section 0
+[285] bibtex.pm:1062> INFO - Decoding LaTeX character macros into UTF-8
+[295] bibtex.pm:923> INFO - Found BibTeX data source 'back/bib.bib'
+[345] Utils.pm:147> WARN - ISBN '13-978-1-900565-36-3' in entry 'Jarry2006' is invalid - run biber with '--validate_datamodel' for details.
+[354] Utils.pm:147> WARN - ISBN '0024094X' in entry 'Edmonds2010' is invalid - run biber with '--validate_datamodel' for details.
+[359] Utils.pm:147> WARN - ISBN 'b5917098' in entry 'Shattuck1959' is invalid - run biber with '--validate_datamodel' for details.
+[376] Utils.pm:147> WARN - ISBN '187151651' in entry 'Partridge1994' is invalid - run biber with '--validate_datamodel' for details.
+[1844] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1845] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1845] Biber.pm:2943> INFO - Sorting list 'nyt' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[1845] Biber.pm:2947> INFO - No sort tailoring available for locale 'en-UK'
+[2240] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2255] bbl.pm:596> INFO - Output to main.bbl
+[2258] Biber.pm:107> INFO - WARNINGS: 4
