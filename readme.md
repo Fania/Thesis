@@ -7,6 +7,9 @@
 - (Win) Tex Live
 
 
+<!-- \colorbox{red!30}{text} -->
+
+
 ## Compile
 To compile manually via commandline:
 
