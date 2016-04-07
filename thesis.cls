@@ -29,10 +29,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\includeonly{%
-  main/interpretation,%
-  main/evaluation%
-}
+% \includeonly{%
+%   main/interpretation,%
+%   main/evaluation%
+% }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ---------------

@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{} $w$ = input query term}
+\PYG{k}{def} \PYG{n+nf}{syzygy}\PYG{p}{(}\PYG{n}{w}\PYG{p}{):}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{n}{wordsets} \PYG{o}{=} \PYG{n}{wn}\PYG{o}{.}\PYG{n}{synsets}\PYG{p}{(}\PYG{n}{w}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{ws} \PYG{o+ow}{in} \PYG{n}{wordsets}\PYG{p}{:}
+        \PYG{n}{words}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{get\PYGZus{}nym}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}hypo\PYGZsq{}}\PYG{p}{,} \PYG{n}{ws}\PYG{p}{))}
+        \PYG{n}{words}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{get\PYGZus{}nym}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}hyper\PYGZsq{}}\PYG{p}{,} \PYG{n}{ws}\PYG{p}{))}
+        \PYG{n}{words}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{get\PYGZus{}nym}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}holo\PYGZsq{}}\PYG{p}{,} \PYG{n}{ws}\PYG{p}{))}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Syzygy\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+\end{Verbatim}

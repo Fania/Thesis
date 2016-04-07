@@ -53,32 +53,31 @@ Hypothetical ``zombies'' (popularised by philosopher David Chalmers \autocite{Ch
 
 \todo{refer to the title of the paper here}
 
-Further, creativity and the subjective properties associated with it, lack a universally accepted definition as I have shown in the~\nameref{ch:creativity}\marginnote{§~\ref{ch:creativity}} chapter. As a human quality it has definitions that don’t necessarily lend themselves to be applied to computers. However, there are several important theories and evaluation frameworks concerning human and computer creativity, and these are the basis for \colorbox{red!30}{our} work. Some aspects, like novelty and value, recur in many models of creativity but some, like relevance and variety, rarely appear; while other terms are problematic when it comes to computing. Computer systems are generally evaluated\marginnote{§~\ref{s:evalsearch}} against functional requirements and performance specifications, but creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
+
+\section{Problems}
+
+Creativity and the subjective properties associated with it, lack a universally accepted definition as I have shown in the~\nameref{ch:creativity}\marginnote{§~\ref{ch:creativity}} chapter. As a human quality it has definitions that don’t necessarily lend themselves to be applied to computers. However, there are several important theories and evaluation frameworks concerning human and computer creativity\marginnote{§~\ref{ch:evaluation}}, and these are the basis for this chapter. Some aspects, like ``novelty'' and ``value'', recur in many models of creativity but some, like ``relevance'' and ``variety'', rarely appear; while other terms are problematic when it comes to computing. Computer systems are generally evaluated\marginnote{§~\ref{s:evalsearch}} against functional requirements and performance specifications, but creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
 
 \begin{quotation}
   ``The expression of our language systems in computer code confers no semantic understanding autonomously on the computer system. The computer system only acts as a tool for transferring symbols and communicating meaning between humans.'' \sourceatright{\autocite{Mcbride2012}}
 \end{quotation}
 
-True Artificial Intelligence and true Computational Creativity are equally elusive. For a computer to become truly intelligent and therefore creative, it would need to break out of the programming procedures by which it operates. Yet it is bound to follow rules, no matter how emergent the outcome. The paradox is that it needs to recognise its contraints in order to break free from them. Yet programatically defining yet more rules to allow that to happen---even when those rules enable machine learning---is tautological!
+True \gls{ai} and true Computational Creativity are equally elusive. For a computer to become truly intelligent and therefore creative, it would need to break out of the programming procedures by which it operates. Yet it is bound to follow rules, no matter how emergent the outcome. The paradox is that it needs to recognise its contraints in order to break free from them. Yet programatically defining yet more rules to allow that to happen---even when those rules enable machine learning---is tautological!
 
+\spirals
 
-\section{Problems}
+Some of the key ideas introduced in the \nameref{ch:evaluation} chapter\marginnote{§~\ref{ch:evaluation}} are listed here as a reminder:
 
-
-\todo{summarize evaluation techniques?}
-
-\begin{description}
-  \item [Output minus input] \autocite[p.2]{Pease2001}
-  \item [Creative Tripod] skill, appreciation, and imagination \autocite{Colton2008a, Colton2008}
-  \item [?] \autocite{Ritchie2007, Ritchie2001}
-  \item [?] \autocite{Ventura2008}
-  \item [?] \autocite{Pease2013}
-  \item [Ontology of Creativity] 14 key components \autocite{Jordanous2012}
-  \item [SPECS] \autocite{Jordanous2012a}
-  \item [MMCE] \autocite{Candy2012}
-\end{description}
-
-% \colorbox{red!30}{our}
+\begin{itemize}
+  \item Output minus input (ignoring the inspiring set/training data)
+  \item Creative Tripod (mimicking skill, appreciation, and imagination)
+  \item Measurement of specific criteria (novelty, usefulness, quality)
+  \item Measuring product, process or both
+  \item Ontology of Creativity (14 key components)
+  \item \gls{specs} (define creativity, define standards, test standards against definition)
+  \item \gls{mmce} (people, process, product, context)
+  \item \gls{csf} (formal notation based on Boden)
+\end{itemize}
 
 
 \subsection{Anthropomorphism}
@@ -98,44 +97,58 @@ The phenomenon of ascribing human qualities to non-human artefacts and machines 
 
 \subsection{The Programmer}
 
-This tendency has implications for the aimed-for objectivity when evaluating certain creative computing projects, one the most well-established being Harold Cohen's \textit{AARON}, artist-authored software that produces an endless output of images in his own unique style. While documenting the process of coding his system, Cohen asked:
+This tendency (of anthropomorphising computers) has implications for the aimed-for objectivity when evaluating certain creative computing projects, one the most well-established being Harold Cohen's \textit{AARON}, artist-authored software that produces an endless output of images in his own unique style. While documenting the process of coding his system, Cohen asked:
 
 \begin{quotation}
   ``How far could I justify the claim that my computer program---or any other computer program---is, in fact, creative? I'd try to address those questions if I knew what the word `creative' meant: or if I thought I knew what anyone else meant by it. [\ldots] `Creative' is a word I do my very best never to use if it can be avoided. [\ldots] AARON is an entity, not a person; and its unmistakable artistic style is a product of its entitality, if I may coin a term, not its personality.'' \sourceatright{\autocite{Cohen1999}}
 \end{quotation}
 
-He goes on to outline four elements of \textit{behaviour X} (his placeholder for creativity): (1) \textbf{emergence} produced from the complexity of a computer program, (2) \textbf{awareness} of what has emerged, (3) \textbf{willingness} to act upon the implications of what has emerged, and (4) \textbf{knowledge} of the kind manifest in expert systems. He identifies three of these properties as programmable (within limits), but ``as to the second element, the program's awareness of properties that emerge, unbidden and unanticipated, from its actions\ldots  well, that's a problem.'' \autocite{Cohen1999}, and concludes that ``it may be true that the program can be written to act upon anything the programmer wants, but surely that's not the same as the individual human acting upon what he wants himself. Isn't free will of the essence when we're talking about the appearance of behaviour X in people?''. In other words, a decision tree in computing is not the same as a human decision-making process. As for whether his life's work is autonomously creative:
+He goes on to outline four elements of \textit{behaviour X} (his placeholder for creativity): (1) ``emergence'' produced from the complexity of a computer program, (2) ``awareness'' of what has emerged, (3) ``willingness'' to act upon the implications of what has emerged, and (4) ``knowledge'' of the kind manifest in expert systems. He identifies three of these properties as programmable (within limits), but ``as to the second element, the program's awareness of properties that emerge, unbidden and unanticipated, from its actions\ldots  well, that's a problem.'' \autocite{Cohen1999}, and concludes that ``it may be true that the program can be written to act upon anything the programmer wants, but surely that's not the same as the individual human acting upon what he wants himself. Isn't free will of the essence when we're talking about the appearance of behaviour X in people?''. In other words, a decision tree in computing is not the same as a human decision-making process. As for whether his life's work is autonomously creative:
 
 \begin{quotation}
   ``I don't regard AARON as being creative; and I won't, until I see the program doing things it couldn't have done as a direct result of what I had put into it. That isn't currently possible, and I am unable to offer myself any assurances that it will be possible in the future. On the other hand I don't think I've said anything to indicate definitively that it isn't possible.'' \sourceatright{\autocite{Cohen1999}}
 \end{quotation}
 
-In the same manner as in the field of computer ethics, i.e. ``the ethics of the robot must be the ethics of the maker'' \autocite{Mcbride2012}, the creative computer must ultimately be a product of the creativity of the programmer. To hijack Barthes' conclusion in ``The Death of the Author'': \textit{the birth of the truly creative computer must be ransomed by the death of the programmer} \autocite{Barthes1967}---in other words, a truly creative computer must be able to act without human input, yet any computer process presumes a significant amount of human input in order to produce such so-called autonomous behaviour, so the question is whether that behaviour can ever be regarded as truly autonomous---no matter how independant it appears to be.
+In the same manner as in the field of computer ethics, i.e. ``the ethics of the robot must be the ethics of the maker'' \autocite{Mcbride2012}, the creative computer must ultimately be a product of the creativity of the programmer. To hijack Barthes' conclusion in ``The Death of the Author'': \textit{the birth of the truly creative computer must be ransomed by the death of the programmer} \autocite{Barthes1967}---in other words, a truly creative computer must be able to act without human input, yet any computer process presumes a significant amount of human input in order to produce such so-called autonomous behaviour, so the question is whether that behaviour can ever be regarded as truly autonomous or creative---no matter how independant it appears to be.
 
 Initiatives like the Human Brain Project suggest that we are far from the capacity to reproduce the level of operations necessary to even mimic a human brain ``the 1 PFlop machine at the J{\"u}lich Supercomputing Centre could simulate up to 100 million neurons---roughly the number found in the mouse brain.'' \autocite{Walker2012}. Even if it were possible today to scale this up to the human brain, would the result be an entity capable of truly intelligent creative activity, or would it actually be a \textit{zombie}?
+
+\todo{add a bit more about human brain}
 
 
 \subsection{Mimickry}
 
-Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the \nameref{ch:evaluation}\marginnote{§~\ref{ch:evaluation}} chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines ``mimic'' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precicely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers so that they \textit{appear} more human.
+Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the \nameref{ch:evaluation}\marginnote{§~\ref{ch:evaluation}} chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines ``mimic'' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precicely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers in their vast potential so that they \textit{appear} more human.
 
-True AI and Computational Creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimickry), the view that something \textit{is} creative because it \textit{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese Room Argument \autocite{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to ``know'' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimick human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\textit{Zombies} \autocite{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his ``Conversation with Einstein's Brain'' \autocite{Hofstadter1981}. This school of thought is employed to demonstrate that \textit{mind} is not just physical \textit{brain}. We are introducing it here to argue that computers do not \textit{consciously create} as do humans, because they are not conscious.
+True AI and Computational Creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimickry), the view that something \textit{is} creative because it \textit{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese Room Argument \autocite{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to ``know'' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimick human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\textit{Zombies} \autocite{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his ``Conversation with Einstein's Brain'' \autocite{Hofstadter1981}. This school of thought is employed to demonstrate that \textit{mind} is not just physical \textit{brain}. \colorbox{red!30}{We} are introducing it here to argue that computers do not \textit{consciously create} as do humans, because they are not conscious.
 
 
-\subsection{Infantalisation}\footnote{Ha Ha! I am victim of my own critique about anthropomorphisms above\ldots}
+\subsection[Infantalisation]{Infantalisation\footnote{Ha Ha! I am victim of my own critique about anthropomorphisms above\ldots}}
 
 Creativity is a transdisciplinary activity and is apparent in many diverse fields, yet it is often studied from within a single discipline within which other perspectives and theories can be overlooked. Therefore, creative evaluation is subjective, and involves an emotional component related to the satisfaction of a set of judgements. These judgements are mutable when subjected to personal, social and cultural influence, so we can only try to evaluate a creative activity objectively via approximisations.
 
 Edsger Dijkstra pointed out that computer science is infantalised \autocite{Dijkstra1988} and there is a danger that the same thing is happening to creativity research. In other words, it may be an over-simplification to reduce creativity down to a four step process, or a product that is novel, valuable and of high quality. A framework that makes the evaluation of creativity appear to be a matter of checking boxes is surely missing the subjective nature of creativity. The real picture is far more interwoven and---although creativity may spring from a finite set of causes---these can interact in a complex manner that cannot be assessed so neatly.
 
-\begin{quotation}
-  ``User of tools are much more prevelant than makers of tools. This imbalance has traditionally been rooted in the vast difference in skill levels required for using a tool compared to making a tool: To use a tool on a computer, you need to do little more than point and click. To create a tool, you must understand the arcane art of computer programming. A strange reverse phenomenon is in motion today: As programming becomes easier and more accesible, the tools for expression are becoming more complex and diffuclt to use. Programming tools are increasingly oriented toward fill-in-the-blank approaches to the construction of code, making it easy to create programs but resulting in software with less originality and fewer differentiating features.'' \autocite{Maeda2004}
-\end{quotation}
+Creativity is a complex human phenomenon that is:
+
+\begin{itemize}
+  \item NOT just thinking outside the box
+  \item NOT just divergent thinking
+  \item NOT just about innovation, usefulness or quality
+  \item NOT just a ``Eureka'' moment
+  \item NOT just a brainstorming technique
+  \item NOT just for geniuses
+  \item NOT just studied in psychology
+\end{itemize}
+
+\todo{say more about this}
+
+% \colorbox{red!30}{our}
 
 
 \subsection{Undefinitions}
 
-Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2]{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposes ``\gls{specs}''\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \autocite[p.137-140]{Jordanous2012a}:
+Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2]{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposed ``\gls{specs}''\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \autocite[p.137-140]{Jordanous2012a}:
 
 \begin{quote}
   \begin{enumerate}
