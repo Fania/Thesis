@@ -81,6 +81,7 @@ Some of the key ideas introduced in the \nameref{ch:evaluation} chapter\marginno
 
 
 \subsection{Anthropomorphism}
+\label{ss:anthropomorphism}
 
 \begin{quotation}
   ``The uncodifiable must be reduced to the codable in the robot. In reducing a complex moral decision (tacit, intuitive, deriving knowledge from maturity) to the execution of a set of coded instructions, we are throwing away vast stretches of knowledge, socialisation and learning not only built up in the individual, but also in the community and the history of that community, and replacing it with some na{\"i}ve `yes' or `no' decisions.'' \sourceatright{\autocite{Mcbride2012}}
@@ -120,14 +121,14 @@ Initiatives like the Human Brain Project suggest that we are far from the capaci
 
 Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the \nameref{ch:evaluation}\marginnote{§~\ref{ch:evaluation}} chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines ``mimic'' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precicely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers in their vast potential so that they \textit{appear} more human.
 
-True AI and Computational Creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimickry), the view that something \textit{is} creative because it \textit{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese Room Argument \autocite{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to ``know'' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimick human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\textit{Zombies} \autocite{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his ``Conversation with Einstein's Brain'' \autocite{Hofstadter1981}. This school of thought is employed to demonstrate that \textit{mind} is not just physical \textit{brain}. \colorbox{red!30}{We} are introducing it here to argue that computers do not \textit{consciously create} as do humans, because they are not conscious.
+True \gls{ai} and Computational Creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimickry), the view that something \textit{is} creative because it \textit{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese Room Argument \autocite{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to ``know'' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimick human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\textit{Zombies} \autocite{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his ``Conversation with Einstein's Brain'' \autocite{Hofstadter1981}. This school of thought is employed to demonstrate that \textit{mind} is not just physical \textit{brain}. \colorbox{red!30}{We} are introducing it here to argue that computers do not \textit{consciously create} as do humans, because they are not conscious.
 
 
-\subsection[Infantalisation]{Infantalisation\footnote{Ha Ha! I am victim of my own critique about anthropomorphisms above\ldots}}
+\subsection{Infantalisation}
 
 Creativity is a transdisciplinary activity and is apparent in many diverse fields, yet it is often studied from within a single discipline within which other perspectives and theories can be overlooked. Therefore, creative evaluation is subjective, and involves an emotional component related to the satisfaction of a set of judgements. These judgements are mutable when subjected to personal, social and cultural influence, so we can only try to evaluate a creative activity objectively via approximisations.
 
-Edsger Dijkstra pointed out that computer science is infantalised \autocite{Dijkstra1988} and there is a danger that the same thing is happening to creativity research. In other words, it may be an over-simplification to reduce creativity down to a four step process, or a product that is novel, valuable and of high quality. A framework that makes the evaluation of creativity appear to be a matter of checking boxes is surely missing the subjective nature of creativity. The real picture is far more interwoven and---although creativity may spring from a finite set of causes---these can interact in a complex manner that cannot be assessed so neatly.
+Edsger Dijkstra pointed out that computer science is infantalised \autocite{Dijkstra1988}\footnote{Interestingly he anthropomorphises computer science here---which he critises srongly in the same article.} and there is a danger that the same thing is happening to creativity research. In other words, it may be an over-simplification to reduce creativity down to a four step process, or a product that is novel, valuable and of high quality. A framework that makes the evaluation of creativity appear to be a matter of checking boxes is surely missing the subjective nature of creativity. The real picture is far more interwoven and---although creativity may spring from a finite set of causes---these can interact in a complex manner that cannot be assessed so neatly.
 
 Creativity is a complex human phenomenon that is:
 
@@ -141,14 +142,42 @@ Creativity is a complex human phenomenon that is:
   \item NOT just studied in psychology
 \end{itemize}
 
-\todo{say more about this}
+\todo{add more}
+
+
+\subsection{Incompleteness}
+
+\autocite{Varshney2013}
+novelty = Bayesian surprise \autocite{Baldi2010}
+which is:
+
+\begin{quote}
+  ``Computational creativity applies technology to assist humans in thinking outside the box and expanding their exploration boundaries.''\sourceatright{\autocite{Varshney2013}\footnote{\url{http://research.ibm.com/cognitive-computing/computational-creativity.shtml}}}
+\end{quote}
+
+% \begin{equation}
+%   \begin{split}
+%     \textrm{Bayesian surprise} = D(p(M|A) \ \parallel  \ p(M))\\
+%     &= \int_{\mathcal{M}}p(M|A) \ log \ \frac{p(M|A)}{p(M)} \ dM
+%   \end{split}
+%   \label{eq:bsurprise}
+% \end{equation}
+% % \myequations{Bayesian surprise}
+%
+% Where:
+% \itab{$\mathcal{M}$} \tab{is the set of artefacts known to the observer,}\\
+% \itab{$M$} \tab{an artefact, with $M \in \mathcal{M}$,}
+% \itab{$A$} \tab{a new artefact,}
+% \itab{$p(M)$} \tab{the probablity of an existing artefact,}
+% \itab{$p(A|M)$} \tab{the conditional probability of the new artefact given the existing artefacts $M$,}
+% \itab{$p(M|A)$} \tab{the conditional probability of the existing artifacts given the new artifact $A$.}
 
 % \colorbox{red!30}{our}
 
 
 \subsection{Undefinitions}
 
-Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite[p.2]{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposed ``\gls{specs}''\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \autocite[p.137-140]{Jordanous2012a}:
+Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposed ``\gls{specs}''\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \autocite{Jordanous2012a}:
 
 \begin{quote}
   \begin{enumerate}
