@@ -204,21 +204,19 @@ Since many problems with evaluating creativity in computers (and humans alike) s
 
 \section{Creative Interpretation}
 
-All of the theories of creativity and its evaluation mentioned above have value, but each alone may be incomplete and contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As J{\"u}rgen Schmidhuber suggests in the quote below, evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.
+All of the theories of creativity\marginnote{§~\ref{ch:creativity}} and its evaluation\marginnote{§~\ref{ch:evaluation}} mentioned above have value, but each alone may be incomplete and contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As J{\"u}rgen Schmidhuber suggests---``Any objective theory of what is good art must take the subjective observer as a parameter.''\autocite{Schmidhuber2006}---evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.
 
-\begin{quote}
-  ``Any objective theory of what is good art must take the subjective observer as a parameter.'' \autocite{Schmidhuber2006}
-\end{quote}
-
-We therefore propose two facets of a new \textit{fuzzy} approach that aims to obtain a more honest measure of the subjective judgements implied when evaluating creativity:
+\colorbox{red!30}{We} therefore propose two facets of a new \textit{fuzzy} approach that aims to obtain a more honest measure of the subjective judgements implied when evaluating creativity:
 
 \begin{enumerate}
-  \item a set of scales that can be used to approximate a ``rating'' for the creative value of an artefact,
-  \item a set of criteria to be considered using the scales above.
+  \item a set of scales that can be used to approximate a ``rating'' for the creative value of an artefact,\marginnote{§~\ref{s:sec}}
+  \item a set of criteria to be considered using the scales above,\marginnote{§~\ref{s:oec}}
+  \item a combined framework for evaliuation.\marginnote{§~\ref{s:framework}}
 \end{enumerate}
 
 
 \subsection{Subjective Evaluation Criteria}
+\label{s:sec}
 
 Following Jordanous' \gls{specs} model\marginnote{§~\ref{s:specs}}, we need to state our own definition of creativity in regards to the computer system being evaluated.
 
@@ -258,6 +256,7 @@ From this I derive the following \hypertarget{creadef}{\textit{Creativity Criter
 
 
 \subsection{Objective Evaluation Constraints}
+\label{s:oec}
 
 In tribute to the many kinds of ``4 P'' models\marginnote{§~\ref{ch:creativity}} out there and combining it with the ``four P's'' of Stahl's computer ethics framework.
 
@@ -265,7 +264,7 @@ In tribute to the many kinds of ``4 P'' models\marginnote{§~\ref{ch:creativity}
   ``One way of characterizing these processes is to use [\ldots] the four P's, which are: product, process, purpose and people. The purpose of using the four P's is to draw attention to the fact that, in addition to the widely recognized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation [\ldots].'' \sourceatright{\autocite[p.203]{Stahl2013}}
 \end{quote}
 
-I propose an evaluation framework called (*surprise surprise*) the ``5 P Model'' --- product, process, people, place and purpose.
+I propose a set of evaluation constraints called (*surprise surprise*) the ``5 P Model'' --- product, process, people, place and purpose.
 
 
 
@@ -349,8 +348,31 @@ The terms on each end of the scales are suggestions only and should not be taken
 \label{evalmatrix}
 \end{figure}
 
+This matrix should be able to address issues such as:
+
+\begin{itemize}
+  \item The design of the product might be very innovative but the process that was used quite established and old.
+  \item The person might have been a novice initially but because the time frame of the project was 5 years (which would influence the skill of the person towards the end).
+  \item The product might be interactive which triggers a lot of emergent behaviour whereas the process itself was very minimal.
+  \item The place may play a specific role with the final product but not at all during the development process.
+  \item The process might involve some random elements but the the concept was very purposive.
+  \item The target group may have been very specific whereas the process was very generic.
+  \item The process may be an established algorithm but it was used for a non-standard novel purpose.
+\end{itemize}
+
 
 \subsubsection{An example application}
+
+\todo{finish this example}
+A complete
+
+\begin{itemize}
+  \item[\textbf{Step 1 --}] Create master matrix to measure against.
+  \item[\textbf{Step 2 --}] Fill matrix, potentially by several judges.
+  \item[\textbf{Step 3 --}] Check against criteria from step 1.
+\end{itemize}
+
+\spirals
 
 Below is an example assessment for a hypothetical piece of art:\\
 
