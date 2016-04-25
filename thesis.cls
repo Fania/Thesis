@@ -351,7 +351,7 @@ breaklines=true
 
 \usepackage[a4paper, % twoside=false,
             left=4cm, right=2cm,
-            top=2cm, bottom=4cm ,showframe, showcrop,
+            top=2cm, bottom=4cm, % showframe, showcrop,
             marginparwidth=3.5cm, marginparsep=3mm
             ]
             {geometry}
@@ -491,12 +491,20 @@ breaklines=true
 
 % CODE
 
-\usepackage[chapter]{minted}
+\usepackage[chapter,newfloat]{minted}
 \usemintedstyle{emacs}
 % css, c, json, hs, lhs, js, py3, py, css+jinja, html+jinja, js+jinja
 
-\renewcommand{\listingscaption}{Source}
-\renewcommand{\listoflistingscaption}{Source Code}
+\SetupFloatingEnvironment{listing}{
+  chapterlistsgaps=on,
+  listname={Code},
+  name=Code
+}
+\cftsetindents{section}{1em}{3.8em}
+\cftsetindents{subsection}{3.5em}{4.5em}
+\setlength\cftfigurenumwidth{1.5cm}
+\setlength\cfttablenumwidth{1.5cm}
+
 
 \setminted[python]{
   linenos,

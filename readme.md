@@ -23,10 +23,6 @@ makeglossaries main
 
 (Works both on Mac and Win)
 
-### XeTeX compilation
-
-xelatex main
-
 
 ## TODO
 
