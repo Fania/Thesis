@@ -52,6 +52,7 @@
 % \usepackage{import}
 
 % \usepackage[T3,OT2,T1]{fontenc}
+% \usepackage{fontspec} % for XeTeX
 \usepackage[T3,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -287,10 +288,11 @@ breaklines=true
   \vskip 50\p@
   \begingroup\centering
   \fontsize{2cm}{0}\bfseries
+  % \newgeometry{a4paper,top=0cm,bottom=0cm,right=0cm,left=0cm,marginparwidth=0cm,marginparsep=0mm}
   \ifnum \c@secnumdepth >-2\relax
        {\fontsize{\@xviipt}{22}\bfseries
       %  \fontsize{5cm}{0cm}%
-         \partname\ \thepart} \vskip 50\p@
+         \partname\ \thepart} \vskip 10\p@
   \fi
   % \fontsize{\@xxpt}{25}\bfseries
       #1\vfill\@partimage\vfil\endgroup \newpage\thispagestyle{empty}}
@@ -349,7 +351,7 @@ breaklines=true
 
 \usepackage[a4paper, % twoside=false,
             left=4cm, right=2cm,
-            top=2cm, bottom=4cm, % ,showframe, showcrop
+            top=2cm, bottom=4cm ,showframe, showcrop,
             marginparwidth=3.5cm, marginparsep=3mm
             ]
             {geometry}

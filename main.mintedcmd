@@ -1,0 +1,1 @@
+pygmentize -l javascript -f latex -P commandprefix=PYG -F tokenmerge -P mathescape=True -o "main.out.pyg" "main.pyg" 
