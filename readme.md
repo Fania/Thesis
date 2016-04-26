@@ -96,7 +96,7 @@ makeglossaries main
 - [ ] Rhyming pattern for future work
 - [ ] Go over all table of contents figure captions
 - [x] glossary entries with back links to pages
-- [ ] add line with three stars/spirals in middle to separate paragraphs
+- [x] add line with three stars/spirals in middle to separate paragraphs
 - [ ] state of the art versus state of the science
 - [ ] when to use italics and when quotes
 - [x] Use Avant Garde font
@@ -108,14 +108,17 @@ makeglossaries main
 - [ ] add margin notes for references to my publications
 - [ ] Boden argues ?? Boden argued ??
 - [x] Redesign chapter title pages (put toc on new page)
-- [ ] Redesign part title pages (fonts?)
+- [x] Redesign part title pages (fonts?)
 - [ ] Check spelling of Web/web and Internet/internet
 - [x] TODO add new spiral for techno-practice
 - [ ] Set caption font to sans serif?
 - [ ] do todos for pata.physics.wtf and fania.uk
 - [ ] deal with Hongji's feedback
 - [ ] add gource, gitgraph.js
-
+- [ ] list of equations
+- [ ] fix all citations (to autocite or not?)
+- [x] make main TOC only show sections, not subsections (chapter TOC will show all detail)
+- [ ] put link to TOC into footer?
 
 
 ## Hongji feedback
@@ -123,7 +126,7 @@ makeglossaries main
 - [x] You can have a bibliography but please have a reference.
 - [x] I like that you use the phrase of Algorithmic Meta-Creativity
 - [ ] Research questions in Section 1.2: it is best not to use yes or no question and it will be better to make these questions more quantitative.
-- [ ] Chapter 3, do you use  an existing research method? Or do you hope to develop a new one? I read that you wrote about workflow -- are steps here corresponding to steps in your chosen method?
+- [ ] Chapter 3, do you use an existing research method? Or do you hope to develop a new one? I read that you wrote about workflow -- are steps here corresponding to steps in your chosen method?
 - [ ] Chapter 8 is a key chapter. I am sure that you have a plan to expand the discussion.
 - [x] I liked that chosen topics in Part II, in particular, Chapter 7, Evaluation.
 - [x] Finally, the structure is very clear and presentation is technically artistic.

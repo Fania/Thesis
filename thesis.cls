@@ -245,11 +245,7 @@ breaklines=true
 \setlength{\cfttablenumwidth}{2.8em}
 
 \setsecnumdepth{subsection}
-% \settocdepth{section}
-\setcounter{tocdepth}{1} % sections and above
-
-% start section numbering at 0.
-% \setcounter{section}{-1}
+\maxtocdepth{section}
 
 % MEMOIR Division Level
 % \book -2
@@ -298,7 +294,8 @@ breaklines=true
       #1\vfill\@partimage\vfil\endgroup \newpage\thispagestyle{empty}}
 \makeatother
 
-
+% Line after PART in TOC
+\renewcommand{\cftpartafterpnum}{\par\vspace{-1.5ex}\hskip -\memRTLleftskip\hrulefill}
 
 % MINITOC
 
@@ -313,7 +310,7 @@ breaklines=true
 \newcommand\minicontents{%
   % \brule
   \vspace{1cm}
-  \printcontents[chapters]{p}{1}{\settocdepth{subsection}}
+  \printcontents[chapters]{p}{1}{\maxtocdepth{subsection}}
   \vspace{1cm}
   % \brule
   }
