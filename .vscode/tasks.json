@@ -3,8 +3,27 @@
     // for the documentation about the tasks.json format
 	// pdflatex --file-line-error -shell-escape main
     "version": "0.1.0",
-    "command": "pdflatex",
+    "command": "cmd",
     "isShellCommand": true,
-    "args": ["--file-line-error", "-shell-escape", "main"],
-    "showOutput": "always"
+    "showOutput": "silent",
+    "args": [
+        "/c"
+    ],
+    "tasks": [
+        {
+            "taskName": "pdflatex",
+            "suppressTaskName": true,
+			"args": ["pdflatex", "--file-line-error", "-shell-escape", "main"],
+            "showOutput": "always",
+			"isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "biber",
+            "suppressTaskName": true,
+            "args" : ["biber", "main"],
+            "showOutput": "always",
+            "problemMatcher": "$msCompile"
+        }
+    ]
 }

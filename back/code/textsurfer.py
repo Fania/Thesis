@@ -167,7 +167,7 @@ def get_title(file):
         'l_02': 'Cyrano de Bergerac: A Voyage to the Moon',
         'l_03': 'Saint Luke: The Gospel',
         'l_04': 'Leon Bloy: Le Desespere',
-        'l_05': 'Samuel Taylor Coleridge: The Rime of the Ancient Mariner',
+        'l_05': 'Samuel Taylor Coleridge: The Rime of The Ancient Mariner',
         'l_06': 'Georges Darien: Le Voleur',
         'l_07': 'Marceline Desbordes-Valmore: Le Livre des Meres et des Enfants',
         'l_08': 'Max Elskamp: Enluminures',
