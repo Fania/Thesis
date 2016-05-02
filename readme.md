@@ -119,6 +119,7 @@ makeglossaries main
 - [ ] fix all citations (to autocite or not?)
 - [x] make main TOC only show sections, not subsections (chapter TOC will show all detail)
 - [ ] put link to TOC into footer?
+- [ ] add header and footer again?
 
 
 ## Hongji feedback
