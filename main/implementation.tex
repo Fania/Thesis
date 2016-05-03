@@ -32,9 +32,10 @@ a sad variety of woes I mourn.
 \todo{add stuff about website as a whole, dont go directly into nitty gritty}
 
 \begin{quotation}
-  ``Opposites are complementary''\\
-  ``It is the hallmark of any deep truth that its negation is also a deep truth''\\
-  ``Some subjects are so serious that one can only joke about them'' \sourceatright{Niels Bohr}
+  Opposites are complementary\\
+  It is the hallmark of any deep truth that its negation is also a deep truth\\
+  Some subjects are so serious that one can only joke about them
+  \sourceatright{Niels Bohr}
 \end{quotation}
 
 \todo{run code on laptop and get snippets of all variable contents, e.g.\ faustroll, froll\_dict, \ldots}
@@ -85,7 +86,7 @@ From the homepage users can choose between text, image and video search. Then th
 
 \section{Corpus}
 
-Instead of crawling the Internet the present tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of ``equivalent books'' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{``In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.''\parencite[p.12]{Jarry1996}}. In principle the \hypertarget{corpus}{corpus}\label{ref:corpus} is just a folder within the tool's directory structure which contains the following files:
+Instead of crawling the Internet the present tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{`In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.'\parencite[p.12]{Jarry1996}}. In principle the \hypertarget{corpus}{corpus}\label{ref:corpus} is just a folder within the tool's directory structure which contains the following files:
 
 \begin{enumerate}[start=0]
 \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
@@ -118,7 +119,7 @@ Instead of crawling the Internet the present tool uses a local collection of tex
 \item Jules Verne: \emph{A Journey to the Centre of the Earth}
 \end{enumerate}
 
-The original list as it appears in ``Faustroll'' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. ``For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.'' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. ``Private and research study purposes'', so for the purposes of this project copyright should not apply.} in their original languages.
+The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. `For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. `Private and research study purposes', so for the purposes of this project copyright should not apply.} in their original languages.
 
 % \begin{enumerate}
 % \item BAUDELAIRE, a volume of E.A. POE translations.
@@ -257,7 +258,7 @@ Image and Video search do not use all three algorithms --- where relevant this i
 
 \subsection{Clinamen}
 
-The clinamen is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' \parencite{Boek2002}.
+The clinamen is the unpredictable swerve that Bök calls `the smallest possible aberration that can make the greatest possible difference' \parencite{Boek2002}.
 
 In simple terms, the clinamen algorithm works in two steps:
 \begin{enumerate}
@@ -487,7 +488,7 @@ def transent(sent):
 
 The image and video search both rely on various \gls{api} calls to produce results. Currently used are Microsoft Translate, Bing Image Search and YouTube.
 
-A \acrshort{rest}ful \gls{api} allows browsers (``clients'') to communicate with a web server via \acrshort{http} methods such as \gls{get} and \gls{post}. The idea is that a given service, like the Microsoft Bing search \gls{api}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
+A \acrshort{rest}ful \gls{api} allows browsers (`clients') to communicate with a web server via \acrshort{http} methods such as \gls{get} and \gls{post}. The idea is that a given service, like the Microsoft Bing search \gls{api}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
 
 \begin{enumerate}
   \item Construct the \gls{url} (see, source~\ref{code:getBing} lines 5,6,7 and 11)
@@ -567,7 +568,7 @@ Bing will then send back the response in \gls{json} format. One entry of the lis
 
 Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and \gls{html} (with \gls{css} stylesheets and some JavaScript).
 
-``the user should be able to choose the techniques they use'' \autocite{Hendler2011}
+`the user should be able to choose the techniques they use' \autocite{Hendler2011}
 
 
 \begin{figure}[htb] % (here, top, bottom, page)
@@ -646,9 +647,9 @@ The image and video results pages work the same way. They both have two display 
 
 \begin{listing}[h!]
   \begin{minted}{html+jinja}
-    <div class="subtab_content" id="q_tab">
-      <p class="w3-center">
-        <a class="emailbutton w3-btn w3-blue-grey" href="#" onclick="return getContent(this)">
+    <div class=``subtab_content'' id=``q_tab''>
+      <p class=``w3-center''>
+        <a class=``emailbutton w3-btn w3-blue-grey'' href=``#'' onclick=``return getContent(this)''>
           Email this poem!
         </a>
       </p>

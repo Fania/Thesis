@@ -68,7 +68,7 @@
 
 \usepackage[main=UKenglish,french]{babel}
 \usepackage[UKenglish]{isodate}
-\usepackage{csquotes}
+\usepackage[english=british]{csquotes}
 
 
 % FONTS

@@ -46,7 +46,7 @@ Knowledge needed to understand project:
 \section{Information Retrieval}
 
 \begin{quotation}
-  ``Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest.'' \sourceatright{\autocite{Baeza-Yates2011}}
+  Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \sourceatright{\autocite{Baeza-Yates2011}}
 \end{quotation}
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure~\ref{fig:SEA}.
@@ -183,7 +183,7 @@ From the users' point of view the search process can be broken down into four ac
   \item [Results evaluation] compare against \gls{in}.
 \end{description}
 
-This model poses problems when we consider a situation where an \gls{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \autocite{Marchionini1988} and they laid out a framework with the following main elements.
+This model poses problems when we consider a situation where an \gls{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that `the setting within which information-seeking takes place constrains the search process' \autocite{Marchionini1988} and they laid out a framework with the following main elements.
 
 \begin{itemize}
   \item Setting (the context of the search and external factors such as time, cost)
@@ -200,10 +200,10 @@ Current web search engines are tailored for information lookup. They do really w
 When it comes to exploratory search though, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploring \autocite{Marchionini2006}.
 
 \begin{quotation}
-  ``Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing.'' \sourceatright{\autocite{Marchionini2006}}
+  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
 \end{quotation}
 
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \autocite{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003}.
+De Vries called this form of browsing an `enlargement of the problem space', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \autocite{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the `territory of structural possibilities' and exploration of that space `exploratory creativity' \autocite{Boden2003}.
 
 All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
@@ -388,9 +388,9 @@ The HITS algorithm also works on the links between pages. It was first described
 \end{equation}
 % \myequations{HITS}
 
-Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \autocite{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ``hub'' pages are predefined.
+Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \autocite{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
 
-Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \autocite{DeBra1994, DeBra1994a, DeBra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ``ranking'' is done dynamically at query time.
+Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \autocite{DeBra1994, DeBra1994a, DeBra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
 
 There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \autocite{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
 
@@ -424,7 +424,7 @@ Since a single query for a popular word can results in  millions of retrieved do
 
 Different retrieval models exist including the Boolean and the Vector model. Other methods exist to make search results more accurate, including relevance feedback and query expansion.
 
-Search quality is generally measured using the metrics of precision and recall but for Web search precision is more important and usually a metric called ``precision at n'' is used for measurements.
+Search quality is generally measured using the metrics of precision and recall but for Web search precision is more important and usually a metric called `precision at n' is used for measurements.
 
 Challenges are the size of the World Wide Web and ambiguous, unstructured nature of Web pages among others.
 
@@ -673,7 +673,7 @@ $N_c$ is the frequency of frequency $c$.
 [3] page 234…
 
 \begin{quote}
-  (Wikipedia): ``A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be `independent feature model'.''
+  (Wikipedia): A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be ``independent feature model''.
 \end{quote}
 
 
@@ -772,7 +772,7 @@ A named entity can be anything that can be referred to by a proper name, such as
 Example (first sentence in Faustroll):
 
 \begin{quote}
-  ``In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough.''
+  In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough.
 \end{quote}
 
 \begin{quote}
@@ -795,7 +795,7 @@ Wikipedia:
   \item [Adverb]: any qualifier of an adjective, verb, or other adverb
   \item [Preposition]: any establisher of relation and syntactic context
   \item [Conjunction]: any syntactic connector
-  \item [Interjection]: any emotional greeting (or ``exclamation'')
+  \item [Interjection]: any emotional greeting (or `exclamation')
 \end{description}
 
 Building a Large Annotated Corpus of English \autocite{Marcus1993}
@@ -848,7 +848,7 @@ Parsing is the process of analysing a sentence and assigning a structure to it. 
 
 \subsection*{Grammar}
 
-A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG.\@ Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases ``the book'' and ``a book'' only. The two parse trees would then look like this:
+A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG.\@ Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. The two parse trees would then look like this:
 
 \begin{figure}[htb]
   \centering

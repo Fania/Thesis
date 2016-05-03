@@ -23,6 +23,9 @@ makeglossaries main
 
 (Works both on Mac and Win)
 
+Definition
+: worndank aosfj o
+
 
 ## TODO
 
@@ -90,7 +93,7 @@ makeglossaries main
 - [ ] Flowchart of website prototype workflow from query to results
 - [x] Put inspiration into lit review? Queneau and library of faustroll etc
 - [ ] Explain why I only use the first occurance
-- [ ] PEP20
+- [x] PEP20
 - [ ] AVOID: so, in principle,
 - [ ] double check line numbers in code
 - [ ] Rhyming pattern for future work
