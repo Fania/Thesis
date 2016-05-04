@@ -177,6 +177,8 @@ gource -w -800x600 --key --disable-bloom --hide filenames --title "Fania's PhD" 
 
 ## Errors
 
+http://www.cs.utexas.edu/~witchel/errorclasses.html
+
 When LaTeX finds an error like this, it displays the error message and pauses. You must type one of the following letters to continue:
 
 **x**	 Stop and exit
