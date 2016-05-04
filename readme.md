@@ -23,13 +23,14 @@ makeglossaries main
 
 (Works both on Mac and Win)
 
-Definition
-: worndank aosfj o
+
+## To add a word to spell check ignore
+```alt + .'''
 
 
 ## TODO
 
-- [x] Linepsacing
+- [x] Linespacing
 - [ ] Header and Footer style ?
 - [ ] Title, abstract design spacing
 - [ ] Finish style
