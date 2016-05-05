@@ -103,6 +103,14 @@
 % \renewcommand*\familydefault{\sfdefault}
 
 
+
+% EMPHASIS
+% bold and italic
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\bfseries\em}
+
+
+
 % TITLE STYLES
 
 % \usepackage{titlesec}
@@ -782,7 +790,6 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \newglossarystyle{mylong}{%
   \setglossarystyle{long}%
   \renewenvironment{theglossary}%
-     % {\begin{longtable}[l]{@{}p{\dimexpr 2cm-\tabcolsep}p{0.8\hsize}}}% <-- change the value here
      {\begin{longtable}[l]{>{\bfseries}p{\dimexpr 2cm-\tabcolsep}l}}% <-- change the value here
      {\end{longtable}}%
  }
