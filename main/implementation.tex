@@ -30,12 +30,13 @@ a sad variety of woes I mourn.
 \spirals
 
 \todo{add stuff about website as a whole, dont go directly into nitty gritty}
+\todo{add example code snippets from shakespeare}
 
 \begin{draft}
   \begin{itemize}
     \item List all small features
     \item note each one, explain why I did it, explain tech used
-    \item User interface design (UIX)
+    \item User interface design (UI Design) UX (User Experience)
     \item subliminal cues
     \item git history (gut history)
     \item software was designed to be scalable (eg shakespeare)
@@ -56,7 +57,9 @@ a sad variety of woes I mourn.
 \todo{give examples of different results if using different base documents!}
 \todo{add section about which pieces of code are not written by me}
 
-The website \url{http://pata.physics.wtf} showcases the current proof-of-concept algorithms. This chapter gives an overview of the structure of the website and the development process.
+The website \url{http://pata.physics.wtf} showcases the current algorithms. This chapter gives an overview of the structure of the website and the development process.
+
+\todo{NO. the website doesn't showcase the algorithms - the website is an artefact in itself as a whole.....!!!!}
 
 Typically, software development is divided into so-called front and back ends. The frontend includes web design and web development and is meant to provide an interface for the end-user to communicate with the backend which involves a server, an application and a database (although this is not completely true in this project).
 
@@ -105,7 +108,9 @@ The folder structure is as follows:
 From the homepage users can choose between text, image and video search. Then they can enter a query --- in the case of text search this should be single words only, image and video search support multi word queries.
 
 
-\section{Corpus}
+\section{Setup}
+
+\subsection{Corpus}
 
 Instead of crawling the Internet the present tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{`In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.'\parencite[p.12]{Jarry1996}}. In principle the \hypertarget{corpus}{corpus}\label{ref:corpus} is just a folder within the tool's directory structure which contains the following files:
 
@@ -141,6 +146,8 @@ Instead of crawling the Internet the present tool uses a local collection of tex
 \end{enumerate}
 
 The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. `For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. `Private and research study purposes', so for the purposes of this project copyright should not apply.} in their original languages.
+
+\todo{add shakespeare}
 
 % \begin{enumerate}
 % \item BAUDELAIRE, a volume of E.A. POE translations.
@@ -200,7 +207,7 @@ The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustl
 % \end{figure}
 
 
-\section{Setup}
+\subsection{Startup}
 
 When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
 
