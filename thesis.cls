@@ -595,11 +595,52 @@ breaklines=true
 \usepackage{tikz}
 \usetikzlibrary{quotes,arrows,angles,decorations,
 fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
+\usepackage[edges]{forest}
 % pathmorphing
 \usepackage{qtree}
 \usepackage{mathtools}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+
+
+\forestset{
+  folders/.style={
+    for tree={
+      parent anchor=south west,
+      child anchor=west,
+      anchor=mid west,
+      inner ysep=0.8pt,
+		  s sep-=0.7em, %reduce vertical spacing
+	    l sep=1em, %increase horizontal spacing
+      % inner ysep=1pt,
+		  % s sep=0.1em, %reduce vertical spacing
+	    % l sep=1em, %increase horizontal spacing
+      grow'=0,
+      align=left,
+      edge path={
+        \noexpand\path [draw, \forestoption{edge}] (!u.parent anchor) ++(1em,0) |- (.child anchor)\forestoption{edge label};
+      },
+      font=\sffamily,
+      if n children=0{}{
+        delay={
+          prepend={[,phantom, calign with current]}
+        }
+      },
+      fit=band,
+      before computing xy={
+        l=2em
+      }
+    },
+  },
+	folder/.style={
+	   %draw=black,
+		 content=\textbf{##1},
+     prepend={[,phantom, calign with current]},
+		 %inner sep=0,
+		 %edge=dotted,
+		 %s sep=0.6em, %reduce vertical spacing
+	 },
+}
 
 % \newcommand{\speechthis}[2]{
 %   \tikz[remember picture,baseline]{\node[anchor=base,inner sep=0,outer sep=0]%
