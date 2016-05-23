@@ -63,14 +63,13 @@ The website \url{http://pata.physics.wtf} showcases the current algorithms. This
 
 Typically, software development is divided into so-called front and back ends. The frontend includes web design and web development and is meant to provide an interface for the end-user to communicate with the backend which involves a server, an application and a database (although this is not completely true in this project).
 
-The frontend design is created using the \textbf{w3.css} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{Javascript} (e.g. scramble letters, randomise poem, send email and tabbed content).\footnote{frontend links: \url{http://www.w3schools.com/w3css/}, \url{https://www.javascript.com/}}
+The frontend design is created using the \textbf{w3.css} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).\footnote{frontend links: \url{http://www.w3schools.com/w3css/}, \url{https://www.javascript.com/}}
 
 The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acrshort{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
 
 The folder structure is as follows:
 
-\begin{forest}
-	folders,
+\begin{forest} folders,
   [pata.physics.wtf, folder
     [app, folder
       [static, folder
@@ -118,20 +117,111 @@ The folder structure is as follows:
   ]
 \end{forest}
 
+\begin{forest} folders, 
+	[faustroll, folder
+		[00.faustroll.txt]
+		[01.poe1.txt]
+		[01.poe2.txt]
+		[01.poe3.txt]
+		[01.poe4.txt]
+		[01.poe5.txt]
+		[02.bergerac.txt]
+		[03.gospel.txt]
+		[04.bloy\_french.txt]
+		[05.coleridge.txt]
+		[06.darien\_french.txt]
+		[07.desbordes\_french.txt]
+		[08.elskamp\_french.txt]
+		[09.florian\_french.txt]
+		[10.arabiannights.txt]
+		[11.grabbe\_german.txt]
+		[12.kahn\_french.txt]
+		[13.lautreamont\_french.txt]
+		[14.maeterlinck.txt]
+		[15.mallarme\_french.txt]
+		[16.mendes.txt]
+		[17.odyssey.txt]
+		[19.rabelais.txt]
+		[22.rimbaud\_french.txt]
+		[23.schwob\_german.txt]
+		[24.ubu\_french.txt]
+		[25.verlaine.txt]
+		[26.verhaeren.txt]
+		[27.verne.txt]
+	]
+\end{forest}
 
-- app\\
---- static\\
------ css\\
------ images\\
------ corpus\\
---- templates\\
-- .git\\
-- dev.py\\
-- guni.py\\
-- live.py\\
-- .gitignore\\
-- README.md\\
-- TODO.txt
+\begin{forest} folders,
+	[shakespeare, folder
+		[00.sonnets.txt]
+		[01.alls\_well.txt]
+		[02.antony\_cleopatra.txt]
+		[03.as\_you\_like\_it.txt]
+		[04.comedy\_of\_errors.txt]
+		[05.coriolanus.txt]
+		[06.cymbeline.txt]
+		[07.hamlet.txt]
+		[08.king\_henry\_IV\_1.txt]
+		[09.king\_henry\_IV\_2.txt]
+		[10.king\_henry\_V.txt]
+		[11.king\_henry\_VI\_1.txt]
+		[12.king\_henry\_VI\_2.txt]
+		[13.king\_henry\_VI\_3.txt]
+		[14.king\_henry\_VIII.txt]
+		[15.king\_john.txt]
+		[16.julius\_caesar.txt]
+		[17.king\_lear.txt]
+		[18.loves\_labours\_lost.txt]
+		[19.macbeth.txt]
+		[20.measure\_for\_measure.txt]
+		[21.merchant\_of\_venice.txt]
+		[22.merry\_wives\_of\_windsor.txt]
+		[23.midsummer\_nights\_dream.txt]
+		[24.much\_ado\_about\_nothing.txt]
+		[25.othello.txt]
+		[26.king\_richard\_II.txt]
+		[27.king\_richard\_III.txt]
+		[28.romeo\_and\_juliet.txt]
+		[29.taming\_of\_the\_shrew.txt]
+		[30.tempest.txt]
+		[31.timon\_of\_athens.txt]
+		[32.titus\_andronicus.txt]
+		[33.troilus\_and\_cressida.txt]
+		[34.twelfth\_night.txt]
+		[35.two\_gentlemen\_of\_verona.txt]
+		[36.winters\_tale.txt]
+		[37.lovers\_complaint.txt]
+	]
+\end{forest}
+
+\begin{forest} folders,
+	[images, folder
+		%[Bing_logo.svg]
+		[dmu.png]
+		[DocteurFaustroll.jpg]
+		[favicon.ico]
+		%[flickr.png]
+		%[freesound_logo_large.png]
+		%[freesound_logo_small.png]
+		[JaneAvril.png]
+		%[library.png]
+		%[loading.gif]
+		[loadspiral.gif]
+		%[mini_spiral_white.svg]
+		%[MSTIcon24.png]
+		%[MSTLogo300.png]
+		[polyglot-404.png]
+		[RevueBlanche.jpg]
+		[SaintCado.jpg]
+		[spiral.png]
+		%[spiral.svg]
+		%[youtube_logo_onecolor_againstblack.png]
+		%[youtube_logo_onecolor_againstwhite.png]
+		%[youtube_logo_standard_againstblack.png]
+		%[youtube_logo_standard_againstwhite.png]
+	]
+\end{forest}
+
 
 \begin{figure}[htb] % (here, top, bottom, page)
   \centering
@@ -153,7 +243,7 @@ The folder structure is as follows:
   \end{enumerate}
 \end{fcom}
 
-\todo{add audio? update this section depending on what i do}
+\todo{add audio? update this section depending on what I do}
 
 From the homepage users can choose between text, image and video search. Then they can enter a query --- in the case of text search this should be single words only, image and video search support multi word queries.
 
@@ -195,39 +285,53 @@ Instead of crawling the Internet the present tool uses a local collection of tex
 \item Jules Verne: \emph{A Journey to the Centre of the Earth}
 \end{enumerate}
 
+\todo{check spelling of all names}
+
 The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. `For literary, dramatic, musical or artistic works 70 years from the end of the calendar year in which the last remaining author of the work dies.' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. `Private and research study purposes', so for the purposes of this project copyright should not apply.} in their original languages.
 
 \todo{add shakespeare}
 
-% \begin{enumerate}
-% \item BAUDELAIRE, a volume of E.A. POE translations.
-% \item BERGERAC, \emph{Works}, volume II, containing the \emph{Histrory of the States and Empires of the Sun}, and the \emph{History of Birds}.
-% \item \emph{The Gospel according to} SAINT LUKE, in Greek.
-% \item BLOY, \emph{The Ungrateful Beggar}.
-% \item COLERIDGE, \emph{The Rime of the ancient Mariner}.
-% \item DARIEN, \emph{The Thief}.
-% \item DESBORDES-VALMORE, \emph{The Oath of the Little Men}.
-% \item ELSKAMP, \emph{Illuminated Designs}.
-% \item An odd volume of the \emph{Plays} of FLORIAN\@.
-% \item An odd volume of \emph{The Thousand and One Nights}, in the GALLAND translation.
-% \item GRABBE, \emph{Scherz, Satire, Ironie und tiefere Bedeutung}, comedy in three acts.
-% \item KAHN, \emph{The Tale of Gold and of Silence}.
-% \item LAUTREAMONT, \emph{The Lays of Maldoror}.
-% \item MAETERLINCK, \emph{Aglavaine and Selysette}.
-% \item MALLARME, \emph{Verse and Prose}.
-% \item MENDES, \emph{Gog}.
-% \item \emph{The Odyssey}, Teubner's edition.
-% \item PELADAN, \emph{Babylon}.
-% \item RABELAIS\@.
-% \item JEAN DE CHILRA, \emph{The Sexual Hour}.
-% \item HENRI DE REGNIER, \emph{The Jasper Cane}.
-% \item RIMBAUD, \emph{The Illuminations}.
-% \item SCHWOB, \emph{The Childrens' Crusade}.
-% \item Ubu Roi.
-% \item VERLAINE, \emph{Wisdom}.
-% \item VERHAEREN, \emph{The Hallucinated Landscapes}.
-% \item VERNE, \emph{Voyage to the Center of the Earth}.
-% \end{enumerate}
+\begin{enumerate}
+  \item The Sonnets
+  \item Alls Well That Ends Well
+  \item The Tragedy of Antony and Cleopatra
+  \item As You Like It
+  \item The Comedy of Errors
+  \item The Tragedy of Coriolanus
+  \item Cymbeline
+  \item The Tragedy of Hamlet, Prince of Denmark
+  \item The First Part of King Henry the Fourth
+  \item The Second Part of King Henry the Fourth
+  \item The Life of Kind Henry the Fifth
+  \item The First Part of Henry the Sixth
+  \item The Second Part of Henry the Sixth
+  \item The Third Part of Henry the Sixth
+  \item King Henry the Eigth
+  \item King John
+  \item The Tragedy of Julius Caesar
+  \item The Tragedy of King Lear
+  \item Love's Labour's Lost
+  \item The Tragedy of Macbeth
+  \item Measure for Measure
+  \item The Merchant of Venice
+  \item The Merry Wives of Windsor
+  \item A Midsummer Night's Dream
+  \item Much Ado About Nothing
+  \item The Tragedy of Othello, Moor of Venice
+  \item King Richard the Second
+  \item Kind Richard III
+  \item The Tragedy of Romeo and Juliet
+  \item The Taming of the Shrew
+  \item The Tempest
+  \item The Life of Timon of Athens
+  \item The Tragedy of Titus Andronicus
+  \item The History of Troilus and Cressida
+  \item Twelfth Night or What You Will
+  \item The Two Gentlemen of Verona
+  \item The Winter's Tale
+  \item A Lover's Complaint
+\end{enumerate}
+
 
 % \begin{figure}
 % \centering

@@ -634,7 +634,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
   },
 	folder/.style={
 	   %draw=black,
-		 content=\textbf{##1},
+		 content=\textbf{\rmfamily\large##1},
      prepend={[,phantom, calign with current]},
 		 %inner sep=0,
 		 %edge=dotted,
