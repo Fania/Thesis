@@ -69,158 +69,179 @@ The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}.
 
 The folder structure is as follows:
 
-\begin{forest} folders,
-  [pata.physics.wtf, folder
-    [app, folder
-      [static, folder
-        [corpus, folder
-          [faustroll, folder]
-          [shakespeare, folder]
-          [quotes.txt]
+\begin{figure}
+\centering
+\begin{minipage}{.45\linewidth}
+  \begin{forest} folders,
+    [pata.physics.wtf, folder
+      [app, folder
+        [static, folder
+          [corpus, folder
+            [faustroll, folder]
+            [shakespeare, folder]
+            [quotes.txt]
+          ]
+          [css, folder
+            [dw\_glidescroll.js]
+            [fania.css]
+            [fania.js]
+            [jquery-1.11.1.min.js]
+            [poemscroll.js]
+            [scramble.js]
+            [tab\_handler.js]
+            [w3.css]
+          ]
+          [images, folder]
         ]
-        [css, folder
-          [dw\_glidescroll.js]
-          [fania.css]
-          [fania.js]
-          [jquery-1.11.1.min.js]
-          [poemscroll.js]
-          [scramble.js]
-          [tab\_handler.js]
-          [w3.css]
+        [templates, folder
+          [base.html]
+          [header.html]
+          [index.html]
+          [errors.html]
+          [about.html]
+          [text.html]
+          [textresults.html]
+          [images.html]
+          [imageresults.html]
+          [videos.html]
+          [videoresults.html]
         ]
-        [images, folder]
+        [\_\_init\_\_.py]
+        [views.py]
+        [textsurfer.py]
+        [textviews.py]
+        [imagesurfer.py]
+        [imageviews.py]
+        [videosurfer.py]
+        [videoviews.py]
       ]
-      [templates, folder
-        [base.html]
-        [header.html]
-        [index.html]
-        [errors.html]
-        [about.html]
-        [text.html]
-        [textresults.html]
-        [images.html]
-        [imageresults.html]
-        [videos.html]
-        [videoresults.html]
-      ]
-      [\_\_init\_\_.py]
-      [views.py]
-      [textsurfer.py]
-      [textviews.py]
-      [imagesurfer.py]
-      [imageviews.py]
-      [videosurfer.py]
-      [videoviews.py]
+      [guni.py]
+      [readme.md]
     ]
-    [guni.py]
-    [readme.md]
-  ]
-\end{forest}
+  \end{forest}
+  \caption[projectdir]{Project directory}
+\label{dir}
+\end{minipage}
+\hspace{.02\linewidth}
+\begin{minipage}{.45\linewidth}
+  \begin{forest} folders,
+    [images, folder
+      %[Bing_logo.svg]
+      [dmu.png]
+      [DocteurFaustroll.jpg]
+      [favicon.ico]
+      %[flickr.png]
+      %[freesound_logo_large.png]
+      %[freesound_logo_small.png]
+      [JaneAvril.png]
+      %[library.png]
+      %[loading.gif]
+      [loadspiral.gif]
+      %[mini_spiral_white.svg]
+      %[MSTIcon24.png]
+      %[MSTLogo300.png]
+      [polyglot-404.png]
+      [RevueBlanche.jpg]
+      [SaintCado.jpg]
+      [spiral.png]
+      %[spiral.svg]
+      %[youtube_logo_onecolor_againstblack.png]
+      %[youtube_logo_onecolor_againstwhite.png]
+      %[youtube_logo_standard_againstblack.png]
+      %[youtube_logo_standard_againstwhite.png]
+    ]
+  \end{forest}
+  \caption[projectimages]{Project images}
+\end{minipage}
+\end{figure}
 
-\begin{forest} folders, 
-	[faustroll, folder
-		[00.faustroll.txt]
-		[01.poe1.txt]
-		[01.poe2.txt]
-		[01.poe3.txt]
-		[01.poe4.txt]
-		[01.poe5.txt]
-		[02.bergerac.txt]
-		[03.gospel.txt]
-		[04.bloy\_french.txt]
-		[05.coleridge.txt]
-		[06.darien\_french.txt]
-		[07.desbordes\_french.txt]
-		[08.elskamp\_french.txt]
-		[09.florian\_french.txt]
-		[10.arabiannights.txt]
-		[11.grabbe\_german.txt]
-		[12.kahn\_french.txt]
-		[13.lautreamont\_french.txt]
-		[14.maeterlinck.txt]
-		[15.mallarme\_french.txt]
-		[16.mendes.txt]
-		[17.odyssey.txt]
-		[19.rabelais.txt]
-		[22.rimbaud\_french.txt]
-		[23.schwob\_german.txt]
-		[24.ubu\_french.txt]
-		[25.verlaine.txt]
-		[26.verhaeren.txt]
-		[27.verne.txt]
-	]
-\end{forest}
 
-\begin{forest} folders,
-	[shakespeare, folder
-		[00.sonnets.txt]
-		[01.alls\_well.txt]
-		[02.antony\_cleopatra.txt]
-		[03.as\_you\_like\_it.txt]
-		[04.comedy\_of\_errors.txt]
-		[05.coriolanus.txt]
-		[06.cymbeline.txt]
-		[07.hamlet.txt]
-		[08.king\_henry\_IV\_1.txt]
-		[09.king\_henry\_IV\_2.txt]
-		[10.king\_henry\_V.txt]
-		[11.king\_henry\_VI\_1.txt]
-		[12.king\_henry\_VI\_2.txt]
-		[13.king\_henry\_VI\_3.txt]
-		[14.king\_henry\_VIII.txt]
-		[15.king\_john.txt]
-		[16.julius\_caesar.txt]
-		[17.king\_lear.txt]
-		[18.loves\_labours\_lost.txt]
-		[19.macbeth.txt]
-		[20.measure\_for\_measure.txt]
-		[21.merchant\_of\_venice.txt]
-		[22.merry\_wives\_of\_windsor.txt]
-		[23.midsummer\_nights\_dream.txt]
-		[24.much\_ado\_about\_nothing.txt]
-		[25.othello.txt]
-		[26.king\_richard\_II.txt]
-		[27.king\_richard\_III.txt]
-		[28.romeo\_and\_juliet.txt]
-		[29.taming\_of\_the\_shrew.txt]
-		[30.tempest.txt]
-		[31.timon\_of\_athens.txt]
-		[32.titus\_andronicus.txt]
-		[33.troilus\_and\_cressida.txt]
-		[34.twelfth\_night.txt]
-		[35.two\_gentlemen\_of\_verona.txt]
-		[36.winters\_tale.txt]
-		[37.lovers\_complaint.txt]
-	]
-\end{forest}
+\begin{figure}
+  \centering
+  \begin{minipage}{.45\linewidth}
+    \begin{forest} folders, 
+      [faustroll, folder
+        [00.faustroll.txt]
+        [01.poe1.txt]
+        [01.poe2.txt]
+        [01.poe3.txt]
+        [01.poe4.txt]
+        [01.poe5.txt]
+        [02.bergerac.txt]
+        [03.gospel.txt]
+        [04.bloy\_french.txt]
+        [05.coleridge.txt]
+        [06.darien\_french.txt]
+        [07.desbordes\_french.txt]
+        [08.elskamp\_french.txt]
+        [09.florian\_french.txt]
+        [10.arabiannights.txt]
+        [11.grabbe\_german.txt]
+        [12.kahn\_french.txt]
+        [13.lautreamont\_french.txt]
+        [14.maeterlinck.txt]
+        [15.mallarme\_french.txt]
+        [16.mendes.txt]
+        [17.odyssey.txt]
+        [19.rabelais.txt]
+        [22.rimbaud\_french.txt]
+        [23.schwob\_german.txt]
+        [24.ubu\_french.txt]
+        [25.verlaine.txt]
+        [26.verhaeren.txt]
+        [27.verne.txt]
+      ]
+    \end{forest}
+    \caption[corpusfaustroll]{Project corpus Faustroll}
+  \end{minipage}
+  \hspace{.02\linewidth}
+  \begin{minipage}{.45\linewidth}
+    \begin{forest} folders,
+      [shakespeare, folder
+        [00.sonnets.txt]
+        [01.alls\_well.txt]
+        [02.antony\_cleopatra.txt]
+        [03.as\_you\_like\_it.txt]
+        [04.comedy\_of\_errors.txt]
+        [05.coriolanus.txt]
+        [06.cymbeline.txt]
+        [07.hamlet.txt]
+        [08.king\_henry\_IV\_1.txt]
+        [09.king\_henry\_IV\_2.txt]
+        [10.king\_henry\_V.txt]
+        [11.king\_henry\_VI\_1.txt]
+        [12.king\_henry\_VI\_2.txt]
+        [13.king\_henry\_VI\_3.txt]
+        [14.king\_henry\_VIII.txt]
+        [15.king\_john.txt]
+        [16.julius\_caesar.txt]
+        [17.king\_lear.txt]
+        [18.loves\_labours\_lost.txt]
+        [19.macbeth.txt]
+        [20.measure\_for\_measure.txt]
+        [21.merchant\_of\_venice.txt]
+        [22.merry\_wives\_of\_windsor.txt]
+        [23.midsummer\_nights\_dream.txt]
+        [24.much\_ado\_about\_nothing.txt]
+        [25.othello.txt]
+        [26.king\_richard\_II.txt]
+        [27.king\_richard\_III.txt]
+        [28.romeo\_and\_juliet.txt]
+        [29.taming\_of\_the\_shrew.txt]
+        [30.tempest.txt]
+        [31.timon\_of\_athens.txt]
+        [32.titus\_andronicus.txt]
+        [33.troilus\_and\_cressida.txt]
+        [34.twelfth\_night.txt]
+        [35.two\_gentlemen\_of\_verona.txt]
+        [36.winters\_tale.txt]
+        [37.lovers\_complaint.txt]
+      ]
+    \end{forest}
+  \caption[projectcorpus]{Project corpus Shakespeare}
+\end{minipage}
+\end{figure}
 
-\begin{forest} folders,
-	[images, folder
-		%[Bing_logo.svg]
-		[dmu.png]
-		[DocteurFaustroll.jpg]
-		[favicon.ico]
-		%[flickr.png]
-		%[freesound_logo_large.png]
-		%[freesound_logo_small.png]
-		[JaneAvril.png]
-		%[library.png]
-		%[loading.gif]
-		[loadspiral.gif]
-		%[mini_spiral_white.svg]
-		%[MSTIcon24.png]
-		%[MSTLogo300.png]
-		[polyglot-404.png]
-		[RevueBlanche.jpg]
-		[SaintCado.jpg]
-		[spiral.png]
-		%[spiral.svg]
-		%[youtube_logo_onecolor_againstblack.png]
-		%[youtube_logo_onecolor_againstwhite.png]
-		%[youtube_logo_standard_againstblack.png]
-		%[youtube_logo_standard_againstwhite.png]
-	]
-\end{forest}
 
 
 \begin{figure}[htb] % (here, top, bottom, page)

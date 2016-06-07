@@ -125,6 +125,9 @@ makeglossaries main
 - [ ] put link to TOC into footer?
 - [ ] add header and footer again?
 - [ ] add "interludes" ? pages containing relevant quotes and sayings for the upcoming chapter? 
+- [ ] remove page num from parts in toc
+- [ ] make pre and postface fonts italic in toc
+- [ ] indent parts in toc
 
 
 ## Hongji feedback

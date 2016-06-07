@@ -252,8 +252,14 @@ breaklines=true
 \setlength{\cftfigurenumwidth}{2.8em}
 \setlength{\cfttablenumwidth}{2.8em}
 
+\cftpagenumbersoff{part}
+
+
 \setsecnumdepth{subsection}
 \maxtocdepth{section}
+
+% \renewcommand{\cftsubsecfont}{\itshape}
+
 
 % MEMOIR Division Level
 % \book -2
