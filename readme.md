@@ -97,7 +97,7 @@ makeglossaries main
 - [x] PEP20
 - [ ] AVOID: so, in principle,
 - [ ] double check line numbers in code
-- [ ] Rhyming pattern for future work
+- [x] Rhyming pattern for future work
 - [ ] Go over all table of contents figure captions
 - [x] glossary entries with back links to pages
 - [x] add line with three stars/spirals in middle to separate paragraphs
@@ -128,6 +128,7 @@ makeglossaries main
 - [ ] remove page num from parts in toc
 - [ ] make pre and postface fonts italic in toc
 - [ ] indent parts in toc
+- [ ] weird space after mini toc?
 
 
 ## Hongji feedback
