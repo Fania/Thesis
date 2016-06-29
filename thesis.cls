@@ -325,7 +325,7 @@ breaklines=true
   % \brule
   \vspace{1cm}
   \printcontents[chapters]{p}{1}{\maxtocdepth{subsection}}
-  \vspace{1cm}
+  \vspace{-3cm}
   % \brule
   }
 \makeatother

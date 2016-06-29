@@ -25,7 +25,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {10.1}{\ignorespaces Adding text files to the corpus library.}}{165}{listing.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.2}{\ignorespaces `setupcorpus' function to process the corpus and create the index.}}{166}{listing.10.2}
+\contentsline {listing}{\numberline {10.2}{\ignorespaces `setupcorpus' function to process the corpus and create the index.}}{165}{listing.10.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {10.3}{\ignorespaces Clinamen function}}{167}{listing.10.3}
 \defcounter {refsection}{0}\relax 
@@ -39,13 +39,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {10.8}{\ignorespaces Function to pataphysicalise image and video query terms.}}{172}{listing.10.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.9}{\ignorespaces Translation function.}}{173}{listing.10.9}
+\contentsline {listing}{\numberline {10.9}{\ignorespaces Translation function.}}{172}{listing.10.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.10}{\ignorespaces Using the Microsoft Bing API to retrieve images.}}{174}{listing.10.10}
+\contentsline {listing}{\numberline {10.10}{\ignorespaces Using the Microsoft Bing API to retrieve images.}}{173}{listing.10.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.11}{\ignorespaces Code for rendering Queneau style poems.}}{178}{listing.10.11}
+\contentsline {listing}{\numberline {10.11}{\ignorespaces Code for rendering Queneau style poems.}}{176}{listing.10.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.12}{\ignorespaces Code for randomising poems.}}{179}{listing.10.12}
+\contentsline {listing}{\numberline {10.12}{\ignorespaces Code for randomising poems.}}{178}{listing.10.12}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
