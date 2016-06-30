@@ -214,6 +214,17 @@
                {\unskip\unskip\endlist}
 
 
+% \newcommand*{\attr}[2][2em]{{%
+%   \unskip\nobreak\hfil\penalty50
+%   \hskip#1\hbox{}\nobreak\hfil\tiny{#2}
+%   \parfillskip\z@\finalhyphendemerits=0\par}}
+
+% \newcommand*{\sourceatright}[2][2em]{{%
+%   \unskip\nobreak\hfil\penalty50
+%   \hskip#1\hbox{}\nobreak\hfil{#2}
+%   \parfillskip\z@\finalhyphendemerits=0\par}}
+
+
 % MULTICOLUMN
 
 \usepackage{multicol, ragged2e}
@@ -339,6 +350,7 @@ breaklines=true
 % \setlist{nosep}
 \setlist{noitemsep}
 \setlist[description]{style=nextline}
+
 
 
 % TODONOTES

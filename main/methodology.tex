@@ -29,8 +29,17 @@ that I would try it on myself acting forthwith on this decision.
 \minicontents
 \spirals
 
+\todo{reflect any changes here to the introduction section...}
 
-The nature of this project spans across several disciplines. These are the Humanities (in specific: Linguistics, Arts, Literature), Computer Science and emerging crossover fields such as Cognitive Science and Digital Humanities.
+This project combines research in science, art and the humanities---making it transdisciplinary.
+
+\begin{description}
+  \item [Pataphysics]: Literature, Philosophy, Art
+  \item [Creativity]: Cognitive Science, \gls{ai}, \gls{dh}
+  \item [Computing]: \gls{ir}, \gls{nlp}, Web Development
+\end{description}
+
+\todo{insert diagram here, see onenote}
 
 Traditional methodologies in these disciplines are very subject specific and a project combining elements of each field is left mixing and matching suitable methods from them all.
 
@@ -38,18 +47,31 @@ In this chapter I will outline the reasons why none of the existing methodologie
 
 \todo{go over intro again when rest is written}
 
+As mentioned in the~\nameref{ch:introduction}\marginnote{§~\ref{s:intromethod}} the overall objectives of this project are to:
+
+\label{s:objectives}
+\begin{enumerate}
+  \item create pataphysical search algorithms,
+  \item create creative exploratory search tool demonstrating the algorithms,
+  \item create set of subjective parameters for defining creativity,
+  \item create objective framework for evaluating creativity.
+\end{enumerate}
+
+Research methods that support these tasks are needed and I will address these four points again at the end of this chapter\marginnote{§~\ref{s:mymeth}}.
+
 
 \section{Intradisciplinary}
 
 Different disciplines prefer different research methodologies. It makes sense that research in medicine, chemistry, literature or mathematics all use different methods. What could a mathematician achieve in a white laboratory coat and test tubes in his hand, and similarly, what could a chemist achieve with pen, paper and a calculator?
 
-Of the various disciplines that inform this research mentioned above the specific topics that are relevant are:
+Of the various disciplines that inform this research the specific subareas that are relevant are:
 
 \begin{itemize}
   \item Information Retrieval
   \item Web Development
   \item Poetry and Literature
   \item Philosophy
+  \item Human and Machine Creativity
   \item Creative Computing
   \item Computational Creativity
 \end{itemize}
@@ -57,37 +79,59 @@ Of the various disciplines that inform this research mentioned above the specifi
 
 \subsection{Computer Science}
 
-In their rather old but still insightful analysis of over 600 papers (published between 1995 and 1999) Ramesh et al \citeyear{Ramesh2004} have shown that---by far---the most common approach to research in computer science during this period was `formulative' with almost 79\% use (as opposed to `descriptive' with 10\% and `evaluative' with 11\%) in particular in regards to `processes, methods and algorithms' which was used by just over 50\% of researchers. Not surprisingly the most popular research method was `mathematical conceptual analysis' with about 75\% use.
+Half of this projects objectives are related to computer science therefore it is important to consider how research in this discipline is traditionally approached.
 
-Jose Nelson Amaral identified 5 main methodologies computer scientists typically use \citeyear{Amaral} as shown below.
+A framework for finding a suitable method was suggested by Holz et al \citeyear{Holz2006}. The following four steps form an iterative process. ``What do we want to achieve?'' e.g. find out what is happening, develop something that works, evaluate an existing system/technology, compare existing systems, change human behaviour. ``Where does the data come from?'' e.g. how to collect? (read, observe, ask, measure, experiment, model) and where to collect? (field, laboratory, conceptual). ``What do we do with the data?'', e.g. identify themes/patterns/quotes, calculate numbers, identify trends, express via multimedia, create frameworks/taxonomies. ``Have we achieved our goal?'' e.g. draw conclusions, evaluate results, identify limitations.
 
-\begin{itemize}
-  \item \textbf{Formal}: Proof, verification, correctness
-  \item \textbf{Experimental}: Testing, evaluation, question answering
-  \item \textbf{Build}: Proof of concept, prototype, artefact
-  \item \textbf{Process}: Understand and define processes
-  \item \textbf{Model}: Abstraction, simulations
-\end{itemize}
+Another option is to look at what computer science researchers have done historically. In a rather old but still insightful analysis of over 600 papers\footnote{While the paper itself was published in 2004, the body of work they studied was based on publicationsfrom between 1995 and 1999---this suggests that a lot of the more ``recent'' research around Web technologies is not included in this study.} Ramesh et al \citeyear{Ramesh2004} have shown that---by far---the most common approach to research in computer science during this period was `formulative' with almost 79\% use (as opposed to `descriptive' with 10\% and `evaluative' with 11\%) in particular in regards to `processes, methods and algorithms' which was used by just over 50\% of researchers. Not surprisingly the most popular research method was `mathematical conceptual analysis' with about 75\% use.
 
-Another group of researchers have proposed a model based on 4 key iterative steps \autocite{Holz2006}.
+Jose Nelson Amaral \citeyear{Amaral} classifies methodologies in computer science into five main categories as shown below.
+
+\textbf{Formal}: Proof, verification, correctness\\
+\textbf{Experimental}: Testing, evaluation, question answering\\
+\textbf{Build}: Proof of concept, prototype, artefact\\
+\textbf{Process}: Understand and define processes\\
+\textbf{Model}: Abstraction, simulations
+
+\spirals
+
+Based on \autocite{Holz2006}, here are this projects answers to the four questions posed in the research.
 
 \begin{description}
-  \item [What do we want to achieve?] Find out what is happening. Develop something that works. Evaluate an existing system/technology. Compare existing systems. Change human behaviour.
-  \item [Where does the data come from?] How to collect? (Read, observe, ask, measure, experiment, model) Where to collect? (Field, laboratory, conceptual)
-  \item [What do we do with the data?] Identify themes/patterns/quotes. Calculate numbers. Identify trends. Express via multimedia. Create frameworks/taxonomies.
-  \item [Have we achieved our goal?] Draw conclusions. Evaluate results. Identify limitations.
+  \item[What do we want to achieve?]~
+    - Understand human creativity and how this translates to machines.\\
+    - Understand the relationship of pataphysics and creativity.\\
+    - Understand how creativity is evaluated in humans and machines.\\
+    - Formulate suitable pataphysical concepts to be implemented as algorithms.\\ 
+    - Define algorithms.\\
+    - Implement prototype incorporating algorithms.\\
+    - Develop framework for interpreting and evaluating machine creativity.
+	\item[Where does the data come from?]~
+    - Read pataphysical literature and research.\\
+    - Collate existing research on creativity and evaluation.\\
+    - Design creative vision for prototype.\\
+    - Experiment with algorithms and implementation.\\
+	\item[What do we do with the data?]~
+    - Demonstrate algorithms in action.\\
+    - Create an artefact (prototype) that represents the underlying philosophy and research as a whole.\\
+    - Create evaluation framework based on theoretical research.
+  \item[Have we achieved our goal?]~
+    - Subjectively evaluate artefact.\\
+    - Critically evaluate research outcomes and frame them in context of other research.
 \end{description}
 
-These methodologies can be useful in many circumstances but they don't cater for creative arts research or more practice based research.
+Referring back to the objectives above\marginnote{§~\ref{s:objectives}}, objective 1 is to create new creative search algorithms. This is not supposed to happen on a purely abstract basis but in a practical fashion (\emph{experimental}), with a working implementation (\emph{build}) as proof of concept (see objective 2). While the algorithms need to be defined in formal terms (\emph{formal}), the goal here is not to create a theoretical proof of correctness (given the creative and rather subjective nature of the underlying philosophy this is virtually impossible) but a practical demonstration of the creative processes behind. Overall this would suggest an experimental approach with prototyping of an artefact. However rigorous testing is not needed given the creative nature of the algorithms. Objective 3 is to come up with a suitable definition of creativity (\emph{process}). This should be informed by existing research. Again, we are not interested in formulating this in mathematical terms and proofs but rather a more esoteric and systemic view. Because the definition needs to apply to humans and machines it needs to be precice enough. Objective 4 is then to create an overall theoretical framework (\emph{model}) for the evaluation of creativity in humans and machines.
 
-\begin{draft}
-  this is just an example of the methodologies used in CS. Why do they not suit my research fully?
-
-  what am i taking from these methodologies and what not?
-\end{draft}
+By now we have managed to cover every one of the major methodologies mentioned in \autocite{Amaral} but we are still lacking ways to address the subjective and creative nature of the project. Furthermore, the philosophical and artistic inspirations that inform the development of the artefact don't get enough of a voice in these methods. In computer science, implementations are generally seen as a proof of concepts or prototypes when really it should be seen as artefacts in the sense of artistic pieces of work. So, to really appreciate the scope of the practical element of this project we need to consider research in the Arts and Humanities too.
 
 
 \subsection{Arts and Humanities}
+
+
+
+\begin{quotation}
+  A hallmark of humanistic study is that research is approached differently than in the natural and social sciences, where data and hard evidence are required to draw conclusions. Because the human experience cannot be adequately captured by facts and figures alone, humanities research employs methods that are historical, interpretive and analytical in nature.\footnote{\url{http://shc.stanford.edu/how-humanities-research-conducted}}
+\end{quotation}
 
 \begin{draft}
   creative practice\\
@@ -101,6 +145,221 @@ These methodologies can be useful in many circumstances but they don't cater for
   justify same as above what i used and why and what not and why not...
 \end{draft}
 \todo{finish}
+
+Digital Humanities?
+
+\begin{draft}
+  Anne Burdick et al have written an authoritative manifesto for the field of \gls{dh} \citeyear{Burdick2012}. Computing has had a big impact on the humanities as a discipline so much so that \gls{dh} was born of the encounter between the two \autocite[p.3]{Burdick2012}. In essence, it is characterised by \textbf{collaboration, transdisciplinarity and an engagement with computing} \autocite[p.122]{Burdick2012} but it should not simply be reduced to doing the humanities digitally \autocite[p.101]{Burdick2012}. It spans across many traditional areas of research, such as literature, philosophy, history, art, music, design and of course computer science.
+
+  \begin{draft}
+    Transliteracy\footnote{Sue Thomas et al.\ define transliteracy as `the ability to read, write and interact across a range of platforms, tools and media from signing and orality through handwriting, print, TV, radio and film, to digital social networks.' \autocite{Thomas2007}} therefore is fundamental \autocite{Thomas2007};
+  \end{draft}
+
+  `The field of Digital Humanities may see the emergence of polymaths who can ``do it all''\,': who can research, write, shoot, edit, code, model, design, network, and dialogue with users. \autocite[p.15]{Burdick2012} \gls{dh} encompasses several core activities which on various levels depend on and support each other.
+
+  \begin{description}
+    \item [Design] Shape, scheme, inform, experience, position, narrate,
+              interpret, remap/reframe, reveal, deconstruct, reconstruct,
+              situate, critique
+    \item [Curation, analysis, editing, modelling] Digitise, classify, describe, metadata, organise, navigate
+    \item [Computation, processing] Disambiguate, encode, structure, procedure, index, automate, sort, search, calculate, match
+    \item [Networks, infrastructure] Cultural, institutional, technical, compatible, interoperable, flexible, mutable, extensible
+    \item [Versioning, prototyping, failures]	Iterate, experiment, take-risks, redefine, beta-test
+  \end{description}
+
+  \begin{draft}
+    IF THE STUDY OF ART OR HUMAN CREATIVITY FALLS WITHIN HUMANITIES RESEARCH, THEN COMP CREAT SHOULD FALL WITHIN DIGITAL HUMANITIES, RIGHT, AND USE THE TOOLS AND METHODS AVAILABLE.\@
+  \end{draft}
+
+  \subsubsection*{DESIGN}
+  The authors suggest that `for digital humanists, design is a creative practice harnessing cultural, social, economic, and technological constraints in order to bring systems and objects into the world.' \autocite[p.13]{Burdick2012}
+
+  In generative mode, these designers shape structural logics, rhetorical schemata, information hierarchies, experiential qualities, cultural positioning, and narrative strategies. When working analytically, their task is to visually interpret, remap or reframe, reveal patterns, deconstruct, reconstruct, situate, and critique. \autocite[p.12]{Burdick2012}
+
+  \subsubsection*{CURATION, ANALYSIS, EDITING, MODELING}
+  \begin{quote}
+    digital activity: digitization, classification, description and metadata, organization, and navigation. \autocite[p.17]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    Involving archives, collections, repositories, and other aggregations of materials, CURATION is the selection and organization of materials in an interpretive framework, argument, or exhibit. \autocite[p.17]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    The parsing of the cultural record in terms of questions of authenticity, origin, transmission, or production is one of the foundation stones of humanistic scholar- ship upon which all other interpretive work depends. But editing is also productive and generative, and it is the suite of rhetorical devices that make a work. Editing is the creative, imaginative activity of making, and as such, design can be also seen as a kind of editing \autocite[p.18]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    MODELING highlights the notion of content models—shapes of argument expressed in information structures and their design. \autocite[p.18]{Burdick2012}
+  \end{quote}
+
+  \subsubsection*{COMPUTATION, PROCESSING}
+  \begin{quote}
+    interpretation is rethought through the encounter with computational methods and [] computational methods are rethought through the encounter with humanistic modes of knowing. \autocite[p.103]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    Humanists have begun to use programming languages. But they have yet to create programming languages of their own: languages that can come to grips with, for example, such fundamental attributes of cultural communication and traditional objects of humanistic scrutiny as nuance, inflection, undertone, irony, and ambivalence. \autocite[p.103]{Burdick2012}
+  \end{quote}
+
+  \begin{figure}[htbp]
+    \centering
+      \includegraphics{images/dh01.png}
+    \caption[Digital Humanities]{Digital Humanities model}
+  \label{fig:Digital_Humanities}
+  \end{figure}
+
+  \subsubsection*{NETWORKS, INFRASTRUCTURE}
+  \begin{quote}
+    Designing and building digital projects depend on knowledge of these fundamentals and on a nuanced understanding of the net- worked environments in which the projects will develop and variously reside. \autocite[p.17]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    Digital work takes place in the real world, and humanists once accus- tomed to isolated or individualized modes of production must now grapple with complex partnerships and with insuring the long-term availability and viability of their scholarship \autocite[p.21]{Burdick2012}
+  \end{quote}
+
+  \subsubsection*{VERSIONING, PROTOTYPING, FAILURES}
+  \begin{quote}
+    one of the strongest attributes of the field is that the iterative versioning of digital projects fosters experimentation, risk-taking, redefinition, and sometime failure. \autocite[p.21]{Burdick2012}
+  \end{quote}
+
+  \begin{draft}
+    SOUNDS LIKE SOFTWARE ENGINEERING
+  \end{draft}
+
+  \begin{quote}
+    It is important that we do not short-circuit this experimental process in the rush to normalize practices, standardize methodologies, and define evaluative metrics. \autocite[p.21]{Burdick2012}
+  \end{quote}
+
+  \begin{draft}
+    argument for creative computing too
+  \end{draft}
+
+  \subsubsection*{Field map of digital humanities: emerging methods and genres}\autocite[p.29-60]{Burdick2012}
+
+  \begin{alltt}
+  •	enhanced critical curation
+  o	digital collections
+  o	multimedia critical editions
+  o	object-based argumentation
+  o	expanded publication
+  o	experiential and spatial
+  o	mixed physical and digital
+  •	augmented editions and fluid textuality
+  o	structured mark-up
+  o	natural language processing
+  o	relational rhetoric
+  o	textual analysis
+  o	variants and versions
+  o	mutability
+  •	scale: the law of large numbers
+  o	quantitative analysis
+  o	text-mining
+  o	machine reading
+  o	digital cultural record
+  o	algorithmic analysis
+  •	distant/close, macro/micro, surface/depth
+  o	large-scale patterns
+  o	fine-grained analysis
+  o	close reading
+  o	distant reading
+  o	differential geographies
+  •	cultural analytics, aggregation, and data-mining
+  o	parametrics
+  o	cultural mash-ups
+  o	computational processing
+  o	composite analysis
+  o	algorithm design
+  •	visualization and data design
+  o	data visualization
+  o	mapping
+  o	information design
+  o	simulation environments
+  o	spatial argument
+  o	modelling knowledge
+  o	visual interpretation
+  •	locative investigation and thick mapping
+  o	spatial humanities
+  o	digital cultural mapping
+  o	interconnected sites
+  o	experimental navigation
+  o	geographic information systems (GIS)
+  o	stacked data
+  •	the animated archive
+  o	user communities
+  o	permeable walls
+  o	active engagement
+  o	bottom-up curation
+  o	multiplied access
+  o	participatory content creation
+  •	distributed knowledge production and performative access
+  o	global networks
+  o	ambient data
+  o	collaborative authorship
+  o	interdisciplinary teams
+  o	use as performance
+  o	crowd-sourcing
+  •	humanities gaming
+  o	user engagement
+  o	rule-based play
+  o	rich interaction
+  o	virtual learning environments
+  o	immersion and simulation
+  o	narrative complexity
+  •	code, software, and platform studies
+  o	narrative structures
+  o	code as text
+  o	computational processes
+  o	software in a cultural context
+  o	encoding practices
+  •	database documentaries
+  o	variable experience
+  o	user-activated
+  o	multimedia prose
+  o	modular and combinatoric
+  o	multilinear
+  •	repurposable content and remix culture
+  o	participatory Web
+  o	read/write/rewrite
+  o	platform migration
+  o	sampling and collage
+  o	meta-medium
+  o	inter-textuality
+  •	pervasive infrastructure
+  o	extensible frameworks
+  o	heterogeneous data streams
+  o	polymorphous browsing
+  o	cloud computing
+  •	ubiquitous scholarship
+  o	augmented reality
+  o	web of things
+  o	pervasive surveillance and tracking
+  o	ubiquitous computing
+  o	deterritorialization of humanistic practice
+  \end{alltt}
+
+  \begin{draft}
+    quantifiable and repeatable phenomena versus complex dynamics of interpretation, cultural meanings, probabilistic modelling, interpretive mapping, subjective visualizations, and self-customizing navigation \autocite[p.103]{Burdick2012}
+  \end{draft}
+
+  \subsubsection*{TOOLS}
+  \begin{quote}
+    Building tools around core humanities concepts: subjectivity, ambiguity, contingency, observer-dependent variables in the production of knowledge: holds the promise of expanding current models of knowledge. As such, the next generation of digital experimenters could contribute to humanities theory by forging tools that quite literally embody humanities centred views regarding the world. \autocite[p.104]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    Tools are not just tools. They are cognitive interfaces that presuppose forms of mental and physical discipline and organization. By scripting an action, they produce and transmit knowledge, and, in turn, model a world. \autocite[p.105]{Burdick2012}
+  \end{quote}
+
+  \begin{quote}
+    For all its potential interest, a humanities-centered computational environment could well end up distancing humanistic work from the mainstream of digital society, either because of its specialized or speculative character, or because the values that inform its architecture are at odds with the needs of business for standardization, quantitative metrics, and disambiguation. \autocite[p.105]{Burdick2012}
+  \end{quote}
+
+  \begin{shaded}
+  Summary\\
+  •	Collaborative, Transdisciplinary and Computing
+  \end{shaded}
+\end{draft}
 
 
 \section{Transdisciplinary}
@@ -253,6 +512,30 @@ Figure~\ref{fig:tmpr}\marginnote{\faicon{object-group}~\ref{fig:tmpr}} shows the
 
 
 \section{My Research Approach}
+\label{s:mymeth}
+
+
+\begin{draft}
+
+  \begin{description}
+    \item [Epistemology]: Subjective, Exploratory, Experimental
+    \item [Methodology]: Practice-Based
+    \item [Methods]: 
+  \end{description}
+
+  The general process\marginnote{§~\ref{ch:implementation}} of my project was as follows.
+
+  \begin{enumerate}
+    \item Conduct extensive literature review into the various subjects involved,
+    \item develop pataphysical algorithms,
+    \item develop an evaluation framework,
+    \item design a system to demonstrate algorithms,
+    \item develop a website for the tool,
+    \item evaluate website using framework and redevelop as needed and
+    \item write up findings.
+  \end{enumerate}
+\end{draft}
+
 
 \todo{comp creat vs creat comp}
 \begin{draft}
