@@ -11,13 +11,14 @@
 
 
 ## Compile
+
 To compile manually via commandline:
 
 pdflatex --file-line-error -shell-escape main
 
 1. pdflatex main
 2. biber main
-makeglossaries main
+  makeglossaries main
 3. pdflatex main
 4. pdflatex main
 
@@ -25,6 +26,7 @@ makeglossaries main
 
 
 ## To add a word to spell check ignore
+
 ```alt + .'''
 
 
