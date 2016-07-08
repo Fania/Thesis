@@ -7,6 +7,11 @@
 - (Win) Tex Live
 
 
+## WORDCOUNT
+
+```texcount -inc main.tex > count.txt'''
+
+
 <!-- \colorbox{red!30}{text} -->
 
 
@@ -196,12 +201,6 @@ When LaTeX finds an error like this, it displays the error message and pauses. Y
 **r**	Run in non-stop mode
 
 To quiet an error of chktex add ```% chktex XX''' to the end of the relevant line.
-
-
-## WORDCOUNT
-
-```texcount -inc main.tex > count.txt'''
-
 
 
 ## ARTY BOLLOCKS
