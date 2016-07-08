@@ -29,60 +29,60 @@ I will pull down my barns.
 \minicontents
 \spirals
 
-FUTURE WORK!
-Alternatives
-GUI, Algorithms, Architecture
+Developing a software product never finishes. Especially with creative products, where the functional requirements are more fluid perhaps, it is always tempting to add, improve, replace bits. \todo{software refactoring}
+
+For the purpose of this doctoral project, the artefact (\url{pata.physics.wtf}) is a snapshot of a product in constant motion. The state of the code at the time of submission of this thesis is described in chapter~\ref{ch:implementation}\marginnote{§~\ref{ch:implementation}} and further elaborated on in the \nameref{ch:analysis} chapter\marginnote{§~\ref{ch:analysis}}.
+
+Here, in this chapter I will lay out some of the potential/likely further work for this project. This may continue on a private basis or in a more academic environment. I have grouped these ideas into three main categories: \emph{design}, \emph{code} and \emph{theory}.
 
 
 \section{Substructions}
 
+\todo{write these out all in one list and then group them as fit}
+
 \subsection{Design}
 
-\begin{itemize}
-  \item Make image/video spirals responsive
-  \item Make poems responsive
-  \item
-\end{itemize}
+\begin{description}
+  \item[Responsive spirals] Currently the image and video spirals are fixed size. This means that when the webpage is resized the spiral stays the same size and is left aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page.
+  \item[Scalable image sizes] At the moment images are retrieved at a given size through the various \gls{api} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \gls{html} code. This means that some of them look squished and pizelated.
+  \item[Square aspect ratio] Another issue is the aspect ratio of images and videos. For the spiral they need to be square. I currently achieve this by squishing them as opposed to cropping them or specifying an option in the \gls{api} calls to only retrieve square images.
+  \item[Responsive poems] A similar problem to the responsive spirals exists with the display of the Queneau poems. The random poems are centered on the page but the Queneau poems require a lot more formatting and styling to render them on the page and currently this is achieved my left aligning them and having a fixed `absolute' position on the page. Ideally this would also be centered as in the random poems. 
+  \item[Startup performance] The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch. This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
+  \item[Query speed] The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \gls{api}s such as Flickr and WordNet.
+  \item[Preprocessing corpora] At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text}. Newlines and whitespace formatting varies, as does language and quality of spelling. Generally, chapter headings, chapter numberings, etc are left untouched. The Shakespeare corpus contains poetry and plays for example. With the plays, scene information is kept, voice details are kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``...Athens and a wood near it ACT I...'' from \textit{A Midsummer Night's Dream} or this example: ``...Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge...'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance.
+  \item[Sentence fragments] Currently the way results sentences are retrieved for the text search is blah blah
+\end{description}
+
+\todo{contunie here}
 
 \subsection{Code}
-
-\begin{itemize}
-  \item Performance
-  \item Improve usage of APIs
-  \item NLP to texts in corpus
-\end{itemize}
-
 \subsection{Theory}
-
-\begin{itemize}
-  \item
-\end{itemize}
 
 
 \section{Additions}
 
 \subsection{Design}
 
-\begin{itemize}
+\begin{description}
   \item More random sentences
   \item
-\end{itemize}
+\end{description}
 
 \subsection{Code}
 
-\begin{itemize}
+\begin{description}
   \item More APIs
   \item Web search
   \item Audio search
   \item More algorithms
   \item Poetry Rhyming scheme
-\end{itemize}
+\end{description}
 
 \subsection{Theory}
 
-\begin{itemize}
+\begin{description}
   \item More testing
-\end{itemize}
+\end{description}
 
 
 \stopcontents[chapters]
