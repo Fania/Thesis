@@ -136,6 +136,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] make pre and postface fonts italic in toc
 - [ ] indent parts in toc
 - [ ] weird space after mini toc?
+- [ ] why do the spirals after the mini chapter tocs creep upwards slowly over time each chapter? at the beginning the distance is fine but later on it overlaps.???
 
 
 ## Hongji feedback

@@ -29,60 +29,92 @@ I will pull down my barns.
 \minicontents
 \spirals
 
+
 Developing a software product never finishes. Especially with creative products, where the functional requirements are more fluid perhaps, it is always tempting to add, improve, replace bits. \todo{software refactoring}
 
 For the purpose of this doctoral project, the artefact (\url{pata.physics.wtf}) is a snapshot of a product in constant motion. The state of the code at the time of submission of this thesis is described in chapter~\ref{ch:implementation}\marginnote{§~\ref{ch:implementation}} and further elaborated on in the \nameref{ch:analysis} chapter\marginnote{§~\ref{ch:analysis}}.
 
-Here, in this chapter I will lay out some of the potential/likely further work for this project. This may continue on a private basis or in a more academic environment. I have grouped these ideas into three main categories: \emph{design}, \emph{code} and \emph{theory}.
+Here, in this chapter I will lay out some of the potential/likely further work for this project. This may continue on a private basis or in a more academic environment. I have grouped these ideas into two main categories: \emph{technical} and \emph{theoretical}. 
 
 
-\section{Substructions}
+\section{Technical}
 
 \todo{write these out all in one list and then group them as fit}
 
-\subsection{Design}
 
-\begin{description}
-  \item[Responsive spirals] Currently the image and video spirals are fixed size. This means that when the webpage is resized the spiral stays the same size and is left aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page.
-  \item[Scalable image sizes] At the moment images are retrieved at a given size through the various \gls{api} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \gls{html} code. This means that some of them look squished and pizelated.
-  \item[Square aspect ratio] Another issue is the aspect ratio of images and videos. For the spiral they need to be square. I currently achieve this by squishing them as opposed to cropping them or specifying an option in the \gls{api} calls to only retrieve square images.
-  \item[Responsive poems] A similar problem to the responsive spirals exists with the display of the Queneau poems. The random poems are centered on the page but the Queneau poems require a lot more formatting and styling to render them on the page and currently this is achieved my left aligning them and having a fixed `absolute' position on the page. Ideally this would also be centered as in the random poems. 
-  \item[Startup performance] The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch. This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
-  \item[Query speed] The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \gls{api}s such as Flickr and WordNet.
-  \item[Preprocessing corpora] At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text}. Newlines and whitespace formatting varies, as does language and quality of spelling. Generally, chapter headings, chapter numberings, etc are left untouched. The Shakespeare corpus contains poetry and plays for example. With the plays, scene information is kept, voice details are kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``...Athens and a wood near it ACT I...'' from \textit{A Midsummer Night's Dream} or this example: ``...Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge...'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance.
-  \item[Sentence fragments] Currently the way results sentences are retrieved for the text search is blah blah
-\end{description}
+\paragraph{Responsive spirals} 
+Currently the image and video spirals are fixed size. This means that when the webpage is resized the spiral stays the same size and is left aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page. Percentages
 
+\paragraph{Scalable image sizes} 
+At the moment images are retrieved at a given size through the various \gls{api} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \gls{html} code. This means that some of them look squished and pizelated. This limits the available choice of results through the API.
+
+\paragraph{Square aspect ratio} 
+Another issue is the aspect ratio of images and videos. For the spiral they need to be square. I currently achieve this by squishing them as opposed to cropping them or specifying an option in the \gls{api} calls to only retrieve square images.
+
+\paragraph{Responsive poems} 
+A similar problem to the responsive spirals exists with the display of the Queneau poems. The random poems are centered on the page but the Queneau poems require a lot more formatting and styling to render them on the page and currently this is achieved my left aligning them and having a fixed `absolute' position on the page. Ideally this would also be centered as in the random poems. 
+
+\paragraph{Startup performance} 
+The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch. This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
+
+\paragraph{Query speed} 
+The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \gls{api}s such as Flickr and WordNet.
+
+\paragraph{Preprocessing corpora} 
+At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text}. Newlines and whitespace formatting varies, as does language and quality of spelling. OCR SOURCES Generally, chapter headings, chapter numberings, etc are left untouched. The Shakespeare corpus contains poetry and plays for example. STAGE DIRECTIONS With the plays, scene information is kept, voice details are kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``...Athens and a wood near it ACT I...'' from \textit{A Midsummer Night's Dream} or this example: ``...Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge...'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance.
+
+\paragraph{Sentence fragments} 
+Currently the way results sentences are retrieved for the text search is based on punctuation. This means once a pataphysicalised keyword has been found, the system retrieves up to 10 words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments.
+
+\paragraph{More APIs} 
+Currently X \gls{api}s are used\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times.
+
+\paragraph{Web search} 
+The use of \gls{api}s could also include web search results rather than just images and videos. This would needs its own interface section and a suitable display style for the results. The biggest problem for this is \gls{api} restrictions. Alternatively a ready-made index or crawl could be used but these are typically many terrabytes in size and have a cost attached. Crawling the Web myself is not an option due to the computational power, time and space required to do so.
+
+\paragraph{Audio search} 
+Originally audio search was going to be a part of this project. This has been abandoned due to time constraints. However it could be added using an \gls{api} such as SoundClouds. Technically the pataphysicalisation could work similar to the image and video searches, meaning it would be based on user tags. One idea would be to search in audio waves.
+
+\paragraph{More algorithms} 
+It would be nice to implement some more algorithms for the search tool. This could include the two additional algorithms suggested by Andrew Dennis (see chapter~\ref{ch:applications}\marginnote{§~\ref{ch:applications}}) or developing more of my own. 
+
+\paragraph{Poetry rhyming scheme} 
+One of the biggest points for future work is to introduce a rhyming scheme for the poetry results. This would involve some more \gls{nlp} during the creation of the index\marginnote{§~\ref{ch:technology}}. It would make the poems much more readable.
+
+\paragraph{Random sentences} 
+Adding to the source of random sentences used in the top and bottom banner on the website should be an ongoing endevour.
+
+\paragraph{Custom API}
+It would be great to develop a custom \gls{api} for this the search tool. This would allow other people to use the search remotely without going through the interface and to use the results as they want. This would have been beneficial for the Digital Opera project\marginnote{§~\ref{ch:applications}} and certainly for other researchers/developers like Adnrew Dennis\marginnote{§~\ref{ch:applications}}.
+
+\paragraph{WordNet vocabulary}
+The vocabulary in WordNet is limited. According to it's website (\url{https://wordnet.princeton.edu/}) it contains 117000 `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms. Because of the way the process works, the link between Wordnet and source texts, results may be limited. \todo{check}
+
+\paragraph{WordNet Antonyms}
+The antinomy algorithms relies on WordNets antonyms. A lot of words simply do not have an opposite and no fallback is currently defined. This means a lot of the time the antinomy function will not produce any results.
+
+\paragraph{Stemming}
+Stemming could increase the number of results found by the algorithms. (See chapter XYZ). A danger of increasing the output of the pataphysicalisation is always that results become more boring. If the query term and potential matches were compared based on their stemmed form 
+ 
+\paragraph{Queneau's poems}
+It would be nice to actually add Queneau's poem texts into the coprus of Faustroll as little easter eggs.
+
+\paragraph{Bitmap algorithms}
+The image and video search currently rely on extrenal \gls{api}s and user tags to work. One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the bitmaps themselves. So this could mean we could have a reverse image search that finds images related the original bitmap in pataphysical way or other.
+
+
+
+\todo{fix all chapter XYZ mentions}
 \todo{contunie here}
 
-\subsection{Code}
-\subsection{Theory}
 
+\section{Theoretical}
 
-\section{Additions}
+\paragraph{Focus group}
+It might be interesting to look at opinions of various people (general public and experts) about the interpretation/evaluation framework. This could be done by asking them to provide their own definition of computer creativity and then to analyse and evaluate a product (such as \url{pata.physics.wtf}) accoriding to their own criteria. Then follow this up by getting the same people to use my proposed framework to compare the results. This would include asking them about wether or not they thought that using the framewokr was beneficial to them or confusing.
 
-\subsection{Design}
+\paragraph{}
 
-\begin{description}
-  \item More random sentences
-  \item
-\end{description}
-
-\subsection{Code}
-
-\begin{description}
-  \item More APIs
-  \item Web search
-  \item Audio search
-  \item More algorithms
-  \item Poetry Rhyming scheme
-\end{description}
-
-\subsection{Theory}
-
-\begin{description}
-  \item More testing
-\end{description}
 
 
 \stopcontents[chapters]

@@ -199,6 +199,11 @@ Basile claims to use a `pseudo-random number generating algorithm' (combining mo
 It is hard to say what exactly influenced my project most. I think the idea of computationally generating this massive library is fantastic --- and absurd. Perhaps this is a feature we share.
 
 
+\section{Oulipo}
+\todo{section on what inspired me of Oulipo}
+\todo{refer back to that in analysis}
+
+
 \section{The Zen of Python}
 
 The programming language Python was used for the core system behind the \url{pata.physics.wtf} site. The so-called \emph{Zen of Python} is a set of guidelines for good practice in programming originally defined by Guido van Rossum---the creator of Python---who is endeeringly known as the \gls{bdfl} and put into the below form by Tim Peters.
@@ -242,8 +247,39 @@ The following list shows some other general programming culture references that 
   \item [\gls{ioccc}] a competition to `write the most obscure/obfuscated C program within the rules to show the importance of programming style, in an ironic way'\footnote{See \url{http://www.ioccc.org/}}
   \item [Glitch Art] Wikipedia defines it as `the aestheticization of digital or analog errors, such as artifacts and other `bugs', by either corrupting digital code/data or by physically manipulating electronic devices (for example by circuit bending)'\footnote{See \url{https://www.reddit.com/r/glitch_art/} and \url{https://goo.gl/waiqKV}}
   \item [Easter Eggs] The practice of hiding a reproducible, personal, harmless and entertaining feature into a piece of software \footnote{See \url{http://www.eeggs.com/faq.html}}
-  \item [Knuth] \footnote{See \url{http://www-cs-faculty.stanford.edu/~uno/help.html}}
+  \item [Knuth] Donald Knuth has long maintained a tradition of (a) adding easter eggs to his books on programming and (b) rewarding people for finding errors and typos in his books with fictional currency.\footnote{See \url{http://www-cs-faculty.stanford.edu/~uno/help.html}}
 \end{description}
+
+An example of creative code from the \gls{ioccc} is reproduced below. It shows highly obfuscated C code ``written in homage to Rene Magritte’s picture \textit{La trahison des images} (The Treachery of Images)'' by Uri Goren in 2011. It won the \emph{most artistic} category of that year's contest\footnote{A full description can be found here: \url{http://www.ioccc.org/2011/goren/hint.html}}.
+
+\begin{listing}
+  \begin{minted}
+  [fontsize=\footnotesize]{c++}
+typedef unsigned char t;t*F="%c",l[]="|\\/=_ \n](.\0(),*(.(=(}*.)[[*.",N='\n',*
+r;typedef(*H)();extern H Ar;Q(a){return(a|-a)>>31;}H S(c,a){return(H)(a&~c|(int
+)Ar&c);}extern t*ist;V(t*u){*u^=*u&2^(*u>>7)*185;}Z(t*u,t n){*u-=n;}e(t c,H h){
+R(h,Q(*                                                                 r^c));}
+I(){r=l                                                                 +7-4*Q(
+getchar                                                                 ()^*l);
+}R(H h,                int                                              c){Ar=S
+(c,h);-                main()                                           ;}P(){r
+++;}z()                {                                                O(&N);}
+O(t*c){                    printf(                                      F,+*c);
+}T(){r=                        "This is not a function\n"               ;}w(U){
+U=Z(r,8                    );                                           r-=~Q(*
+r/8-4);                    return 0;                                    }M(){r=
+ist-68;                }                                                h(){t G
+=r[1]-r                                                                 [2]^*r;
+G^=30;V                                                                 (&G);e(
+0,(O(&G                                                                 ),P(P(*
+r++)),z));}g(){M();R(h,0);}f(){P(O(r));e('f',g);}p(){P();e('a',f);}d(){P(O(r));
+e('n',p);}c(u){u=r[-2];T(Ar=d);R(f,Q(u^'"'));}n(){e(w(O(l+*r%8)),c);}a(){I();R(
+n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
+  \end{minted}
+\caption{An example entry by Uri Goren from the \gls{ioccc} contest from 2011.}
+\label{code:goren}
+\end{listing}
+
 
 \todo{finish writing these out}
 
