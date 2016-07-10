@@ -103,9 +103,35 @@ It would be nice to actually add Queneau's poem texts into the coprus of Faustro
 The image and video search currently rely on extrenal \gls{api}s and user tags to work. One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the bitmaps themselves. So this could mean we could have a reverse image search that finds images related the original bitmap in pataphysical way or other.
 
 
+\section{Creative NLP}
+N-grams are a \gls{nlp} technique introduced in chapter~\ref{ch:technology}\marginnote{Section~\ref{ch:technology}}. The idea is that it allows for prediction of likely word pairs, meaning if the word `sunny' often occurs just before the word `day' in a given training text or corpus then the probability for this particular n-gram is higher than say for `sunny dog'. This can be increased to predict the probability of longer chains of words. On can immediately see the attraction of abusing this to generate pseudo sentences or even of creating a formula similar in nature but for example ranking obscure combinations of words higher than common ones. So ffor example instead of having a \gls{mle} (see chapter XYZ and formular 6.12) we could have a `Maximum Obscurity Estimation' defined as:
 
+\begin{equation}
+  P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
+  \label{eq:probmoe}
+\end{equation}
+% \myequations{Probwn}
+\todo{work the maths out here for this example of MOE}
+
+Similarly, we could could play with maximum entropy models as shown on page 112 (see chapter XYZ) together with \gls{pos} tagging. What if we rigged the probability such that instead of `in Quebec' ranking high for a `location' \gls{pos} tag, it now ranks high as a `drug'?
+
+
+Again there are endless possipilities of abusing these kinds of systems to create \gls{amc}. This is also very reminiscent of \gls{oulipo} techniques. We could create a whole new language grammar based on pataphysical principles.
+
+Another example of interesting uses of \gls{nlp} for \gls{amc} is playing with homonyms and heteronyms. Homonyms are pronounced the same but mean something else (e.g. `write' and `right'). Heteronyms are words that are spelled the smae but have a different meaning (e.g. `close to the edge' and `to close the door'). There are similar techniques in the \gls{oulipo}. Homophones are often used to create puns (and remember---puns are syzygy's of words), for example ``past your eyes'' and ``pasteurize''. 
+
+\begin{quotation}
+   You can tune a guitar, but you can't tuna fish. Unless of course, you play bass. \sourceatright{attributed to Douglas Adams}
+\end{quotation}
+
+\gls{nlp} would also be useful for introducing a rhyming pattern into auto-generated poetry. \todo{look into rhyming tags in nlp}
+
+
+
+\todo{https://wordnet.princeton.edu/wordnet/man/wngloss.7WN.html for glossary}
 \todo{fix all chapter XYZ mentions}
-\todo{contunie here}
+\todo{group these into better sub groups and make them proper sections rather than paragraphs}
+
 
 
 \section{Theoretical}
