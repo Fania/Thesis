@@ -79,10 +79,270 @@ Looking back over the inspirations for this project (see chapter~\ref{ch:inspira
   \item IBM watson, Sophia robot, alpha go, MS twitter ai DONE
   \item p and H creativity for computers
   \item storing rhyming data in index or other additional things like ranking
-  \item creative use of NLP examples (search web for refs)
+  \item creative use of NLP examples (search web for refs) DONE
   \item refer back to AMC here in analysis
   \item CONSTRAINTS + oulipo again
 \end{itemize}
+
+
+\section{WordNet}
+
+The syzygy function goes through the following process.
+\todo{semantic hierarchy visualised?}
+It shows each step in the algorithm for the query term `clear'.
+\begin{enumerate}
+  \item A set of synonyms (a ``synset'') is generated.
+\end{enumerate}
+
+\begin{draft}
+SYZYGY
+synsets:
+[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear\_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+synset item:clear.n.01
+hypernym out:innocence
+[]
+synset item:open.n.01
+hypernym out:area
+hypernym out:country
+hypernym in:country
+[]
+synset item:unclutter.v.01
+hypernym out:change
+hypernym in:change
+hypernym out:alter
+hypernym out:modify
+[]
+synset item:clear.v.02
+hypernym out:make
+hypernym in:make
+hypernym out:create
+[]
+synset item:clear\_up.v.04
+[]
+synset item:authorize.v.01
+hyponym out:approbate
+hyponym out:approve
+hyponym out:O.K.
+hyponym out:okay
+hyponym out:sanction
+hyponym out:certificate
+hyponym in:certificate
+hyponym out:commission
+hyponym out:declare
+hyponym in:declare
+hyponym out:license
+hyponym out:licence
+hyponym out:certify
+hyponym out:validate
+hyponym out:formalize
+hyponym out:formalise
+hypernym out:permit
+hypernym in:permit
+hypernym out:allow
+hypernym in:allow
+hypernym out:let
+hypernym in:let
+hypernym out:countenance
+hypernym in:countenance
+[]
+synset item:clear.v.05
+hyponym out:clear-cut
+hyponym out:deforest
+hyponym out:disforest
+hyponym out:disafforest
+hyponym out:denude
+hyponym out:bare
+hyponym in:bare
+hyponym out:denudate
+hyponym out:strip
+hyponym out:stump
+hypernym out:remove
+hypernym out:take
+hypernym in:take
+hypernym out:take\_away
+hypernym out:withdraw
+[]
+synset item:pass.v.09
+hyponym out:clear
+hyponym in:clear
+hypernym out:succeed
+hypernym in:succeed
+hypernym out:win
+hypernym out:come\_through
+hypernym out:bring\_home\_the\_bacon
+hypernym out:deliver\_the\_goods
+[]
+synset item:clear.v.07
+[]
+synset item:clear.v.08
+hypernym out:vanish
+hypernym in:vanish
+hypernym out:disappear
+hypernym out:go\_away
+[]
+synset item:clear.v.09
+hyponym out:hop
+hypernym out:pass
+hypernym in:pass
+hypernym out:overtake
+hypernym out:overhaul
+[]
+synset item:clear.v.10
+hypernym out:clarify
+hypernym out:clear\_up
+hypernym out:elucidate
+[]
+synset item:clear.v.11
+hypernym out:free
+hypernym in:free
+hypernym out:discharge
+[]
+synset item:clear.v.12
+hypernym out:rid
+hypernym out:free
+hypernym in:free
+hypernym out:disembarrass
+[]
+synset item:net.v.02
+hypernym out:yield
+hypernym out:pay
+hypernym in:pay
+hypernym out:bear
+[]
+synset item:net.v.01
+hypernym out:profit
+hypernym out:gain
+hypernym in:gain
+hypernym out:benefit
+hypernym in:benefit
+[]
+synset item:gain.v.08
+hyponym out:eke\_out
+hyponym out:squeeze\_out
+hyponym out:gross
+hyponym out:profit
+hyponym out:turn\_a\_profit
+hyponym out:rake\_in
+hyponym out:shovel\_in
+hyponym out:rake\_off
+hyponym out:take\_home
+hyponym out:bring\_home
+hyponym out:yield
+hyponym out:pay
+hyponym in:pay
+hyponym out:bear
+hypernym out:get
+hypernym out:acquire
+[]
+synset item:clear.v.16
+hypernym out:sell
+[]
+synset item:clear.v.17
+hypernym out:pass
+hypernym in:pass
+hypernym out:clear
+hypernym in:clear
+[]
+synset item:acquit.v.01
+hyponym out:purge
+hyponym out:vindicate
+hyponym out:whitewash
+hypernym out:pronounce
+hypernym in:pronounce
+hypernym out:label
+hypernym out:judge
+hypernym in:judge
+[]
+synset item:clear.v.19
+hypernym out:settle
+hypernym out:square\_off
+hypernym out:square\_up
+hypernym out:determine
+hypernym in:determine
+[]
+synset item:clear.v.20
+hypernym out:change
+hypernym in:change
+hypernym out:alter
+hypernym out:modify
+[]
+synset item:clear.v.21
+hypernym out:empty
+hypernym in:empty
+[]
+synset item:clear.v.22
+hypernym out:take\_out
+hypernym out:move\_out
+hypernym out:remove
+[]
+synset item:clear.v.23
+hypernym out:empty
+hypernym in:empty
+[]
+synset item:clear.v.24
+hypernym out:remove
+hypernym out:take
+hypernym in:take
+hypernym out:take\_away
+hypernym out:withdraw
+[]
+synset item:clear.a.01
+[]
+synset item:clear.s.02
+[]
+synset item:clear.s.03
+[]
+synset item:clear.a.04
+[]
+synset item:clear.s.05
+[]
+synset item:clear.s.06
+[]
+synset item:clean.s.03
+[]
+synset item:clear.s.08
+[]
+synset item:clear.s.09
+[]
+synset item:well-defined.a.02
+[]
+synset item:clear.a.11
+[]
+synset item:clean.s.02
+[]
+synset item:clear.s.13
+[]
+synset item:clear.s.14
+[]
+synset item:clear.s.15
+[]
+synset item:absolved.s.01
+[]
+synset item:clear.s.17
+[]
+synset item:clear.r.01
+[]
+synset item:clearly.r.04
+[]
+\end{draft}
+
+\section{Clinamen}
+
+The clinamen function uses the damerau-levenshtein algorithm to create pataphysicalised words. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the damerau levenshtein algorithm needing two words to compare with each other. It also ensures we get real words as results and not some random gibberish.
+
+Currently the algorithm is set to accept terms that have a difference of 1 or 2 to the original query. We can lower this to 1 to allow fewer results or increase it to make it broader. I felt 1 or 2 was a good compromise. Only allowing 1 error would mean terms are too similar. Allowing 3 might mean they are drastically different.
+
+\todo{show examples of clinamen results with less or more difference allowance}
+\todo{show clinamen results with a different base document}
+\todo{show clinamen results with a real dictionary rather than a base text}
+
+
+\section{nums}
+Show some stats on the number of results found by the 3 different algotihms.
+Clinamen produces x many results for `clear', Syzygy produces Y many and Antinomy produces Z many.
+What does that mean? How can we address this?
+
+\todo{check out what is happening with the hyponyms in the getnym function}
 
 
 \section{Meta}
@@ -110,7 +370,7 @@ Below you can see a shortened version of the timeline of my commits between 20XX
   |/|   
   * | 0ebff0d  Tue 11 Aug 2015	 Analytics enabled again
   * | 703f977  Tue 11 Aug 2015	 Problems solved.
-  * | 74a1fae  Tue 11 Aug 2015	 About to change l_dict to dict of dict
+  * | 74a1fae  Tue 11 Aug 2015	 About to change l\_dict to dict of dict
   * | 0935b23  Mon 10 Aug 2015	 BUG FUCKER
   * | 4f7d91e  Mon 10 Aug 2015	 Turn debug off
   * | 58f0c2b  Mon 10 Aug 2015	 Button styling done
@@ -292,17 +552,17 @@ Perhaps there is an argument that if humans are the only entities who can judge 
 
 
 
-\section{Numbers}
+\section{Index}
 
-\paragraph{Index}
 \todo{look up google index or other examples or crawls}
 The index is a central part of the \url{pata.physics.wtf} system. It is generated when the program/server is first started up but then cached and re-used. The initial process of going over all the text files in each corpus takes a few minutes. Of course in comparison to a full Internet crawl this is a tiny amoutn of data to be processed. 
 
-The Faustroll corpus for example contains 28 textx\footnote{This is technically not true since a few of those files are empty}\todo{check which ones are empty}. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge's \textit{the rime of the ancient mariner} is a poem whereas the Edgar Allan Poe file is a whole collection of his works. The whole size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.
+The Faustroll corpus for example contains 28 textx\footnote{This is technically not true since a few of those files are empty}\todo{check which ones are empty}. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge's \textit{The Rime of the Ancient Mariner} is a poem whereas the Edgar Allan Poe file is a whole collection of his works. The whole size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.
 
 Now, the size of the index is interesting. Processing the Faustroll corpus alone produced an index of 12.4MB. That's larger than the actual size of the corpus. Remember, the index contains each word that occurs anywhere in the corpus together with the list of files it is found in and the specific locations within each text. This includes english words buts also french and spanish and german terms since the faustroll corpus is multi-lingual.
 \todo{how big is the new combined corpus??}
 
+storing rhyming data in index or other additional things like ranking
 
 
 \section{Patalgorithms}

@@ -102,6 +102,19 @@ It would be nice to actually add Queneau's poem texts into the coprus of Faustro
 \paragraph{Bitmap algorithms}
 The image and video search currently rely on extrenal \gls{api}s and user tags to work. One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the bitmaps themselves. So this could mean we could have a reverse image search that finds images related the original bitmap in pataphysical way or other.
 
+\paragraph{Index}
+One idea for the pataphysicalisation process was to add `patadata' to the index. This could include pronounciation tags for example to make an implementation of a rhyming scheme for the poetry easier. So each word in teh index dictionary would contain the following items.
+
+\begin{verbatim}
+  (``tree'': [``l_00'': [24,566,4990], ``s_14'': [234,5943]], IPA data)
+\end{verbatim}
+
+\todo{add ipa data or whatever is best for the rhyming stuff}
+storing rhyming data in index or other additional things like ranking
+
+\paragraph{Stopwords}
+Using a different set of stopwords to see if that makes a difference. For example we could use a spanish set of stopwords on an english text. OR the other way around.
+
 
 \section{Creative NLP}
 N-grams are a \gls{nlp} technique introduced in chapter~\ref{ch:technology}\marginnote{Section~\ref{ch:technology}}. The idea is that it allows for prediction of likely word pairs, meaning if the word `sunny' often occurs just before the word `day' in a given training text or corpus then the probability for this particular n-gram is higher than say for `sunny dog'. This can be increased to predict the probability of longer chains of words. On can immediately see the attraction of abusing this to generate pseudo sentences or even of creating a formula similar in nature but for example ranking obscure combinations of words higher than common ones. So ffor example instead of having a \gls{mle} (see chapter XYZ and formular 6.12) we could have a `Maximum Obscurity Estimation' defined as:
