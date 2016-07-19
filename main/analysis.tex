@@ -29,6 +29,26 @@ still a point worthy very serious investigation.
 \minicontents
 \spirals
 
+Influences
+WordNetClinamen
+Numbers
+Meta
+Code
+Science Fiction
+Brains
+Index
+Pataphysicalisation
+Content Perception
+\todo{see below}
+
+- change file used by clinamen
+- clinamen change stopwords
+- syzygy synsets, print each step
+- clinamen with more or less erros
+- poem and list side by side
+- newspaper legal corpus
+- pp_sent 1st occurance
+
 
 A lot of the analysis on the more theoretical aspects of this research have been discussed in chapters~\ref{ch:foundations} and \ref{ch:interpretation}. The evaluation here is more concerned with the practical artefact \url{pata.physics.wtf} and its interpretation as well as whether or not it actually achieved some of its goals and was true to its inspirations.
 
@@ -565,9 +585,12 @@ Now, the size of the index is interesting. Processing the Faustroll corpus alone
 storing rhyming data in index or other additional things like ranking
 
 
-\section{Patalgorithms}
+\section{Pataphysicalisation}
 
 It is quite interesting to compare the three different algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table XYZ.
+
+
+\subsection{Text}
 
 \begin{table}[htb]
   \begin{tabu}{X[1,L]|X[3,L]X[3,L]X[2,L]}
@@ -640,54 +663,80 @@ The different language is quite obvious. This is helped by the fact that the Sha
 \todo{say some more about this}
 \todo{link to example poems in various chapters or put two side by side here perhaps.}
 
-there was a period put to the Fire\\
-pink and spot\\
-Earth was flat like the floor of an Oven\\
-the scorched face glowed more luminously still\\
+\begin{figure}[h!]
+\centering
+\begin{minipage}{.45\linewidth}
+  {\footnotesize\sffamily\SingleSpacing
+  There was a period put to the Fire\\
+  pink and spot\\
+  earth was flat like the floor of an Oven\\
+  as much ease as a mower doth the grass\\
 
-and corresponding with a small aperture in the floor of the car itself\\
-rhat tend to ebb and flow when it is stretched\\
-there were others that glowed all over with intense fire\\
-or your favourite flowers died\\
+  during the first period of my captivity\\
+  room with a hard earthen floor\\
+  not within everyone's power\\
+  or your favourite flowers died\\
 
-shocks lose power \\
-the white daisy \\
-do all in our power to help you spend\\
+  shocks lose power\\
+  the white daisy\\
+  after a long period\\
 
-poppy \\
-peony \\
-stock to all People
+  poppy\\
+  peony\\
+  stock to all People\\}
+\end{minipage}
+\hspace{.02\linewidth}
+\begin{minipage}{.45\linewidth}
+  {\footnotesize\sffamily\SingleSpacing
+  O bloody period\\
+  I as your lover speak\\
+  has she such power\\
+  gather those flowers\\
 
+  thy lover\\
+  juiced flowers\\
+  had I been any god of power\\
+  or a lover's lute\\
 
-----
+  the river hath thrice flow'd\\
+  but sad mortality o'ersways their power\\
+ 	now here a period of tumultuous broils\\
 
-O bloody period \\
-I as your lover speak \\
-of generosity And make bold power look pale \\
-gather those flowers \\
+  led by their master to the flow'red fields\\
+  not a minister in his power\\
+  where soulds do couch on flowers\\}
+\end{minipage}
+\caption[Faustroll vs Shakespeare]{Comparison of Faustroll (left) versus Shakespeare (right) poetry}
+\label{fig:2poems}
+\end{figure}
 
-let me make the period to my curse \\
-juiced flowers \\
-all these spirits thy power Hath conjur ' d to attend \\
-or a lover ' s lute 
+\begin{table}
+  \centering
+  \begin{tabu}{llcccc}
+  \toprule
+  \textbf{Corpus} & \textbf{Query} & \textbf{Results} & \textbf{Reverberations} & \textbf{Origins} & \textbf{Poems}\\
+  \midrule
+  Faustroll & flower & 89 & 24 & 18 & $7.8 \times 10^{10}$\\
+  Shakespeare & flower & 157 & 15 & 38 & $3.8 \times 10^{14}$\\
+  Faustroll & clear & 542 & 79 & 23 & $1.3 \times 10^{22}$\\
+  Shakespeare & clear & 1445 & 72 & 38 & $1.5 \times 10^{28}$\\
+  Faustroll & troll & 124 & 16 & 16 & $4.4 \times 10^{12}$\\
+  Shakespeare & troll & 327 & 14 & 38 & $1.1 \times 10^{19}$\\
+  Faustroll & fania & 9 & 2 & 6 & 1\\
+  Shakespeare & fania & 15 & 2 & 14 & 1\\
+  \bottomrule
+  \end{tabu}
+\caption[Faustroll vs Shakespeare stats]{Faustroll versus Shakespeare stats}
+\label{tab:faustshake}
+\end{table}
+\todo{add stuff about total number of poems possible - fix MATHS}
 
-You meet in some fresh cheek the power of fancy \\
-with a linen stock on one leg and a kersey boot \\
-sweet stem from York ' s great stock 
-
-Led by their master to the flow ' red fields \\
-not A minister in his power \\
-and what stock he springs of
 
 \todo{find better examples}
-
-
-
 \todo{finish}
 
 
-
-\spirals
+\subsection{Images}
 
 The image search can produce quite inetersting results as well. A search for ``blue kitten'' on Flickr produces the following results: ``[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]'' which are then passed into ten seperate \gls{api} calls to retrieve one image each (see fig below XYZ).
 
@@ -727,145 +776,23 @@ It is interesting to note how different the search results are perceived when pr
 
 DELETE EVERYTHING FROM BELOW HERE:
 
-\section[Ejaculation]{Ejaculation\footnote{Autocorrect or nottocorrect---that is the question\ldots}}
-
-\todo{im evaluating the website - not the project !!!!!!!}
-\todo{change font size, capitalisation and dashes}
-
-The website \url{pata.physics.wtf} is supposed to be an example of \gls{amc}.
-
-It seems appropriate to start the critical evaluation of the artefact created as part of this research project with an application of my own framework as suggested in chapter~\ref{ch:interpretation}. I will do this in two ways. FIrst I will sketch a matrix similar to the one shown in figure XYZ to give an overview of the evaluation at a glance. Second I will explain each point in the matrix in a bit more detail to try and bring across the thoughts triggered by the framework. In the end the decision of whether or not the artefact has `passed' the criteria/threshold for \gls{amc} is subjective. The framework is only a guideline. Of course it should be considered that ideally this process should be done by an external party or a panel of judges rather than the artist herself.
-
-\begin{description}
-  \item[WHO?] Myself, the programmer and artist of \url{pata.physics.wtf}.
-  \item[Person---Novelty] The person behind \url{pata.physics.wtf} is myself. As the sole developer and designer of the product I was responsible for all decisions and all creative input. At the time, I had never worked with Python before, never heard of Pataphysics, and never create a website of this complexity. Of course I had some familiarity with programming in general and I had interests in arts but overall the majority of subjects relevant for the project were novel to me.
-  \item[Person---Quality] The quality of my work could perhaps be measured by the existence of bugs in my code or the beauty of the design. Given that the subject area was mostly novel to me and my previous education didn't fully prepare me for this sort of work, there are surprisingly few problems with the code. \todo{not true} The performance is way too slow, the design is not great and not user friendly enough.
-  \item[PERSON - VALUE] The value of myself as the researcher on this project is clear in my background. I brought in a varied background and many interests. I had done Computer Science as an undergraduate degree - which gave me an understanding of code necessary to complete the practical aspect of the project but also some of the more theoretical ideas. Having then done a postgraduate degree in Creative Technologies helped introduce me to interdisciplinary work and allowed me to experiment with my creative side. This was essential for the project at hand. It allowed me to see problems from different perspectives.
-  \item[PERSON - PURPOSE] I was chosen for this project presumably because of the skills and interests I had demonstrated in the past. On a more insteresting note perhaps---a website doesn't build itself. I created the backend and frontend all by myself. I created the algorithms which form the core of the website.
-  \item[PERSON - SPATIAL] Luckily spatial issues are not much of an issue when it comes to Web development. I could work anywhere with an Internet connection and a laptop or computer at hand. This allowed me to be very flexibel with my location. Another aspect to this was my nationality and upbringing. I am originally from Germany. I grew up near a museum on `Art and Media Technology'\footnote{`ZKM'---see \url{http://on1.zkm.de/zkm/e/}} which got me interested in digital art quite early on in live. Also, my father was an office equipment mechanic and I grew up around computers and have always had a strong interest in Web development.
-  \item[PERSON - TEMPORAL] A temporal aspect regarding my person was perhaps the time scale and time management of the project. I studied full time, took a year interruption and more to finish. \todo{update timing} Someone else could have done this faster perhaps. The coding is never finished.
-  \item[PERSON - EPHEMERAL] I did not actually apply for this PhD programme but my application was forwarded from another department after an unsuccessful application there. This is quite serendipitous.
-\end{description}
-
-\spirals
-
-\begin{description}
-  \item[Where?] On the Internet via \url{pata.physics.wtf}.
-  \item[PLACE - Novelty] The location of \url{pata.physics.wtf} is online. Other art projects have been put online in the past. This is certainly not new. The \gls{ioct} was already established but Professor Andrew Hugill published his monograph on pataphysics the year I started which meant my research into developing pataphysical algorithms was cutting edge. \todo{check dates} 
-  \item[PLACE - QUALITY] The site is hosted on a server provided by `OVH'\footnote{\url{https://www.ovh.co.uk/}}. The cost is reasonable and allows enough freedom to run the Python application which forms the search tool. The speed of the server and security and reliablity is high but out of my control.
-  \item[PLACE - VALUE] The site is found through a custom \gls{url} (\url{pata.physics.wtf}) and is findable on google. This was chosen because it is a memorable name and the top level domain name (`.wtf') conveys some of the humour needed to appreciate the project.
-  \item[PLACE - PURPOSE] The purpose of putting the project online is of course for users to actually be able to use it whenever and whereever they want. Sticking the search tool on a local machine in a museum space for example would not be very interesting. Of course the project is `interactive' in very simple terms, i.e. the user needs to enter a keyword to trigger the pataphysicalisation and the display of the results and then needs to spend some time reading through them or looking throigh the results.
-  \item[PLACE - SPATIAL] The OVH server is hosted in France, although that is not really relevant. It should be accessible from all over the world, unless it gets blocked.
-  \item[PLACE - TEMPORAL] The hosting and domain name need renewing each year. Website design goes out of date quickly nowadays, so it may have to be redesigned to stay appealing. Being online, the site is available all day every day, so access is not limited to viewing times in a museum or similar constraints.
-  \item[PLACE - EPHEMERAL] N/A
-\end{description}
-
-\spirals
-
-\begin{description}
-  \item[Why?] To demonstrate pataphysical creative exploratory search algorithms---overall an example of \gls{amc}.
-  \item[PURPOSE - Novelty] The concepts behind the search tool are novel. Creative search has been attempted before as discussed in chapter CYZ but not specifically with Pataphysics as its inspiration.
-  \item[PURPOSE - QUALITY] Whether or not the use of pataphysics over another creative technique is better can only be determined with further study.
-  \item[PURPOSE - VALUE] Having a clear aim is always helpful, and in the case of \url{pata.physics.wtf} that aim pervades the site through and through. The main functionality is to provide creative search not relevant lookup search. The value is subjective to each user.
-  \item[PURPOSE - PURPOSE] N/A
-  \item[PURPOSE - SPATIAL] The fact that some of the texts in the search results are french or german is a conscious choice not accident or necessity. This language barrier reminds users of language spaces, borders, inaccessibility and originality. It reminds users that some texts may be translated from a different language. Its a sign of equality to include different languages representing different locations. From a different perspective, it was also imperative to make the system available from all over the world. This is also why the site was created to be responsive---to allow users to access it comfortably from their phones, tablets, laptops or desktop computers.
-  \item[PURPOSE - TEMPORAL] A similar point is true for the time aspect. The idea was to allow users to access the system anytime.
-  \item[PURPOSE - EPHEMERAL] Of course the system may appear serendipitous or random at times but the underlying logic certainly is not random. It was important to bring across a sense of structure in the results and the pataphysical algorithms hopefully achieve that.
-\end{description}
-
-\spirals
-
-\begin{description}
-  \item[What?] \url{pata.physics.wtf}: an exploratory algorithmic meta-creative search tool.
-  \item[Product - Novelty] The actual website itself doesn't use any groundbreakingly new frameworks or techniques other than the patalgorithms described in chapter XYZ. 
-  \item[Product - Quality] The website looks polished and functions without major incidents.
-  \item[Product - Value] The value of the website is discussed in chapter XYZ and the fact that it has been used to create a libretto for an opera is great.
-  \item[Product - Purpose] The purpose was to create an example of \gls{amc}.
-  \item[Product - Spatial] 
-  \item[Product - Temporal]
-  \item[Product - Ephemeral]
-\end{description}
-
-\spirals
-
-\begin{description}
-  \item[How?] By combining pataphysics with creativity to create patalgotihms.
-  \item[PROCESS - NOVELTY] The algorithms are novel. The approach of using pataphysics to inspire the creative element of the project is novel.
-  \item[PROCESS - QUALITY] The development process was experimental. It involved a lot of trial and error to get things right.
-  \item[PROCESS - VALUE] The algorithms produce interesting results.
-  \item[PROCESS - PURPOSE] The algorithms are an example of creative computing using pataphyscs.
-  \item[PROCESS - SPATIAL] The algorithms rely on corpora which they need access to, to work properly.
-  \item[PROCESS - TEMPORAL] The startup process is long and pataphysicalisation can take some time.
-  \item[PROCESS - EPHEMERAL] There is an element of randomness in some of the algorithms, e.g. the image and video search.
-\end{description}
-
-What does this description of the 
-\todo{create a template matrix to fill in with colours or whatever and then summarise the above items underneath - only highlighting the interesting ones}
 
 \begin{draft}
-  What does this now tell us? It shows that we can almost always argue for creative aspects in each of the points raised in the matrix. Is the product fit for purpose? That's subjective but I would argue that yes. Is the product robust and working as planned? Yes, it works reliably and as planned.
+DELETE THIS
 
-  This evaluation is subjective.
-\end{draft}
+In this section we consider the possible uses and applications for the proposed creative search tool.
 
+Our target audience is not quite as broad as that of a general search engine like Google. Instead, we aim to specifically cater for users who can appreciate creativity or users in need of creative inspiration. Users should generally be educated about the purpose of the search tool so that are not discouraged by what might appear to be nonsensical results. Users could include artists, writers or poets but equally anybody who is looking for out-of-the-box inspirations or simply a refreshingly different search engine to the standard.
 
+The way we display and label results produced by the tool can influence how the user perceives them. The current prototype for example separates the results into its three components but we could have equally just mixed them all together. The less transparent the processes in the background (e.g.\ which algorithm was used, how does the result relate to the query precisely, etc.) are for the user, the more difficult it might be to appreciate the search.
 
-\begin{draft}
-  DELETE THIS
+There are many ways a pataphysical search tool could be used across disciplines.
 
+In literature, for example, it could be used to write or generate poetry, either practically or as a simple aid for inspiration. We are not limited to poetry either; novels, librettos or plays could benefit from such pataphysicalised inspirations. One can imagine tools using this technology that let you explore books in a different ordering of sentences (a sort of pataphysical journey of paragraph hopping), tools that re-write poems or mix and match them together. Even our simple prototype shows potential in this area and could be even more powerful if we extended it to include more base texts, for example the whole set of books contained in Faustroll’s library ([20] and also [12]). A richer body of texts (by different authors) would produce a larger index which would possibly find many more matches through WordNet and end in a more varied list of results.
 
-\section{Personal}
+From a computer science perspective it could be used as one of the many algorithms used by traditional search engines for purposes like query feedback or expansion (e.g. “did you mean … “or “you might also be interested in … “). Depending on how creative we want the search engine to be, the higher we would rank the importance of this particular algorithm. One of the concepts related to the search tool, namely patadata, could have an impact on the development of the Semantic Web. Just as the Semantic Web is about organizing information semantically through objective metadata, patadata could be used to organize information pataphysically in a subjective way.
 
-On a more personal note, real life made it harder to keep the project on track and on time. Chronic illness, big life changes, dramatic family events and financial difficulties were all happening at once. The research has changed quite a bit since the beginning. That isn't necessarily bad but it costs time. Now the project is mien and aI am proud of it.
-
-
-\section{Problems}
-
-\todo{discuss problems with algorithms, pros and cons...}
-This function exhibits the same problem as mentioned above for the syzygy, just much worse. Arguably, some words just do not appear to have an opposite, but the pataphysical antinomy should still be able to find a match. A better thesaurus or a larger index (e.g.\ based on more than one book –-- or, of course, the Web) could improve this method.
-
-\begin{itemize}
-  \item
-  \item
-  \item 
-  \item
-\end{itemize}
-
-
-\section{Shortcomings}
-
-From here, we can try to implement different algorithms or different pataphysical concepts within our existing tool or built a different system. The next logical step would be to implement a fully functioning Web search engine using the algorithms described in this paper. But before we go into further development, it might be worth evaluating and interpreting the results produced by the prototype.
-
-\begin{itemize}
-  \item
-  \item
-  \item
-  \item
-  \item
-  \item
-  \item
-  \item
-  \item
-\end{itemize}
-
-
-
-
-
-
-  In this section we consider the possible uses and applications for the proposed creative search tool.
-
-  Our target audience is not quite as broad as that of a general search engine like Google. Instead, we aim to specifically cater for users who can appreciate creativity or users in need of creative inspiration. Users should generally be educated about the purpose of the search tool so that are not discouraged by what might appear to be nonsensical results. Users could include artists, writers or poets but equally anybody who is looking for out-of-the-box inspirations or simply a refreshingly different search engine to the standard.
-
-  The way we display and label results produced by the tool can influence how the user perceives them. The current prototype for example separates the results into its three components but we could have equally just mixed them all together. The less transparent the processes in the background (e.g.\ which algorithm was used, how does the result relate to the query precisely, etc.) are for the user, the more difficult it might be to appreciate the search.
-
-  There are many ways a pataphysical search tool could be used across disciplines.
-
-  In literature, for example, it could be used to write or generate poetry, either practically or as a simple aid for inspiration. We are not limited to poetry either; novels, librettos or plays could benefit from such pataphysicalised inspirations. One can imagine tools using this technology that let you explore books in a different ordering of sentences (a sort of pataphysical journey of paragraph hopping), tools that re-write poems or mix and match them together. Even our simple prototype shows potential in this area and could be even more powerful if we extended it to include more base texts, for example the whole set of books contained in Faustroll’s library ([20] and also [12]). A richer body of texts (by different authors) would produce a larger index which would possibly find many more matches through WordNet and end in a more varied list of results.
-
-  From a computer science perspective it could be used as one of the many algorithms used by traditional search engines for purposes like query feedback or expansion (e.g. “did you mean … “or “you might also be interested in … “). Depending on how creative we want the search engine to be, the higher we would rank the importance of this particular algorithm. One of the concepts related to the search tool, namely patadata, could have an impact on the development of the Semantic Web. Just as the Semantic Web is about organizing information semantically through objective metadata, patadata could be used to organize information pataphysically in a subjective way.
-
-  The prototype tool is already being used in the creation of an online opera, provisionally entitled from [place] to [place], created in collaboration with The Opera Group, an award-winning, nationally and internationally renowned opera company, specialising in commissioning and producing new operas. In particular, it is being used to create the libretto for one of the virtual islands whose navigation provides the central storyline for the opera. The opera will premiere in 2013, and will continue to develop thereafter, deploying new versions of the tool as they appear.
+The prototype tool is already being used in the creation of an online opera, provisionally entitled from [place] to [place], created in collaboration with The Opera Group, an award-winning, nationally and internationally renowned opera company, specialising in commissioning and producing new operas. In particular, it is being used to create the libretto for one of the virtual islands whose navigation provides the central storyline for the opera. The opera will premiere in 2013, and will continue to develop thereafter, deploying new versions of the tool as they appear.
 \end{draft}
 
 

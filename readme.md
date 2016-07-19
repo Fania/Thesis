@@ -137,6 +137,12 @@ pdflatex --file-line-error -shell-escape main
 - [ ] indent parts in toc
 - [ ] weird space after mini toc?
 - [ ] why do the spirals after the mini chapter tocs creep upwards slowly over time each chapter? at the beginning the distance is fine but later on it overlaps.???
+- [ ] turn code into art. each aspect of phd is art.
+- [ ] remove publications in preface and just describe fully in first chapter
+
+
+
+
 
 
 ## Hongji feedback
