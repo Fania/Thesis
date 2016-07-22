@@ -260,7 +260,7 @@ It is quite interesting to compare the three different algorithms with each othe
   recorded, dead
   \\ \bottomrule
   \end{tabu}
-\caption[Comparison of algorithms]{Comparison of algorithms}
+\caption[Comparison of algorithms]{Comparison of algorithms showing a selection of results for each.}
 \label{algorithmscomp}
 \end{table}
 
@@ -358,7 +358,7 @@ The index is a central part of the \url{pata.physics.wtf} system. It is generate
 The Faustroll corpus for example contains 28 textx\footnote{This is technically not true since a few of those files are empty}\todo{check which ones are empty}. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge's \textit{The Rime of the Ancient Mariner} is a poem whereas the Edgar Allan Poe file is a whole collection of his works. The whole size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.
 
 Now, the size of the index is interesting. Processing the Faustroll corpus alone produced an index of 12.4MB. That's larger than the actual size of the corpus. Remember, the index contains each word that occurs anywhere in the corpus together with the list of files it is found in and the specific locations within each text. This includes english words buts also french and spanish and german terms since the faustroll corpus is multi-lingual.
-\todo{how big is the new combined corpus??}
+\todo{how big is the new combined corpus?? - its 35.2MB}
 
 storing rhyming data in index or other additional things like ranking
 
@@ -401,38 +401,57 @@ Currently the algorithm is set to accept terms that have a difference of 1 or 2 
 
 \subsubsection{Changing the base text in Clinamen}
 
-QUery: clear
+As examples of using different base documents in the Clinamen algorithm I have used three examples. 
 
-Midsummer Night's Dream\\
-altar, bear, car, cheer, clean, clear, dear, ear, fear, Fear, hear, lead, liar, near, Near, plead, rear, swear, tear, wear
+\begin{itemize}
+  \item Midsummer Night's Dream by Shakespeare (Dream in short)
+  \item Arabian Nights by various artists (Nights in short)
+  \item Exploits and Opinions of Doctor Faustroll, Pataphysician by Jarry (Faustroll in short)
+\end{itemize}
 
-Arabian Nights\\
-bear, cedar, cellar, cheap, clad, clap, clean, clear, cleared, clearer, clearly, clever, dear, Dear, ear, fear, Fear, hear, lead, leaf, leap, learn, liar, near, swear, tear, wear, Year, year
+\begin{table}
+  \centering
+  \begin{tabu}{X[l]X[1.5,l]X[l]}
+  \toprule
+  \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
+  \midrule
+  altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear & bear, cedar, cellar, cheap, clad, clap, clean, clear, cleared, clearer, clearly, clever, dear, ear, fear, hear, lead, leaf, leap, learn, liar, near, swear, tear, wear, year & altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year\\
+  \bottomrule
+  \end{tabu}
+\caption[Changing base in clinamen]{changing base in clinamen}
+\label{tab:baseclear}
+\end{table}
 
-Faustroll\\
-altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, Fear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year
+\begin{minted}{c}
+altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear
+\end{minted}
 
-Query: fania
 
-Midsummer Night's Dream\\
-fail, faint, fair, fan, fancy
+\begin{table}
+  \centering
+  \begin{tabu}{X[l]X[1.5,l]X[l]}
+  \toprule
+  \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
+  \midrule
+  fail, faint, fair, fan, fancy & fail, fain, faint, fair, fancy, Sadia & fan, fans, Tanit\\
+  \bottomrule
+  \end{tabu}
+\caption[Changing base in clinamen]{changing base in clinamen}
+\label{tab:basefania}
+\end{table}
 
-Arabian Nights\\
-fail, fain, faint, fair, fancy, Sadia
-
-Faustroll\\
-fan, fans, Tanit
-
-Query: Moss
-
-clinamen: MND\\
-amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, Most, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows
- 
-clinamen: AN\\
-amiss, ass, Ass, bows, boys, cost, cosy, cross, Does, does, dogs, Dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, Most, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, Sons, vows
-  
-clinamen: F\\
-ass, Bosse, bows, Boys, cost, Cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops
+\begin{table}
+  \centering
+  \begin{tabu}{X[l]X[l]X[l]}
+  \toprule
+  \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
+  \midrule
+  amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows & amiss, ass, bows, boys, cost, cosy, cross, does, dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, vows & ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops\\
+  \bottomrule
+  \end{tabu}
+\caption[Changing base in clinamen]{changing base in clinamen}
+\label{tab:basemoss}
+\end{table}
 
 
 \subsubsection{clinamen with up to 1 error}
