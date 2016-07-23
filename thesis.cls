@@ -725,6 +725,9 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{caption} % for subtables
 % \usepackage{subcaption} % for subtables
 
+\usepackage{multirow}
+
+
 
 % SILENCE WARNINGS
 \usepackage{silence}
