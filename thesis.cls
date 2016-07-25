@@ -198,6 +198,15 @@
 }
 
 
+% POETRY
+\renewcommand{\PoemTitlefont}{%
+    \normalfont\itshape\centering}
+
+\newcommand{\attrib}[1]{% 
+    \nopagebreak{\raggedleft\footnotesize #1\par}}
+
+
+
 
 % OVERVIEW
 

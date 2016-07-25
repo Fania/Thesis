@@ -33,6 +33,7 @@ This research was heavily influenced by a few major inspirations and this chapte
 
 
 \section{The Syzygy Surfer}
+\label{s:surfer}
 
 This PhD project is directly based on the \emph{Syzygy Surfer} \autocite{Hendler2011, Hendler2013}. Hendler and Hugill suggest the use of three pataphysical principles, namely clinamen, syzygy and anomaly, to create a new type of Web search engine reminiscent of the experience of surfing the Web using Semantic Web technologies. This is in contrast to current Web search engines which value relevant results over creative ones.
 
@@ -50,7 +51,11 @@ My project has since moved on from the idea of using the Semantic Web to create 
 \section{Faustroll's Library of Equivalent Books}
 \label{s:faustlib}
 
-The artefact created to demonstrate the search algorithms\footnote{\url{pata.physics.wtf}} uses a collection of texts rather than the open Web as source material\marginnote{§~\ref{ch:implementation}}. This corpus is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{`In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.'\parencite[p.12]{Jarry1996}}. This library contains the following books.
+The artefact created to demonstrate the search algorithms---\url{pata.physics.wtf}---uses two collections of texts rather than the open Web as source material\marginnote{§~\ref{ch:implementation}}. One of these corpora is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}
+
+The library also contains three prints (a poster of `Jane Avril' by Toulouse-Lautrec, an advert for the `Revue Blanche' by Bonnard, and a portrait of Doctor Faustroll by Aubrey Beardsley) and a picture `Saint Cado' by the Oberthuer printing house of Rennes.\parencite[p.12]{Jarry1996}}.\marginnote{\faicon{picture-o}~\ref{fig:libimgs}}
+
+This library contains the following books.
 
 \begin{quotation}
   \begin{enumerate}
@@ -109,13 +114,15 @@ The artefact created to demonstrate the search algorithms\footnote{\url{pata.phy
   \caption[Oberthuer's `Saint Cado']{Oberthuer's `Saint Cado'}
 \label{fig:oberthuer}
 \end{minipage}
+\label{fig:libimgs}
 \end{figure}
 
 
 \section{100.000.000.000.000 Poems}
+\label{s:queneau}
 
 The interface design\marginnote{§~\ref{s:poetry}} of some of my search results is directly inspired by
-Raymond Queneau's \emph{Cent Mille Milliards de Poèmes}, a prime example of Oulipian art \citeyear{Queneau1961}. The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time. My implementation of this resulted in a sonnet, each line of which can be changed individually using mouse clicks.
+Raymond Queneau's \emph{Cent Mille Milliards de Poèmes} \citeyear{Queneau1961}, a prime example of Oulipian art. The book is essentially made up of 10 pages containing one sonnet each. Each page however is split into 14 thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time. My implementation of this resulted in a sonnet, each line of which can be changed individually using mouse clicks.
 
 \begin{figure}[h!]
 \centering
@@ -134,6 +141,7 @@ Raymond Queneau's \emph{Cent Mille Milliards de Poèmes}, a prime example of Oul
 
 
 \section{Celestial Emporium of Benevolent Knowledge}
+\label{s:borges}
 
 Jorge Luis Borges mentions a `Chinese Encyclopaedia' called the \emph{Celestial Emporium of Benevolent Knowledge} in the short story `The Analytical Language of John Wilkins' \citeyear{Borges2000}. It is a primary inspiration for this project, originally identified by \autocite{Hendler2011, Hendler2013}. It lists the following results under the category of `animal'.
 
@@ -160,6 +168,7 @@ Although these are obviously all perfectly valid results, it is clear that they 
 
 
 \section{Metaphorical Search Engine Yossarian}
+\label{s:yossarian}
 
 Yossarian is a creative search engine which claims to return \emph{diverse and unexpected results} \citeyear{Yossarian2015}. It is probably the closest thing to `related work' that exists for this project. Being a commercial product it is hard to find reliable details on precisely how their search engine works. The site seems well marketed but its functionality is shrouded in mystery. However, they argue that
 
@@ -181,10 +190,11 @@ This search engine appeared some time after I began my PhD research and has been
 
 
 \section{The Library of Babel}
+\label{s:babel}
 
 The \emph{Library of Babel} is a short story by Jorge Luis Borges \citeyear{Borges1964}. It envisions a universe, called `the Library', which is composed of `an indefinite and perhaps infinite number of hexagonal galleries' containing every possible book every conceived and not yet conceived.
 
-The specific artefact of inspiration for my project is a website implementing a miniature form of this library\footnote{\url{https://libraryofbabel.info/}} created by Jonathan Basile \citeyear{Basile2015}. Instead of containing every single book possible it \emph{only} contains every single page possible --- which is, at 3200 characters per page and 29 possible characters, still a lot.
+The specific artefact of inspiration for my project is a website implementing a miniature form of this library\footnote{\url{https://libraryofbabel.info/}} created by Jonathan Basile \citeyear{Basile2015}. Instead of containing every single book possible, it \emph{only} contains every single page possible---which is, at 3200 characters per page and 29 possible characters, still a lot.
 
 Basile claims to use a `pseudo-random number generating algorithm' (combining modular arithmetic and bit-shifting operations) to produce all $29^{3200}$ pages without needing to store anything on disk.
 
@@ -196,75 +206,95 @@ Basile claims to use a `pseudo-random number generating algorithm' (combining mo
   Nonetheless, the library contains its own sort of poetry and revelation, and even this disappointment can provide a moment of clarity. \sourceatright{\autocite{Basile2015}}
 \end{quotation}
 
-It is hard to say what exactly influenced my project most. I think the idea of computationally generating this massive library is fantastic --- and absurd. Perhaps this is a feature we share.
+It is hard to say what exactly influenced my project most. I think the idea of computationally generating this massive library is fantastic---and absurd. Perhaps this is a feature we share.
 
 
 \section{Oulipo}
-\todo{section on what inspired me of Oulipo}
-\todo{refer back to that in analysis}
+\label{s:oulipo}
+
 \todo{replace all references to Queneau with an abbreviation using 10to the power of xyz to shorten the title...}
-The \gls{oulipo} is a originally literary movement\footnote{It has since spread to other disciplines. The generic term for oulipian groups is OUXPO (``Ouvroir d'X Potentielle''), where the X can be replaced with whatever particular subject area you like (typically in french): fine art---OUPEINPO, music---OUMUPO, etc.} from the 1960's originating in France as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique''. It therefore has roots in pataphysics although it eventually seperated and became a standalone group. Their main blah blahBLAH BLAH is to use constraints to enhance creative output. Some examples of techniques invented and used by them are shown below.
+The \gls{oulipo} is a originally literary movement\footnote{It has since spread to other disciplines. The generic term for oulipian groups is OUXPO (``Ouvroir d'X Potentielle''), where the X can be replaced with whatever particular subject area you like (typically in french): fine art---OUPEINPO, music---OUMUPO, etc.} from the 1960's, originating in France as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique''. It therefore has roots in pataphysics although it eventually seperated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from \autocite{Mathews2005}, invented and used by them are shown below.
 
 \begin{description}
-  \item[N+7] Invented by Jean Lescure. It's a simple method of replacing each noun with the next seventh noun in a dictionary.
+  \item[N+7] Invented by Jean Lescure. It's a simple method of replacing each noun with the next seventh noun in a dictionary. For example: \emph{tree} $\rightarrow$ \emph{trend}\footnote{Generated using \url{http://www.spoonbill.org/n+7/}.}.
   \item[Algol poetry] Algol (Algorithmic Oriented Language) is a programming language from 1960 which at the time consisted of only 24 words. It was used to write poetry given the restricted vocabulary of the language only (see example below XYZ).
   \item[Melting snowball] A technique by which each line in a text has one less cahracter than the preceding one resulting in a structure as shown in figure XYZ.
   \item[Paul Braffort] Paul Braffort wrote a program in 1975 to generate versions of Queneau's 100 thousand million poems. It used the reader's name and the time it took to write it to determine which poem to display.\autocite[p.130]{Mathews2005} He did a similar thing with Italo Calvino to write a story that has a very large number of possible outcomes which can be reduced by the reader by making certain choices.
   \item[Mathew's Algorithm] In the 1970's Harry Mathews created this procedure of generating results. It is based on permutation of characters, words, symbols, numbers, etc.
 \end{description}
+\todo{add references}
 
 \begin{quotation}
-  [The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to elminate them.\sourceatright{\autocite[p.131]{Mathews2005}}
+  [The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to eliminate them.\sourceatright{\autocite[p.131]{Mathews2005}}
 \end{quotation}
 
-\todo{poetry listing?}
-\begin{draft}
-  \textit{Table}\\
-  Begin: to make format,\\
-  go down to comment\\
-  while channel not false\\
-    (if not true). End.\\
-  (Francois Le Lionnais) \autocite[p.47]{Mathews2005}
-\end{draft}
+\begin{figure}[h!]
+\begin{minipage}{.42\linewidth}
+  \settowidth{\versewidth}{while channel not false} 
+  \indentpattern{00001}
+  \begin{verse}[\versewidth]
+  \begin{patverse}\ttfamily
+    ~~~~~~~\textit{Table}\\
+    Begin: to make format,\\
+    go down to comment\\
+    while channel not false\\
+      (if not true). End.\\ 
+  \end{patverse}
+  \end{verse}
+\end{minipage}
+\begin{minipage}{.32\linewidth}
+  \begin{alltt}\ttfamily\centering
+    Incontrovertible
+    sadomasochistic
+    orthographical
+    compositional
+    restrictions 
+    insistently
+    discipline
+    grandiose
+    sixteens
+    initial
+    hubris
+    right
+    down
+    now
+    to
+    0
+  \end{alltt}
+\end{minipage}
+\begin{minipage}{.24\linewidth}
+  \centering
+  $\begin{matrix}
+    \text{T}&\text{I}&\text{N}&\text{E}\\
+    \text{S}&\text{A}&\text{L}&\text{E}\\
+    \text{M}&\text{A}&\text{L}&\text{E}\\
+    \text{V}&\text{I}&\text{N}&\text{E}
+  \end{matrix}$
 
-\begin{draft}
-  Incontrovertible\\
-  sadomasochistic\\
-  orthographical\\
-  compositional\\
-  restrictions\\
-  insistently\\
-  discipline\\
-  grandiose\\
-  sixteens\\
-  initial\\
-  hubris\\
-  right\\
-  down\\
-  now\\
-  to\\
-  0
-  \autocite[p.185]{Mathews2005}
-\end{draft}
+  \vspace{5mm}
 
-\begin{draft}
-  \todo{create matrix}
-  TINE\\
-  SALE\\
-  MALE\\
-  VINE\\
+  $\downarrow$
 
-  TINE\\
-  ESAL\\
-  LEMA\\
-  INEV\\
-  \autocite[p.184]{Mathews2005}
-\end{draft}
+  \vspace{5mm}
 
-These techniques have endless applications in as many different disciplines. The use of constraints is now a well known approach for creative activities and has many supporters.
+  $\begin{matrix}
+    \text{T}&\text{I}&\text{N}&\text{E}\\
+    \text{E}&\text{S}&\text{A}&\text{L}\\
+    \text{L}&\text{E}&\text{M}&\text{A}\\
+    \text{I}&\text{N}&\text{E}&\text{V}
+  \end{matrix}$
+\end{minipage}
+\caption{Algol Poem (left), Melting Snowball (middle), Mathew's Algorithm (right)}
+\label{fig:poems}
+\end{figure}
+
+These techniques have endless applications in as many different disciplines. The use of constraints is now a well-known approach for creative activities and has many supporters.
 
 
-\section{The Zen of Python}
+\section{Coder Culture}
+\label{s:culture}
+
+Whether you want to call it ``programming culture'', ``coding culture'', or ``hacking culture''---it is clear that the topics shared are \emph{code} and \emph{culture}.
 
 The programming language Python was used for the core system behind the \url{pata.physics.wtf} site. The so-called \emph{Zen of Python} is a set of guidelines for good practice in programming originally defined by Guido van Rossum---the creator of Python---who is endeeringly known as the \gls{bdfl} and put into the below form by Tim Peters.
 
@@ -305,7 +335,7 @@ The following list shows some other general programming culture references that 
   \item [Code Golf] `a competition to solve a particular problem in the fewest bytes of source code'\footnote{See \url{http://codegolf.stackexchange.com/questions/tagged/code-golf}}
   \item [Code Bowling] `a competition to solve a particular (usually simple) problem in the most bytes or complexity'\footnote{See \url{http://codegolf.stackexchange.com/questions/tagged/code-bowling}}
   \item [\gls{ioccc}] a competition to `write the most obscure/obfuscated C program within the rules to show the importance of programming style, in an ironic way'\footnote{See \url{http://www.ioccc.org/}}
-  \item [Glitch Art] Wikipedia defines it as `the aestheticization of digital or analog errors, such as artifacts and other `bugs', by either corrupting digital code/data or by physically manipulating electronic devices (for example by circuit bending)'\footnote{See \url{https://www.reddit.com/r/glitch_art/} and \url{https://goo.gl/waiqKV}}
+  \item [Glitch Art] The community\footnote{AKA Wikipedia.} defines it as `the aestheticization of digital or analog errors, such as artifacts and other `bugs', by either corrupting digital code/data or by physically manipulating electronic devices (for example by circuit bending)'\footnote{See \url{https://www.reddit.com/r/glitch_art/} and \url{https://goo.gl/waiqKV}}
   \item [Easter Eggs] The practice of hiding a reproducible, personal, harmless and entertaining feature into a piece of software \footnote{See \url{http://www.eeggs.com/faq.html}}
   \item [Knuth] Donald Knuth has long maintained a tradition of (a) adding easter eggs to his books on programming and (b) rewarding people for finding errors and typos in his books with fictional currency.\footnote{See \url{http://www-cs-faculty.stanford.edu/~uno/help.html}}
 \end{description}
@@ -339,9 +369,6 @@ n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
 \caption{An example entry by Uri Goren from the \gls{ioccc} contest from 2011.}
 \label{code:goren}
 \end{listing}
-
-
-\todo{finish writing these out}
 
 
 \stopcontents[chapters]
