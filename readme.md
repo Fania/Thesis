@@ -139,7 +139,26 @@ pdflatex --file-line-error -shell-escape main
 - [ ] why do the spirals after the mini chapter tocs creep upwards slowly over time each chapter? at the beginning the distance is fine but later on it overlaps.???
 - [ ] turn code into art. each aspect of phd is art.
 - [ ] remove publications in preface and just describe fully in first chapter
+- [ ] make all chapter poems sans serif or monospace
+- [ ] remove spacing between preface and postface items in toc 
+- [ ] replace some chapter poems with shakespeare versions to be able to refer back to them later
 
+
+## FIRST DRAFT COMPLETE:
+- [x] introduction
+- [x] inspiration
+- [ ] methodology
+- [ ] pataphysics
+- [ ] creativity
+- [ ] technology
+- [ ] evaluation
+- [ ] foundations
+- [ ] interpretation
+- [ ] implementation
+- [ ] application
+- [ ] analysis
+- [ ] aspirations
+- [ ] observations
 
 
 
