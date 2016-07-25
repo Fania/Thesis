@@ -53,7 +53,7 @@ My project has since moved on from the idea of using the Semantic Web to create 
 
 The artefact created to demonstrate the search algorithms---\url{pata.physics.wtf}---uses two collections of texts rather than the open Web as source material\marginnote{§~\ref{ch:implementation}}. One of these corpora is based on the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}
 
-The library also contains three prints (a poster of `Jane Avril' by Toulouse-Lautrec, an advert for the `Revue Blanche' by Bonnard, and a portrait of Doctor Faustroll by Aubrey Beardsley) and a picture `Saint Cado' by the Oberthuer printing house of Rennes.\parencite[p.12]{Jarry1996}}.\marginnote{\faicon{picture-o}~\ref{fig:libimgs}}
+The library also contains three prints (a poster of `Jane Avril' by Toulouse-Lautrec, an advert for the `Revue Blanche' by Bonnard, and a portrait of Doctor Faustroll by Aubrey Beardsley) and a picture `Saint Cado' by the Oberthuer printing house of Rennes.\autocite[p.12]{Jarry1996}.\marginnote{\faicon{picture-o}~\ref{fig:libimgs}}
 
 This library contains the following books.
 
@@ -93,27 +93,28 @@ This library contains the following books.
 \centering
 \begin{minipage}{.45\linewidth}
   \includegraphics[width=\linewidth]{JaneAvril}
-  \caption[Toulouse-Lautrec's `Jane Avril']{Toulouse-Lautrec's `Jane Avril'}
-\label{fig:toulouse}
+%   \caption[Toulouse-Lautrec's `Jane Avril']{Toulouse-Lautrec's `Jane Avril'}
+% \label{fig:toulouse}
 \end{minipage}
 \hspace{.05\linewidth}
 \begin{minipage}{.45\linewidth}
   \includegraphics[width=\linewidth]{RevueBlanche}
-  \caption[Bonnard's `Revue Blanche']{Bonnard's `Revue Blanche'}
-\label{fig:bonnard}
+%   \caption[Bonnard's `Revue Blanche']{Bonnard's `Revue Blanche'}
+% \label{fig:bonnard}
 \end{minipage}
 \vspace{.05\linewidth}
 \begin{minipage}{.45\linewidth}
   \includegraphics[width=\linewidth]{DocteurFaustroll}
-  \caption[Beardsley's `Docteur Faustroll']{Beardsley's `Docteur Faustroll'}
-\label{fig:beardsley}
+%   \caption[Beardsley's `Docteur Faustroll']{Beardsley's `Docteur Faustroll'}
+% \label{fig:beardsley}
 \end{minipage}
 \hspace{.05\linewidth}
 \begin{minipage}{.45\linewidth}
   \includegraphics[width=\linewidth]{SaintCado}
-  \caption[Oberthuer's `Saint Cado']{Oberthuer's `Saint Cado'}
-\label{fig:oberthuer}
+%   \caption[Oberthuer's `Saint Cado']{Oberthuer's `Saint Cado'}
+% \label{fig:oberthuer}
 \end{minipage}
+\caption[Jane Avril, Revue Blanche, Docteur Faustroll and Saint Cado]{Jane Avril, Revue Blanche, Docteur Faustroll and Saint Cado}
 \label{fig:libimgs}
 \end{figure}
 
@@ -213,16 +214,15 @@ It is hard to say what exactly influenced my project most. I think the idea of c
 \label{s:oulipo}
 
 \todo{replace all references to Queneau with an abbreviation using 10to the power of xyz to shorten the title...}
-The \gls{oulipo} is a originally literary movement\footnote{It has since spread to other disciplines. The generic term for oulipian groups is OUXPO (``Ouvroir d'X Potentielle''), where the X can be replaced with whatever particular subject area you like (typically in french): fine art---OUPEINPO, music---OUMUPO, etc.} from the 1960's, originating in France as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique''. It therefore has roots in pataphysics although it eventually seperated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from \autocite{Mathews2005}, invented and used by them are shown below.
+The \gls{oulipo} is a originally literary movement\footnote{It has since spread to other disciplines. The generic term for oulipian groups is OUXPO (``Ouvroir d'X Potentielle''), where the X can be replaced with whatever particular subject area you like (typically in french): fine art---OUPEINPO, music---OUMUPO, etc.} from the 1960's, originating in France as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique''. It therefore has roots in pataphysics although it eventually separated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from \autocite{Mathews2005}, invented and used by them are shown below.
 
 \begin{description}
-  \item[N+7] Invented by Jean Lescure. It's a simple method of replacing each noun with the next seventh noun in a dictionary. For example: \emph{tree} $\rightarrow$ \emph{trend}\footnote{Generated using \url{http://www.spoonbill.org/n+7/}.}.
-  \item[Algol poetry] Algol (Algorithmic Oriented Language) is a programming language from 1960 which at the time consisted of only 24 words. It was used to write poetry given the restricted vocabulary of the language only (see example below XYZ).
-  \item[Melting snowball] A technique by which each line in a text has one less cahracter than the preceding one resulting in a structure as shown in figure XYZ.
-  \item[Paul Braffort] Paul Braffort wrote a program in 1975 to generate versions of Queneau's 100 thousand million poems. It used the reader's name and the time it took to write it to determine which poem to display.\autocite[p.130]{Mathews2005} He did a similar thing with Italo Calvino to write a story that has a very large number of possible outcomes which can be reduced by the reader by making certain choices.
-  \item[Mathew's Algorithm] In the 1970's Harry Mathews created this procedure of generating results. It is based on permutation of characters, words, symbols, numbers, etc.
+  \item[N+7] Invented by Jean Lescure. It's a simple method of replacing each noun with the next seventh noun in a dictionary. For example: \emph{tree} $\rightarrow$ \emph{trend}, \emph{shoreline} $\rightarrow$ \emph{shotgun}\footnote{Generated using \url{http://www.spoonbill.org/n+7/}.}.
+  \item[Algol poetry] Algol (Algorithmic Oriented Language) is a programming language from 1960 which at the time consisted of only 24 words. It was used to write poetry given the restricted vocabulary of the language only (see example below in figure~\ref{fig:poems}).
+  \item[Melting snowball] A technique by which each line in a text has one less character than the preceding one resulting in a structure as shown in figure~\ref{fig:poems}.
+  \item[Paul Braffort] Paul Braffort wrote a program in 1975 to generate versions of Queneau's 100 thousand million poems. It used the reader's name and the time it took to write it to determine which poem to display. He did a similar thing with Italo Calvino to write a story that has a very large number of possible outcomes which can be reduced by the reader by making certain choices.
+  \item[Mathew's Algorithm] In the 1970's Harry Mathews created this procedure of generating results. It is based on permutation of characters, words, symbols, numbers, etc. See figure~\ref{fig:poems}.
 \end{description}
-\todo{add references}
 
 \begin{quotation}
   [The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to eliminate them.\sourceatright{\autocite[p.131]{Mathews2005}}
@@ -284,7 +284,7 @@ The \gls{oulipo} is a originally literary movement\footnote{It has since spread 
     \text{I}&\text{N}&\text{E}&\text{V}
   \end{matrix}$
 \end{minipage}
-\caption{Algol Poem (left), Melting Snowball (middle), Mathew's Algorithm (right)}
+\caption[Algol Poem, Melting Snowball, Mathew's Algorithm]{Algol Poem (left), Melting Snowball (middle), Mathew's Algorithm (right)}
 \label{fig:poems}
 \end{figure}
 
