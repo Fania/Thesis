@@ -41,7 +41,6 @@ still a point worthy very serious investigation.
   \item query expansion == pataphysicalisation
   \item expand 6.1 (abusing stuff, creating own rules, oulipo)
   \item lookup vs exploratory
-  \item homonym / heteronym DONE
   \item storing rhyming data in index or other additional things like ranking
   \item creative use of NLP examples (search web for refs) DONE
   \item CONSTRAINTS + oulipo again
@@ -51,47 +50,46 @@ still a point worthy very serious investigation.
   \item newspaper legal corpus
 \end{itemize}
 
-\begin{fcom}
-Randomness is meaningless. Serendipity contains an element of faith or the supernatural. Pataphysics is purposeless but by using it to give structure to something else it gains a purpose.
-\end{fcom}
-
 \spirals
 
-A lot of the more theoretical aspects of this research have been discussed in chapters~\ref{ch:foundations}\marginnote{§~\ref{ch:foundations}~\&~\ref{ch:interpretation}} and \ref{ch:interpretation}. The evaluation here is more concerned with the practical artefact \url{pata.physics.wtf} and its interpretation as well as whether or not it actually achieved some of its goals and was true to its inspirations.
+A lot of the more theoretical aspects of this research have been discussed in chapters~\ref{ch:foundations}\marginnote{§~\ref{ch:foundations}~\&~\ref{ch:interpretation}} and \ref{ch:interpretation}. The evaluation here is more concerned with the practical artefact \url{pata.physics.wtf} and its interpretation.
+
+The chapter is divided into several sections addressing issues related to \url{pata.physics.wtf}. This includes a discussion of the inspirations, an analysis of some of the technical aspects, a review of design decisions made, a contextualisation and also a meta-analysis of the project's execution and management.
 
 
 \section{Influences}
 
-Looking back over the inspirations for this project described in chapter~\ref{ch:inspirations}\marginnote{§~\ref{ch:inspirations}}, some of the influences can be clearly seen straight away. Others are intentionally a bit more subtle. There are various motivations for that. First, transparency conflicts with \emph{surprise}. Serendipity was one of the original aims to try and model, so being overly obvious and descriptive about what the tool is and does would be counter productive. An element of surprise also makes it more enjoyable in repeat visits. Another reasons was \emph{humour}. Pataphysics has an intrinsic kind of humour I wanted to include in the whole presentation of the artefact. 
+Looking back over the inspirations for this project described in chapter~\ref{ch:inspirations}\marginnote{§~\ref{ch:inspirations}}, some of the influences can be clearly seen straight away. Others are intentionally a bit more subtle. There are various motivations for that. First, transparency conflicts with \emph{surprise}. Serendipity was one of the original aims to try and model, so being overly obvious and descriptive about what the tool is and does would be counter productive. An element of surprise also makes it more enjoyable in repeat visits. Pure randomness is meaningless. Another reasons was \emph{humour}. Pataphysics has an intrinsic kind of humour I wanted to include in the whole presentation of the artefact. 
 
 \begin{description}
   \item[Syzygy Surfer]\marginnote{§~\ref{s:surfer}} The influence of the Syzygy Surfer cannot be overstated. It forms the immediate predecessor to my research. It should not be forgotten that the authors of the Syzygy Surfer are part of my supervisory team. This is where the initial ideas for the pataphysical algorithms\marginnote{§~\ref{s:algorithms}} came from. There are important differences as well though. For example, pataphors were never implemented even though this was originally suggested. Also, the concept of patadata was never really conceptualised properly. The idea of using ontologies and semantic web technologies such as \gls{rdf} to develop the system was abandoned early on too.
-  \item[Faustroll Library]\marginnote{§~\ref{s:faustlib}} This fictional library of real books was direct inspiration for the Faustroll corpus used in the text search\marginnote{§~\ref{s:corpora}}. I tried my best to complete the library as accurately as I could but some of the texts where unsourceable. As with the original, I included some foreign language texts. Since the results (if the Faustroll corpus is chosen of course) are drawn from any of these texts, the mood and style of language is quite distinct and athmospheric.
+  \item[Faustroll Library]\marginnote{§~\ref{s:faustlib}} This fictional library of real books was direct inspiration for the Faustroll corpus used in the text search\marginnote{§~\ref{s:corpora}}. I tried my best to complete the library as accurately as I could but some of the texts where unsourceable. As with the original, I included some foreign language texts. Since the results (if the Faustroll corpus is chosen of course) are drawn from any of these texts, the mood and style of language is quite distinct and atmospheric.
   \item[Queneau's 100 thousand million poems]\marginnote{§~\ref{s:queneau}} Queneau is another one of the inspirations that became a direct influence. The text search can be displayed as poetry\marginnote{§~\ref{s:poetry}} in the same style as Queneau's 100 thousand million poems only in digital form and with a larger set of lines. This means that many more possible poems can be generated by switching individual lines. The outcome is beautiful.
-  \item[Celestial Emporium of Benevloent Knoweldge]\marginnote{§~\ref{s:borges}} Borges chinese encyclopedia has been an inspiration right from the start. The subtle humour in it is great. The sort of semantic logic behind it was modeled through the pataphysical algorithms\marginnote{§~\ref{s:algorithms}}.
+  \item[Celestial Emporium of Benevolent Knowledge]\marginnote{§~\ref{s:borges}} Borges chinese encyclopedia has been an inspiration right from the start. The subtle humour in it is great. The sort of semantic logic behind it was modeled through the pataphysical algorithms\marginnote{§~\ref{s:algorithms}}.
   \item[Yossarian]\marginnote{§~\ref{s:yossarian}} This has been interesting to watch but if anything was more of a counter inspiration. An example of what I do not want to do. Their so-called metaphoric search engine is hyped but it is wholly unclear of how their algorithm actually create these metaphors. It is hard to compare against this as it is so different even though we share some of the same goals or principles.
   \item[Library of Babel]\marginnote{§~\ref{s:babel}} The library of babel is a great project which has only indirectly influence my work. The pataphysical elements in it are obvious even though perhaps unconscious. The seriousness with which the library is presented, the pseudo-scientific approach, the vagueness of what's actually behind it. Is it random? Or is it indeed the most gigantic digital library of any book every written or even to be written? The sheer perceived scale of the library was part motivation for calculating the numbers of the generatable poems\marginnote{\faicon{table}~\ref{tab:faustshake}}.
   \item[Oulipo]\marginnote{§~\ref{s:oulipo}} Given that the \gls{oulipo} is directly rooted in pataphysical priniciples\footnote{Remember that the \gls{oulipo} was founded as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique'' in the 60's.}, the influence on this project cannot be underestimated. The algorithms\marginnote{§~\ref{s:algorithms}} created could even be seen as an oulipian technique themselves.
-  \item[Coder Culture]\marginnote{§~\ref{s:culture}} This group of inspirations is a bit more generic and influenced lots of little things throughout the project. The idea of hiding easter eggs on the site, the deliberate placement or use of errors, the obfuscation, the humour, the jargonisation and littered `l33t' language, and the art and aesthetics behind it. All of that was influenced by coder culture---and most of all perhaps: this thesis.
+  \item[Coder Culture]\marginnote{§~\ref{s:culture}} This group of inspirations is a bit more generic and influenced lots of little things throughout the project. The idea of hiding easter eggs on the site, the deliberate placement or use of errors, the obfuscation, the humour, the jargonisation and littered `l33t' style language, and the art and aesthetics behind it. All of that was influenced by coder culture---and most of all perhaps: this thesis.
 \end{description}
-
-\todo{check out what is happening with the hyponyms in the getnym function}
+\todo{remove yossarian criticism}
 
 
 \section{Pataphysicalisation}
 
-It is quite interesting to compare the three different algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{algorithmscomp}.
+The internal transformation of a query term to the final results is essentially what I call the \emph{pataphysicalisation} process. The three pataphysical algorithms, or \emph{patalgorithms}, are at the center of this process.
+
+It is quite interesting to compare these algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{tab:algorithmscomp}.
 
 \begin{table}[htb]
   \begin{tabu}{X[1,L]|X[3,L]X[3,L]X[2,L]}
   \toprule
   % \cline{2-4}
   &
-  \textbf{clinamen}
+  \textbf{Clinamen}
   &
-  \textbf{syzygy}
+  \textbf{Syzygy}
   &
-  \textbf{antinomy}
+  \textbf{Antinomy}
   \\ \midrule
   \textbf{clear}
   &
@@ -135,66 +133,70 @@ It is quite interesting to compare the three different algorithms with each othe
   \\ \bottomrule
   \end{tabu}
 \caption[Comparison of algorithms]{Comparison of algorithms showing a selection of results for each.}
-\label{algorithmscomp}
+\label{yab:algorithmscomp}
 \end{table}
 
-Seeing the results in a table like this gives an almost immediate idea of how each algorithm works. This is not meant to to be transparent and perhaps only after knowing the ins and outs of the algorithms can one recognise how each result was found. The clinamen results show words that contain one or two spelling errors of the original query term. It is perhaps counter intuitive to have words such as `altar', `leaf' and `cellar' be classed as spelling errors of the word `clear' but they clearly could be. Remember that a spelling error can be classed in one of four ways: (1) deletion, (2) insertion, (3) substitution and (4) transposition. So, going from `clear' to `altar' is an instance of two times case 3 (`c' is replace by `a' and `e' is replaced by `t') and going from  `clear' to `leaf' is an example of case 1 (`c' is deleted) and case 3 (`r' is replaced by `f').
+Seeing the results in a table like\marginnote{\faicon{table}~\ref{tab:algorithmscomp}} this gives an almost immediate idea of how each algorithm works. This is not meant to be transparent and perhaps only after knowing the ins and outs of the algorithms can one recognise how each result was found. 
 
-Looking at the second column, the syzygy results, shows semantic relationship between the original query term and the results. Again, this may not be immediatly noticeable but certainly once you know how the process works you can recognise the common relations. This is especially evident for the antinomy algorithm.
+The clinamen results show words that contain one or two spelling errors of the original query term. It is perhaps counter-intuitive to have words such as `altar', `leaf' and `cellar' be classed as spelling errors of the word `clear' but they clearly could be. Remember that a spelling error can be classed in one of four ways: (1) deletion, (2) insertion, (3) substitution and (4) transposition. So, going from `clear' to `altar' is an instance of two times case 3 (`c' is replace by `a' and `e' is replaced by `t') and going from  `clear' to `leaf' is an example of case 1 (`c' is deleted) and case 3 (`r' is replaced by `f').
+
+Looking at the second column (the syzygy results) shows the semantic relationship between the original query term and the results. Again, this may not be immediatly noticeable but certainly once you know how the process works you can recognise the common relations. This is especially evident for the antinomy algorithm which is based on opposites.
 
 \spirals
 
 However it is equally interesting to compare some full sentences.
-Looking at some of the poems at the beginning of each chapter shows the variety of the possible outcomes. It also highlights the difference between the two corpora. Poems based on the Faustrol corpus have a very different sound and feel to it than ones based on the Shakespeare corpus.
+Looking at some of the poems at the beginning of each chapter shows the variety of the possible outcomes (Pages \pageref{ch:introduction}, \pageref{ch:inspirations}, \pageref{ch:methodology}, \pageref{ch:pataphysics}, \pageref{ch:creativity}, \pageref{ch:technology}, \pageref{ch:evaluation}, \pageref{ch:foundations}, \pageref{ch:interpretation}, \pageref{ch:implementation}, \pageref{ch:applications}, \pageref{ch:analysis}, \pageref{ch:aspirations}, and \pageref{ch:observations}). It also highlights the difference between the two corpora. Poems based on the Faustrol corpus have a very different sound and feel to it than ones based on the Shakespeare corpus.
 
-Sometimes we can even get a general feel for the theme of the poem, as in we can recognize the connection, the relationship between the individual lines and what must be the original query term. Of course putting the poems into the chapters as they are---without specifically stating the keyword they were generated from---makes them a bit more elusive.
+Sometimes we can even get a general feel for the theme of the poem, as in we can recognize the connection, the relationship between the individual lines and what must be the original query term. Of course putting the poems into the chapters as they are---without specifically stating the keyword they were generated from or the corpus they are based on---makes them a bit more elusive.
 
-The different language is quite obvious. This is helped by the fact that the Shakespeare corpus is of course written by the same author\footnote{Unless of course we believe the legends that he didn't write those works by himself\ldots}. The Faustroll corpus contains text by over 20 different authors and in four different languages even.
-\todo{say some more about this}
-\todo{link to example poems in various chapters or put two side by side here perhaps.}
+The different language is quite obvious. This is helped by the fact that the Shakespeare corpus is of course written by the same author\footnote{Unless of course we believe the legends that Shakespeare didn't write those works by himself\ldots}. The Faustroll corpus contains text by over 20 different authors and in three different languages even.
 
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.45\linewidth}
-  {\footnotesize\sffamily\SingleSpacing
-  There was a period put to the Fire\\
-  pink and spot\\
-  earth was flat like the floor of an Oven\\
-  as much ease as a mower doth the grass\\
+  \settowidth{\versewidth}{earth was flat like the floor of an Oven} 
+  \begin{verse}[\versewidth]\sffamily\footnotesize
+    There was a period put to the Fire\\
+    pink and spot\\
+    earth was flat like the floor of an Oven\\
+    as much ease as a mower doth the grass
 
-  during the first period of my captivity\\
-  room with a hard earthen floor\\
-  not within everyone's power\\
-  or your favourite flowers died\\
+    during the first period of my captivity\\
+    room with a hard earthen floor\\
+    not within everyone's power\\
+    or your favourite flowers died
 
-  shocks lose power\\
-  the white daisy\\
-  after a long period\\
+    shocks lose power\\
+    the white daisy\\
+    after a long period
 
-  poppy\\
-  peony\\
-  stock to all People\\}
+    poppy\\
+    peony\\
+    stock to all People
+  \end{verse}
 \end{minipage}
 \hspace{.02\linewidth}
 \begin{minipage}{.45\linewidth}
-  {\footnotesize\sffamily\SingleSpacing
-  O bloody period\\
-  I as your lover speak\\
-  has she such power\\
-  gather those flowers\\
+  \settowidth{\versewidth}{led by their master to the flow'red fields} 
+  \begin{verse}[\versewidth]\sffamily\footnotesize
+    O bloody period\\
+    I as your lover speak\\
+    has she such power\\
+    gather those flowers
 
-  thy lover\\
-  juiced flowers\\
-  had I been any god of power\\
-  or a lover's lute\\
+    thy lover\\
+    juiced flowers\\
+    had I been any god of power\\
+    or a lover's lute
 
-  the river hath thrice flow'd\\
-  but sad mortality o'ersways their power\\
- 	now here a period of tumultuous broils\\
+    the river hath thrice flow'd\\
+    but sad mortality o'ersways their power\\
+    now here a period of tumultuous broils
 
-  led by their master to the flow'red fields\\
-  not a minister in his power\\
-  where soulds do couch on flowers\\}
+    led by their master to the flow'red fields\\
+    not a minister in his power\\
+    where soulds do couch on flowers
+  \end{verse}
 \end{minipage}
 \caption[Faustroll vs Shakespeare]{Comparison of Faustroll (left) versus Shakespeare (right) poetry}
 \label{fig:2poems}
@@ -262,6 +264,35 @@ What does that mean? How can we address this?
 \end{table}
 
 
+\paragraph{pp\_sent}
+
+faustroll clear with all sentences 8751 
+faustroll clear with the first sentence only 542
+
+Francois Rabelais: Gargantua and Pantagruel
+
+term: cellar\\
+positions: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]\\
+sentence: rope wine is let down into a cellar
+
+sentences: \\
+  - rope wine is let down into a cellar\\
+  - bread and holy water of the cellar\\
+  - year who had a cool cellar under ground\\
+  - cellar\\
+  - that Nick in the dark cellar\\
+  - on the cellar door\\
+  - in mind of the painted cellar in the oldest city in the world\\
+  - and the painted cellar also
+
+\begin{draft}
+  This is also a lot more time consuming.
+  A way around this would be to store each sentence with each word in the index directly.
+\end{draft}
+
+\todo{calculate averages of how many positions the average index term has}
+
+
 \subsection{Index}
 
 \todo{look up google index or other examples or crawls}
@@ -273,33 +304,6 @@ Now, the size of the index is interesting. Processing the Faustroll corpus alone
 \todo{how big is the new combined corpus?? - its 35.2MB}
 
 storing rhyming data in index or other additional things like ranking
-
-
-\subsection{pp\_sent}
-
-faustroll clear with all sentences 8751 
-faustroll clear with the first sentence only 542
-
-Francois Rabelais: Gargantua and Pantagruel
-
-term: cellar
-positions: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]
-sentence: rope wine is let down into a cellar
-
-sentences: 
-  - rope wine is let down into a cellar
-  - bread and holy water of the cellar
-  - year who had a cool cellar under ground
-  - cellar
-  - that Nick in the dark cellar
-  - on the cellar door
-  - in mind of the painted cellar in the oldest city in the world
-  - and the painted cellar also
-
-\begin{draft}
-  This is also a lot more time consuming.
-  A way around this would be to store each sentence with each word in the index directly.
-\end{draft}
 
 
 \subsection{Clinamen}
@@ -399,6 +403,9 @@ abyss, Across, across, acts, adds, Alas, almost, also, among, amor, amore, amour
 
 
 \subsection{Syzygy}
+
+
+\todo{check out what is happening with the hyponyms in the getnym function}
 
 The syzygy function goes through the following process.
 \todo{semantic hierarchy visualised?}

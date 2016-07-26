@@ -142,6 +142,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] make all chapter poems sans serif or monospace
 - [ ] remove spacing between preface and postface items in toc 
 - [ ] replace some chapter poems with shakespeare versions to be able to refer back to them later
+- [ ] key of code stuff in intro (e.g. oreilly)
 
 
 ## FIRST DRAFT COMPLETE:
@@ -161,7 +162,16 @@ pdflatex --file-line-error -shell-escape main
 - [ ] observations
 
 
+titles of books etc in italics
+quotes from books in double quotes
+word emph in italics
 
+\begin{description}
+  \item [\faicon{table}] Represents a table.
+  \item [\faicon{object-group}] Represents a figure.
+  \item [§] Represents a chapter.
+  \item [\faicon{picture-o}] Represents an image.
+\end{description}
 
 
 ## Hongji feedback
