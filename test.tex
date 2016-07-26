@@ -7,7 +7,21 @@
 
 
 \begin{document}
+\pagestyle{plain}
 
+\tableofcontents
 
+\include{test0}
+\include{test1}
+% \include{main/methodology}
+
+\phantomsection
+\addtocontents{toc}{\protect\vspace{20pt}}
+\addcontentsline{toc}{part}{HELLO WORLD}
+\partimage[width=\textwidth]{spiral_hello.pdf}
+\part{\texorpdfstring{H\scalebox{2.2}{$\boldsymbol\Sigma$}LL\scalebox{2.2}{$\boldsymbol\Theta$} W\scalebox{2.2}{$\boldsymbol\Theta$}RLD}{HELLO WORLD}}
+% \include{main/introduction}
+% \include{main/inspirations}
+\include{main/methodology}
 
 \end{document}
