@@ -345,9 +345,9 @@ breaklines=true
 \newcommand\minicontents{%
   % \brule
   % \vspace{1cm}
-  \begin{shaded}
+  % \begin{shaded}
   \printcontents[chapters]{p}{1}{\maxtocdepth{subsection}}
-  \end{shaded}
+  % \end{shaded}
   % \addvspace{\baselineskip}
   % \vspace{-3cm}
   % \vspace{1cm}
@@ -634,6 +634,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % pathmorphing
 \usepackage{qtree}
 \usepackage{mathtools}
+% \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
 
@@ -733,6 +734,10 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 
 % TABLES
+
+\usepackage{wrapfig}
+\setlength{\intextsep}{0.5cm} 
+\setlength{\columnsep}{1cm} 
 
 \usepackage{booktabs}
 \usepackage{tabu}

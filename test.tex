@@ -5,23 +5,265 @@
 \author{Fania Raczinski}
 \date{March 2015}
 
+\usepackage{lipsum}
 
 \begin{document}
-\pagestyle{plain}
 
-\tableofcontents
+\lipsum[2]
 
-\include{test0}
-\include{test1}
-% \include{main/methodology}
+\begin{wraptable}{r}{4.5cm} 
+\begin{tabu}{ccc}
+\toprule
+File & Words  & Lang \\ \midrule
+00   & 22230  & e    \\
+01   & 419456 & e    \\
+02   & 33078  & e    \\
+03   & 26843  & e    \\
+04   & 103637 & f    \\
+05   & 3853   & e    \\
+06   & 134328 & f    \\
+07   & 39937  & f    \\
+08   & 4548   & f    \\
+09   & 11309  & f    \\
+10   & 110518 & e    \\
+11   & 31286  & g    \\
+12   & 78983  & f    \\
+13   & 75293  & f    \\
+14   & 20371  & e    \\
+15   & 21822  & f    \\
+16   & 54747  & e    \\
+17   & 110980 & e    \\
+18   & 0      &      \\
+19   & 301903 & e    \\
+20   & 0      &      \\
+21   & 0      &      \\
+22   & 14627  & f    \\
+23   & 5873   & g    \\
+24   & 12660  & f    \\
+25   & 6647   & e    \\
+26   & 8065   & e    \\
+27   & 85467  & e    \\ \bottomrule
+\end{tabu}
+\caption{My caption}
+\label{my-label}
+\end{wraptable}
 
-\phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
-\addcontentsline{toc}{part}{HELLO WORLD}
-\partimage[width=\textwidth]{spiral_hello.pdf}
-\part{\texorpdfstring{H\scalebox{2.2}{$\boldsymbol\Sigma$}LL\scalebox{2.2}{$\boldsymbol\Theta$} W\scalebox{2.2}{$\boldsymbol\Theta$}RLD}{HELLO WORLD}}
-% \include{main/introduction}
-% \include{main/inspirations}
-\include{main/methodology}
+\lipsum[2]
+
+% % Please add the following required packages to your document preamble:
+% % \usepackage{booktabs}
+% \begin{table}[]
+% \centering
+% \caption{My caption}
+% \label{my-label}
+% \begin{tabular}{@{}lll@{}}
+% \toprule
+% File & Words  & Lang \\ \midrule
+% 00   & 22230  & e    \\
+% 01   & 419456 & e    \\
+% 02   & 33078  & e    \\
+% 03   & 26843  & e    \\
+% 04   & 103637 & f    \\
+% 05   & 3853   & e    \\
+% 06   & 134328 & f    \\
+% 07   & 39937  & f    \\
+% 08   & 4548   & f    \\
+% 09   & 11309  & f    \\
+% 10   & 110518 & e    \\
+% 11   & 31286  & g    \\
+% 12   & 78983  & f    \\
+% 13   & 75293  & f    \\
+% 14   & 20371  & e    \\
+% 15   & 21822  & f    \\
+% 16   & 54747  & e    \\
+% 17   & 110980 & e    \\
+% 18   & 0      &      \\
+% 19   & 301903 & e    \\
+% 20   & 0      &      \\
+% 21   & 0      &      \\
+% 22   & 14627  & f    \\
+% 23   & 5873   & g    \\
+% 24   & 12660  & f    \\
+% 25   & 6647   & e    \\
+% 26   & 8065   & e    \\
+% 27   & 85467  & e    \\ \bottomrule
+% \end{tabular}
+% \end{table}
+
+% \begin{bchart}[max=420]
+%   \bcbar[value=22230]{22.230}
+%   \bcbar[value=419456]{419.456}
+%   \bcbar[value=33078]{33.078}
+%   \bcbar[value=26843]{26.843}
+%   \bcbar[value=103637]{103.637}
+%   \bcbar[value=3853]{3.853}
+%   \bcbar[value=134328]{134.328}
+%   \bcbar[value=39937]{39.937}
+%   \bcbar[value=4548]{4.548}
+%   \bcbar[value=11309]{11.309}
+%   \bcbar[value=110518]{110.518}
+%   \bcbar[value=31286]{31.286}
+%   \bcbar[value=78983]{78.983}
+%   \bcbar[value=75293]{75.293}
+%   \bcbar[value=20371]{20.371}
+%   \bcbar[value=21822]{21.822}
+%   \bcbar[value=54747]{54.747}
+%   \bcbar[value=110980]{110.980}
+%   \bcbar[value=0]{0}
+%   \bcbar[value=301903]{301.903}
+%   \bcbar[value=0]{0}
+%   \bcbar[value=0]{0}
+%   \bcbar[value=14627]{14.627}
+%   \bcbar[value=5873]{5.873}
+%   \bcbar[value=12660]{12.660}
+%   \bcbar[value=6647]{6.647}
+%   \bcbar[value=8065]{8.065}
+%   \bcbar[value=85467]{85.467} 
+% \end{bchart}
+
+
+
+
+
+
+% \begin{tikzpicture}
+%   \begin{axis}[title  = Faustroll Word Counts,
+%     xbar,
+%     y axis line style = { opacity = 0 },
+%     axis x line       = none,
+%     tickwidth         = 0pt,
+%     enlarge y limits  = 0.2,
+%     enlarge x limits  = 0.02,
+%     % symbolic y coords = {LaTeX, Tools, Distributions, Editors},
+%     nodes near coords,
+%   ]
+%   \addplot coordinates { 
+%   (22230, 0)
+%   (419456, 1)
+%   (33078, 2)
+%   (26843, 3)
+%   (103637, 4)
+%   (3853, 5)
+%   (134328, 6)
+%   (39937, 7)
+%   (4548, 8)
+%   (11309, 9)
+%   (110518, 10)
+%   (31286, 11)
+%   (78983, 12)
+%   (75293, 13)
+%   (20371, 14)
+%   (21822, 15)
+%   (54747, 16)
+%   (110980, 17)
+%   (0, 18)
+%   (301903, 19)
+%   (0, 20)
+%   (0, 21)
+%   (14627, 22)
+%   (5873, 23)
+%   (12660, 24)
+%   (6647, 25)
+%   (8065, 26)
+%   (85467, 27)            
+%   };
+%   % \addplot coordinates { (14320,LaTeX)         (1615,Tools)
+%                         %  (560,Distributions)   (3075,Editors)  };
+%   \legend{Faustroll}
+%   \end{axis}
+% \end{tikzpicture}
+
+
+faustroll corpus has 3 empty files.
+stopwords
+quality of faustroll corpus (typos)
+
+
+shakespeare vocab in index: 23398
+faustroll vocab in index: 78893
+faustroll english vocab in index: 49040
+
+french: 
+4,6,7,8,9,12,13,15,22,24
+
+german:
+11,23
+
+english:
+0,1,2,3,5,10,14,16,17,19,25,26,27
+
+empty:
+18,20,21
+
+faustroll total number of words
+00 22230 e
+01 419456 e
+02 33078 e
+03 26843 e
+04 103637 f
+05 3853 e
+06 134328 f
+07 39937 f
+08 4548 f
+09 11309 f
+10 110518 e
+11 31286 g
+12 78983 f
+13 75293 f
+14 20371 e
+15 21822 f
+16 54747 e
+17 110980 e
+18 0
+19 301903 e
+20 0
+21 0
+22 14627 f
+23 5873 g
+24 12660 f
+25 6647 e
+26 8065 e
+27 85467 e
+
+
+shakespeare
+00 17742
+01 24371
+02 26460
+03 22812
+04 16200
+05 29213
+06 28786
+07 32031
+08 25721
+09 27631
+10 27447
+11 22776
+12 26784
+13 25833
+14 25817
+15 21704
+16 20870
+17 27513
+18 22887
+19 18233
+20 22873
+21 22254
+22 23360
+23 17233
+24 22450
+25 27866
+26 23297
+27 31090
+28 25864
+29 22159
+30 17415
+31 19634
+32 21634
+33 27537
+34 21153
+35 18293
+36 25949
+37 2568
 
 \end{document}
