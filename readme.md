@@ -143,6 +143,12 @@ pdflatex --file-line-error -shell-escape main
 - [ ] remove spacing between preface and postface items in toc 
 - [ ] replace some chapter poems with shakespeare versions to be able to refer back to them later
 - [ ] key of code stuff in intro (e.g. oreilly)
+- [ ] Make it clear that you are presenting a thesis that embodies knowledge in an artefact (the software) but avoid the "practice-based" argument altogether. That involves little change to what you have already done and leaves you free to go into as much depth as you like. In practice, the examiners will probably see a 50/50 relationship between the software and the thesis, which is about right in my opinion.
+
+
+I am more convinced than ever that submitting this as a "practice-based" portfolio is not the best way forwards. I think it is risky, because you would be judged as though you are an artist who has written some code, rather than a computer scientist who has ventured into artistic territory. But, more importantly, I think it undervalues the amazing amount of critical reading and synthesis, not to mention hard maths and programming, you have done, by putting all that into a "supporting thesis" rather than it being the thesis itself. Your best bet, as I said in my previous email, is to make it clear that you have embedded your knowledge in an artefact. That way it will be judged in a roughly 50/50 relationship with the thesis. That probably needs some explaining at the start, which leads on to my next point...
+
+While the subjectivity of pataphysics and creativity is not in doubt, I'm not sure that means it is necessary to include so much personal information in the thesis. I'm not saying you should remove yourself, but I do think it tends to weaken the overall argument and suggests that you are not confident in your own work. You have every reason to present this as an original contribution to knowledge. I would discuss your own role only where it is strictly relevant to the process and outcome. There are some occasions like that. In general, try to avoid anecdote and concentrate on delivering the hard, complex and terrific work you have done. It speaks for you!
 
 
 ## FIRST DRAFT COMPLETE:
