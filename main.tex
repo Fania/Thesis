@@ -78,7 +78,8 @@
 \mainmatter
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% these spaces mess up my partial tocs....
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{HELLO WORLD}
 \partimage[width=\textwidth]{spiral_hello.pdf}
 \part{\texorpdfstring{H\scalebox{2.2}{$\boldsymbol\Sigma$}LL\scalebox{2.2}{$\boldsymbol\Theta$} W\scalebox{2.2}{$\boldsymbol\Theta$}RLD}{HELLO WORLD}}
@@ -87,7 +88,7 @@
 \include{main/methodology}
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{TOOLS OF THE TRADE}
 \partimage[width=\textwidth]{spiral_trade.pdf}
 \part{\texorpdfstring{T\scalebox{2.2}{$\boldsymbol\Theta\boldsymbol\Theta$}LS OF THE TR\scalebox{2.2}{$\boldsymbol\forall$}D\scalebox{2.2}{$\boldsymbol\Sigma$}}{TOOLS OF THE TRADE}}
@@ -103,7 +104,7 @@
 \include{back/interlude1}
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{THE CORE: TECHNO-LOGIC}
 \partimage[width=\textwidth]{spiral_core.pdf}
 \part{\texorpdfstring{THE C\scalebox{2.2}{$\boldsymbol\Theta$}RE:\@ T\scalebox{2.2}{$\boldsymbol\Sigma$}CHN\scalebox{2.2}{$\boldsymbol\Theta$}-L\scalebox{2.2}{$\boldsymbol\Theta$}GIC}{THE CORE:\@ TECHNO-LOGIC}}
@@ -111,11 +112,11 @@
 % \include{main/interpretation}
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{THE CORE: TECHNO-PRACTICE}
 \partimage[width=\textwidth]{spiral_practice.pdf}
 \part{\texorpdfstring{THE C\scalebox{2.2}{$\boldsymbol\Theta$}RE:\@ T\scalebox{2.2}{$\boldsymbol\Sigma$}CHN\scalebox{2.2}{$\boldsymbol\Theta$}-PR\scalebox{2.2}{$\boldsymbol\forall$}CTIC\scalebox{2.2}{$\boldsymbol\Sigma$}}{THE CORE:\@ TECHNO-PRACTICE}}
-% \include{main/implementation}
+\include{main/implementation}
 \include{main/applications}
 
 % \phantomsection
@@ -125,7 +126,7 @@
 \include{back/interlude2}
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{META-LOGICALYSIS}
 \partimage[width=\textwidth]{spiral_meta.pdf}
 \part{\texorpdfstring{M\scalebox{2.2}{$\boldsymbol\Sigma$}T\scalebox{2.2}{$\boldsymbol\forall$}-L\scalebox{2.2}{$\boldsymbol\Theta$}GIC\scalebox{2.2}{$\boldsymbol\forall$}LYSIS}{META-LOGICALYSIS}}
@@ -133,7 +134,7 @@
 \include{main/aspirations}
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{HAPPILY EVER AFTER}
 \partimage[width=\textwidth]{spiral_after.pdf}
 \part{\texorpdfstring{H\scalebox{2.2}{$\boldsymbol\forall$}PPILY \scalebox{2.2}{$\boldsymbol\Sigma$}V\scalebox{2.2}{$\boldsymbol\Sigma$}R \scalebox{2.2}{$\boldsymbol\forall$}FT\scalebox{2.2}{$\boldsymbol\Sigma$}R?}{HAPPILY EVER AFTER?}}
@@ -149,7 +150,7 @@
 \appendix
 
 \phantomsection
-\addtocontents{toc}{\protect\vspace{20pt}}
+% \addtocontents{toc}{\protect\vspace{20pt}}
 \addcontentsline{toc}{part}{POSTFACE}
 \partimage[width=\textwidth]{spiral_post.pdf}
 \part{\texorpdfstring{POST\scalebox{2.5}{\frownie{}}}{POSTFACE}}

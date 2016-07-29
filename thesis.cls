@@ -315,6 +315,7 @@ breaklines=true
     % \addcontentsline{toc}{part}{#1}
   \fi
   \thispagestyle{empty}
+  % \addtocontents{toc}{\protect\vspace*{20\p@}}% <------------ added
   \vskip 50\p@
   \begingroup\centering
   \fontsize{2cm}{0}\bfseries
@@ -343,9 +344,13 @@ breaklines=true
 {} {\contentslabel{3.5em}} {} {\titlerule*[1pc]{.}\contentspage}
 \newcommand\minicontents{%
   % \brule
-  \vspace{1cm}
+  % \vspace{1cm}
+  % \begin{shaded}
   \printcontents[chapters]{p}{1}{\maxtocdepth{subsection}}
-  \vspace{-3cm}
+  % \end{shaded}
+  % \addvspace{\baselineskip}
+  % \vspace{-3cm}
+  % \vspace{1cm}
   % \brule
   }
 \makeatother
@@ -629,6 +634,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % pathmorphing
 \usepackage{qtree}
 \usepackage{mathtools}
+% \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
 
@@ -729,6 +735,10 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % TABLES
 
+\usepackage{wrapfig}
+\setlength{\intextsep}{0.5cm} 
+\setlength{\columnsep}{1cm} 
+
 \usepackage{booktabs}
 \usepackage{tabu}
 \newtabulinestyle{outer=1.2pt}
@@ -821,6 +831,14 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % }
 
 
+% FRAME
+% \usepackage[framemethod=default]{mdframed}
+% \usepackage{showexpl}
+% \mdfdefinestyle{exampledefault}{%
+% rightline=true,innerleftmargin=10,innerrightmargin=10,
+% frametitlerule=true,frametitlerulecolor=green,
+% frametitlebackgroundcolor=yellow,
+% frametitlerulewidth=2pt}
 
 
 
@@ -845,7 +863,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
             pdftex,
             pdfauthor={Fania Raczinski},
             pdftitle={PhD Thesis},
-            pdfsubject={Web Collider},
+            pdfsubject={Algorithmic Meta-Creativity},
             pdfkeywords={Pataphysics, Creative Computing, Interdisciplinary Research}]{hyperref}
 
 
