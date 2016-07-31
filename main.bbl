@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.5 $
+% $ biblatex bbl format version 2.7 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,43 +18,49 @@
 
 
 \refsection{0}
-  \sortlist{nyt}{nyt}
-    \entry{Agichtein2006}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=fe8015d14586e9b47ee6a9b45faf20ab}{Agichtein}{A\bibinitperiod}{Eugene}{E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=9f8e33baaaf8e47517200546eb04dc57}{Brill}{B\bibinitperiod}{Eric}{E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=d5f0f6887b60158e68525c49071c2a73}{Dumais}{D\bibinitperiod}{Susan}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {New York, New York, USA}%
-      }
-      \list{publisher}{1}{%
-        {ACM Press}%
-      }
-      \strng{namehash}{8ddcc2c68fb00b27888fe47dc8021ad2}
-      \strng{fullhash}{8ddcc2c68fb00b27888fe47dc8021ad2}
-      \field{sortinit}{A}
-      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{ACM SIGIR conference on Research and development in information retrieval}
-      \field{title}{{Improving web search ranking by incorporating user behavior information}}
-      \field{year}{2006}
-      \field{pages}{19}
-      \range{pages}{1}
-    \endentry
+  \sortlist[entry]{nyt/global/}
     \entry{Amaral}{article}{}
       \name{author}{8}{}{%
-        {{uniquename=0,hash=aa4cfb3d0eb3fc5f4ff9bb720a15896c}{Amaral}{A\bibinitperiod}{Jose\bibnamedelima Nelson}{J\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1d5c128ae3ff1819ea0c2f845dd76536}{Buro}{B\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=b5ec0b677b8aa22bc8dd78c61632885b}{Elio}{E\bibinitperiod}{Renee}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=12d8b333519586895d50bf805dab6082}{Hoover}{H\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4bb78236d76d9c6e6b7e99b320997b04}{Nikolaidis}{N\bibinitperiod}{Ioanis}{I\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1622accd2e04b06caa29ff658cea96ab}{Salavatipour}{S\bibinitperiod}{Mohammad}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=df436b204335ade5595778ce44d8cebc}{Stewart}{S\bibinitperiod}{Lorna}{L\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=0fcc3175edd96e9eb0bc377b0beddb93}{Wong}{W\bibinitperiod}{Ken}{K\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aa4cfb3d0eb3fc5f4ff9bb720a15896c}{%
+           family={Amaral},
+           family_i={A\bibinitperiod},
+           given={Jose\bibnamedelima Nelson},
+           given_i={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{uniquename=0,hash=1d5c128ae3ff1819ea0c2f845dd76536}{%
+           family={Buro},
+           family_i={B\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=b5ec0b677b8aa22bc8dd78c61632885b}{%
+           family={Elio},
+           family_i={E\bibinitperiod},
+           given={Renee},
+           given_i={R\bibinitperiod}}}%
+        {{uniquename=0,hash=12d8b333519586895d50bf805dab6082}{%
+           family={Hoover},
+           family_i={H\bibinitperiod},
+           given={Jim},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=4bb78236d76d9c6e6b7e99b320997b04}{%
+           family={Nikolaidis},
+           family_i={N\bibinitperiod},
+           given={Ioanis},
+           given_i={I\bibinitperiod}}}%
+        {{uniquename=0,hash=1622accd2e04b06caa29ff658cea96ab}{%
+           family={Salavatipour},
+           family_i={S\bibinitperiod},
+           given={Mohammad},
+           given_i={M\bibinitperiod}}}%
+        {{uniquename=0,hash=df436b204335ade5595778ce44d8cebc}{%
+           family={Stewart},
+           family_i={S\bibinitperiod},
+           given={Lorna},
+           given_i={L\bibinitperiod}}}%
+        {{uniquename=0,hash=0fcc3175edd96e9eb0bc377b0beddb93}{%
+           family={Wong},
+           family_i={W\bibinitperiod},
+           given={Ken},
+           given_i={K\bibinitperiod}}}%
       }
       \strng{namehash}{ab1e137003d78fb2efd34497f274cab8}
       \strng{fullhash}{3333df75e10468611498a19358d94d52}
@@ -70,277 +76,13 @@
       \verb %7Bhttps://webdocs.cs.ualberta.ca/~c603/readings/research-methods.pdf%7D
       \endverb
     \endentry
-    \entry{Baeza-Yates2011}{book}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=14e9e2c7e918f62ba13b9e040fb7f468}{Baeza-Yates}{B\bibinithyphendelim Y\bibinitperiod}{Ricardo}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=f25e271e4c06cb466719bf923801707f}{Ribeiro-Neto}{R\bibinithyphendelim N\bibinitperiod}{Berthier}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Addison Wesley}%
-      }
-      \strng{namehash}{1f00528ee1ee87a4195a7a9296c94914}
-      \strng{fullhash}{1f00528ee1ee87a4195a7a9296c94914}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2011}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0321416910}
-      \field{title}{{Modern Information Retrieval: The Concepts and Technology Behind Search}}
-      \field{year}{2011}
-      \verb{url}
-      \verb http://www.mir2ed.org/
-      \endverb
-    \endentry
-    \entry{Baidu2012}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=d36e219e608d6f9aa15b1e42081689fa}{Baidu}{B\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{d36e219e608d6f9aa15b1e42081689fa}
-      \strng{fullhash}{d36e219e608d6f9aa15b1e42081689fa}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Baidu About}}
-      \field{urlday}{22}
-      \field{urlmonth}{12}
-      \field{urlyear}{2012}
-      \field{year}{2012}
-    \endentry
-    \entry{Baldi2010}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=29071d8aba395a6fac114cffcb4b6b19}{Baldi}{B\bibinitperiod}{Pierre}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a5d0648fad8ee57ed9668c4157bc00b4}{Itti}{I\bibinitperiod}{Laurent}{L\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier Ltd}%
-      }
-      \strng{namehash}{78dd3840e3425c5e9227e44ee9974048}
-      \strng{fullhash}{78dd3840e3425c5e9227e44ee9974048}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2010}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Neural Networks}
-      \field{title}{{Of bits and wows : A Bayesian theory of surprise with applications to attention}}
-      \field{volume}{23}
-      \field{year}{2010}
-      \field{pages}{649\bibrangedash 666}
-      \range{pages}{18}
-      \verb{doi}
-      \verb 10.1016/j.neunet.2009.12.007
-      \endverb
-    \endentry
-    \entry{Bao2007}{article}{}
-      \name{author}{6}{}{%
-        {{uniquename=0,hash=9a3738ae61e3decbabc15aef77e55232}{Bao}{B\bibinitperiod}{Shenghua}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=46c6a2d866959ab2b082ab0ec2e70547}{Wu}{W\bibinitperiod}{Xiaoyuan}{X\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=96c9605983fba7ed699f38babe8d8903}{Fei}{F\bibinitperiod}{Ben}{B\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=96943dcdb4eb55380d96a618a8194ba5}{Xue}{X\bibinitperiod}{Guirong}{G\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=23501135d71fdb37393cdc612ec1a91d}{Su}{S\bibinitperiod}{Zhong}{Z\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=c447a713c11f58a40c2a899040774a98}{Yu}{Y\bibinitperiod}{Yong}{Y\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{5fe77f5ec2740038a4e9ca4768366fa0}
-      \strng{fullhash}{75f8c946a02d16442317429b4cc4a6f5}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Distribution}
-      \field{title}{{Optimizing Web Search Using Social Annotations}}
-      \field{year}{2007}
-      \field{pages}{501\bibrangedash 510}
-      \range{pages}{10}
-    \endentry
-    \entry{Barthes1967}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=1b230e91c108eeaca0348e9eba71249c}{Barthes}{B\bibinitperiod}{Roland}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {UbuWeb}%
-      }
-      \strng{namehash}{1b230e91c108eeaca0348e9eba71249c}
-      \strng{fullhash}{1b230e91c108eeaca0348e9eba71249c}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{1967}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Aspen 5,6}
-      \field{note}{the birth of the reader must be ransomed by the death of the Author}
-      \field{title}{The Death of the Author}
-      \field{urlday}{26}
-      \field{urlmonth}{01}
-      \field{urlyear}{2016}
-      \field{year}{1967}
-      \verb{url}
-      \verb %7Bhttp://www.ubu.com/aspen/aspen5and6/threeEssays.html/#barthes%7D
-      \endverb
-    \endentry
-    \entry{Basile2015}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=fc6a82a13eedc474cd5dea5914bc887a}{Basile}{B\bibinitperiod}{Jonathan}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{fc6a82a13eedc474cd5dea5914bc887a}
-      \strng{fullhash}{fc6a82a13eedc474cd5dea5914bc887a}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2015}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The Library of Babel}
-      \field{urlday}{10}
-      \field{urlmonth}{12}
-      \field{urlyear}{2015}
-      \field{year}{2015}
-      \verb{url}
-      \verb https://libraryofbabel.info/
-      \endverb
-    \endentry
-    \entry{BastosFilho2008}{article}{}
-      \name{author}{5}{}{%
-        {{uniquename=0,hash=c32b5e16d378a21c62641743d436a47d}{{Bastos\bibnamedelimb Filho}}{B\bibinitperiod}{Carmelo}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e8d84a245aab4458f79a669ecb11bdd3}{{de\bibnamedelimb Lima\bibnamedelimb Neto}}{d\bibinitperiod}{Fernando}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=ec3b83c049d066149d18123411c392ca}{Lins}{L\bibinitperiod}{Anthony}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=77584b94557fdffec873eb34f48438f6}{Nascimento}{N\bibinitperiod}{Antonio}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=6886a7a77ce42942806cb893877652ab}{Lima}{L\bibinitperiod}{Marilia}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Ieee}%
-      }
-      \strng{namehash}{0fdfd6601b36abc89ee33eee102ad0c5}
-      \strng{fullhash}{dba9244bc77749ba3405220f443ddee5}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2008}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE International Conference on Systems, Man and Cybernetics}
-      \field{title}{{A novel search algorithm based on fish school behavior}}
-      \field{year}{2008}
-      \field{pages}{2646\bibrangedash 2651}
-      \range{pages}{6}
-    \endentry
-    \entry{Baudrillard2007}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=d3678024febce6c9a32d9b8bc9cea570}{Baudrillard}{B\bibinitperiod}{Jean}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{d3678024febce6c9a32d9b8bc9cea570}
-      \strng{fullhash}{d3678024febce6c9a32d9b8bc9cea570}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Pataphysics}}
-      \field{urlday}{21}
-      \field{urlmonth}{01}
-      \field{urlyear}{2012}
-      \field{year}{2007}
-      \verb{url}
-      \verb http://www.ctheory.net/articles.aspx?id=569
-      \endverb
-    \endentry
-    \entry{Beghetto2007}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=6016afe921e92f543da8e9202b4e4b6e}{Beghetto}{B\bibinitperiod}{Ronald\bibnamedelima A.}{R\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=52719bdc3fc9567249c12397a5130be2}{Kaufman}{K\bibinitperiod}{James\bibnamedelima C.}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{0949620c4613e072eced077ab4172f5a}
-      \strng{fullhash}{0949620c4613e072eced077ab4172f5a}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Psychology of Aesthetics, Creativity, and the Arts}
-      \field{number}{2}
-      \field{title}{{Toward a broader conception of creativity: A case for 'mini-c' creativity.}}
-      \field{volume}{1}
-      \field{year}{2007}
-      \field{pages}{73\bibrangedash 79}
-      \range{pages}{7}
-    \endentry
-    \entry{Bharat2000}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=29a5fb28082a646136e3460b881a653b}{Bharat}{B\bibinitperiod}{Krishna}{K\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1423cca7398fe6c45ac06c60162b358f}{Mihaila}{M\bibinitperiod}{George}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{25c64995f790ced442c84b7c41ba72ff}
-      \strng{fullhash}{25c64995f790ced442c84b7c41ba72ff}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2000}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proc of the 9th International WWW}
-      \field{title}{{Hilltop: A Search Engine based on Expert Documents}}
-      \field{volume}{11}
-      \field{year}{2000}
-    \endentry
-    \entry{Bird2009}{book}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=a6ad72a87713a430f7335c5656da28f1}{Bird}{B\bibinitperiod}{Steven}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=95e002ca584c2d8d701c96f08c6d589f}{Klein}{K\bibinitperiod}{Ewan}{E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2814798d9a65d66800fc6e2ec5ad7483}{Loper}{L\bibinitperiod}{Edward}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Sebasopol, CA}%
-      }
-      \list{publisher}{1}{%
-        {O'Reilly Media}%
-      }
-      \strng{namehash}{f0999d1f539a44b08b01482038a721f8}
-      \strng{fullhash}{f0999d1f539a44b08b01482038a721f8}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-0-596-51649-9}
-      \field{title}{{Natural Language Processing with Python}}
-      \field{year}{2009}
-    \endentry
-    \entry{Boden2003}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=b6c9b366a167b533289162ba9a2cee2c}{Boden}{B\bibinitperiod}{Margaret}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Routledge}%
-      }
-      \strng{namehash}{b6c9b366a167b533289162ba9a2cee2c}
-      \strng{fullhash}{b6c9b366a167b533289162ba9a2cee2c}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2003}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0415314534}
-      \field{title}{{The Creative Mind: Myths and Mechanisms}}
-      \field{year}{2003}
-    \endentry
     \entry{Boek2002}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=610c1c5f52703d63c33d33d5d2187e5e}{Boek}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=610c1c5f52703d63c33d33d5d2187e5e}{%
+           family={Boek},
+           family_i={B\bibinitperiod},
+           given={Christian},
+           given_i={C\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Evanston, Illinois}%
@@ -360,311 +102,33 @@
       \field{title}{{'Pataphysics: The Poetics of an Imaginary Science}}
       \field{year}{2002}
     \endentry
-    \entry{Borges1964}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {New York}%
-      }
-      \list{publisher}{1}{%
-        {New Directions}%
-      }
-      \strng{namehash}{55c46750cf7ab3664d78a35aff495868}
-      \strng{fullhash}{55c46750cf7ab3664d78a35aff495868}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{1964}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-0811200127}
-      \field{title}{{Labyrinths - Selected Stories and Other Writings}}
-      \field{year}{1964}
-    \endentry
-    \entry{Borges1999}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \name{translator}{1}{}{%
-        {{hash=b555839fa2d85c70f5650fe0dd02a6b7}{Hurley}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Penguin}%
-      }
-      \strng{namehash}{55c46750cf7ab3664d78a35aff495868}
-      \strng{fullhash}{55c46750cf7ab3664d78a35aff495868}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{1999}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9780140286809}
-      \field{title}{{Collected fictions}}
-      \field{year}{1999}
-    \endentry
-    \entry{Borges2000}{inbook}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=01780f39b37039e442b35fa2b0a61280}{Weinberger}{W\bibinitperiod}{Eliot}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Penguin Books}%
-      }
-      \strng{namehash}{55c46750cf7ab3664d78a35aff495868}
-      \strng{fullhash}{55c46750cf7ab3664d78a35aff495868}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2000}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Selected Non-Fictions}
-      \field{title}{{The Analytical Language of John Wilkins}}
-      \field{year}{2000}
-      \field{pages}{229\bibrangedash 232}
-      \range{pages}{4}
-      \verb{url}
-      \verb http://www.entish.org/essays/Wilkins.html
-      \endverb
-    \endentry
-    \entry{Borges2010b}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Reclam}%
-      }
-      \strng{namehash}{55c46750cf7ab3664d78a35aff495868}
-      \strng{fullhash}{55c46750cf7ab3664d78a35aff495868}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2010}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{La biblioteca de Babel}}
-      \field{year}{2010}
-    \endentry
-    \entry{Borges2010a}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=3ff64e4607691fb0b03ab845e17d34c7}{Dembo}{D\bibinitperiod}{L.S.}{L\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{d9853f0077150b5b5c020f4447437133}
-      \strng{fullhash}{d9853f0077150b5b5c020f4447437133}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2010}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Contemporary Literature}
-      \field{number}{3}
-      \field{title}{{Interview with Borges}}
-      \field{volume}{11}
-      \field{year}{2010}
-      \field{pages}{315\bibrangedash 323}
-      \range{pages}{9}
-    \endentry
-    \entry{Borges1957}{book}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=55c46750cf7ab3664d78a35aff495868}{Borges}{B\bibinitperiod}{Jorge\bibnamedelima Luis}{J\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=5f29375b57385f416a2f518b7e197443}{Guerrero}{G\bibinitperiod}{Margarita}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{translator}{1}{}{%
-        {{hash=b555839fa2d85c70f5650fe0dd02a6b7}{Hurley}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Viking}%
-      }
-      \strng{namehash}{8b813890509d5bc32e71cc4c281b481b}
-      \strng{fullhash}{8b813890509d5bc32e71cc4c281b481b}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{1957}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Book of Imaginary Beings}}
-      \field{year}{1957}
-    \endentry
-    \entry{Brin1998b}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7ddfb5dccb95d01018c3b0724ae93a06}{Page}{P\bibinitperiod}{Larry}{L\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{86bc0c0321d713241fa50f4de722ec9c}
-      \strng{fullhash}{86bc0c0321d713241fa50f4de722ec9c}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{extrayear}{1}
-      \field{labelyear}{1998}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computer Networks and ISDN Systems}
-      \field{number}{1-7}
-      \field{title}{{The anatomy of a large-scale hypertextual Web search engine}}
-      \field{volume}{30}
-      \field{year}{1998}
-      \field{pages}{107\bibrangedash 117}
-      \range{pages}{11}
-    \endentry
-    \entry{Brin1998}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7ddfb5dccb95d01018c3b0724ae93a06}{Page}{P\bibinitperiod}{Larry}{L\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{86bc0c0321d713241fa50f4de722ec9c}
-      \strng{fullhash}{86bc0c0321d713241fa50f4de722ec9c}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{extrayear}{2}
-      \field{labelyear}{1998}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{World Wide Web Internet And Web Information Systems}
-      \field{title}{{The PageRank Citation Ranking: Bringing Order to the Web}}
-      \field{year}{1998}
-      \field{pages}{1\bibrangedash 17}
-      \range{pages}{17}
-    \endentry
-    \entry{Brotchie2011}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=2,hash=505aae8b78f6f15a3609dada788cdb56}{Brotchie}{B\bibinitperiod}{Alastair}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {UK}%
-      }
-      \list{publisher}{1}{%
-        {Atlas Press}%
-      }
-      \strng{namehash}{505aae8b78f6f15a3609dada788cdb56}
-      \strng{fullhash}{505aae8b78f6f15a3609dada788cdb56}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2011}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-1-900565-55-4}
-      \field{title}{{A supplement}}
-      \field{year}{2011}
-    \endentry
-    \entry{Brotchie2007}{book}{}
-      \name{editor}{2}{}{%
-        {{uniquename=2,hash=505aae8b78f6f15a3609dada788cdb56}{Brotchie}{B\bibinitperiod}{Alastair}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=484c51edca47b25dd8d5c8510338b609}{Chapman}{C\bibinitperiod}{Stanley}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Atlas Press}%
-      }
-      \strng{namehash}{5f0f08624a79529e555f3f4974baef49}
-      \strng{fullhash}{5f0f08624a79529e555f3f4974baef49}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-1-900565-42-4}
-      \field{title}{{Necrologies}}
-      \field{year}{2007}
-    \endentry
-    \entry{Brotchie2003}{book}{}
-      \name{editor}{4}{uniquelist=2}{%
-        {{uniquename=2,hash=505aae8b78f6f15a3609dada788cdb56}{Brotchie}{B\bibinitperiod}{Alastair}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=484c51edca47b25dd8d5c8510338b609}{Chapman}{C\bibinitperiod}{Stanley}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=f88f8d9137a2bab5c75d62b8e8fa3335}{Foulc}{F\bibinitperiod}{Thieri}{T\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=229ad85ebbcf10bb67714df26759c6e6}{Jackson}{J\bibinitperiod}{Kevin}{K\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Atlas Press}%
-      }
-      \strng{namehash}{b91f6e305f8326afac6a34257cfe3f88}
-      \strng{fullhash}{c456060a089e40a6fcd78d8decf0a6a5}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2003}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{isbn}{1900565080}
-      \field{title}{{'Pataphysics: Definitions and Citations}}
-      \field{year}{2003}
-    \endentry
-    \entry{Brotchie1995}{book}{}
-      \name{editor}{1}{}{%
-        {{uniquename=2,hash=e47b1bfb22045aa43f5a115ccab23fd0}{Brotchie}{B\bibinitperiod}{Alistair}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \name{translator}{1}{}{%
-        {{hash=f9f96d5d2136fd6642a30dcddb95cc54}{Edwards}{E\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Atlas Press}%
-      }
-      \strng{namehash}{e47b1bfb22045aa43f5a115ccab23fd0}
-      \strng{fullhash}{e47b1bfb22045aa43f5a115ccab23fd0}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{1995}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0-947757-78-3}
-      \field{title}{{A True History of the College of 'Pataphysics - 1}}
-      \field{year}{1995}
-    \endentry
-    \entry{Wired2011}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=ded96e8c8681436bb90e0ad619a01a84}{Brown}{B\bibinitperiod}{Mark}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wired UK}%
-      }
-      \strng{namehash}{ded96e8c8681436bb90e0ad619a01a84}
-      \strng{fullhash}{ded96e8c8681436bb90e0ad619a01a84}
-      \field{sortinit}{B}
-      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
-      \field{labelyear}{2011}
-      \field{labelmonth}{06}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{06}
-      \field{title}{Patrick Tresset's robots draw faces and doodle when bored}
-      \field{urlday}{24}
-      \field{urlmonth}{01}
-      \field{urlyear}{2016}
-      \field{year}{2011}
-      \verb{url}
-      \verb http://www.wired.co.uk/news/archive/2011-06/17/sketching-robots
-      \endverb
-    \endentry
     \entry{Burdick2012}{book}{}
       \name{author}{5}{}{%
-        {{uniquename=0,hash=bb88d70fb259118895676e24b72e7631}{Burdick}{B\bibinitperiod}{Anne}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1cfaef74f23558d563be1ef6740cc386}{Drucker}{D\bibinitperiod}{Johanna}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=155509ef4d59d90e3d1970061a16a990}{Lunefeld}{L\bibinitperiod}{Peter}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=9c9091d200496acb5852f6498286432c}{Presner}{P\bibinitperiod}{Todd}{T\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=3b912e96c46082dc0fbb48531db5cc98}{Schnapp}{S\bibinitperiod}{Jeffrey}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bb88d70fb259118895676e24b72e7631}{%
+           family={Burdick},
+           family_i={B\bibinitperiod},
+           given={Anne},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=1cfaef74f23558d563be1ef6740cc386}{%
+           family={Drucker},
+           family_i={D\bibinitperiod},
+           given={Johanna},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=155509ef4d59d90e3d1970061a16a990}{%
+           family={Lunefeld},
+           family_i={L\bibinitperiod},
+           given={Peter},
+           given_i={P\bibinitperiod}}}%
+        {{uniquename=0,hash=9c9091d200496acb5852f6498286432c}{%
+           family={Presner},
+           family_i={P\bibinitperiod},
+           given={Todd},
+           given_i={T\bibinitperiod}}}%
+        {{uniquename=0,hash=3b912e96c46082dc0fbb48531db5cc98}{%
+           family={Schnapp},
+           family_i={S\bibinitperiod},
+           given={Jeffrey},
+           given_i={J\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge, Massachusetts}%
@@ -686,7 +150,11 @@
     \endentry
     \entry{Burnham2015}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=0c8bb25e77692e2abe47cf18a92bbac4}{Burnham}{B\bibinitperiod}{Douglas}{D\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=0c8bb25e77692e2abe47cf18a92bbac4}{%
+           family={Burnham},
+           family_i={B\bibinitperiod},
+           given={Douglas},
+           given_i={D\bibinitperiod}}}%
       }
       \strng{namehash}{0c8bb25e77692e2abe47cf18a92bbac4}
       \strng{fullhash}{0c8bb25e77692e2abe47cf18a92bbac4}
@@ -708,7 +176,11 @@
     \endentry
     \entry{Candy2006}{report}{}
       \name{author}{1}{}{%
-        {{uniquename=2,hash=f3cdb65074a2ecb331165fe1bd97c2c0}{Candy}{C\bibinitperiod}{Linda}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=2,hash=f3cdb65074a2ecb331165fe1bd97c2c0}{%
+           family={Candy},
+           family_i={C\bibinitperiod},
+           given={Linda},
+           given_i={L\bibinitperiod}}}%
       }
       \strng{namehash}{f3cdb65074a2ecb331165fe1bd97c2c0}
       \strng{fullhash}{f3cdb65074a2ecb331165fe1bd97c2c0}
@@ -724,227 +196,13 @@
       \field{volume}{V1}
       \field{year}{2006}
     \endentry
-    \entry{Candy2012}{incollection}{}
-      \name{author}{1}{}{%
-        {{uniquename=2,hash=f3cdb65074a2ecb331165fe1bd97c2c0}{Candy}{C\bibinitperiod}{Linda}{L\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=b7b242a8e9af2070c17402fb145882aa}{Carroll}{C\bibinitperiod}{J.M.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{f3cdb65074a2ecb331165fe1bd97c2c0}
-      \strng{fullhash}{f3cdb65074a2ecb331165fe1bd97c2c0}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Creativity and Rationale: Enhancing Human Experience by Design}
-      \field{title}{{Evaluating Creativity}}
-      \field{year}{2012}
-    \endentry
-    \entry{Candy2011}{book}{}
-      \name{editor}{2}{}{%
-        {{uniquename=2,hash=f3cdb65074a2ecb331165fe1bd97c2c0}{Candy}{C\bibinitperiod}{Linda}{L\bibinitperiod}{}{}{}{}}%
-        {{uniquename=2,hash=7931d5b0283ff960cd220ea654bf9964}{Edmonds}{E\bibinitperiod}{Ernest}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Libri Publishing}%
-      }
-      \strng{namehash}{a1559aac7e565b0424ea9c091599c07c}
-      \strng{fullhash}{a1559aac7e565b0424ea9c091599c07c}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{2011}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{editor}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9781907471483}
-      \field{title}{{Interacting: Art, Research and the Creative Practitioner}}
-      \field{year}{2011}
-    \endentry
-    \entry{Chalmers1996}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=7dcb36334b8af1f861af821c58cc48ce}{Chalmers}{C\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Oxford University Press}%
-      }
-      \strng{namehash}{7dcb36334b8af1f861af821c58cc48ce}
-      \strng{fullhash}{7dcb36334b8af1f861af821c58cc48ce}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{1996}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{The Conscious Mind}}
-      \field{year}{1996}
-    \endentry
-    \entry{Cohen1999}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=686b0001846f52b4ece5b660500a6e57}{Cohen}{C\bibinitperiod}{Harold}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{686b0001846f52b4ece5b660500a6e57}
-      \strng{fullhash}{686b0001846f52b4ece5b660500a6e57}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{1999}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Colouring Without Seeing: A Problem in Machine Creativity}
-      \field{urlday}{24}
-      \field{urlmonth}{01}
-      \field{urlyear}{2016}
-      \field{year}{1999}
-      \verb{url}
-      \verb %7Bhttp://www.kurzweilcyberart.com/aaron/hi_essays.html%7D
-      \endverb
-    \endentry
-    \entry{Colton2008}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{3cc72753508ea031bbab98dfcaf1d385}
-      \strng{fullhash}{3cc72753508ea031bbab98dfcaf1d385}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{extrayear}{1}
-      \field{labelyear}{2008}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{AISB Quarterly}
-      \field{title}{{Computational Creativity}}
-      \field{year}{2008}
-      \field{pages}{6\bibrangedash 7}
-      \range{pages}{2}
-    \endentry
-    \entry{Colton2008a}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{3cc72753508ea031bbab98dfcaf1d385}
-      \strng{fullhash}{3cc72753508ea031bbab98dfcaf1d385}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{extrayear}{2}
-      \field{labelyear}{2008}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{In Proceedings of the AAAI Spring Symp. on Creative Intelligent Systems}
-      \field{title}{Creativity versus the perception of creativity in computational systems}
-      \field{year}{2008}
-    \endentry
-    \entry{Colton2001}{misc}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=d98a1f39fa7df83e0aa3ed6461066a3d}{Pease}{P\bibinitperiod}{Alison}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=0504ccf340a1c8204debb5ff8a1d3d56}{Ritchie}{R\bibinitperiod}{Graeme}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{126729950118f6c3460bd0b96a6235e8}
-      \strng{fullhash}{126729950118f6c3460bd0b96a6235e8}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{The Effect of Input Knowledge on Creativity}}
-      \field{year}{2001}
-    \endentry
-    \entry{Colton2012}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=d565adbbd0075d5589e9afa4bbbf18b5}{Wiggins}{W\bibinitperiod}{Geraint\bibnamedelima A}{G\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Montpellier, France}%
-      }
-      \list{publisher}{1}{%
-        {IOS Press}%
-      }
-      \strng{namehash}{bc0a9d7925439a73145f3fbe0c920005}
-      \strng{fullhash}{bc0a9d7925439a73145f3fbe0c920005}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 20th European Conference on Artificial Intelligence}
-      \field{isbn}{978-1-61499-097-0}
-      \field{title}{{Computational Creativity: The Final Frontier?}}
-      \field{year}{2012}
-      \field{pages}{21\bibrangedash 26}
-      \range{pages}{6}
-    \endentry
-    \entry{Corbyn2005}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=062af0ebc83594ebc7b71a88d5d4533d}{Corbyn}{C\bibinitperiod}{Zoe}{Z\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{062af0ebc83594ebc7b71a88d5d4533d}
-      \strng{fullhash}{062af0ebc83594ebc7b71a88d5d4533d}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{2005}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{The Guardian}
-      \field{title}{{An introduction to 'Pataphysics}}
-      \field{year}{2005}
-    \endentry
-    \entry{Cruickshank}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=438cda562dc1ce6bc3945498ffc68e88}{Cruickshank}{C\bibinitperiod}{Douglas}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{438cda562dc1ce6bc3945498ffc68e88}
-      \strng{fullhash}{438cda562dc1ce6bc3945498ffc68e88}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{nd}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Why Anti-Matter Matters}}
-      \field{urlday}{23}
-      \field{urlmonth}{05}
-      \field{urlyear}{2011}
-      \field{year}{nd}
-      \verb{url}
-      \verb http://www.ralphmag.org/jarry.html
-      \endverb
-    \endentry
-    \entry{Cutshall1988}{thesis}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=248258e9dabb9f82d531df89a0a62c4e}{Cutshall}{C\bibinitperiod}{James\bibnamedelima Anthony}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{institution}{1}{%
-        {University of Reading}%
-      }
-      \strng{namehash}{248258e9dabb9f82d531df89a0a62c4e}
-      \strng{fullhash}{248258e9dabb9f82d531df89a0a62c4e}
-      \field{sortinit}{C}
-      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
-      \field{labelyear}{1988}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{The Figure of the Writer - Alfred Jarry}}
-      \field{type}{Thesis}
-      \field{year}{1988}
-      \field{pages}{258}
-      \range{pages}{1}
-    \endentry
     \entry{Damerau1964}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=9c6527f548d2e1b28c459127bce62c75}{Damerau}{D\bibinitperiod}{Fred\bibnamedelima J}{F\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=9c6527f548d2e1b28c459127bce62c75}{%
+           family={Damerau},
+           family_i={D\bibinitperiod},
+           given={Fred\bibnamedelima J},
+           given_i={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \strng{namehash}{9c6527f548d2e1b28c459127bce62c75}
       \strng{fullhash}{9c6527f548d2e1b28c459127bce62c75}
@@ -962,136 +220,13 @@
       \field{pages}{171\bibrangedash 176}
       \range{pages}{6}
     \endentry
-    \entry{Daumal2012}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=356b1f991979263a51f2dfebae1a3cd2}{Daumal}{D\bibinitperiod}{Rene}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \name{translator}{1}{}{%
-        {{hash=a71ad4c32d7a270889e6356bbce096aa}{Vosteen}{V\bibinitperiod}{Thomas}{T\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Cambridge, Massachusetts}%
-      }
-      \list{publisher}{1}{%
-        {Wakefield Press}%
-      }
-      \strng{namehash}{356b1f991979263a51f2dfebae1a3cd2}
-      \strng{fullhash}{356b1f991979263a51f2dfebae1a3cd2}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-0-9841155-6-3}
-      \field{title}{{Pataphysical Essays}}
-      \field{year}{2012}
-    \endentry
-    \entry{DeBra}{article}{}
-      \name{author}{4}{uniquelist=2}{%
-        {{uniquename=0,hash=736d8680ce137f0958189bee9491caa7}{{De\bibnamedelimb Bra}}{D\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=6ead7ed239e90406c85f76e1a5f0a65e}{Houben}{H\bibinitperiod}{Geert-jan}{G\bibinithyphendelim j\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=762782c59fa57a4126fca06631a461cc}{Kornatzky}{K\bibinitperiod}{Yoram}{Y\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2c38fb5f06082d072bbb8cca98b7a780}{Post}{P\bibinitperiod}{Reinier}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{84d56352425aa5bf1d79db42d8a8a1fb}
-      \strng{fullhash}{cbf80812e58c6ad13b9e266a38c7d71f}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{1994}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Techniques}
-      \field{title}{{Information Retrieval in Distributed Hypertexts}}
-      \field{year}{1994}
-    \endentry
-    \entry{DeBra1994}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=736d8680ce137f0958189bee9491caa7}{{De\bibnamedelimb Bra}}{D\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2c38fb5f06082d072bbb8cca98b7a780}{Post}{P\bibinitperiod}{Reinier}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c1cb78649f2793a8e6594169cb0df9ef}
-      \strng{fullhash}{c1cb78649f2793a8e6594169cb0df9ef}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{extrayear}{1}
-      \field{labelyear}{1994}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computer Networks and ISDN Systems}
-      \field{number}{2}
-      \field{title}{{Information retrieval in the World-Wide Web: Making client-based searching feasible}}
-      \field{volume}{27}
-      \field{year}{1994}
-      \field{pages}{183\bibrangedash 192}
-      \range{pages}{10}
-    \endentry
-    \entry{DeBra1994a}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=736d8680ce137f0958189bee9491caa7}{{De\bibnamedelimb Bra}}{D\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2c38fb5f06082d072bbb8cca98b7a780}{Post}{P\bibinitperiod}{Reinier}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c1cb78649f2793a8e6594169cb0df9ef}
-      \strng{fullhash}{c1cb78649f2793a8e6594169cb0df9ef}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{extrayear}{2}
-      \field{labelyear}{1994}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mosaic A journal For The Interdisciplinary Study Of Literature}
-      \field{title}{{Searching for Arbitrary Information in the WWW: the Fish Search for Mosaic}}
-      \field{year}{1994}
-    \endentry
-    \entry{Dean2003}{article}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{Dean}{D\bibinitperiod}{Jeffrey}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=711e2ad9b469344ccde2663c5a728af6}{Barroso}{B\bibinitperiod}{Luiz\bibnamedelima Andre}{L\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e94016b2c45d82da3475eb64a8e55bf2}{Hoelzle}{H\bibinitperiod}{Urs}{U\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{8b7e3430511dcd233c85f729395357ad}
-      \strng{fullhash}{8b7e3430511dcd233c85f729395357ad}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2003}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ieee Micro}
-      \field{title}{{Web Search for a Planet: The Google Cluster Architecture}}
-      \field{year}{2003}
-      \field{pages}{22\bibrangedash 28}
-      \range{pages}{7}
-    \endentry
-    \entry{Deerwester1990}{article}{}
-      \name{author}{4}{}{%
-        {{uniquename=0,hash=33824b0de08cf4a7075df4f3770a32a6}{Deerwester}{D\bibinitperiod}{Scott}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4f50a66e1161ce4b1cfcf8be54b9926b}{Furnas}{F\bibinitperiod}{George\bibnamedelima W}{G\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=094a9517d499a0ef6da98427fc576938}{Landauer}{L\bibinitperiod}{Thomas\bibnamedelima K}{T\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7c88ecf79d79d0e2a2c3d1021ce406df}{Harshman}{H\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{a2dd299301a7eaaa9b5f0155e02ad2c0}
-      \strng{fullhash}{8ca9dc0c6592abb4bc90db4aef35ee2a}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{1990}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Jour\-nal of the American Society for Infor\-mation Science}
-      \field{number}{6}
-      \field{title}{{Indexing by Latent Semantic Analysis}}
-      \field{volume}{41}
-      \field{year}{1990}
-      \field{pages}{391\bibrangedash 407}
-      \range{pages}{17}
-    \endentry
     \entry{Dennis2016}{thesis}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=b908d36e850552414706a2120e2b7466}{Dennis}{D\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=b908d36e850552414706a2120e2b7466}{%
+           family={Dennis},
+           family_i={D\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
       }
       \list{institution}{1}{%
         {University of London}%
@@ -1107,189 +242,18 @@
       \field{title}{{Investigation of a patadata-based ontology for text based search and replacement}}
       \field{year}{2016}
     \endentry
-    \entry{OEDanimal}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=6b3d6869e215ed48df372f001e267b7a}{Dictionary}{D\bibinitperiod}{Oxford\bibnamedelima English}{O\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{6b3d6869e215ed48df372f001e267b7a}
-      \strng{fullhash}{6b3d6869e215ed48df372f001e267b7a}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2015}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{animal, n.}
-      \field{urlday}{10}
-      \field{urlmonth}{12}
-      \field{urlyear}{2015}
-      \field{year}{2015}
-      \verb{url}
-      \verb http://www.oed.com/view/Entry/273779
-      \endverb
-    \endentry
-    \entry{Dijkstra1988}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=3fa72084538a27e0e2efc0508856455c}{Dijkstra}{D\bibinitperiod}{Edsger\bibnamedelima W.}{E\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{3fa72084538a27e0e2efc0508856455c}
-      \strng{fullhash}{3fa72084538a27e0e2efc0508856455c}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{1988}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{On the Cruelty of Really Teaching Computing Science}
-      \field{urlday}{17}
-      \field{urlmonth}{01}
-      \field{urlyear}{2016}
-      \field{year}{1988}
-      \verb{url}
-      \verb http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html
-      \endverb
-    \endentry
-    \entry{Ding}{inproceedings}{}
-      \name{author}{9}{}{%
-        {{uniquename=0,hash=ddfd2015d739d5eee9205f7a7500a742}{Ding}{D\bibinitperiod}{Li}{L\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=f72951f82953c1fa5d859938ba2882f5}{Finin}{F\bibinitperiod}{Tim}{T\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1ae617106cb039a371e9f86a315bf0eb}{Joshi}{J\bibinitperiod}{Anupam}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=3acacc1f684ef378918a00ece495d31b}{Pan}{P\bibinitperiod}{Rong}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=58e987a7083ab744f772f843c99d8eef}{Scott}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a5088fac73ab441a5683d39235561aca}{Peng}{P\bibinitperiod}{Cost\bibnamedelima Yun}{C\bibinitperiod\bibinitdelim Y\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=f38d9598201668eb5e23103d8c0dff93}{Reddivari}{R\bibinitperiod}{Pavan}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4be13f3f94c5dc9cc46423fdc6affa3a}{Doshi}{D\bibinitperiod}{Vishal}{V\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=07cc4720378cb70e3b90c375d8af74cf}{Sachs}{S\bibinitperiod}{Joel}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{f48030304b9af2256be790813c16432c}
-      \strng{fullhash}{c39660a5b1d11cb9d71139a06404dc3c}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2004}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{In Proceedings of the 13th ACM Conference on Information and Knowledge Management. ACM}
-      \field{title}{Swoogle: A semantic web search and metadata engine}
-      \field{year}{2004}
-    \endentry
-    \entry{Drucker2009}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=1cfaef74f23558d563be1ef6740cc386}{Drucker}{D\bibinitperiod}{Johanna}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {University of Chicago Press}%
-      }
-      \strng{namehash}{1cfaef74f23558d563be1ef6740cc386}
-      \strng{fullhash}{1cfaef74f23558d563be1ef6740cc386}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0226165086}
-      \field{title}{{SpecLab: Digital Aesthetics and Projects in Speculative Computing}}
-      \field{year}{2009}
-    \endentry
-    \entry{Drucker2007}{incollection}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=1cfaef74f23558d563be1ef6740cc386}{Drucker}{D\bibinitperiod}{Johanna}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1cd27c40f7f6b650b55eb014f6b17d53}{Nowviskie}{N\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{3}{}{%
-        {{hash=88ae748f6e578c43821fb87e0b8448b2}{Schreibman}{S\bibinitperiod}{Susan}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=9c572c3e191a091db97cbe430d1f936f}{Unsworth}{U\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=f99ab92b861b031fb236f5c9a90f6f0f}{Siemens}{S\bibinitperiod}{Ray}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Oxford}%
-      }
-      \list{publisher}{1}{%
-        {Blackwell Publishing}%
-      }
-      \strng{namehash}{97583c6ed5cce9e0629463d0caf14f9b}
-      \strng{fullhash}{97583c6ed5cce9e0629463d0caf14f9b}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{A Companion to Digitial Humanities}
-      \field{chapter}{29}
-      \field{title}{{Speculative Computing: Aesthetic Provocations in Humanities Computing}}
-      \field{year}{2007}
-    \endentry
-    \entry{Du2007}{article}{}
-      \name{author}{4}{}{%
-        {{uniquename=0,hash=2d480a140825661ab18d21e58a984c61}{Du}{D\bibinitperiod}{Zhi-Qiang}{Z\bibinithyphendelim Q\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4b14b65883cab79a18b6071512db4b88}{Hu}{H\bibinitperiod}{Jing}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4cefbc8c6a79e2a062f4116c49b4ca38}{Yi}{Y\bibinitperiod}{Hong-Xia}{H\bibinithyphendelim X\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=0ce8e404947b44f0dcf1e74f84bc8827}{Hu}{H\bibinitperiod}{Jin-Zhu}{J\bibinithyphendelim Z\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Ieee}%
-      }
-      \strng{namehash}{aa93dd0e0cca6c9c244b4a6f9233179d}
-      \strng{fullhash}{a5045cdd9abb61b5e73178358d896481}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{2007 International Conference on Wireless Communications, Networking and Mobile Computing}
-      \field{title}{{The Research of the Semantic Search Engine Based on the Ontology}}
-      \field{year}{2007}
-      \field{pages}{5398\bibrangedash 5401}
-      \range{pages}{4}
-    \endentry
-    \entry{Dubbelboer2009}{thesis}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=b2b888fbeb772bb215195267b0631c85}{Dubbelboer}{D\bibinitperiod}{Marieke}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{institution}{1}{%
-        {Rijksuniversiteit Groningen}%
-      }
-      \strng{namehash}{b2b888fbeb772bb215195267b0631c85}
-      \strng{fullhash}{b2b888fbeb772bb215195267b0631c85}
-      \field{sortinit}{D}
-      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{'UBUSING' CULTURE}}
-      \field{type}{Thesis}
-      \field{year}{2009}
-      \field{pages}{233}
-      \range{pages}{1}
-    \endentry
-    \entry{Eden2007}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=1,hash=6a8aab8cacd253d02e3bce5395c4e737}{Eden}{E\bibinitperiod}{Amnon\bibnamedelima H.}{A\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{6a8aab8cacd253d02e3bce5395c4e737}
-      \strng{fullhash}{6a8aab8cacd253d02e3bce5395c4e737}
-      \field{sortinit}{E}
-      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Minds and Machines}
-      \field{number}{2}
-      \field{title}{{Three Paradigms of Computer Science}}
-      \field{volume}{17}
-      \field{year}{2007}
-      \field{pages}{135\bibrangedash 167}
-      \range{pages}{33}
-    \endentry
     \entry{Edmonds2010}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=2,hash=ccaeedebda80e4ac992fccfe45ce2ac1}{Edmonds}{E\bibinitperiod}{E.}{E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=2,hash=8cb27fa64cf2d0d907ecab1de3c5ea69}{Candy}{C\bibinitperiod}{L.}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ccaeedebda80e4ac992fccfe45ce2ac1}{%
+           family={Edmonds},
+           family_i={E\bibinitperiod},
+           given={E.},
+           given_i={E\bibinitperiod}}}%
+        {{uniquename=2,hash=8cb27fa64cf2d0d907ecab1de3c5ea69}{%
+           family={Candy},
+           family_i={C\bibinitperiod},
+           given={L.},
+           given_i={L\bibinitperiod}}}%
       }
       \strng{namehash}{74a8cfd5217bb777f0da3c31c0c680f8}
       \strng{fullhash}{74a8cfd5217bb777f0da3c31c0c680f8}
@@ -1309,8 +273,16 @@
     \endentry
     \entry{Efron1976}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=5470455fc7dceb3ccf6db38cb22a113d}{Efron}{E\bibinitperiod}{Bradley}{B\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=28e856b54d33d88424a84632bb8311b7}{Thisted}{T\bibinitperiod}{Ronald}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=5470455fc7dceb3ccf6db38cb22a113d}{%
+           family={Efron},
+           family_i={E\bibinitperiod},
+           given={Bradley},
+           given_i={B\bibinitperiod}}}%
+        {{uniquename=0,hash=28e856b54d33d88424a84632bb8311b7}{%
+           family={Thisted},
+           family_i={T\bibinitperiod},
+           given={Ronald},
+           given_i={R\bibinitperiod}}}%
       }
       \strng{namehash}{0397157fd6365b4546bf56c93135270a}
       \strng{fullhash}{0397157fd6365b4546bf56c93135270a}
@@ -1328,32 +300,13 @@
       \field{pages}{435\bibrangedash 447}
       \range{pages}{13}
     \endentry
-    \entry{Elton1995}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=a840479d863d55f138183ac802b33376}{Elton}{E\bibinitperiod}{Matthew}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {The MIT Press}%
-      }
-      \strng{namehash}{a840479d863d55f138183ac802b33376}
-      \strng{fullhash}{a840479d863d55f138183ac802b33376}
-      \field{sortinit}{E}
-      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
-      \field{labelyear}{1995}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Leonardo}
-      \field{number}{3}
-      \field{title}{{Artificial Creativity: Enculturing Computers}}
-      \field{volume}{28}
-      \field{year}{1995}
-      \field{pages}{207\bibrangedash 213}
-      \range{pages}{7}
-    \endentry
     \entry{Foucault1966}{inbook}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=984e5967448051538555a64aac11ed21}{Foucault}{F\bibinitperiod}{Michel}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=984e5967448051538555a64aac11ed21}{%
+           family={Foucault},
+           family_i={F\bibinitperiod},
+           given={Michel},
+           given_i={M\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {France}%
@@ -1376,148 +329,25 @@
       \field{pages}{xv\bibrangedash xxiv}
       \range{pages}{10}
     \endentry
-    \entry{Garcia-Molina2004}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=7b6f78bee4d74fb4edb7a42ad7e3c2ad}{Garcia-Molina}{G\bibinithyphendelim M\bibinitperiod}{Hector}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=dd8c5cd39e9b1caf13ea2082034e4d67}{Pedersen}{P\bibinitperiod}{Jan}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=6835bcb3272074fad369197c48f31292}{Gyongyi}{G\bibinitperiod}{Zoltan}{Z\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Morgan Kaufmann}%
-      }
-      \strng{namehash}{b9a18d75d056fd4d484021692d06fdbf}
-      \strng{fullhash}{b9a18d75d056fd4d484021692d06fdbf}
-      \field{sortinit}{G}
-      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
-      \field{labelyear}{2004}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{In VLDB}
-      \field{title}{{Combating Web Spam with TrustRank}}
-      \field{year}{2004}
-      \field{pages}{576\bibrangedash 587}
-      \range{pages}{12}
-    \endentry
-    \entry{Gelernter1994}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=24859de866ee7043e56558ee1f5ad4e5}{Gelernter}{G\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Fourth Estate Limited}%
-      }
-      \strng{namehash}{24859de866ee7043e56558ee1f5ad4e5}
-      \strng{fullhash}{24859de866ee7043e56558ee1f5ad4e5}
-      \field{sortinit}{G}
-      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
-      \field{labelyear}{1994}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{1-85702-083-9}
-      \field{title}{{The Muse in the Machine}}
-      \field{year}{1994}
-    \endentry
-    \entry{Glover2001}{article}{}
-      \name{author}{7}{}{%
-        {{uniquename=0,hash=5e084b9d0ddc6d2dc7250aacb236bbcc}{Glover}{G\bibinitperiod}{E.J.}{E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a1355e05804763cf4e16a1c188248995}{Flake}{F\bibinitperiod}{G.W.}{G\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=eecf2ce6415b262f4cbccc026c92c684}{Lawrence}{L\bibinitperiod}{Steve}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7d2ac016a3455825f8b66815a327874a}{Birmingham}{B\bibinitperiod}{W.P.}{W\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a0369cc82be115d5f9f5df3a8833f42f}{Kruger}{K\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=d60017097abbb94e31b9fe93aa0d15e7}{Giles}{G\bibinitperiod}{C.L.}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=b64c13aa4f4a5cd13686e7252f6e0f48}{Pennock}{P\bibinitperiod}{D.M.}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE Computer Soc.}%
-      }
-      \strng{namehash}{58144468aaee8173f2a6f5e248535035}
-      \strng{fullhash}{01556434e37681b4900e1194c01775be}
-      \field{sortinit}{G}
-      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings 2001 Symposium on Applications and the Internet}
-      \field{title}{{Improving category specific Web search by learning query modifications}}
-      \field{year}{2001}
-      \field{pages}{23\bibrangedash 32}
-      \range{pages}{10}
-    \endentry
-    \entry{Google2012}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=8b36e9207c24c76e6719268e49201d94}{Google}{G\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
-      \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
-      \field{sortinit}{G}
-      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Google Ranking}}
-      \field{urlday}{22}
-      \field{urlmonth}{12}
-      \field{urlyear}{2012}
-      \field{year}{2012}
-      \verb{url}
-      \verb https://www.google.com/intl/en/about/company/philosophy/
-      \endverb
-    \endentry
-    \entry{Haveliwala2003}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=c2fc8f37d1b0d63a6782878975f42395}{Haveliwala}{H\bibinitperiod}{Taher\bibnamedelima H}{T\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{c2fc8f37d1b0d63a6782878975f42395}
-      \strng{fullhash}{c2fc8f37d1b0d63a6782878975f42395}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{2003}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Knowledge Creation Diffusion Utilization}
-      \field{number}{4}
-      \field{title}{{Topic-Sensitive Page\-Rank: A Context Sensitive Ranking Algorithm for Web Search}}
-      \field{volume}{15}
-      \field{year}{2003}
-      \field{pages}{784\bibrangedash 796}
-      \range{pages}{13}
-    \endentry
-    \entry{Heilman2003}{article}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=80b59a3532bd7b908a10092060dce91f}{Heilman}{H\bibinitperiod}{Kenneth\bibnamedelima M}{K\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=862f4bdd0db8a7c7d0d6ccd62126ed1c}{Nadeau}{N\bibinitperiod}{Stephen\bibnamedelima E}{S\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=76e586cc6dc7d90092b20f58ab2faec1}{Beversdorf}{B\bibinitperiod}{David\bibnamedelima O}{D\bibinitperiod\bibinitdelim O\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{2bdc35f5641acd258fb9507fc2362fb2}
-      \strng{fullhash}{2bdc35f5641acd258fb9507fc2362fb2}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{2003}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Neurocase}
-      \field{number}{5}
-      \field{title}{{Creative innovation: possible brain mechanisms.}}
-      \field{volume}{9}
-      \field{year}{2003}
-      \field{pages}{369\bibrangedash 79}
-      \range{pages}{11}
-    \endentry
     \entry{Heisenberg1942}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=93ed8b754e9b3f332468bbbfa56e7602}{Heisenberg}{H\bibinitperiod}{Werner}{W\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=93ed8b754e9b3f332468bbbfa56e7602}{%
+           family={Heisenberg},
+           family_i={H\bibinitperiod},
+           given={Werner},
+           given_i={W\bibinitperiod}}}%
       }
       \name{translator}{2}{}{%
-        {{hash=9a65708cb840bf019533544bb5ba6a58}{Rumscheidt}{R\bibinitperiod}{M.B.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=38e16cdffecd8cd835c7fa5a8079641a}{Lukens}{L\bibinitperiod}{N.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=9a65708cb840bf019533544bb5ba6a58}{%
+           family={Rumscheidt},
+           family_i={R\bibinitperiod},
+           given={M.B.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=38e16cdffecd8cd835c7fa5a8079641a}{%
+           family={Lukens},
+           family_i={L\bibinitperiod},
+           given={N.},
+           given_i={N\bibinitperiod}}}%
       }
       \strng{namehash}{93ed8b754e9b3f332468bbbfa56e7602}
       \strng{fullhash}{93ed8b754e9b3f332468bbbfa56e7602}
@@ -1538,8 +368,16 @@
     \endentry
     \entry{Hendler2011}{inproceedings}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=bc4f6004ab1c0d06e9b1bef4ead5b4fe}{Hendler}{H\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bc4f6004ab1c0d06e9b1bef4ead5b4fe}{%
+           family={Hendler},
+           family_i={H\bibinitperiod},
+           given={Jim},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{%
+           family={Hugill},
+           family_i={H\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{a2b6d2261cf88711132f767a28a91295}
       \strng{fullhash}{a2b6d2261cf88711132f767a28a91295}
@@ -1553,87 +391,38 @@
       \field{title}{{The Syzygy Surfer : Creative Technology for the World Wide Web}}
       \field{year}{2011}
     \endentry
-    \entry{Hendler2013}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=bc4f6004ab1c0d06e9b1bef4ead5b4fe}{Hendler}{H\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{a2b6d2261cf88711132f767a28a91295}
-      \strng{fullhash}{a2b6d2261cf88711132f767a28a91295}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{International journal of Creative Computing}
-      \field{number}{1}
-      \field{title}{{The syzygy surfer: (Ab)using the semantic web to inspire creativity}}
-      \field{volume}{1}
-      \field{year}{2013}
-      \field{pages}{20\bibrangedash 34}
-      \range{pages}{15}
-    \endentry
-    \entry{Hersovici1998}{article}{}
-      \name{author}{6}{}{%
-        {{uniquename=0,hash=f532d2f84f7bc87b00f8e1b6aaca6a3b}{Hersovici}{H\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=daffc20a9b3c482a010a1dddd102fb9d}{Jacovi}{J\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=ccfc379b2cce9fd646a363163cf50026}{Maarek}{M\bibinitperiod}{Y}{Y\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=d48ff984084f00c459efda41d0a6c980}{Pelleg}{P\bibinitperiod}{D}{D\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a5cd9acebeacda729a1a832e8a1dfff3}{Shtalhaim}{S\bibinitperiod}{M}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=dbcf2434345db64762a83707ac279eaf}{Ur}{U\bibinitperiod}{S}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{e6106603d53ff9a048db799305ed85b6}
-      \strng{fullhash}{41eb0bc94e7029b444542216e3b77102}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{1998}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computer Networks and ISDN Systems}
-      \field{number}{1-7}
-      \field{title}{{The shark-search algorithm. An application: tailored Web site mapping}}
-      \field{volume}{30}
-      \field{year}{1998}
-      \field{pages}{317\bibrangedash 326}
-      \range{pages}{10}
-    \endentry
-    \entry{Hofstadter1981}{incollection}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=18508284242debcc15c15f04d32c3467}{Hofstadter}{H\bibinitperiod}{Douglas}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{2}{}{%
-        {{hash=18508284242debcc15c15f04d32c3467}{Hofstadter}{H\bibinitperiod}{Douglas}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=7c2232e270f66332c0ccbe0a208c7f37}{Dennett}{D\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Basic Books}%
-      }
-      \strng{namehash}{18508284242debcc15c15f04d32c3467}
-      \strng{fullhash}{18508284242debcc15c15f04d32c3467}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{1981}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{The Mind's I}
-      \field{chapter}{26}
-      \field{isbn}{0-465-03091-2}
-      \field{title}{{A Conversation with Einstein's Brain}}
-      \field{year}{1981}
-      \field{pages}{430\bibrangedash 460}
-      \range{pages}{31}
-    \endentry
     \entry{Holz2006}{article}{}
       \name{author}{6}{}{%
-        {{uniquename=0,hash=42e6492380269ef487d68dd6475f6989}{Holz}{H\bibinitperiod}{Hilary\bibnamedelima J}{H\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=9da6c59fd58f5cbc2d72fb6ccd221226}{Applin}{A\bibinitperiod}{Anne}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=38dea860bee1087e96dffdbae95947db}{Joyce}{J\bibinitperiod}{Donald}{D\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=92f92eb1deecc712405d392c03627361}{Purchase}{P\bibinitperiod}{Helen}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2a4b8cf85cef753c33e3cd357ad5fa4c}{Reed}{R\bibinitperiod}{Catherine}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=a110ae5a357ca5bc3b18eef4c4600f74}{Haberman}{H\bibinitperiod}{Bruria}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=42e6492380269ef487d68dd6475f6989}{%
+           family={Holz},
+           family_i={H\bibinitperiod},
+           given={Hilary\bibnamedelima J},
+           given_i={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{uniquename=0,hash=9da6c59fd58f5cbc2d72fb6ccd221226}{%
+           family={Applin},
+           family_i={A\bibinitperiod},
+           given={Anne},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=38dea860bee1087e96dffdbae95947db}{%
+           family={Joyce},
+           family_i={J\bibinitperiod},
+           given={Donald},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=0,hash=92f92eb1deecc712405d392c03627361}{%
+           family={Purchase},
+           family_i={P\bibinitperiod},
+           given={Helen},
+           given_i={H\bibinitperiod}}}%
+        {{uniquename=0,hash=2a4b8cf85cef753c33e3cd357ad5fa4c}{%
+           family={Reed},
+           family_i={R\bibinitperiod},
+           given={Catherine},
+           given_i={C\bibinitperiod}}}%
+        {{uniquename=0,hash=a110ae5a357ca5bc3b18eef4c4600f74}{%
+           family={Haberman},
+           family_i={H\bibinitperiod},
+           given={Bruria},
+           given_i={B\bibinitperiod}}}%
       }
       \strng{namehash}{3653a34a8f0994708f30d774ac4dd657}
       \strng{fullhash}{809388fde494b6e0b996056ff5e5198d}
@@ -1649,33 +438,13 @@
       \field{pages}{96\bibrangedash 114}
       \range{pages}{19}
     \endentry
-    \entry{Hotho}{inproceedings}{}
-      \name{author}{4}{}{%
-        {{uniquename=0,hash=84af49c1afad6e0672bca67acc04862f}{Hotho}{H\bibinitperiod}{Andreas}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=6c1b552419c74c1edc39a0d4bf11608e}{Jaeschke}{J\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2dcd8a3bce14c7ba8abc2f7eb6bc26d2}{Schmitz}{S\bibinitperiod}{Christoph}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=98d2cffeba0d82667e344897db264eab}{Stumme}{S\bibinitperiod}{Gerd}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{70e37e5f94b364ef240208240908e6a4}
-      \strng{fullhash}{344fcab45293c2a0310c818239762dd2}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{The Semantic Web: Research and Applications, volume 4011 of LNAI}
-      \field{title}{Information retrieval in folksonomies: Search and ranking}
-      \field{year}{2006}
-      \field{pages}{411\bibrangedash 426}
-      \range{pages}{16}
-    \endentry
     \entry{Hugill2012a}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{%
+           family={Hugill},
+           family_i={H\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge, Massachusetts}%
@@ -1695,30 +464,18 @@
       \field{title}{{'Pataphysics: A Useless Guide}}
       \field{year}{2012}
     \endentry
-    \entry{Hugill2013}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{1ba4a71dfd9f589b387deabd70911b46}
-      \strng{fullhash}{1ba4a71dfd9f589b387deabd70911b46}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Digital Creativity}
-      \field{number}{3}
-      \field{title}{{Introduction: transdisciplinary learning for digital creative practice}}
-      \field{volume}{24}
-      \field{year}{2013}
-      \field{pages}{165\bibrangedash 167}
-      \range{pages}{3}
-    \endentry
     \entry{Hugill2013c}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{Yang}{Y\bibinitperiod}{Hongji}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{%
+           family={Hugill},
+           family_i={H\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Hongji},
+           given_i={H\bibinitperiod}}}%
       }
       \strng{namehash}{7310affd3a07ae0a9043d27296815166}
       \strng{fullhash}{7310affd3a07ae0a9043d27296815166}
@@ -1736,48 +493,13 @@
       \field{pages}{4\bibrangedash 19}
       \range{pages}{16}
     \endentry
-    \entry{Hugill2013d}{article}{}
-      \name{author}{4}{uniquelist=2}{%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{Yang}{Y\bibinitperiod}{Hongji}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7d271056c31f7ff1f45ff6ff1656f189}{Raczinski}{R\bibinitperiod}{Fania}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=ecdca13646908346d5190b2b1cd77dfe}{Sawle}{S\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{71cc5931e42f7fa96dee78b9bccd2f86}
-      \strng{fullhash}{7bba13108b178af884069ebbf64b4132}
-      \field{sortinit}{H}
-      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Digital Creativity}
-      \field{number}{3}
-      \field{title}{{The pataphysics of creativity: developing a tool for creative search}}
-      \field{volume}{24}
-      \field{year}{2013}
-      \field{pages}{237\bibrangedash 251}
-      \range{pages}{15}
-    \endentry
-    \entry{Indurkhya}{unpublished}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=21e7a40b0cd4fc1196fe1eca31eb99df}{Indurkhya}{I\bibinitperiod}{Bipin}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{21e7a40b0cd4fc1196fe1eca31eb99df}
-      \strng{fullhash}{21e7a40b0cd4fc1196fe1eca31eb99df}
-      \field{sortinit}{I}
-      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
-      \field{labelyear}{1997}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Unpublished manuscript. Based on the keynote speech 'On Modeling Mechanisms of Creativity' delivered at Mind II: Computational Models of Creative Cognition}
-      \field{title}{{Computers and creativity}}
-      \field{year}{1997}
-    \endentry
     \entry{Jarry1996}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=c74b5637cfbb2f957d02f22db60af4ef}{Jarry}{J\bibinitperiod}{Alfred}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c74b5637cfbb2f957d02f22db60af4ef}{%
+           family={Jarry},
+           family_i={J\bibinitperiod},
+           given={Alfred},
+           given_i={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge, MA}%
@@ -1799,11 +521,23 @@
     \endentry
     \entry{Jarry2006}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=c74b5637cfbb2f957d02f22db60af4ef}{Jarry}{J\bibinitperiod}{Alfred}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c74b5637cfbb2f957d02f22db60af4ef}{%
+           family={Jarry},
+           family_i={J\bibinitperiod},
+           given={Alfred},
+           given_i={A\bibinitperiod}}}%
       }
       \name{editor}{2}{}{%
-        {{hash=505aae8b78f6f15a3609dada788cdb56}{Brotchie}{B\bibinitperiod}{Alastair}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=f9f96d5d2136fd6642a30dcddb95cc54}{Edwards}{E\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=505aae8b78f6f15a3609dada788cdb56}{%
+           family={Brotchie},
+           family_i={B\bibinitperiod},
+           given={Alastair},
+           given_i={A\bibinitperiod}}}%
+        {{hash=f9f96d5d2136fd6642a30dcddb95cc54}{%
+           family={Edwards},
+           family_i={E\bibinitperiod},
+           given={Paul},
+           given_i={P\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {London}%
@@ -1822,266 +556,13 @@
       \field{title}{{Collected Works II - Three Early Novels}}
       \field{year}{2006}
     \endentry
-    \entry{Jeh}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=fbd69c6d235787c2f8b015c7b0ffa471}{Jeh}{J\bibinitperiod}{Glen}{G\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=f5c9bf7d1fe609c7c5aa35cdee017284}{Widom}{W\bibinitperiod}{Jennifer}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{56ab51597703d4f9543ceec9aecbdac4}
-      \strng{fullhash}{56ab51597703d4f9543ceec9aecbdac4}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{2002}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{In KDD}
-      \field{title}{SimRank: A Measure of Structural Context Similarity}
-      \field{year}{2002}
-      \field{pages}{538\bibrangedash 543}
-      \range{pages}{6}
-    \endentry
-    \entry{Jordanous2015}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=1,hash=f9796b7fb7f6a9526c9f7cd61275b249}{Jordanous}{J\bibinitperiod}{Anna}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{f9796b7fb7f6a9526c9f7cd61275b249}
-      \strng{fullhash}{f9796b7fb7f6a9526c9f7cd61275b249}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{2015}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{International Conference on Computational Creativity}
-      \field{title}{{Four PPPPerspectives on Computational Creativity}}
-      \field{year}{2015}
-    \endentry
-    \entry{Jordanous2011}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=1,hash=7b8f17b0f8be725bbfa7542ecca33a9e}{Jordanous}{J\bibinitperiod}{Anna\bibnamedelima Katerina}{A\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{7b8f17b0f8be725bbfa7542ecca33a9e}
-      \strng{fullhash}{7b8f17b0f8be725bbfa7542ecca33a9e}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{2011}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the Second International Conference on Computational Creativity}
-      \field{title}{{Evaluating Evaluation : Assessing Progress in Computational Creativity Research}}
-      \field{year}{2011}
-    \endentry
-    \entry{Jordanous2012a}{thesis}{}
-      \name{author}{1}{}{%
-        {{uniquename=1,hash=7b8f17b0f8be725bbfa7542ecca33a9e}{Jordanous}{J\bibinitperiod}{Anna\bibnamedelima Katerina}{A\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
-      }
-      \list{institution}{1}{%
-        {University of Sussex}%
-      }
-      \strng{namehash}{7b8f17b0f8be725bbfa7542ecca33a9e}
-      \strng{fullhash}{7b8f17b0f8be725bbfa7542ecca33a9e}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Evaluating Computational Creativity: A Standardised Procedure for Evaluating Creative Systems and its Application}}
-      \field{type}{phdthesis}
-      \field{year}{2012}
-    \endentry
-    \entry{Jordanous2012}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{uniquename=1,hash=7b8f17b0f8be725bbfa7542ecca33a9e}{Jordanous}{J\bibinitperiod}{Anna\bibnamedelima Katerina}{A\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=22bce5c6fc1ce18aac0baaa39e04f768}{Keller}{K\bibinitperiod}{Bill}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{123ceb461567a1269d69f1117fd005d0}
-      \strng{fullhash}{123ceb461567a1269d69f1117fd005d0}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 3rd International Conference on Computational Creativity}
-      \field{title}{{Weaving creativity into the Semantic Web: a language-processing approach}}
-      \field{year}{2012}
-      \field{pages}{216\bibrangedash 220}
-      \range{pages}{5}
-    \endentry
-    \entry{Jorn1961}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=cdd76b96320caabcfd059dca131483ab}{Jorn}{J\bibinitperiod}{Asger}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{cdd76b96320caabcfd059dca131483ab}
-      \strng{fullhash}{cdd76b96320caabcfd059dca131483ab}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{1961}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{Pataphysics as a religion?}
-      \field{journaltitle}{Internationale Situationniste}
-      \field{title}{{Pataphysics - A Religion In The Making}}
-      \field{volume}{6}
-      \field{year}{1961}
-    \endentry
-    \entry{Jurafsky2009}{book}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=bd33d7a70284b5ead9c7985cb5c9929c}{Jurafsky}{J\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7d1c7262a31a89cbc5dbdeb95fd7b4fb}{Martin}{M\bibinitperiod}{James\bibnamedelima H}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Pearson Education}%
-      }
-      \strng{namehash}{907cff53a2c379ae25525bfbb7211534}
-      \strng{fullhash}{907cff53a2c379ae25525bfbb7211534}
-      \field{sortinit}{J}
-      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Speech and Language Processing}}
-      \field{year}{2009}
-    \endentry
-    \entry{Kamps}{report}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=fb9dd99d7f40e6a4ac31adc141a95a2c}{Kamps}{K\bibinitperiod}{Jaap}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7f415088267aa1c0ce0067a0c0ff7bfd}{Kaptein}{K\bibinitperiod}{Rianne}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1f7453050c77eeac8f0571c67899414b}{Koolen}{K\bibinitperiod}{Marijn}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{institution}{1}{%
-        {?}%
-      }
-      \strng{namehash}{82c9f9ec0526f637c1a1c580eba6d3c2}
-      \strng{fullhash}{82c9f9ec0526f637c1a1c580eba6d3c2}
-      \field{sortinit}{K}
-      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{2010}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Using Anchor Text , Spam Filtering and Wikipedia for Web Search and Entity Ranking}
-      \field{type}{techreport}
-      \field{year}{2010}
-    \endentry
-    \entry{Kaufman2009}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=52719bdc3fc9567249c12397a5130be2}{Kaufman}{K\bibinitperiod}{James\bibnamedelima C.}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=6016afe921e92f543da8e9202b4e4b6e}{Beghetto}{B\bibinitperiod}{Ronald\bibnamedelima A.}{R\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{7c7eeabb35bce6b69de725a8068605ad}
-      \strng{fullhash}{7c7eeabb35bce6b69de725a8068605ad}
-      \field{sortinit}{K}
-      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Review of General Psychology}
-      \field{number}{1}
-      \field{title}{{Beyond big and little: The four c model of creativity}}
-      \field{volume}{13}
-      \field{year}{2009}
-      \field{pages}{1\bibrangedash 12}
-      \range{pages}{12}
-    \endentry
-    \entry{Kim2012}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=c7de707a695ae3d70e1d4e046250c3c4}{Kim}{K\bibinitperiod}{Youjeong}{Y\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7efdcb60e19115c2aa91cdb3aaa1f432}{Sundar}{S\bibinitperiod}{S.\bibnamedelimi Shyam}{S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier Ltd}%
-      }
-      \strng{namehash}{506a7f40ed684a8b1c3d9a2f3d19e1ae}
-      \strng{fullhash}{506a7f40ed684a8b1c3d9a2f3d19e1ae}
-      \field{sortinit}{K}
-      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computers in Human Behavior}
-      \field{number}{1}
-      \field{title}{{Anthropomorphism of computers: Is it mindful or mindless?}}
-      \field{volume}{28}
-      \field{year}{2012}
-      \field{pages}{241\bibrangedash 250}
-      \range{pages}{10}
-    \endentry
-    \entry{Kleinberg1999}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=f112b97e31827df683319c6804eb25a9}{Kleinberg}{K\bibinitperiod}{Jon\bibnamedelima M}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{f112b97e31827df683319c6804eb25a9}
-      \strng{fullhash}{f112b97e31827df683319c6804eb25a9}
-      \field{sortinit}{K}
-      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{1999}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{journal of the ACM}
-      \field{number}{5}
-      \field{title}{{Authoritative sources in a hyperlinked environment}}
-      \field{volume}{46}
-      \field{year}{1999}
-      \field{pages}{604\bibrangedash 632}
-      \range{pages}{29}
-    \endentry
-    \entry{Kleinberg}{article}{}
-      \name{author}{4}{uniquelist=1}{%
-        {{uniquename=0,hash=f112b97e31827df683319c6804eb25a9}{Kleinberg}{K\bibinitperiod}{Jon\bibnamedelima M}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=8b41fe0754fd3864ac9f18e92f6daf24}{Kumar}{K\bibinitperiod}{Ravi}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=68f523934985e2f967ab2b15f4ded07c}{Raghavan}{R\bibinitperiod}{Prabhakar}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7d082f7fe11af8abef4e85b1d2f8598a}{Tomkins}{T\bibinitperiod}{Andrew\bibnamedelima S}{A\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{9a14695ccb4e4ca9ab6d24b2eabd16f6}
-      \strng{fullhash}{e060f1c88ae1c8413f7b0641f8131962}
-      \field{sortinit}{K}
-      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{1999}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computer}
-      \field{title}{{The Web as a graph : measurements, models and methods}}
-      \field{year}{1999}
-    \endentry
-    \entry{Koestler1964}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=1586493221c4bf272acbef5d52806cc5}{Koestler}{K\bibinitperiod}{Arthur}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{2}{%
-        {Hutchinson}%
-        {Co}%
-      }
-      \strng{namehash}{1586493221c4bf272acbef5d52806cc5}
-      \strng{fullhash}{1586493221c4bf272acbef5d52806cc5}
-      \field{sortinit}{K}
-      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
-      \field{labelyear}{1964}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0091282705}
-      \field{title}{{The Act of Creation}}
-      \field{year}{1964}
-    \endentry
     \entry{Kurzweil2013}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=0adc9b7df5d54aca253a97676a4f9ee3}{Kurzweil}{K\bibinitperiod}{Ray}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=0adc9b7df5d54aca253a97676a4f9ee3}{%
+           family={Kurzweil},
+           family_i={K\bibinitperiod},
+           given={Ray},
+           given_i={R\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {London}%
@@ -2103,7 +584,11 @@
     \endentry
     \entry{Levenshtein1966}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=1055829c328365c6dcbb03dc6fe71d51}{Levenshtein}{L\bibinitperiod}{Vladimir\bibnamedelima I}{V\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1055829c328365c6dcbb03dc6fe71d51}{%
+           family={Levenshtein},
+           family_i={L\bibinitperiod},
+           given={Vladimir\bibnamedelima I},
+           given_i={V\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
       }
       \strng{namehash}{1055829c328365c6dcbb03dc6fe71d51}
       \strng{fullhash}{1055829c328365c6dcbb03dc6fe71d51}
@@ -2121,177 +606,20 @@
       \field{pages}{707\bibrangedash 710}
       \range{pages}{4}
     \endentry
-    \entry{Luo2005}{article}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=757933c3e8eb60d0be95bd1df5401fcf}{Luo}{L\bibinitperiod}{Fang-fang}{F\bibinithyphendelim f\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7ed467570cb75a616f75b79cf5528119}{Chen}{C\bibinitperiod}{Guo-long}{G\bibinithyphendelim l\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4bccf113ae6840bee27ad9a6c515d57f}{Guo}{G\bibinitperiod}{Wen-zhong}{W\bibinithyphendelim z\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Ieee}%
-      }
-      \strng{namehash}{fce1dbe6db543b9525a32db1108e7175}
-      \strng{fullhash}{fce1dbe6db543b9525a32db1108e7175}
-      \field{sortinit}{L}
-      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
-      \field{labelyear}{2005}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{2005 International Conference on Natural Language Processing and Knowledge Engineering}
-      \field{title}{{An Improved 'Fish-search' Algorithm for Information Retrieval}}
-      \field{year}{2005}
-      \field{pages}{523\bibrangedash 528}
-      \range{pages}{6}
-    \endentry
-    \entry{Macdonald2009}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=abb0872ff1e8610455b7c9bfd5f440e3}{Macdonald}{M\bibinitperiod}{Craig}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{abb0872ff1e8610455b7c9bfd5f440e3}
-      \strng{fullhash}{abb0872ff1e8610455b7c9bfd5f440e3}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Philosophy}
-      \field{title}{{The Voting Model for People Search}}
-      \field{year}{2009}
-    \endentry
-    \entry{Maeda2001}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=9d8c125c90913c045cdc1afe7bdf69f7}{Maeda}{M\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {MIT Press}%
-      }
-      \strng{namehash}{9d8c125c90913c045cdc1afe7bdf69f7}
-      \strng{fullhash}{9d8c125c90913c045cdc1afe7bdf69f7}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Design by Numbers}
-      \field{year}{2001}
-    \endentry
-    \entry{Manning2009}{book}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=ff4377244c68b8beb3253e53d6387f94}{Manning}{M\bibinitperiod}{Christopher}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=68f523934985e2f967ab2b15f4ded07c}{Raghavan}{R\bibinitperiod}{Prabhakar}{P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=649b7399037d78a25778825cfd63a4ba}{Schuetze}{S\bibinitperiod}{Hinrich}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge UP}%
-      }
-      \strng{namehash}{5540d7fcf4916517c5cf7e634951b888}
-      \strng{fullhash}{5540d7fcf4916517c5cf7e634951b888}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2009 Cambridge UP}
-      \field{title}{{Introduction to Information Retrieval}}
-      \field{year}{2009}
-      \verb{url}
-      \verb http://informationretrieval.org
-      \endverb
-    \endentry
-    \entry{Marchionini2006}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=34443e5f53d9622a82ef394045e2db5d}{Marchionini}{M\bibinitperiod}{Gary}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{34443e5f53d9622a82ef394045e2db5d}
-      \strng{fullhash}{34443e5f53d9622a82ef394045e2db5d}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Communications of the ACM}
-      \field{number}{4}
-      \field{title}{{From finding to understanding}}
-      \field{volume}{49}
-      \field{year}{2006}
-      \field{pages}{41\bibrangedash 46}
-      \range{pages}{6}
-    \endentry
-    \entry{Marchionini1988}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=34443e5f53d9622a82ef394045e2db5d}{Marchionini}{M\bibinitperiod}{Gary}{G\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=39afccc0f55ae7821df79ffd677c90b0}{Shneiderman}{S\bibinitperiod}{Ben}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{ac657ea9e0a4587c7bd0f232c188f803}
-      \strng{fullhash}{ac657ea9e0a4587c7bd0f232c188f803}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{1988}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computer}
-      \field{number}{1}
-      \field{title}{{Finding facts vs. browsing knowledge in hypertext systems}}
-      \field{volume}{21}
-      \field{year}{1988}
-      \field{pages}{70\bibrangedash 80}
-      \range{pages}{11}
-    \endentry
-    \entry{Marcus1993}{article}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=a84230895aa53cc0ddcebd83c1386ec1}{Marcus}{M\bibinitperiod}{Mitchell\bibnamedelima P}{M\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1a6b1a60e440837f7e64b04d28996d76}{Santorini}{S\bibinitperiod}{Beatrice}{B\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=70c3bd2fb69d1b113d0d84c8f65670d5}{Marcinkiewicz}{M\bibinitperiod}{Mary\bibnamedelima Ann}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{f77f8a0fd1ca595fa264af65b2bc1ab1}
-      \strng{fullhash}{f77f8a0fd1ca595fa264af65b2bc1ab1}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{1993}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computational Linguistics}
-      \field{number}{2}
-      \field{title}{{Building a Large Annotated Corpus of English: The Penn Treebank}}
-      \field{volume}{19}
-      \field{year}{1993}
-    \endentry
-    \entry{Mathews2005}{book}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=7b620de39364a6ae2714c2e4977f2092}{Mathews}{M\bibinitperiod}{Harry}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=2,hash=505aae8b78f6f15a3609dada788cdb56}{Brotchie}{B\bibinitperiod}{Alastair}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Atlas Press}%
-      }
-      \strng{namehash}{71ac82520e4b4e46324524f87db0e16b}
-      \strng{fullhash}{71ac82520e4b4e46324524f87db0e16b}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2005}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{1900565188}
-      \field{title}{{Oulipo Compendium}}
-      \field{year}{2005}
-    \endentry
     \entry{Mayer1999}{incollection}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=4e023dbb8bb0e81438ad477d5e916296}{Mayer}{M\bibinitperiod}{Richard\bibnamedelima E}{R\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4e023dbb8bb0e81438ad477d5e916296}{%
+           family={Mayer},
+           family_i={M\bibinitperiod},
+           given={Richard\bibnamedelima E},
+           given_i={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \name{editor}{1}{}{%
-        {{hash=50f8ce5e49f4ae4a572b5ad65796a522}{Sternberg}{S\bibinitperiod}{Robert\bibnamedelima J}{R\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=50f8ce5e49f4ae4a572b5ad65796a522}{%
+           family={Sternberg},
+           family_i={S\bibinitperiod},
+           given={Robert\bibnamedelima J},
+           given_i={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {New York}%
@@ -2315,67 +643,13 @@
       \field{pages}{449\bibrangedash 460}
       \range{pages}{12}
     \endentry
-    \entry{Mcbride2012}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=2d5a5b6ab22201daed1585375825da21}{McBride}{M\bibinitperiod}{Neil}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{2d5a5b6ab22201daed1585375825da21}
-      \strng{fullhash}{2d5a5b6ab22201daed1585375825da21}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{{AISB / IACAP World Congress 2012 Framework for Responsible Research and Innovation in AI}}
-      \field{number}{July}
-      \field{title}{{A Robot Ethics: The EPSRC Principles and the Ethical Gap}}
-      \field{year}{2012}
-      \field{pages}{10\bibrangedash 15}
-      \range{pages}{6}
-    \endentry
-    \entry{McBride2013}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=2d5a5b6ab22201daed1585375825da21}{McBride}{M\bibinitperiod}{Neil}{N\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Leicester}%
-      }
-      \strng{namehash}{2d5a5b6ab22201daed1585375825da21}
-      \strng{fullhash}{2d5a5b6ab22201daed1585375825da21}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Robot Ethics: The Boundaries of Machine Ethics}}
-      \field{year}{2013}
-    \endentry
-    \entry{Microsoft2012a}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=140864078aeca1c7c35b4beb33c53c34}{Microsoft}{M\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
-      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Bing Fact Sheet}}
-      \field{urlday}{22}
-      \field{urlmonth}{12}
-      \field{urlyear}{2012}
-      \field{year}{2012}
-      \verb{url}
-      \verb http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx
-      \endverb
-    \endentry
     \entry{Miller1995}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=862c073f4a68ee34451be2b8e6224f19}{Miller}{M\bibinitperiod}{George\bibnamedelima A.}{G\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=862c073f4a68ee34451be2b8e6224f19}{%
+           family={Miller},
+           family_i={M\bibinitperiod},
+           given={George\bibnamedelima A.},
+           given_i={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
       \strng{namehash}{862c073f4a68ee34451be2b8e6224f19}
       \strng{fullhash}{862c073f4a68ee34451be2b8e6224f19}
@@ -2396,194 +670,13 @@
       \verb http://portal.acm.org/citation.cfm?doid=219717.219748
       \endverb
     \endentry
-    \entry{Minsky1980}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=2fe335dc52e059141e41e4fada160d64}{Minsky}{M\bibinitperiod}{Marvin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{2fe335dc52e059141e41e4fada160d64}
-      \strng{fullhash}{2fe335dc52e059141e41e4fada160d64}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{1980}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Cognitive Science}
-      \field{number}{4}
-      \field{title}{{K-Lines : A Theory of Memory}}
-      \field{volume}{33}
-      \field{year}{1980}
-      \field{pages}{117\bibrangedash 133}
-      \range{pages}{17}
-    \endentry
-    \entry{Minsky1988}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=2fe335dc52e059141e41e4fada160d64}{Minsky}{M\bibinitperiod}{Marvin}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{2}{%
-        {Simon}%
-        {Schuster}%
-      }
-      \strng{namehash}{2fe335dc52e059141e41e4fada160d64}
-      \strng{fullhash}{2fe335dc52e059141e41e4fada160d64}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{1988}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0671657135}
-      \field{title}{{The Society of Mind}}
-      \field{year}{1988}
-      \field{pages}{336}
-      \range{pages}{1}
-    \endentry
-    \entry{Miyamoto1988}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=aaa39c35d16ce58d0239d5e98a4cdebe}{Miyamoto}{M\bibinitperiod}{Sadaaki}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{aaa39c35d16ce58d0239d5e98a4cdebe}
-      \strng{fullhash}{aaa39c35d16ce58d0239d5e98a4cdebe}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{1988}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Information Retrieval based on Fuzzy Associations}}
-      \field{year}{1988}
-    \endentry
-    \entry{Miyamoto2010}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=aaa39c35d16ce58d0239d5e98a4cdebe}{Miyamoto}{M\bibinitperiod}{Sadaaki}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{aaa39c35d16ce58d0239d5e98a4cdebe}
-      \strng{fullhash}{aaa39c35d16ce58d0239d5e98a4cdebe}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2010}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9048140676}
-      \field{title}{{Fuzzy Sets in Information Retrieval and Cluster Analysis (Theory and Decision Library D)}}
-      \field{year}{2010}
-      \field{pages}{276}
-      \range{pages}{1}
-    \endentry
-    \entry{Miyamoto1986}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=aaa39c35d16ce58d0239d5e98a4cdebe}{Miyamoto}{M\bibinitperiod}{Sadaaki}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1a8f41f342126d6fe82cb86a2e12644e}{Nakayama}{N\bibinitperiod}{K}{K\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{76956ad05711434980b90de03ae3d08c}
-      \strng{fullhash}{76956ad05711434980b90de03ae3d08c}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{1986}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Systems, Man and Cybernetics}
-      \field{number}{2}
-      \field{title}{{Fuzzy Information Retrieval Based on a Fuzzy Pseudothesaurus}}
-      \field{volume}{16}
-      \field{year}{1986}
-      \field{pages}{278\bibrangedash 282}
-      \range{pages}{5}
-    \endentry
-    \entry{Motte2007}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=710a9d7b9cb352487ea6597e32d08342}{Motte}{M\bibinitperiod}{Warren}{W\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Dalkey Archive Press}%
-      }
-      \strng{namehash}{710a9d7b9cb352487ea6597e32d08342}
-      \strng{fullhash}{710a9d7b9cb352487ea6597e32d08342}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{1-56478-187-9}
-      \field{title}{{Oulipo, A primer of potential literature}}
-      \field{year}{2007}
-    \endentry
-    \entry{YossarianEmail}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=61119c7a686c42397d441e3e49ff2a0a}{Neeley}{N\bibinitperiod}{J.\bibnamedelimi Paul}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{61119c7a686c42397d441e3e49ff2a0a}
-      \strng{fullhash}{61119c7a686c42397d441e3e49ff2a0a}
-      \field{sortinit}{N}
-      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
-      \field{labelyear}{2015}
-      \field{labelmonth}{12}
-      \field{labelday}{09}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{09}
-      \field{month}{12}
-      \field{title}{Introducing the NEW Yossarian}
-      \field{type}{email communication}
-      \field{year}{2015}
-    \endentry
-    \entry{Newell1963}{book}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=8f62a7a8b535a0a3285530036452983a}{Newell}{N\bibinitperiod}{A}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=65ac964e700db1eca29e9d2a31a76c17}{Shaw}{S\bibinitperiod}{J.\bibnamedelimi G.}{J\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=eec78c43c08b6eb13bcfd4ce2af1526e}{Simon}{S\bibinitperiod}{H.\bibnamedelimi A.}{H\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {New York}%
-      }
-      \list{publisher}{1}{%
-        {Atherton}%
-      }
-      \strng{namehash}{76232af1bae7941f8997036304de7fde}
-      \strng{fullhash}{76232af1bae7941f8997036304de7fde}
-      \field{sortinit}{N}
-      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
-      \field{labelyear}{1963}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{The Process Of Creative Thinking}}
-      \field{year}{1963}
-    \endentry
-    \entry{Nick2001}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=705005a67e5dd26eba1b1b29ed32762d}{Nick}{N\bibinitperiod}{Z.Z.}{Z\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=dee3c1a4eb7a7b30c0560276d4cea264}{Themis}{T\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{e838bb5cb5085421efff9801a4030468}
-      \strng{fullhash}{e838bb5cb5085421efff9801a4030468}
-      \field{sortinit}{N}
-      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Internet Computing}
-      \field{number}{2}
-      \field{title}{{Web Search Using a Genetic Algorithm}}
-      \field{volume}{5}
-      \field{year}{2001}
-      \field{pages}{18\bibrangedash 26}
-      \range{pages}{9}
-    \endentry
     \entry{Nicolescu2010}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=8d3fa0dc6dc779b080ac5588a0c4eb5a}{Nicolescu}{N\bibinitperiod}{Basarab}{B\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=8d3fa0dc6dc779b080ac5588a0c4eb5a}{%
+           family={Nicolescu},
+           family_i={N\bibinitperiod},
+           given={Basarab},
+           given_i={B\bibinitperiod}}}%
       }
       \strng{namehash}{8d3fa0dc6dc779b080ac5588a0c4eb5a}
       \strng{fullhash}{8d3fa0dc6dc779b080ac5588a0c4eb5a}
@@ -2601,207 +694,13 @@
       \field{pages}{19\bibrangedash 38}
       \range{pages}{20}
     \endentry
-    \entry{Partridge1994}{book}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=b8ace6ae0f1bf6d1a74c417a537d0384}{Partridge}{P\bibinitperiod}{Derek}{D\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=6e8e03943b5221e9edec181e6ac42daf}{Rowe}{R\bibinitperiod}{Jon}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Oxford}%
-      }
-      \list{publisher}{1}{%
-        {Intellect}%
-      }
-      \strng{namehash}{bb11f1b9b60e3235abe185f7597ff6f1}
-      \strng{fullhash}{bb11f1b9b60e3235abe185f7597ff6f1}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{1994}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Computers and Creativity}}
-      \field{year}{1994}
-    \endentry
-    \entry{Pease2011}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=d98a1f39fa7df83e0aa3ed6461066a3d}{Pease}{P\bibinitperiod}{Alison}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{bd7ae3b9bccaeed86dfbe2e40ae16a15}
-      \strng{fullhash}{bd7ae3b9bccaeed86dfbe2e40ae16a15}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{2011}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the AISB}
-      \field{title}{{On impact and evaluation in Computational Creativity : A discussion of the Turing Test and an alternative proposal}}
-      \field{year}{2011}
-    \endentry
-    \entry{Pease2013}{inproceedings}{}
-      \name{author}{5}{uniquelist=2}{%
-        {{uniquename=0,hash=d98a1f39fa7df83e0aa3ed6461066a3d}{Pease}{P\bibinitperiod}{Alison}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=7d5b20975f19c166baff59bbd3517076}{Ramezani}{R\bibinitperiod}{Ramin}{R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=129060d860b06a54d41e87b58f838300}{Charnley}{C\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e3018862f7e3eba5c1be41e660072cd8}{Reed}{R\bibinitperiod}{Kate}{K\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Sydney, Australia}%
-      }
-      \list{publisher}{1}{%
-        {University of Sydney}%
-      }
-      \strng{namehash}{7ca63f9df1d7a14fbc76c163e7bd0fdb}
-      \strng{fullhash}{1e7857c22b8fd4d2acad9f07f4c748a3}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 4th International Conference on Computational Creativity}
-      \field{title}{{A Discussion on Serendipity in Creative Systems}}
-      \field{volume}{1000}
-      \field{year}{2013}
-      \field{pages}{64\bibrangedash 71}
-      \range{pages}{8}
-    \endentry
-    \entry{Pease2001}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=d98a1f39fa7df83e0aa3ed6461066a3d}{Pease}{P\bibinitperiod}{Alison}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4a82f6702789330c5fdaa4ad653c5486}{Winterstein}{W\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=3cc72753508ea031bbab98dfcaf1d385}{Colton}{C\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{4a0ee8d946b9400bb0424a7018a8282e}
-      \strng{fullhash}{4a0ee8d946b9400bb0424a7018a8282e}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of ICCBR Workshop on Approaches to Creativity}
-      \field{title}{{Evaluating Machine Creativity}}
-      \field{year}{2001}
-      \field{pages}{129\bibrangedash 137}
-      \range{pages}{9}
-    \endentry
-    \entry{PEP20}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=e3aa619a4412763613574bb6b6fc1510}{Peters}{P\bibinitperiod}{Tim}{T\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{e3aa619a4412763613574bb6b6fc1510}
-      \strng{fullhash}{e3aa619a4412763613574bb6b6fc1510}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{2004}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{PEP 20 -- The Zen of Python}}
-      \field{urlday}{26}
-      \field{urlmonth}{04}
-      \field{urlyear}{2016}
-      \field{year}{2004}
-      \verb{url}
-      \verb %7Bhttps://www.python.org/dev/peps/pep-0020/%7D
-      \endverb
-    \endentry
-    \entry{Piffer2012}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=a9524349e6cac8de81df9a7276eca069}{Piffer}{P\bibinitperiod}{Davide}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier Ltd}%
-      }
-      \strng{namehash}{a9524349e6cac8de81df9a7276eca069}
-      \strng{fullhash}{a9524349e6cac8de81df9a7276eca069}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Thinking Skills and Creativity}
-      \field{number}{3}
-      \field{title}{{Can creativity be measured? An attempt to clarify the notion of creativity and general directions for future research}}
-      \field{volume}{7}
-      \field{year}{2012}
-      \field{pages}{258\bibrangedash 264}
-      \range{pages}{7}
-    \endentry
-    \entry{Poincare2001}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=0348d3e0c0a1e49f06e35787663f29c4}{Poincare}{P\bibinitperiod}{Henri}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=4684625981e330bfd023f543c1324b0f}{Gould}{G\bibinitperiod}{Stephen\bibnamedelima Jay}{S\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {New York}%
-      }
-      \list{publisher}{1}{%
-        {Modern Library}%
-      }
-      \strng{namehash}{0348d3e0c0a1e49f06e35787663f29c4}
-      \strng{fullhash}{0348d3e0c0a1e49f06e35787663f29c4}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0375758488}
-      \field{title}{{The Value of Science}}
-      \field{year}{2001}
-    \endentry
-    \entry{Polya1957}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=c6bab844d80dcf3ef4b79a4c63b733b6}{Polya}{P\bibinitperiod}{George}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Princeton, New Jersey}%
-      }
-      \list{publisher}{1}{%
-        {Princeton University Press}%
-      }
-      \strng{namehash}{c6bab844d80dcf3ef4b79a4c63b733b6}
-      \strng{fullhash}{c6bab844d80dcf3ef4b79a4c63b733b6}
-      \field{sortinit}{P}
-      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
-      \field{labelyear}{1957}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{2nd}
-      \field{isbn}{0691023565}
-      \field{title}{{How To Solve It}}
-      \field{year}{1957}
-    \endentry
-    \entry{Queneau1961}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=0eb4d0a44ec1e8a92c5cf3ba939b660f}{Queneau}{Q\bibinitperiod}{Raymond}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Gallimard}%
-      }
-      \strng{namehash}{0eb4d0a44ec1e8a92c5cf3ba939b660f}
-      \strng{fullhash}{0eb4d0a44ec1e8a92c5cf3ba939b660f}
-      \field{sortinit}{Q}
-      \field{sortinithash}{15867262911a166ca2270ec58a0e3fe9}
-      \field{labelyear}{1961}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{One Hundred Thousand Billion Poems}}
-      \field{year}{1961}
-    \endentry
     \entry{Raczinski2016a}{misc}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=7d271056c31f7ff1f45ff6ff1656f189}{Raczinski}{R\bibinitperiod}{Fania}{F\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=7d271056c31f7ff1f45ff6ff1656f189}{%
+           family={Raczinski},
+           family_i={R\bibinitperiod},
+           given={Fania},
+           given_i={F\bibinitperiod}}}%
       }
       \strng{namehash}{7d271056c31f7ff1f45ff6ff1656f189}
       \strng{fullhash}{7d271056c31f7ff1f45ff6ff1656f189}
@@ -2816,55 +715,23 @@
       \field{title}{Emails}
       \field{year}{2016}
     \endentry
-    \entry{Raczinski2016}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=7d271056c31f7ff1f45ff6ff1656f189}{Raczinski}{R\bibinitperiod}{Fania}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=c31712291f16c1f047315bcee073e6fa}{Everitt}{E\bibinitperiod}{Dave}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{53d611b193bea2ba19181c9291da3911}
-      \strng{fullhash}{53d611b193bea2ba19181c9291da3911}
-      \field{sortinit}{R}
-      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
-      \field{labelyear}{2016}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{International Symposium of Creative Computing}
-      \field{title}{{Creative Zombie Apocalypse: A Critique of Computer Creativity Evaluation}}
-      \field{year}{2016}
-    \endentry
-    \entry{Raczinski2013}{inproceedings}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=7d271056c31f7ff1f45ff6ff1656f189}{Raczinski}{R\bibinitperiod}{Fania}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{Yang}{Y\bibinitperiod}{Hongji}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Sydney, Australia}%
-      }
-      \list{publisher}{1}{%
-        {ACM New York, NY, USA}%
-      }
-      \strng{namehash}{1f4dd22c1cec8cbb53e4c7490a411faa}
-      \strng{fullhash}{1f4dd22c1cec8cbb53e4c7490a411faa}
-      \field{sortinit}{R}
-      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 9th International Conference on Creativity and Cognition}
-      \field{isbn}{978-1-4503-2150-1}
-      \field{title}{{Creative Search Using Pataphysics}}
-      \field{year}{2013}
-      \field{pages}{274\bibrangedash 280}
-      \range{pages}{7}
-    \endentry
     \entry{Ramesh2004}{article}{}
       \name{author}{3}{}{%
-        {{uniquename=0,hash=d3441cf09955570f314dcc805ba869b2}{Ramesh}{R\bibinitperiod}{V.}{V\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=9c16a04997f3c5055f9a9df4d4ee2d12}{Glass}{G\bibinitperiod}{Robert\bibnamedelima L.}{R\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=75c68f291e11e2fb995568adea67a5bd}{Vessey}{V\bibinitperiod}{Iris}{I\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d3441cf09955570f314dcc805ba869b2}{%
+           family={Ramesh},
+           family_i={R\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{uniquename=0,hash=9c16a04997f3c5055f9a9df4d4ee2d12}{%
+           family={Glass},
+           family_i={G\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           given_i={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{uniquename=0,hash=75c68f291e11e2fb995568adea67a5bd}{%
+           family={Vessey},
+           family_i={V\bibinitperiod},
+           given={Iris},
+           given_i={I\bibinitperiod}}}%
       }
       \strng{namehash}{3ebb0b06558061942b18d1a2ceb16a7f}
       \strng{fullhash}{3ebb0b06558061942b18d1a2ceb16a7f}
@@ -2882,159 +749,13 @@
       \field{pages}{165\bibrangedash 176}
       \range{pages}{12}
     \endentry
-    \entry{Rhodes1961}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=8e9691784598e3c254b3d45b87886757}{Rhodes}{R\bibinitperiod}{Mel}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{8e9691784598e3c254b3d45b87886757}
-      \strng{fullhash}{8e9691784598e3c254b3d45b87886757}
-      \field{sortinit}{R}
-      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
-      \field{labelyear}{1961}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Phi Delta Kappan}
-      \field{number}{7}
-      \field{title}{{An analysis of creativity}}
-      \field{volume}{42}
-      \field{year}{1961}
-      \field{pages}{305\bibrangedash 310}
-      \range{pages}{6}
-    \endentry
-    \entry{Ritchie2001}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=0504ccf340a1c8204debb5ff8a1d3d56}{Ritchie}{R\bibinitperiod}{Graeme}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{3}{%
-        {Proceedings of the AISB'01 Symposium on Artificial Intelligence}%
-        {Creativity in Arts}%
-        {Science}%
-      }
-      \strng{namehash}{0504ccf340a1c8204debb5ff8a1d3d56}
-      \strng{fullhash}{0504ccf340a1c8204debb5ff8a1d3d56}
-      \field{sortinit}{R}
-      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{AISB '01 Symposium on Artificial Intelligence and Creativity in Arts and Science}
-      \field{title}{{Assessing creativity}}
-      \field{year}{2001}
-      \field{pages}{3\bibrangedash 11}
-      \range{pages}{9}
-    \endentry
-    \entry{Ritchie2007}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=0504ccf340a1c8204debb5ff8a1d3d56}{Ritchie}{R\bibinitperiod}{Graeme}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{0504ccf340a1c8204debb5ff8a1d3d56}
-      \strng{fullhash}{0504ccf340a1c8204debb5ff8a1d3d56}
-      \field{sortinit}{R}
-      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
-      \field{labelyear}{2007}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Minds and Machines}
-      \field{number}{1}
-      \field{title}{{Some Empirical Criteria for Attributing Creativity to a Computer Program}}
-      \field{volume}{17}
-      \field{year}{2007}
-      \field{pages}{67\bibrangedash 99}
-      \range{pages}{33}
-    \endentry
-    \entry{Ritchie2012}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=0504ccf340a1c8204debb5ff8a1d3d56}{Ritchie}{R\bibinitperiod}{Graeme}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{0504ccf340a1c8204debb5ff8a1d3d56}
-      \strng{fullhash}{0504ccf340a1c8204debb5ff8a1d3d56}
-      \field{sortinit}{R}
-      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
-      \field{labelyear}{2012}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{International Conference on Computational Creativity}
-      \field{title}{{A closer look at creativity as search}}
-      \field{year}{2012}
-      \field{pages}{41\bibrangedash 48}
-      \range{pages}{8}
-    \endentry
-    \entry{Schmidhuber2006}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=2333709f91a1b22edafa71582c31e391}{Schmidhuber}{S\bibinitperiod}{Juergen}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{2333709f91a1b22edafa71582c31e391}
-      \strng{fullhash}{2333709f91a1b22edafa71582c31e391}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{extrayear}{1}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Connection Science}
-      \field{number}{2}
-      \field{title}{{Developmental robotics, optimal artificial curiosity, creativity, music, and the fine arts}}
-      \field{volume}{18}
-      \field{year}{2006}
-      \field{pages}{173\bibrangedash 187}
-      \range{pages}{15}
-    \endentry
-    \entry{Schmidhuber2006a}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=2333709f91a1b22edafa71582c31e391}{Schmidhuber}{S\bibinitperiod}{Juergen}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{2333709f91a1b22edafa71582c31e391}
-      \strng{fullhash}{2333709f91a1b22edafa71582c31e391}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{extrayear}{2}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{New millennium AI and the Convergence of history}
-      \field{year}{2006}
-    \endentry
-    \entry{Schuetze1998}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=649b7399037d78a25778825cfd63a4ba}{Schuetze}{S\bibinitperiod}{Hinrich}{H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{649b7399037d78a25778825cfd63a4ba}
-      \strng{fullhash}{649b7399037d78a25778825cfd63a4ba}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1998}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Computational Linguistics}
-      \field{title}{{Automatic Word Sense Discrimination}}
-      \field{year}{1998}
-    \endentry
-    \entry{Schuetze}{misc}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=649b7399037d78a25778825cfd63a4ba}{Schuetze}{S\bibinitperiod}{Hinrich}{H\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=dd8c5cd39e9b1caf13ea2082034e4d67}{Pedersen}{P\bibinitperiod}{Jan}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{529d23c9b847b7f39dacaf15386857d7}
-      \strng{fullhash}{529d23c9b847b7f39dacaf15386857d7}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1995}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Information Retrieval Based on Word Senses}
-      \field{year}{1995}
-    \endentry
     \entry{Schulman2009}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=66a3aac42148ee35b7592eed4fe5b5b7}{Schulman}{S\bibinitperiod}{Ari}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=66a3aac42148ee35b7592eed4fe5b5b7}{%
+           family={Schulman},
+           family_i={S\bibinitperiod},
+           given={Ari},
+           given_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{66a3aac42148ee35b7592eed4fe5b5b7}
       \strng{fullhash}{66a3aac42148ee35b7592eed4fe5b5b7}
@@ -3051,230 +772,43 @@
       \field{pages}{46\bibrangedash 68}
       \range{pages}{23}
     \endentry
-    \entry{Searle1980}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=d6d7a401da9d01dfc8a3b6ebd29270d9}{Searle}{S\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{d6d7a401da9d01dfc8a3b6ebd29270d9}
-      \strng{fullhash}{d6d7a401da9d01dfc8a3b6ebd29270d9}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1980}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Behavioral and Brain Sciences}
-      \field{number}{3}
-      \field{title}{{Minds, Brains, and Programs}}
-      \field{volume}{3}
-      \field{year}{1980}
-      \field{pages}{417\bibrangedash 457}
-      \range{pages}{41}
-    \endentry
-    \entry{Shattuck1959}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=61b594f9ffc5c51bf7b57109de948df1}{Shattuck}{S\bibinitperiod}{Roger}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Faber}%
-      }
-      \strng{namehash}{61b594f9ffc5c51bf7b57109de948df1}
-      \strng{fullhash}{61b594f9ffc5c51bf7b57109de948df1}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1959}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The Arts in France 1885 - 1918}
-      \field{title}{{The Banquet Years}}
-      \field{year}{1959}
-    \endentry
-    \entry{Shu1999}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=4ffae0f285731e44e6d208fea4990f8d}{Shu}{S\bibinitperiod}{Bo}{B\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e8fab41d9850454e624e1ef9ffa87409}{Kak}{K\bibinitperiod}{Subhash}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{a79dcff4b085cf58785f23ebb0cb91d7}
-      \strng{fullhash}{a79dcff4b085cf58785f23ebb0cb91d7}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1999}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Information Sciences}
-      \field{title}{{A neural network-based intelligent meta\-search engine}}
-      \field{volume}{120}
-      \field{year}{1999}
-    \endentry
-    \entry{Singh2005}{thesis}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=c08ca73548ff4fb2841dbc2b8255f421}{Singh}{S\bibinitperiod}{Push}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \list{institution}{1}{%
-        {Massachusetts Institute of Technology}%
-      }
-      \strng{namehash}{c08ca73548ff4fb2841dbc2b8255f421}
-      \strng{fullhash}{c08ca73548ff4fb2841dbc2b8255f421}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{2005}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{EM-ONE: An Architecture for Reflect\-ive Common\-sense Thinking}}
-      \field{type}{phdthesis}
-      \field{year}{2005}
-    \endentry
-    \entry{Srinivasan2001}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=82cf99e92395928628bf3857603fb154}{Srinivasan}{S\bibinitperiod}{P}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{82cf99e92395928628bf3857603fb154}
-      \strng{fullhash}{82cf99e92395928628bf3857603fb154}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Information Processing and Management}
-      \field{number}{1}
-      \field{title}{{Vocabulary mining for information retrieval: rough sets and fuzzy sets}}
-      \field{volume}{37}
-      \field{year}{2001}
-      \field{pages}{15\bibrangedash 38}
-      \range{pages}{24}
-    \endentry
-    \entry{Stahl2013}{incollection}{}
-      \name{author}{3}{}{%
-        {{uniquename=0,hash=b64d1fa67455a9f28569ad8961d1b0e5}{Stahl}{S\bibinitperiod}{Bernd\bibnamedelima Carsten}{B\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=5e81946dba6a6712091123e648f65936}{Jirotka}{J\bibinitperiod}{Marina}{M\bibinitperiod}{}{}{}{}}%
-        {{uniquename=1,hash=cd7266f372b0096624ddf8c1197186fd}{Eden}{E\bibinitperiod}{Grace}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=22416fcb3a783b803e3eff9be0f23dd4}{Owen}{O\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{2}{%
-        {John Wiley}%
-        {Sons}%
-      }
-      \strng{namehash}{6e34fc145ed8d187a0c36ddf0232018b}
-      \strng{fullhash}{6e34fc145ed8d187a0c36ddf0232018b}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Responsible Innovation}
-      \field{chapter}{11}
-      \field{title}{{Responsible Research and Innovation in Information and Communication Technology: Identifying and Engaging with the Ethical Implications of ICTs}}
-      \field{year}{2013}
-      \field{pages}{199\bibrangedash 218}
-      \range{pages}{20}
-    \endentry
-    \entry{Sternberg1999}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=50f8ce5e49f4ae4a572b5ad65796a522}{Sternberg}{S\bibinitperiod}{Robert\bibnamedelima J}{R\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{50f8ce5e49f4ae4a572b5ad65796a522}
-      \strng{fullhash}{50f8ce5e49f4ae4a572b5ad65796a522}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1999}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0521576040}
-      \field{title}{{Handbook of creativity}}
-      \field{year}{1999}
-      \field{pages}{490}
-      \range{pages}{1}
-    \endentry
-    \entry{Sternberg2006}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=50f8ce5e49f4ae4a572b5ad65796a522}{Sternberg}{S\bibinitperiod}{Robert\bibnamedelima J}{R\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{50f8ce5e49f4ae4a572b5ad65796a522}
-      \strng{fullhash}{50f8ce5e49f4ae4a572b5ad65796a522}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{0521338921}
-      \field{journaltitle}{Creativity Research journal}
-      \field{number}{1}
-      \field{title}{{The Nature of Creativity}}
-      \field{volume}{18}
-      \field{year}{2006}
-      \field{pages}{87\bibrangedash 98}
-      \range{pages}{12}
-    \endentry
-    \entry{Sutcliffe1998}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=43950c16f7c507192a21585f27494f6c}{Sutcliffe}{S\bibinitperiod}{Alistrair}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=514c78df104820b6b8665fe9fe9cd76c}{Ennis}{E\bibinitperiod}{Mark}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{eecafef0aa674c36ec3bdd17f8cf9dad}
-      \strng{fullhash}{eecafef0aa674c36ec3bdd17f8cf9dad}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{1998}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Interacting with Computers}
-      \field{title}{{Towards a cognitive theory of information retrieval}}
-      \field{volume}{10}
-      \field{year}{1998}
-      \field{pages}{321\bibrangedash 351}
-      \range{pages}{31}
-    \endentry
-    \entry{Taye2009}{thesis}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=be520420b41783e8d7988a145c717eb8}{Taye}{T\bibinitperiod}{Mohammad\bibnamedelima Mustafa}{M\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{institution}{1}{%
-        {De Montort University}%
-      }
-      \strng{namehash}{be520420b41783e8d7988a145c717eb8}
-      \strng{fullhash}{be520420b41783e8d7988a145c717eb8}
-      \field{sortinit}{T}
-      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
-      \field{labelyear}{2009}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{I Can}
-      \field{title}{{Ontology Alignment Mechanisms for Improving Web-based Searching}}
-      \field{type}{phdthesis}
-      \field{year}{2009}
-    \endentry
     \entry{Thomas2007}{article}{}
       \name{author}{7}{}{%
-        {{uniquename=0,hash=a5dea30154a7353ae2c017044b93fa22}{Thomas}{T\bibinitperiod}{Sue}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=25cba42859653d032b6b25cbac9cb77a}{Joseph}{J\bibinitperiod}{Chris}{C\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=99cc647582ab18e8ca23aa343ee69304}{Laccetti}{L\bibinitperiod}{Jess}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=864dc5e67083d33f88aa552292ae9209}{Mason}{M\bibinitperiod}{Bruce}{B\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=2c2e6631e17c78855e3fe3eb8d49fc36}{Mills}{M\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=4de409a8789216976ca5a7e54fa41ba1}{Perril}{P\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=8afdd78ee9a61e8b831e28ad85018b34}{Pullinger}{P\bibinitperiod}{Kate}{K\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=a5dea30154a7353ae2c017044b93fa22}{%
+           family={Thomas},
+           family_i={T\bibinitperiod},
+           given={Sue},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=25cba42859653d032b6b25cbac9cb77a}{%
+           family={Joseph},
+           family_i={J\bibinitperiod},
+           given={Chris},
+           given_i={C\bibinitperiod}}}%
+        {{uniquename=0,hash=99cc647582ab18e8ca23aa343ee69304}{%
+           family={Laccetti},
+           family_i={L\bibinitperiod},
+           given={Jess},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=864dc5e67083d33f88aa552292ae9209}{%
+           family={Mason},
+           family_i={M\bibinitperiod},
+           given={Bruce},
+           given_i={B\bibinitperiod}}}%
+        {{uniquename=0,hash=2c2e6631e17c78855e3fe3eb8d49fc36}{%
+           family={Mills},
+           family_i={M\bibinitperiod},
+           given={Simon},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=4de409a8789216976ca5a7e54fa41ba1}{%
+           family={Perril},
+           family_i={P\bibinitperiod},
+           given={Simon},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=8afdd78ee9a61e8b831e28ad85018b34}{%
+           family={Pullinger},
+           family_i={P\bibinitperiod},
+           given={Kate},
+           given_i={K\bibinitperiod}}}%
       }
       \strng{namehash}{b06301eea2088ecf5c9333c79cc99e18}
       \strng{fullhash}{d85ddbe3ce32d16c7e795c4cebd9ce34}
@@ -3290,120 +824,13 @@
       \field{volume}{12}
       \field{year}{2007}
     \endentry
-    \entry{Turing1950}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=d6d9f41ce7ab57b0d45edbe153331923}{Turing}{T\bibinitperiod}{Alan}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{d6d9f41ce7ab57b0d45edbe153331923}
-      \strng{fullhash}{d6d9f41ce7ab57b0d45edbe153331923}
-      \field{sortinit}{T}
-      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
-      \field{labelyear}{1950}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mind}
-      \field{title}{{Computing Machinery and Intelligence}}
-      \field{urlday}{23}
-      \field{urlmonth}{01}
-      \field{urlyear}{2016}
-      \field{volume}{59}
-      \field{year}{1950}
-      \field{pages}{433\bibrangedash 460}
-      \range{pages}{28}
-      \verb{url}
-      \verb http://loebner.net/Prizef/TuringArticle.html
-      \endverb
-    \endentry
-    \entry{Varshney2013}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{uniquename=0,hash=bec850fff9dd997b834057b47d11f3fa}{Varshney}{V\bibinitperiod}{Lav\bibnamedelima R}{L\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=abceac1e263eaa13bfc23a2ab397cc12}{Pinel}{P\bibinitperiod}{Florian}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e60d4312f3f487477d6b6dd090121fcc}{Varshney}{V\bibinitperiod}{Kush\bibnamedelima R}{K\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=dbf4533192da658487df7378e5e8721a}{Schoergendofer}{S\bibinitperiod}{Angela}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=e3295fd9667d004412332a75c29f79a6}{Chee}{C\bibinitperiod}{Yin-Min}{Y\bibinithyphendelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {New York City, USA}%
-      }
-      \strng{namehash}{b9872bc83643dd15d685efa278a4b984}
-      \strng{fullhash}{04ca84c82381cf6360d568e78bdab4b1}
-      \field{sortinit}{V}
-      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
-      \field{labelyear}{2013}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{12th International IEEE Conference on Cognitive Informatics and Cognitive Computing}
-      \field{isbn}{9781479907830}
-      \field{title}{{Cognition as a Part of Computational Creativity}}
-      \field{year}{2013}
-      \field{pages}{36\bibrangedash 43}
-      \range{pages}{8}
-    \endentry
-    \entry{Ventura2008}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=b2da14aea97364c3ffe95f801a0f6a7d}{Ventura}{V\bibinitperiod}{Dan}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Madrid, Spain}%
-      }
-      \strng{namehash}{b2da14aea97364c3ffe95f801a0f6a7d}
-      \strng{fullhash}{b2da14aea97364c3ffe95f801a0f6a7d}
-      \field{sortinit}{V}
-      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
-      \field{labelyear}{2008}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{5th International Joint Workshop on Computational Creativty}
-      \field{title}{{A Reductio Ad Absurdum Experiment in Sufficiency for Evaluating (Computational) Creative Systems}}
-      \field{year}{2008}
-    \endentry
-    \entry{Vian2006}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=55f762c8395e87eb2e924537f79c16c2}{Vian}{V\bibinitperiod}{Boris}{B\bibinitperiod}{}{}{}{}}%
-      }
-      \name{translator}{1}{}{%
-        {{hash=484c51edca47b25dd8d5c8510338b609}{Chapman}{C\bibinitperiod}{Stanley}{S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {London}%
-      }
-      \list{publisher}{1}{%
-        {Atlas Press}%
-      }
-      \strng{namehash}{55f762c8395e87eb2e924537f79c16c2}
-      \strng{fullhash}{55f762c8395e87eb2e924537f79c16c2}
-      \field{sortinit}{V}
-      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{1-900565-32-3}
-      \field{title}{{'Pataphysics? What's That?}}
-      \field{year}{2006}
-    \endentry
-    \entry{DeVries1993}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=9f9c94108fd182096eee7f06a4ab86c6}{Vries}{V\bibinitperiod}{Erica}{E\bibinitperiod}{de}{d\bibinitperiod}{}{}}%
-      }
-      \strng{namehash}{9f9c94108fd182096eee7f06a4ab86c6}
-      \strng{fullhash}{9f9c94108fd182096eee7f06a4ab86c6}
-      \field{sortinit}{V}
-      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
-      \field{labelyear}{1993}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{OCTO report 93/02}
-      \field{title}{{Browsing vs Searching}}
-      \field{year}{1993}
-    \endentry
     \entry{Walker2012}{report}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=e91b4c886f818bf849eb9b2d123321e8}{Walker}{W\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e91b4c886f818bf849eb9b2d123321e8}{%
+           family={Walker},
+           family_i={W\bibinitperiod},
+           given={Richard},
+           given_i={R\bibinitperiod}}}%
       }
       \list{institution}{1}{%
         {HBP-PS Consortium}%
@@ -3420,48 +847,23 @@
       \field{type}{techreport}
       \field{year}{2012}
     \endentry
-    \entry{Wallas1926}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=3d8a8c5903ced4bab20ce35c795a14fc}{Wallas}{W\bibinitperiod}{Graham}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Jonathan Cape}%
-      }
-      \strng{namehash}{3d8a8c5903ced4bab20ce35c795a14fc}
-      \strng{fullhash}{3d8a8c5903ced4bab20ce35c795a14fc}
-      \field{sortinit}{W}
-      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
-      \field{labelyear}{1926}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{The Art of Thought}}
-      \field{year}{1926}
-    \endentry
-    \entry{Walsh2001}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=0f6da01e23d0e7a8aea03fa7b788d259}{Walsh}{W\bibinitperiod}{Dave}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{0f6da01e23d0e7a8aea03fa7b788d259}
-      \strng{fullhash}{0f6da01e23d0e7a8aea03fa7b788d259}
-      \field{sortinit}{W}
-      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{disinfo.com}
-      \field{title}{{Absinthe, Bicycles and Merdre}}
-      \field{urlday}{11}
-      \field{urlmonth}{01}
-      \field{urlyear}{2012}
-      \field{year}{2001}
-    \endentry
     \entry{Wickson2006}{article}{}
       \name{author}{3}{}{%
-        {{uniquename=0,hash=76e9ec15a73000638355be24dd42a6e6}{Wickson}{W\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=5393cb9b1296bcabc876455bf9ca8cb6}{Carew}{C\bibinitperiod}{A.L.}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=709dfc31a30df62471d7a558868f15a5}{Russell}{R\bibinitperiod}{A.W.}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=76e9ec15a73000638355be24dd42a6e6}{%
+           family={Wickson},
+           family_i={W\bibinitperiod},
+           given={F.},
+           given_i={F\bibinitperiod}}}%
+        {{uniquename=0,hash=5393cb9b1296bcabc876455bf9ca8cb6}{%
+           family={Carew},
+           family_i={C\bibinitperiod},
+           given={A.L.},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=709dfc31a30df62471d7a558868f15a5}{%
+           family={Russell},
+           family_i={R\bibinitperiod},
+           given={A.W.},
+           given_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{0693464098b04b9fbc482c35b9c6ef16}
       \strng{fullhash}{0693464098b04b9fbc482c35b9c6ef16}
@@ -3479,52 +881,13 @@
       \field{pages}{1046\bibrangedash 1059}
       \range{pages}{14}
     \endentry
-    \entry{Widyantoro2001}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,hash=de7c7d75fdcd1cc8a4f79ea9b193256f}{Widyantoro}{W\bibinitperiod}{D.H.}{D\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=62ae453853dccd8e1af8ffa037a0873c}{Yen}{Y\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Ieee}%
-      }
-      \strng{namehash}{c044d3e443fb17bbb964cf3dd8c0feb9}
-      \strng{fullhash}{c044d3e443fb17bbb964cf3dd8c0feb9}
-      \field{sortinit}{W}
-      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
-      \field{labelyear}{2001}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{10th IEEE International Conference on Fuzzy Systems}
-      \field{title}{{A fuzzy ontology-based abstract search engine and its user studies}}
-      \field{volume}{2}
-      \field{year}{2001}
-      \field{pages}{1291\bibrangedash 1294}
-      \range{pages}{4}
-    \endentry
-    \entry{Wiggins2006}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=d565adbbd0075d5589e9afa4bbbf18b5}{Wiggins}{W\bibinitperiod}{Geraint\bibnamedelima A}{G\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{d565adbbd0075d5589e9afa4bbbf18b5}
-      \strng{fullhash}{d565adbbd0075d5589e9afa4bbbf18b5}
-      \field{sortinit}{W}
-      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
-      \field{labelyear}{2006}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Knowledge Based Systems}
-      \field{number}{7}
-      \field{title}{{A preliminary framework for description, analysis and comparison of creative systems}}
-      \field{volume}{19}
-      \field{year}{2006}
-      \field{pages}{449\bibrangedash 458}
-      \range{pages}{10}
-    \endentry
     \entry{Yang2013}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{Yang}{Y\bibinitperiod}{Hongji}{H\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=11c725cec38f9c8cc92eac0343e52114}{%
+           family={Yang},
+           family_i={Y\bibinitperiod},
+           given={Hongji},
+           given_i={H\bibinitperiod}}}%
       }
       \strng{namehash}{11c725cec38f9c8cc92eac0343e52114}
       \strng{fullhash}{11c725cec38f9c8cc92eac0343e52114}
@@ -3541,27 +904,6 @@
       \field{year}{2013}
       \field{pages}{1\bibrangedash 3}
       \range{pages}{3}
-    \endentry
-    \entry{Yossarian2015}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=50a5296654163ac9f42474f90afca55a}{Yossarian}{Y\bibinitperiod}{}{}{}{}{}{}}%
-      }
-      \strng{namehash}{50a5296654163ac9f42474f90afca55a}
-      \strng{fullhash}{50a5296654163ac9f42474f90afca55a}
-      \field{sortinit}{Y}
-      \field{sortinithash}{3cbc1e3d286284cedb5e5218a3248f94}
-      \field{labelyear}{2015}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Yossarian}
-      \field{urlday}{02}
-      \field{urlmonth}{12}
-      \field{urlyear}{2015}
-      \field{year}{2015}
-      \verb{url}
-      \verb https://yossarian.co/
-      \endverb
     \endentry
   \endsortlist
 \endrefsection
