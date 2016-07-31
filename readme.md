@@ -144,7 +144,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] replace some chapter poems with shakespeare versions to be able to refer back to them later
 - [ ] key of code stuff in intro (e.g. oreilly)
 - [ ] Make it clear that you are presenting a thesis that embodies knowledge in an artefact (the software) but avoid the "practice-based" argument altogether. 
-
+- [ ] format all numbers using \num{} also \num{1.5e10}
 
 
 ## FIRST DRAFT COMPLETE:

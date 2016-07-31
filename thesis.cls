@@ -623,6 +623,9 @@ breaklines=true
 
 % MATHS BULLSHIT
 
+\usepackage{sistyle}
+\SIthousandsep{,}
+
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{quotes,arrows,angles,decorations,

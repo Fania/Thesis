@@ -85,7 +85,7 @@ The internal transformation of a query term to the final results is essentially 
   \item system displays sentence fragments in various formats.
 \end{enumerate}
 
-It is quite interesting to compare these algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{tab:algorithmscomp}.
+It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{tab:algorithmscomp}.
 
 \begin{table}[htb]
   \begin{tabu}{X[1,L]|X[3,L]X[3,L]X[2,L]}
@@ -224,14 +224,14 @@ The above examples (table~\ref{tab:algorithmscomp} and figure~\ref{fig:2poems} g
   \toprule
   \textbf{Corpus} & \textbf{Query} & \textbf{Results} & \textbf{Reverbs} & \textbf{Origins} & \textbf{Poems}\\
   \midrule
-  Faustroll & flower & 89 & 24 & 18 & $7.8 \times 10^{10}$\\
-  Shakespeare & flower & 157 & 15 & 38 & $3.8 \times 10^{14}$\\
-  Faustroll & clear & 542 & 79 & 23 & $1.3 \times 10^{22}$\\
-  Shakespeare & clear & 1445 & 72 & 38 & $1.5 \times 10^{28}$\\
-  Faustroll & troll & 124 & 16 & 16 & $4.4 \times 10^{12}$\\
-  Shakespeare & troll & 327 & 14 & 38 & $1.1 \times 10^{19}$\\
-  Faustroll & fania & 9 & 2 & 6 & $1$\\
-  Shakespeare & fania & 15 & 2 & 14 & $1$\\
+  Faustroll & flower & 89 & 24 & 18 & \num{7.8e10}\\
+  Shakespeare & flower & 157 & 15 & 38 & \num{3.8e14}\\
+  Faustroll & clear & 542 & 79 & 23 & \num{1.3e22}\\
+  Shakespeare & clear & 1445 & 72 & 38 & \num{1.5e28}\\
+  Faustroll & troll & 124 & 16 & 16 & \num{4.4e12}\\
+  Shakespeare & troll & 327 & 14 & 38 & \num{1.1e19}\\
+  Faustroll & fania & 9 & 2 & 6 & \num{1}\\
+  Shakespeare & fania & 15 & 2 & 14 & \num{1}\\
   \bottomrule
   \end{tabu}
 \caption[Faustroll vs Shakespeare in numbers]{Faustroll versus Shakespeare in numbers}
@@ -251,206 +251,12 @@ To put this into perspective, the Faustroll corpus contains a total of 28 texts 
 
 It is rather interesting to note that even though the Shakespeare corpus produces overall more results from more texts, the Faustroll corpus produces more reverberations per query. This might stem from the multi-author, multi-language nature of the corpus. The overall vocabulary\marginnote{§~\ref{s:index}} used is much larger than the Shakespeare one.
 
-Regarding the final column showing the number of possible poems, let's look at the Shakespeare---clear row. There are 1445 number of results. These are spread over 14 lines, so each line has 103 options. The overall number of poems is therefore calculated as $103^{14}$ which equals $15125897248551112432256145169$ (or $1.5 \times 10^{28}$ in short\marginnote{\faicon{table}~\ref{tab:faustshake}}).
+Regarding the final column showing the number of possible poems, let's look at the Shakespeare---clear row. There are \num{1445} number of results. These are spread over 14 lines, so each line has 103 options. The overall number of poems is therefore calculated as $103^{14}$ which equals \num{15125897248551112432256145169} (or \num{1.5e28} in short\marginnote{\faicon{table}~\ref{tab:faustshake}}).
 
 \spirals
 
 A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table~\ref{tab:algonums}\marginnote{\faicon{table}~\ref{tab:algonums}} shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using four example query terms (`clear', `shine', `disorder' and `stuck') for each of the two corpora (`Faustroll' and `Shakespeare').
 
-The first immediate observation surely must be that the Antinomy algorithm produces the fewest results, in two cases even none at all. This is caused by the fact that the Antinomy algorithm\marginnote{§~\ref{s:antinomy}} is based on semantic opposites in WordNet and some words simply do not have defined opposites. Addressing this issue was left for future work mentioned in chapter~\ref{ch:future}\marginnote{§~\ref{ch:future}}. On the other hand the Syzygy algorithm\marginnote{§~\ref{s:syzygy}}, which is also based on WordNet, produces most results on average.
-
-The Clinamen algorithm\marginnote{§~\ref{s:clinamen}} interestingly produces a varying number of results depending on the query term. For the query `disorder' no results where found in either the Faustroll or the Shakespeare corpus. This of course is rooted in the fact that no reverberations where produced during the pataphysicalisation process. Here it is important to remember that the Clinamen algorithm makes use of a base document\footnote{This is hardcoded to be Jarry's \textit{Exploits and Opinions of Doctor Faustroll, Pataphysician}. Section~\ref{s:basetext} discusses what would happen if we changed the base document to something else.}\marginnote{§~\ref{s:basetext}}. Therefore the success of the algorithm depends on the vocabulary of this base text. In this particular example this means that there was no word in the base text of one or two spelling errors to the original query of `disorder'.
-
-Looking at the origins column in table~\ref{tab:algonums}\marginnote{\faicon{table}~\ref{tab:algonums}} highlights how the Shakespeare corpus mostly produces results from each of its 38 texts. The Faustroll corpus varies a lot more. This may be due to the different languages and varying word counts of the files in the corpus (see table~\ref{tab:faustcount}\marginnote{\faicon{table}~\ref{tab:faustcount}}).
-
-HERE
-
-\begin{itemize}
-  \item There are three empty texts (18,20,21) in the Faustroll corpus.
-  \item The quality of the Faustroll corpus is not perfect.
-  \item The total number of words in the 
-\end{itemize}
-
-\begin{itemize}
-  \item According to \autocite{Efron1976} Shakespeare used 31534 different words in his works, about half of which he only used once (14376). They cite the total number of words used in his corpus as 884647. 883460 is the total count of the Shakespeare texts in my corpus.
-  \item The total number of words in the Faustroll corpus is 1738461. Of this, 1204158 words are from English texts, 497144 are French and 37159 are in German.
-\end{itemize}
-
-69.3/English\\
-28.60/French\\
-2.14/German
-
-\begin{table}[]
-\centering
-\begin{tabu}{lcc}
-\toprule
-Count           & Faustroll & Shakespeare \\ \midrule
-Total words     & 1738461   & 883460      \\
-Average words   & 62088     & 23249       \\
-Total English   & 1204158   &             \\
-Total French    & 497144    &             \\
-Total German    & 37159     &             \\
-Average English & 92628     &             \\
-Average French  & 49714     &             \\
-Average German  & 18578     &             \\ \bottomrule
-\end{tabu}
-\caption{My caption}
-\label{my-label}
-\end{table}
-
-
-
-shakespeare vocab in index: 23398\\
-faustroll vocab in index: 78893\\
-faustroll english vocab in index: 49040
-
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{lll}
-\hline
-Count           & Faustroll & Shakespeare \\ \hline
-Total words     & 1738461   & 883460      \\
-Average words   & 62088     & 23249       \\
-Total English   & 1204158   &             \\
-Total French    & 497144    &             \\
-Total German    & 37159     &             \\
-Average English & 92628     &             \\
-Average French  & 49714     &             \\
-Average German  & 18578     &             \\ \hline
-\end{tabular}
-\end{table}
-
-shakespeare
-00 17742
-01 24371
-02 26460
-03 22812
-04 16200
-05 29213
-06 28786
-07 32031
-08 25721
-09 27631
-10 27447
-11 22776
-12 26784
-13 25833
-14 25817
-15 21704
-16 20870
-17 27513
-18 22887
-19 18233
-20 22873
-21 22254
-22 23360
-23 17233
-24 22450
-25 27866
-26 23297
-27 31090
-28 25864
-29 22159
-30 17415
-31 19634
-32 21634
-33 27537
-34 21153
-35 18293
-36 25949
-37 2568
-
-The full list of stopwords per language can be found in appendix~\ref{app:stopwords}\marginnote{§~\ref{app:stopwords}}.
-
-% \begin{tikzpicture}
-%   \begin{axis}[title  = Faustroll Word Count,
-%     xbar,
-%     y axis line style = { opacity = 0 },
-%     axis x line       = none,
-%     height			  = \textheight,
-%     width			  = \textwidth,
-%     tickwidth         = 0pt,
-% %     enlarge y limits  = 0.2,
-%     enlarge x limits  = 0.02,
-%     nodes near coords,
-%   ]
-%   \addplot coordinates { 
-%   (Jarry: Dr. Faustroll, 22230)
-%   (Poe: Collected Works, 419456)
-%   (Bergerac: Voyage to the Moon, 33078)
-%   (Saint Luke: The Gospel, 26843)
-%   (Bloy: Le Desespere, 103637)
-%   (Coleridge: Ancient Mariner, 3853)
-%   (Darien: Le Voleur, 134328)
-%   (Desbordes-Valmore: Meres et Enfants, 39937)
-%   (Elskamp: Enluminures, 4548)
-%   (Florian: Deux Billets, 11309)
-%   (1001 Nights, 110518)
-%   (Grabbe: Scherz, Satire, Ironie, 31286)
-%   (Kahn: l'Or et Silence, 78983)
-%   (Lautreamont: Chants de Maldoror, 75293)
-%   (Maeterlinck: Aglavaine and Selysette, 20371)
-%   (Mallarme: Verse and Prose, 21822)
-%   (Mendes: The Mirror, 54747)
-%   (Homer: The Odyssey, 110980)
-%   (Peladan: Babylon, 0)
-%   (Rabelais: Gargantua and Pantagruel, 301903)
-%   (Chilra: L'Heure Sexuelle, 0)
-%   (Regnier: La Canne de Jaspe, 0)
-%   (Rimbaud: Poesies Completes, 14627)
-%   (Schwob: Kinderkreuzzug, 5873)
-%   (Jarry: Ubu Roi, 12660)
-%   (Verlaine: Poems, 6647)
-%   (Verhaeren: Poems, 8065)
-%   (Verne: Journey to Centre of Earth, 85467)            
-%   };
-%   \end{axis}
-%   \caption[Faustroll corpus word counts]{Faustroll corpus word counts}
-%   \label{fig:faustgraph}
-% \end{tikzpicture}
-
-\begin{wraptable}{r}{4.5cm} 
-\begin{tabu}{ccc}
-\toprule
-File & Words  & Lang \\ \midrule
-00   & 22230  & en    \\
-01   & 419456 & en    \\
-02   & 33078  & en    \\
-03   & 26843  & en    \\
-04   & 103637 & fr    \\
-05   & 3853   & en    \\
-06   & 134328 & fr    \\
-07   & 39937  & fr    \\
-08   & 4548   & fr    \\
-09   & 11309  & fr    \\
-10   & 110518 & en    \\
-11   & 31286  & de    \\
-12   & 78983  & fr    \\
-13   & 75293  & fr    \\
-14   & 20371  & en    \\
-15   & 21822  & fr    \\
-16   & 54747  & en    \\
-17   & 110980 & en    \\
-18   & 0      &       \\
-19   & 301903 & en    \\
-20   & 0      &       \\
-21   & 0      &       \\
-22   & 14627  & fr    \\
-23   & 5873   & de    \\
-24   & 12660  & fr    \\
-25   & 6647   & en    \\
-26   & 8065   & en    \\
-27   & 85467  & en    \\ \bottomrule
-\end{tabu}
-\caption[Faustroll corpus word count]{Faustroll corpus word count}
-\label{tab:faustcount}
-\end{wraptable}
-
-
-
-HERE
 \todo{add french query term}
 \begin{table}[]
 \centering\small
@@ -482,6 +288,38 @@ HERE
 \caption[Numbers per algorithm]{Results-Reverberations-Origin numbers per algorithm}
 \label{tab:algonums}
 \end{table}
+
+The first immediate observation surely must be that the Antinomy algorithm produces the fewest results, in two cases even none at all. This is caused by the fact that the Antinomy algorithm\marginnote{§~\ref{s:antinomy}} is based on semantic opposites in WordNet and some words simply do not have defined opposites. Addressing this issue was left for future work mentioned in chapter~\ref{ch:future}\marginnote{§~\ref{ch:future}}. On the other hand the Syzygy algorithm\marginnote{§~\ref{s:syzygy}}, which is also based on WordNet, produces most results on average.
+
+The Clinamen algorithm\marginnote{§~\ref{s:clinamen}} interestingly produces a varying number of results depending on the query term. For the query `disorder' no results where found in either the Faustroll or the Shakespeare corpus. This of course is rooted in the fact that no reverberations where produced during the pataphysicalisation process. Here it is important to remember that the Clinamen algorithm makes use of a base document\footnote{This is hardcoded to be Jarry's \textit{Exploits and Opinions of Doctor Faustroll, Pataphysician}. Section~\ref{s:basetext} discusses what would happen if we changed the base document to something else.}\marginnote{§~\ref{s:basetext}}. Therefore the success of the algorithm depends on the vocabulary of this base text. In this particular example this means that there was no word in the base text of one or two spelling errors to the original query of `disorder'.
+
+Looking at the origins column in table~\ref{tab:algonums}\marginnote{\faicon{table}~\ref{tab:algonums}} highlights how the Shakespeare corpus mostly produces results from each of its 38 texts. The Faustroll corpus varies a lot more. This may be due to the different languages and varying word counts of the files in the corpus.
+
+\paragraph*{Faustroll}
+\begin{itemize}
+  \item There are three empty texts (Peladan, de Chilra, de Regnier).
+  \item The total number of words is \num{1738461}. Of this, \num{1204158} words are from English texts (70\%), \num{497144} are French (28\%) and \num{37159} are in German (2\%).
+  \item The shortest text contains \num{3853} words (Coleridge).
+  \item The longest text contains \num{419456} words (Poe).
+  \item The average amount of words per text is \num{62088}.
+  \item The vocabulary of the index contains \num{78893} words. Of this \num{49040} are english terms.
+\end{itemize}
+
+\paragraph*{Shakespeare}
+\begin{itemize}
+  \item The total number of words is \num{883460}\footnote{According to \autocite{Efron1976} Shakespeare used \num{31534} different words in his works, about half of which he only used once (\num{14376}). They cite the total number of words used in his corpus as \num{884647}.}.
+  \item The shortest text contains \num{2568} words (Lover's Complaint).
+  \item The longest text contains \num{32031} words (Hamlet).
+  \item The average amount of words per text is \num{23249}.
+  \item The vocabulary of the index contains \num{23398} words.
+\end{itemize}
+
+The full list of stopwords per language can be found in appendix~\ref{app:stopwords}\marginnote{§~\ref{app:stopwords}}.
+
+
+
+HERE
+
 
 
 \paragraph{pp\_sent}
