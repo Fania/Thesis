@@ -153,12 +153,6 @@ Looking at the second column (the syzygy results) shows the semantic relationshi
 
 However it is equally interesting to compare some full sentences. Looking at some of the poems at the beginning of each chapter shows the variety of the possible outcomes (see pages \pageref{ch:introduction}, \pageref{ch:inspirations}, \pageref{ch:methodology}, \pageref{ch:pataphysics}, \pageref{ch:creativity}, \pageref{ch:technology}, \pageref{ch:evaluation}, \pageref{ch:foundations}, \pageref{ch:interpretation}, \pageref{ch:implementation}, \pageref{ch:applications}, \pageref{ch:analysis}, \pageref{ch:aspirations}, and \pageref{ch:observations}). It also highlights the difference between the two corpora. Poems based on the Faustrol corpus have a very different sound and feel to it than ones based on the Shakespeare corpus.
 
-\todo{remember to replace some of the chapter poems with shakespeare}
-
-Sometimes we can even get a general feel for the theme of the poem, as in we can recognize the connection, the relationship between the individual lines and what must be the original query term. Of course putting the poems into the chapters as they are---without specifically stating the keyword they were generated from or the corpus they are based on---makes them a bit more elusive.
-
-The different language is quite obvious. This is helped by the fact that the Shakespeare corpus is of course written by the same author\footnote{Unless of course we believe the legends that Shakespeare didn't write those works by himself\ldots}. The Faustroll corpus contains text by over 20 different authors and in three different languages even.
-
 \begin{figure}[h!]
 \centering
 \begin{minipage}{.45\linewidth}
@@ -212,6 +206,12 @@ The different language is quite obvious. This is helped by the fact that the Sha
 \label{fig:2poems}
 \end{figure}
 
+\todo{remember to replace some of the chapter poems with shakespeare}
+
+Sometimes we can even get a general feel for the theme of the poem, as in we can recognize the connection, the relationship between the individual lines and what must be the original query term. Of course putting the poems into the chapters as they are---without specifically stating the keyword they were generated from or the corpus they are based on---makes them a bit more elusive.
+
+The different language is quite obvious. This is helped by the fact that the Shakespeare corpus is of course written by the same author\footnote{Unless of course we believe the legends that Shakespeare didn't write those works by himself\ldots}. The Faustroll corpus contains text by over 20 different authors and in three different languages even.
+
 
 \subsection{Numbers}
 \label{s:numbers}
@@ -244,14 +244,14 @@ Table~\ref{tab:faustshake}\marginnote{\faicon{table}~\ref{tab:faustshake}} shows
   \item[Results] A `result' in this case is one line (a sentence fragment). This column shows the total number of results found by the three algorithms combined. Individual results appear only once but the keyword in contains can appear in several of the results.
   \item[Reverbs] A `reverberation' is one of the terms in the list of keywords produced by the pataphysicalisation process. The list cannot contain duplicates but each reverberation cab appear in more than one result. Reverberations are used to find results in each corpus. This column shows the total number of reverberations created by the three algorithms.
   \item[Origins] An `origin' in this case is the original source text from which a given sentence fragment was retrieved. Each corpus has a set number of source texts. Each origin can contain several results based on several reverberations. This column shows the number of origins in the given corpus in which results where found.
-  \item[Poems] This refers to the total number of Queneau style poems that can be generated using the given results\footnote{The original book by Queneau contains 10 sonnets with 14 lines each. This means the total number of poems producable by the book is $10^{14}$}. This is calculated as the number of different options per line to the power of the number of lines.
+  \item[Poems] This refers to the total number of Queneau style poems that can be generated using the given results\footnote{The original book by Queneau contains 10 sonnets with 14 lines each. This means the total number of poems producable by the book is $10^{14}$ or one hundred thousand million.}. This is calculated as the number of different options per line to the power of the number of lines.
 \end{description}
 
 To put this into perspective, the Faustroll corpus contains a total of 28 texts of very varied authors and different languages even. This might explain why not the queries in table~\ref{tab:faustshake}\marginnote{\faicon{table}~\ref{tab:faustshake}} have not found results in all of the texts. The query `clear' found results in 23 out of 28 for example while the query `fania' only found results in 6 texts. The Shakespeare corpus seems much more uniform. Reverberations generally seem to find results in all 38 source texts in the corpus apart from the query `fania'. This might be explained by the fact that Shakespeare wrote all of the texts himself using much of the same language and vocabulary unlike the Faustroll corpus. 
 
 It is rather interesting to note that even though the Shakespeare corpus produces overall more results from more texts, the Faustroll corpus produces more reverberations per query. This might stem from the multi-author, multi-language nature of the corpus. The overall vocabulary\marginnote{§~\ref{s:index}} used is much larger than the Shakespeare one.
 
-Regarding the final column showing the number of possible poems, let's look at the Shakespeare---clear row. There are 1445 number of results. These are spread over 14 lines, so each line has 103 options. The overall number of poems is therefore calculated as $103^{14}$ which equals $15125897248551112432256145169$ (shortened to $1.5 \times 10^{28}$ in table~\ref{tab:faustshake}\marginnote{\faicon{table}~\ref{tab:faustshake}}).
+Regarding the final column showing the number of possible poems, let's look at the Shakespeare---clear row. There are 1445 number of results. These are spread over 14 lines, so each line has 103 options. The overall number of poems is therefore calculated as $103^{14}$ which equals $15125897248551112432256145169$ (or $1.5 \times 10^{28}$ in short\marginnote{\faicon{table}~\ref{tab:faustshake}}).
 
 \spirals
 

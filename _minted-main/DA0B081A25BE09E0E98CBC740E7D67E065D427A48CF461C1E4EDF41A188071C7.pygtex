@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c}{\PYGZsh{} $w$ = input query term}
+\PYG{k}{def} \PYG{n+nf}{antinomy}\PYG{p}{(}\PYG{n}{w}\PYG{p}{):}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+    \PYG{n}{wordsets} \PYG{o}{=} \PYG{n}{wn}\PYG{o}{.}\PYG{n}{synsets}\PYG{p}{(}\PYG{n}{w}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{ws} \PYG{o+ow}{in} \PYG{n}{wordsets}\PYG{p}{:}
+        \PYG{n}{anti} \PYG{o}{=} \PYG{n}{ws}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{()[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{antonyms}\PYG{p}{()}
+        \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{anti}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{anti}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{a}\PYG{o}{.}\PYG{n}{name}\PYG{p}{())} \PYG{o}{!=} \PYG{n}{w}\PYG{p}{:}
+                    \PYG{n}{words}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{a}\PYG{o}{.}\PYG{n}{name}\PYG{p}{()))}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}Antinomy\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+\end{Verbatim}

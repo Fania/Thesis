@@ -7,15 +7,25 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {listing}{\numberline {2.1}{\ignorespaces Adding text files to the corpus library.}}{32}{listing.2.1}
+=======
+\contentsline {listing}{\numberline {2.1}{\ignorespaces Adding text files to the corpus library.}}{31}{listing.2.1}
+>>>>>>> 4f3de4c7a891d725a2a9d79e1d04d9e78e3be91d
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.2}{\ignorespaces `setupcorpus' function to process the corpus and create the index.}}{32}{listing.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.3}{\ignorespaces Clinamen function}}{34}{listing.2.3}
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {listing}{\numberline {2.4}{\ignorespaces `get\_results' function to get all sentences for a list of words.}}{35}{listing.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.5}{\ignorespaces `pp\_sent' function to retrieve a sentence from a file.}}{36}{listing.2.5}
+=======
+\contentsline {listing}{\numberline {2.4}{\ignorespaces `get\_results' function to get all sentences for a list of words.}}{34}{listing.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {listing}{\numberline {2.5}{\ignorespaces `pp\_sent' function to retrieve a sentence from a file.}}{35}{listing.2.5}
+>>>>>>> 4f3de4c7a891d725a2a9d79e1d04d9e78e3be91d
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.6}{\ignorespaces Syzygy function.}}{37}{listing.2.6}
 \defcounter {refsection}{0}\relax 
