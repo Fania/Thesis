@@ -202,7 +202,7 @@ However it is equally interesting to compare some full sentences. Looking at som
     where soulds do couch on flowers
   \end{verse}
 \end{minipage}
-\caption[Faustroll vs. Shakespeare poetry]{Comparison of Faustroll (left) versus Shakespeare (right) poetry for query term `flower'}
+\caption[Faustroll vs. Shakespeare poetry]{Comparison of Faustroll (left) versus Shakespeare (right) poetry, both for query term `flower'}
 \label{fig:2poems}
 \end{figure}
 
@@ -302,7 +302,7 @@ Looking at the origins column in table~\ref{tab:algonums}\marginnote{\faicon{tab
   \item The shortest text contains \num{3853} words (Coleridge).
   \item The longest text contains \num{419456} words (Poe).
   \item The average amount of words per text is \num{62088}.
-  \item The vocabulary of the index contains \num{78893} words. Of this \num{49040} are english terms.
+  \item The vocabulary of the index contains \num{78893} words. Of this \num{49040} are English terms.
 \end{itemize}
 
 \paragraph*{Shakespeare}
@@ -314,45 +314,65 @@ Looking at the origins column in table~\ref{tab:algonums}\marginnote{\faicon{tab
   \item The vocabulary of the index contains \num{23398} words.
 \end{itemize}
 
-The full list of stopwords per language can be found in appendix~\ref{app:stopwords}\marginnote{§~\ref{app:stopwords}}.
+It should be noted that the index\marginnote{§~\ref{s:index}} is generated based on the texts vocabulary minus stopwords. Stopwords (e.g. `and', `or', `the', etc.) are common terms that occur frequently in use. The full list of stopwords per language can be found in appendix~\ref{app:stopwords}\marginnote{§~\ref{app:stopwords}}.
+
+
+\subsection{Sentences}
+\label{s:sents}
+
+The index stores entries in the following format (for more detail see chapter~\ref{s:index}\marginnote{§~\ref{s:index}}).
+
+\begin{minted}{c}
+{
+  word1: {fileA: [pos1, pos2, ...], fileB: [pos1], ...},
+  word2: {fileC: [pos1, pos2], fileK: [pos1, pos2, pos3, ...], ...},
+  ...
+}
+\end{minted}
+
+At the top level we have a list of words. Each word contains a list of files and each file stores a list of positions. After the pataphysicalisation process, any entries in the index that match the pataphysicalised query terms are looked up and then the corresponding sentences are retrieved to display as results. The code is set up to retrieve the first position only instead of each one.
+
+\begin{minted}{c}
+{
+  word1: {fileA: [pos1], fileB: [pos1], ...},
+  word2: {fileC: [pos1], fileK: [pos1], ...},
+  ...
+}
+\end{minted}
+
+This has two implications: (1) there is some unnecessary computation at the startup of the program when then index is generated and (2) only a fraction of the possible results are retrieved.
+
+The decision to only use one position was mainly made for performance issues. Generating the full results with each position takes a lot more time than doing it for just the first occurance. This is perhaps best understood by looking at an example.
+
+The Faustroll corpus produces \num{542} results for the query `clear' with only the first sentence. If we enable the retrieval of every matching sentence, the number of results increases to \num{8751}.
+
+\begin{minted}{c}
+cellar: {l_19: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]}
+\end{minted}
+
+The above pseudocode shows an entry for the word `cellar' with only the positions for the \py{l_19} file\footnote{Francois Rabelais: Gargantua and Pantagruel}. Another example of an index entry for the term `doctor' can be found on page~\pageref{c:pos}. The sentences for the above positions are shown below.
+
+\begin{itemize}
+  \item rope wine is let down into a cellar
+  \item bread and holy water of the cellar
+  \item year who had a cool cellar under ground
+  \item cellar
+  \item that Nick in the dark cellar
+  \item on the cellar door
+  \item in mind of the painted cellar in the oldest city in the world
+  \item and the painted cellar also
+\end{itemize}
 
 
 
-HERE
-
-
-
-\paragraph{pp\_sent}
-
-faustroll clear with all sentences 8751 
-faustroll clear with the first sentence only 542
-
-Francois Rabelais: Gargantua and Pantagruel
-
-term: cellar\\
-positions: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]\\
-sentence: rope wine is let down into a cellar
-
-sentences: \\
-  - rope wine is let down into a cellar\\
-  - bread and holy water of the cellar\\
-  - year who had a cool cellar under ground\\
-  - cellar\\
-  - that Nick in the dark cellar\\
-  - on the cellar door\\
-  - in mind of the painted cellar in the oldest city in the world\\
-  - and the painted cellar also
-
-\begin{draft}
-  This is also a lot more time consuming.
-  A way around this would be to store each sentence with each word in the index directly.
-\end{draft}
 
 \todo{calculate averages of how many positions the average index term has}
 
 
 \subsection{Index}
-\label{s:index}
+\label{s:analindex}
+
+\todo{check analindex refs and index refs}
 
 \todo{look up google index or other examples or crawls}
 The index is a central part of the \url{pata.physics.wtf} system. It is generated when the program/server is first started up but then cached and re-used. The initial process of going over all the text files in each corpus takes a few minutes. Of course in comparison to a full Internet crawl this is a tiny amoutn of data to be processed. 
