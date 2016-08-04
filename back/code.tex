@@ -32,6 +32,7 @@ index:\\
 
 
 \section{Damerau Levenshtein}
+\label{app:damlev}
 
 \begin{minted}{python}
   # http://mwh.geek.nz/2009/04/26/python-damerau-levenshtein-distance/
@@ -51,6 +52,16 @@ index:\\
                       thisrow[y] = min(thisrow[y], twoago[y - 2] + 1)
       return thisrow[len(seq2) - 1]
 \end{minted}
+
+
+\section{Clinamen with up to 3 errors, Faustroll corpus}
+\label{app:clin3errors}
+
+\begin{description}
+  \item[clear] afar, ahead, Alas, altar, appear, bar, beam, beard, bears, beat, beer, ble, bleed, blew, bluer, bread, break, Caesar, calvary, can, canal, care, cedar, cellar, chair, charm, cheek, chen, chere, chern, choir, clad, claim, clasp, claws, clean, clear, clearly, clerks, climb, clock, clogs, close, cloth, color, coral, crab, crap, cresc, crest, Dead, dead, dear, Dewar, ear, ears, eat, ever, far, fear, Fear, feat, flag, flat, flesh, floor, Friar, glare, Great, great, head, hear, heard, heart, heat, Her, her, idea, ideal, ideas, jar, law, lay, lead, leaf, leap, least, leave, led, lees, left, leg, legs, lent, leper, less, lest, let, mean, meat, near, oar, Ocean, Opera, over, peak, pearl, per, plat, pleas, read, Read, real, rear, sea, Sea, seat, sheer, slab, sleep, solar, speak, star, steam, sugar, swear, swears, sweat, tean, tears, their, vulgar, war, year, years, zeal
+  \item[fania] acid, aid, aim, air, an, ance, and, animae, animal, Anna, ant, anti, ants, anvil, any, axis, Baba, bank, banks, basin, cabin, can, canal, Cane, canvas, dance, Danzig, data, Denis, fa, face, faced, faces, facet, facing, fact, facts, fading, faIt, faith, fake, fall, falls, false, family, fan, fans, far, fat, fate, fauns, favor, final, find, finds, fine, finer, fins, flint, fluid, foil, francs, fruit, gain, habit, hair, hand, hands, india, Jane, Janus, Kaka, Kantian, laid, lance, land, lanes, Latin, lava, mail, main, Man, man, many, nadir, nail, nib, nil, pair, pan, Pan, Papio, papio, Paris, rang, range, rapid, said, sail, Saint, saliva, San, sand, sang, sonic, tail, Tait, Tanit, tunic, unit, vain, valid, van, vanish, vanity, vans, vina, Yan
+  \item[moss] abyss, Across, across, acts, adds, Alas, almost, also, among, amor, amore, amour, ants, apes, arms, arose, as, As, ash, ask, ass, axis, bars, base, bases, beds, best, bis, blows, Boat, boat, boats, body, bolus, bone, bones, book, books, boot, boots, bores, born, Bosse, both, bout, bow, bowl, bows, box, boy, Boys, brass, brows, bust, case, cases, cash, cast, chose, clogs, close, co, coast, coats, Code, coins, cold, come, comes, cool, copy, cords, cost, Cost, costs, cows, crass, cross, cuIs, cups, days, demons, Deus, disk, disks, Do, do, does, dogs, dome, domos, done, door, doors, douds, down, Down, dress, drops, dust, ears, ease, easy, eats, eggs, ells, else, ends, Eros, ess, est, eyes, fans, fess, fins, fish, fist, fists, foam, fog, foil, folds, foot, For, for, fore, fork, Form, form, forms, fotms, foul, four, fox, foxes, Ghost, ghosts, glass, glows, go, God, gods, goes, Gog, Gogh, gold, Gold, gong, good, goods, gown, gowns, grass, hams, has, hast, His, his, ho, Ho, holds, holes, Holy, home, Homo, hoof, hooks, hope, horn, horns, Horse, horse, horses, host, hot, hour, Hour, hours, house, houses, how, How, humors, hums, ikons, iris, irs, is, Is, Its, its, jaws, Jesus, jibs, job, John, jowls, joy, Just, just, kiosks, kiss, knows, last, laws, Lays, lees, legs, less, lest, lies, lions, lips, Lo, lobe, loins, Long, long, looks, Lord, lord, lords, lore, lose, loss, lost, Loti, lots, loud, louse, Love, love, loves, low, Loye, m, made, mail, main, make, makes, male, man, many, map, maps, mask, mass, masses, mast, masts, may, me, mean, means, meat, meet, men, mere, mesh, meshes, met, milk, mimes, mist, mite, mites, mob, moist, moles, month, months, moon, mor, more, Moses, most, motor, mount, Mour, mouth, mouths, moved, mower, Mrs, much, music, must, Must, my, nest, news, nisi, no, No, noise, non, none, noon, Nor, nor, nos, nose, Not, not, note, now, Now, nuts, o, oak, oar, oars, oc, odd, of, off, ofQ, oil, old, on, one, ones, or, orb, orms, our, out, own, pass, past, pigs, piss, Plus, Poe, poets, pole, poles, ponds, Poor, poor, pope, port, Pour, prose, Prose, rats, rays, rest, rise, rises, road, robe, robes, rock, rocks, rod, Roi, role, roll, rolls, rome, roof, room, rooms, root, rope, ropes, rose, rosy, row, rows, s, says, sc, sets, shops, smock, smoke, So, so, soft, sole, Some, some, son, songs, sons, soon, Soon, sorb, soul, souls, sows, sums, suns, tats, This, this, those, Thus, thus, tjis, to, To, toad, toads, tock, toes, told, tome, tone, toO, too, took, top, tops, tore, torn, tossed, Town, town, Tres, tres, ups, us, use, vans, vast, Was, was, wash, wasps, webs, whose, wigs, Woan, won, wont, wood, word, words, wore, Work, work, Works, works, worm, worn, wove, Yes, yolk, York, you, You, your, Your
+\end{description}
 
 
 \section{WordNet}
@@ -128,6 +139,322 @@ index:\\
 
 
 \subsection{Syzygy}
+\label{app:syzygy}
+
+\indent[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear\_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+
+Step (2) then retrieves related terms. First it gets hypernyms.
+
+\begin{multicols}{2}
+% \begin{alltt}
+synset: clear.n.01\\
+hyponyms: ---\\
+hypernyms: innocence\\
+holonyms: ---
+
+synset: open.n.01\\
+hyponyms: ---\\
+hypernyms: area, country\\
+holonyms: ---
+
+synset: unclutter.v.01\\
+hyponyms: ---\\
+hypernyms: change, alter, modify\\
+holonyms: ---
+
+synset: clear.v.02\\
+hyponyms: ---\\
+hypernyms: make, create\\
+holonyms: ---
+
+synset: clear\_up.v.04\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset: authorize.v.01\\
+hyponyms: approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise\\
+hypernyms: permit, allow, let, countenance\\
+holonyms: ---
+
+synset: clear.v.05\\
+hyponyms: clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump\\
+hypernyms: remove, take, take\_away, withdraw\\
+holonyms: ---
+
+synset: pass.v.09\\
+hyponyms: clear\\
+hypernyms: succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods\\
+holonyms: ---
+
+synset: clear.v.07\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset: clear.v.08\\
+hyponyms: ---\\
+hypernyms: vanish, disappear, go\_away\\
+holonyms: ---
+
+synset: clear.v.09\\
+hyponyms: hop\\
+hypernyms: pass, overtake, overhaul\\
+holonyms: ---
+
+synset: clear.v.10\\
+hyponyms: ---\\
+hypernyms: clarify, clear\_up, elucidate\\
+holonyms: ---
+
+synset: clear.v.11\\
+hyponyms: ---\\
+hypernyms: free, discharge\\
+holonyms: ---
+
+synset: clear.v.12\\
+hyponyms: ---\\
+hypernyms: rid, free, disembarass\\
+holonyms: ---
+
+synset: net.v.02\\
+hyponyms: ---\\
+hypernyms: yield, pay, bear\\
+holonyms: ---
+
+synset: net.v.01\\
+hyponyms: ---\\
+hypernyms: profit, gain, benefit\\
+holonyms: ---
+
+synset: gain.v.08\\
+hyponyms: eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear\\
+hypernyms: get, acquire\\
+holonyms: ---
+
+synset: clear.v.16\\
+hyponyms: ---\\
+hypernyms: sell\\
+holonyms: ---
+
+synset: clear.v.17\\
+hyponyms: ---\\
+hypernyms: pass, clear\\
+holonyms: ---
+
+synset: acquit.v.01\\
+hyponyms: ---\\
+hyponyms: purge, vindicate, whitewash, pronounce, label, judge\\
+holonyms: ---
+
+synset: clear.v.19\\
+hyponyms: ---\\
+hypernyms: settle, square\_off, square\_up, determine\\
+holonyms: ---
+
+synset item:clear.v.20\\
+hyponyms: ---\\
+hypernyms: change, alter, modify\\
+holonyms: ---
+
+synset item:clear.v.21\\
+hyponyms: ---\\
+hypernyms: empty\\
+holonyms: ---
+
+synset item:clear.v.22\\
+hyponyms: ---\\
+hypernym out:take\_out, move\_out, remove\\
+holonyms: ---
+
+synset item:clear.v.23\\
+hyponyms: ---\\
+hypernym out:empty\\
+holonyms: ---
+
+synset item:clear.v.24\\
+hyponyms: ---\\
+hypernym out:remove, take, take\_away, withdraw\\
+holonyms: ---
+
+synset item:clear.a.01\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.02\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.03\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.a.04\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.05\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.06\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clean.s.03\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.08\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.09\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:well-defined.a.02\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.a.11\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clean.s.02\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.13\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.14\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.15\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:absolved.s.01\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.s.17\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clear.r.01\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+
+synset item:clearly.r.04\\
+hyponyms: ---\\
+hypernyms: ---\\
+holonyms: ---
+% \end{alltt}
+\end{multicols}
+
+\todo{indent these paragraphs}
+% \begin{addmargin}{1cm}
+{\ttfamily
+synset: clear.n.01\\
+hypernyms: innocence
+
+synset: open.n.01\\
+hypernyms: area, country
+
+synset: unclutter.v.01\\
+hypernyms: change, alter, modify
+
+synset: clear.v.02\\
+hypernyms: make, create
+
+synset: authorize.v.01\\
+hyponyms: approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise\\
+hypernyms: permit, allow, let, countenance
+
+synset: clear.v.05\\
+hyponyms: clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump\\
+hypernyms: remove, take, take\_away, withdraw
+
+synset: pass.v.09\\
+hyponyms: clear\\
+hypernyms: succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods
+
+synset: clear.v.08\\
+hypernyms: vanish, disappear, go\_away
+
+synset: clear.v.09\\
+hyponyms: hop\\
+hypernyms: pass, overtake, overhaul
+
+synset: clear.v.10\\
+hypernyms: clarify, clear\_up, elucidate
+
+synset: clear.v.11\\
+hypernyms: free, discharge
+
+synset: clear.v.12\\
+hypernyms: rid, free, disembarass
+
+synset: net.v.02\\
+hypernyms: yield, pay, bear
+
+synset: net.v.01\\
+hypernyms: profit, gain, benefit
+
+synset: gain.v.08\\
+hyponyms: eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear\\
+hypernyms: get, acquire
+
+synset: clear.v.16\\
+hypernyms: sell
+
+synset: clear.v.17\\
+hypernyms: pass, clear
+
+synset: acquit.v.01\\
+hyponyms: purge, vindicate, whitewash, pronounce, label, judge
+
+synset: clear.v.19\\
+hypernyms: settle, square\_off, square\_up, determine
+
+synset: clear.v.20\\
+hypernyms: change, alter, modify
+
+synset: clear.v.21\\
+hypernyms: empty
+
+synset: clear.v.22\\
+hypernyms: take\_out, move\_out, remove
+
+synset: clear.v.23\\
+hypernyms: empty
+
+synset: clear.v.24\\
+hypernyms: remove, take, take\_away, withdraw
+}
+% \end{addmargin}
 
 \begin{multicols}{2}
   \begin{lstlisting}
@@ -366,7 +693,7 @@ index:\\
 \section{Bing API}
 
 Formatted:
-\begin{minted}{c}
+\begin{minted}{text}
 "d": { "results": [
   { "__metadata":
     { "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1",
@@ -398,7 +725,7 @@ Formatted:
 \end{minted}
 
 Real:
-\begin{minted}{c}
+\begin{minted}{text}
 {"d":{"results":[{"__metadata":{"uri":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1","type":"ImageResult"},"ID":"e09072a2-faf3-47ac-b77d-46a8df8941aa","Title":"Cute Kittens - Pictures - The Wondrous Pics","MediaUrl":"http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg","SourceUrl":"http://wondrouspics.com/cute-kittens-pictures/","DisplayUrl":"wondrouspics.com/cute-kittens-pictures","Width":"1440","Height":"900","FileSize":"238015","ContentType":"image/jpeg","Thumbnail":{"__metadata":{"type":"Bing.Thumbnail"},"MediaUrl":"http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0&pid=15.1","ContentType":"image/jpg","Width":"480","Height":"300","FileSize":"13856"}},{"__metadata":{"uri":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=1&$top=1","type":"ImageResult"},"ID":"16f74e1b-9a64-4e5b-99b1-bc0b7bfe3121","Title":"Silver and red kitten, evo jedne slike s macama","MediaUrl":"http://stuffpoint.com/cats/image/192286-cats-silver-and-red-kitten.jpg","SourceUrl":"http://stuffpoint.com/cats/image/192286/silver-and-red-kitten-picture/","DisplayUrl":"stuffpoint.com/cats/image/192286/silver-and-red-kitten-picture","Width":"1332","Height":"984","FileSize":"133078","ContentType":"image/jpeg","Thumbnail":{"__metadata":{"type":"Bing.Thumbnail"},"MediaUrl":"http://ts3.mm.bing.net/th?id=OIP.Mf0ea1fd0a1675ba6c46daffd82bfd666H0&pid=15.1","ContentType":"image/jpg","Width":"300","Height":"221","FileSize":"6509"}},...],"__next":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=50"}}
 \end{minted}
 

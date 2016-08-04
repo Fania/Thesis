@@ -414,7 +414,7 @@ l_27 = library.words('27.verne.txt')
 
 The \py{setupcorpus} function (see source~\ref{code:setupcorpus}) is called for each of the text files in the corpus to populate the index data structure \py{l_dict}.
 
-\begin{minted}{c}
+\begin{minted}{text}
 l_dict = dictionary { dictionary { list [ ] } }
 \end{minted}
 
@@ -438,7 +438,7 @@ def setupcorpus(f, l):
 
 Line 6 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line 7 checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stopword file \py{l} (for a list of english stopwords see appendix~\ref{app:code}). If both of those conditions are true variable \py{y} is created on line 8 (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to \py{l_dict} together with the file \py{y} and the current position \py{x} on line 9. After all files are processed, the index looks like this:
 
-\begin{minted}{c}
+\begin{minted}{text}
 {
   word1: {fileA: [pos1, pos2, ...], fileB: [pos], ...},
   word2: {fileC: [pos1, pos2], fileK: [pos], ...},
@@ -449,7 +449,7 @@ Line 6 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line
 Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual \py{l_dict} can be found in the appendix~\ref{app:code}.
 
 \label{c:pos}
-\begin{minted}{c}
+\begin{minted}{text}
 {
   doctor: {
     l_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],
@@ -474,6 +474,7 @@ Image and Video search do not use all three algorithms --- where relevant this i
 
 
 \subsection{Clinamen}
+\label{s:clinamen}
 
 The clinamen is the unpredictable swerve that Bök calls `the smallest possible aberration that can make the greatest possible difference' \parencite{Boek2002}.
 
@@ -676,11 +677,11 @@ def pataphysicalise(words):
 
 For example, running the pataphysicalise function with the terms `clear' and `sky' will produce two intermediary lists (shortened here for the demonstration) which are then combined into one list using the Cartesian product:
 
-\begin{minted}{c}
+\begin{minted}{text}
 ["disembarrass", "bear", "judge", "remove", "elucidate", "modify", "free", "approve", "certify", "determine", "strip",  "empty", "purge", "vanish", "disappear", "sell", "pay", "make", "take", "disforest", "formalize", "okay", "allow", ...],
 ["blue", "atmosphere", "fling", "throw_back", "lag", "blue_sky", "submarine", "toss_back", "blue_air", "mackerel_sky", "wild_blue_yonder"]
 \end{minted}
-\begin{minted}{c}
+\begin{minted}{text}
 [("disembarrass", "blue"), ("disembarrass", "atmosphere"), ..., ("strip", "fling"), ..., ("empty", "submarine"), ..., ("allow", "mackerel_sky"), ("allow", "wild_blue_yonder")]
 \end{minted}
 
@@ -749,7 +750,7 @@ An example \gls{url} for the Bing image search with the query term of `kittens' 
 
 Bing will then send back the response in \gls{json} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the \py{Title}, \py{MediaUrl} and \py{SourceUrl} and ignores all other data fields.
 
-\begin{minted}{c}
+\begin{minted}{text}
 "d": { "results": [
   { "__metadata":
     { "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1",
@@ -896,7 +897,7 @@ Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Q
 
 \todo{get structure of lol as opposed to all\_sens}
 
-\begin{minted}{c}
+\begin{minted}{text}
   # all_sens list:
     [(title, (pre, word, post), algorithm), ...]
   # lol list:

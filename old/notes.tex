@@ -10,6 +10,25 @@ It's also possible to link directly any word or
 
 For instance \hypertarget{thesentence}{this sentence}.
 
+\begin{table}[htb]
+\centering
+\begin{tabu}{llccccc}
+\toprule
+         &             & \multicolumn{2}{c}{All} & \multicolumn{2}{c}{First} & \\
+Query    & Corpus      & Count   & Time          & Count        & Time       & Percent \\ \midrule
+clear    & Faustroll   & 8751    & 59 - 48.3     & 542          & 1.83       & 6.19\%  \\
+clear    & Shakespeare & 11304   & 69.2 - 55     & 1445         & 3.59       & 12.78\% \\
+solution & Faustroll   & 693     & 11.7 - 8.75   & 53           & 0.98       & 7.65\%  \\
+solution & Shakespeare & 547     & 8.51 - 5.87   & 86           & 1.07       & 15.72\% \\
+form     & Faustroll   & 19222   & 120 - 1.5     & 1064         & 2.81       & 5.54\%  \\
+form     & Shakespeare & 13635   & 90 - 1.2      & 2125         & 4.63       & 15.58\% \\
+record   & Faustroll   & 5199    & 38 - 31.74    & 275          & 1.72       & 5.29\%  \\
+record   & Shakespeare & 7631    & 49.2 - 37.54  & 794          & 2.09       & 10.40\% \\ \bottomrule
+\end{tabu}
+\caption{Percentage of results retrieved}{Percentage of results retrieved}
+\label{tab:percent}
+\end{table}
+
 % \part{\texorpdfstring{\textipa{HELLO WORLD}}{HELLO WORLD}}
 % H\ipa{E"}l\ipa{@U} W\ipa{3:}ld
 % hɛˈləʊ wɜːld

@@ -21,13 +21,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.7}{\ignorespaces Antinomy function.}}{38}{listing.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {2.8}{\ignorespaces Function to pataphysicalise image and video query terms.}}{38}{listing.2.8}
+\contentsline {listing}{\numberline {2.8}{\ignorespaces Function to pataphysicalise image and video query terms.}}{39}{listing.2.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.9}{\ignorespaces Translation function.}}{39}{listing.2.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.10}{\ignorespaces Using the Microsoft Bing API to retrieve images.}}{40}{listing.2.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {2.11}{\ignorespaces Code for rendering Queneau style poems.}}{44}{listing.2.11}
+\contentsline {listing}{\numberline {2.11}{\ignorespaces Code for rendering Queneau style poems.}}{43}{listing.2.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2.12}{\ignorespaces Code for randomising poems.}}{45}{listing.2.12}
 \defcounter {refsection}{0}\relax 

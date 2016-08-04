@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGZdq{}d\PYGZdq{}: \PYGZob{} \PYGZdq{}results\PYGZdq{}: [
+  \PYGZob{} \PYGZdq{}\PYGZus{}\PYGZus{}metadata\PYGZdq{}:
+    \PYGZob{} \PYGZdq{}uri\PYGZdq{}: \PYGZdq{}https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\PYGZbs{}u0027kittens\PYGZbs{}u0027\PYGZam{}\PYGZdl{}skip=0\PYGZam{}\PYGZdl{}top=1\PYGZdq{},
+      \PYGZdq{}type\PYGZdq{}: \PYGZdq{}ImageResult\PYGZdq{}
+    \PYGZcb{}, // \PYGZus{}\PYGZus{}metadata
+    \PYGZdq{}ID\PYGZdq{}: \PYGZdq{}e09072a2\PYGZhy{}faf3\PYGZhy{}47ac\PYGZhy{}b77d\PYGZhy{}46a8df8941aa\PYGZdq{},
+    \PYGZdq{}Title\PYGZdq{}: \PYGZdq{}Cute Kittens \PYGZhy{} Pictures \PYGZhy{} The Wondrous Pics\PYGZdq{},
+    \PYGZdq{}MediaUrl\PYGZdq{}: \PYGZdq{}http://wondrouspics.com/wp\PYGZhy{}content/uploads/2011/12/Cute\PYGZhy{}Kitten2.jpg\PYGZdq{},
+    \PYGZdq{}SourceUrl\PYGZdq{}: \PYGZdq{}http://wondrouspics.com/cute\PYGZhy{}kittens\PYGZhy{}pictures/\PYGZdq{},
+    \PYGZdq{}DisplayUrl\PYGZdq{}: \PYGZdq{}wondrouspics.com/cute\PYGZhy{}kittens\PYGZhy{}pictures\PYGZdq{},
+    \PYGZdq{}Width\PYGZdq{}: \PYGZdq{}1440\PYGZdq{},
+    \PYGZdq{}Height\PYGZdq{}: \PYGZdq{}900\PYGZdq{},
+    \PYGZdq{}FileSize\PYGZdq{}: \PYGZdq{}238015\PYGZdq{},
+    \PYGZdq{}ContentType\PYGZdq{}: \PYGZdq{}image/jpeg\PYGZdq{},
+    \PYGZdq{}Thumbnail\PYGZdq{}:
+    \PYGZob{} \PYGZdq{}\PYGZus{}\PYGZus{}metadata\PYGZdq{}:
+      \PYGZob{} \PYGZdq{}type\PYGZdq{}: \PYGZdq{}Bing.Thumbnail\PYGZdq{}
+      \PYGZcb{},
+      \PYGZdq{}MediaUrl\PYGZdq{}: \PYGZdq{}http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0\PYGZam{}pid=15.1\PYGZdq{},
+      \PYGZdq{}ContentType\PYGZdq{}: \PYGZdq{}image/jpg\PYGZdq{},
+      \PYGZdq{}Width\PYGZdq{}: \PYGZdq{}480\PYGZdq{},
+      \PYGZdq{}Height\PYGZdq{}: \PYGZdq{}300\PYGZdq{},
+      \PYGZdq{}FileSize\PYGZdq{}: \PYGZdq{}13856\PYGZdq{}
+    \PYGZcb{} // Tumbnail
+  \PYGZcb{}, ...
+  ], // results
+  \PYGZdq{}\PYGZus{}\PYGZus{}next\PYGZdq{}: \PYGZdq{}https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\PYGZbs{}u0027kittens\PYGZbs{}u0027\PYGZam{}\PYGZdl{}skip=50\PYGZdq{}
+\PYGZcb{} // d
+\end{Verbatim}

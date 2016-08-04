@@ -31,24 +31,10 @@ still a point worthy very serious investigation.
 \minicontents
 \spirals
 
-
 \todo{go over previous chapters incl lit review and refer back to things. bring things together. show the breadth and depth of my research!!!}
 \todo{relate all of these things back to my topic of AMC}
-
-\begin{itemize}
-  \item index terms vocab vs google index DONE
-  \item discuss fig 6.2 (in relation to DH methodologies)
-  \item query expansion == pataphysicalisation
-  \item expand 6.1 (abusing stuff, creating own rules, oulipo)
-  \item lookup vs exploratory
-  \item storing rhyming data in index or other additional things like ranking
-  \item creative use of NLP examples (search web for refs) DONE
-  \item CONSTRAINTS + oulipo again
-  \item clinamen change stopwords
-  \item syzygy synsets, print each step
-  \item poem and list side by side
-  \item newspaper legal corpus
-\end{itemize}
+\todo{discuss fig 6.2 (in relation to DH methodologies)}
+\todo{expand 6.1 (abusing stuff, creating own rules, oulipo)}
 
 \spirals
 
@@ -257,7 +243,7 @@ Regarding the final column showing the number of possible poems, let's look at t
 
 A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table~\ref{tab:algonums}\marginnote{\faicon{table}~\ref{tab:algonums}} shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using four example query terms (`clear', `shine', `disorder' and `stuck') for each of the two corpora (`Faustroll' and `Shakespeare').
 
-\todo{add french query term}
+\todo{add french query term cœur}
 \begin{table}[]
 \centering\small
 \begin{tabu}{ll|ccc|ccc|ccc|ccc}
@@ -274,6 +260,7 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 & disorder & 0 & 0 & 0 & 159 & 127 & 23 & 10 & 2 & 10 & \multicolumn{3}{c}{169---40---23} \\
 \multicolumn{1}{l}{}
 & stuck & 59 & 14 & 13 & 181 & 43 & 22 & 11 & 3 & 9 & \multicolumn{3}{c}{251---47---22} \\ 
+& amour & 69 & 16 & 23 & 0 & 0 & 0 & 0 & 0 & 0 & \multicolumn{3}{c}{69---10---23} \\ 
 \midrule
 \multicolumn{1}{l}{\multirow{4}{*}{\textbf{\rotatebox{90}{Shakespeare}}}}
 & clear & 435 & 20 & 38 & 997 & 90 & 38 & 13 & 8 & 12 & \multicolumn{3}{c}{1445---72---38} \\
@@ -283,6 +270,7 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 & disorder & 0 & 0 & 0 & 326 & 127 & 38 & 29 & 2 & 29 & \multicolumn{3}{c}{355---26---38} \\
 \multicolumn{1}{l}{}
 & stuck & 152 & 14 & 37 & 479 & 43 & 38 & 34 & 3 & 34 & \multicolumn{3}{c}{665---41---38} \\ 
+& amour & 110 & 16 & 38 & 0 & 0 & 0 & 0 & 0 & 0 & \multicolumn{3}{c}{110---6---38} \\ 
 \bottomrule
 \end{tabu}
 \caption[Numbers per algorithm]{Results-Reverberations-Origin numbers per algorithm}
@@ -322,7 +310,7 @@ It should be noted that the index\marginnote{§~\ref{s:index}} is generated base
 
 The index stores entries in the following format (for more detail see chapter~\ref{s:index}\marginnote{§~\ref{s:index}}).
 
-\begin{minted}{c}
+\begin{minted}{text}
 {
   word1: {fileA: [pos1, pos2, ...], fileB: [pos1], ...},
   word2: {fileC: [pos1, pos2], fileK: [pos1, pos2, pos3, ...], ...},
@@ -330,9 +318,9 @@ The index stores entries in the following format (for more detail see chapter~\r
 }
 \end{minted}
 
-At the top level we have a list of words. Each word contains a list of files and each file stores a list of positions. After the pataphysicalisation process, any entries in the index that match the pataphysicalised query terms are looked up and then the corresponding sentences are retrieved to display as results. The code is set up to retrieve the first position only instead of each one.
+At the top level we have a list of words. Each word contains a list of files and each file stores a list of positions. After the pataphysicalisation process, any entries in the index that match the pataphysicalised query terms are looked up and then the corresponding sentences are retrieved to display as results. The code is set up to retrieve the first position only instead of each one (referred to as the \emph{first only} method from now on).
 
-\begin{minted}{c}
+\begin{minted}{text}
 {
   word1: {fileA: [pos1], fileB: [pos1], ...},
   word2: {fileC: [pos1], fileK: [pos1], ...},
@@ -342,15 +330,15 @@ At the top level we have a list of words. Each word contains a list of files and
 
 This has two implications: (1) there is some unnecessary computation at the startup of the program when then index is generated and (2) only a fraction of the possible results are retrieved.
 
-The decision to only use one position was mainly made for performance issues. Generating the full results with each position takes a lot more time than doing it for just the first occurance. This is perhaps best understood by looking at an example.
+The decision to only use one position was mainly made for performance issues. Generating the full results with each position (the \emph{return all} method) takes a lot more time than doing it for just the first occurance. This is perhaps best understood by looking at an example.
 
 The Faustroll corpus produces \num{542} results for the query `clear' with only the first sentence. If we enable the retrieval of every matching sentence, the number of results increases to \num{8751}.
 
-\begin{minted}{c}
+\begin{minted}{text}
 cellar: {l_19: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]}
 \end{minted}
 
-The above pseudocode shows an entry for the word `cellar' with only the positions for the \py{l_19} file\footnote{Francois Rabelais: Gargantua and Pantagruel}. Another example of an index entry for the term `doctor' can be found on page~\pageref{c:pos}. The sentences for the above positions are shown below.
+The above pseudocode shows an entry for the word `cellar' with only the positions for the \py{l_19} file\footnote{Francois Rabelais: Gargantua and Pantagruel}. Another example of an index entry for the term `doctor' can be found on page~\pageref{c:pos}. The sentences for the above positions are shown below. Using only the first occurance (position) means the system ignores the rest.
 
 \begin{itemize}
   \item rope wine is let down into a cellar
@@ -363,10 +351,29 @@ The above pseudocode shows an entry for the word `cellar' with only the position
   \item and the painted cellar also
 \end{itemize}
 
+Table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} shows some example queries for both corpora and the number of results retrieved with the first position only used (as in the live version of \url{pata.physics.wtf}) in column 5 and on column 3 with all results retrieved. The final column shows what percentage of results are retrieved using the `first only' method. The average percentage for this is about 10\%. 
 
+\begin{table}[htb]
+\centering
+\begin{tabu}{llccccc}
+\toprule
+ & & \multicolumn{2}{c}{Return all} & \multicolumn{2}{c}{First only} & \\
+Query    & Corpus      & Count   & Time   & Count & Time   & Percent \\
+\midrule
+clear    & Faustroll   & 8751    & 59s    & 542   & 1.83s   & 6.19\%  \\
+clear    & Shakespeare & 11304   & 69.2s  & 1445  & 3.59s   & 12.78\% \\
+solution & Faustroll   & 693     & 11.7s  & 53    & 0.98s   & 7.65\%  \\
+solution & Shakespeare & 547     & 8.51s  & 86    & 1.07s   & 15.72\% \\
+form     & Faustroll   & 19222   & 120s   & 1064  & 2.81s   & 5.54\%  \\
+form     & Shakespeare & 13635   & 90s    & 2125  & 4.63s   & 15.58\% \\
+record   & Faustroll   & 5199    & 38s    & 275   & 1.72s   & 5.29\%  \\
+record   & Shakespeare & 7631    & 49.2s  & 794   & 2.09s   & 10.40\% \\ \bottomrule
+\end{tabu}
+\caption[Count and time of results]{Count, time and percentage of results retrieved}
+\label{tab:percent}
+\end{table}
 
-
-\todo{calculate averages of how many positions the average index term has}
+Google recommends having a ``response time under 200ms''\footnote{\url{https://developers.google.com/speed/docs/insights/Server}}. The numbers in table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} clearly show that the `return all' method is unacceptable in terms of speed performance. Using the `first only' method is much closer to the recommended speed limit. Columns 4 and 6 show the time it takes for the page to load from the user query to the display of results. The times are shown in seconds. The data for column 4 was generated using a Chrome browser plugin called ``Load-timer'' by alex-vv\footnote{\url{https://github.com/avflance/chrome-load-timer}} and the data for column 6 was generated by the Chrome ``Developer Tools''.
 
 
 \subsection{Index}
@@ -374,393 +381,243 @@ The above pseudocode shows an entry for the word `cellar' with only the position
 
 \todo{check analindex refs and index refs}
 
-\todo{look up google index or other examples or crawls}
-The index is a central part of the \url{pata.physics.wtf} system. It is generated when the program/server is first started up but then cached and re-used. The initial process of going over all the text files in each corpus takes a few minutes. Of course in comparison to a full Internet crawl this is a tiny amoutn of data to be processed. 
+The index\marginnote{§~\ref{s:index}} is a central part of the \url{pata.physics.wtf} system. It is generated when the program/server is first started up but then cached and re-used. The initial process of going over all the text files in each corpus takes a few minutes. Of course in comparison to a full Internet crawl this is a tiny amoutn of data to be processed. 
 
-The Faustroll corpus for example contains 28 texts\footnote{This is technically not true since a few of those files are empty}\todo{check which ones are empty}. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge's \textit{The Rime of the Ancient Mariner} is a poem whereas the Edgar Allan Poe file is a whole collection of his works. The whole size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.
+The Faustroll corpus\marginnote{§~\ref{s:corpora}} for example contains 28 texts\footnote{This is technically not true since a few of those files are empty.}. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge's \textit{The Rime of the Ancient Mariner} is a poem whereas the Edgar Allan Poe file contains a collection of all of his works. The total size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.
 
-Now, the size of the index is interesting. Processing the Faustroll corpus alone produced an index of 12.4MB. That's larger than the actual size of the corpus. Remember, the index contains each word that occurs anywhere in the corpus together with the list of files it is found in and the specific locations within each text. This includes english words buts also french and spanish and german terms since the faustroll corpus is multi-lingual.
-\todo{how big is the new combined index?? - its 35.2MB}
+Now, the size of the actual index data structure is interesting. Processing the Faustroll corpus alone produced an index of 12.4MB. That's larger than the actual size of the corpus. Remember, the index contains each word that occurs anywhere in the corpus together with the list of files it is found in and the specific locations within each text. This includes English words buts also French and German terms since the Faustroll corpus is multi-lingual. The combined index is therefore 35.2MB large.
 
-\todo{how many words in shakespeare vocab compared to faustroll vocab?}
+\spirals
 
-storing rhyming data in index or other additional things like ranking
+As mentioned before, the index is structured in a double nested dictionary style list as shown below.
+
+\begin{minted}{text}
+{
+  word1: {fileA: [pos1, pos2, ...], fileB: [pos1], ...},
+  word2: {fileC: [pos1, pos2], fileK: [pos1, pos2, pos3, ...], ...},
+  ...
+}
+\end{minted}
+
+There are other options of how to make this data structure. For example we could store a list of pataphysicalised query terms (\emph{patadata}) with each word and the full sentence fragment with each position. This would allow faster retrieval at query time but would increase the time needed for the initial startup. Additionally we could store data on rhyming patterns directly in the index with each word entry. This would of course be beneficial for the implementation of a rhyming scheme for the poetry generation. See also chapter~\ref{ch:future}\marginnote{§~\ref{ch:future}}.
+
+\begin{minted}{text}
+{
+  word1: ([patadata], [rhymes], {fileA: [(pos1, sent), (pos2, sent), ...], fileB: [(pos1, sent)], ...}),
+  word2: ([patadata], [rhymes], {fileC: [(pos1, sent), (pos2, sent)], fileK: [(pos1, sent), (pos2, sent), (pos3, sent), ...]), ...},
+  ...
+}
+\end{minted}
+
+\spirals
+
+As a comparison to the 35 megabyte index generated by the system described in this thesis, Google claims to have ``well over 100,000,000 gigabytes'' of data in their index and that they've spent ``over one million computing hours to build it''.
+
+\begin{quotation}
+  The web is like an ever-growing public library with billions of books and no central filing system. Google essentially gathers the pages during the crawl process and then creates an index, so we know exactly how to look things up. Much like the index in the back of a book, the Google index includes information about words and their locations. When you search, at the most basic level, our algorithms look up your search terms in the index to find the appropriate pages.
+
+  The search process gets much more complex from there. When you search for ``dogs'' you don't want a page with the word ``dogs'' on it hundreds of times. You probably want pictures, videos or a list of breeds. Google's indexing systems note many different aspects of pages, such as when they were published, whether they contain pictures and videos, and much more.\footnote{See \url{https://www.google.com/insidesearch/howsearchworks/crawling-indexing.html}}
+\end{quotation}
+
+It is also worth noting that Google for example also uses a form of pataphysicalisation. In their case of course the aim of the pataphysicalisation isn't to infuse the result with pataphysics but to make it more relevant and interesting to users. They use techniques such as PageRank and query expansion to achieve this. See chapter~\ref{ch:technology}\marginnote{§~\ref{ch:technology}} for more information on this.
 
 
 \subsection{Clinamen}
 
-The clinamen function uses the damerau-levenshtein algorithm to create pataphysicalised words. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the damerau levenshtein algorithm needing two words to compare with each other. It also ensures we get real words as results and not some random gibberish.
+The clinamen\marginnote{§~\ref{s:clinamen}} function uses the Damerau-Levenshtein algorithm\marginnote{§~\ref{app:damlev}} to create pataphysicalised words. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the damerau levenshtein algorithm needing two words to compare with each other. It also ensures we get real words as results and not some random gibberish.
 
 Currently the algorithm is set to accept terms that have a difference of 1 or 2 to the original query. We can lower this to 1 to allow fewer results or increase it to make it broader. I felt 1 or 2 was a good compromise. Only allowing 1 error would mean terms are too similar. Allowing 3 might mean they are drastically different.
 
-\todo{show clinamen results with a real dictionary rather than a base text}
 
-
-\subsubsection{Changing the base text in Clinamen}
+\subsubsection{Changing the base text}
 \label{s:basetext}
 
 As examples of using different base documents in the Clinamen algorithm I have used three examples. 
 
 \begin{itemize}
-  \item Midsummer Night's Dream by Shakespeare (Dream in short)
-  \item Arabian Nights by various artists (Nights in short)
-  \item Exploits and Opinions of Doctor Faustroll, Pataphysician by Jarry (Faustroll in short)
+  \item Midsummer Night's Dream by Shakespeare (`Dream' in short)
+  \item Arabian Nights by various artists (`Nights' in short)
+  \item Exploits and Opinions of Doctor Faustroll, Pataphysician by Jarry (`Faustroll' in short)
 \end{itemize}
 
-\begin{table}
-  \centering
+Tables~\ref{tab:basefania},~\ref{tab:baseclear}~and~\ref{tab:basemoss} each compare the full list of pataphysicalised terms for a particular query term for the three base texts above. These examples show that changing the base text of the algorithm does indeed change the set of results you get. 
+
+The decision to use the Faustroll text as a base text was made due to the central role it has for pataphysics\marginnote{§~\ref{ch:pataphysics}} and indeed the corpus itself. The Faustroll book introduces pataphysics and contains Jarry's original definition and it also lists Dr. Faustroll's library of `equivalent books'\marginnote{§~\ref{s:faustlib}} which was used as the inspiration for the Faustroll corpus.
+
+\begin{table}[p]
+\centering
+\begin{minipage}{\textwidth}
   \begin{tabu}{X[l]X[1.5,l]X[l]}
-  \toprule
-  \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
-  \midrule
-  altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear & bear, cedar, cellar, cheap, clad, clap, clean, clear, cleared, clearer, clearly, clever, dear, ear, fear, hear, lead, leaf, leap, learn, liar, near, swear, tear, wear, year & altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year\\
-  \bottomrule
-  \end{tabu}
-\caption[Changing base in clinamen]{changing base in clinamen}
-\label{tab:baseclear}
-\end{table}
-
-\begin{minted}{c}
-altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear
-\end{minted}
-
-
-\begin{table}
-  \centering
+    \toprule
+    \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
+    \midrule
+    fail, faint, fair, fan, fancy 
+    & 
+    fail, fain, faint, fair, fancy, Sadia 
+    & 
+    fan, fans, Tanit\\
+    \bottomrule
+    \end{tabu}
+  \caption[Changing base in Clinamen - `fania']{Changing base in Clinamen - query `fania'}
+  \label{tab:basefania}
+\end{minipage}
+\vspace{1cm}
+\begin{minipage}{\textwidth}
   \begin{tabu}{X[l]X[1.5,l]X[l]}
-  \toprule
-  \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
-  \midrule
-  fail, faint, fair, fan, fancy & fail, fain, faint, fair, fancy, Sadia & fan, fans, Tanit\\
-  \bottomrule
-  \end{tabu}
-\caption[Changing base in clinamen]{changing base in clinamen}
-\label{tab:basefania}
+    \toprule
+    \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
+    \midrule
+    altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear 
+    & 
+    bear, cedar, cellar, cheap, clad, clap, clean, clear, cleared, clearer, clearly, clever, dear, ear, fear, hear, lead, leaf, leap, learn, liar, near, swear, tear, wear, year 
+    & 
+    altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year\\
+    \bottomrule
+    \end{tabu}
+  \caption[Changing base in Clinamen - `clear']{Changing base in Clinamen - query `clear'}
+  \label{tab:baseclear}
+\end{minipage}
+\vspace{0.5cm}
+\begin{minipage}{\textwidth}
+  \begin{tabu}{X[l]X[1.1,l]X[1.2,l]}
+    \toprule
+    \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
+    \midrule
+    amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows 
+    & 
+    amiss, ass, bows, boys, cost, cosy, cross, does, dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, vows 
+    & 
+    ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops\\
+    \bottomrule
+    \end{tabu}
+  \caption[Changing base in Clinamen - `moss']{Changing base in Clinamen - query `moss'}
+  \label{tab:basemoss}
+\end{minipage}
 \end{table}
 
-\begin{table}
-  \centering
-  \begin{tabu}{X[l]X[l]X[l]}
-  \toprule
-  \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
-  \midrule
-  amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows & amiss, ass, bows, boys, cost, cosy, cross, does, dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, vows & ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops\\
-  \bottomrule
-  \end{tabu}
-\caption[Changing base in clinamen]{changing base in clinamen}
-\label{tab:basemoss}
-\end{table}
+
+\subsubsection{Changing number of errors}
+
+Another key factor in how the Clinamen function works is the Damerau-Levenshtein algorithm (see appendix~\ref{app:damlev})\marginnote{§~\ref{app:damlev}} integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions. 
+
+If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of \url{pata.physics.wtf} uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed).
+
+\paragraph{Clinamen with up to 1 error, Faustroll corpus}
+\begin{description}
+  \item[clear] clean, clear
+  \item[fania] ---
+  \item[moss] loss, mass, moss
+\end{description}
+
+\paragraph{Clinamen with up to 2 errors, Faustroll corpus}
+\begin{description}
+  \item[clear] altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, Fear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year
+  \item[fania] fan, fans, Tanit
+  \item[moss] ass, Bosse, bows, Boys, cost, Cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops
+\end{description}
+
+\paragraph{Clinamen with up to 3 errors, Faustroll corpus}
+This is only a shortned set of results. The full version can be found in appendix~\ref{app:clin3errors}\marginnote{§~\ref{app:clin3errors}}.
+\begin{description}
+  \item[clear] afar, ahead, Alas, altar, appear, \ldots, vulgar, war, year, years, zeal
+  \item[fania] acid, aid, aim, air, an, ance, \ldots, unit, vain, valid, van, vanish, vanity, vans, vina, Yan
+  \item[moss] abyss, Across, across, acts, adds, \ldots, worm, worn, wove, Yes, yolk, York, you, You, your, Your
+\end{description}
+
+\todo{add tabel with numbers here?}
 
 
-\subsubsection{clinamen with up to 1 error}
-faustroll clear:\\
-clean, clear
-
-faustroll fania:\\
--
-
-faustroll moss:\\
-loss, mass, most
-
-\subsubsection{clinamen with up to 2 errors}
-faustroll clear:\\
-altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, Fear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year
-
-faustroll fania:\\
-fan, fans, Tanit
-
-faustroll moss:\\
-ass, Bosse, bows, Boys, cost, Cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops
-
-\subsubsection{clinamen with up to 3 errors}
-
-faustroll clear:\\
-afar, ahead, Alas, altar, appear, bar, beam, beard, bears, beat, beer, ble, bleed, blew, bluer, bread, break, Caesar, calvary, can, canal, care, cedar, cellar, chair, charm, cheek, chen, chere, chern, choir, clad, claim, clasp, claws, clean, clear, clearly, clerks, climb, clock, clogs, close, cloth, color, coral, crab, crap, cresc, crest, Dead, dead, dear, Dewar, ear, ears, eat, ever, far, fear, Fear, feat, flag, flat, flesh, floor, Friar, glare, Great, great, head, hear, heard, heart, heat, Her, her, idea, ideal, ideas, jar, law, lay, lead, leaf, leap, least, leave, led, lees, left, leg, legs, lent, leper, less, lest, let, mean, meat, near, oar, Ocean, Opera, over, peak, pearl, per, plat, pleas, read, Read, real, rear, sea, Sea, seat, sheer, slab, sleep, solar, speak, star, steam, sugar, swear, swears, sweat, tean, tears, their, vulgar, war, year, years, zeal
-
-faustroll fania:\\
-acid, aid, aim, air, an, ance, and, animae, animal, Anna, ant, anti, ants, anvil, any, axis, Baba, bank, banks, basin, cabin, can, canal, Cane, canvas, dance, Danzig, data, Denis, fa, face, faced, faces, facet, facing, fact, facts, fading, faIt, faith, fake, fall, falls, false, family, fan, fans, far, fat, fate, fauns, favor, final, find, finds, fine, finer, fins, flint, fluid, foil, francs, fruit, gain, habit, hair, hand, hands, india, Jane, Janus, Kaka, Kantian, laid, lance, land, lanes, Latin, lava, mail, main, Man, man, many, nadir, nail, nib, nil, pair, pan, Pan, Papio, papio, Paris, rang, range, rapid, said, sail, Saint, saliva, San, sand, sang, sonic, tail, Tait, Tanit, tunic, unit, vain, valid, van, vanish, vanity, vans, vina, Yan
-
-faustroll moss:\\
-abyss, Across, across, acts, adds, Alas, almost, also, among, amor, amore, amour, ants, apes, arms, arose, as, As, ash, ask, ass, axis, bars, base, bases, beds, best, bis, blows, Boat, boat, boats, body, bolus, bone, bones, book, books, boot, boots, bores, born, Bosse, both, bout, bow, bowl, bows, box, boy, Boys, brass, brows, bust, case, cases, cash, cast, chose, clogs, close, co, coast, coats, Code, coins, cold, come, comes, cool, copy, cords, cost, Cost, costs, cows, crass, cross, cuIs, cups, days, demons, Deus, disk, disks, Do, do, does, dogs, dome, domos, done, door, doors, douds, down, Down, dress, drops, dust, ears, ease, easy, eats, eggs, ells, else, ends, Eros, ess, est, eyes, fans, fess, fins, fish, fist, fists, foam, fog, foil, folds, foot, For, for, fore, fork, Form, form, forms, fotms, foul, four, fox, foxes, Ghost, ghosts, glass, glows, go, God, gods, goes, Gog, Gogh, gold, Gold, gong, good, goods, gown, gowns, grass, hams, has, hast, His, his, ho, Ho, holds, holes, Holy, home, Homo, hoof, hooks, hope, horn, horns, Horse, horse, horses, host, hot, hour, Hour, hours, house, houses, how, How, humors, hums, ikons, iris, irs, is, Is, Its, its, jaws, Jesus, jibs, job, John, jowls, joy, Just, just, kiosks, kiss, knows, last, laws, Lays, lees, legs, less, lest, lies, lions, lips, Lo, lobe, loins, Long, long, looks, Lord, lord, lords, lore, lose, loss, lost, Loti, lots, loud, louse, Love, love, loves, low, Loye, m, made, mail, main, make, makes, male, man, many, map, maps, mask, mass, masses, mast, masts, may, me, mean, means, meat, meet, men, mere, mesh, meshes, met, milk, mimes, mist, mite, mites, mob, moist, moles, month, months, moon, mor, more, Moses, most, motor, mount, Mour, mouth, mouths, moved, mower, Mrs, much, music, must, Must, my, nest, news, nisi, no, No, noise, non, none, noon, Nor, nor, nos, nose, Not, not, note, now, Now, nuts, o, oak, oar, oars, oc, odd, of, off, ofQ, oil, old, on, one, ones, or, orb, orms, our, out, own, pass, past, pigs, piss, Plus, Poe, poets, pole, poles, ponds, Poor, poor, pope, port, Pour, prose, Prose, rats, rays, rest, rise, rises, road, robe, robes, rock, rocks, rod, Roi, role, roll, rolls, rome, roof, room, rooms, root, rope, ropes, rose, rosy, row, rows, s, says, sc, sets, shops, smock, smoke, So, so, soft, sole, Some, some, son, songs, sons, soon, Soon, sorb, soul, souls, sows, sums, suns, tats, This, this, those, Thus, thus, tjis, to, To, toad, toads, tock, toes, told, tome, tone, toO, too, took, top, tops, tore, torn, tossed, Town, town, Tres, tres, ups, us, use, vans, vast, Was, was, wash, wasps, webs, whose, wigs, Woan, won, wont, wood, word, words, wore, Work, work, Works, works, worm, worn, wove, Yes, yolk, York, you, You, your, Your
 
 
 \subsection{Syzygy}
 
-
-\todo{check out what is happening with the hyponyms in the getnym function}
+\todo{semantic hierarchy visualised?}
 
 The syzygy function goes through the following process.
-\todo{semantic hierarchy visualised?}
-It shows each step in the algorithm for the query term `clear'.
+
 \begin{enumerate}
-  \item A set of synonyms (a ``synset'') is generated.
+  \item A set of synonyms (a list of ``synsets'') is generated.
+  \item For each of these, hyponyms, hypernyms and holonyms are retrieved.
 \end{enumerate}
 
-\begin{draft}
-SYZYGY
-synsets:
-[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear\_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
-synset item:clear.n.01
-hypernym out:innocence
-[]
-synset item:open.n.01
-hypernym out:area
-hypernym out:country
-hypernym in:country
-[]
-synset item:unclutter.v.01
-hypernym out:change
-hypernym in:change
-hypernym out:alter
-hypernym out:modify
-[]
-synset item:clear.v.02
-hypernym out:make
-hypernym in:make
-hypernym out:create
-[]
-synset item:clear\_up.v.04
-[]
-synset item:authorize.v.01
-hyponym out:approbate
-hyponym out:approve
-hyponym out:O.K.
-hyponym out:okay
-hyponym out:sanction
-hyponym out:certificate
-hyponym in:certificate
-hyponym out:commission
-hyponym out:declare
-hyponym in:declare
-hyponym out:license
-hyponym out:licence
-hyponym out:certify
-hyponym out:validate
-hyponym out:formalize
-hyponym out:formalise
-hypernym out:permit
-hypernym in:permit
-hypernym out:allow
-hypernym in:allow
-hypernym out:let
-hypernym in:let
-hypernym out:countenance
-hypernym in:countenance
-[]
-synset item:clear.v.05
-hyponym out:clear-cut
-hyponym out:deforest
-hyponym out:disforest
-hyponym out:disafforest
-hyponym out:denude
-hyponym out:bare
-hyponym in:bare
-hyponym out:denudate
-hyponym out:strip
-hyponym out:stump
-hypernym out:remove
-hypernym out:take
-hypernym in:take
-hypernym out:take\_away
-hypernym out:withdraw
-[]
-synset item:pass.v.09
-hyponym out:clear
-hyponym in:clear
-hypernym out:succeed
-hypernym in:succeed
-hypernym out:win
-hypernym out:come\_through
-hypernym out:bring\_home\_the\_bacon
-hypernym out:deliver\_the\_goods
-[]
-synset item:clear.v.07
-[]
-synset item:clear.v.08
-hypernym out:vanish
-hypernym in:vanish
-hypernym out:disappear
-hypernym out:go\_away
-[]
-synset item:clear.v.09
-hyponym out:hop
-hypernym out:pass
-hypernym in:pass
-hypernym out:overtake
-hypernym out:overhaul
-[]
-synset item:clear.v.10
-hypernym out:clarify
-hypernym out:clear\_up
-hypernym out:elucidate
-[]
-synset item:clear.v.11
-hypernym out:free
-hypernym in:free
-hypernym out:discharge
-[]
-synset item:clear.v.12
-hypernym out:rid
-hypernym out:free
-hypernym in:free
-hypernym out:disembarrass
-[]
-synset item:net.v.02
-hypernym out:yield
-hypernym out:pay
-hypernym in:pay
-hypernym out:bear
-[]
-synset item:net.v.01
-hypernym out:profit
-hypernym out:gain
-hypernym in:gain
-hypernym out:benefit
-hypernym in:benefit
-[]
-synset item:gain.v.08
-hyponym out:eke\_out
-hyponym out:squeeze\_out
-hyponym out:gross
-hyponym out:profit
-hyponym out:turn\_a\_profit
-hyponym out:rake\_in
-hyponym out:shovel\_in
-hyponym out:rake\_off
-hyponym out:take\_home
-hyponym out:bring\_home
-hyponym out:yield
-hyponym out:pay
-hyponym in:pay
-hyponym out:bear
-hypernym out:get
-hypernym out:acquire
-[]
-synset item:clear.v.16
-hypernym out:sell
-[]
-synset item:clear.v.17
-hypernym out:pass
-hypernym in:pass
-hypernym out:clear
-hypernym in:clear
-[]
-synset item:acquit.v.01
-hyponym out:purge
-hyponym out:vindicate
-hyponym out:whitewash
-hypernym out:pronounce
-hypernym in:pronounce
-hypernym out:label
-hypernym out:judge
-hypernym in:judge
-[]
-synset item:clear.v.19
-hypernym out:settle
-hypernym out:square\_off
-hypernym out:square\_up
-hypernym out:determine
-hypernym in:determine
-[]
-synset item:clear.v.20
-hypernym out:change
-hypernym in:change
-hypernym out:alter
-hypernym out:modify
-[]
-synset item:clear.v.21
-hypernym out:empty
-hypernym in:empty
-[]
-synset item:clear.v.22
-hypernym out:take\_out
-hypernym out:move\_out
-hypernym out:remove
-[]
-synset item:clear.v.23
-hypernym out:empty
-hypernym in:empty
-[]
-synset item:clear.v.24
-hypernym out:remove
-hypernym out:take
-hypernym in:take
-hypernym out:take\_away
-hypernym out:withdraw
-[]
-synset item:clear.a.01
-[]
-synset item:clear.s.02
-[]
-synset item:clear.s.03
-[]
-synset item:clear.a.04
-[]
-synset item:clear.s.05
-[]
-synset item:clear.s.06
-[]
-synset item:clean.s.03
-[]
-synset item:clear.s.08
-[]
-synset item:clear.s.09
-[]
-synset item:well-defined.a.02
-[]
-synset item:clear.a.11
-[]
-synset item:clean.s.02
-[]
-synset item:clear.s.13
-[]
-synset item:clear.s.14
-[]
-synset item:clear.s.15
-[]
-synset item:absolved.s.01
-[]
-synset item:clear.s.17
-[]
-synset item:clear.r.01
-[]
-synset item:clearly.r.04
-[]
-\end{draft}
+The notation used by WordNet for synsets is \textbf{<lemma>.<pos>.<senses>}. The `lemma' is the morphological stem of the word. The `pos' stands for part-of-speech and can be `n' for nouns, `v' for verbs, `a'
+for adjectives, `r' for adverbs and `s' for satellites. The `senses' element stands for the number of synsets the relevant lemma is part of (a word might have a noun sense as well as a verb sense for example in which case the number would be `02'). For the query `clear' for instance, the following list of synsets is retrieved for step (1).
+
+\begin{minted}{text}
+  [
+  clear.n.01, open.n.01, unclutter.v.01, clear.v.02, clear_up.v.04, authorize.v.01, clear.v.05, pass.v.09, clear.v.07, clear.v.08, clear.v.09, clear.v.10, clear.v.11, clear.v.12, net.v.02, net.v.01, gain.v.08, clear.v.16, clear.v.17, acquit.v.01, clear.v.19, clear.v.20, clear.v.21, clear.v.22, clear.v.23, clear.v.24, clear.a.01, clear.s.02, clear.s.03, clear.a.04, clear.s.05, clear.s.06, clean.s.03, clear.s.08, clear.s.09, well-defined.a.02, clear.a.11, clean.s.02, clear.s.13, clear.s.14, clear.s.15, absolved.s.01, clear.s.17, clear.r.01, clearly.r.04
+  ]
+\end{minted}
+
+Step (2) then retrieves related terms. Below is a list of terms it found. Not all synsets return each of the hypo-/hyper- and holonyms. This is clearer when inspecting the full list of results as shown in appendix~\ref{app:syzygy}\marginnote{§~\ref{app:syzygy}}. 
+
+\begin{minted}{text}
+  [
+  innocence, area, country, change, alter, modify, make, create, approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise, permit, allow, let, countenance, clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump, remove, take, take_away, withdraw, clear, succeed, win, come_through, bring_home_the_bacon, deliver_the_goods, vanish, disappear, go_away, hop, pass, overtake, overhaul, clarify, clear_up, elucidate, free, discharge, rid, free, disembarass, yield, pay, bear, profit, gain, benefit, eke_out, squeeze_out, gross, profit, turn_a_profit, rake_in, shovel_in, rake_off, take_home, bring_home, yield, pay, bear, get, acquire, sell, pass, clear, purge, vindicate, whitewash, pronounce, label, judge, settle, square_off, square_up, determine, change, alter, modify, empty, take_out, move_out, remove, empty, remove, take, take_away, withdraw
+  ]
+\end{minted}
+
+\todo{table showing hypo, hyper and holonyms numbers side by side for a query}
 
 
 \subsection{Images}
 
-The image search can produce quite intersting results as well. A search for ``blue kitten'' on Flickr produces the following results: ``[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]'' which are then passed into ten seperate \gls{api} calls to retrieve one image each (see fig below XYZ).
+The image search can produce quite intersting results as well. A search for ``blue kitten'' on Flickr produces the following resulting pataphysicalised query terms: ``[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]'' which are then passed into ten seperate \gls{api} calls to retrieve one image each (see figure~\ref{fig:imgspiralflickr}\marginnote{§~\ref{fig:imgspiralflickr}}). The results show a variety of images seemingly unrelated to each other. 
 
 \begin{figure}[h!]
 \centering
   \includegraphics[width=\linewidth]{bluekittenflickr}
-\caption[image spiral flickr]{image spiral flickr}
+\caption[Image spiral `blue kitten'---Flickr]{Image spiral for query `blue kitten'---Flickr}
 \label{fig:imgspiralflickr}
 \end{figure}
 
-For Getty the image search works slightly differently due to its \gls{api} restrictions. The query ``blue kitten'' gets turned into the word ``racy'' which then calls the \gls{api} to retrieve ten results (see below).
+For Getty the image search works slightly differently due to its \gls{api} restrictions. The query ``blue kitten'' gets turned into the word ``racy'' which then calls the \gls{api} to retrieve ten results (see figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}). The results mostly show racing cars from various angles although one oddball snuck in too: an office scene Getty has deemed to be `racy' (a guy in a suit checking out a lady's behind while she's leaning over a laptop).
 
 \begin{figure}[h!]
 \centering
   \includegraphics[width=\linewidth]{bluekittengetty}
-\caption[image spiral getty]{image spiral getty}
+\caption[Image spiral `blue kitten'---Getty]{Image spiral for query `blue kitten'---Getty}
 \label{fig:imgspiralgetty}
 \end{figure}
 
-The difference is staggering.
+\spirals
 
+The \gls{api} functions all share one major issue. This is to do with how images and videos are retrieved from the external store. Some people tend to upload sequences of images depicting the same content from different angles or time frames with the same tags. A query for hat tag then returns all of those matches even though the images are almost identical in nature. An example of this can be seen in figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}. This may have been addressed by adding checks in the code that make sure authors don't appear twice in the results.
+
+Another way to address this was attempted by changing the query term for each image or video that is retrieved. As mentioned above, this only worked for some of the \gls{api}s.
+
+\spirals
+
+Something else to consider is perhaps that it is not entirely clear how the internal search for each \gls{api} works. This means that there's a possibility that they do their own query expansion\marginnote{§~\ref{s:qexpansion}} in the background to find more matches.
 
 
 
 \section{Design}
 
-Content Perception\\
-It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using focus groups using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example.
+It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using focus groups using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example. 
 
-\todo{poem vs list here}
+Figures~\ref{fig:poemtree},~\ref{fig:listsourcetree}~and~\ref{fig:listalgotree} show the three different text result styles. The poetry\marginnote{\faicon{picture-o}~\ref{fig:poemtree}} is compact and invites users to read all 14 (or less) lines. The two list styles\marginnote{\faicon{picture-o}~\ref{fig:listsourcetree}~\&~\ref{fig:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
 
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\linewidth]{poemtree}
+\caption[Results as poem]{Results in poem form for query `tree'---Shakespeare}
+\label{fig:poemtree}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\linewidth]{listsourcetree}
+\caption[Results as list by sources]{Results as list by sources for query `tree'---Shakespeare}
+\label{fig:listsourcetree}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+  \includegraphics[width=\linewidth]{listalgotree}
+\caption[Results as list by algorithm]{Results as list by algorithm for query `tree'---Shakespeare}
+\label{fig:listalgotree}
+\end{figure}
 
 
 \section{Science Fiction}

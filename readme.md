@@ -145,6 +145,11 @@ pdflatex --file-line-error -shell-escape main
 - [ ] key of code stuff in intro (e.g. oreilly)
 - [ ] Make it clear that you are presenting a thesis that embodies knowledge in an artefact (the software) but avoid the "practice-based" argument altogether. 
 - [ ] format all numbers using \num{} also \num{1.5e10}
+- [ ] check spelling of all names (foreign ones especially)
+- [ ] add glossary at beginning of pata terms
+- [ ] different style (underline) subsubsections?
+- [ ] add images as seperate figure items, also in toc
+- [ ] convert all urls to proper references
 
 
 ## FIRST DRAFT COMPLETE:

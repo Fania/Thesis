@@ -103,14 +103,6 @@
 % \renewcommand*\familydefault{\sfdefault}
 
 
-
-% EMPHASIS
-% bold and italic
-\let\emph\relax % there's no \RedeclareTextFontCommand
-\DeclareTextFontCommand{\emph}{\bfseries\em}
-
-
-
 % TITLE STYLES
 
 % \usepackage{titlesec}
@@ -357,6 +349,18 @@ breaklines=true
 
 
 
+% HEADINGS
+% \usepackage{ulem}
+% \newcommand\underlinedhead[1]{\noindent\uline{#1}}
+% \setsubsubsecheadstyle{\underlinedhead}
+
+% EMPHASIS
+% bold and italic
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\bfseries\em}
+
+
+
 % LIST SPACING
 
 \usepackage{enumitem}
@@ -397,6 +401,11 @@ breaklines=true
 % \usepackage[top=2cm, bottom=1.3cm, left=5cm, right=0.5cm,
 % heightrounded,
 %   marginparwidth=4.6cm, marginparsep=3mm]{geometry}
+
+% INDENT
+% \usepackage{scrextend}
+
+
 
 % BIBLIOGRAPHY
 
@@ -578,14 +587,17 @@ breaklines=true
   xrightmargin=1cm,
 }
 
-\setminted[c]{ % PSEUDOCODE
+\newdimen\temporarydimen \settowidth{\temporarydimen}{\ttfamily aaaaaaaa}
+\setminted[text]{ % PSEUDOCODE
   fontsize=\footnotesize,
   mathescape=true,
   framesep=2mm,
   breaklines,
+  breaksymbolindentleft={\temporarydimen},
   xleftmargin=1cm,
   xrightmargin=1cm,
 }
+
 
 \newmintinline[py]{python}{
   bgcolor={lavendermist},
