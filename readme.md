@@ -150,6 +150,10 @@ pdflatex --file-line-error -shell-escape main
 - [ ] different style (underline) subsubsections?
 - [ ] add images as seperate figure items, also in toc
 - [ ] convert all urls to proper references
+- [ ] pataphysicalised terms == patadata
+- [ ] citations in gray
+- [ ] table captions on top?
+
 
 
 ## FIRST DRAFT COMPLETE:

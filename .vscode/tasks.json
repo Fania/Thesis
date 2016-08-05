@@ -24,6 +24,13 @@
             "args" : ["biber", "main"],
             "showOutput": "always",
             "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "test",
+            "suppressTaskName": true,
+            "args" : ["pdflatex", "--file-line-error", "-shell-escape", "test"],
+            "showOutput": "always",
+            "problemMatcher": "$msCompile"
         }
     ]
 }

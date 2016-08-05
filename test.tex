@@ -6,16 +6,44 @@
 \date{March 2015}
 
 
+
 \begin{document}
 
-\section{test}
-\lipsum[2]
-\subsection{test}
-\lipsum[2]
-\subsubsection{test}
-\lipsum[2]
-\paragraph{test}
-Hello \emph{world}.
+\chapter{Chapter test}
+\vspace{5cm}
+\section{Section test}
+
+\begin{table}
+  \centering
+  \begin{tabu}{llcccc}
+  \toprule
+  \textbf{Query} & \textbf{Corpus} & \textbf{Results} & \textbf{Reverbs} & \textbf{Origins} & \textbf{Poems}\\
+  \midrule
+  \multirow{2}{*}{flower} & Faustroll   & 89   & 24 & 18 & \num{7.8e10}\\
+                          & Shakespeare & 157  & 15 & 38 & \num{3.8e14}\\
+  \cmidrule{1-6}
+  \multirow{2}{*}{clear}  & Faustroll   & 542  & 79 & 23 & \num{1.3e22}\\
+                          & Shakespeare & 1445 & 72 & 38 & \num{1.5e28}\\
+  \cmidrule{1-6}
+  \multirow{2}{*}{troll}  & Faustroll   & 124  & 16 & 16 & \num{4.4e12}\\
+                          & Shakespeare & 327  & 14 & 38 & \num{1.1e19}\\
+  \cmidrule{1-6}
+  \multirow{2}{*}{fania}  & Faustroll   & 9    & 2  & 6  & \num{1}\\
+                          & Shakespeare & 15   & 2  & 14 & \num{1}\\
+  \bottomrule
+  \end{tabu}
+\caption[Faustroll vs Shakespeare in numbers]{Faustroll versus Shakespeare in numbers}
+\label{tab:faustshake}
+\end{table}
+
+
+
+\subsection{Subsection test}
+\lipsum[1]
+\subsubsection{Subsubsection test}
+\lipsum[1]
+\paragraph{Paragraph test}
+Hello \emph{emphasis} test.
 
 
 \end{document}

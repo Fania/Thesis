@@ -53,7 +53,7 @@ Knowledge needed to understand project:
 
 In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure~\ref{fig:SEA}.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \input{images/architecture.pdf_tex}
   \caption[Search Engine Architecture]{Abstract search engine architecture}
@@ -85,7 +85,7 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 
 \todo{example TDM for faustroll sentence?}
 
-\begin{figure}[hb]
+\begin{figure}[!htbp]
 \[
   \bbordermatrix{
     ~ & Faustroll & Gospel & Voyage \cr % chktex 41
@@ -278,7 +278,7 @@ The vector model allows a more flexible scoring since it basically computes the 
 \end{equation}
 % \myequations{vector}
 
-\begin{figure}[htb] % (here, top, bottom, page)
+\begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \begin{tikzpicture}
   \draw
@@ -357,7 +357,7 @@ Ranking algorithms are the essence of any Web search engine and as such guarded 
 
 PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \autocite{Brin1998b} and they further describe the algorithm here \autocite{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \autocite[p.472]{Baeza-Yates2011}.
 
-\begin{figure}[htb] % (here, top, bottom, page)
+\begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \includegraphics[width=.75\linewidth]{pagerank}
 \caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
@@ -853,7 +853,7 @@ Parsing is the process of analysing a sentence and assigning a structure to it. 
 
 A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG.\@ Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. The two parse trees would then look like this:
 
-\begin{figure}[htb]
+\begin{figure}[!htbp]
   \centering
   \begin{minipage}{.4\linewidth}
   \Tree[.NP [.Det \emph{a} ]

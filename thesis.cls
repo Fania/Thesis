@@ -114,6 +114,13 @@
 %   {\thesection}{1em}{}
 
 
+% FONTS
+\setsecheadstyle{\Large\bfseries\sffamily\scshape}
+\setsubsecheadstyle{\large\bfseries\sffamily\scshape}
+\setsubsubsecheadstyle{\bfseries\sffamily\scshape\underline}
+
+
+
 \usepackage{tgadventor}
 \usepackage{lipsum}
 \usepackage{xcolor,calc}

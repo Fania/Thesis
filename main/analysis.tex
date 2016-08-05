@@ -74,9 +74,10 @@ The internal transformation of a query term to the final results is essentially 
 It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{tab:algorithmscomp}.
 
 \begin{table}[htb]
-  \begin{tabu}{X[1,L]|X[3,L]X[3,L]X[2,L]}
+  \begin{tabu}{X[1,L]X[3,L]X[3,L]X[2,L]}
   \toprule
   % \cline{2-4}
+  \textbf{Query}
   &
   \textbf{Clinamen}
   &
@@ -91,7 +92,7 @@ It is quite interesting to compare the algorithms with each other. By removing t
   vanish, allow, bare, pronounce
   &
   opaque
-  \\ \midrule
+  \\ \cmidrule{1-4}
   \textbf{solid}
   &
   sound, valid, solar, slide
@@ -99,7 +100,7 @@ It is quite interesting to compare the algorithms with each other. By removing t
   block, form, matter, crystal, powder
   &
   liquid, hollow
-  \\ \midrule
+  \\ \cmidrule{1-4}
   \textbf{books}
   &
   boot, bones, hooks, rocks, banks
@@ -107,7 +108,7 @@ It is quite interesting to compare the algorithms with each other. By removing t
   dialogue, authority, record, fact
   &
   ---
-  \\ \midrule
+  \\ \cmidrule{1-4}
   \textbf{troll}
   &
   grill, role, tell
@@ -115,7 +116,7 @@ It is quite interesting to compare the algorithms with each other. By removing t
   wheel, roll, mouth, speak
   &
   ---
-  \\ \midrule
+  \\ \cmidrule{1-4}
   \textbf{live}
   &
   love, lies, river, wave, size, bite
@@ -139,7 +140,7 @@ Looking at the second column (the syzygy results) shows the semantic relationshi
 
 However it is equally interesting to compare some full sentences. Looking at some of the poems at the beginning of each chapter shows the variety of the possible outcomes (see pages \pageref{ch:introduction}, \pageref{ch:inspirations}, \pageref{ch:methodology}, \pageref{ch:pataphysics}, \pageref{ch:creativity}, \pageref{ch:technology}, \pageref{ch:evaluation}, \pageref{ch:foundations}, \pageref{ch:interpretation}, \pageref{ch:implementation}, \pageref{ch:applications}, \pageref{ch:analysis}, \pageref{ch:aspirations}, and \pageref{ch:observations}). It also highlights the difference between the two corpora. Poems based on the Faustrol corpus have a very different sound and feel to it than ones based on the Shakespeare corpus.
 
-\begin{figure}[h!]
+\begin{figure}[!htbp]
 \centering
 \begin{minipage}{.45\linewidth}
   \settowidth{\versewidth}{earth was flat like the floor of an Oven}
@@ -208,16 +209,19 @@ The above examples (table~\ref{tab:algorithmscomp} and figure~\ref{fig:2poems} g
   \centering
   \begin{tabu}{llcccc}
   \toprule
-  \textbf{Corpus} & \textbf{Query} & \textbf{Results} & \textbf{Reverbs} & \textbf{Origins} & \textbf{Poems}\\
+  \textbf{Query} & \textbf{Corpus} & \textbf{Results} & \textbf{Reverbs} & \textbf{Origins} & \textbf{Poems}\\
   \midrule
-  Faustroll & flower & 89 & 24 & 18 & \num{7.8e10}\\
-  Shakespeare & flower & 157 & 15 & 38 & \num{3.8e14}\\
-  Faustroll & clear & 542 & 79 & 23 & \num{1.3e22}\\
-  Shakespeare & clear & 1445 & 72 & 38 & \num{1.5e28}\\
-  Faustroll & troll & 124 & 16 & 16 & \num{4.4e12}\\
-  Shakespeare & troll & 327 & 14 & 38 & \num{1.1e19}\\
-  Faustroll & fania & 9 & 2 & 6 & \num{1}\\
-  Shakespeare & fania & 15 & 2 & 14 & \num{1}\\
+  \multirow{2}{*}{flower} & Faustroll   & 89   & 24 & 18 & \num{7.8e10}\\
+                          & Shakespeare & 157  & 15 & 38 & \num{3.8e14}\\
+  \cmidrule{1-6}
+  \multirow{2}{*}{clear}  & Faustroll   & 542  & 79 & 23 & \num{1.3e22}\\
+                          & Shakespeare & 1445 & 72 & 38 & \num{1.5e28}\\
+  \cmidrule{1-6}
+  \multirow{2}{*}{troll}  & Faustroll   & 124  & 16 & 16 & \num{4.4e12}\\
+                          & Shakespeare & 327  & 14 & 38 & \num{1.1e19}\\
+  \cmidrule{1-6}
+  \multirow{2}{*}{fania}  & Faustroll   & 9    & 2  & 6  & \num{1}\\
+                          & Shakespeare & 15   & 2  & 14 & \num{1}\\
   \bottomrule
   \end{tabu}
 \caption[Faustroll vs Shakespeare in numbers]{Faustroll versus Shakespeare in numbers}
@@ -243,14 +247,14 @@ Regarding the final column showing the number of possible poems, let's look at t
 
 A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table~\ref{tab:algonums}\marginnote{\faicon{table}~\ref{tab:algonums}} shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using four example query terms (`clear', `shine', `disorder' and `stuck') for each of the two corpora (`Faustroll' and `Shakespeare').
 
-\todo{add french query term cœur}
+% \todo{add french query term cœur}
 \begin{table}[]
 \centering\small
 \begin{tabu}{ll|ccc|ccc|ccc|ccc}
 \toprule
  & & \multicolumn{3}{c}{\textbf{Clinamen}} & \multicolumn{3}{c}{\textbf{Syzygy}} & \multicolumn{3}{c|}{\textbf{Antinomy}} & \multicolumn{3}{c}{} \\ 
-\midrule
-\multicolumn{1}{l}{} & Query & \rotatebox{90}{Results} & \rotatebox{90}{Reverbs} & \rotatebox{90}{Origins} & \rotatebox{90}{Results} & \rotatebox{90}{Reverbs} & \rotatebox{90}{Origins} & \rotatebox{90}{Results} & \rotatebox{90}{Reverbs} & \rotatebox{90}{Origins} & \multicolumn{3}{c}{Total} \\ 
+\cmidrule{3-11}
+\multicolumn{1}{l}{} & \textbf{Query} & \rotatebox{90}{Results} & \rotatebox{90}{Reverbs} & \rotatebox{90}{Origins} & \rotatebox{90}{Results} & \rotatebox{90}{Reverbs} & \rotatebox{90}{Origins} & \rotatebox{90}{Results} & \rotatebox{90}{Reverbs} & \rotatebox{90}{Origins} & \multicolumn{3}{c}{\textbf{Total}} \\ 
 \midrule
 \multicolumn{1}{l}{\multirow{4}{*}{\textbf{\rotatebox{90}{Faustroll}}}} 
 & clear & 158 & 20 & 13 & 368 & 90 & 23 & 16 & 8 & 8 & \multicolumn{3}{c}{542---79---23} \\
@@ -260,8 +264,7 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 & disorder & 0 & 0 & 0 & 159 & 127 & 23 & 10 & 2 & 10 & \multicolumn{3}{c}{169---40---23} \\
 \multicolumn{1}{l}{}
 & stuck & 59 & 14 & 13 & 181 & 43 & 22 & 11 & 3 & 9 & \multicolumn{3}{c}{251---47---22} \\ 
-& amour & 69 & 16 & 23 & 0 & 0 & 0 & 0 & 0 & 0 & \multicolumn{3}{c}{69---10---23} \\ 
-\midrule
+\cmidrule{1-12}
 \multicolumn{1}{l}{\multirow{4}{*}{\textbf{\rotatebox{90}{Shakespeare}}}}
 & clear & 435 & 20 & 38 & 997 & 90 & 38 & 13 & 8 & 12 & \multicolumn{3}{c}{1445---72---38} \\
 \multicolumn{1}{l}{}
@@ -270,7 +273,6 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 & disorder & 0 & 0 & 0 & 326 & 127 & 38 & 29 & 2 & 29 & \multicolumn{3}{c}{355---26---38} \\
 \multicolumn{1}{l}{}
 & stuck & 152 & 14 & 37 & 479 & 43 & 38 & 34 & 3 & 34 & \multicolumn{3}{c}{665---41---38} \\ 
-& amour & 110 & 16 & 38 & 0 & 0 & 0 & 0 & 0 & 0 & \multicolumn{3}{c}{110---6---38} \\ 
 \bottomrule
 \end{tabu}
 \caption[Numbers per algorithm]{Results-Reverberations-Origin numbers per algorithm}
@@ -357,17 +359,26 @@ Table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} shows some 
 \centering
 \begin{tabu}{llccccc}
 \toprule
- & & \multicolumn{2}{c}{Return all} & \multicolumn{2}{c}{First only} & \\
-Query    & Corpus      & Count   & Time   & Count & Time   & Percent \\
+ & & \multicolumn{2}{c}{\textbf{Return all}} & \multicolumn{2}{c}{\textbf{First only}} & \\
+\cmidrule{3-4}\cmidrule{5-6}
+\textbf{Query} & \textbf{Corpus} & \textit{Count} & \textit{Time} & \textit{Count} & \textit{Time} & \textbf{Percent} \\
 \midrule
-clear    & Faustroll   & 8751    & 59s    & 542   & 1.83s   & 6.19\%  \\
-clear    & Shakespeare & 11304   & 69.2s  & 1445  & 3.59s   & 12.78\% \\
-solution & Faustroll   & 693     & 11.7s  & 53    & 0.98s   & 7.65\%  \\
-solution & Shakespeare & 547     & 8.51s  & 86    & 1.07s   & 15.72\% \\
-form     & Faustroll   & 19222   & 120s   & 1064  & 2.81s   & 5.54\%  \\
-form     & Shakespeare & 13635   & 90s    & 2125  & 4.63s   & 15.58\% \\
-record   & Faustroll   & 5199    & 38s    & 275   & 1.72s   & 5.29\%  \\
-record   & Shakespeare & 7631    & 49.2s  & 794   & 2.09s   & 10.40\% \\ \bottomrule
+\multirow{2}{*}{clear} 
+& Faustroll   & 8751    & 59s    & 542   & 1.83s   & 6.19\%  \\
+& Shakespeare & 11304   & 69.2s  & 1445  & 3.59s   & 12.78\% \\
+\cmidrule{1-7}
+\multirow{2}{*}{solution} 
+& Faustroll   & 693     & 11.7s  & 53    & 0.98s   & 7.65\%  \\
+& Shakespeare & 547     & 8.51s  & 86    & 1.07s   & 15.72\% \\
+\cmidrule{1-7}
+\multirow{2}{*}{form} 
+& Faustroll   & 19222   & 120s   & 1064  & 2.81s   & 5.54\%  \\
+& Shakespeare & 13635   & 90s    & 2125  & 4.63s   & 15.58\% \\
+\cmidrule{1-7}
+\multirow{2}{*}{record}
+& Faustroll   & 5199    & 38s    & 275   & 1.72s   & 5.29\%  \\
+& Shakespeare & 7631    & 49.2s  & 794   & 2.09s   & 10.40\% \\ 
+\bottomrule
 \end{tabu}
 \caption[Count and time of results]{Count, time and percentage of results retrieved}
 \label{tab:percent}
@@ -416,7 +427,7 @@ As a comparison to the 35 megabyte index generated by the system described in th
 \begin{quotation}
   The web is like an ever-growing public library with billions of books and no central filing system. Google essentially gathers the pages during the crawl process and then creates an index, so we know exactly how to look things up. Much like the index in the back of a book, the Google index includes information about words and their locations. When you search, at the most basic level, our algorithms look up your search terms in the index to find the appropriate pages.
 
-  The search process gets much more complex from there. When you search for ``dogs'' you don't want a page with the word ``dogs'' on it hundreds of times. You probably want pictures, videos or a list of breeds. Google's indexing systems note many different aspects of pages, such as when they were published, whether they contain pictures and videos, and much more.\footnote{See \url{https://www.google.com/insidesearch/howsearchworks/crawling-indexing.html}}
+  The search process gets much more complex from there. When you search for ``dogs'' you don't want a page with the word ``dogs'' on it hundreds of times. You probably want pictures, videos or a list of breeds. Google's indexing systems note many different aspects of pages, such as when they were published, whether they contain pictures and videos, and much more.\sourceatright{\autocite{GoogleCI}}
 \end{quotation}
 
 It is also worth noting that Google for example also uses a form of pataphysicalisation. In their case of course the aim of the pataphysicalisation isn't to infuse the result with pataphysics but to make it more relevant and interesting to users. They use techniques such as PageRank and query expansion to achieve this. See chapter~\ref{ch:technology}\marginnote{§~\ref{ch:technology}} for more information on this.
@@ -461,7 +472,8 @@ The decision to use the Faustroll text as a base text was made due to the centra
   \caption[Changing base in Clinamen - `fania']{Changing base in Clinamen - query `fania'}
   \label{tab:basefania}
 \end{minipage}
-\vspace{1cm}
+% \vspace{2cm}
+\vfill
 \begin{minipage}{\textwidth}
   \begin{tabu}{X[l]X[1.5,l]X[l]}
     \toprule
@@ -477,7 +489,8 @@ The decision to use the Faustroll text as a base text was made due to the centra
   \caption[Changing base in Clinamen - `clear']{Changing base in Clinamen - query `clear'}
   \label{tab:baseclear}
 \end{minipage}
-\vspace{0.5cm}
+\vfill
+% \vspace{0.5cm}
 \begin{minipage}{\textwidth}
   \begin{tabu}{X[l]X[1.1,l]X[1.2,l]}
     \toprule
@@ -500,38 +513,29 @@ The decision to use the Faustroll text as a base text was made due to the centra
 
 Another key factor in how the Clinamen function works is the Damerau-Levenshtein algorithm (see appendix~\ref{app:damlev})\marginnote{§~\ref{app:damlev}} integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions. 
 
-If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of \url{pata.physics.wtf} uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed).
+If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of \url{pata.physics.wtf} uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed). Table~\ref{tab:errors})\marginnote{§~\ref{tab:errors}} shows three example queries and the number of results produced by the algorithm with either up to 1 error, up to 2 errors or up to 3 errors.
 
-\paragraph{Clinamen with up to 1 error, Faustroll corpus}
-\begin{description}
-  \item[clear] clean, clear
-  \item[fania] ---
-  \item[moss] loss, mass, moss
-\end{description}
-
-\paragraph{Clinamen with up to 2 errors, Faustroll corpus}
-\begin{description}
-  \item[clear] altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, Fear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year
-  \item[fania] fan, fans, Tanit
-  \item[moss] ass, Bosse, bows, Boys, cost, Cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops
-\end{description}
-
-\paragraph{Clinamen with up to 3 errors, Faustroll corpus}
-This is only a shortned set of results. The full version can be found in appendix~\ref{app:clin3errors}\marginnote{§~\ref{app:clin3errors}}.
-\begin{description}
-  \item[clear] afar, ahead, Alas, altar, appear, \ldots, vulgar, war, year, years, zeal
-  \item[fania] acid, aid, aim, air, an, ance, \ldots, unit, vain, valid, van, vanish, vanity, vans, vina, Yan
-  \item[moss] abyss, Across, across, acts, adds, \ldots, worm, worn, wove, Yes, yolk, York, you, You, your, Your
-\end{description}
-
-\todo{add tabel with numbers here?}
-
-
+\begin{table}[htb]
+  \centering
+  \begin{tabu}{lccc}
+    \toprule
+    \textbf{Query} & \textbf{Up to 1} & \textbf{Up to 2} & \textbf{Up to 3}\\
+    \midrule
+    clear & 2 & 20 & 136 \\
+    fania & 0 & 3 & 118 \\
+    moss & 3 & 49 & 457 \\
+    \bottomrule
+    \end{tabu}
+  \caption[Changing number of errors in Clinamen]{Changing number of errors in Clinamen}
+  \label{tab:errors}
+\end{table}
 
 
 \subsection{Syzygy}
 
 \todo{semantic hierarchy visualised?}
+\todo{i tried modeeling the three alignments but how?}
+\todo{}
 
 The syzygy function goes through the following process.
 
@@ -544,17 +548,17 @@ The notation used by WordNet for synsets is \textbf{<lemma>.<pos>.<senses>}. The
 for adjectives, `r' for adverbs and `s' for satellites. The `senses' element stands for the number of synsets the relevant lemma is part of (a word might have a noun sense as well as a verb sense for example in which case the number would be `02'). For the query `clear' for instance, the following list of synsets is retrieved for step (1).
 
 \begin{minted}{text}
-  [
+[
   clear.n.01, open.n.01, unclutter.v.01, clear.v.02, clear_up.v.04, authorize.v.01, clear.v.05, pass.v.09, clear.v.07, clear.v.08, clear.v.09, clear.v.10, clear.v.11, clear.v.12, net.v.02, net.v.01, gain.v.08, clear.v.16, clear.v.17, acquit.v.01, clear.v.19, clear.v.20, clear.v.21, clear.v.22, clear.v.23, clear.v.24, clear.a.01, clear.s.02, clear.s.03, clear.a.04, clear.s.05, clear.s.06, clean.s.03, clear.s.08, clear.s.09, well-defined.a.02, clear.a.11, clean.s.02, clear.s.13, clear.s.14, clear.s.15, absolved.s.01, clear.s.17, clear.r.01, clearly.r.04
-  ]
+]
 \end{minted}
 
 Step (2) then retrieves related terms. Below is a list of terms it found. Not all synsets return each of the hypo-/hyper- and holonyms. This is clearer when inspecting the full list of results as shown in appendix~\ref{app:syzygy}\marginnote{§~\ref{app:syzygy}}. 
 
 \begin{minted}{text}
-  [
+[
   innocence, area, country, change, alter, modify, make, create, approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise, permit, allow, let, countenance, clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump, remove, take, take_away, withdraw, clear, succeed, win, come_through, bring_home_the_bacon, deliver_the_goods, vanish, disappear, go_away, hop, pass, overtake, overhaul, clarify, clear_up, elucidate, free, discharge, rid, free, disembarass, yield, pay, bear, profit, gain, benefit, eke_out, squeeze_out, gross, profit, turn_a_profit, rake_in, shovel_in, rake_off, take_home, bring_home, yield, pay, bear, get, acquire, sell, pass, clear, purge, vindicate, whitewash, pronounce, label, judge, settle, square_off, square_up, determine, change, alter, modify, empty, take_out, move_out, remove, empty, remove, take, take_away, withdraw
-  ]
+]
 \end{minted}
 
 \todo{table showing hypo, hyper and holonyms numbers side by side for a query}
@@ -564,7 +568,7 @@ Step (2) then retrieves related terms. Below is a list of terms it found. Not al
 
 The image search can produce quite intersting results as well. A search for ``blue kitten'' on Flickr produces the following resulting pataphysicalised query terms: ``[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]'' which are then passed into ten seperate \gls{api} calls to retrieve one image each (see figure~\ref{fig:imgspiralflickr}\marginnote{§~\ref{fig:imgspiralflickr}}). The results show a variety of images seemingly unrelated to each other. 
 
-\begin{figure}[h!]
+\begin{figure}[!htbp]
 \centering
   \includegraphics[width=\linewidth]{bluekittenflickr}
 \caption[Image spiral `blue kitten'---Flickr]{Image spiral for query `blue kitten'---Flickr}
@@ -573,7 +577,7 @@ The image search can produce quite intersting results as well. A search for ``bl
 
 For Getty the image search works slightly differently due to its \gls{api} restrictions. The query ``blue kitten'' gets turned into the word ``racy'' which then calls the \gls{api} to retrieve ten results (see figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}). The results mostly show racing cars from various angles although one oddball snuck in too: an office scene Getty has deemed to be `racy' (a guy in a suit checking out a lady's behind while she's leaning over a laptop).
 
-\begin{figure}[h!]
+\begin{figure}[!htbp]
 \centering
   \includegraphics[width=\linewidth]{bluekittengetty}
 \caption[Image spiral `blue kitten'---Getty]{Image spiral for query `blue kitten'---Getty}
@@ -598,21 +602,21 @@ It is interesting to note how different the search results are perceived when pr
 
 Figures~\ref{fig:poemtree},~\ref{fig:listsourcetree}~and~\ref{fig:listalgotree} show the three different text result styles. The poetry\marginnote{\faicon{picture-o}~\ref{fig:poemtree}} is compact and invites users to read all 14 (or less) lines. The two list styles\marginnote{\faicon{picture-o}~\ref{fig:listsourcetree}~\&~\ref{fig:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
   \includegraphics[width=\linewidth]{poemtree}
 \caption[Results as poem]{Results in poem form for query `tree'---Shakespeare}
 \label{fig:poemtree}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
   \includegraphics[width=\linewidth]{listsourcetree}
 \caption[Results as list by sources]{Results as list by sources for query `tree'---Shakespeare}
 \label{fig:listsourcetree}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
   \includegraphics[width=\linewidth]{listalgotree}
 \caption[Results as list by algorithm]{Results as list by algorithm for query `tree'---Shakespeare}
