@@ -73,7 +73,7 @@ The internal transformation of a query term to the final results is essentially 
 
 It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{tab:algorithmscomp}.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
   \begin{tabu}{X[1,L]X[3,L]X[3,L]X[2,L]}
   \toprule
   % \cline{2-4}
@@ -205,7 +205,7 @@ The different language is quite obvious. This is helped by the fact that the Sha
 
 The above examples (table~\ref{tab:algorithmscomp} and figure~\ref{fig:2poems} give a good overview of the two main factors in the pataphysicalisation process, namely the three patalgorithms and the two corpora. Both only reflect a small selection of the variety of results produced though. It is therefore quite interesting to look at some actual numbers.
 
-\begin{table}
+\begin{table}[!htbp]
   \centering
   \begin{tabu}{llcccc}
   \toprule
@@ -248,7 +248,7 @@ Regarding the final column showing the number of possible poems, let's look at t
 A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table~\ref{tab:algonums}\marginnote{\faicon{table}~\ref{tab:algonums}} shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using four example query terms (`clear', `shine', `disorder' and `stuck') for each of the two corpora (`Faustroll' and `Shakespeare').
 
 % \todo{add french query term cœur}
-\begin{table}[]
+\begin{table}[!htbp]
 \centering\small
 \begin{tabu}{ll|ccc|ccc|ccc|ccc}
 \toprule
@@ -355,7 +355,7 @@ The above pseudocode shows an entry for the word `cellar' with only the position
 
 Table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} shows some example queries for both corpora and the number of results retrieved with the first position only used (as in the live version of \url{pata.physics.wtf}) in column 5 and on column 3 with all results retrieved. The final column shows what percentage of results are retrieved using the `first only' method. The average percentage for this is about 10\%. 
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \begin{tabu}{llccccc}
 \toprule
@@ -455,7 +455,7 @@ Tables~\ref{tab:basefania},~\ref{tab:baseclear}~and~\ref{tab:basemoss} each comp
 
 The decision to use the Faustroll text as a base text was made due to the central role it has for pataphysics\marginnote{§~\ref{ch:pataphysics}} and indeed the corpus itself. The Faustroll book introduces pataphysics and contains Jarry's original definition and it also lists Dr. Faustroll's library of `equivalent books'\marginnote{§~\ref{s:faustlib}} which was used as the inspiration for the Faustroll corpus.
 
-\begin{table}[p]
+\begin{table}[!htbp]
 \centering
 \begin{minipage}{\textwidth}
   \begin{tabu}{X[l]X[1.5,l]X[l]}
@@ -515,7 +515,7 @@ Another key factor in how the Clinamen function works is the Damerau-Levenshtein
 
 If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of \url{pata.physics.wtf} uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed). Table~\ref{tab:errors})\marginnote{§~\ref{tab:errors}} shows three example queries and the number of results produced by the algorithm with either up to 1 error, up to 2 errors or up to 3 errors.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
   \centering
   \begin{tabu}{lccc}
     \toprule
