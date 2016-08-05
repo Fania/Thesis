@@ -100,7 +100,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] Add change-log to website
 - [ ] Flowchart of website prototype workflow from query to results
 - [x] Put inspiration into lit review? Queneau and library of faustroll etc
-- [ ] Explain why I only use the first occurance
+- [x] Explain why I only use the first occurance
 - [x] PEP20
 - [ ] AVOID: so, in principle,
 - [ ] double check line numbers in code
@@ -135,8 +135,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] remove page num from parts in toc
 - [ ] make pre and postface fonts italic in toc
 - [ ] indent parts in toc
-- [ ] weird space after mini toc?
-- [ ] why do the spirals after the mini chapter tocs creep upwards slowly over time each chapter? at the beginning the distance is fine but later on it overlaps.???
+- [x] weird space after mini toc?
 - [ ] turn code into art. each aspect of phd is art.
 - [ ] remove publications in preface and just describe fully in first chapter
 - [ ] make all chapter poems sans serif or monospace
@@ -147,30 +146,15 @@ pdflatex --file-line-error -shell-escape main
 - [ ] format all numbers using \num{} also \num{1.5e10}
 - [ ] check spelling of all names (foreign ones especially)
 - [ ] add glossary at beginning of pata terms
-- [ ] different style (underline) subsubsections?
+- [x] different style (underline) subsubsections?
 - [ ] add images as seperate figure items, also in toc
 - [ ] convert all urls to proper references
 - [ ] pataphysicalised terms == patadata
-- [ ] citations in gray
+- [ ] quotations in gray
 - [ ] table captions on top?
+- [ ] add space before floats
 
 
-
-## FIRST DRAFT COMPLETE:
-- [x] introduction
-- [x] inspiration
-- [ ] methodology
-- [ ] pataphysics
-- [ ] creativity
-- [ ] technology
-- [ ] evaluation
-- [ ] foundations
-- [ ] interpretation
-- [ ] implementation
-- [ ] application
-- [ ] analysis
-- [ ] aspirations
-- [ ] observations
 
 
 titles of books etc in italics

@@ -26,7 +26,9 @@
 \hfuzz=7pt
 \vfuzz=7pt
 
-
+% \AtBeginDocument{%
+%   \addtocontents{toc}{\protect\label{ch:contents}}%
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \includeonly{%
@@ -521,6 +523,29 @@ breaklines=true
 % % \renewcommand{\footrulewidth}{0.1pt}
 %
 % \setlength{\headheight}{13.6pt}
+
+\makepagestyle{fania} 
+% \makeevenhead{fania}{}{}{}
+% \makeoddhead{fania}{\slshape\rightmark}{}{\slshape\leftmark}
+% \makeevenfoot{fania}{}{}{}
+\makeoddfoot{fania}{Hello World}{}{\thepage}
+% \makeevenhead{fania}{\thepage}{}{\leftmark}
+\makeoddhead{fania}{\leftmark}{}{\rightmark}
+% \makerunningwidth{fania}{1.1\textwidth}
+% \makeheadrule{fania}{1.1\textwidth}{\normalrulethickness}
+% \makefootrule{fania}{1.1\textwidth}{\normalrulethickness}
+% \pagestyle{fania}
+
+
+% LINK TO TOC
+\usepackage{eso-pic}
+\newcommand\AtPageBottomCentre[1]{%
+ \put(\LenToUnit{.5\paperwidth},\LenToUnit{\textheight}){#1}%
+}
+\AddToShipoutPictureBG{%
+   \AtPageBottomCentre{\put(0,-620){\hyperlink{ch:contents}{Go to TOC}}}
+}
+
 
 
 % COLOUR STUFF
