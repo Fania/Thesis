@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.5 $
+% $ biblatex bbl format version 2.7 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,10 +18,14 @@
 
 
 \refsection{0}
-  \sortlist{nyt}{nyt}
+  \sortlist[entry]{nyt/global/}
     \entry{Burnham2015}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=0c8bb25e77692e2abe47cf18a92bbac4}{Burnham}{B\bibinitperiod}{Douglas}{D\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=0c8bb25e77692e2abe47cf18a92bbac4}{%
+           family={Burnham},
+           family_i={B\bibinitperiod},
+           given={Douglas},
+           given_i={D\bibinitperiod}}}%
       }
       \strng{namehash}{0c8bb25e77692e2abe47cf18a92bbac4}
       \strng{fullhash}{0c8bb25e77692e2abe47cf18a92bbac4}
@@ -43,8 +47,16 @@
     \endentry
     \entry{Efron1976}{article}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=5470455fc7dceb3ccf6db38cb22a113d}{Efron}{E\bibinitperiod}{Bradley}{B\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=28e856b54d33d88424a84632bb8311b7}{Thisted}{T\bibinitperiod}{Ronald}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=5470455fc7dceb3ccf6db38cb22a113d}{%
+           family={Efron},
+           family_i={E\bibinitperiod},
+           given={Bradley},
+           given_i={B\bibinitperiod}}}%
+        {{uniquename=0,hash=28e856b54d33d88424a84632bb8311b7}{%
+           family={Thisted},
+           family_i={T\bibinitperiod},
+           given={Ronald},
+           given_i={R\bibinitperiod}}}%
       }
       \strng{namehash}{0397157fd6365b4546bf56c93135270a}
       \strng{fullhash}{0397157fd6365b4546bf56c93135270a}
@@ -64,7 +76,11 @@
     \endentry
     \entry{Foucault1966}{inbook}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=984e5967448051538555a64aac11ed21}{Foucault}{F\bibinitperiod}{Michel}{M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=984e5967448051538555a64aac11ed21}{%
+           family={Foucault},
+           family_i={F\bibinitperiod},
+           given={Michel},
+           given_i={M\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {France}%
@@ -89,7 +105,9 @@
     \endentry
     \entry{GoogleCI}{online}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=8b36e9207c24c76e6719268e49201d94}{Google}{G\bibinitperiod}{}{}{}{}{}{}}%
+        {{uniquename=0,hash=8b36e9207c24c76e6719268e49201d94}{%
+           family={Google},
+           family_i={G\bibinitperiod}}}%
       }
       \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
       \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
@@ -112,8 +130,16 @@
     \endentry
     \entry{Hendler2011}{inproceedings}{}
       \name{author}{2}{}{%
-        {{uniquename=0,hash=bc4f6004ab1c0d06e9b1bef4ead5b4fe}{Hendler}{H\bibinitperiod}{Jim}{J\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bc4f6004ab1c0d06e9b1bef4ead5b4fe}{%
+           family={Hendler},
+           family_i={H\bibinitperiod},
+           given={Jim},
+           given_i={J\bibinitperiod}}}%
+        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{%
+           family={Hugill},
+           family_i={H\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{a2b6d2261cf88711132f767a28a91295}
       \strng{fullhash}{a2b6d2261cf88711132f767a28a91295}
@@ -129,7 +155,11 @@
     \endentry
     \entry{Hugill2012a}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{Hugill}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=1ba4a71dfd9f589b387deabd70911b46}{%
+           family={Hugill},
+           family_i={H\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Cambridge, Massachusetts}%
@@ -151,11 +181,23 @@
     \endentry
     \entry{Jarry2006}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=c74b5637cfbb2f957d02f22db60af4ef}{Jarry}{J\bibinitperiod}{Alfred}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c74b5637cfbb2f957d02f22db60af4ef}{%
+           family={Jarry},
+           family_i={J\bibinitperiod},
+           given={Alfred},
+           given_i={A\bibinitperiod}}}%
       }
       \name{editor}{2}{}{%
-        {{hash=505aae8b78f6f15a3609dada788cdb56}{Brotchie}{B\bibinitperiod}{Alastair}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=f9f96d5d2136fd6642a30dcddb95cc54}{Edwards}{E\bibinitperiod}{Paul}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=505aae8b78f6f15a3609dada788cdb56}{%
+           family={Brotchie},
+           family_i={B\bibinitperiod},
+           given={Alastair},
+           given_i={A\bibinitperiod}}}%
+        {{hash=f9f96d5d2136fd6642a30dcddb95cc54}{%
+           family={Edwards},
+           family_i={E\bibinitperiod},
+           given={Paul},
+           given_i={P\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {London}%
@@ -176,7 +218,11 @@
     \endentry
     \entry{Kurzweil2013}{book}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=0adc9b7df5d54aca253a97676a4f9ee3}{Kurzweil}{K\bibinitperiod}{Ray}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=0adc9b7df5d54aca253a97676a4f9ee3}{%
+           family={Kurzweil},
+           family_i={K\bibinitperiod},
+           given={Ray},
+           given_i={R\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {London}%
@@ -198,10 +244,18 @@
     \endentry
     \entry{Mayer1999}{incollection}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=4e023dbb8bb0e81438ad477d5e916296}{Mayer}{M\bibinitperiod}{Richard\bibnamedelima E}{R\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=4e023dbb8bb0e81438ad477d5e916296}{%
+           family={Mayer},
+           family_i={M\bibinitperiod},
+           given={Richard\bibnamedelima E},
+           given_i={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \name{editor}{1}{}{%
-        {{hash=50f8ce5e49f4ae4a572b5ad65796a522}{Sternberg}{S\bibinitperiod}{Robert\bibnamedelima J}{R\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=50f8ce5e49f4ae4a572b5ad65796a522}{%
+           family={Sternberg},
+           family_i={S\bibinitperiod},
+           given={Robert\bibnamedelima J},
+           given_i={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {New York}%
@@ -227,7 +281,11 @@
     \endentry
     \entry{Schulman2009}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=66a3aac42148ee35b7592eed4fe5b5b7}{Schulman}{S\bibinitperiod}{Ari}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=66a3aac42148ee35b7592eed4fe5b5b7}{%
+           family={Schulman},
+           family_i={S\bibinitperiod},
+           given={Ari},
+           given_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{66a3aac42148ee35b7592eed4fe5b5b7}
       \strng{fullhash}{66a3aac42148ee35b7592eed4fe5b5b7}
@@ -246,7 +304,11 @@
     \endentry
     \entry{Walker2012}{report}{}
       \name{author}{1}{}{%
-        {{uniquename=0,hash=e91b4c886f818bf849eb9b2d123321e8}{Walker}{W\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e91b4c886f818bf849eb9b2d123321e8}{%
+           family={Walker},
+           family_i={W\bibinitperiod},
+           given={Richard},
+           given_i={R\bibinitperiod}}}%
       }
       \list{institution}{1}{%
         {HBP-PS Consortium}%
@@ -265,9 +327,21 @@
     \endentry
     \entry{Wickson2006}{article}{}
       \name{author}{3}{}{%
-        {{uniquename=0,hash=76e9ec15a73000638355be24dd42a6e6}{Wickson}{W\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=5393cb9b1296bcabc876455bf9ca8cb6}{Carew}{C\bibinitperiod}{A.L.}{A\bibinitperiod}{}{}{}{}}%
-        {{uniquename=0,hash=709dfc31a30df62471d7a558868f15a5}{Russell}{R\bibinitperiod}{A.W.}{A\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=76e9ec15a73000638355be24dd42a6e6}{%
+           family={Wickson},
+           family_i={W\bibinitperiod},
+           given={F.},
+           given_i={F\bibinitperiod}}}%
+        {{uniquename=0,hash=5393cb9b1296bcabc876455bf9ca8cb6}{%
+           family={Carew},
+           family_i={C\bibinitperiod},
+           given={A.L.},
+           given_i={A\bibinitperiod}}}%
+        {{uniquename=0,hash=709dfc31a30df62471d7a558868f15a5}{%
+           family={Russell},
+           family_i={R\bibinitperiod},
+           given={A.W.},
+           given_i={A\bibinitperiod}}}%
       }
       \strng{namehash}{0693464098b04b9fbc482c35b9c6ef16}
       \strng{fullhash}{0693464098b04b9fbc482c35b9c6ef16}

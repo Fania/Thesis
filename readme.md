@@ -153,7 +153,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] quotations in gray
 - [ ] table captions on top?
 - [ ] add space before floats
-
+- [ ] description list spacing by adding [longest word] after environment
 
 
 

@@ -48,10 +48,10 @@ Here, in this chapter I will lay out some of the potential/likely further work f
 Currently the image and video spirals are fixed size. This means that when the webpage is resized the spiral stays the same size and is left aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page. Percentages
 
 \paragraph{Scalable image sizes} 
-At the moment images are retrieved at a given size through the various \gls{api} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \gls{html} code. This means that some of them look squished and pizelated. This limits the available choice of results through the API.
+At the moment images are retrieved at a given size through the various \ac{API} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \ac{HTML} code. This means that some of them look squished and pizelated. This limits the available choice of results through the API.
 
 \paragraph{Square aspect ratio} 
-Another issue is the aspect ratio of images and videos. For the spiral they need to be square. I currently achieve this by squishing them as opposed to cropping them or specifying an option in the \gls{api} calls to only retrieve square images.
+Another issue is the aspect ratio of images and videos. For the spiral they need to be square. I currently achieve this by squishing them as opposed to cropping them or specifying an option in the \ac{API} calls to only retrieve square images.
 
 \paragraph{Responsive poems} 
 A similar problem to the responsive spirals exists with the display of the Queneau poems. The random poems are centered on the page but the Queneau poems require a lot more formatting and styling to render them on the page and currently this is achieved my left aligning them and having a fixed `absolute' position on the page. Ideally this would also be centered as in the random poems. 
@@ -60,7 +60,7 @@ A similar problem to the responsive spirals exists with the display of the Quene
 The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch. This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
 
 \paragraph{Query speed} 
-The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \gls{api}s such as Flickr and WordNet.
+The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \ac{API}s such as Flickr and WordNet.
 
 \paragraph{Preprocessing corpora} 
 At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text}. Newlines and whitespace formatting varies, as does language and quality of spelling. OCR SOURCES Generally, chapter headings, chapter numberings, etc are left untouched. The Shakespeare corpus contains poetry and plays for example. STAGE DIRECTIONS With the plays, scene information is kept, voice details are kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``...Athens and a wood near it ACT I...'' from \textit{A Midsummer Night's Dream} or this example: ``...Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge...'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance.
@@ -69,25 +69,25 @@ At this point the texts in the corpora consist of almost unedited plaintext (`.t
 Currently the way results sentences are retrieved for the text search is based on punctuation. This means once a pataphysicalised keyword has been found, the system retrieves up to 10 words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments.
 
 \paragraph{More APIs} 
-Currently X \gls{api}s are used\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times.
+Currently X \ac{API}s are used\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times.
 
 \paragraph{Web search} 
-The use of \gls{api}s could also include web search results rather than just images and videos. This would needs its own interface section and a suitable display style for the results. The biggest problem for this is \gls{api} restrictions. Alternatively a ready-made index or crawl could be used but these are typically many terrabytes in size and have a cost attached. Crawling the Web myself is not an option due to the computational power, time and space required to do so.
+The use of \ac{API}s could also include web search results rather than just images and videos. This would needs its own interface section and a suitable display style for the results. The biggest problem for this is \ac{API} restrictions. Alternatively a ready-made index or crawl could be used but these are typically many terrabytes in size and have a cost attached. Crawling the Web myself is not an option due to the computational power, time and space required to do so.
 
 \paragraph{Audio search} 
-Originally audio search was going to be a part of this project. This has been abandoned due to time constraints. However it could be added using an \gls{api} such as SoundClouds. Technically the pataphysicalisation could work similar to the image and video searches, meaning it would be based on user tags. One idea would be to search in audio waves.
+Originally audio search was going to be a part of this project. This has been abandoned due to time constraints. However it could be added using an \ac{API} such as SoundClouds. Technically the pataphysicalisation could work similar to the image and video searches, meaning it would be based on user tags. One idea would be to search in audio waves.
 
 \paragraph{More algorithms} 
-It would be nice to implement some more algorithms for the search tool. This could include the two additional algorithms suggested by Andrew Dennis (see chapter~\ref{ch:applications}\marginnote{§~\ref{ch:applications}}) or developing more of my own. This could involve implementing some of the other pataphysical principles, such as equivalence or anomaly. Or it could consist of implementing some of the more famous \gls{oulipo} techniques. The repetoire of them is huge (see appendix XYZ).
+It would be nice to implement some more algorithms for the search tool. This could include the two additional algorithms suggested by Andrew Dennis (see chapter~\ref{ch:applications}\marginnote{§~\ref{ch:applications}}) or developing more of my own. This could involve implementing some of the other pataphysical principles, such as equivalence or anomaly. Or it could consist of implementing some of the more famous \ac{OULIPO} techniques. The repetoire of them is huge (see appendix XYZ).
 
 \paragraph{Poetry rhyming scheme} 
-One of the biggest points for future work is to introduce a rhyming scheme for the poetry results. This would involve some more \gls{nlp} during the creation of the index\marginnote{§~\ref{ch:technology}}. It would make the poems much more readable. See more in chapter XYZ.
+One of the biggest points for future work is to introduce a rhyming scheme for the poetry results. This would involve some more \ac{NLP} during the creation of the index\marginnote{§~\ref{ch:technology}}. It would make the poems much more readable. See more in chapter XYZ.
 
 \paragraph{Random sentences} 
 Adding to the source of random sentences used in the top and bottom banner on the website should be an ongoing endevour.
 
 \paragraph{Custom API}
-It would be great to develop a custom \gls{api} for this the search tool. This would allow other people to use the search remotely without going through the interface and to use the results as they want. This would have been beneficial for the Digital Opera project\marginnote{§~\ref{ch:applications}} and certainly for other researchers/developers like Adnrew Dennis\marginnote{§~\ref{ch:applications}}.
+It would be great to develop a custom \ac{API} for this the search tool. This would allow other people to use the search remotely without going through the interface and to use the results as they want. This would have been beneficial for the Digital Opera project\marginnote{§~\ref{ch:applications}} and certainly for other researchers/developers like Adnrew Dennis\marginnote{§~\ref{ch:applications}}.
 
 \paragraph{WordNet vocabulary}
 The vocabulary in WordNet is limited. According to it's website (\url{https://wordnet.princeton.edu/}) it contains 117000 `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms. Because of the way the process works, the link between Wordnet and source texts, results may be limited. \todo{check}
@@ -103,7 +103,7 @@ Stemming could increase the number of results found by the algorithms. (See chap
 It would be nice to actually add Queneau's poem texts into the coprus of Faustroll as little easter eggs.
 
 \paragraph{Bitmap algorithms}
-The image and video search currently rely on extrenal \gls{api}s and user tags to work. One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the bitmaps themselves. So this could mean we could have a reverse image search that finds images related the original bitmap in pataphysical way or other.
+The image and video search currently rely on extrenal \ac{API}s and user tags to work. One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the bitmaps themselves. So this could mean we could have a reverse image search that finds images related the original bitmap in pataphysical way or other.
 
 \paragraph{Index}
 One idea for the pataphysicalisation process was to add `patadata' to the index. This could include pronounciation tags for example to make an implementation of a rhyming scheme for the poetry easier. So each word in teh index dictionary would contain the following items.
@@ -120,7 +120,7 @@ Using a different set of stopwords to see if that makes a difference. For exampl
 
 
 \section{Creative NLP}
-N-grams are a \gls{nlp} technique introduced in chapter~\ref{ch:technology}\marginnote{Section~\ref{ch:technology}}. The idea is that it allows for prediction of likely word pairs, meaning if the word `sunny' often occurs just before the word `day' in a given training text or corpus then the probability for this particular n-gram is higher than say for `sunny dog'. This can be increased to predict the probability of longer chains of words. On can immediately see the attraction of abusing this to generate pseudo sentences or even of creating a formula similar in nature but for example ranking obscure combinations of words higher than common ones. So ffor example instead of having a \gls{mle} (see chapter XYZ and formular 6.12) we could have a `Maximum Obscurity Estimation' defined as:
+N-grams are a \ac{NLP} technique introduced in chapter~\ref{ch:technology}\marginnote{Section~\ref{ch:technology}}. The idea is that it allows for prediction of likely word pairs, meaning if the word `sunny' often occurs just before the word `day' in a given training text or corpus then the probability for this particular n-gram is higher than say for `sunny dog'. This can be increased to predict the probability of longer chains of words. On can immediately see the attraction of abusing this to generate pseudo sentences or even of creating a formula similar in nature but for example ranking obscure combinations of words higher than common ones. So ffor example instead of having a \ac{MLE} (see chapter XYZ and formular 6.12) we could have a `Maximum Obscurity Estimation' defined as:
 
 \begin{equation}
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
@@ -129,19 +129,19 @@ N-grams are a \gls{nlp} technique introduced in chapter~\ref{ch:technology}\marg
 % \myequations{Probwn}
 \todo{work the maths out here for this example of MOE}
 
-Similarly, we could could play with maximum entropy models as shown on page 112 (see chapter XYZ) together with \gls{pos} tagging. What if we rigged the probability such that instead of `in Quebec' ranking high for a `location' \gls{pos} tag, it now ranks high as a `drug'?
+Similarly, we could could play with maximum entropy models as shown on page 112 (see chapter XYZ) together with \ac{POS} tagging. What if we rigged the probability such that instead of `in Quebec' ranking high for a `location' \ac{POS} tag, it now ranks high as a `drug'?
 
 
-Again there are endless possipilities of abusing these kinds of systems to create \gls{amc}. This is also very reminiscent of \gls{oulipo} techniques. We could create a whole new language grammar based on pataphysical principles.
+Again there are endless possipilities of abusing these kinds of systems to create \ac{AMC}. This is also very reminiscent of \ac{OULIPO} techniques. We could create a whole new language grammar based on pataphysical principles.
 
-Another example of interesting uses of \gls{nlp} for \gls{amc} is playing with homonyms and heteronyms. Homonyms are pronounced the same but mean something else (e.g. `write' and `right'). Heteronyms are words that are spelled the smae but have a different meaning (e.g. `close to the edge' and `to close the door'). There are similar techniques in the \gls{oulipo}. Homophones are often used to create puns (and remember---puns are syzygy's of words), for example ``past your eyes'' and ``pasteurize''. 
+Another example of interesting uses of \ac{NLP} for \ac{AMC} is playing with homonyms and heteronyms. Homonyms are pronounced the same but mean something else (e.g. `write' and `right'). Heteronyms are words that are spelled the smae but have a different meaning (e.g. `close to the edge' and `to close the door'). There are similar techniques in the \ac{OULIPO}. Homophones are often used to create puns (and remember---puns are syzygy's of words), for example ``past your eyes'' and ``pasteurize''. 
 
 \begin{quotation}
    You can tune a guitar, but you can't tuna fish. Unless of course, you play bass. \sourceatright{attributed to Douglas Adams}
 \end{quotation}
 
 \todo{look into rhyming tags in nlp}
-\gls{nlp} would also be useful for introducing a rhyming pattern into auto-generated poetry. BY doing \gls{pos} tagging with pronounciation data, we could retrieve sentences that match the sound of the last word of the previous line, etc.
+\ac{NLP} would also be useful for introducing a rhyming pattern into auto-generated poetry. BY doing \ac{POS} tagging with pronounciation data, we could retrieve sentences that match the sound of the last word of the previous line, etc.
 
 
 

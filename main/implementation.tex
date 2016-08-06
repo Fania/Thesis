@@ -398,7 +398,7 @@ The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustl
 
 When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
 
-Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \gls{nltk} Python library\footnote{\url{http://www.nltk.org/}} for \acrlong{nlp}.
+Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library\footnote{\url{http://www.nltk.org/}} for \acrlong{nlp}.
 
 \begin{listing}
   \begin{minted}{python}
@@ -604,7 +604,7 @@ def syzygy(w):
 \label{code:syzygy}
 \end{listing}
 
-The syzygy function makes heavy use of WordNet \parencite{Miller1995} through the \gls{nltk} Python library to find suitable results. Specifically, as shown in source~\ref{code:syzygy}, the algorithm fetches the set of synonyms (synsets) on line 4. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 5--8. It finds any hyponyms, hypernyms or holonyms for each \py{ws} (each of which denotes some sort of relationship or membership with its parent synonym) using the \py{get_nym} function.
+The syzygy function makes heavy use of WordNet \parencite{Miller1995} through the \ac{NLTK} Python library to find suitable results. Specifically, as shown in source~\ref{code:syzygy}, the algorithm fetches the set of synonyms (synsets) on line 4. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 5--8. It finds any hyponyms, hypernyms or holonyms for each \py{ws} (each of which denotes some sort of relationship or membership with its parent synonym) using the \py{get_nym} function.
 
 \todo{explain reasoning behind algorithms like this for all:}
 This mimics a syzygy alignment of three words in a line (query $\to$ synonym $\to$ hypo/hyper/holonym).
@@ -685,7 +685,7 @@ For example, running the pataphysicalise function with the terms `clear' and `sk
 [("disembarrass", "blue"), ("disembarrass", "atmosphere"), ..., ("strip", "fling"), ..., ("empty", "submarine"), ..., ("allow", "mackerel_sky"), ("allow", "wild_blue_yonder")]
 \end{minted}
 
-The next step is to translate the pataphysicalised search terms as shown in source~\ref{code:transent} before any \gls{api} calls are made.
+The next step is to translate the pataphysicalised search terms as shown in source~\ref{code:transent} before any \ac{API} calls are made.
 
 \begin{listing}
   \begin{minted}{python}
@@ -704,15 +704,15 @@ def transent(sent):
 
 \subsection{REST \& API}
 
-The image and video search both rely on various \gls{api} calls to produce results. Currently used are Microsoft Translate, Bing Image Search and YouTube.
+The image and video search both rely on various \ac{API} calls to produce results. Currently used are Microsoft Translate, Bing Image Search and YouTube.
 
-A \acrshort{rest}ful \gls{api} allows browsers (`clients') to communicate with a web server via \acrshort{http} methods such as \gls{get} and \gls{post}. The idea is that a given service, like the Microsoft Bing search \gls{api}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
+A \acrshort{rest}ful \ac{API} allows browsers (`clients') to communicate with a web server via \acrshort{http} methods such as \ac{get} and \ac{post}. The idea is that a given service, like the Microsoft Bing search \ac{API}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
 
 \begin{enumerate}
-  \item Construct the \gls{url} (see, source~\ref{code:getBing} lines 5,6,7 and 11)
-  \item get an \gls{api} key (see, source~\ref{code:getBing} line 4)
-  \item send \gls{url} and key using \gls{get} method (see, source~\ref{code:getBing} line 12)
-  \item receive and process response in requested format (e.g. \gls{json}\footnote{\url{http://www.json.org/}})
+  \item Construct the \ac{URL} (see, source~\ref{code:getBing} lines 5,6,7 and 11)
+  \item get an \ac{API} key (see, source~\ref{code:getBing} line 4)
+  \item send \ac{URL} and key using \ac{get} method (see, source~\ref{code:getBing} line 12)
+  \item receive and process response in requested format (e.g. \ac{JSON}\footnote{\url{http://www.json.org/}})
 \end{enumerate}
 
 \begin{listing}
@@ -745,10 +745,10 @@ def get_Bing(words):
 \label{code:getBing}
 \end{listing}
 
-An example \gls{url} for the Bing image search with the query term of `kittens' and a requested response format of \gls{json} is this:
+An example \ac{URL} for the Bing image search with the query term of `kittens' and a requested response format of \ac{JSON} is this:
 \url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}. There are many other parameters that can be specified, such as `Adult' (which can be set to `Moderate' for example) and `ImageFilters' (which allows users to specify size or aspect ratio)\footnote{see \url{https://datamarket.azure.com/dataset/bing/search\#schema}}.
 
-Bing will then send back the response in \gls{json} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the \py{Title}, \py{MediaUrl} and \py{SourceUrl} and ignores all other data fields.
+Bing will then send back the response in \ac{JSON} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the \py{Title}, \py{MediaUrl} and \py{SourceUrl} and ignores all other data fields.
 
 \begin{minted}{text}
 "d": { "results": [
@@ -784,7 +784,7 @@ Bing will then send back the response in \gls{json} format. One entry of the lis
 
 \section{Design}
 
-Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and \gls{html} (with \gls{css} stylesheets and some JavaScript).
+Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and \ac{HTML} (with \ac{CSS} stylesheets and some JavaScript).
 
 `the user should be able to choose the techniques they use' \autocite{Hendler2011}
 

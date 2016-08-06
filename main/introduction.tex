@@ -32,21 +32,21 @@ as any person at all conversant with authorship may satisfy himself at.
 \minicontents
 \spirals
 
-This thesis describes \gls{amc}. More precisely it is about using creative computing to achieve computer creativity.
+This thesis describes \ac{AMC}. More precisely it is about using creative computing to achieve computer creativity.
 
 The project is transdisciplinary;\marginnote{§~\ref{ch:methodology}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\marginnote{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
 
 The research\marginnote{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines, how pataphysics relates to creativity and how creativity should be evaluated in machines.
 
-Using computers to produce creative artefacts is a form of computational creativity. Using creative techniques computationally is creative computing. \gls{amc} spans the two---whether this is to achieve a creative or non-creative output. It is the use of digital tools (which may not be creative themselves) and the way they are used forms the creative process or product. 
+Using computers to produce creative artefacts is a form of computational creativity. Using creative techniques computationally is creative computing. \ac{AMC} spans the two---whether this is to achieve a creative or non-creative output. It is the use of digital tools (which may not be creative themselves) and the way they are used forms the creative process or product. 
 
 Creativity in humans needs to be interpreted differently to machines. Humans and machines differ in many ways, we have different `brains/memory', `thinking processes/software' and `bodies/hardware'. Too often creative output by machines is judged as we would a humans. 
 
-Computers which are truly artificially intelligent might be capable of true artificial creativity. Until then they are (philosophical) zombie robots: machines that behave like humans but aren't conscious. The only alternative is to see any computer creativity as a direct or indirect expression of human creativity using digital means and evaluate it as such. \gls{amc} is neither machine creativity nor human creativity---it is both. By acknowledging the undeniable link between computer creativity and its human influence (the machine is just a tool for the human) we enter a new realm of thought. How is \gls{amc} defined and evaluated? This thesis address this issue. 
+Computers which are truly artificially intelligent might be capable of true artificial creativity. Until then they are (philosophical) zombie robots: machines that behave like humans but aren't conscious. The only alternative is to see any computer creativity as a direct or indirect expression of human creativity using digital means and evaluate it as such. \ac{AMC} is neither machine creativity nor human creativity---it is both. By acknowledging the undeniable link between computer creativity and its human influence (the machine is just a tool for the human) we enter a new realm of thought. How is \ac{AMC} defined and evaluated? This thesis address this issue. 
 
 \begin{enumerate}
-  \item a practical demonstration of \gls{amc}
-  \item a theoretical framework to help interpret and evaluate products of \gls{amc}
+  \item a practical demonstration of \ac{AMC}
+  \item a theoretical framework to help interpret and evaluate products of \ac{AMC}
 \end{enumerate}
 
 The outcome of step (1)\marginnote{§~\ref{ch:implementation}} is presented as a website---\url{pata.physics.wtf}---written in 5 different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to 6 external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over 3000 lines of code\footnote{2864 lines of code, 489 lines of comments - as of 08 Dec 2015} spread over 30 files.
@@ -62,12 +62,12 @@ Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional 
 
 To address step (2) above, I explored the problem of objective evaluation and interpretation\marginnote{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I have argued that the most appropriate way to approach this is by looking at five objective constraints (person, process, product, place, purpose) and seven subjective criteria (novelty, value, quality, purpose, spatial, temporal, ephemeral) holistically and by understanding that humour and art `lie in the ear and eye of the beholder'\ldots
 
-This resulted in an \emph{interpretation framework}\marginnote{§~\ref{s:framework}} visualised as an evaluation matrix (5 constraints x 7 criteria) which can be used to qualitatively and/or quantitatively measure the creativity of a given \gls{amc} artefact (be that man-made or machine-made).
+This resulted in an \emph{interpretation framework}\marginnote{§~\ref{s:framework}} visualised as an evaluation matrix (5 constraints x 7 criteria) which can be used to qualitatively and/or quantitatively measure the creativity of a given \ac{AMC} artefact (be that man-made or machine-made).
 
 
 \section{Motivation}
 
-My personal interest in this project comes from a background in computer science and a longstanding interest in art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \gls{dmu}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \gls{ioct} at \gls{dmu} and when he pitched his \textit{Syzygy Surfer} \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
+My personal interest in this project comes from a background in computer science and a longstanding interest in art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \ac{DMU}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \ac{IOCT} at \ac{DMU} and when he pitched his \textit{Syzygy Surfer} \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
 
 \spirals
 
@@ -92,7 +92,7 @@ This apparent dichotomy of computing and pataphysics is alluring. Christian B{\"
 
 Combining pataphysics with creativity\marginnote{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly. 
 
-Another motivating factor for this project was the lack of research in the particular area of creative computing\marginnote{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \gls{ai}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
+Another motivating factor for this project was the lack of research in the particular area of creative computing\marginnote{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \ac{AI}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
 
 
 \section{Questions}
@@ -123,8 +123,8 @@ This project combines research\marginnote{§~\ref{ch:methodology}} in science an
 
 \begin{description}
   \item [Pataphysics] Literature, Philosophy
-  \item [Creativity] Cognitive Science, \gls{ai}
-  \item [Computing] Software Engineering, Information Retrieval, \gls{nlp}
+  \item [Creativity] Cognitive Science, \ac{AI}
+  \item [Computing] Software Engineering, Information Retrieval, \ac{NLP}
 \end{description}
 
 This is practice-based research, meaning that a part of my submission for the degree of Doctor of Philosophy is an artefact demonstrating my original contribution to knowledge. The thesis provides the context of this artefact and critically analyses and discusses the experimental process and outcome.

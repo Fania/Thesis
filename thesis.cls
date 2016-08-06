@@ -917,21 +917,28 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % GLOSSARY & ACRONYMS
 % WANTS TO BE AFTER HYPERREF
 
-\let\printglossary\relax
-\let\theglossary\relax
-\let\endtheglossary\relax
+\usepackage[printonlyused]{acronym}
+
+% dua - dont use acronyms, always print long word
+% smaller - make them smaller
+% footnote - show full as footnote
+% withpage - shows first occurance page number
+
+% \let\printglossary\relax
+% \let\theglossary\relax
+% \let\endtheglossary\relax
 
 % \makeglossary
-\usepackage[acronyms]{glossaries}
-% \setacronymstyle{long-short}
-\loadglsentries{front/abbreviations}
+% \usepackage[acronyms]{glossaries}
+% % \setacronymstyle{long-short}
+% \loadglsentries{front/abbreviations}
+% \glsnoexpandfields
+% \newglossarystyle{mylong}{%
+%   \setglossarystyle{long}%
+%   \renewenvironment{theglossary}%
+%      {\begin{longtable}[l]{>{\bfseries}p{\dimexpr 2cm-\tabcolsep}l}}% <-- change the value here
+%      {\end{longtable}}%
+%  }
 
-\newglossarystyle{mylong}{%
-  \setglossarystyle{long}%
-  \renewenvironment{theglossary}%
-     {\begin{longtable}[l]{>{\bfseries}p{\dimexpr 2cm-\tabcolsep}l}}% <-- change the value here
-     {\end{longtable}}%
- }
-
-\makenoidxglossaries
+% \makenoidxglossaries
 

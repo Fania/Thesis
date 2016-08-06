@@ -68,15 +68,18 @@
 
 \phantomsection
 \addcontentsline{toc}{chapter}{Acronyms}
-\printnoidxglossary[style=mylong,type=acronym]
+\include{front/acronyms}
+% \printacronyms[style=mylong]
+% \printnoidxglossary[style=mylong,type=acronym]
 % \printglossary[style=mylong,type=\acronymtype]
+% \printglossaries
 \clearpage
 
 
 % MAIN
-\pagestyle{fania}
 % \pagestyle{plain}
 \mainmatter
+\pagestyle{fania}
 
 \phantomsection
 % these spaces mess up my partial tocs....
@@ -170,11 +173,11 @@
 \printbibliography % BIBLATEX
 \clearpage
 
-\phantomsection
-% \addcontentsline{toc}{chapter}{Glossary}
-\printnoidxglossary
-% \printglossary
-\clearpage
+% \phantomsection
+% % \addcontentsline{toc}{chapter}{Glossary}
+% \printnoidxglossary
+% % \printglossary
+% \clearpage
 
 \newpage
 \pagestyle{empty}

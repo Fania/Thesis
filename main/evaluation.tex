@@ -34,7 +34,7 @@ and to draw a judgement from Heaven upon you for the Injustice.
 \section{Evaluating Search}
 \label{s:evalsearch}
 
-Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional \gls{ir} is evaluated using two metrics known as precision and recall. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.
+Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional \ac{IR} is evaluated using two metrics known as precision and recall. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.
 
 \begin{equation}
   Precision = \frac{relevant \ documents \ retrieved}{retrieved \ documents}
@@ -131,7 +131,7 @@ Ranking is another issue that could be considered to pre-evaluate web pages at i
 \todo{add francois stuff}
 \todo{check ICCC conference 2014 and 2015}
 
-Because creativity infused computing has only emerged in the last few decades or so, its evaluation is not well defined. Discussions from \gls{compc} for example often focus on very basic questions such as `whether an idea or artefact is valuable or not, and whether a system is acting creatively or not' \autocite{Pease2011}.
+Because creativity infused computing has only emerged in the last few decades or so, its evaluation is not well defined. Discussions from \ac{CompC} for example often focus on very basic questions such as `whether an idea or artefact is valuable or not, and whether a system is acting creatively or not' \autocite{Pease2011}.
 
 Pease, Winterstein and Colton have argued that creativity may be seen as `output minus input.' \autocite[p.2]{Pease2001}. The output in this case is the creative product but the input is not the process. Rather, it is the `inspiring set' (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) of a piece of software.
 
@@ -181,7 +181,7 @@ The 14 components Jordanous collated are: \citeyear[p.118-120]{Jordanous2012}
   \end{enumerate}
 \end{quotation}
 
-Anna Jordanous found that `evaluation of computational creativity is not being performed in a systematic or standard way' \autocite[p.2]{Jordanous2011} and proposed `\gls{specs}' \autocite[p.137-140]{Jordanous2012a}:
+Anna Jordanous found that `evaluation of computational creativity is not being performed in a systematic or standard way' \autocite[p.2]{Jordanous2011} and proposed `\ac{SPECS}' \autocite[p.137-140]{Jordanous2012a}:
 \label{s:specs}
 
 \begin{quotation}
@@ -236,7 +236,7 @@ This is further strengthened by Richard Mayer stating that we need a `clearer de
 
 \spirals
 
-Linda Candy draws inspiration for the evaluation of (interactive) creative computer systems from \gls{hci}. The focus of evaluation in \gls{hci} has been on usabilty, she says \autocite[p.23]{Candy2012}, which may not be as useful in creativity research. She argues that in order to successfully evaluate an artefact, the practitioner needs to have `the necessary information including constraints on the options under consideration.' \autocite[p.7]{Candy2012}
+Linda Candy draws inspiration for the evaluation of (interactive) creative computer systems from \ac{HCI}. The focus of evaluation in \ac{HCI} has been on usabilty, she says \autocite[p.23]{Candy2012}, which may not be as useful in creativity research. She argues that in order to successfully evaluate an artefact, the practitioner needs to have `the necessary information including constraints on the options under consideration.' \autocite[p.7]{Candy2012}
 
 Evaluation happens at every stage of the process (i.e. from design $\to$ implementation $\to$ operation). Some of the key aspects of evaluation Candy highlights are:
 
@@ -247,7 +247,7 @@ Evaluation happens at every stage of the process (i.e. from design $\to$ impleme
   \item reflective practice
 \end{itemize}
 
-Candy introduces the \gls{mmce}\marginnote{\faicon{object-group}~\ref{fig:candy02}} with four main elements of people, process, product and context \autocite[p.11]{Candy2012} similar to some of the models of creativity\marginnote{§~\ref{ch:creativity}} we have seen in chapter~\ref{ch:creativity}.
+Candy introduces the \ac{MMCE}\marginnote{\faicon{object-group}~\ref{fig:candy02}} with four main elements of people, process, product and context \autocite[p.11]{Candy2012} similar to some of the models of creativity\marginnote{§~\ref{ch:creativity}} we have seen in chapter~\ref{ch:creativity}.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -274,11 +274,11 @@ Furthermore it is interesting to know the judging criteria for the Prix Ars Elec
 
 Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems \citeyear{Wiggins2006} which is largely based on Boden's theory of creativity \citeyear{Boden2003}. The framework uses three criteria for measuring creativity: `relevance, acceptability and quality'.
 
-Geraint Wiggins previously described a formal notation and set of rules for the description, analysis and comparison of creative systems in the form of his \gls{csf} \autocite{Wiggins2006} which was largely based on Margaret Boden's theory of creativity \autocite{Boden2003}. Graeme Ritchie then contributed to this framework \autocite{Ritchie2012} and we will base our work on his revised version of this framework.\todo{It's not an aesthetic framework, but rather a functionalist framework} The \gls{csf} provides a formal description for Boden's concepts of exploratory and transformational creativity. Wiggins's R–transformation and T–transformation is akin to Boden's H-creativity and P-creativity respectively. To enable the transition from exploratory to transformational creativity in his framework, Wiggins introduced meta-rules which allow us to redefine our conceptual space in a new way.
+Geraint Wiggins previously described a formal notation and set of rules for the description, analysis and comparison of creative systems in the form of his \ac{CSF} \autocite{Wiggins2006} which was largely based on Margaret Boden's theory of creativity \autocite{Boden2003}. Graeme Ritchie then contributed to this framework \autocite{Ritchie2012} and we will base our work on his revised version of this framework.\todo{It's not an aesthetic framework, but rather a functionalist framework} The \ac{CSF} provides a formal description for Boden's concepts of exploratory and transformational creativity. Wiggins's R–transformation and T–transformation is akin to Boden's H-creativity and P-creativity respectively. To enable the transition from exploratory to transformational creativity in his framework, Wiggins introduced meta-rules which allow us to redefine our conceptual space in a new way.
 
 It is important to note here that the exploratory search in an information retrieval sense should not be mistaken with what is discussed here. Exploratory search (for a creative solution to a problem) in the Wiggins/Ritchie/Boden sense happens one step before transformational search. This means that we want to end up with transformational tools from this framework (rather than exploratory ones) to use in our exploratory Web search system.
 
-Ritchie described the \gls{csf} as a set of initial concepts, which create `further concepts one after another, thus ``exploring the space''' but also argued that a search system would practically only go through a limited number of steps and therefore proposed some changes and additions to the framework. He summarised Wiggins' original \gls{csf} as consisting of the following basic elements:
+Ritchie described the \ac{CSF} as a set of initial concepts, which create `further concepts one after another, thus ``exploring the space''' but also argued that a search system would practically only go through a limited number of steps and therefore proposed some changes and additions to the framework. He summarised Wiggins' original \ac{CSF} as consisting of the following basic elements:
 
 \begin{enumerate}
 	\item the universal set of concepts $U$,
@@ -295,7 +295,7 @@ This set of elements is described as the object-level (enabling exploratory sear
 A typical search process would go as follows. We start with an initial set of concepts C that represent our conceptual space and a query. We then explore C and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden's sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden's transformational search) with slightly different quality criteria, as suggested in the next section.
 
 \paragraph{Uncreativity}
-Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework\marginnote{\faicon{table}~\ref{tab:wiggins}}. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \gls{csf}.
+Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework\marginnote{\faicon{table}~\ref{tab:wiggins}}. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \ac{CSF}.
 \todo{explain more}
 
 \begin{table}[!htbp]
@@ -337,7 +337,7 @@ In a diagram on the difference between `computational creativity' and `cognitive
 
 
 % Pataphysical Search Framework
-% We have explained earlier that evaluating creative search results largely depends on the user's understanding of relevance, usefulness and creativity. We can define pataphysical concepts and evaluation criteria in terms of the \gls{csf} to provide a common ground for this understanding. The suggested definitions should provide more suitable criteria for the analysis of creative search results rather than traditional results.
+% We have explained earlier that evaluating creative search results largely depends on the user's understanding of relevance, usefulness and creativity. We can define pataphysical concepts and evaluation criteria in terms of the \ac{CSF} to provide a common ground for this understanding. The suggested definitions should provide more suitable criteria for the analysis of creative search results rather than traditional results.
 % Norm	N_α (X)={c ∈X ┤|N(c)> α}
 %  N∈ [0,1]^X
 % Value	V_α (X)={c ∈X ┤|V(c)> α}
@@ -358,7 +358,7 @@ In a diagram on the difference between `computational creativity' and `cognitive
 %  S_obj→ S^meta→ 〖S'〗_obj
 % Absolute	V_1 (N_1 (X))  ≠ \emptyset
 % (criteria for value and norm must be perfectly matched)
-% Table 3 – Extension to the \gls{csf} to provide a notation for pataphysical concepts. Norm and value are defined in a traditional sense, with the other pataphysical concepts being defined around those two.
+% Table 3 – Extension to the \ac{CSF} to provide a notation for pataphysical concepts. Norm and value are defined in a traditional sense, with the other pataphysical concepts being defined around those two.
 % Table 3 shows various definitions for pataphysical principles that can be applied as criteria in search processes. There are of course more ways in which they could be expressed but as a demonstration this should suffice.
 % 	Combined with a set of evaluative rules inspired by Ritchie (2001), this forms an essential part of creative exploratory search systems. Some example evaluative criteria are shown here:
 % 	The norm and value ratings by themselves have lower importance than the pata rating,
