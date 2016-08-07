@@ -74,6 +74,58 @@
       \field{pages}{435\bibrangedash 447}
       \range{pages}{13}
     \endentry
+    \entry{FlickrAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=3b0f3a25d07e5d9dbdf98db15ee70410}{%
+           family={Flickr},
+           family_i={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b0f3a25d07e5d9dbdf98db15ee70410}
+      \strng{fullhash}{3b0f3a25d07e5d9dbdf98db15ee70410}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{extrayear}{1}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The App Garden}
+      \field{title}{{flickr.photo.search}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://www.flickr.com/services/api/flickr.photos.search.html
+      \endverb
+    \endentry
+    \entry{FlickrGuideAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=3b0f3a25d07e5d9dbdf98db15ee70410}{%
+           family={Flickr},
+           family_i={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b0f3a25d07e5d9dbdf98db15ee70410}
+      \strng{fullhash}{3b0f3a25d07e5d9dbdf98db15ee70410}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{extrayear}{2}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Flickr Developer Guide: API}
+      \field{title}{{Getting Started}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://www.flickr.com/services/developer/api/
+      \endverb
+    \endentry
     \entry{Foucault1966}{inbook}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=984e5967448051538555a64aac11ed21}{%
@@ -103,6 +155,58 @@
       \field{pages}{xv\bibrangedash xxiv}
       \range{pages}{10}
     \endentry
+    \entry{GettyOverviewAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7243694bba13b1e38a8a0e2acd4fae93}{%
+           family={Getty},
+           family_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{7243694bba13b1e38a8a0e2acd4fae93}
+      \strng{fullhash}{7243694bba13b1e38a8a0e2acd4fae93}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{extrayear}{1}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Getty Images API}
+      \field{title}{{API Overview}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb http://developers.gettyimages.com/api/docs/v3/api-overview.html
+      \endverb
+    \endentry
+    \entry{GettyAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7243694bba13b1e38a8a0e2acd4fae93}{%
+           family={Getty},
+           family_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{7243694bba13b1e38a8a0e2acd4fae93}
+      \strng{fullhash}{7243694bba13b1e38a8a0e2acd4fae93}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{extrayear}{2}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Getty Images API}
+      \field{title}{{Search For Creative Images}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb http://developers.gettyimages.com/api/docs/v3/search/images/creative/get/
+      \endverb
+    \endentry
     \entry{GoogleCI}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=8b36e9207c24c76e6719268e49201d94}{%
@@ -113,6 +217,7 @@
       \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
       \field{sortinit}{G}
       \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{extrayear}{1}
       \field{labelyear}{2016}
       \field{labelmonth}{08}
       \field{labelday}{04}
@@ -126,6 +231,32 @@
       \field{urlyear}{2016}
       \verb{url}
       \verb https://www.google.com/insidesearch/howsearchworks/crawling-indexing.html
+      \endverb
+    \endentry
+    \entry{YouTubeAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=8b36e9207c24c76e6719268e49201d94}{%
+           family={Google},
+           family_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{extrayear}{2}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{YouTube Data API}
+      \field{title}{{Search: list}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://developers.google.com/youtube/v3/docs/search/list
       \endverb
     \endentry
     \entry{Hendler2011}{inproceedings}{}
@@ -278,6 +409,84 @@
       \field{year}{1999}
       \field{pages}{449\bibrangedash 460}
       \range{pages}{12}
+    \endentry
+    \entry{BingAzureAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           family_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{1}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Microsoft Azure Marketplace}
+      \field{title}{{Bing Search API}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb http://datamarket.azure.com/dataset/bing/search#schema
+      \endverb
+    \endentry
+    \entry{BingAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           family_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{2}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Microsoft Developer Network}
+      \field{title}{{Image Search API Reference}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://msdn.microsoft.com/en-us/library/dn760791.aspx
+      \endverb
+    \endentry
+    \entry{TranslatorAPI}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={Microsoft},
+           family_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{3}
+      \field{labelyear}{2016}
+      \field{labelmonth}{08}
+      \field{labelday}{07}
+      \field{datelabelsource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Microsoft Azure Marketplace}
+      \field{title}{{Microsoft Translator - Text Translation}}
+      \field{urlday}{07}
+      \field{urlmonth}{08}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://datamarket.azure.com/dataset/bing/microsofttranslator
+      \endverb
     \endentry
     \entry{Schulman2009}{article}{}
       \name{author}{1}{}{%

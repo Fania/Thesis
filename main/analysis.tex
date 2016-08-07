@@ -390,17 +390,17 @@ Google recommends having a ``response time under 200ms''\footnote{\url{https://d
 \subsection{Index}
 \label{s:analindex}
 
-\todo{check analindex refs and index refs}
-
 The index\marginnote{§~\ref{s:index}} is a central part of the \url{pata.physics.wtf} system. It is generated when the program/server is first started up but then cached and re-used. The initial process of going over all the text files in each corpus takes a few minutes. Of course in comparison to a full Internet crawl this is a tiny amoutn of data to be processed. 
 
 The Faustroll corpus\marginnote{§~\ref{s:corpora}} for example contains 28 texts\footnote{This is technically not true since a few of those files are empty.}. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge's \textit{The Rime of the Ancient Mariner} is a poem whereas the Edgar Allan Poe file contains a collection of all of his works. The total size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.
 
 Now, the size of the actual index data structure is interesting. Processing the Faustroll corpus alone produced an index of 12.4MB. That's larger than the actual size of the corpus. Remember, the index contains each word that occurs anywhere in the corpus together with the list of files it is found in and the specific locations within each text. This includes English words buts also French and German terms since the Faustroll corpus is multi-lingual. The combined index is therefore 35.2MB large.
 
+Figure~\ref{fig:termdocs}\marginnote{\faicon{object-group}~\ref{fig:termdocs}} shows some example words and how often they occur in three example files of the Faustroll corpus in the form of a \ac{TDM} (see chapter~\ref{ch:technology} for more details). Implementing the Faustroll corpus index as a \ac{TDM} properly, would result in a $78893 \times 28$ matrix---the number of words (not counting duplicates) times the number of files in the corpus.
+
 \spirals
 
-As mentioned before, the index is structured in a double nested dictionary style list as shown below.
+As mentioned before\marginnote{§~\ref{s:index}}, the index is structured in a double nested dictionary style list as shown below.
 
 \begin{minted}{text}
 {
@@ -535,7 +535,26 @@ If we decrease or increase the number of errors allowed we get drastically diffe
 
 \todo{semantic hierarchy visualised?}
 \todo{i tried modeeling the three alignments but how?}
-\todo{}
+
+
+            Generalisation (Hypernym)
+
+Whole (holonym)    synonyms       Part (meronym)
+
+            Specialisation (Hyponym)
+
+
+
+      plant
+forest tree branch
+      oak
+
+
+
+
+
+
+
 
 The syzygy function goes through the following process.
 
@@ -564,9 +583,38 @@ Step (2) then retrieves related terms. Below is a list of terms it found. Not al
 \todo{table showing hypo, hyper and holonyms numbers side by side for a query}
 
 
-\subsection{Images}
+\subsection{APIs}
+\label{s:apis}
 
-The image search can produce quite intersting results as well. A search for ``blue kitten'' on Flickr produces the following resulting pataphysicalised query terms: ``[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]'' which are then passed into ten seperate \ac{API} calls to retrieve one image each (see figure~\ref{fig:imgspiralflickr}\marginnote{§~\ref{fig:imgspiralflickr}}). The results show a variety of images seemingly unrelated to each other. 
+The \ac{API} functions all share one major issue. This is to do with how images and videos are retrieved from the external store. Some people tend to upload sequences of images depicting the same content from different angles or time frames with the same tags. A query for hat tag then returns all of those matches even though the images are almost identical in nature. An example of this can be seen in figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}. This may have been addressed by adding checks in the code that make sure authors don't appear twice in the results.
+
+Another way to address this was attempted by changing the query term for each image or video that is retrieved. As mentioned above, this only worked for some of the \ac{API}s.
+
+
+\subsubsection{Query Structure}
+
+The text search functionality of \url{pata.physics.wtf} is set up to only work with one \emph{single query term},
+\todo{explain why}
+whereas the image and video search works on \emph{multiple word queries}. This is mainly due to the fact that the external \ac{API}s are already setup to allow for more than one search term. Usually they allow extra parameters too to narrow down the results. So for example we can search for ``blue kitten'' and the three \ac{API}s will return their respective results related to `blue kittens'. The service provided by companies in the form of \ac{API}s is not always free, sometimes only at a low usage quota. \ac{API}s are updated often and not always back-compatible, meaning out-of-date code needs to be maintained regularly to assure it works if changes to the \ac{API} are made.
+
+The lists below show the parameters related to the query for Flickr, Getty, Bing and YouTube.
+
+\todo{how are they currently set up in my code?}
+\paragraph{Flickr}
+\begin{quotation}
+  \begin{description}
+    \item[text (Optional)] A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character.
+    \item[tags (Optional)] A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character.
+    \item[tag\_mode (Optional)] Either `any' for an OR combination of tags, or `all' for an AND combination. Defaults to `any' if not specified.
+  \end{description}
+  \sourceatright{\autocite{FlickrAPI}}
+\end{quotation}
+
+The Flickr function in \url{pata.physics.wtf} uses the \py{tags} parameter to set the query and a \py{tag_mode} parameter of `all' to ensure multi-word queries are run as a conjunction. In 
+\todo{link back to implementation}
+I explained how the Flickr algorithm essentially runs ten times, once for each pataphysicalised query term, to retrieve ten different images. This decision was taken to make sure images reflect the varied nature of the patadata.
+
+A search for ``blue kitten'' on Flickr produces the following resulting pataphysicalised query terms: ``[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]'' which are then passed into ten seperate \ac{API} calls to retrieve one image each (see figure~\ref{fig:imgspiralflickr}\marginnote{§~\ref{fig:imgspiralflickr}}). The results show a variety of images seemingly unrelated to each other. 
 
 \begin{figure}[!htbp]
 \centering
@@ -575,7 +623,17 @@ The image search can produce quite intersting results as well. A search for ``bl
 \label{fig:imgspiralflickr}
 \end{figure}
 
-For Getty the image search works slightly differently due to its \ac{API} restrictions. The query ``blue kitten'' gets turned into the word ``racy'' which then calls the \ac{API} to retrieve ten results (see figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}). The results mostly show racing cars from various angles although one oddball snuck in too: an office scene Getty has deemed to be `racy' (a guy in a suit checking out a lady's behind while she's leaning over a laptop).
+
+\paragraph{Getty}
+\begin{quotation}
+  \begin{description}
+    \item[keyword\_ids] Return only images tagged with specific keyword(s). Specify using a comma-separated list of keyword Ids. If keyword Ids and phrase are both specified, only those images matching the query phrase which also contain the requested keyword(s) are returned.
+    \item[phrase] Search images using a search phrase.
+  \end{description}
+  \sourceatright{\autocite{GettyAPI}}
+\end{quotation}
+
+Getty uses the \py{phrase} parameter to set the query. It only creates one pataphysicalised query term from the original query and calls for ten results based on that. This decision was based on the quota restrictions\marginnote{§~\ref{s:quota}} defined by Getty. Their limit is based on calls per second rather than calls per day or month. This means we cannot run ten calls for each user query as we did with FLickr. The query ``blue kitten'' gets turned into the word ``racy'' which then calls the \ac{API} to retrieve ten results (see figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}). The results mostly show racing cars from various angles although one oddball snuck in too: an office scene Getty has deemed to be `racy' (a guy in a suit checking out a lady's behind while she's leaning over a laptop).
 
 \begin{figure}[!htbp]
 \centering
@@ -584,21 +642,65 @@ For Getty the image search works slightly differently due to its \ac{API} restri
 \label{fig:imgspiralgetty}
 \end{figure}
 
-\spirals
+\paragraph{Bing}
+\begin{quotation}
+  \begin{description}
+    \item[query] The user's search query string. The query string cannot be empty. The query string may contain Bing Advanced Operators\footnote{For example `AND', `OR', `imagesize:', `NOT', or `phrase'}. For example, to limit images to a specific domain, use the site: operator. To help improve relevance and the results, you should always include the user's query string in an insights query (see insightsToken). This parameter is supported only by the Image API; do not specify this parameter when calling the Trending Images API.
+  \end{description}
+  \sourceatright{\autocite{BingAPI}\footnote{Microsoft will discontinue this version of the current \ac{API} in December 2016. The new version is documented on \url{https://www.microsoft.com/cognitive-services/en-us/bing-image-search-api}.}}
+\end{quotation}
 
-The \ac{API} functions all share one major issue. This is to do with how images and videos are retrieved from the external store. Some people tend to upload sequences of images depicting the same content from different angles or time frames with the same tags. A query for hat tag then returns all of those matches even though the images are almost identical in nature. An example of this can be seen in figure~\ref{fig:imgspiralgetty}\marginnote{§~\ref{fig:imgspiralgetty}}. This may have been addressed by adding checks in the code that make sure authors don't appear twice in the results.
+For the Bing function uses the \py{query} parameter to set the query in the same way as Getty.
 
-Another way to address this was attempted by changing the query term for each image or video that is retrieved. As mentioned above, this only worked for some of the \ac{API}s.
+\paragraph{YouTube}
+\begin{quotation}
+  \begin{description}
+    \item[q] The q parameter specifies the query term to search for. Your request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos that are associated with one of several search terms. For example, to search for videos matching either ``boating'' or ``sailing'', set the q parameter value to boating|sailing. Similarly, to search for videos matching either ``boating'' or ``sailing'' but not ``fishing'', set the q parameter value to boating|sailing -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-escaped value for the pipe character is \%7C.
+  \end{description}
+  \sourceatright{\autocite{YouTubeAPI}}
+\end{quotation}
 
-\spirals
+Youtube works in a similar way as well. The \py{q} parameter is set to the pataphysicalised query term and one call retrieves ten results.
 
 Something else to consider is perhaps that it is not entirely clear how the internal search for each \ac{API} works. This means that there's a possibility that they do their own query expansion\marginnote{§~\ref{s:qexpansion}} in the background to find more matches.
+
+
+\subsubsection{Quota}
+\label{s:quota}
+
+Each \ac{API} has a different quota for their subscription packages. 
+
+\begin{description}
+  \item[Flickr] \num{3600} queries per hour are free \autocite{FlickrGuideAPI}.
+  \item[Getty] \num{5} calls per second, unlimited calls per day \autocite{GettyOverviewAPI}.
+  \item[Bing] \num{5000} transactions per month are free. A transaction is one request that returns one page of results \autocite{BingAzureAPI}.
+  \item[YouTube] \num{50000000} units per day, \num{300000} units per \num{100} seconds per user, and \num{3000000} requests per \num{100} seconds are free. A call to the video search method counts as \num{100} units \autocite{YouTubeAPI}.
+  \item[Microsoft Translator] \num{2000000} characters per month are free. Note the quota relates to single characters, not words \autocite{TranslatorAPI}.
+\end{description}
+
+
+\section{Formalisation}
+
+A formal description of the \url{pata.physics.wtf} system in terms of an \ac{IR} model described in chapter~\ref{s:irmodels} is unsuitable.
+
+Remember, an \ac{IR} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
+\itab{$D$} \tab{is the set of documents,}\\
+\itab{$Q$} \tab{is the set of queries,}\\
+\itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors}\\
+\itab{}    \tab{~~~linear algebra\ldots}\\
+\itab{$R(q_i, d_j)$}
+            \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
+\itab{$t$} \tab{is the number of index terms in a document collection,}\\
+\itab{$V$} \tab{is the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document}\\
+\itab{}     \tab~~~{collection (vocabulary).}
+
+$D$ is the set of files we have in either the Faustroll or Shakespeare corpus. $Q$ is the given user query.
 
 
 
 \section{Design}
 
-It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using focus groups using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example. 
+It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:aspirations},~\ref{ch:aspirations}). 
 
 Figures~\ref{fig:poemtree},~\ref{fig:listsourcetree}~and~\ref{fig:listalgotree} show the three different text result styles. The poetry\marginnote{\faicon{picture-o}~\ref{fig:poemtree}} is compact and invites users to read all 14 (or less) lines. The two list styles\marginnote{\faicon{picture-o}~\ref{fig:listsourcetree}~\&~\ref{fig:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
 
@@ -626,7 +728,11 @@ Figures~\ref{fig:poemtree},~\ref{fig:listsourcetree}~and~\ref{fig:listalgotree} 
 
 \section{Science Fiction}
 
-Where does this project stand in the wider world and the progress of computing, \ac{AI} and creativity? \ac{AI} and robotics is alluring as a research topic because it is so prevelant in Science Fiction. Computer creativity rarely plays a centrol role though. We regularly read headlines that tell us that yet another kind of \ac{AI}-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near perfectly human-like (and yet cannot walk up stairs). There are so many examples of advances that are hailed as the next big thing which aren't all that great. 
+A more theoretical question regarding the evolution of creative computing is related to developments in \ac{AI}. I have previously explored the similarities and differences 
+
+HERE
+
+Where does this project stand in the wider world and the progress of computing, \ac{AI} and creativity? \ac{AI} and robotics is alluring as a research topic because it is so prevelant in Science Fiction. Computer creativity rarely plays a centrol role though. We regularly read headlines that tell us that yet another kind of \ac{AI}-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing which aren't all that great in the grand scheme of things. 
 
 \subsection{AI}
 This is also evident in games, for example \ac{VR} and \ac{AR}. The Oculus Rift and similar systems are advertised so much you might believe they are actually about to hit mainstream and every kid will own a \ac{VR} console and headset. Yet they are still way too expensive to be mainstream and motion sickness is also still an issue (and probably always will). These industries are so ``hip'' any publication is seen as the new cool thing without taking into account the history and work that has been done previously in perhaps slightly different disciplines. This is the case for example with a recent article on \ac{VR} sickness and how to compat it. This is a well known problem already---motion sickness already exists in normal games. Similar to epilepsy problems.
@@ -638,11 +744,14 @@ This is also evident in games, for example \ac{VR} and \ac{AR}. The Oculus Rift 
 \ac{AR} has very recently received a massive boom thanks to Pokenmon Go (released in Australia, New Zealand and the USA in July 2016). It has become a phenomenon since then.
 \todo{find pokemon links}
 
-What about IBM's Watson\footnote{See \url{http://www.ibm.com/watson/}}, Microsofts Twitter \ac{AI} Chatbot\footnote{See \url{http://www.ibm.com/watson/}}, Google's AlphaGo\footnote{See \url{https://deepmind.com/alpha-go}} and Hanson Robotics Sophia robot\footnote{See \url{http://www.hansonrobotics.com/}}? How does this relate to my work? Practially of course they are all unrelated. On a deeper level though we can start asking interesting questions. 
+What about IBM's Watson\footnote{See \url{http://www.ibm.com/watson/}}, Microsofts Twitter \ac{AI} chatbot Tay\footnote{See \url{https://web.archive.org/web/20160414074049/https://www.tay.ai/} for an archived version of the original website which is now offline. See also \url{https://twitter.com/tayandyou}, \url{https://www.theguardian.com/technology/2016/mar/24/tay-microsofts-ai-chatbot-gets-a-crash-course-in-racism-from-twitter}, and \url{https://www.theguardian.com/technology/2016/mar/30/microsoft-racist-sexist-chatbot-twitter-drugs}. Wikipedia also has a good article and sources on Tay: \url{https://en.wikipedia.org/wiki/Tay_(bot)}}, Google's AlphaGo\footnote{See \url{https://deepmind.com/alpha-go}} and Hanson Robotics Sophia robot\footnote{See \url{http://www.hansonrobotics.com/}}? How does this relate to my work? Practially of course they are all unrelated. On a deeper level though we can start asking interesting questions. 
+
+https://www.engadget.com/2016/08/07/ibms-watson-ai-saved-a-woman-from-leukemia/
+https://xkcd.com/1619/ XKCD WATSON
 
 \begin{description}
   \item[IBM Watson] Watson is a question answering expert system. It famously won against human Jeopardy! champions in 2011.
-  \item[Microsoft Chatbot] 
+  \item[Microsoft Tay] 
   \item[Google AlphaGo] AlphaGo is a system for playing the game Go. It won against a top human professional player in 2015.
   \item[Hansen Sophia]
 \end{description}

@@ -154,6 +154,8 @@ pdflatex --file-line-error -shell-escape main
 - [ ] table captions on top?
 - [ ] add space before floats
 - [ ] description list spacing by adding [longest word] after environment
+- [ ] cut pdf with spiral in it for line \spirals
+
 
 
 
