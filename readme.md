@@ -157,6 +157,15 @@ pdflatex --file-line-error -shell-escape main
 - [ ] cut pdf with spiral in it for line \spirals
 
 
+Wordcount after Boot Camp 54776 total
+
+from nltk.corpus import wordnet
+book = wordnet.synsets('book')[0]
+book.hypernyms()
+>>> [Synset('publication.n.01')]
+book.part_meronyms()
+>>> [Synset('running_head.n.01'), Synset('signature.n.05')]
+
 
 
 titles of books etc in italics
