@@ -74,16 +74,12 @@ The internal transformation of a query term to the final results is essentially 
 It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side below in table~\ref{tab:algorithmscomp}.
 
 \begin{table}[!htbp]
+\caption[Comparison of patalgorithms]{Comparison of patalgorithms showing a selection of results for each.}
+\label{tab:algorithmscomp}
   \begin{tabu}{X[1,L]X[3,L]X[3,L]X[2,L]}
   \toprule
   % \cline{2-4}
-  \textbf{Query}
-  &
-  \textbf{Clinamen}
-  &
-  \textbf{Syzygy}
-  &
-  \textbf{Antinomy}
+  \textbf{Query} & \textbf{Clinamen} & \textbf{Syzygy} & \textbf{Antinomy}
   \\ \midrule
   \textbf{clear}
   &
@@ -126,8 +122,6 @@ It is quite interesting to compare the algorithms with each other. By removing t
   recorded, dead
   \\ \bottomrule
   \end{tabu}
-\caption[Comparison of patalgorithms]{Comparison of patalgorithms showing a selection of results for each.}
-\label{tab:algorithmscomp}
 \end{table}
 
 Seeing the results in a table like\marginnote{\faicon{table}~\ref{tab:algorithmscomp}} this gives an almost immediate idea of how each algorithm works. This is not meant to be transparent and perhaps only after knowing the ins and outs of the algorithms can one recognise how each result was found. 
@@ -206,13 +200,15 @@ The different language is quite obvious. This is helped by the fact that the Sha
 The above examples (table~\ref{tab:algorithmscomp} and figure~\ref{fig:2poems} give a good overview of the two main factors in the pataphysicalisation process, namely the three patalgorithms and the two corpora. Both only reflect a small selection of the variety of results produced though. It is therefore quite interesting to look at some actual numbers.
 
 \begin{table}[!htbp]
+\caption[Faustroll vs Shakespeare in numbers]{Faustroll versus Shakespeare in numbers}
+\label{tab:faustshake}
   \centering
   \begin{tabu}{llcccc}
   \toprule
   \textbf{Query} & \textbf{Corpus} & \textbf{Results} & \textbf{Reverbs} & \textbf{Origins} & \textbf{Poems}\\
   \midrule
-  \multirow{2}{*}{flower} & Faustroll   & 89   & 24 & 18 & \num{7.8e10}\\
-                          & Shakespeare & 157  & 15 & 38 & \num{3.8e14}\\
+  \multirow{2}{*}{flower} & Faustroll   & 90   & 25 & 18 & \num{7.8e10}\\
+                          & Shakespeare & 158  & 15 & 38 & \num{3.8e14}\\
   \cmidrule{1-6}
   \multirow{2}{*}{clear}  & Faustroll   & 542  & 79 & 23 & \num{1.3e22}\\
                           & Shakespeare & 1445 & 72 & 38 & \num{1.5e28}\\
@@ -224,8 +220,6 @@ The above examples (table~\ref{tab:algorithmscomp} and figure~\ref{fig:2poems} g
                           & Shakespeare & 15   & 2  & 14 & \num{1}\\
   \bottomrule
   \end{tabu}
-\caption[Faustroll vs Shakespeare in numbers]{Faustroll versus Shakespeare in numbers}
-\label{tab:faustshake}
 \end{table}
 
 Table~\ref{tab:faustshake}\marginnote{\faicon{table}~\ref{tab:faustshake}} shows a comparison of the two different corpora with four example query terms.
@@ -249,6 +243,8 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 
 % \todo{add french query term cœur}
 \begin{table}[!htbp]
+\caption[Numbers per algorithm]{Results-Reverberations-Origin numbers per algorithm}
+\label{tab:algonums}
 \centering\small
 \begin{tabu}{ll|ccc|ccc|ccc|ccc}
 \toprule
@@ -264,6 +260,8 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 & disorder & 0 & 0 & 0 & 159 & 127 & 23 & 10 & 2 & 10 & \multicolumn{3}{c}{169---40---23} \\
 \multicolumn{1}{l}{}
 & stuck & 59 & 14 & 13 & 181 & 43 & 22 & 11 & 3 & 9 & \multicolumn{3}{c}{251---47---22} \\ 
+\multicolumn{1}{l}{}
+& feather & 78 & 13 & 12 & 83 & 37 & 14 & 0 & 0 & 0 & \multicolumn{3}{c}{161---29---14} \\[0.5cm] 
 \cmidrule{1-12}
 \multicolumn{1}{l}{\multirow{4}{*}{\textbf{\rotatebox{90}{Shakespeare}}}}
 & clear & 435 & 20 & 38 & 997 & 90 & 38 & 13 & 8 & 12 & \multicolumn{3}{c}{1445---72---38} \\
@@ -273,10 +271,10 @@ A slightly different angle to consider is a comparison of these kind of numbers 
 & disorder & 0 & 0 & 0 & 326 & 127 & 38 & 29 & 2 & 29 & \multicolumn{3}{c}{355---26---38} \\
 \multicolumn{1}{l}{}
 & stuck & 152 & 14 & 37 & 479 & 43 & 38 & 34 & 3 & 34 & \multicolumn{3}{c}{665---41---38} \\ 
+\multicolumn{1}{l}{}
+& feather & 217 & 13 & 38 & 195 & 37 & 38 & 0 & 0 & 0 & \multicolumn{3}{c}{412---25---38} \\ 
 \bottomrule
 \end{tabu}
-\caption[Numbers per algorithm]{Results-Reverberations-Origin numbers per algorithm}
-\label{tab:algonums}
 \end{table}
 
 The first immediate observation surely must be that the Antinomy algorithm produces the fewest results, in two cases even none at all. This is caused by the fact that the Antinomy algorithm\marginnote{§~\ref{s:antinomy}} is based on semantic opposites in WordNet and some words simply do not have defined opposites. Addressing this issue was left for future work mentioned in chapter~\ref{ch:future}\marginnote{§~\ref{ch:future}}. On the other hand the Syzygy algorithm\marginnote{§~\ref{s:syzygy}}, which is also based on WordNet, produces most results on average.
@@ -287,6 +285,7 @@ Looking at the origins column in table~\ref{tab:algonums}\marginnote{\faicon{tab
 
 \paragraph*{Faustroll}
 \begin{itemize}
+\vspace{-0.5cm}
   \item There are three empty texts (Peladan, de Chilra, de Regnier).
   \item The total number of words is \num{1738461}. Of this, \num{1204158} words are from English texts (70\%), \num{497144} are French (28\%) and \num{37159} are in German (2\%).
   \item The shortest text contains \num{3853} words (Coleridge).
@@ -297,6 +296,7 @@ Looking at the origins column in table~\ref{tab:algonums}\marginnote{\faicon{tab
 
 \paragraph*{Shakespeare}
 \begin{itemize}
+\vspace{-0.5cm}
   \item The total number of words is \num{883460}\footnote{According to \autocite{Efron1976} Shakespeare used \num{31534} different words in his works, about half of which he only used once (\num{14376}). They cite the total number of words used in his corpus as \num{884647}.}.
   \item The shortest text contains \num{2568} words (Lover's Complaint).
   \item The longest text contains \num{32031} words (Hamlet).
@@ -343,48 +343,48 @@ cellar: {l_19: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]}
 The above pseudocode shows an entry for the word `cellar' with only the positions for the \py{l_19} file\footnote{Francois Rabelais: Gargantua and Pantagruel}. Another example of an index entry for the term `doctor' can be found on page~\pageref{c:pos}. The sentences for the above positions are shown below. Using only the first occurance (position) means the system ignores the rest.
 
 \begin{itemize}
-  \item rope wine is let down into a cellar
-  \item bread and holy water of the cellar
-  \item year who had a cool cellar under ground
-  \item cellar
-  \item that Nick in the dark cellar
-  \item on the cellar door
-  \item in mind of the painted cellar in the oldest city in the world
-  \item and the painted cellar also
+  \item ``rope wine is let down into a cellar''
+  \item ``bread and holy water of the cellar''
+  \item ``year who had a cool cellar under ground''
+  \item ``cellar''
+  \item ``that Nick in the dark cellar''
+  \item ``on the cellar door''
+  \item ``in mind of the painted cellar in the oldest city in the world''
+  \item ``and the painted cellar also''
 \end{itemize}
 
 Table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} shows some example queries for both corpora and the number of results retrieved with the first position only used (as in the live version of \url{pata.physics.wtf}) in column 5 and on column 3 with all results retrieved. The final column shows what percentage of results are retrieved using the `first only' method. The average percentage for this is about 10\%. 
 
 \begin{table}[!htbp]
-\centering
-\begin{tabu}{llccccc}
-\toprule
- & & \multicolumn{2}{c}{\textbf{Return all}} & \multicolumn{2}{c}{\textbf{First only}} & \\
-\cmidrule{3-4}\cmidrule{5-6}
-\textbf{Query} & \textbf{Corpus} & \textit{Count} & \textit{Time} & \textit{Count} & \textit{Time} & \textbf{Percent} \\
-\midrule
-\multirow{2}{*}{clear} 
-& Faustroll   & 8751    & 59s    & 542   & 1.83s   & 6.19\%  \\
-& Shakespeare & 11304   & 69.2s  & 1445  & 3.59s   & 12.78\% \\
-\cmidrule{1-7}
-\multirow{2}{*}{solution} 
-& Faustroll   & 693     & 11.7s  & 53    & 0.98s   & 7.65\%  \\
-& Shakespeare & 547     & 8.51s  & 86    & 1.07s   & 15.72\% \\
-\cmidrule{1-7}
-\multirow{2}{*}{form} 
-& Faustroll   & 19222   & 120s   & 1064  & 2.81s   & 5.54\%  \\
-& Shakespeare & 13635   & 90s    & 2125  & 4.63s   & 15.58\% \\
-\cmidrule{1-7}
-\multirow{2}{*}{record}
-& Faustroll   & 5199    & 38s    & 275   & 1.72s   & 5.29\%  \\
-& Shakespeare & 7631    & 49.2s  & 794   & 2.09s   & 10.40\% \\ 
-\bottomrule
-\end{tabu}
 \caption[Count and time of results]{Count, time and percentage of results retrieved}
 \label{tab:percent}
+  \centering
+  \begin{tabu}{llccccc}
+  \toprule
+  & & \multicolumn{2}{c}{\textbf{Return all}} & \multicolumn{2}{c}{\textbf{First only}} & \\
+  \cmidrule{3-4}\cmidrule{5-6}
+  \textbf{Query} & \textbf{Corpus} & \textit{Count} & \textit{Time} & \textit{Count} & \textit{Time} & \textbf{Percent} \\
+  \midrule
+  \multirow{2}{*}{clear} 
+  & Faustroll   & \num{8751}  & 59s   & \num{542}  & 1.83s & 6.19\%  \\
+  & Shakespeare & \num{11304} & 69.2s & \num{1445} & 3.59s & 12.78\% \\
+  \cmidrule{1-7}
+  \multirow{2}{*}{solution} 
+  & Faustroll   & \num{693}   & 11.7s & \num{53}   & 0.98s & 7.65\%  \\
+  & Shakespeare & \num{547}   & 8.51s & \num{86}   & 1.07s & 15.72\% \\
+  \cmidrule{1-7}
+  \multirow{2}{*}{form} 
+  & Faustroll   & \num{19222} & 120s  & \num{1064} & 2.81s & 5.54\%  \\
+  & Shakespeare & \num{13635} & 90s   & \num{2125} & 4.63s & 15.58\% \\
+  \cmidrule{1-7}
+  \multirow{2}{*}{record}
+  & Faustroll   & \num{5199}  & 38s   & \num{275}  & 1.72s & 5.29\%  \\
+  & Shakespeare & \num{7631}  & 49.2s & \num{794}  & 2.09s & 10.40\% \\ 
+  \bottomrule
+  \end{tabu}
 \end{table}
 
-Google recommends having a ``response time under 200ms''\footnote{\url{https://developers.google.com/speed/docs/insights/Server}}. The numbers in table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} clearly show that the `return all' method is unacceptable in terms of speed performance. Using the `first only' method is much closer to the recommended speed limit. Columns 4 and 6 show the time it takes for the page to load from the user query to the display of results. The times are shown in seconds. The data for column 4 was generated using a Chrome browser plugin called ``Load-timer'' by alex-vv\footnote{\url{https://github.com/avflance/chrome-load-timer}} and the data for column 6 was generated by the Chrome ``Developer Tools''.
+Google recommends having a ``response time under \num{200}ms''\footnote{\url{https://developers.google.com/speed/docs/insights/Server}}. The numbers in table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}} clearly show that the `return all' method is unacceptable in terms of speed performance. Using the `first only' method is much closer to the recommended speed limit. Columns 4 and 6 show the time it takes for the page to load from the user query to the display of results. The times are shown in seconds. The data for column 4 was generated using a Chrome browser plugin called ``Load-timer'' by alex-vv\footnote{\url{https://github.com/avflance/chrome-load-timer}} and the data for column 6 was generated by the Chrome ``Developer Tools''.
 
 
 \subsection{Index}
@@ -422,7 +422,7 @@ There are other options of how to make this data structure. For example we could
 
 \spirals
 
-As a comparison to the 35 megabyte index generated by the system described in this thesis, and the search times mentioned in table~\ref{tab:percent}, Google claims to have ``well over 100,000,000 gigabytes'' of data in their index and that they've spent ``over one million computing hours to build it''. Similarly Google managed to retrieve about \num{2140000000} results for the query `clear' in 0.85 seconds.
+As a comparison to the 35 megabyte index generated by the system described in this thesis, and the search times mentioned in table~\ref{tab:percent}, Google claims to have ``well over \num{100000000} gigabytes'' of data in their index and that they've spent ``over one million computing hours to build it''. Similarly Google managed to retrieve about \num{2140000000} results for the query `clear' in 0.85 seconds.
 
 \begin{quotation}
   The web is like an ever-growing public library with billions of books and no central filing system. Google essentially gathers the pages during the crawl process and then creates an index, so we know exactly how to look things up. Much like the index in the back of a book, the Google index includes information about words and their locations. When you search, at the most basic level, our algorithms look up your search terms in the index to find the appropriate pages.
@@ -446,9 +446,9 @@ Currently the algorithm is set to accept terms that have a difference of 1 or 2 
 As examples of using different base documents in the Clinamen algorithm I have used three examples. 
 
 \begin{itemize}
-  \item Midsummer Night's Dream by Shakespeare (`Dream' in short)
-  \item Arabian Nights by various artists (`Nights' in short)
-  \item Exploits and Opinions of Doctor Faustroll, Pataphysician by Jarry (`Faustroll' in short)
+  \item \textit{Midsummer Night's Dream} by Shakespeare (`Dream' in short)
+  \item \textit{Arabian Nights} by various artists (`Nights' in short)
+  \item \textit{Exploits and Opinions of Doctor Faustroll, Pataphysician} by Jarry (`Faustroll' in short)
 \end{itemize}
 
 Tables~\ref{tab:basefania},~\ref{tab:baseclear}~and~\ref{tab:basemoss} each compare the full list of pataphysicalised terms for a particular query term for the three base texts above. These examples show that changing the base text of the algorithm does indeed change the set of results you get. 
@@ -458,6 +458,8 @@ The decision to use the Faustroll text as a base text was made due to the centra
 \begin{table}[!htbp]
 \centering
 \begin{minipage}{\textwidth}
+  \caption[Changing base in Clinamen - `fania']{Changing base in Clinamen - query `fania'}
+  \label{tab:basefania}
   \begin{tabu}{X[l]X[1.5,l]X[l]}
     \toprule
     \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
@@ -469,12 +471,12 @@ The decision to use the Faustroll text as a base text was made due to the centra
     fan, fans, Tanit\\
     \bottomrule
     \end{tabu}
-  \caption[Changing base in Clinamen - `fania']{Changing base in Clinamen - query `fania'}
-  \label{tab:basefania}
 \end{minipage}
 % \vspace{2cm}
 \vfill
 \begin{minipage}{\textwidth}
+  \caption[Changing base in Clinamen - `clear']{Changing base in Clinamen - query `clear'}
+  \label{tab:baseclear}
   \begin{tabu}{X[l]X[1.5,l]X[l]}
     \toprule
     \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
@@ -486,12 +488,12 @@ The decision to use the Faustroll text as a base text was made due to the centra
     altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year\\
     \bottomrule
     \end{tabu}
-  \caption[Changing base in Clinamen - `clear']{Changing base in Clinamen - query `clear'}
-  \label{tab:baseclear}
 \end{minipage}
 \vfill
 % \vspace{0.5cm}
 \begin{minipage}{\textwidth}
+  \caption[Changing base in Clinamen - `moss']{Changing base in Clinamen - query `moss'}
+  \label{tab:basemoss}
   \begin{tabu}{X[l]X[1.1,l]X[1.2,l]}
     \toprule
     \textbf{Dream} & \textbf{Nights} & \textbf{Faustroll}\\
@@ -503,8 +505,6 @@ The decision to use the Faustroll text as a base text was made due to the centra
     ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops\\
     \bottomrule
     \end{tabu}
-  \caption[Changing base in Clinamen - `moss']{Changing base in Clinamen - query `moss'}
-  \label{tab:basemoss}
 \end{minipage}
 \end{table}
 
@@ -516,6 +516,8 @@ Another key factor in how the Clinamen function works is the Damerau-Levenshtein
 If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of \url{pata.physics.wtf} uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed). Table~\ref{tab:errors})\marginnote{§~\ref{tab:errors}} shows three example queries and the number of results produced by the algorithm with either up to 1 error, up to 2 errors or up to 3 errors.
 
 \begin{table}[!htbp]
+  \caption[Changing number of errors in Clinamen]{Changing number of errors in Clinamen}
+  \label{tab:errors}
   \centering
   \begin{tabu}{lccc}
     \toprule
@@ -525,36 +527,23 @@ If we decrease or increase the number of errors allowed we get drastically diffe
     fania & 0 & 3 & 118 \\
     moss & 3 & 49 & 457 \\
     \bottomrule
-    \end{tabu}
-  \caption[Changing number of errors in Clinamen]{Changing number of errors in Clinamen}
-  \label{tab:errors}
+  \end{tabu}
 \end{table}
 
 
 \subsection{Syzygy}
 
-\todo{semantic hierarchy visualised?}
-\todo{i tried modeeling the three alignments but how?}
-
-
-            Generalisation (Hypernym)
-
-Whole (holonym)    synonyms       Part (meronym)
-
-            Specialisation (Hyponym)
-
-
-
-      plant
-forest tree branch
-      oak
-
-
+\begin{figure}[!htbp]
+\centering
+  \input{images/wordnet.pdf_tex}
+  \caption[Semantic relationships of `feather']{Semantic relationships of `feather'}
+\label{fig:wordnet}
+\end{figure}
 
 The syzygy function goes through the following process.
 
 \begin{enumerate}
-  \item A set of synonyms (a list of ``synsets'') is generated.
+  \item A set of synonyms (a list of ``synsets'') is retrieved.
   \item For each of these, hyponyms, hypernyms, holonyms and meronyms are retrieved.
 \end{enumerate}
 
@@ -575,47 +564,36 @@ Step (2) then retrieves related terms. Below is a list of terms it found. Not al
 ]
 \end{minted}
 
-For the term `feather' the algorithm for example finds the hyponym `down', the hypernym `body covering' and the holonym `quill'. It also considers synonyms, so the term `fledge' for instance finds a hypernym of `develop'.
+For the term `feather' the algorithm for example finds the hyponym `down', the hypernym `body covering', the holonym `bird' and the meronym `quill'. It also considers synonyms, so the term `fledge' for instance finds a hypernym of `develop'.
 
-WordNet seems limited in this regard. Often no meronyms or holonyms are found or only one of them. In the above example for `feather' we would expect to find a holonym of `bird' perhaps, but this was not returned. 
+\begin{description}
+  \item[Query] feather 
+  \item[Synonyms] feather.n.01, feather.n.02, feather.v.01, feather.v.02, feather.v.03, feather.v.04, fledge.v.03
+  \item[Hyponyms] down\_feather, quill\_feather, aftershaft, bastard\_wing, scapular, alula, spurious\_wing, flight\_feather, down, marabou, contour\_feather, hackle, quill, pinion
+  \item[Hypernyms] body\_covering, acquire, join, get, conjoin, cover, paddle, grow, produce, animal\_material, develop, rotation, rotary\_motion, row
+  \item[Holonyms] rowing, bird, row
+  \item[Meronyms] shaft, calamus, web, ceratin, vane, melanin, keratin, quill
+\end{description}
 
+Table~\ref{tab:semnum}\marginnote{\faicon{table}~\ref{tab:semnum}} shows the spread of numbers retrieved by the various semantic relationships to some example queries. This highlights how the holonym function of WordNet returns very few results. The meronym function is a bit more reliable but also occasionally produces no results depending on whether there are any holonyms or meronyms for the query term.
 
+\begin{table}[!htbp]
+\centering
+\caption[Quantities of different semantic relations]{Quantities of different semantic relations}
+\label{tab:semnum}
+\begin{tabu}{lccccc}
+\toprule
+\textbf{Query} & \textbf{Syno} & \textbf{Hypo} & \textbf{Hyper} & \textbf{Holo} & \textbf{Mero} \\ \midrule
+clear   & 45   & 41   & 65    & 0    & 0    \\
+feather & 7    & 14   & 14    & 3    & 8    \\
+death   & 8    & 34   & 13    & 4    & 0    \\
+page    & 9    & 14   & 13    & 0    & 7    \\
+book    & 15   & 85   & 32    & 2    & 22   \\
+seed    & 13   & 39   & 35    & 0    & 12   \\
+web     & 8    & 10   & 15    & 4    & 1    \\ \bottomrule
+\end{tabu}
+\end{table}
 
-\todo{table showing hypo, hyper and holonyms numbers side by side for a query}
-
-hypo, Synset('feather.n.01'), aftershaft
-hypo, Synset('feather.n.01'), bastard_wing
-hypo, Synset('feather.n.01'), alula
-hypo, Synset('feather.n.01'), spurious_wing
-hypo, Synset('feather.n.01'), contour_feather
-hypo, Synset('feather.n.01'), down
-hypo, Synset('feather.n.01'), down_feather
-hypo, Synset('feather.n.01'), flight_feather
-hypo, Synset('feather.n.01'), pinion
-hypo, Synset('feather.n.01'), quill
-hypo, Synset('feather.n.01'), quill_feather
-hypo, Synset('feather.n.01'), hackle
-hypo, Synset('feather.n.01'), marabou
-hypo, Synset('feather.n.01'), scapular
-hyper, Synset('feather.n.01'), animal_material
-hyper, Synset('feather.n.01'), body_covering
-mero, Synset('feather.n.01'), quill
-mero, Synset('feather.n.01'), calamus
-mero, Synset('feather.n.01'), shaft
-mero, Synset('feather.n.01'), vane
-mero, Synset('feather.n.01'), web
-hyper, Synset('feather.n.02'), rotation
-hyper, Synset('feather.n.02'), rotary_motion
-hyper, Synset('feather.v.01'), join
-hyper, Synset('feather.v.01'), conjoin
-hyper, Synset('feather.v.02'), cover
-hyper, Synset('feather.v.03'), paddle
-hyper, Synset('feather.v.04'), row
-hyper, Synset('fledge.v.03'), grow
-hyper, Synset('fledge.v.03'), develop
-hyper, Synset('fledge.v.03'), produce
-hyper, Synset('fledge.v.03'), get
-hyper, Synset('fledge.v.03'), acquire
 
 \subsection{APIs}
 \label{s:apis}
@@ -627,16 +605,16 @@ Another way to address this was attempted by changing the query term for each im
 
 \subsubsection{Query Structure}
 
-The text search functionality of \url{pata.physics.wtf} is set up to only work with one \emph{single query term},
-\todo{explain why}
-whereas the image and video search works on \emph{multiple word queries}. This is mainly due to the fact that the external \ac{API}s are already setup to allow for more than one search term. Usually they allow extra parameters too to narrow down the results. So for example we can search for ``blue kitten'' and the three \ac{API}s will return their respective results related to `blue kittens'. The service provided by companies in the form of \ac{API}s is not always free, sometimes only at a low usage quota. \ac{API}s are updated often and not always back-compatible, meaning out-of-date code needs to be maintained regularly to assure it works if changes to the \ac{API} are made.
+The text search functionality of \url{pata.physics.wtf} is set up to only work with one \emph{single query term}, whereas the image and video search works on \emph{multiple word queries}. This is mainly due to the fact that the external \ac{API}s are already setup to allow for more than one search term. Usually they allow extra parameters too to narrow down the results. So for example we can search for ``blue kitten'' and the three \ac{API}s will return their respective results related to blue kittens. The service provided by companies in the form of \ac{API}s is not always free, sometimes only at a low usage quota. \ac{API}s are updated often and not always back-compatible, meaning out-of-date code needs to be maintained regularly to assure it works if changes to the \ac{API} are made.
+
+Enabling multi-word queries in my system would involve a change that would propagate through quite a bit of code. There are two main approaches this could be achieved. One would be to pataphysicalise each query term individually and combine the results found. Another approach would be to change the code to work with actual multi-word queries. The algorithms are created for single words though and rewriting them to allow for more than one word would be difficult and most of all increase the time it takes to compute pataphysicalisations.
 
 The lists below show the parameters related to the query for Flickr, Getty, Bing and YouTube.
 
-\todo{how are they currently set up in my code?}
-\paragraph{Flickr}
+\paragraph{Flickr:}
 \begin{quotation}
   \begin{description}
+  \vspace{-1cm}
     \item[text (Optional)] A free text search. Photos who's title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character.
     \item[tags (Optional)] A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character.
     \item[tag\_mode (Optional)] Either `any' for an OR combination of tags, or `all' for an AND combination. Defaults to `any' if not specified.
@@ -657,10 +635,10 @@ A search for ``blue kitten'' on Flickr produces the following resulting pataphys
 \label{fig:imgspiralflickr}
 \end{figure}
 
-
-\paragraph{Getty}
+\paragraph{Getty:}
 \begin{quotation}
   \begin{description}
+  \vspace{-1cm}
     \item[keyword\_ids] Return only images tagged with specific keyword(s). Specify using a comma-separated list of keyword Ids. If keyword Ids and phrase are both specified, only those images matching the query phrase which also contain the requested keyword(s) are returned.
     \item[phrase] Search images using a search phrase.
   \end{description}
@@ -676,25 +654,27 @@ Getty uses the \py{phrase} parameter to set the query. It only creates one patap
 \label{fig:imgspiralgetty}
 \end{figure}
 
-\paragraph{Bing}
+\paragraph{Bing:}
 \begin{quotation}
   \begin{description}
+  \vspace{-1cm}
     \item[query] The user's search query string. The query string cannot be empty. The query string may contain Bing Advanced Operators\footnote{For example `AND', `OR', `imagesize:', `NOT', or `phrase'}. For example, to limit images to a specific domain, use the site: operator. To help improve relevance and the results, you should always include the user's query string in an insights query (see insightsToken). This parameter is supported only by the Image API; do not specify this parameter when calling the Trending Images API.
   \end{description}
   \sourceatright{\autocite{BingAPI}\footnote{Microsoft will discontinue this version of the current \ac{API} in December 2016. The new version is documented on \url{https://www.microsoft.com/cognitive-services/en-us/bing-image-search-api}.}}
 \end{quotation}
 
-For the Bing function uses the \py{query} parameter to set the query in the same way as Getty.
+The Bing function uses the \py{query} parameter to set the query in the same way as Getty.
 
-\paragraph{YouTube}
+\paragraph{YouTube:}
 \begin{quotation}
   \begin{description}
+  \vspace{-1cm}
     \item[q] The q parameter specifies the query term to search for. Your request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos that are associated with one of several search terms. For example, to search for videos matching either ``boating'' or ``sailing'', set the q parameter value to boating|sailing. Similarly, to search for videos matching either ``boating'' or ``sailing'' but not ``fishing'', set the q parameter value to boating|sailing -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-escaped value for the pipe character is \%7C.
   \end{description}
   \sourceatright{\autocite{YouTubeAPI}}
 \end{quotation}
 
-Youtube works in a similar way as well. The \py{q} parameter is set to the pataphysicalised query term and one call retrieves ten results.
+Youtube works in a similar way too. The \py{q} parameter is set to the pataphysicalised query term and one call retrieves ten results.
 
 Something else to consider is perhaps that it is not entirely clear how the internal search for each \ac{API} works. This means that there's a possibility that they do their own query expansion\marginnote{§~\ref{s:qexpansion}} in the background to find more matches.
 
@@ -712,6 +692,7 @@ Each \ac{API} has a different quota for their subscription packages.
   \item[Microsoft Translator] \num{2000000} characters per month are free. Note the quota relates to single characters, not words \autocite{TranslatorAPI}.
 \end{description}
 
+HERE
 
 \section{Formalisation}
 
@@ -720,7 +701,7 @@ A formal description of the \url{pata.physics.wtf} system in terms of an \ac{IR}
 Remember, an \ac{IR} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 \itab{$D$} \tab{is the set of documents,}\\
 \itab{$Q$} \tab{is the set of queries,}\\
-\itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors}\\
+\itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors,}\\
 \itab{}    \tab{~~~linear algebra\ldots}\\
 \itab{$R(q_i, d_j)$}
             \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
@@ -729,7 +710,6 @@ Remember, an \ac{IR} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
 \itab{}     \tab~~~{collection (vocabulary).}
 
 $D$ is the set of files we have in either the Faustroll or Shakespeare corpus. $Q$ is the given user query.
-
 
 
 \section{Design}
@@ -971,6 +951,12 @@ I also kept the thesis under git version control. Since the thesis was written i
 * ba1a9c2	 Second commit
 * 244c4b3	 First commit
 \end{verbatim}
+
+
+\subsubsection{Development}
+
+doing the analysis really helped revising and improving the code.
+
 
 
 \subsection{Thesis}

@@ -630,7 +630,6 @@ breaklines=true
   xrightmargin=1cm,
 }
 
-
 \newmintinline[py]{python}{
   bgcolor={lavendermist},
   fontsize=\footnotesize,
