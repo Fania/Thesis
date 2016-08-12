@@ -555,7 +555,7 @@ The syzygy function goes through the following process.
 
 \begin{enumerate}
   \item A set of synonyms (a list of ``synsets'') is generated.
-  \item For each of these, hyponyms, hypernyms and holonyms are retrieved.
+  \item For each of these, hyponyms, hypernyms, holonyms and meronyms are retrieved.
 \end{enumerate}
 
 The notation used by WordNet for synsets is \textbf{<lemma>.<pos>.<senses>}. The `lemma' is the morphological stem of the word. The `pos' stands for part-of-speech and can be `n' for nouns, `v' for verbs, `a'
@@ -567,13 +567,19 @@ for adjectives, `r' for adverbs and `s' for satellites. The `senses' element sta
 ]
 \end{minted}
 
-Step (2) then retrieves related terms. Below is a list of terms it found. Not all synsets return each of the hypo-/hyper- and holonyms. This is clearer when inspecting the full list of results as shown in appendix~\ref{app:syzygy}\marginnote{§~\ref{app:syzygy}}. 
+Step (2) then retrieves related terms. Below is a list of terms it found. Not all synsets return each of the hypo-/hyper- and holo-/meronyms. This is clearer when inspecting the full list of results as shown in appendix~\ref{app:syzygy}\marginnote{§~\ref{app:syzygy}}. 
 
 \begin{minted}{text}
 [
   innocence, area, country, change, alter, modify, make, create, approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise, permit, allow, let, countenance, clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump, remove, take, take_away, withdraw, clear, succeed, win, come_through, bring_home_the_bacon, deliver_the_goods, vanish, disappear, go_away, hop, pass, overtake, overhaul, clarify, clear_up, elucidate, free, discharge, rid, free, disembarass, yield, pay, bear, profit, gain, benefit, eke_out, squeeze_out, gross, profit, turn_a_profit, rake_in, shovel_in, rake_off, take_home, bring_home, yield, pay, bear, get, acquire, sell, pass, clear, purge, vindicate, whitewash, pronounce, label, judge, settle, square_off, square_up, determine, change, alter, modify, empty, take_out, move_out, remove, empty, remove, take, take_away, withdraw
 ]
 \end{minted}
+
+For the term `feather' the algorithm for example finds the hyponym `down', the hypernym `body covering' and the holonym `quill'. It also considers synonyms, so the term `fledge' for instance finds a hypernym of `develop'.
+
+WordNet seems limited in this regard. Often no meronyms or holonyms are found or only one of them. In the above example for `feather' we would expect to find a holonym of `bird' perhaps, but this was not returned. 
+
+
 
 \todo{table showing hypo, hyper and holonyms numbers side by side for a query}
 
