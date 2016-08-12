@@ -9,7 +9,7 @@
 
 \marginnote{§~\ref{ch:intro}}
 
-\gls{nlp}
+\ac{nlp}
 
 \textcolor{red}{300 words\ldots}
 

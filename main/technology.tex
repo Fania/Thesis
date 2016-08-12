@@ -62,7 +62,7 @@ In simple terms, a typical search process can be described as follows. A user is
 
 Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\autocite{Google2012, Baidu2012, Microsoft2012a} Google uses over 200 signals \autocite{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
 
-Any \gls{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
+Any \ac{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
 
 
 \paragraph{Crawler}
@@ -72,7 +72,7 @@ The crawler, sometimes called spider, indexer or bot, is a program that processe
 
 \paragraph{Index}
 
-An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a \gls{tdm}. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{tdm}. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
 
 \begin{equation}
   \bbordermatrix{~ & d_1 & d_2 \cr % chktex 41
@@ -126,7 +126,7 @@ The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctu
 
 \paragraph{Ranking}
 
-Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acrlong{tf}-\acrlong{idf} or \acrshort{tf}-\acrshort{idf} for short. Given a \gls{tf} weight of $tf_{i,j}$ and a \gls{idf} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
+Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{tf}-\acl{idf} or \acs{tf}-\acs{idf} for short. Given a \ac{tf} weight of $tf_{i,j}$ and a \ac{idf} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
 
 \begin{equation}
   w_{i,j} =
@@ -140,12 +140,12 @@ Ranking is the process of ordering search results using a given weight. One simp
 
 Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
 
-The \gls{tf} $tf_{i,j}$ is calculated and normalised using a log function as:
+The \ac{tf} $tf_{i,j}$ is calculated and normalised using a log function as:
 $1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
 
-The total \gls{tf} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
+The total \ac{tf} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
 
-The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \gls{idf} of term $k_i$. The more often a term occurs in different documents the lower the \gls{idf}.
+The \ac{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{idf} of term $k_i$. The more often a term occurs in different documents the lower the \ac{idf}.
 
 % \begin{equation}
 %   tf_{i,j}=
@@ -174,18 +174,18 @@ The \gls{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the d
 
 \todo{rewrite to match current style}
 
-What do we actually mean by searching? Usually it implies that there is something to be found, an \gls{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
+What do we actually mean by searching? Usually it implies that there is something to be found, an \ac{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
 
 From the users' point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques \autocite{Polya1957}:
 
 \begin{description}
-  \item [Problem identification] \gls{in},
-  \item [Need articulation] \gls{in} in natural language terms,
-  \item [Query formulation] translate \gls{in} into query terms, and
-  \item [Results evaluation] compare against \gls{in}.
+  \item [Problem identification] \ac{in},
+  \item [Need articulation] \ac{in} in natural language terms,
+  \item [Query formulation] translate \ac{in} into query terms, and
+  \item [Results evaluation] compare against \ac{in}.
 \end{description}
 
-This model poses problems when we consider a situation where an \gls{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that `the setting within which information-seeking takes place constrains the search process' \autocite{Marchionini1988} and they laid out a framework with the following main elements.
+This model poses problems when we consider a situation where an \ac{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that `the setting within which information-seeking takes place constrains the search process' \autocite{Marchionini1988} and they laid out a framework with the following main elements.
 
 \begin{itemize}
   \item Setting (the context of the search and external factors such as time, cost)
@@ -195,7 +195,7 @@ This model poses problems when we consider a situation where an \gls{in} cannot 
   \item Outcomes (the assessment of the results/answers)
 \end{itemize}
 
-Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \autocite{DeVries1993, Marchionini2006}. A situation where an \gls{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
+Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \autocite{DeVries1993, Marchionini2006}. A situation where an \ac{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
 
 Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
 
@@ -214,7 +214,7 @@ All of these ideas, however, seem to be concerned with how users interact with a
 \label{s:irmodels}
 
 \begin{fcom}
-  \gls{ir} models describe ranking algorithms formally. ???
+  \ac{ir} models describe ranking algorithms formally. ???
 \end{fcom}
 
 There are different models for different needs, for example a multimedia system is going to be different than a text based system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
@@ -336,7 +336,7 @@ Where,\\
 \itab{$K$} \tab{is the number of results we want}\\
 \itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
 
-There are several other common \gls{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
+There are several other common \ac{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
 
 
 
@@ -423,7 +423,7 @@ Since a single query for a popular word can results in  millions of retrieved do
 
 \subsubsection*{Summary}
 
-\gls{ir} refers to the retrieval of information from a collection. In terms of the Internet it is often called Web search. A Web search engine is divided into different components, being the crawler to build an index of the collection and a ranking algorithm which stands between the index and the user.
+\ac{ir} refers to the retrieval of information from a collection. In terms of the Internet it is often called Web search. A Web search engine is divided into different components, being the crawler to build an index of the collection and a ranking algorithm which stands between the index and the user.
 
 Different retrieval models exist including the Boolean and the Vector model. Other methods exist to make search results more accurate, including relevance feedback and query expansion.
 
@@ -437,7 +437,7 @@ Ranking can be done at different stages of the search process. Depending on how 
 \section{Natural Language Processing}
 
 \todo{describe NLTK and the core functionality}
-\gls{nltk} Python library\footnote{\url{http://www.nltk.org/}}.
+\ac{nltk} Python library\footnote{\url{http://www.nltk.org/}}.
 
 \begin{description}
   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
@@ -488,9 +488,9 @@ $d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive sy
 
 
 
-\gls{nlp} blah blah blah\ldots
+\ac{nlp} blah blah blah\ldots
 
-Bird, S., Klein, E. and Loper, E., 2009. \gls{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\autocite{Bird2009}
+Bird, S., Klein, E. and Loper, E., 2009. \ac{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\autocite{Bird2009}
 
 Manning, C., Raghavan, P. and Schuetze, H., 2008. Introduction to Information Retrieval 1st ed., Cambridge: Cambridge University Press.\autocite{Manning2009}
 
@@ -498,12 +498,12 @@ Taken from \autocite{Jurafsky2009}, also known as:
 \begin{itemize}
   \item Speech and language processing
   \item Human language technology
-  \item \gls{nlp}
+  \item \ac{nlp}
   \item Computational linguistics
   \item Speech recognition and synthesis
 \end{itemize}
 
-Goals of \gls{nlp} are to get computers to perform useful tasks involving human language like:
+Goals of \ac{nlp} are to get computers to perform useful tasks involving human language like:
 \begin{itemize}
   \item Enabling human-machine communication
   \item Improving human-human communication
@@ -945,7 +945,7 @@ Given the rather complicated nature of the words and sentence structure, some of
 
 \section{Linguistics / WordNet}
 
-Here’s my \gls{hyper} term. \gls{holo} \gls{hyper}
+Here’s my \ac{hyper} term. \ac{holo} \ac{hyper}
 
 I looked into linguistics for the purpose of patadata. This section definitely needs some expanding. Some concepts that might be relevant include (taken from Wikipedia):
 

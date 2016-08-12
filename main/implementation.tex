@@ -67,7 +67,7 @@ Typically, software development is divided into so-called front and back ends. T
 
 The frontend design is created using the \textbf{w3.css} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).\footnote{frontend links: \url{http://www.w3schools.com/w3css/}, \url{https://www.javascript.com/}}
 
-The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acrshort{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
+The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
 
 The folder structure is as follows:
 
@@ -398,7 +398,7 @@ The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustl
 
 When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
 
-Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library\footnote{\url{http://www.nltk.org/}} for \acrlong{nlp}.
+Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library\footnote{\url{http://www.nltk.org/}} for \acl{nlp}.
 
 \begin{listing}
   \begin{minted}{python}
@@ -654,10 +654,10 @@ In simple terms, the image and video search works in three steps:
 \begin{enumerate}
   \item pataphysicalise query terms using syzygy algorithm
   \item translate each pataphysicalised term
-  \item retrieve images/videos using \acrshort{api} calls
+  \item retrieve images/videos using \acs{api} calls
 \end{enumerate}
 
-The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the original query terms ready for the next step. In line 5 the \py{syzygy} algorithm (source~\ref{code:syzygy}) is used to make this transformation. Given that the image and video search allows multi-word queries and the \py{syzygy} function returns several new words per query terms, this creates a long list of entries. On top of that the output is the inner product (line 8) of all these results. The purpose of producing so many pataphysicalisations is to find more results using the \glspl{api}.
+The \py{pataphysicalise} function (see source~\ref{code:pataph}) transforms the original query terms ready for the next step. In line 5 the \py{syzygy} algorithm (source~\ref{code:syzygy}) is used to make this transformation. Given that the image and video search allows multi-word queries and the \py{syzygy} function returns several new words per query terms, this creates a long list of entries. On top of that the output is the inner product (line 8) of all these results. The purpose of producing so many pataphysicalisations is to find more results using the \ac{api}.
 
 \begin{listing}
   \begin{minted}{python}
@@ -708,12 +708,12 @@ def transent(sent):
 
 The image and video search both rely on various \ac{API} calls to produce results. Currently used are Microsoft Translate, Bing Image Search and YouTube.
 
-A \acrshort{rest}ful \ac{API} allows browsers (`clients') to communicate with a web server via \acrshort{http} methods such as \ac{get} and \ac{post}. The idea is that a given service, like the Microsoft Bing search \ac{API}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
+A \acs{REST}ful \ac{API} allows browsers (`clients') to communicate with a web server via \acs{HTTP} methods such as GET and POST. The idea is that a given service, like the Microsoft Bing search \ac{API}, can be accessed in a few simple steps using a library like \textbf{Requests}\footnote{\url{http://docs.python-requests.org/en/latest/}}. These are:
 
 \begin{enumerate}
   \item Construct the \ac{URL} (see, source~\ref{code:getBing} lines 5,6,7 and 11)
   \item get an \ac{API} key (see, source~\ref{code:getBing} line 4)
-  \item send \ac{URL} and key using \ac{get} method (see, source~\ref{code:getBing} line 12)
+  \item send \ac{URL} and key using GET method (see, source~\ref{code:getBing} line 12)
   \item receive and process response in requested format (e.g. \ac{JSON}\footnote{\url{http://www.json.org/}})
 \end{enumerate}
 
