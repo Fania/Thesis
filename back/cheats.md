@@ -13,6 +13,10 @@
 
 \textcolor{red}{300 words\ldots}
 
+titles of books etc in italics
+quotes from books in double quotes
+word emph in italics
+
 
 ## FIGURES
 \begin{figure}[!htb] % (here, top, bottom, page)

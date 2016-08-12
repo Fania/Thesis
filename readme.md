@@ -150,8 +150,8 @@ pdflatex --file-line-error -shell-escape main
 - [ ] add images as seperate figure items, also in toc
 - [ ] convert all urls to proper references
 - [ ] pataphysicalised terms == patadata
-- [ ] quotations in gray
-- [ ] table captions on top?
+- [x] quotations in gray
+- [x] table captions on top?
 - [ ] add space before floats
 - [ ] description list spacing by adding [longest word] after environment
 - [ ] cut pdf with spiral in it for line \spirals
@@ -159,17 +159,6 @@ pdflatex --file-line-error -shell-escape main
 
 Wordcount after Boot Camp 54715 total
 11.08.16 56630
-
-titles of books etc in italics
-quotes from books in double quotes
-word emph in italics
-
-\begin{description}
-  \item [\faicon{table}] Represents a table.
-  \item [\faicon{object-group}] Represents a figure.
-  \item [§] Represents a chapter.
-  \item [\faicon{picture-o}] Represents an image.
-\end{description}
 
 
 ## Hongji feedback

@@ -66,7 +66,7 @@ The time it takes from the user entering a query term and the system displaying 
 At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text}. Newlines and whitespace formatting varies, as does language and quality of spelling. OCR SOURCES Generally, chapter headings, chapter numberings, etc are left untouched. The Shakespeare corpus contains poetry and plays for example. STAGE DIRECTIONS With the plays, scene information is kept, voice details are kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``...Athens and a wood near it ACT I...'' from \textit{A Midsummer Night's Dream} or this example: ``...Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge...'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance.
 
 \paragraph{Sentence fragments} 
-Currently the way results sentences are retrieved for the text search is based on punctuation. This means once a pataphysicalised keyword has been found, the system retrieves up to 10 words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments.
+Currently the way results sentences are retrieved for the text search is based on punctuation. This means once a pataphysicalised keyword has been found, the system retrieves up to \num{10} words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments.
 
 \paragraph{More APIs} 
 Currently X \ac{API}s are used\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times.
@@ -90,7 +90,7 @@ Adding to the source of random sentences used in the top and bottom banner on th
 It would be great to develop a custom \ac{API} for this the search tool. This would allow other people to use the search remotely without going through the interface and to use the results as they want. This would have been beneficial for the Digital Opera project\marginnote{§~\ref{ch:applications}} and certainly for other researchers/developers like Adnrew Dennis\marginnote{§~\ref{ch:applications}}.
 
 \paragraph{WordNet vocabulary}
-The vocabulary in WordNet is limited. According to it's website (\url{https://wordnet.princeton.edu/}) it contains 117000 `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms. Because of the way the process works, the link between Wordnet and source texts, results may be limited. \todo{check}
+The vocabulary in WordNet is limited. According to it's website (\url{https://wordnet.princeton.edu/}) it contains \num{117000} `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms. Because of the way the process works, the link between Wordnet and source texts, results may be limited. \todo{check}
 
 \paragraph{WordNet Antonyms}
 The antinomy algorithms relies on WordNets antonyms. A lot of words simply do not have an opposite and no fallback is currently defined. This means a lot of the time the antinomy function will not produce any results.
@@ -129,8 +129,8 @@ N-grams are a \ac{NLP} technique introduced in chapter~\ref{ch:technology}\margi
 % \myequations{Probwn}
 \todo{work the maths out here for this example of MOE}
 
-Similarly, we could could play with maximum entropy models as shown on page 112 (see chapter XYZ) together with \ac{POS} tagging. What if we rigged the probability such that instead of `in Quebec' ranking high for a `location' \ac{POS} tag, it now ranks high as a `drug'?
-
+Similarly, we could could play with maximum entropy models as shown on page \num{112} (see chapter XYZ) together with \ac{POS} tagging. What if we rigged the probability such that instead of `in Quebec' ranking high for a `location' \ac{POS} tag, it now ranks high as a `drug'?
+\todo{fix page num}
 
 Again there are endless possipilities of abusing these kinds of systems to create \ac{AMC}. This is also very reminiscent of \ac{OULIPO} techniques. We could create a whole new language grammar based on pataphysical principles.
 

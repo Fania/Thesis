@@ -220,7 +220,7 @@
 % \usepackage{dirtytalk}
 \renewenvironment{quotation}
                {\list{}{\rightmargin\leftmargin}%
-                \item\relax\sffamily\SingleSpacing\ignorespaces}
+                \item\relax\sffamily\SingleSpacing\color{gray}\ignorespaces}
                {\unskip\unskip\endlist}
 
 
@@ -565,6 +565,7 @@ breaklines=true
 \definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
 \definecolor{gainsboro}{rgb}{0.86, 0.86, 0.86}
 \definecolor{lavendermist}{rgb}{0.9, 0.9, 0.98}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
 
 
 % CODE
