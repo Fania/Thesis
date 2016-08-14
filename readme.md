@@ -155,6 +155,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] add space before floats
 - [ ] description list spacing by adding [longest word] after environment
 - [ ] cut pdf with spiral in it for line \spirals
+- [ ] remove indent in inline code style
 
 
 Wordcount after Boot Camp 54715 total
