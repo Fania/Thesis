@@ -696,43 +696,62 @@ Each \ac{API} has a different quota for their subscription packages. At this sta
 \end{description}
 
 
-\section{Design}
-
-It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:aspirations},~\ref{ch:aspirations}). 
-
-\todo{feeling of ownership due to having to enter search term?}
-
-Figures~\ref{fig:poemtree},~\ref{fig:listsourcetree}~and~\ref{fig:listalgotree} show the three different text result styles. The poetry\marginnote{\faicon{picture-o}~\ref{fig:poemtree}} is compact and invites users to read all \num{14} (or less) lines. The two list styles\marginnote{\faicon{picture-o}~\ref{fig:listsourcetree}~\&~\ref{fig:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
-
-\begin{figure}[!htbp]
-\centering
-  \includegraphics[width=\linewidth]{poemtree}
-\caption[Results as poem]{Results in poem form for query `tree'---Shakespeare}
-\label{fig:poemtree}
-\end{figure}
-
-\begin{figure}[!htbp]
-\centering
-  \includegraphics[width=\linewidth]{listsourcetree}
-\caption[Results as list by sources]{Results as list by sources for query `tree'---Shakespeare}
-\label{fig:listsourcetree}
-\end{figure}
-
-\begin{figure}[!htbp]
-\centering
-  \includegraphics[width=\linewidth]{listalgotree}
-\caption[Results as list by algorithm]{Results as list by algorithm for query `tree'---Shakespeare}
-\label{fig:listalgotree}
-\end{figure}
-
-
 \section{Science Fiction}
 
-A more theoretical question regarding the evolution of creative computing is related to developments in \ac{AI}. I have previously explored the similarities and differences 
+A more theoretical aspect of this analysis is concerned with what was already discussed to an extent in chapter~\ref{ch:interpretation} (specifically sections~\ref{ss:anthropomorphism}, \ref{s:programmer}, \ref{s:mimicry} and \ref{s:babying}), namely the parallel between artificial creativity and \acl{AI}. 
 
-HERE
 
-Where does this project stand in the wider world and the progress of computing, \ac{AI} and creativity? \ac{AI} and robotics is alluring as a research topic because it is so prevelant in Science Fiction. Computer creativity rarely plays a centrol role though. We regularly read headlines that tell us that yet another kind of \ac{AI}-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing which aren't all that great in the grand scheme of things. 
+\subsection{Creativity, Intelligence and Ethics}
+
+Computer creativity falls into the same overarching category as computer intelligence (\ac{AI}) and computer ethics.
+
+
+
+
+Cohen is the author of AARON, perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use. Cohen viewed AARON as his collaborator. At times during their decadeslong relationship AARON was quite autonomous, responsible for the composition, coloring and other aspects of a work; more recently, AARON served Cohen by making drawings that Cohen would develop into paintings. Cohen's death is the end of a lengthy partnership between an artist and an artificial intelligence.\autocite{Cohen2016}
+
+Cohen had no patience for the ``is it art?'' question. He showed AARON's work in the world's galleries, museums and science centers -- the Tate, the Stedelijk, the San Francisco Museum of Art, Documenta, the Boston Computer Museum, the Ontario Science Center, and many others. His audiences might have been drawn in by curiosity and the novelty of computer-generated art, but they would soon ask, how can a machine make such marvelous pictures? How does it work? The very questions that Cohen asked himself throughout his career.\autocite{Cohen2016}
+
+
+\todo{aaron stuff}
+\url{http://collections.vam.ac.uk/name/cohen-harold/6433/}
+
+\begin{quotation}
+  \ldots we'll be seeing an increasing number of artists turning to robotic art of one sort or another in the next five or ten years. We're already seeing some. It's also a pretty safe bet that for the most part they'll be using off-the-shelf robots; that the ``art'' will be manifested in dreaming up contexts they were never intended for; and the culture's definitions of art will change accordingly.
+  \sourceatright{\autocite{Cohen2007}}
+\end{quotation}
+
+\begin{quotation}
+  Shouldn't it be possible, I wondered, to write the rules for generating material for a painting and then simply follow the rules?  In this way, it would be almost as if the painting was painting itself; and I would be relieved of the uncertain task of inventing on a day-to-day basis. 
+
+  That was a little naïve, of course; it simply shifted the burden of invention to another place, another level. I'm still inventing on a day to day basis, but now it's likely to be algorithms for doing particular tasks that I'm inventing.
+  \sourceatright{\autocite{Cohen2007}}
+\end{quotation}
+
+\begin{quotation}
+  I'd like to end with a couple of observations about AARON's algorithm. Firstly; I think it's fair to say that nothing of what has happened could have happened unless I had drawn upon a lifetime of experience as a colorist.  I've evidently managed to pack all that experience into a few lines of code,  yet nothing in the code looks remotely like what I would have been doing as a painter, and AARON's algorithm isn't something a human artist could apply by hand, so to speak.
+  \sourceatright{\autocite{Cohen2007}}
+\end{quotation}
+
+\begin{quotation}
+  It's twenty years since I first realized that I could never turn AARON into a colorist by having it emulate my own expertise; in that case simply because it lacked the hardware upon which that expertise depended. Now I have AARON exercising an algorithm that couldn't be emulated by human colorists, presumably because they lack the hardware to do what AARON does. (and by hardware, in this case I mean the intellectual machinery that can build a stable enough representation and juggle enough variables, as AARON does in running the algorithm.) 
+  \sourceatright{\autocite{Cohen2007}}
+\end{quotation}
+
+\begin{quotation}
+  None of this would be interesting if AARON were an indifferent colorist. But I think I can claim, without undue immodesty, that AARON is a world-class colorist, significantly more inventive and infinitely more productive than I ever was myself. And I conclude that, after decades of expert systems  built to simulate human expertise, AARON has emerged as an expert in its own right. That marks a significant change of state, a change of level, in the never-ending pursuit of autonomy, not merely an incremental change in what the program is able to do. 
+  \sourceatright{\autocite{Cohen2007}}
+\end{quotation}
+
+\begin{quotation}
+  If I were writing AARON's biography today, I might almost say that AARON was a twinkle in its parent's eye in 1963; it was conceived in 1972 but not born until 2006. It has been a long gestation, and right now the parent is struggling to direct an unruly child, keeping it fed and changing its diapers. He has no idea when the child will be potty-trained, much less how long it will be before it reaches adulthood.
+  \sourceatright{\autocite{Cohen2007}}
+\end{quotation}
+
+
+
+
+Where does this project stand in the wider world and the progress of computing, \ac{AI} and creativity? \ac{AI} and robotics is alluring as a research topic because it is so prevelant in Science Fiction. Computer creativity rarely plays a centrol role though. We can regularly read headlines that tell us that yet another kind of \ac{AI}-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing which aren't all that great in the grand scheme of things. 
 
 \subsection{AI}
 This is also evident in games, for example \ac{VR} and \ac{AR}. The Oculus Rift and similar systems are advertised so much you might believe they are actually about to hit mainstream and every kid will own a \ac{VR} console and headset. Yet they are still way too expensive to be mainstream and motion sickness is also still an issue (and probably always will). These industries are so ``hip'' any publication is seen as the new cool thing without taking into account the history and work that has been done previously in perhaps slightly different disciplines. This is the case for example with a recent article on \ac{VR} sickness and how to compat it. This is a well known problem already---motion sickness already exists in normal games. Similar to epilepsy problems.
@@ -855,6 +874,33 @@ Is computer creativity an expert system or does it fall into general \ac{AI}?
 \paragraph{Machines self-assessing}
 Perhaps there is an argument that if humans are the only entities who can judge whether another human is being creative, then machines should be assessing themselves. This is a paradoxical concepts though. Since machines are products made my humans, they can never be autonomous in that sense. If machines had evolved like other animals besides us this argument might hold but obviously that is not the case.
 
+
+\section{Design}
+
+It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:aspirations},~\ref{ch:aspirations}). 
+
+Figures~\ref{fig:poemtree},~\ref{fig:listsourcetree}~and~\ref{fig:listalgotree} show the three different text result styles. The poetry\marginnote{\faicon{picture-o}~\ref{fig:poemtree}} is compact and invites users to read all \num{14} (or less) lines. The two list styles\marginnote{\faicon{picture-o}~\ref{fig:listsourcetree}~\&~\ref{fig:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\linewidth]{poemtree}
+\caption[Results as poem]{Results in poem form for query `tree'---Shakespeare}
+\label{fig:poemtree}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\linewidth]{listsourcetree}
+\caption[Results as list by sources]{Results as list by sources for query `tree'---Shakespeare}
+\label{fig:listsourcetree}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\linewidth]{listalgotree}
+\caption[Results as list by algorithm]{Results as list by algorithm for query `tree'---Shakespeare}
+\label{fig:listalgotree}
+\end{figure}
 
 
 \section{Meta}
