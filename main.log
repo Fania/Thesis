@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.7.26)  14 AUG 2016 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.7.26)  15 AUG 2016 16:45
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3135,13 +3135,13 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 
-] [2] [3]
-Overfull \hbox (20.58911pt too wide) in paragraph at lines 132--132
+] [2]
+Overfull \hbox (20.58911pt too wide) in paragraph at lines 128--128
  [][] [][][][][] \T1/pbk/l/n/10.95 ht-tps://wordnet.princeton.edu/wordnet/man/w
 ngloss.7WN.html for gloss- |
  []
 
-) [4]
+[3]) [4]
 \openout2 = `front/title.aux'.
 
  (./front/title.tex
@@ -3181,7 +3181,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 27.
 
-<images/spiral_pre.pdf, id=456, 156.48964pt x 156.48964pt>
+<images/spiral_pre.pdf, id=452, 156.48964pt x 156.48964pt>
 File: images/spiral_pre.pdf Graphic file (type pdf)
 
 <use images/spiral_pre.pdf>
@@ -3217,7 +3217,7 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
 \openout2 = `front/publications.aux'.
 
  (./front/publications.tex
-<images/spirals.png, id=488, 482.80376pt x 473.77pt>
+<images/spirals.png, id=484, 482.80376pt x 473.77pt>
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 16.
@@ -3391,7 +3391,7 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <39.83366> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <28.45274> not available
 (Font)              size <24.88> substituted on input line 89.
 
-<images/spiral_hello.pdf, id=693, 156.48964pt x 156.48964pt>
+<images/spiral_hello.pdf, id=688, 156.48964pt x 156.48964pt>
 File: images/spiral_hello.pdf Graphic file (type pdf)
 
 <use images/spiral_hello.pdf>
@@ -3407,7 +3407,7 @@ l.89 ...2}{$\boldsymbol\Theta$}RLD}{Introduction}}
 
 
 
- <./images/spiral_hello.pdf>] <images/spiral_trade.pdf, id=704, 156.48964pt x 1
+ <./images/spiral_hello.pdf>] <images/spiral_trade.pdf, id=699, 156.48964pt x 1
 56.48964pt>
 File: images/spiral_trade.pdf Graphic file (type pdf)
 
@@ -3433,7 +3433,7 @@ l.30 \clearpage
 
 
 ])
-<images/spiral_core.pdf, id=730, 156.48964pt x 156.48964pt>
+<images/spiral_core.pdf, id=725, 156.48964pt x 156.48964pt>
 File: images/spiral_core.pdf Graphic file (type pdf)
 
 <use images/spiral_core.pdf>
@@ -3448,7 +3448,7 @@ l.114 ...ox{2.2}{$\boldsymbol\Theta$}GIC}{Theory}}
 
 
 
- <./images/spiral_core.pdf>] <images/spiral_practice.pdf, id=740, 156.48964pt x
+ <./images/spiral_core.pdf>] <images/spiral_practice.pdf, id=735, 156.48964pt x
  156.48964pt>
 File: images/spiral_practice.pdf Graphic file (type pdf)
 
@@ -3513,13 +3513,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--243
 
 LaTeX Warning: Float too large for page by 80.88406pt on input line 245.
 
-<images/flow.png, id=798, 342.5297pt x 494.2214pt>
+<images/flow.png, id=795, 342.5297pt x 494.2214pt>
 File: images/flow.png Graphic file (type png)
  <use images/flow.png>
 Package pdftex.def Info: images/flow.png used on input line 249.
 (pdftex.def)             Requested size: 426.79135pt x 615.84468pt.
 
-<images/gource.png, id=799, 461.09766pt x 166.74797pt>
+<images/gource.png, id=796, 461.09766pt x 166.74797pt>
 File: images/gource.png Graphic file (type png)
  <use images/gource.png>
 Package pdftex.def Info: images/gource.png used on input line 256.
@@ -3601,6 +3601,9 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <9> not available
 (Font)              Font shape `T1/pbk/l/it' tried instead on input line 2.
 )
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 \openout8 = `main.pyg'.
 
 
@@ -3648,12 +3651,12 @@ F.pygtex)
 
 
 (./_minted-main/401B30E3B8B5D629635A5C613CDB79196261B2510394E23546F15612EF9D7BB
-F.pygtex) [15]
+F.pygtex)
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/F6A78526957D757FA60F6B7F3AF3D7228A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex)
+4.pygtex [15])
 
 LaTeX Warning: Reference `termdocs' on page 16 undefined on input line 449.
 
@@ -3672,7 +3675,7 @@ LaTeX Warning: Reference `app:code' on page 16 undefined on input line 449.
 
 
 (./_minted-main/E753ED52F3D9869AAB7B3486B56943D58A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex) [16]
+4.pygtex [16])
 Overfull \hbox (8.23271pt too wide) in paragraph at lines 489--490
 \T1/pbk/l/n/10.95 Damerau-Levenshtein al-gorithm ([][][][]Dam-erau [][]1964[][]
 [][]; [][][][]Leven-shtein [][]1966[][][][]), which meas-|
@@ -3683,6 +3686,9 @@ Overfull \hbox (8.23271pt too wide) in paragraph at lines 489--490
 
 (./_minted-main/6FF3700C23E5F95C832DEE5A6D12728065D427A48CF461C1E4EDF41A188071C
 7.pygtex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 \openout8 = `main.pyg'.
 
 
@@ -3773,7 +3779,7 @@ F.pygtex)
 
 
 (./_minted-main/010E0DDED70E4D927D697D34DA98CC086261B2510394E23546F15612EF9D7BB
-F.pygtex)
+F.pygtex) [18]
 \openout8 = `main.pyg'.
 
 
@@ -3813,7 +3819,7 @@ F.pygtex)
 
 
 (./_minted-main/E0A3494BE84D31CC5A4464CD7D5C5D436261B2510394E23546F15612EF9D7BB
-F.pygtex) [18] [19]
+F.pygtex) [19]
 \openout7 = `main.pyg'.
 
 
@@ -3838,12 +3844,12 @@ F.pygtex)
 
 
 (./_minted-main/5C1C95C45816CE8E7EC016BF5289424C6261B2510394E23546F15612EF9D7BB
-F.pygtex)
+F.pygtex) [20]
 \openout8 = `main.pyg'.
 
 
 (./_minted-main/062A3CA7D0D85E1932755C6D3154ABE16261B2510394E23546F15612EF9D7BB
-F.pygtex) [20]
+F.pygtex)
 \openout8 = `main.pyg'.
 
 
@@ -3859,10 +3865,35 @@ F.pygtex)
 
 (./_minted-main/062A3CA7D0D85E1932755C6D3154ABE16261B2510394E23546F15612EF9D7BB
 F.pygtex)
+Package acronym Info: Label `acro:IR' newly defined as it shall be overridden
+although it is yet undefined on input line 653.
 
-Package acronym Warning: Acronym `api' is not defined on input line 658.
 
+LaTeX Warning: Reference `s:irmodels' on page 21 undefined on input line 653.
+
+Package marginnote Info: Margin note 35.1 is on absolute page 36
+(marginnote)              on input line 653.
+Package marginnote Info: right page because not two side mode on input line 653
+.
+
+LaTeX Warning: Reference `s:irmodels' on page 21 undefined on input line 653.
+
+Package marginnote Info: xpos seems to be 359.74991pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 653.
 [21]
+
+LaTeX Warning: Citation 'Yates2011' on page 22 undefined on input line 655.
+
+Package marginnote Info: Margin note 36.1 is on absolute page 36
+(marginnote)              on input line 689.
+Package marginnote Info: right page because not two side mode on input line 689
+.
+Package marginnote Info: xpos seems to be 270.39435pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 689.
+[22]
+
+Package acronym Warning: Acronym `api' is not defined on input line 726.
+
 \openout8 = `main.pyg'.
 
 
@@ -3879,53 +3910,49 @@ F.pygtex)
 (./_minted-main/CA5BC26FD26FF36F70ED8973D9107A3F6261B2510394E23546F15612EF9D7BB
 F.pygtex)
 Package acronym Info: Label `acro:api' newly defined as it shall be overridden
-although it is yet undefined on input line 661.
+although it is yet undefined on input line 729.
 
 
-Package acronym Warning: Acronym `api' is not defined on input line 661.
+Package acronym Warning: Acronym `api' is not defined on input line 729.
 
 
-Package acronym Warning: Acronym `api' is not defined on input line 661.
+Package acronym Warning: Acronym `api' is not defined on input line 729.
 
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/7447F9E26347A3813C5D7787EB16E04D65D427A48CF461C1E4EDF41A188071C
 7.pygtex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/7555D7EE26E10BBA25632AAAEC066F1B8A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex)
+4.pygtex [23])
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/415E896F7A6C022B125870C3930C22CC8A6B04CDDF0492A16BBC30FCB74219E
 4.pygtex)
 Package acronym Info: Label `acro:API' newly defined as it shall be overridden
-although it is yet undefined on input line 689.
+although it is yet undefined on input line 757.
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/71FCFC2D3151BB4ED2F63B41067A1B1065D427A48CF461C1E4EDF41A188071C
-7.pygtex)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[22]
+7.pygtex) [24]
 Package acronym Info: Label `acro:URL' newly defined as it shall be overridden
-although it is yet undefined on input line 715.
+although it is yet undefined on input line 783.
 Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
-although it is yet undefined on input line 718.
+although it is yet undefined on input line 786.
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/ECA1995CCD78E4DDBAE38D79D5E49CCB65D427A48CF461C1E4EDF41A188071C
-7.pygtex)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+7.pygtex) [25]
 \openout8 = `main.pyg'.
 
 
@@ -3945,7 +3972,7 @@ F.pygtex)
 
 
 (./_minted-main/35617E0BA850C9A7ECEC9DE1593D3C398A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex [23]
+4.pygtex
 Overfull \hbox (265.87341pt too wide) in paragraph at lines 4--4
 \T1/pcr/m/n/9 "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Que
 ry=\u0027kittens\u0027&$skip=0&$top=1",|  |
@@ -3963,7 +3990,7 @@ Overfull \hbox (147.07355pt too wide) in paragraph at lines 20--20
 6cH0&pid=15.1",|  |
  []
 
-[24]
+
 Overfull \hbox (217.27347pt too wide) in paragraph at lines 28--28
 \T1/pcr/m/n/9 "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Que
 ry=\u0027kittens\u0027&$skip=50"|  |
@@ -3972,60 +3999,62 @@ ry=\u0027kittens\u0027&$skip=50"|  |
 )
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 
-although it is yet undefined on input line 790.
+although it is yet undefined on input line 858.
 Package acronym Info: Label `acro:CSS' newly defined as it shall be overridden
-although it is yet undefined on input line 790.
- <images/proto3screen.png, id=1079, 926.46124pt x 589.20125pt>
+although it is yet undefined on input line 858.
+ [26] <images/proto3screen.png, id=1103, 926.46124pt x 589.20125pt>
 File: images/proto3screen.png Graphic file (type png)
 
 <use images/proto3screen.png>
-Package pdftex.def Info: images/proto3screen.png used on input line 797.
+Package pdftex.def Info: images/proto3screen.png used on input line 865.
 (pdftex.def)             Requested size: 426.79135pt x 271.43144pt.
 File: images/proto3screen.png Graphic file (type png)
  <use images/proto3screen.png>
-Package pdftex.def Info: images/proto3screen.png used on input line 805.
+Package pdftex.def Info: images/proto3screen.png used on input line 873.
 (pdftex.def)             Requested size: 426.79135pt x 271.43144pt.
 
-<images/proto2screen.png, id=1080, 926.46124pt x 577.15625pt>
+<images/proto2screen.png, id=1104, 926.46124pt x 577.15625pt>
 File: images/proto2screen.png Graphic file (type png)
 
 <use images/proto2screen.png>
-Package pdftex.def Info: images/proto2screen.png used on input line 809.
+Package pdftex.def Info: images/proto2screen.png used on input line 877.
 (pdftex.def)             Requested size: 426.79135pt x 265.88258pt.
 
-<images/proto1screen.png, id=1081, 923.45pt x 574.145pt>
+<images/proto1screen.png, id=1105, 923.45pt x 574.145pt>
 File: images/proto1screen.png Graphic file (type png)
 
 <use images/proto1screen.png>
-Package pdftex.def Info: images/proto1screen.png used on input line 813.
+Package pdftex.def Info: images/proto1screen.png used on input line 881.
 (pdftex.def)             Requested size: 426.79135pt x 265.35393pt.
 
 
-LaTeX Warning: Float too large for page by 156.69614pt on input line 817.
+LaTeX Warning: Float too large for page by 156.69614pt on input line 885.
 
-<images/screen_rpoetry_full.png, id=1082, 689.57625pt x 923.45pt>
+<images/screen_rpoetry_full.png, id=1106, 689.57625pt x 923.45pt>
 File: images/screen_rpoetry_full.png Graphic file (type png)
 
 <use images/screen_rpoetry_full.png>
-Package pdftex.def Info: images/screen_rpoetry_full.png used on input line 822.
+Package pdftex.def Info: images/screen_rpoetry_full.png used on input line 890.
 
 (pdftex.def)             Requested size: 243.27419pt x 325.77684pt.
 
-<images/screen_rpoetry_mobile.png, id=1083, 400.49625pt x 1173.38374pt>
+<images/screen_rpoetry_mobile.png, id=1107, 400.49625pt x 1173.38374pt>
 File: images/screen_rpoetry_mobile.png Graphic file (type png)
 
 <use images/screen_rpoetry_mobile.png>
-Package pdftex.def Info: images/screen_rpoetry_mobile.png used on input line 82
-6.
+Package pdftex.def Info: images/screen_rpoetry_mobile.png used on input line 89
+4.
 (pdftex.def)             Requested size: 115.23547pt x 337.60481pt.
- [25 <./images/proto3screen.png>]
-[26 <./images/proto2screen.png> <./images/proto1screen.png>] [27 <./images/scre
-en_rpoetry_full.png> <./images/screen_rpoetry_mobile.png>]
+ [27 <./images/proto3screen.png>]
+[28 <./images/proto2screen.png> <./images/proto1screen.png>]
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/AE5CF68846720623677A0A715A43456DF321CB041C1132A5681D6C9DD178236
 2.pygtex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 \openout8 = `main.pyg'.
 
 
@@ -4036,7 +4065,7 @@ F.pygtex)
 
 (./_minted-main/59BCC3AD6775562F845953CF016242256261B2510394E23546F15612EF9D7BB
 F.pygtex)
-Overfull \hbox (49.53764pt too wide) in paragraph at lines 899--900
+Overfull \hbox (49.53764pt too wide) in paragraph at lines 967--968
 \T1/pbk/l/n/10.95 email. Spe-cific-ally line [] calls the Javas-cript func-tion
  [][][][][][]|
  []
@@ -4045,85 +4074,94 @@ Overfull \hbox (49.53764pt too wide) in paragraph at lines 899--900
 
 
 (./_minted-main/5B2A7054BC22D874B9E1B9889EB75C808A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex [28])
+4.pygtex [29 <./images/screen_rpoetry_full.png> <./images/screen_rpoetry_mobile
+.png>])
 \openout7 = `main.pyg'.
 
 
 (./_minted-main/BB834E2AA3468331EAA75B5BE8C1D9002A220285471CCB69D0FAB951682F2E1
-C.pygtex) <images/Fibonacci.png, id=1117, 803.0pt x 507.8975pt>
+C.pygtex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/Fibonacci.png, id=1137, 803.0pt x 507.8975pt>
 File: images/Fibonacci.png Graphic file (type png)
 
 <use images/Fibonacci.png>
-Package pdftex.def Info: images/Fibonacci.png used on input line 953.
+Package pdftex.def Info: images/Fibonacci.png used on input line 1021.
 (pdftex.def)             Requested size: 213.39568pt x 134.97194pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 954--954
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
 [][] [][][]\T1/pbk/l/n/9 Image taken from [][]$\T1/pcr/m/n/9 https : / / upload
  . wikimedia . org / wikipedia / commons / 9 / 93 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
 []\T1/pbk/l/n/10.95 Python,
  []
 
 
-Underfull \hbox (badness 1629) in paragraph at lines 1018--1018
+Underfull \hbox (badness 1629) in paragraph at lines 1086--1086
 []\T1/pbk/l/n/10.95 Django, Her-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
 []\T1/pbk/l/n/10.95 Flask, Gu-ni-corn,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
 []\T1/pbk/l/n/10.95 WordNet, Flickr,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
 \T1/pbk/l/n/10.95 Bing, You-Tube,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
 \T1/pbk/l/n/10.95 Tube, Mi-crosoft
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
 []\T1/pbk/l/n/10.95 Algorithm, Source,
  []
 
-[29] [30 <./images/Fibonacci.png>]
-<images/prototype01.png, id=1133, 176.15813pt x 337.26pt>
+[30] [31]
+
+LaTeX Warning: Text page 32 contains only floats.
+
+[32 <./images/Fibonacci.png>]
+<images/prototype01.png, id=1157, 176.15813pt x 337.26pt>
 File: images/prototype01.png Graphic file (type png)
 
 <use images/prototype01.png>
-Package pdftex.def Info: images/prototype01.png used on input line 1062.
+Package pdftex.def Info: images/prototype01.png used on input line 1130.
 (pdftex.def)             Requested size: 211.3376pt x 404.6023pt.
 File: images/proto1screen.png Graphic file (type png)
  <use images/proto1screen.png>
-Package pdftex.def Info: images/proto1screen.png used on input line 1069.
+Package pdftex.def Info: images/proto1screen.png used on input line 1137.
 (pdftex.def)             Requested size: 426.79135pt x 265.35393pt.
- [31]
-<images/prototype02.png, id=1140, 318.43968pt x 252.945pt>
+ [33]
+<images/prototype02.png, id=1164, 318.43968pt x 252.945pt>
 File: images/prototype02.png Graphic file (type png)
 
 <use images/prototype02.png>
-Package pdftex.def Info: images/prototype02.png used on input line 1098.
+Package pdftex.def Info: images/prototype02.png used on input line 1166.
 (pdftex.def)             Requested size: 256.07741pt x 203.40608pt.
 File: images/proto2screen.png Graphic file (type png)
  <use images/proto2screen.png>
-Package pdftex.def Info: images/proto2screen.png used on input line 1105.
+Package pdftex.def Info: images/proto2screen.png used on input line 1173.
 (pdftex.def)             Requested size: 426.79135pt x 265.88258pt.
- [32 <./images/prototype01.png>] [33 <./images/prototype02.png>]) [34]
+ [34 <./images/prototype01.png>] [35 <./images/prototype02.png>]) [36]
 \openout2 = `main/applications.aux'.
 
  (./main/applications.tex
-[35
+[37
 
 
 
@@ -4141,15 +4179,15 @@ File: images/spirals.png Graphic file (type png)
 <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 32.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
- [36] [37]
-<images/dennis.png, id=1192, 673.39078pt x 540.89578pt>
+ [38] [39]
+<images/dennis.png, id=1216, 673.39078pt x 540.89578pt>
 File: images/dennis.png Graphic file (type png)
 
 <use images/dennis.png>
 Package pdftex.def Info: images/dennis.png used on input line 78.
 (pdftex.def)             Requested size: 426.79135pt x 342.82123pt.
- [38 <./images/dennis.png>]
-<images/opera.png, id=1208, 1235.61626pt x 705.63625pt>
+ [40 <./images/dennis.png>]
+<images/opera.png, id=1233, 1235.61626pt x 705.63625pt>
 File: images/opera.png Graphic file (type png)
  <use images/opera.png>
 Package pdftex.def Info: images/opera.png used on input line 100.
@@ -4168,7 +4206,7 @@ File: images/spirals.png Graphic file (type png)
 Package pdftex.def Info: images/spirals.png used on input line 111.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 
-[39 <./images/opera.png>] [40]
+[41 <./images/opera.png>] [42]
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 146.
@@ -4183,34 +4221,34 @@ File: images/spirals.png Graphic file (type png)
 Package pdftex.def Info: images/spirals.png used on input line 146.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 
-<images/patakosmos.png, id=1226, 1008.76875pt x 670.505pt>
+<images/patakosmos.png, id=1251, 1008.76875pt x 670.505pt>
 File: images/patakosmos.png Graphic file (type png)
 
 <use images/patakosmos.png>
 Package pdftex.def Info: images/patakosmos.png used on input line 162.
 (pdftex.def)             Requested size: 426.79135pt x 283.67686pt.
 
-<images/tweets.png, id=1227, 592.2125pt x 884.30376pt>
+<images/tweets.png, id=1252, 592.2125pt x 884.30376pt>
 File: images/tweets.png Graphic file (type png)
  <use images/tweets.png>
 Package pdftex.def Info: images/tweets.png used on input line 172.
 (pdftex.def)             Requested size: 362.77525pt x 541.71838pt.
-) [41] [42 <./images/patakosmos.png>] [43 <./images/tweets.png>]
+) [43] [44 <./images/patakosmos.png>] [45 <./images/tweets.png>]
 \openout2 = `back/interlude2.aux'.
 
 
-(./back/interlude2.tex [44
+(./back/interlude2.tex [46
 
 
 
 ])
-<images/spiral_meta.pdf, id=1265, 156.48964pt x 156.48964pt>
+<images/spiral_meta.pdf, id=1288, 156.48964pt x 156.48964pt>
 File: images/spiral_meta.pdf Graphic file (type pdf)
 
 <use images/spiral_meta.pdf>
 Package pdftex.def Info: images/spiral_meta.pdf used on input line 136.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [45
+ [47
 
 
 
@@ -4218,7 +4256,7 @@ Package pdftex.def Info: images/spiral_meta.pdf used on input line 136.
 \openout2 = `main/analysis.aux'.
 
 
-(./main/analysis.tex [46
+(./main/analysis.tex [48
 
 
 ] (./main.ptc)
@@ -4250,53 +4288,53 @@ Package pdftex.def Info: images/spirals.png used on input line 39.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 
 
-LaTeX Warning: Reference `ch:foundations' on page 47 undefined on input line 41
+LaTeX Warning: Reference `ch:foundations' on page 49 undefined on input line 41
 .
 
-Package marginnote Info: Margin note 61.1 is on absolute page 61
+Package marginnote Info: Margin note 63.1 is on absolute page 63
 (marginnote)              on input line 41.
 Package marginnote Info: right page because not two side mode on input line 41.
 
 
-LaTeX Warning: Reference `ch:foundations' on page 47 undefined on input line 41
+LaTeX Warning: Reference `ch:foundations' on page 49 undefined on input line 41
 .
 
 
-LaTeX Warning: Reference `ch:interpretation' on page 47 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 49 undefined on input line
  41.
 
 Package marginnote Info: xpos seems to be 182.82004pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 41.
 
-LaTeX Warning: Reference `ch:interpretation' on page 47 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 49 undefined on input line
  41.
 
 
-LaTeX Warning: Reference `ch:inspirations' on page 47 undefined on input line 4
+LaTeX Warning: Reference `ch:inspirations' on page 49 undefined on input line 4
 8.
 
-Package marginnote Info: Margin note 61.2 is on absolute page 62
+Package marginnote Info: Margin note 63.2 is on absolute page 64
 (marginnote)              on input line 48.
 Package marginnote Info: right page because not two side mode on input line 48.
 
 
-LaTeX Warning: Reference `ch:inspirations' on page 47 undefined on input line 4
+LaTeX Warning: Reference `ch:inspirations' on page 49 undefined on input line 4
 8.
 
 Package marginnote Info: xpos seems to be 506.19096pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 48.
-[47]
-Package marginnote Info: Margin note 62.1 is on absolute page 62
+[49]
+Package marginnote Info: Margin note 64.1 is on absolute page 64
 (marginnote)              on input line 51.
 Package marginnote Info: right page because not two side mode on input line 51.
 
 
 
-LaTeX Warning: Reference `s:surfer' on page 48 undefined on input line 51.
+LaTeX Warning: Reference `s:surfer' on page 50 undefined on input line 51.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 51.
-Package marginnote Info: Margin note 62.2 is on absolute page 62
+Package marginnote Info: Margin note 64.2 is on absolute page 64
 (marginnote)              on input line 51.
 Package marginnote Info: right page because not two side mode on input line 51.
 
@@ -4310,72 +4348,72 @@ Overfull \hbox (7.82237pt too wide) in paragraph at lines 51--52
 lo-gies such as [][][]Resource|
  []
 
-Package marginnote Info: Margin note 62.3 is on absolute page 62
+Package marginnote Info: Margin note 64.3 is on absolute page 64
 (marginnote)              on input line 52.
 Package marginnote Info: right page because not two side mode on input line 52.
 
 
-LaTeX Warning: Reference `s:faustlib' on page 48 undefined on input line 52.
+LaTeX Warning: Reference `s:faustlib' on page 50 undefined on input line 52.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 52.
-Package marginnote Info: Margin note 62.4 is on absolute page 62
+Package marginnote Info: Margin note 64.4 is on absolute page 64
 (marginnote)              on input line 52.
 Package marginnote Info: right page because not two side mode on input line 52.
 
 Package marginnote Info: xpos seems to be 307.66623pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 52.
-Package marginnote Info: Margin note 62.5 is on absolute page 62
+Package marginnote Info: Margin note 64.5 is on absolute page 64
 (marginnote)              on input line 53.
 Package marginnote Info: right page because not two side mode on input line 53.
 
 
-LaTeX Warning: Reference `s:queneau' on page 48 undefined on input line 53.
+LaTeX Warning: Reference `s:queneau' on page 50 undefined on input line 53.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 53.
-Package marginnote Info: Margin note 62.6 is on absolute page 62
+Package marginnote Info: Margin note 64.6 is on absolute page 64
 (marginnote)              on input line 53.
 Package marginnote Info: right page because not two side mode on input line 53.
 
 Package marginnote Info: xpos seems to be 373.26385pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 53.
-Package marginnote Info: Margin note 62.7 is on absolute page 62
+Package marginnote Info: Margin note 64.7 is on absolute page 64
 (marginnote)              on input line 54.
 Package marginnote Info: right page because not two side mode on input line 54.
 
 
-LaTeX Warning: Reference `s:borges' on page 48 undefined on input line 54.
+LaTeX Warning: Reference `s:borges' on page 50 undefined on input line 54.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 54.
-Package marginnote Info: Margin note 62.8 is on absolute page 62
+Package marginnote Info: Margin note 64.8 is on absolute page 64
 (marginnote)              on input line 54.
 Package marginnote Info: right page because not two side mode on input line 54.
 
 Package marginnote Info: xpos seems to be 336.83842pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 54.
-Package marginnote Info: Margin note 62.9 is on absolute page 63
+Package marginnote Info: Margin note 64.9 is on absolute page 65
 (marginnote)              on input line 55.
 Package marginnote Info: right page because not two side mode on input line 55.
 
 
-LaTeX Warning: Reference `s:yossarian' on page 48 undefined on input line 55.
+LaTeX Warning: Reference `s:yossarian' on page 50 undefined on input line 55.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 55.
-[48]
-Package marginnote Info: Margin note 63.1 is on absolute page 63
+[50]
+Package marginnote Info: Margin note 65.1 is on absolute page 65
 (marginnote)              on input line 56.
 Package marginnote Info: right page because not two side mode on input line 56.
 
 
 
-LaTeX Warning: Reference `s:babel' on page 49 undefined on input line 56.
+LaTeX Warning: Reference `s:babel' on page 51 undefined on input line 56.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 56.
-Package marginnote Info: Margin note 63.2 is on absolute page 63
+Package marginnote Info: Margin note 65.2 is on absolute page 65
 (marginnote)              on input line 56.
 Package marginnote Info: right page because not two side mode on input line 56.
 
@@ -4386,42 +4424,42 @@ File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )
 Package marginnote Info: xpos seems to be 513.0438pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 56.
-Package marginnote Info: Margin note 63.3 is on absolute page 63
+Package marginnote Info: Margin note 65.3 is on absolute page 65
 (marginnote)              on input line 57.
 Package marginnote Info: right page because not two side mode on input line 57.
 
 
 
-LaTeX Warning: Reference `s:oulipo' on page 49 undefined on input line 57.
+LaTeX Warning: Reference `s:oulipo' on page 51 undefined on input line 57.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 57.
 Package acronym Info: Label `acro:OULIPO' newly defined as it shall be overridd
 en
 although it is yet undefined on input line 57.
-Package marginnote Info: Margin note 63.4 is on absolute page 63
+Package marginnote Info: Margin note 65.4 is on absolute page 65
 (marginnote)              on input line 57.
 Package marginnote Info: right page because not two side mode on input line 57.
 
 Package marginnote Info: xpos seems to be 308.45427pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 57.
-Package marginnote Info: Margin note 63.5 is on absolute page 63
+Package marginnote Info: Margin note 65.5 is on absolute page 65
 (marginnote)              on input line 58.
 Package marginnote Info: right page because not two side mode on input line 58.
 
 
-LaTeX Warning: Reference `s:culture' on page 49 undefined on input line 58.
+LaTeX Warning: Reference `s:culture' on page 51 undefined on input line 58.
 
 Package marginnote Info: xpos seems to be 141.18608pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 58.
-[49]
-Package marginnote Info: Margin note 64.1 is on absolute page 64
+[51]
+Package marginnote Info: Margin note 66.1 is on absolute page 66
 (marginnote)              on input line 127.
 Package marginnote Info: right page because not two side mode on input line 127
 .
 Package marginnote Info: xpos seems to be 299.97975pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 127.
- [50]
+ [52]
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 133.
@@ -4437,68 +4475,68 @@ Package pdftex.def Info: images/spirals.png used on input line 133.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 
 
-LaTeX Warning: Reference `ch:introduction' on page 51 undefined on input line 1
+LaTeX Warning: Reference `ch:introduction' on page 53 undefined on input line 1
 35.
 
 
-LaTeX Warning: Reference `ch:inspirations' on page 51 undefined on input line 1
+LaTeX Warning: Reference `ch:inspirations' on page 53 undefined on input line 1
 35.
 
 
-LaTeX Warning: Reference `ch:methodology' on page 51 undefined on input line 13
+LaTeX Warning: Reference `ch:methodology' on page 53 undefined on input line 13
 5.
 
 
-LaTeX Warning: Reference `ch:pataphysics' on page 51 undefined on input line 13
+LaTeX Warning: Reference `ch:pataphysics' on page 53 undefined on input line 13
 5.
 
 
-LaTeX Warning: Reference `ch:creativity' on page 51 undefined on input line 135
+LaTeX Warning: Reference `ch:creativity' on page 53 undefined on input line 135
 .
 
 
-LaTeX Warning: Reference `ch:technology' on page 51 undefined on input line 135
+LaTeX Warning: Reference `ch:technology' on page 53 undefined on input line 135
 .
 
 
-LaTeX Warning: Reference `ch:evaluation' on page 51 undefined on input line 135
+LaTeX Warning: Reference `ch:evaluation' on page 53 undefined on input line 135
 .
 
 
-LaTeX Warning: Reference `ch:foundations' on page 51 undefined on input line 13
+LaTeX Warning: Reference `ch:foundations' on page 53 undefined on input line 13
 5.
 
 
-LaTeX Warning: Reference `ch:interpretation' on page 51 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 53 undefined on input line
  135.
 
 
-LaTeX Warning: Reference `ch:aspirations' on page 51 undefined on input line 13
+LaTeX Warning: Reference `ch:aspirations' on page 53 undefined on input line 13
 5.
 
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 143.
-[51]
-Package marginnote Info: Margin note 66.1 is on absolute page 66
+[53]
+Package marginnote Info: Margin note 68.1 is on absolute page 68
 (marginnote)              on input line 225.
 Package marginnote Info: right page because not two side mode on input line 225
 .
 Package marginnote Info: xpos seems to be 169.62944pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 225.
- [52]
-Package marginnote Info: Margin note 67.1 is on absolute page 67
+ [54]
+Package marginnote Info: Margin note 69.1 is on absolute page 69
 (marginnote)              on input line 234.
 Package marginnote Info: right page because not two side mode on input line 234
 .
 Package marginnote Info: xpos seems to be 237.81781pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 234.
-Package marginnote Info: Margin note 67.2 is on absolute page 67
+Package marginnote Info: Margin note 69.2 is on absolute page 69
 (marginnote)              on input line 236.
 Package marginnote Info: right page because not two side mode on input line 236
 .
 Package marginnote Info: xpos seems to be 374.31032pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 236.
-Package marginnote Info: Margin note 67.3 is on absolute page 67
+Package marginnote Info: Margin note 69.3 is on absolute page 69
 (marginnote)              on input line 238.
 Package marginnote Info: right page because not two side mode on input line 238
 .
@@ -4517,7 +4555,7 @@ File: images/spirals.png Graphic file (type png)
 <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 240.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package marginnote Info: Margin note 67.4 is on absolute page 67
+Package marginnote Info: Margin note 69.4 is on absolute page 69
 (marginnote)              on input line 242.
 Package marginnote Info: right page because not two side mode on input line 242
 .
@@ -4527,52 +4565,52 @@ Package marginnote Info: xpos seems to be 342.32056pt,
 Overfull \vbox (11.24232pt too high) detected at line 277
  []
 
-[53]
-Package marginnote Info: Margin note 68.1 is on absolute page 68
+[55]
+Package marginnote Info: Margin note 70.1 is on absolute page 70
 (marginnote)              on input line 280.
 Package marginnote Info: right page because not two side mode on input line 280
 .
 
 
-LaTeX Warning: Reference `s:antinomy' on page 54 undefined on input line 280.
+LaTeX Warning: Reference `s:antinomy' on page 56 undefined on input line 280.
 
 Package marginnote Info: xpos seems to be 312.42964pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 280.
-Package marginnote Info: Margin note 68.2 is on absolute page 68
+Package marginnote Info: Margin note 70.2 is on absolute page 70
 (marginnote)              on input line 280.
 Package marginnote Info: right page because not two side mode on input line 280
 .
-Package marginnote Info: xpos seems to be 374.05995pt,
+Package marginnote Info: xpos seems to be 370.4094pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 280.
-Package marginnote Info: Margin note 68.3 is on absolute page 68
+Package marginnote Info: Margin note 70.3 is on absolute page 70
 (marginnote)              on input line 280.
 Package marginnote Info: right page because not two side mode on input line 280
 .
 
-LaTeX Warning: Reference `s:syzygy' on page 54 undefined on input line 280.
+LaTeX Warning: Reference `s:syzygy' on page 56 undefined on input line 280.
 
 Package marginnote Info: xpos seems to be 165.27544pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 280.
-Package marginnote Info: Margin note 68.4 is on absolute page 68
+Package marginnote Info: Margin note 70.4 is on absolute page 70
 (marginnote)              on input line 282.
 Package marginnote Info: right page because not two side mode on input line 282
 .
 Package marginnote Info: xpos seems to be 247.66742pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 282.
-Package marginnote Info: Margin note 68.5 is on absolute page 68
+Package marginnote Info: Margin note 70.5 is on absolute page 70
 (marginnote)              on input line 282.
 Package marginnote Info: right page because not two side mode on input line 282
 .
 Package marginnote Info: xpos seems to be 227.69403pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 282.
-Package marginnote Info: Margin note 68.6 is on absolute page 69
+Package marginnote Info: Margin note 70.6 is on absolute page 71
 (marginnote)              on input line 284.
 Package marginnote Info: right page because not two side mode on input line 284
 .
 Package marginnote Info: xpos seems to be 343.39209pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 284.
-[54]
-Package marginnote Info: Margin note 69.1 is on absolute page 69
+[56]
+Package marginnote Info: Margin note 71.1 is on absolute page 71
 (marginnote)              on input line 307.
 Package marginnote Info: right page because not two side mode on input line 307
 .
@@ -4580,20 +4618,20 @@ Package marginnote Info: xpos seems to be 303.5116pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 307.
 
 
-LaTeX Warning: Reference `app:stopwords' on page 55 undefined on input line 307
+LaTeX Warning: Reference `app:stopwords' on page 57 undefined on input line 307
 .
 
-Package marginnote Info: Margin note 69.2 is on absolute page 69
+Package marginnote Info: Margin note 71.2 is on absolute page 71
 (marginnote)              on input line 307.
 Package marginnote Info: right page because not two side mode on input line 307
 .
 
-LaTeX Warning: Reference `app:stopwords' on page 55 undefined on input line 307
+LaTeX Warning: Reference `app:stopwords' on page 57 undefined on input line 307
 .
 
 Package marginnote Info: xpos seems to be 180.82452pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 307.
-Package marginnote Info: Margin note 69.3 is on absolute page 69
+Package marginnote Info: Margin note 71.3 is on absolute page 71
 (marginnote)              on input line 313.
 Package marginnote Info: right page because not two side mode on input line 313
 .
@@ -4603,7 +4641,7 @@ Package marginnote Info: xpos seems to be 536.22592pt,
 
 
 (./_minted-main/478DEACC5439FE8DDB3C105051A773AE8A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex) [55]
+4.pygtex) [57]
 \openout7 = `main.pyg'.
 
 
@@ -4618,27 +4656,27 @@ Package marginnote Info: xpos seems to be 536.22592pt,
 
 
 (./_minted-main/6720FB654202837DBB6F7702B48C1E786261B2510394E23546F15612EF9D7BB
-F.pygtex) [56]
-Package marginnote Info: Margin note 71.1 is on absolute page 71
+F.pygtex) [58]
+Package marginnote Info: Margin note 73.1 is on absolute page 73
 (marginnote)              on input line 356.
 Package marginnote Info: right page because not two side mode on input line 356
 .
 Package marginnote Info: xpos seems to be 167.18456pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 356.
-Package marginnote Info: Margin note 71.2 is on absolute page 71
+Package marginnote Info: Margin note 73.2 is on absolute page 73
 (marginnote)              on input line 387.
 Package marginnote Info: right page because not two side mode on input line 387
 .
 Package marginnote Info: xpos seems to be 166.0804pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 387.
-Package marginnote Info: Margin note 71.3 is on absolute page 71
+Package marginnote Info: Margin note 73.3 is on absolute page 73
 (marginnote)              on input line 393.
 Package marginnote Info: right page because not two side mode on input line 393
 .
 Package marginnote Info: xpos seems to be 172.28473pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 393.
- [57]
-Package marginnote Info: Margin note 72.1 is on absolute page 72
+ [59]
+Package marginnote Info: Margin note 74.1 is on absolute page 74
 (marginnote)              on input line 395.
 Package marginnote Info: right page because not two side mode on input line 395
 .
@@ -4646,10 +4684,10 @@ Package marginnote Info: xpos seems to be 229.04202pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 395.
 
 
-LaTeX Warning: Reference `fig:termdocs' on page 58 undefined on input line 399.
+LaTeX Warning: Reference `fig:termdocs' on page 60 undefined on input line 399.
 
 
-Package marginnote Info: Margin note 72.2 is on absolute page 72
+Package marginnote Info: Margin note 74.2 is on absolute page 74
 (marginnote)              on input line 399.
 Package marginnote Info: right page because not two side mode on input line 399
 .
@@ -4659,7 +4697,7 @@ line 399.
 File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
 )
 
-LaTeX Warning: Reference `fig:termdocs' on page 58 undefined on input line 399.
+LaTeX Warning: Reference `fig:termdocs' on page 60 undefined on input line 399.
 
 
 Package marginnote Info: xpos seems to be 168.1245pt,
@@ -4667,7 +4705,7 @@ Package marginnote Info: xpos seems to be 168.1245pt,
 Package acronym Info: Label `acro:TDM' newly defined as it shall be overridden
 although it is yet undefined on input line 399.
 
-LaTeX Warning: Reference `ch:technology' on page 58 undefined on input line 399
+LaTeX Warning: Reference `ch:technology' on page 60 undefined on input line 399
 .
 
 File: images/spirals.png Graphic file (type png)
@@ -4682,7 +4720,7 @@ File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 401.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package marginnote Info: Margin note 72.3 is on absolute page 72
+Package marginnote Info: Margin note 74.3 is on absolute page 74
 (marginnote)              on input line 403.
 Package marginnote Info: right page because not two side mode on input line 403
 .
@@ -4693,13 +4731,13 @@ Package marginnote Info: xpos seems to be 223.20827pt,
 
 (./_minted-main/478DEACC5439FE8DDB3C105051A773AE8A6B04CDDF0492A16BBC30FCB74219E
 4.pygtex)
-Package marginnote Info: Margin note 72.4 is on absolute page 73
+Package marginnote Info: Margin note 74.4 is on absolute page 75
 (marginnote)              on input line 413.
 Package marginnote Info: right page because not two side mode on input line 413
 .
-Package marginnote Info: xpos seems to be 451.23134pt,
+Package marginnote Info: xpos seems to be 443.56633pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 413.
- [58]
+ [60]
 \openout7 = `main.pyg'.
 
 
@@ -4718,7 +4756,7 @@ File: images/spirals.png Graphic file (type png)
 <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 423.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package marginnote Info: Margin note 73.1 is on absolute page 73
+Package marginnote Info: Margin note 75.1 is on absolute page 75
 (marginnote)              on input line 425.
 Package marginnote Info: right page because not two side mode on input line 425
 .
@@ -4726,64 +4764,64 @@ Package marginnote Info: xpos seems to be 416.10081pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 425.
 
 
-LaTeX Warning: Reference `ch:technology' on page 59 undefined on input line 433
+LaTeX Warning: Reference `ch:technology' on page 61 undefined on input line 433
 .
 
-Package marginnote Info: Margin note 73.2 is on absolute page 73
+Package marginnote Info: Margin note 75.2 is on absolute page 75
 (marginnote)              on input line 433.
 Package marginnote Info: right page because not two side mode on input line 433
 .
 
-LaTeX Warning: Reference `ch:technology' on page 59 undefined on input line 433
+LaTeX Warning: Reference `ch:technology' on page 61 undefined on input line 433
 .
 
 Package marginnote Info: xpos seems to be 269.47449pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 433.
-Package marginnote Info: Margin note 73.3 is on absolute page 74
+Package marginnote Info: Margin note 75.3 is on absolute page 76
 (marginnote)              on input line 438.
 Package marginnote Info: right page because not two side mode on input line 438
 .
 Package marginnote Info: xpos seems to be 191.8468pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 438.
-Package marginnote Info: Margin note 73.4 is on absolute page 74
+Package marginnote Info: Margin note 75.4 is on absolute page 76
 (marginnote)              on input line 438.
 Package marginnote Info: right page because not two side mode on input line 438
 .
 
-LaTeX Warning: Reference `app:damlev' on page 59 undefined on input line 438.
+LaTeX Warning: Reference `app:damlev' on page 61 undefined on input line 438.
 
 Package marginnote Info: xpos seems to be 471.03117pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 438.
-[59]
-Package marginnote Info: Margin note 74.1 is on absolute page 74
+[61]
+Package marginnote Info: Margin note 76.1 is on absolute page 76
 (marginnote)              on input line 456.
 Package marginnote Info: right page because not two side mode on input line 456
 .
 
 
-LaTeX Warning: Reference `ch:pataphysics' on page 60 undefined on input line 45
+LaTeX Warning: Reference `ch:pataphysics' on page 62 undefined on input line 45
 6.
 
 Package marginnote Info: xpos seems to be 265.87039pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 456.
-Package marginnote Info: Margin note 74.2 is on absolute page 74
+Package marginnote Info: Margin note 76.2 is on absolute page 76
 (marginnote)              on input line 456.
 Package marginnote Info: right page because not two side mode on input line 456
 .
 
-LaTeX Warning: Reference `s:faustlib' on page 60 undefined on input line 456.
+LaTeX Warning: Reference `s:faustlib' on page 62 undefined on input line 456.
 
 Package marginnote Info: xpos seems to be 352.64825pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 456.
 
-LaTeX Warning: Reference `app:damlev' on page 60 undefined on input line 514.
+LaTeX Warning: Reference `app:damlev' on page 62 undefined on input line 514.
 
-Package marginnote Info: Margin note 74.3 is on absolute page 74
+Package marginnote Info: Margin note 76.3 is on absolute page 76
 (marginnote)              on input line 514.
 Package marginnote Info: right page because not two side mode on input line 514
 .
 
-LaTeX Warning: Reference `app:damlev' on page 60 undefined on input line 514.
+LaTeX Warning: Reference `app:damlev' on page 62 undefined on input line 514.
 
 Package marginnote Info: xpos seems to be 266.17479pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 514.
@@ -4793,35 +4831,35 @@ Overfull \hbox (16.28638pt too wide) in paragraph at lines 514--515
 the Damerau-Levenshtein|
  []
 
-Package marginnote Info: Margin note 74.4 is on absolute page 76
+Package marginnote Info: Margin note 76.4 is on absolute page 78
 (marginnote)              on input line 516.
 Package marginnote Info: right page because not two side mode on input line 516
 .
 Package marginnote Info: xpos seems to be 170.60405pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 516.
-[60] [61] (./images/wordnet.pdf_tex
-<images/wordnet.pdf, id=1522, page=1, 305.33415pt x 145.86453pt>
+[62] [63] (./images/wordnet.pdf_tex
+<images/wordnet.pdf, id=1542, page=1, 305.33415pt x 145.86453pt>
 File: images/wordnet.pdf Graphic file (type pdf)
 
 <use images/wordnet.pdf, page 1>
 Package pdftex.def Info: images/wordnet.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 305.33414pt x 145.87306pt.
 
-<images/wordnet.pdf, id=1523, page=2, 305.33415pt x 145.86453pt>
+<images/wordnet.pdf, id=1543, page=2, 305.33415pt x 145.86453pt>
 File: images/wordnet.pdf Graphic file (type pdf)
 
 <use images/wordnet.pdf, page 2>
 Package pdftex.def Info: images/wordnet.pdf, page2 used on input line 57.
 (pdftex.def)             Requested size: 305.33414pt x 145.87306pt.
 
-<images/wordnet.pdf, id=1524, page=3, 305.33415pt x 145.86453pt>
+<images/wordnet.pdf, id=1544, page=3, 305.33415pt x 145.86453pt>
 File: images/wordnet.pdf Graphic file (type pdf)
 
 <use images/wordnet.pdf, page 3>
 Package pdftex.def Info: images/wordnet.pdf, page3 used on input line 62.
 (pdftex.def)             Requested size: 305.33414pt x 145.87306pt.
 
-<images/wordnet.pdf, id=1525, page=4, 305.33415pt x 145.86453pt>
+<images/wordnet.pdf, id=1545, page=4, 305.33415pt x 145.86453pt>
 File: images/wordnet.pdf Graphic file (type pdf)
 
 <use images/wordnet.pdf, page 4>
@@ -4832,7 +4870,7 @@ Package pdftex.def Info: images/wordnet.pdf, page4 used on input line 67.
 
 
 (./_minted-main/C2E8D9E62C38B30CE23E32288428C5378A6B04CDDF0492A16BBC30FCB74219E
-4.pygtex [62 <./images/wordnet.pdf> <./images/wordnet.pdf
+4.pygtex [64 <./images/wordnet.pdf> <./images/wordnet.pdf
 
 pdfTeX warning: pdflatex.exe (file ./images/wordnet.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
@@ -4846,14 +4884,14 @@ pdfTeX warning: pdflatex.exe (file ./images/wordnet.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
 >])
 
-LaTeX Warning: Reference `app:syzygy' on page 63 undefined on input line 559.
+LaTeX Warning: Reference `app:syzygy' on page 65 undefined on input line 559.
 
-Package marginnote Info: Margin note 77.1 is on absolute page 77
+Package marginnote Info: Margin note 79.1 is on absolute page 79
 (marginnote)              on input line 559.
 Package marginnote Info: right page because not two side mode on input line 559
 .
 
-LaTeX Warning: Reference `app:syzygy' on page 63 undefined on input line 559.
+LaTeX Warning: Reference `app:syzygy' on page 65 undefined on input line 559.
 
 Package marginnote Info: xpos seems to be 454.42928pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 559.
@@ -4867,20 +4905,20 @@ Overfull \hbox (17.0299pt too wide) in paragraph at lines 571--572
 er.v.03, feather.v.04,|
  []
 
-[63]
-Package marginnote Info: Margin note 78.1 is on absolute page 78
+[65]
+Package marginnote Info: Margin note 80.1 is on absolute page 80
 (marginnote)              on input line 578.
 Package marginnote Info: right page because not two side mode on input line 578
 .
 Package marginnote Info: xpos seems to be 167.90489pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 578.
-Package marginnote Info: Margin note 78.2 is on absolute page 78
+Package marginnote Info: Margin note 80.2 is on absolute page 80
 (marginnote)              on input line 600.
 Package marginnote Info: right page because not two side mode on input line 600
 .
 Package marginnote Info: xpos seems to be 385.53206pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 600.
-Package marginnote Info: Margin note 78.3 is on absolute page 79
+Package marginnote Info: Margin note 80.3 is on absolute page 81
 (marginnote)              on input line 606.
 Package marginnote Info: right page because not two side mode on input line 606
 .
@@ -4892,7 +4930,7 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 Package marginnote Info: xpos seems to be 414.97507pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 606.
 
-[64] [65]
+[66] [67]
 \openout8 = `main.pyg'.
 
 
@@ -4903,49 +4941,49 @@ F.pygtex)
 
 (./_minted-main/705ECC5DE65742645767CE1DE3BE99576261B2510394E23546F15612EF9D7BB
 F.pygtex)
-Package marginnote Info: Margin note 80.1 is on absolute page 80
+Package marginnote Info: Margin note 82.1 is on absolute page 82
 (marginnote)              on input line 630.
 Package marginnote Info: right page because not two side mode on input line 630
 .
 Package marginnote Info: xpos seems to be 288.50574pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 630.
-Package marginnote Info: Margin note 80.2 is on absolute page 80
+Package marginnote Info: Margin note 82.2 is on absolute page 82
 (marginnote)              on input line 632.
 Package marginnote Info: right page because not two side mode on input line 632
 .
 Package marginnote Info: xpos seems to be 428.82654pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 632.
- <images/bluekittenflickr.png, id=1579, 676.77844pt x 422.70422pt>
+ <images/bluekittenflickr.png, id=1599, 676.77844pt x 422.70422pt>
 File: images/bluekittenflickr.png Graphic file (type png)
 
 <use images/bluekittenflickr.png>
 Package pdftex.def Info: images/bluekittenflickr.png used on input line 636.
 (pdftex.def)             Requested size: 426.79135pt x 266.57596pt.
- [66 <./images/bluekittenflickr.png>]
+ [68 <./images/bluekittenflickr.png>]
 \openout8 = `main.pyg'.
 
 
 (./_minted-main/D291D678917689B4D4E38F7FF07E40556261B2510394E23546F15612EF9D7BB
 F.pygtex)
-Package marginnote Info: Margin note 81.1 is on absolute page 81
+Package marginnote Info: Margin note 83.1 is on absolute page 83
 (marginnote)              on input line 651.
 Package marginnote Info: right page because not two side mode on input line 651
 .
 Package marginnote Info: xpos seems to be 446.72467pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 651.
-Package marginnote Info: Margin note 81.2 is on absolute page 81
+Package marginnote Info: Margin note 83.2 is on absolute page 83
 (marginnote)              on input line 651.
 Package marginnote Info: right page because not two side mode on input line 651
 .
 Package marginnote Info: xpos seems to be 298.65892pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 651.
- <images/bluekittengetty.png, id=1594, 674.1436pt x 419.31656pt>
+ <images/bluekittengetty.png, id=1614, 674.1436pt x 419.31656pt>
 File: images/bluekittengetty.png Graphic file (type png)
 
 <use images/bluekittengetty.png>
 Package pdftex.def Info: images/bluekittengetty.png used on input line 655.
 (pdftex.def)             Requested size: 426.79135pt x 265.46967pt.
- [67 <./images/bluekittengetty.png>]
+ [69 <./images/bluekittengetty.png>]
 Underfull \hbox (badness 1024) in paragraph at lines 666--666
 [][] [][][]\T1/pbk/l/n/9 Microsoft will dis-con-tinue this ver-sion of the cur-
 rent [][] in Decem-ber 2016. The
@@ -4966,241 +5004,222 @@ URL-escaped|
 
 (./_minted-main/C3BE117041A113540DEB0FF532B195436261B2510394E23546F15612EF9D7BB
 F.pygtex)
-Package marginnote Info: Margin note 82.1 is on absolute page 82
+Package marginnote Info: Margin note 84.1 is on absolute page 84
 (marginnote)              on input line 682.
 Package marginnote Info: right page because not two side mode on input line 682
 .
 
 
-LaTeX Warning: Reference `s:qexpansion' on page 68 undefined on input line 682.
+LaTeX Warning: Reference `s:qexpansion' on page 70 undefined on input line 682.
 
 
 Package marginnote Info: xpos seems to be 259.6635pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 682.
-[68]
-Package acronym Info: Label `acro:IR' newly defined as it shall be overridden
-although it is yet undefined on input line 701.
+[70]
+
+LaTeX Warning: Reference `ch:aspirations' on page 71 undefined on input line 70
+1.
 
 
-LaTeX Warning: Reference `s:irmodels' on page 69 undefined on input line 701.
+LaTeX Warning: Reference `ch:aspirations' on page 71 undefined on input line 70
+1.
 
-Package marginnote Info: Margin note 83.1 is on absolute page 83
-(marginnote)              on input line 701.
-Package marginnote Info: right page because not two side mode on input line 701
+Package marginnote Info: Margin note 85.1 is on absolute page 85
+(marginnote)              on input line 705.
+Package marginnote Info: right page because not two side mode on input line 705
 .
-
-LaTeX Warning: Reference `s:irmodels' on page 69 undefined on input line 701.
-
-Package marginnote Info: xpos seems to be 359.74991pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 701.
-
-LaTeX Warning: Citation 'Yates2011' on page 69 undefined on input line 703.
-
-[69]
-
-LaTeX Warning: Reference `ch:aspirations' on page 70 undefined on input line 74
-4.
-
-
-LaTeX Warning: Reference `ch:aspirations' on page 70 undefined on input line 74
-4.
-
-Package marginnote Info: Margin note 84.1 is on absolute page 84
-(marginnote)              on input line 748.
-Package marginnote Info: right page because not two side mode on input line 748
-.
-Package marginnote Info: xpos seems to be 531.62344pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 748.
-Package marginnote Info: Margin note 84.2 is on absolute page 84
-(marginnote)              on input line 748.
-Package marginnote Info: right page because not two side mode on input line 748
+Package marginnote Info: xpos seems to be 113.81102pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 705.
+Package marginnote Info: Margin note 85.2 is on absolute page 85
+(marginnote)              on input line 705.
+Package marginnote Info: right page because not two side mode on input line 705
 .
 Package marginnote Info: xpos seems to be 523.66304pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 748.
-<images/poemtree.png, id=1656, 490.83376pt x 323.33296pt>
+(marginnote)             \marginnoteleftadjust ignored on input line 705.
+<images/poemtree.png, id=1662, 490.83376pt x 323.33296pt>
 File: images/poemtree.png Graphic file (type png)
 
 <use images/poemtree.png>
-Package pdftex.def Info: images/poemtree.png used on input line 752.
+Package pdftex.def Info: images/poemtree.png used on input line 709.
 (pdftex.def)             Requested size: 426.79135pt x 281.15433pt.
 
-<images/listsourcetree.png, id=1657, 400.87265pt x 325.215pt>
+<images/listsourcetree.png, id=1663, 400.87265pt x 325.215pt>
 File: images/listsourcetree.png Graphic file (type png)
 
 <use images/listsourcetree.png>
-Package pdftex.def Info: images/listsourcetree.png used on input line 759.
+Package pdftex.def Info: images/listsourcetree.png used on input line 716.
 (pdftex.def)             Requested size: 426.79135pt x 346.26459pt.
 
-<images/listalgotree.png, id=1658, 551.43515pt x 302.63063pt>
+<images/listalgotree.png, id=1664, 551.43515pt x 302.63063pt>
 File: images/listalgotree.png Graphic file (type png)
 
 <use images/listalgotree.png>
-Package pdftex.def Info: images/listalgotree.png used on input line 766.
+Package pdftex.def Info: images/listalgotree.png used on input line 723.
 (pdftex.def)             Requested size: 426.79135pt x 234.23615pt.
 Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
-although it is yet undefined on input line 774.
- [70]
+although it is yet undefined on input line 731.
+ [71]
 Package acronym Info: Label `acro:VR' newly defined as it shall be overridden
-although it is yet undefined on input line 781.
+although it is yet undefined on input line 738.
 Package acronym Info: Label `acro:AR' newly defined as it shall be overridden
-although it is yet undefined on input line 781.
- [71 <./images/poemtree.png>] [72 <./images/listsourcetree.png> <./images/lista
+although it is yet undefined on input line 738.
+ [72 <./images/poemtree.png>] [73 <./images/listsourcetree.png> <./images/lista
 lgotree.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 790--790
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
 [][] [][][]\T1/pbk/l/n/9 See [][]$\T1/pcr/m/n/9 https : / / web . archive . org
  / web / 20160414074049 / https : / / www . tay . ai/$[][] \T1/pbk/l/n/9 for
  []
 
 
-Underfull \hbox (badness 2277) in paragraph at lines 790--790
+Underfull \hbox (badness 2277) in paragraph at lines 747--747
 \T1/pbk/l/n/9 an archived ver-sion of the ori-ginal web-site which is now off-l
 ine. See also [][]$\T1/pcr/m/n/9 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--790
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
 \T1/pcr/m/n/9 / / twitter . com / tayandyou$[][]\T1/pbk/l/n/9 , [][]$\T1/pcr/m/
 n/9 https : / / www . theguardian . com / technology / 2016 / mar / 24 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--790
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
 \T1/pcr/m/n/9 tay-[]microsofts-[]ai-[]chatbot-[]gets-[]a-[]crash-[]course-[]in-
 []racism-[]from-[]twitter$[][]\T1/pbk/l/n/9 , and
  []
 
 
-Overfull \hbox (96.988pt too wide) in paragraph at lines 790--790
+Overfull \hbox (96.988pt too wide) in paragraph at lines 747--747
 [][]$\T1/pcr/m/n/9 https : / / www . theguardian . com / technology / 2016 / ma
 r / 30 / microsoft-[]racist-[]sexist-[]chatbot-[]twitter-[]drugs$[][]\T1/pbk/l/
 n/9 .|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 798--798
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 800--800
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
 
  []
 
-[73]
+[74]
 
-LaTeX Warning: Reference `ch:interpretation' on page 74 undefined on input line
- 807.
+LaTeX Warning: Reference `ch:interpretation' on page 75 undefined on input line
+ 764.
 
-Package marginnote Info: Margin note 88.1 is on absolute page 89
-(marginnote)              on input line 807.
-Package marginnote Info: right page because not two side mode on input line 807
+Package marginnote Info: Margin note 89.1 is on absolute page 89
+(marginnote)              on input line 764.
+Package marginnote Info: right page because not two side mode on input line 764
 .
 
-LaTeX Warning: Reference `ch:interpretation' on page 74 undefined on input line
- 807.
+LaTeX Warning: Reference `ch:interpretation' on page 75 undefined on input line
+ 764.
 
 Package marginnote Info: xpos seems to be 226.81393pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 807.
-[74]
-Underfull \hbox (badness 10000) in paragraph at lines 818--818
+(marginnote)             \marginnoteleftadjust ignored on input line 764.
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 775--775
 [][] [][][][][]$\T1/pcr/m/n/9 http : / / scienceblogs . com / developingintelli
 gence / 2007 / 03 / 27 /
  []
 
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 866--873
-
- []
-
 [76]
-Underfull \hbox (badness 10000) in paragraph at lines 874--881
+Underfull \hbox (badness 10000) in paragraph at lines 823--830
 
  []
 
-[77]
-Overfull \hbox (387.88766pt too wide) in paragraph at lines 920--920
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--838
+
+ []
+
+[77] [78]
+Overfull \hbox (387.88766pt too wide) in paragraph at lines 877--877
 []  \T1/pcr/m/n/10.95 *   10f61f9  Sun 08 May 2016  (HEAD -> api, origin/api) M
 erge remote-tracking branch \TS1/pcr/m/n/10.95 '\T1/pcr/m/n/10.95 refs/remotes/
 origin/master\TS1/pcr/m/n/10.95 ' \T1/pcr/m/n/10.95 into api[] |
  []
 
 
-Overfull \hbox (46.24808pt too wide) in paragraph at lines 922--922
+Overfull \hbox (46.24808pt too wide) in paragraph at lines 879--879
 []  \T1/pcr/m/n/10.95 * | 71437f6  Tue 18 Aug 2015  Flickr and Bing work, radio
  buttons work[] |
  []
 
 
-Overfull \hbox (33.1081pt too wide) in paragraph at lines 924--924
+Overfull \hbox (33.1081pt too wide) in paragraph at lines 881--881
 []  \T1/pcr/m/n/10.95 | | * 1cbb63d  Tue 11 Aug 2015  (origin/thesis) Update te
 xtsurfer.py[] |
  []
 
 
-Overfull \hbox (39.67809pt too wide) in paragraph at lines 929--929
+Overfull \hbox (39.67809pt too wide) in paragraph at lines 886--886
 []  \T1/pcr/m/n/10.95 * | 74a1fae  Tue 11 Aug 2015  About to change l\_dict to 
 dict of dict[] |
  []
 
 
-Overfull \hbox (13.39812pt too wide) in paragraph at lines 934--934
+Overfull \hbox (13.39812pt too wide) in paragraph at lines 891--891
 []  \T1/pcr/m/n/10.95 * |   f1b2d40  Sun 09 Aug 2015  Merge branch \TS1/pcr/m/n
 /10.95 '\T1/pcr/m/n/10.95 Deploy\TS1/pcr/m/n/10.95 ' \T1/pcr/m/n/10.95 into the
 sis[] |
  []
 
 
-Overfull \hbox (13.39812pt too wide) in paragraph at lines 936--936
+Overfull \hbox (13.39812pt too wide) in paragraph at lines 893--893
 []  \T1/pcr/m/n/10.95 | * | 435cb2d  Sun 09 Aug 2015  Deployment works, added a
 nalytics[] |
  []
 
-[78]
-Overfull \hbox (59.38806pt too wide) in paragraph at lines 946--946
+[79]
+Overfull \hbox (59.38806pt too wide) in paragraph at lines 903--903
 []  \T1/pcr/m/n/10.95 | * | 657126c  Wed 05 Aug 2015  Random poems work - witho
 ut links though[] |
  []
 
 
-Overfull \hbox (65.95805pt too wide) in paragraph at lines 947--947
+Overfull \hbox (65.95805pt too wide) in paragraph at lines 904--904
 []  \T1/pcr/m/n/10.95 | * | 3d31ea9  Wed 05 Aug 2015  Randomise still only work
 s once, count ok[] |
  []
 
 
-Overfull \hbox (13.39812pt too wide) in paragraph at lines 962--962
+Overfull \hbox (13.39812pt too wide) in paragraph at lines 919--919
 []  \T1/pcr/m/n/10.95 | * | 9370334  Mon 03 Aug 2015  working on list display o
 f images[] |
  []
 
 
-Overfull \hbox (33.1081pt too wide) in paragraph at lines 963--963
+Overfull \hbox (33.1081pt too wide) in paragraph at lines 920--920
 []  \T1/pcr/m/n/10.95 | * | e1f1ead  Mon 03 Aug 2015  Stylesheets sorted and cl
 eaned files[] |
  []
 
 File: images/spirals.png Graphic file (type png)
 <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 969.
+Package pdftex.def Info: images/spirals.png used on input line 926.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 969.
+Package pdftex.def Info: images/spirals.png used on input line 926.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 969.
+Package pdftex.def Info: images/spirals.png used on input line 926.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 
-[79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 1035--1038
+[80] [81]
+Underfull \hbox (badness 10000) in paragraph at lines 992--995
 
  []
 
-[81]) [82]
+[82]) [83]
 \openout2 = `main/aspirations.aux'.
 
- (./main/aspirations.tex [83
+ (./main/aspirations.tex [84
 
 
 
@@ -5218,20 +5237,20 @@ File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 32.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package marginnote Info: Margin note 98.1 is on absolute page 98
+Package marginnote Info: Margin note 99.1 is on absolute page 99
 (marginnote)              on input line 37.
 Package marginnote Info: right page because not two side mode on input line 37.
 
 Package marginnote Info: xpos seems to be 388.08978pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 37.
-Package marginnote Info: Margin note 98.2 is on absolute page 98
+Package marginnote Info: Margin note 99.2 is on absolute page 99
 (marginnote)              on input line 37.
 Package marginnote Info: right page because not two side mode on input line 37.
 
 Package marginnote Info: xpos seems to be 239.73459pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 37.
- [84] [85]
-Package marginnote Info: Margin note 100.1 is on absolute page 100
+ [85] [86]
+Package marginnote Info: Margin note 101.1 is on absolute page 101
 (marginnote)              on input line 81.
 Package marginnote Info: right page because not two side mode on input line 81.
 
@@ -5239,24 +5258,24 @@ Package marginnote Info: xpos seems to be 262.28574pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 81.
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
 although it is yet undefined on input line 84.
-Package marginnote Info: Margin note 100.2 is on absolute page 100
+Package marginnote Info: Margin note 101.2 is on absolute page 101
 (marginnote)              on input line 84.
 Package marginnote Info: right page because not two side mode on input line 84.
 
 
 
-LaTeX Warning: Reference `ch:technology' on page 86 undefined on input line 84.
+LaTeX Warning: Reference `ch:technology' on page 87 undefined on input line 84.
 
 
 Package marginnote Info: xpos seems to be 484.58018pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 84.
-Package marginnote Info: Margin note 100.3 is on absolute page 100
+Package marginnote Info: Margin note 101.3 is on absolute page 101
 (marginnote)              on input line 90.
 Package marginnote Info: right page because not two side mode on input line 90.
 
 Package marginnote Info: xpos seems to be 290.90228pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 90.
-Package marginnote Info: Margin note 100.4 is on absolute page 100
+Package marginnote Info: Margin note 101.4 is on absolute page 101
 (marginnote)              on input line 90.
 Package marginnote Info: right page because not two side mode on input line 90.
 
@@ -5268,7 +5287,7 @@ Underfull \hbox (badness 1348) in paragraph at lines 93--93
 re in-ter-change-able in many
  []
 
-[86]
+[87]
 Overfull \hbox (39.67809pt too wide) in paragraph at lines 114--114
 []  \T1/pcr/m/n/10.95 (\TS1/pcr/m/n/10.95 ``\T1/pcr/m/n/10.95 tree\TS1/pcr/m/n/
 10.95 ''\T1/pcr/m/n/10.95 : [\TS1/pcr/m/n/10.95 ``\T1/pcr/m/n/10.95 l_00\TS1/pc
@@ -5277,17 +5296,17 @@ r/m/n/10.95 ''\T1/pcr/m/n/10.95 : [24,566,4990], \TS1/pcr/m/n/10.95 ``\T1/pcr/m
 |
  []
 
-[87]
+[88]
 
-LaTeX Warning: Reference `ch:technology' on page 88 undefined on input line 125
+LaTeX Warning: Reference `ch:technology' on page 89 undefined on input line 125
 .
 
-Package marginnote Info: Margin note 102.1 is on absolute page 102
+Package marginnote Info: Margin note 103.1 is on absolute page 103
 (marginnote)              on input line 125.
 Package marginnote Info: right page because not two side mode on input line 125
 .
 
-LaTeX Warning: Reference `ch:technology' on page 88 undefined on input line 125
+LaTeX Warning: Reference `ch:technology' on page 89 undefined on input line 125
 .
 
 Package marginnote Info: xpos seems to be 404.57944pt,
@@ -5296,20 +5315,20 @@ Package acronym Info: Label `acro:MLE' newly defined as it shall be overridden
 although it is yet undefined on input line 125.
 Package acronym Info: Label `acro:POS' newly defined as it shall be overridden
 although it is yet undefined on input line 134.
-[88] [89]) [90] <images/spiral_after.pdf, id=1961, 156.48964pt x 156.48964pt>
+[89] [90]) [91] <images/spiral_after.pdf, id=1972, 156.48964pt x 156.48964pt>
 File: images/spiral_after.pdf Graphic file (type pdf)
 
 <use images/spiral_after.pdf>
 Package pdftex.def Info: images/spiral_after.pdf used on input line 144.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [91
+ [92
 
 
  <./images/spiral_after.pdf>]
 \openout2 = `main/observations.aux'.
 
 
-(./main/observations.tex [92
+(./main/observations.tex [93
 
 
 ] (./main.ptc)
@@ -5326,120 +5345,120 @@ File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 32.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
- [93]
+ [94]
 Underfull \hbox (badness 10000) in paragraph at lines 64--64
 [][] [][][]\T1/pbk/l/n/9 Inspired by Time Berners-Lee's art-icles on the Web in
  1998---
  []
 
 
-LaTeX Warning: Reference `ch:evaluation' on page 94 undefined on input line 69.
+LaTeX Warning: Reference `ch:evaluation' on page 95 undefined on input line 69.
 
 
-Package marginnote Info: Margin note 108.1 is on absolute page 108
+Package marginnote Info: Margin note 109.1 is on absolute page 109
 (marginnote)              on input line 69.
 Package marginnote Info: right page because not two side mode on input line 69.
 
 
-LaTeX Warning: Reference `ch:evaluation' on page 94 undefined on input line 69.
+LaTeX Warning: Reference `ch:evaluation' on page 95 undefined on input line 69.
 
 
 Package marginnote Info: xpos seems to be 299.60678pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 69.
 
-LaTeX Warning: Reference `ch:interpretation' on page 94 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 95 undefined on input line
  69.
 
-Package marginnote Info: Margin note 108.2 is on absolute page 108
+Package marginnote Info: Margin note 109.2 is on absolute page 109
 (marginnote)              on input line 69.
 Package marginnote Info: right page because not two side mode on input line 69.
 
 
-LaTeX Warning: Reference `ch:interpretation' on page 94 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 95 undefined on input line
  69.
 
 Package marginnote Info: xpos seems to be 342.4473pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 69.
 
-LaTeX Warning: Reference `ch:foundations' on page 94 undefined on input line 70
+LaTeX Warning: Reference `ch:foundations' on page 95 undefined on input line 70
 .
 
-Package marginnote Info: Margin note 108.3 is on absolute page 108
+Package marginnote Info: Margin note 109.3 is on absolute page 109
 (marginnote)              on input line 70.
 Package marginnote Info: right page because not two side mode on input line 70.
 
 
-LaTeX Warning: Reference `ch:foundations' on page 94 undefined on input line 70
+LaTeX Warning: Reference `ch:foundations' on page 95 undefined on input line 70
 .
 
 Package marginnote Info: xpos seems to be 243.81537pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 70.
 
-LaTeX Warning: Reference `ch:creativity' on page 94 undefined on input line 70.
+LaTeX Warning: Reference `ch:creativity' on page 95 undefined on input line 70.
 
 
-Package marginnote Info: Margin note 108.4 is on absolute page 108
+Package marginnote Info: Margin note 109.4 is on absolute page 109
 (marginnote)              on input line 70.
 Package marginnote Info: right page because not two side mode on input line 70.
 
 
-LaTeX Warning: Reference `ch:creativity' on page 94 undefined on input line 70.
+LaTeX Warning: Reference `ch:creativity' on page 95 undefined on input line 70.
 
 
 Package marginnote Info: xpos seems to be 287.69554pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 70.
 
-LaTeX Warning: Reference `ch:creativity' on page 94 undefined on input line 71.
+LaTeX Warning: Reference `ch:creativity' on page 95 undefined on input line 71.
 
 
-Package marginnote Info: Margin note 108.5 is on absolute page 108
+Package marginnote Info: Margin note 109.5 is on absolute page 109
 (marginnote)              on input line 71.
 Package marginnote Info: right page because not two side mode on input line 71.
 
 
-LaTeX Warning: Reference `ch:creativity' on page 94 undefined on input line 71.
+LaTeX Warning: Reference `ch:creativity' on page 95 undefined on input line 71.
 
 
 Package marginnote Info: xpos seems to be 399.85477pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 71.
 
-LaTeX Warning: Reference `ch:interpretation' on page 94 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 95 undefined on input line
  71.
 
-Package marginnote Info: Margin note 108.6 is on absolute page 108
+Package marginnote Info: Margin note 109.6 is on absolute page 109
 (marginnote)              on input line 71.
 Package marginnote Info: right page because not two side mode on input line 71.
 
 
-LaTeX Warning: Reference `ch:interpretation' on page 94 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 95 undefined on input line
  71.
 
 Package marginnote Info: xpos seems to be 438.17949pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 71.
 
-LaTeX Warning: Reference `ch:interpretation' on page 94 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 95 undefined on input line
  72.
 
-Package marginnote Info: Margin note 108.7 is on absolute page 108
+Package marginnote Info: Margin note 109.7 is on absolute page 109
 (marginnote)              on input line 72.
 Package marginnote Info: right page because not two side mode on input line 72.
 
 
-LaTeX Warning: Reference `ch:interpretation' on page 94 undefined on input line
+LaTeX Warning: Reference `ch:interpretation' on page 95 undefined on input line
  72.
 
 Package marginnote Info: xpos seems to be 320.4499pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 72.
-Package marginnote Info: Margin note 108.8 is on absolute page 108
+Package marginnote Info: Margin note 109.8 is on absolute page 109
 (marginnote)              on input line 72.
 Package marginnote Info: right page because not two side mode on input line 72.
 
 
-LaTeX Warning: Reference `s:oec' on page 94 undefined on input line 72.
+LaTeX Warning: Reference `s:oec' on page 95 undefined on input line 72.
 
 Package marginnote Info: xpos seems to be 170.56796pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 72.
-Package marginnote Info: Margin note 108.9 is on absolute page 108
+Package marginnote Info: Margin note 109.9 is on absolute page 109
 (marginnote)              on input line 73.
 Package marginnote Info: right page because not two side mode on input line 73.
 
@@ -5451,47 +5470,48 @@ Overfull \hbox (9.22002pt too wide) in paragraph at lines 73--74
 ed in chapter [][]3[][]|[]. |
  []
 
-Package marginnote Info: Margin note 108.10 is on absolute page 109
+Package marginnote Info: Margin note 109.10 is on absolute page 110
 (marginnote)              on input line 74.
 Package marginnote Info: right page because not two side mode on input line 74.
 
 Package marginnote Info: xpos seems to be 533.81345pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 74.
-[94]
+[95]
 
-LaTeX Warning: Reference `ch:pubs' on page 95 undefined on input line 94.
+LaTeX Warning: Reference `ch:pubs' on page 96 undefined on input line 94.
 
-Package marginnote Info: Margin note 109.1 is on absolute page 109
+Package marginnote Info: Margin note 110.1 is on absolute page 110
 (marginnote)              on input line 94.
 Package marginnote Info: right page because not two side mode on input line 94.
 
 
-LaTeX Warning: Reference `ch:pubs' on page 95 undefined on input line 94.
+LaTeX Warning: Reference `ch:pubs' on page 96 undefined on input line 94.
 
 Package marginnote Info: xpos seems to be 337.92159pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 94.
-) [95]
+) [96]
 \openout2 = `back/interlude3.aux'.
 
- (./back/interlude3.tex [96
+ (./back/interlude3.tex [97
 
 
 
 ])
-<images/spiral_post.pdf, id=2026, 156.48964pt x 156.48964pt>
+<images/spiral_post.pdf, id=2036, 156.48964pt x 156.48964pt>
 File: images/spiral_post.pdf Graphic file (type pdf)
 
 <use images/spiral_post.pdf>
 Package pdftex.def Info: images/spiral_post.pdf used on input line 160.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [97
+ [98
 
 
 
- <./images/spiral_post.pdf>] [98
+ <./images/spiral_post.pdf>] [99
 
 
-] [99] [100]
+] [100]
+[101]
 Overfull \hbox (13.27571pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 spe-cies: How many words did Shakespeare know?' In: \T1/pbk/d
 b/it/10.95 Bio-met-rika \T1/pbk/l/n/10.95 63.3, pp. 435^^U|
@@ -5510,26 +5530,26 @@ Overfull \hbox (43.09384pt too wide) in paragraph at lines 174--174
 [][] \T1/pbk/l/n/10.95 (vis-ited on 04/08/2016)|
  []
 
-[101]
+[102]
 Overfull \hbox (12.1257pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 Web site map-ping'. In: \T1/pbk/db/it/10.95 Com-puter Net-wor
 ks and ISDN Sys-tems \T1/pbk/l/n/10.95 30.1-7, pp. 317^^U|
  []
 
-[102]
+[103]
 Overfull \hbox (7.31467pt too wide) in paragraph at lines 174--174
 [][]\T1/pbk/l/n/10.95 Jurafsky, Daniel and James H Mar-tin (2009). \T1/pbk/db/i
 t/10.95 Speech and Lan-guage Pro-cessing\T1/pbk/l/n/10.95 .|
  []
 
-[103]
+[104]
 Overfull \hbox (12.13213pt too wide) in paragraph at lines 174--174
 [][][]\T1/pbk/l/n/10.95 (2016c). \T1/pbk/db/it/10.95 Mi-crosoft Trans-lator - T
 ext Trans-la-tion\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : 
 [][]$\T1/pcr/m/n/10.95 https : / / datamarket .|
  []
 
-[104] [105]
+[105] [106]
 Overfull \hbox (11.0051pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 os-ity, cre-ativ-ity, mu-sic, and the fine arts'. In: \T1/pbk
 /db/it/10.95 Con-nec-tion Sci-ence \T1/pbk/l/n/10.95 18.2, pp. 173^^U|
@@ -5541,7 +5561,7 @@ Overfull \hbox (8.91748pt too wide) in paragraph at lines 174--174
 lect-ive Common-sense Think-|
  []
 
-[106]
+[107]
 Overfull \hbox (7.71707pt too wide) in paragraph at lines 174--174
 [][][]\T1/pbk/l/n/10.95 (2006). `  The Nature of Cre-ativ-ity'. In: \T1/pbk/db/
 it/10.95 Cre-ativ-ity Re-search journal \T1/pbk/l/n/10.95 18.1, pp. 87^^U|
@@ -5553,11 +5573,11 @@ Overfull \hbox (11.63657pt too wide) in paragraph at lines 174--174
 -li-gence'. In: \T1/pbk/db/it/10.95 Mind \T1/pbk/l/n/10.95 59, pp. 433^^U|
  []
 
-[107]
+[108]
 \tf@ptc=\write10
 \openout10 = `main.ptc'.
 
- [108
+ [109
 
 ]
 \tf@tdo=\write11
@@ -5585,7 +5605,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 69D988AC10986B8258BD7144A6C6F4A1;3648.
+(rerunfilecheck)             Checksum: BD218D13FB0778F45B7D1760CA32B57D;3655.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -5593,9 +5613,6 @@ LaTeX Font Warning: Size substitutions with differences
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -5609,10 +5626,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 71396 strings out of 493013
- 1457745 string characters out of 6136993
- 1967632 words of memory out of 5000000
- 72799 multiletter control sequences out of 15000+600000
+ 71407 strings out of 493013
+ 1457858 string characters out of 6136993
+ 1967844 words of memory out of 5000000
+ 72807 multiletter control sequences out of 15000+600000
  115892 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  157i,17n,184p,10377b,6595s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -5646,10 +5663,10 @@ n/ubkli8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb><c
 :/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2016/t
 exmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><c:/texlive/2016/texmf-dist/fonts
 /type1/public/wasy2-ps/wasyb10.pfb>
-Output written on main.pdf (122 pages, 12563289 bytes).
+Output written on main.pdf (123 pages, 12541591 bytes).
 PDF statistics:
- 2552 PDF objects out of 2984 (max. 8388607)
- 2283 compressed objects within 23 object streams
- 765 named destinations out of 1000 (max. 500000)
+ 2563 PDF objects out of 2984 (max. 8388607)
+ 2293 compressed objects within 23 object streams
+ 768 named destinations out of 1000 (max. 500000)
  673 words of extra memory for PDF output out of 10000 (max. 10000000)
 

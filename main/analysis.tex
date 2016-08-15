@@ -696,49 +696,6 @@ Each \ac{API} has a different quota for their subscription packages. At this sta
 \end{description}
 
 
-\section{Formalisation}
-
-A formal description of the \url{pata.physics.wtf} system in terms of an \ac{IR} model described in chapter~\ref{s:irmodels}\marginnote{§~\ref{s:irmodels}} is unsuitable. It assumes for example the presence of some sort of ranking algorithm $R(q_i, d_j)$. It also assumes a set set of queries---our doesn't have that, queries come in as the user sends them.
-
-Remember, \autocite{Yates2011} defines an \ac{IR} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
-\itab{$D$} \tab{is the set of documents,}\\
-\itab{$Q$} \tab{is the set of queries,}\\
-\itab{$F$} \tab{is the framework,}\\
-\itab{$R(q_i, d_j)$}
-            \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
-\itab{$t$} \tab{is the number of index terms in a document collection,}\\
-\itab{$V$} \tab{is the set of all distinct index terms $\{k_1,\ldots, k_t\}$.}
-
-Making relevant changes, for the Faustroll corpus text search, an approximate system description could be this:\\
-\itab{$D$} \tab{is the set of documents $\{d_1,\ldots, d_{m}\}$,}\\
-\itab{$m$} \tab{is the number of all documents in $D$ (=\num{28}),}\\
-\itab{$V$} \tab{is the set of all distinct terms $\{v_1,\ldots, v_{n}\}$ in $D$,}\\
-\itab{}    \tab{~~~not including stopwords,}\\
-\itab{$n$} \tab{is the number of all distinct terms in $D$ (=\num{78893}),}\\
-\itab{$v$} \tab{is a vocabulary entry of form $\{d(v) \mapsto [l(v)]\}$,}\\
-\itab{$q$} \tab{is the user query,}\\
-\itab{$F$} \tab{is the set of patalgorithms Clinamen, Syzygy and Antinomy $\{f_C, f_S, f_A\}$,}\\
-\itab{$P$} \tab{is the set of pataphysicalised query terms $\{p_1,\ldots, p_{u}\}$,}\\
-\itab{$u$} \tab{is the number of terms in $P$,}\\
-\itab{$P(q)$} \tab{is the set of patadata $\{P(q)_C \cup P(q)_S \cup P(q)_A\}$ for query $q$,}\\
-\itab{$R$} \tab{is the set of results $\{r_1,\ldots, r_{o}\}$,}\\
-\itab{$o$} \tab{is the number of results in $R$,}\\
-\itab{$R(P(q))$} \tab{is the set of results $\{R(P(q)_C) \cup R(P(q)_S) \cup R(P(q)_A)\}$,}\\
-\itab{}    \tab{~~~produced by each algorithm in $F$,}\\
-\itab{$r$} \tab{is a result of form ($d$, sentence, $f$).}
-
-going from patadata to results is a boolean model.
-
-\itab{$P(q)_C$} \tab{$\{p: 0 < \text{dameraulevenshtein}(q,p) \leq 2\}, \quad \text{for} \ p \in v_1$}
-
-
-\todo{syzygy and antinomy P(q)\_S and P(q)\_A}
-\todo{how to get results from P}
-
-
-
-
-
 \section{Design}
 
 It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:aspirations},~\ref{ch:aspirations}). 

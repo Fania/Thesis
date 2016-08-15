@@ -648,6 +648,74 @@ def antinomy(w):
 For the antinomy we simply used WordNet's antonyms (opposites) (see source~\ref{code:antinomy}). This algorithm is very similar to the algorithm for the syzygy. It finds all antonyms through WordNet and retrieves result sentences using the \py{get_results} function.
 
 
+\subsection{Formalisation}
+
+A formal description of the \url{pata.physics.wtf} system in terms of an \ac{IR} model described in chapter~\ref{s:irmodels}\marginnote{§~\ref{s:irmodels}} is unsuitable. It assumes for example the presence of some sort of ranking algorithm $R(q_i, d_j)$. It also assumes a set set of queries---our doesn't have that, queries come in as the user sends them.
+
+Remember, \autocite{Yates2011} defines an \ac{IR} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
+\itab{$D$} \tab{is the set of documents,}\\
+\itab{$Q$} \tab{is the set of queries,}\\
+\itab{$F$} \tab{is the framework,}\\
+\itab{$R(q_i, d_j)$}
+            \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
+\itab{$t$} \tab{is the number of index terms in a document collection,}\\
+\itab{$V$} \tab{is the set of all distinct index terms $\{k_1,\ldots, k_t\}$.}
+
+Making relevant changes, for the Faustroll corpus text search, an approximate system description could be this:\\
+\itab{$D$} \tab{is the set of documents $\{d_1,\ldots, d_{m}\}$,}\\
+\itab{$m$} \tab{is the number of all documents in $D$ ($|D| = 28$),}\\
+\itab{$V$} \tab{is the set of all distinct terms $\{v_1,\ldots, v_{n}\}$ in $D$,}\\
+\itab{}    \tab{~~~not including stopwords,}\\
+\itab{$n$} \tab{is the number of all distinct terms in $V$ ($|V| = 78893$),}\\
+\itab{$v$} \tab{is a vocabulary entry of form $\{d(v) \mapsto [l(v)]\}$,}\\
+\itab{}    \tab{~~~where $l(v)$ is the location of term $v$ in text $d$}\\
+\itab{$q$} \tab{is the user query,}\\
+\itab{$F$} \tab{is the set of patalgorithms Clinamen, Syzygy and Antinomy $\{f_C, f_S, f_A\}$,}\\
+\itab{$P$} \tab{is the set of pataphysicalised query terms $\{p_1,\ldots, p_{u}\}$,}\\
+\itab{$u$} \tab{is the number of terms in $P$,}\\
+\itab{$P(q)$} \tab{is the set of patadata $\{P(q)_C \cup P(q)_S \cup P(q)_A\}$ for query $q$,}\\
+\itab{$R$} \tab{is the set of results $\{r_1,\ldots, r_{o}\}$,}\\
+\itab{$o$} \tab{is the number of results in $R$,}\\
+\itab{$R(P(q))$} \tab{is the set of results $\{R(P(q)_C) \cup R(P(q)_S) \cup R(P(q)_A)\}$,}\\
+\itab{}    \tab{~~~produced by each algorithm in $F$,}\\
+\itab{$r$} \tab{is a result of form ($d$, sentence, $f$).}
+
+\begin{equation}
+  P(q)_C = \{p \in v_1: 0 < \text{dameraulevenshtein}(q,p) \leq 2\}
+  \label{eq:clinamen}
+\end{equation}
+% \myequations{vector}
+
+damerauleveshtein$(q,p)$ in equation~\ref{eq:clinamen} is the Damerau-Levenshtein algorithm as described in section~\ref{s:clinamen}\marginnote{§~\ref{s:clinamen}} and $v_1$ is the Faustroll text.
+
+\begin{equation}
+  \begin{split}
+    P(q)_S &= \{p \in V: p \in \text{nyms}(s), \ \forall s \in \text{synonyms}(q)\}\\
+    \text{where} \ \text{nyms}(s) &= \text{hypos}(s) \ \cup \ \text{hypers}(s) \ \cup \ \text{holos}(s) \ \cup \ \text{meros}(s)
+  \end{split}
+  \label{eq:syzygy}
+\end{equation}
+% \myequations{vector}
+
+synonyms$(q)$ in equation~\ref{eq:syzygy} is the WordNet function to retrieve all synsets for the query $q$ and the four `nym' functions return the relevant hyponyms, hypernyms, holonyms or meronyms for each of the synonyms.
+
+\begin{equation}
+  P(q)_A = \{p \in V: p \in \text{antonyms}(s), \ \forall s \in \text{synonyms}(q)\}
+  \label{eq:antinomy}
+\end{equation}
+% \myequations{vector}
+
+Similarly, in equation~\ref{eq:antinomy} the synonyms$(q)$ function returns WordNet synsets for the query and the antonyms$(s)$ function returns WordNet antonyms for each of the synonyms.
+
+\begin{equation}
+  R(P(q)) = \{(d \in D, \ sent(p) \in d, \ f \in F): \forall \ p \in P(q)_f)) \}
+  \label{eq:results}
+\end{equation}
+% \myequations{vector}
+
+$R(P(q))$ in equation~\ref{eq:results} returns a list of triples containing the source text ($d$), the sentence $sent(p)$ and the algorithm $f$. For each pataphysicalised query term $p$ one sentence is retrieved per file $d$.
+
+
 \section{Image \& Video}
 \label{s:imgvid}
 
