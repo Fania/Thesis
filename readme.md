@@ -156,6 +156,8 @@ pdflatex --file-line-error -shell-escape main
 - [ ] description list spacing by adding [longest word] after environment
 - [ ] cut pdf with spiral in it for line \spirals
 - [ ] remove indent in inline code style
+- [ ] add Olston2010 reference and Gulli2005 on crawling and size of web
+
 
 
 Wordcount after Boot Camp 54715 total
