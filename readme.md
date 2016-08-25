@@ -165,14 +165,9 @@ Wordcount after Boot Camp 54715 total
 
 
 ## Hongji feedback
-- [x] I like the structure in terms that you divided it into parts, chapters and sections.
-- [x] You can have a bibliography but please have a reference.
-- [x] I like that you use the phrase of Algorithmic Meta-Creativity
 - [ ] Research questions in Section 1.2: it is best not to use yes or no question and it will be better to make these questions more quantitative.
 - [ ] Chapter 3, do you use an existing research method? Or do you hope to develop a new one? I read that you wrote about workflow -- are steps here corresponding to steps in your chosen method?
-- [ ] Chapter 8 is a key chapter. I am sure that you have a plan to expand the discussion.
-- [x] I liked that chosen topics in Part II, in particular, Chapter 7, Evaluation.
-- [x] Finally, the structure is very clear and presentation is technically artistic.
+
 
 
 ## GOURCE
