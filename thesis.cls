@@ -234,6 +234,14 @@
 %   \hskip#1\hbox{}\nobreak\hfil{#2}
 %   \parfillskip\z@\finalhyphendemerits=0\par}}
 
+% \def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+%   \hbox{}\nobreak\hfil(#1)%
+%   \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\renewcommand*{\sourceatright}[2][2em]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip#1\hbox{}\nobreak\hfil\rmfamily{#2}
+  \parfillskip\z@\finalhyphendemerits=0\par}}
 
 % MULTICOLUMN
 
@@ -790,6 +798,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \usepackage{tabu}
 \newtabulinestyle{outer=1.2pt}
 \tabulinesep = 2mm
+\usepackage{longtable}
 
 % \usepackage{caption} % for subtables
 % \usepackage{subcaption} % for subtables

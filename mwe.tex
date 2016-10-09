@@ -1,0 +1,14 @@
+%
+\documentclass[11pt]{memoir} % draft
+
+\renewcommand*{\sourceatright}[2][2em]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip#1\hbox{}\nobreak\hfil\tiny\sffamily{#2}
+  \parfillskip\z@\finalhyphendemerits=0\par}}
+
+\begin{document}
+\begin{quotation}
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ante sapien, feugiat sed elit id, tempus dictum erat. Maecenas bibendum eget lectus eu mollis.\sourceatright{Lipsum 2016}
+\end{quotation}
+
+\end{document}
