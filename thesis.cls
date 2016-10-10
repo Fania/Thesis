@@ -218,11 +218,15 @@
 
 % \usepackagee[autostyle,english=british,french=guillemets]{csquotes}
 % \usepackage{dirtytalk}
+% \renewenvironment{quotation}
+%                {\list{}{\rightmargin\leftmargin}%
+%                 \item\relax\sffamily\SingleSpacing\color{gray}\ignorespaces}
+%                {\unskip\unskip\endlist}
+
 \renewenvironment{quotation}
                {\list{}{\rightmargin\leftmargin}%
-                \item\relax\sffamily\SingleSpacing\color{gray}\ignorespaces}
+                \item\relax\sffamily\small\SingleSpacing\ignorespaces}
                {\unskip\unskip\endlist}
-
 
 % \newcommand*{\attr}[2][2em]{{%
 %   \unskip\nobreak\hfil\penalty50
