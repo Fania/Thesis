@@ -229,19 +229,13 @@
 %   \hskip#1\hbox{}\nobreak\hfil\tiny{#2}
 %   \parfillskip\z@\finalhyphendemerits=0\par}}
 
-% \newcommand*{\sourceatright}[2][2em]{{%
-%   \unskip\nobreak\hfil\penalty50
-%   \hskip#1\hbox{}\nobreak\hfil{#2}
-%   \parfillskip\z@\finalhyphendemerits=0\par}}
-
-% \def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
-%   \hbox{}\nobreak\hfil(#1)%
-%   \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
-
+\makeatletter
 \renewcommand*{\sourceatright}[2][2em]{{%
   \unskip\nobreak\hfil\penalty50
-  \hskip#1\hbox{}\nobreak\hfil\rmfamily{#2}
-  \parfillskip\z@\finalhyphendemerits=0\par}}
+  \hskip#1\hbox{}\nobreak\hfil{\tiny\sffamily#2}%
+  \parfillskip\z@\finalhyphendemerits=\z@\par}}
+\makeatother
+
 
 % MULTICOLUMN
 
