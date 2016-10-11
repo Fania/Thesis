@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.6)  10 OCT 2016 21:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.6)  11 OCT 2016 16:33
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2925,8 +2925,8 @@ runsystem(del main.aex)...executed.
 
  (./main.aux
 (./front/title.aux) (./front/abstract.aux) (./front/publications.aux)
-(./front/acronyms.aux) (./main/pataphysics.aux) (./main/creativity.aux)
-(./back/interlude1.aux) (./back/interlude2.aux) (./back/interlude3.aux))
+(./front/acronyms.aux) (./main/creativity.aux) (./back/interlude1.aux)
+(./back/interlude2.aux) (./back/interlude3.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -3192,7 +3192,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 27.
 
-<images/spiral_pre.pdf, id=210, 156.48964pt x 156.48964pt>
+<images/spiral_pre.pdf, id=145, 156.48964pt x 156.48964pt>
 File: images/spiral_pre.pdf Graphic file (type pdf)
 
 <use images/spiral_pre.pdf>
@@ -3228,7 +3228,7 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
 \openout2 = `front/publications.aux'.
 
  (./front/publications.tex
-<images/spirals.png, id=241, 482.80376pt x 473.77pt>
+<images/spirals.png, id=176, 482.80376pt x 473.77pt>
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 16.
@@ -3402,7 +3402,7 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <39.83366> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <28.45274> not available
 (Font)              size <24.88> substituted on input line 89.
 
-<images/spiral_hello.pdf, id=331, 156.48964pt x 156.48964pt>
+<images/spiral_hello.pdf, id=258, 156.48964pt x 156.48964pt>
 File: images/spiral_hello.pdf Graphic file (type pdf)
 
 <use images/spiral_hello.pdf>
@@ -3418,7 +3418,7 @@ l.89 ...2}{$\boldsymbol\Theta$}RLD}{Introduction}}
 
 
 
- <./images/spiral_hello.pdf>] <images/spiral_trade.pdf, id=342, 156.48964pt x 1
+ <./images/spiral_hello.pdf>] <images/spiral_trade.pdf, id=269, 156.48964pt x 1
 56.48964pt>
 File: images/spiral_trade.pdf Graphic file (type pdf)
 
@@ -3428,15 +3428,22 @@ Package pdftex.def Info: images/spiral_trade.pdf used on input line 98.
  [2
 
  <./images/spiral_trade.pdf>]
-\openout2 = `main/pataphysics.aux'.
+\openout2 = `main/creativity.aux'.
 
 
-(./main/pataphysics.tex
+(./main/creativity.tex
 \c@ttl@toc@chapters=\count556
- [3
+LaTeX Font Info:    Try loading font information for TS1+qag on input line 21.
+ (c:/texlive/2016/texmf-dist/tex/latex/tex-gyre/ts1qag.fd
+File: ts1qag.fd 2009/09/25 v1.2 font definition file for TS1/qag
+) [3
 
 
 ] (./main.ptc)
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 32.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 32.
@@ -3446,289 +3453,203 @@ File: images/spirals.png Graphic file (type png)
 <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 32.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 32.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 49.
  [4]
 
-LaTeX Warning: Citation 'oxdick2016' on page 5 undefined on input line 78.
-
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 78.
-LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <7> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 78.
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 5 undefined on input line 102.
-
-[5]
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 6 undefined on input line 129.
+LaTeX Warning: Reference `ch:methodology' on page 5 undefined on input line 64.
 
 
-LaTeX Warning: Citation 'Brotchie2011a' on page 6 undefined on input line 134.
-
-[6]
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 7 undefined on input line 143.
+Package marginnote Info: Margin note 16.1 is on absolute page 16
+(marginnote)              on input line 64.
+Package marginnote Info: right page because not two side mode on input line 64.
 
 
-LaTeX Warning: Citation 'Brotchie2011a' on page 7 undefined on input line 145.
+LaTeX Warning: Reference `ch:methodology' on page 5 undefined on input line 64.
 
 
-LaTeX Warning: Citation 'Brotchie2011a' on page 7 undefined on input line 148.
-
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 7 undefined on input line 152.
+Package marginnote Info: xpos seems to be 505.09424pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 64.
+[5] [6]
+Package marginnote Info: Margin note 18.1 is on absolute page 18
+(marginnote)              on input line 121.
+Package marginnote Info: right page because not two side mode on input line 121
+.
+LaTeX Font Info:    Try loading font information for U+fontawesomeone on input 
+line 121.
+ (c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
+File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
+)
+Package marginnote Info: xpos seems to be 298.71999pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 121.
 
 [7]
 
-LaTeX Warning: Citation 'Brotchie2011a' on page 8 undefined on input line 156.
-
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 8 undefined on input line 159.
+LaTeX Warning: Citation 'Leary1964' on page 8 undefined on input line 160.
 
 [8]
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 9 undefined on input line 175.
-
-
-LaTeX Warning: Reference `app:jarry' on page 9 undefined on input line 190.
-
-[9] [10]
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 230.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 230.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 230.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-
-
-LaTeX Warning: Citation 'Brotchie2011a' on page 11 undefined on input line 245.
-
-
-[11]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 282.
- [12]
-Package acronym Info: Label `acro:oulipo' newly defined as it shall be overridd
-en
-although it is yet undefined on input line 319.
-
-
-Package acronym Warning: Acronym `oulipo' is not defined on input line 319.
-
-
-Package acronym Warning: Acronym `oulipo' is not defined on input line 319.
-
-
-LaTeX Warning: Reference `s:oulipo' on page 13 undefined on input line 319.
-
-Package marginnote Info: Margin note 24.1 is on absolute page 24
-(marginnote)              on input line 319.
-Package marginnote Info: right page because not two side mode on input line 319
-.
-
-LaTeX Warning: Reference `s:oulipo' on page 13 undefined on input line 319.
-
-Package marginnote Info: xpos seems to be 440.48883pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 319.
+Package acronym Info: Label `acro:CC' newly defined as it shall be overridden
+although it is yet undefined on input line 292.
+ [9] [10] [11]
 Package acronym Info: Label `acro:OULIPO' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 321.
-[13]
-
-LaTeX Warning: Reference `s:oulipo' on page 14 undefined on input line 323.
+although it is yet undefined on input line 310.
 
 
-LaTeX Warning: Reference `fig:poems' on page 14 undefined on input line 323.
+LaTeX Warning: Reference `s:patalipo' on page 12 undefined on input line 310.
 
-Package marginnote Info: Margin note 25.1 is on absolute page 25
-(marginnote)              on input line 323.
-Package marginnote Info: right page because not two side mode on input line 323
-.
-LaTeX Font Info:    Try loading font information for U+fontawesomeone on input 
-line 323.
-(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
-File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
-)
-
-LaTeX Warning: Reference `fig:poems' on page 14 undefined on input line 323.
-
-Package marginnote Info: xpos seems to be 275.5189pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 323.
-Package marginnote Info: Margin note 25.2 is on absolute page 25
-(marginnote)              on input line 323.
-Package marginnote Info: right page because not two side mode on input line 323
-.
-LaTeX Font Info:    Try loading font information for U+fontawesomethree on inpu
-t line 323.
-(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)
-Package marginnote Info: xpos seems to be 234.91666pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 323.
-
-[14] [15]
-
-LaTeX Warning: Reference `s:borges' on page 16 undefined on input line 453.
-
-Package marginnote Info: Margin note 27.1 is on absolute page 27
-(marginnote)              on input line 453.
-Package marginnote Info: right page because not two side mode on input line 453
+Package marginnote Info: Margin note 23.1 is on absolute page 23
+(marginnote)              on input line 310.
+Package marginnote Info: right page because not two side mode on input line 310
 .
 
-LaTeX Warning: Reference `s:borges' on page 16 undefined on input line 453.
+LaTeX Warning: Reference `s:patalipo' on page 12 undefined on input line 310.
 
-Package marginnote Info: xpos seems to be 537.09843pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 453.
-File: images/spirals.png Graphic file (type png)
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 478.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 478.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 478.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+Package marginnote Info: xpos seems to be 383.17873pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 310.
+[12]
+LaTeX Font Info:    Try loading font information for TS1+pbk on input line 339.
 
-[16]
-
-LaTeX Warning: Citation 'pataphysics2007' on page 17 undefined on input line 48
-5.
-
-) [17]
-\openout2 = `main/creativity.aux'.
-
- (./main/creativity.tex
-LaTeX Font Info:    Try loading font information for TS1+qag on input line 21.
-
-(c:/texlive/2016/texmf-dist/tex/latex/tex-gyre/ts1qag.fd
-File: ts1qag.fd 2009/09/25 v1.2 font definition file for TS1/qag
-) [18
-
-
-
-] (./main.ptc)
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 32.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 32.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 32.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-
-[19]
-
-LaTeX Warning: Reference `ch:methodology' on page 20 undefined on input line 66
-.
-
-Package marginnote Info: Margin note 31.1 is on absolute page 31
-(marginnote)              on input line 66.
-Package marginnote Info: right page because not two side mode on input line 66.
-
-
-LaTeX Warning: Reference `ch:methodology' on page 20 undefined on input line 66
-.
-
-Package marginnote Info: xpos seems to be 505.09424pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 66.
-[20]
-Package acronym Info: Label `acro:bisociation' newly defined as it shall be ove
-rridden
-although it is yet undefined on input line 105.
-
-
-Package acronym Warning: Acronym `bisociation' is not defined on input line 105
-.
-
-
-Package acronym Warning: Acronym `bisociation' is not defined on input line 105
-.
-
-[21] [22] [23]
-Package acronym Info: Label `acro:CC' newly defined as it shall be overridden
-although it is yet undefined on input line 215.
- [24] [25] [26] [27]
-LaTeX Font Info:    Try loading font information for TS1+pbk on input line 358.
-
-
-(c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pbk.fd
+ (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pbk.fd
 File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
 )
 LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10.95> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 358.
- [28] [29] [30]
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 339.
+ [13]
+File: images/spirals.png Graphic file (type png)
+
+<use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 373.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 373.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 373.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+
+[14]
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 392.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 392.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+
+<use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 392.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 404.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 404.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+
+<use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 404.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
-although it is yet undefined on input line 440.
- [31]
-[32] [33]
+although it is yet undefined on input line 406.
+ [15] [16]
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 441.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+
+<use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 441.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 441.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+ [17]
+
+LaTeX Warning: Reference `ch:analysis' on page 18 undefined on input line 456.
+
+Package marginnote Info: right page because not two side mode on input line 456
+.
+
+LaTeX Warning: Reference `ch:analysis' on page 18 undefined on input line 456.
+
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 456.
+Package acronym Info: Label `acro:ACC' newly defined as it shall be overridden
+although it is yet undefined on input line 460.
+
+Package acronym Warning: Acronym `ACC' is not defined on input line 460.
+
+
+Package acronym Warning: Acronym `ACC' is not defined on input line 460.
+
+
+LaTeX Warning: Citation 'iccc2014' on page 18 undefined on input line 463.
+
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 463.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <7> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 463.
+
+Package acronym Warning: Acronym `ACC' is not defined on input line 474.
+
 Package acronym Info: Label `acro:ICCC' newly defined as it shall be overridden
 
-although it is yet undefined on input line 507.
- [34]
-Package acronym Info: Label `acro:DH' newly defined as it shall be overridden
-although it is yet undefined on input line 539.
- [35]
+although it is yet undefined on input line 474.
+[18]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 510.
 Package acronym Info: Label `acro:IJCrC' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 556.
- [36] [37] [38] [39] [40] [41] [42]
-<images/dh01.png, id=1111, 337.26pt x 213.79875pt>
+although it is yet undefined on input line 512.
+ [19] [20]
+Package acronym Info: Label `acro:DH' newly defined as it shall be overridden
+although it is yet undefined on input line 554.
+ [21] [22] [23] [24] [25] [26]
+<images/dh01.png, id=757, 337.26pt x 213.79875pt>
 File: images/dh01.png Graphic file (type png)
  <use images/dh01.png>
-Package pdftex.def Info: images/dh01.png used on input line 762.
+Package pdftex.def Info: images/dh01.png used on input line 718.
 (pdftex.def)             Requested size: 337.25917pt x 213.79822pt.
 
-[43]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 796.
+[27 <./images/dh01.png>]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 752.
 
  (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [44 <./images/dh01.png>] [45] [46] [47]) [48]
+) [28] [29] [30] [31]) [32]
 \openout2 = `back/interlude1.aux'.
 
- (./back/interlude1.tex [49
+ (./back/interlude1.tex [33
 
 
 
 ])
-<images/spiral_core.pdf, id=1194, 156.48964pt x 156.48964pt>
+<images/spiral_core.pdf, id=837, 156.48964pt x 156.48964pt>
 File: images/spiral_core.pdf Graphic file (type pdf)
 
 <use images/spiral_core.pdf>
 Package pdftex.def Info: images/spiral_core.pdf used on input line 114.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [50
+ [34
 
 
 
  <./images/spiral_core.pdf>]
-<images/spiral_practice.pdf, id=1206, 156.48964pt x 156.48964pt>
+<images/spiral_practice.pdf, id=849, 156.48964pt x 156.48964pt>
 File: images/spiral_practice.pdf Graphic file (type pdf)
 
 <use images/spiral_practice.pdf>
 Package pdftex.def Info: images/spiral_practice.pdf used on input line 122.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [51
+ [35
 
  <./images/spiral_practice.pdf>]
 \openout2 = `back/interlude2.aux'.
@@ -3736,55 +3657,57 @@ Package pdftex.def Info: images/spiral_practice.pdf used on input line 122.
 
 (./back/interlude2.tex
 
-LaTeX Warning: Citation 'Turing2009' on page 52 undefined on input line 35.
+LaTeX Warning: Citation 'Turing2009' on page 36 undefined on input line 35.
 
 
-LaTeX Warning: Citation 'Turing2009' on page 52 undefined on input line 39.
+LaTeX Warning: Citation 'Turing2009' on page 36 undefined on input line 39.
 
-[52
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 46.
+[36
 
 
-] [53]) <images/spiral_meta.pdf, id=1237, 156.48964pt x 156.48964pt>
+] [37]) <images/spiral_meta.pdf, id=886, 156.48964pt x 156.48964pt>
 File: images/spiral_meta.pdf Graphic file (type pdf)
 
 <use images/spiral_meta.pdf>
 Package pdftex.def Info: images/spiral_meta.pdf used on input line 136.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [54
+ [38
 
 
 
  <./images/spiral_meta.pdf>]
-<images/spiral_after.pdf, id=1249, 156.48964pt x 156.48964pt>
+<images/spiral_after.pdf, id=899, 156.48964pt x 156.48964pt>
 File: images/spiral_after.pdf Graphic file (type pdf)
 
 <use images/spiral_after.pdf>
 Package pdftex.def Info: images/spiral_after.pdf used on input line 144.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [55
+ [39
 
  <./images/spiral_after.pdf>]
 \openout2 = `back/interlude3.aux'.
 
 
-(./back/interlude3.tex [56
+(./back/interlude3.tex [40
 
 
 ])
-<images/spiral_post.pdf, id=1267, 156.48964pt x 156.48964pt>
+<images/spiral_post.pdf, id=916, 156.48964pt x 156.48964pt>
 File: images/spiral_post.pdf Graphic file (type pdf)
 
 <use images/spiral_post.pdf>
 Package pdftex.def Info: images/spiral_post.pdf used on input line 160.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [57
+ [41
 
 
 
- <./images/spiral_post.pdf>] [58
+ <./images/spiral_post.pdf>] [42
 
 
-] [59] [60]
+] [43] [44]
 Overfull \hbox (13.27571pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 spe-cies: How many words did Shakespeare know?' In: \T1/pbk/d
 b/it/10.95 Bio-met-rika \T1/pbk/l/n/10.95 63.3, pp. 435^^U|
@@ -3803,26 +3726,26 @@ Overfull \hbox (46.59778pt too wide) in paragraph at lines 174--174
 [][] \T1/pbk/l/n/10.95 (vis-ited on 04/08/2016). |
  []
 
-[61]
+[45]
 Overfull \hbox (12.1257pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 Web site map-ping'. In: \T1/pbk/db/it/10.95 Com-puter Net-wor
 ks and ISDN Sys-tems \T1/pbk/l/n/10.95 30.1-7, pp. 317^^U|
  []
 
-[62]
+[46]
 Overfull \hbox (7.31467pt too wide) in paragraph at lines 174--174
 [][]\T1/pbk/l/n/10.95 Jurafsky, Daniel and James H Mar-tin (2009). \T1/pbk/db/i
 t/10.95 Speech and Lan-guage Pro-cessing\T1/pbk/l/n/10.95 .|
  []
 
-[63]
+[47]
 Overfull \hbox (12.13213pt too wide) in paragraph at lines 174--174
 [][][]\T1/pbk/l/n/10.95 (2016c). \T1/pbk/db/it/10.95 Mi-crosoft Trans-lator - T
 ext Trans-la-tion\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : 
 [][]$\T1/pcr/m/n/10.95 https : / / datamarket .|
  []
 
-[64] [65]
+[48] [49]
 Overfull \hbox (11.0051pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 os-ity, cre-ativ-ity, mu-sic, and the fine arts'. In: \T1/pbk
 /db/it/10.95 Con-nec-tion Sci-ence \T1/pbk/l/n/10.95 18.2, pp. 173^^U|
@@ -3834,7 +3757,7 @@ Overfull \hbox (8.91748pt too wide) in paragraph at lines 174--174
 lect-ive Common-sense Think-|
  []
 
-[66]
+[50]
 Overfull \hbox (7.71707pt too wide) in paragraph at lines 174--174
 [][][]\T1/pbk/l/n/10.95 (2006). `  The Nature of Cre-ativ-ity'. In: \T1/pbk/db/
 it/10.95 Cre-ativ-ity Re-search journal \T1/pbk/l/n/10.95 18.1, pp. 87^^U|
@@ -3846,11 +3769,11 @@ Overfull \hbox (11.63657pt too wide) in paragraph at lines 174--174
 -li-gence'. In: \T1/pbk/db/it/10.95 Mind \T1/pbk/l/n/10.95 59, pp. 433^^U|
  []
 
-[67]
+[51]
 \tf@ptc=\write10
 \openout10 = `main.ptc'.
 
- [68
+ [52
 
 ]
 \tf@tdo=\write11
@@ -3871,20 +3794,28 @@ Overfull \hbox (11.63657pt too wide) in paragraph at lines 174--174
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 189.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
  (./main.aux (./front/title.aux) (./front/abstract.aux)
-(./front/publications.aux) (./front/acronyms.aux) (./main/pataphysics.aux)
-(./main/creativity.aux) (./back/interlude1.aux) (./back/interlude2.aux)
-(./back/interlude3.aux))
+(./front/publications.aux) (./front/acronyms.aux) (./main/creativity.aux)
+(./back/interlude1.aux) (./back/interlude2.aux) (./back/interlude3.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D40E67CE2A4FE892C306F8A0E6CCE666;2214.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 37D2D22578C261E9A6DB4679B764B6E5;1571
+(rerunfilecheck)             After:  E8C706131C090B0EBAFE3BB6CDBFA500;1727.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 32.0255pt have occurred.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -3896,39 +3827,46 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64631 strings out of 493013
- 1238993 string characters out of 6136994
- 1916072 words of memory out of 5000000
- 66666 multiletter control sequences out of 15000+600000
- 111759 words of font info for 153 fonts, out of 8000000 for 9000
+ 64408 strings out of 493013
+ 1235816 string characters out of 6136994
+ 1907805 words of memory out of 5000000
+ 66517 multiletter control sequences out of 15000+600000
+ 105734 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,15n,82p,10377b,2089s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{c:/texlive/201
-6/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2016/texmf-dist/fon
-ts/enc/dvips/fontawesome/fontawesomethree.enc}{c:/texlive/2016/texmf-dist/fonts
-/enc/dvips/fontawesome/fontawesomeone.enc}{c:/texlive/2016/texmf-dist/fonts/enc
+ 75i,15n,82p,10377b,2011s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section*.52} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.49} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.47} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.44} has been referenced but does not exist
+, replaced by a fixed one
+
+{c:/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{c:/
+texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{c:/texlive/2016/texm
+f-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2016/texmf-dist/fonts/enc
 /dvips/base/8r.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc
 .enc}<c:/texlive/2016/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb
 ><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/tex-gyre/qagb.pfb><c:/texliv
-e/2016/texmf-dist/fonts/type1/public/tex-gyre/qagr.pfb><c:/texlive/2016/texmf-d
-ist/fonts/type1/public/tex-gyre/qagri.pfb><c:/texlive/2016/texmf-dist/fonts/typ
-e1/urw/bookman/ubkd8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/u
-bkdi8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb><c:/t
-exlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2016/tex
-mf-dist/fonts/type1/urw/courier/ucrb8a.pfb><c:/texlive/2016/texmf-dist/fonts/ty
-pe1/urw/courier/ucrr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/wasy2
--ps/wasyb10.pfb>
-Output written on main.pdf (79 pages, 668296 bytes).
+ype1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/publi
+c/tex-gyre/qagb.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/tex-gyre/qag
+r.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb><c:/texliv
+e/2016/texmf-dist/fonts/type1/urw/bookman/ubkdi8a.pfb><c:/texlive/2016/texmf-di
+st/fonts/type1/urw/bookman/ubkl8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/u
+rw/bookman/ubkli8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrb
+8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texli
+ve/2016/texmf-dist/fonts/type1/public/wasy2-ps/wasyb10.pfb>
+Output written on main.pdf (63 pages, 575925 bytes).
 PDF statistics:
- 1742 PDF objects out of 2073 (max. 8388607)
- 1591 compressed objects within 16 object streams
- 428 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1349 PDF objects out of 1440 (max. 8388607)
+ 1231 compressed objects within 13 object streams
+ 370 named destinations out of 1000 (max. 500000)
+ 275 words of extra memory for PDF output out of 10000 (max. 10000000)
 
