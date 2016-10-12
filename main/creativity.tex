@@ -121,25 +121,24 @@ In a similar fashion, Ross Mooney identified four aspects of creativity in 1963 
 
 James Kaufman and Ronald Beghetto developed a model of creativity called the ``four C model'' \citeyear{Kaufman2009}. Figure~\ref{fig:4C}\marginnote{\faicon{object-group}~\ref{fig:4C}} shows the relationship between the so called 4 C's.
 
-\tikzstyle{format} = [draw, thin, minimum height=2em, minimum width=2cm]
 \begin{figure}[!htbp]
   \centering
-  \begin{tikzpicture}[node distance=3cm, auto,>=latex', thick]
-    \path[->] node[format] (minic) {mini-c};
-    \path[->] node[format, below of=minic] (littlec) {little-c}
-            (minic) edge node [swap] {Tinkering} (littlec);
-    \path[->] node[below of=littlec, node distance=1.5cm] (reflect) {Reflection}
-            (littlec) edge node {} (reflect);
-    \path[->] node[format, right of=minic, node distance=7cm] (proc) {Pro-c}
-                  (minic) edge node {Formal Apprenticeship} (proc)
-                  (littlec) edge node [swap, text width=2cm] {Informal Apprenticeship} (proc);
-    \path[->] node[above of=proc, node distance=1.5cm] (stasis) {Stasis}
-            (proc) edge node {} (stasis);
-    \path[->] node[format, right of=littlec, node distance=7cm] (bigc) {Big-C}
-            (proc) edge node {} (bigc);
-    \path[->] node[below of=bigc, node distance=1.5cm] (legend) {Legend}
-            (bigc) edge node {} (legend);
-    \path[->, draw, thin] (proc) -| +(1.4,0) |- node[near start] {Greatness} (bigc);
+  \begin{tikzpicture}[node distance = 2cm and 7cm]
+    \node [box] (minic) {mini-c};
+    \node [box, below = of minic] (littlec) {little-c};
+    \node [box, right = of minic] (proc) {Pro-c};
+    \node [box, right = of littlec] (bigc) {Big-C};
+    \node [above = 1cm of proc] (stasis) {Stasis};
+    \node [below = 1cm of bigc] (legend) {Legend};
+    \node [below = 1cm of littlec] (reflect) {Reflection};
+    \draw [->] (minic) -- node [left] {Tinkering} (littlec);
+    \draw [->] (minic) -- node [above] {Formal Apprenticeship} (proc);
+    \draw [->] (littlec) -- node [below = 10pt, text width = 2cm] {Informal Apprenticeship} (proc);
+    \draw [->] (littlec) -- (reflect);
+    \draw [->] (proc) -- (stasis);
+    \draw [->] (proc) -- (bigc);
+    \draw [->] (bigc) -- (legend);
+    \draw [->] (proc) -| +(1.4,0) |- node[near start, right] {Greatness} (bigc);
   \end{tikzpicture}
 \caption[The 4 C Model]{The 4 C Model}
 \label{fig:4C}
@@ -166,6 +165,8 @@ Timothy Leary took this idea of common characteristics a bit further and suggest
   \item [Creative Creator] (new experience presented in novel performances)
   \item [Creative Blocked] (new direct experience expressed in conventional modes)
 \end{description}
+
+\todo{change style of tables}
 
 \begin{table}[!htbp]
 \caption[Leary's four types of creativity]{Leary's four types of creativity}
@@ -575,7 +576,7 @@ Pataphysics governs exceptions and anomalies and she introduces a, what she call
 
 With this, Drucker introduces Speculative Aesthetics, which links interface design in which other speculative computing principles. She also refers to Kant and his idea of `purposiveness without purpose'. She says that the appreaciation of design as it is (outside of untility) is the goal of speculative aesthetics.
 
-HERE
+
 \subsection{Digital Humanities}
 
 Anne Burdick et al. have written a manifesto for the field of \ac{DH} \citeyear{Burdick2012}. Computing has had a big impact on the humanities as a discipline so much so that \ac{DH} was born of the encounter between the two. In essence, it is characterised by ``collaboration, transdisciplinarity and an engagement with computing'' \autocite[p.122]{Burdick2012} but it should not simply be reduced to `doing the humanities digitally' \autocite[p.101]{Burdick2012}. It spans across many traditional areas of research, such as literature, philosophy, history, art, music, design and of course computer science---making the concept of transliteracy fundamental.
@@ -608,174 +609,62 @@ Anne Burdick et al. have written a manifesto for the field of \ac{DH} \citeyear{
   \sourceatright{\autocite[p.21]{Burdick2012}}
 \end{quotation}
 
-A list of the emerging methods Burdick et al. have identified are shown below in the \textit{Field map of digital humanities: emerging methods and genres} \citeyear[p.29-60]{Burdick2012}.
+A shortened list of the emerging methods Burdick et al. have identified are shown below \citeyear[p.29-60]{Burdick2012}. A full list can be found in appendix \nameref{app:others}, section~\ref{s:dhmap}\marginnote{§~\ref{s:dhmap}}.
 
-\todo{refer back to this from conclusion or analysis}
+\todo{refer back to this from conclusion or analysis or methodology}
 
 \begin{itemize}
-  \item enhanced critical curation
-  \begin{itemize}
-    \item digital collections
-    \item multimedia critical editions
-    \item object-based argumentation
-    \item expanded publication
-    \item experiential and spatial
-    \item mixed physical and digital
-  \end{itemize}
-  \item augmented editions and fluid textuality
-  \begin{itemize}
-    \item structured mark-up
-    \item	natural language processing
-    \item	relational rhetoric
-    \item	textual analysis
-    \item	variants and versions
-    \item	mutability
-  \end{itemize}
-  \item scale: the law of large numbers
-  \begin{itemize}
-    \item quantitative analysis
-    \item	text-mining
-    \item	machine reading
-    \item	digital cultural record
-    \item	algorithmic analysis
-  \end{itemize}
+  \item structured mark-up
+  \item	natural language processing
+  \item	mutability
+  \item	digital cultural record
+  \item	algorithmic analysis
   \item distant/close, macro/micro, surface/depth
-  \begin{itemize}
-    \item large-scale patterns
-    \item	fine-grained analysis
-    \item	close reading
-    \item	distant reading
-    \item	differential geographies
-  \end{itemize}
-  \item cultural analytics, aggregation, and data-mining
-  \begin{itemize}
-    \item parametrics
-    \item	cultural mash-ups
-    \item	computational processing
-    \item	composite analysis
-    \item	algorithm design
-  \end{itemize}
-  \item visualization and data design
-  \begin{itemize}
-    \item data visualization
-    \item	mapping
-    \item	information design
-    \item	simulation environments
-    \item	spatial argument
-    \item	modelling knowledge
-    \item	visual interpretation
-  \end{itemize}
-  \item locative investigation and thick mapping
-  \begin{itemize}
-    \item spatial humanities
-    \item	digital cultural mapping
-    \item	interconnected sites
-    \item	experimental navigation
-    \item	geographic information systems (GIS)
-    \item	stacked data
-  \end{itemize}
-  \item the animated archive
-  \begin{itemize}
-    \item user communities
-    \item	permeable walls
-    \item	active engagement
-    \item	bottom-up curation
-    \item	multiplied access
-    \item	participatory content creation
-  \end{itemize}
-  \item distributed knowledge production and performative access
-  \begin{itemize}
-    \item global networks
-    \item	ambient data
-    \item	collaborative authorship
-    \item	interdisciplinary teams
-    \item	use as performance
-    \item	crowd-sourcing
-  \end{itemize}
-  \item humanities gaming
-  \begin{itemize}
-    \item user engagement
-    \item	rule-based play
-    \item	rich interaction
-    \item	virtual learning environments
-    \item	immersion and simulation
-    \item	narrative complexity
-  \end{itemize}
-  \item code, software, and platform studies
-  \begin{itemize}
-    \item narrative structures
-    \item	code as text
-    \item	computational processes
-    \item	software in a cultural context
-    \item	encoding practices
-  \end{itemize}
-  \item database documentaries
-  \begin{itemize}
-    \item variable experience
-    \item	user-activated
-    \item	multimedia prose
-    \item	modular and combinatoric
-    \item	multilinear
-  \end{itemize}
+  \item parametrics
+  \item	cultural mash-ups
+  \item	algorithm design
+  \item data visualization
+  \item	modelling knowledge
+  \item	ambient data
+  \item	collaborative authorship
+  \item	interdisciplinary teams
+  \item	use as performance
+  \item narrative structures
+  \item	code as text
+  \item	software in a cultural context
   \item repurposable content and remix culture
-  \begin{itemize}
-    \item participatory Web
-    \item	read/write/rewrite
-    \item	platform migration
-    \item	sampling and collage
-    \item	meta-medium
-    \item	inter-textuality
-  \end{itemize}
-  \item pervasive infrastructure
-  \begin{itemize}
-    \item extensible frameworks
-    \item	heterogeneous data streams
-    \item	polymorphous browsing
-    \item	cloud computing
-  \end{itemize}
-  \item ubiquitous scholarship
-  \begin{itemize}
-    \item augmented reality
-    \item	web of things
-    \item	pervasive surveillance and tracking
-    \item	ubiquitous computing
-    \item	deterritorialization of humanistic practice
-  \end{itemize}
+  \item participatory Web
+  \item	read/write/rewrite
+  \item	meta-medium
+  \item	polymorphous browsing
 \end{itemize}
 
-% \subsubsection*{Field map of digital humanities: emerging methods and genres}\autocite[p.29-60]{Burdick2012}
 
+% \subsection*{Computer Ethics}
 
+% \begin{quote}
+%   One way of characterizing these processes is to use an alliteration that allows us to keep track of some of the core features of RRI in ICT, namely the four “p”s, which are: product, process, purpose and people. The purpose of using the four “p”s is to draw attention to the fact that, in addition to the widely recog- nized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation need to be incorporated in RRI. \autocite{Stahl2013}
+% \end{quote}
 
-\subsection*{Computer Ethics}
+% \begin{draft}
+%   ETHICS\@: PROCESS< PRODUCT< PURPOSE\\
+%   ROBOT ETHICS\@: similar to 4-p’s of creativity
 
+%   \autocite{McBride2013}
 
-\begin{quote}
-  One way of characterizing these processes is to use an alliteration that allows us to keep track of some of the core features of RRI in ICT, namely the four “p”s, which are: product, process, purpose and people. The purpose of using the four “p”s is to draw attention to the fact that, in addition to the widely recog- nized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation need to be incorporated in RRI. \autocite{Stahl2013}
-\end{quote}
+%   it has three actors: Robot engineer, client and user.
 
-\begin{draft}
-  ETHICS\@: PROCESS< PRODUCT< PURPOSE\\
-  ROBOT ETHICS\@: similar to 4-p’s of creativity
+%   4 approaches:\\
+%   •	challenge the myth of autonomy\\
+%   •	Developing practice-based approaches (in context of it purpose and environment)\\
+%   •	Managing ethical variety\\
+%   •	A model for human-centred robot ethics
 
-
-
-
-  \autocite{McBride2013}
-
-  it has three actors: Robot engineer, client and user.
-
-  4 approaches:\\
-  •	challenge the myth of autonomy\\
-  •	Developing practice-based approaches (in context of it purpose and environment)\\
-  •	Managing ethical variety\\
-  •	A model for human-centred robot ethics
-
-  Virtuous robot:\\
-  •	Human-centred\\
-  •	Man-machine interdependency\\
-  •	Practice based (context)\\
-  •	Ethical variety
-\end{draft}% chktex 17
+%   Virtuous robot:\\
+%   •	Human-centred\\
+%   •	Man-machine interdependency\\
+%   •	Practice based (context)\\
+%   •	Ethical variety
+% \end{draft}% chktex 17
 
 \stopcontents[chapters]

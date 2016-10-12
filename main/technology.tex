@@ -43,7 +43,7 @@ Knowledge needed to understand project:
   \item
 \end{itemize}
 
-\todo{update all graphics with inkscape}
+\todo{update all graphics with tikz}
 
 \section{Information Retrieval}
 
@@ -51,16 +51,29 @@ Knowledge needed to understand project:
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \sourceatright{\autocite{Baeza-Yates2011}}
 \end{quotation}
 
-In simple terms, a typical search process can be described as follows. A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview. See figure~\ref{fig:SEA}.
+In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
 \begin{figure}[!htbp]
   \centering
-  \input{images/architecture.pdf_tex}
-  \caption[Search Engine Architecture]{Abstract search engine architecture}
-\label{fig:SEA}
+  \begin{tikzpicture}[node distance = 1cm and 2cm]
+    \node [box] (web) {Web};
+    \node [box, below = of web] (crawl) {Crawler};
+    \node [box, below = of crawl] (index) {Index};
+    \node [box, right = of web] (user) {User};
+    \node [box, below = of user] (query) {Query};
+    \node [box, below = of query] (rank) {Ranking};
+    \draw [->] (web) -- (crawl);
+    \draw [->] (crawl) -- (index);
+    \draw [->] (user) -- (query);
+    \draw [->] (index) -- (rank);
+    \draw [->] (rank) -| +(1.4,0) |- (user);
+    \draw [->] (query.west) -| +(-1,0) |- (index.north east);
+  \end{tikzpicture}
+\caption[Search Engine Architecture]{Abstract search engine architecture}
+\label{fig:sea}
 \end{figure}
 
-Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results.\autocite{Google2012, Baidu2012, Microsoft2012a} Google uses over \num{200} signals \autocite{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
+Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results \autocite{Google2012, Baidu2012, Microsoft2012a}. Google uses over \num{200} signals \citeyear{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
 
 Any \ac{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
 

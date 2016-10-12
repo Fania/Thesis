@@ -690,7 +690,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
-
+\tikzstyle{box} = [draw, minimum height = 2em, minimum width = 2cm]
 
 \forestset{
   folders/.style={
