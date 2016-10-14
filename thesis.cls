@@ -534,9 +534,10 @@ breaklines=true
 % \makeevenhead{fania}{}{}{}
 % \makeoddhead{fania}{\slshape\rightmark}{}{\slshape\leftmark}
 % \makeevenfoot{fania}{}{}{}
-\makeoddfoot{fania}{Hello World}{}{\thepage}
+\makeoddfoot{fania}{}{}{\thepage}
 % \makeevenhead{fania}{\thepage}{}{\leftmark}
-\makeoddhead{fania}{\leftmark}{}{\rightmark}
+\makeoddhead{fania}{}{}{}
+% \makeoddhead{fania}{\leftmark}{}{\rightmark}
 % \makerunningwidth{fania}{1.1\textwidth}
 % \makeheadrule{fania}{1.1\textwidth}{\normalrulethickness}
 % \makefootrule{fania}{1.1\textwidth}{\normalrulethickness}
@@ -677,6 +678,7 @@ breaklines=true
 \SIthousandsep{,}
 
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage{tikz}
 \usetikzlibrary{quotes,arrows,angles,decorations,
 fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}

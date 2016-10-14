@@ -31,19 +31,8 @@ I am also your subject so the Sultan told the grand.
 \minicontents
 \spirals
 
-Knowledge needed to understand project:
-\begin{itemize}
-  \item Search engines
-  \item index
-  \item corpus
-  \item query --- expansion etc
-  \item results
-  \item searching vs browsing
-  \item Web programming
-  \item
-\end{itemize}
-
 \todo{update all graphics with tikz}
+
 
 \section{Information Retrieval}
 
@@ -51,7 +40,7 @@ Knowledge needed to understand project:
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \sourceatright{\autocite{Baeza-Yates2011}}
 \end{quotation}
 
-In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
+In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}\marginnote{\faicon{object-group}~\ref{fig:sea}}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
 \begin{figure}[!htbp]
   \centering
@@ -69,77 +58,73 @@ In simple terms, a typical search process can be described as follows (see figur
     \draw [->] (rank) -| +(1.4,0) |- (user);
     \draw [->] (query.west) -| +(-1,0) |- (index.north east);
   \end{tikzpicture}
-\caption[Search Engine Architecture]{Abstract search engine architecture}
+\caption[Search engine architecture]{Abstract search engine architecture}
 \label{fig:sea}
 \end{figure}
 
 Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results \autocite{Google2012, Baidu2012, Microsoft2012a}. Google uses over \num{200} signals \citeyear{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
 
-Any \ac{ir} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors (for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages).
-
+Any \ac{IR} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ single-word vs.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors---for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages.
 
 \paragraph{Crawler}
-
 The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are well-known examples.
-
+\todo{add proper refs}
 
 \paragraph{Index}
-
-An index is a list of keywords (called the dictionary or vocabulary) together with a list (called postings list) that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{tdm}. In this case $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list called postings list that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginnote{$\bm{\Sigma}$~\ref{eq:tdm}}.
 
 \begin{equation}
-  \bbordermatrix{~ & d_1 & d_2 \cr % chktex 41
-        k_1 & f_{1,1} & f_{1,2} \cr % chktex 41
-        k_2 & f_{2,1} & f_{2,2} \cr % chktex 41
+  \bbordermatrix{~ & d_1 & d_2 \cr
+        k_1 & f_{1,1} & f_{1,2} \cr
+        k_2 & f_{2,1} & f_{2,2} \cr
         k_3 & f_{3,1} & f_{3,2}}
 \label{eq:tdm}
 \end{equation}
 % \myequations{Term-document matrix}
 
-\todo{example TDM for faustroll sentence?}
+Where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
+
+To illustrate this with a concrete example, figure~\ref{fig:termdocs} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}: 
+
+\begin{itemize}
+  \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (Faustroll) \citeyear{Jarry1996}
+  \item Saint Luke: \emph{The Gospel} (Gospel)
+  \item Jules Verne: \emph{A Journey to the Centre of the Earth} (Voyage)
+\end{itemize}
 
 \begin{figure}[!htbp]
 \[
   \bbordermatrix{
-    ~ & Faustroll & Gospel & Voyage \cr % chktex 41
-    Faustroll & 77 & 0 & 0 \cr % chktex 41
-    father & 1 & 28 & 2 \cr % chktex 41
-    time & 34 & 16 & 129 \cr % chktex 41
-    purpose & 2 & 0 & 3 \cr % chktex 41
-    little & 28 & 16 & 81 \cr % chktex 41
-    background & 0 & 0 & 0 \cr % chktex 41
-    water & 29 & 7 & 120 \cr % chktex 41
-    doctor & 30 & 0 & 0 \cr % chktex 41
-    without & 27 & 7 & 117 \cr % chktex 41
-    skiff & 35 & 0 & 0 \cr % chktex 41
-    bishop & 27 & 0 & 2 \cr % chktex 41
-    God & 25 & 123 & 2 \cr % chktex 41
-    substance & 8 & 3 & 1 \cr % chktex 41
-    issue & 0 & 2 & 2 \cr % chktex 41
-    watch & 5 & 3 & 6
+    ~           & Faustroll & Gospel  & Voyage  \cr
+    Faustroll   & 77        & 0       & 0       \cr
+    father      & 1         & 28      & 2       \cr
+    time        & 34        & 16      & 129     \cr
+    background  & 0         & 0       & 0       \cr
+    water       & 29        & 7       & 120     \cr
+    doctor      & 30        & 0       & 0       \cr
+    without     & 27        & 7       & 117     \cr
+    bishop      & 27        & 0       & 2       \cr
+    God         & 25        & 123     & 2
   }
 \]
 \caption[Various wordcounts]{Various wordcounts in Faustroll, Gospel and Voyage}
 \label{fig:termdocs}
 \end{figure}
 
-Total wordcount of files: Faustroll=\num{131891}, Gospel=\num{139669}, Voyage=\num{497295}.
+% purpose     & 2         & 0       & 3       \cr
+% little      & 28        & 16      & 81      \cr
+% skiff       & 35        & 0       & 0       \cr
+% substance   & 8         & 3       & 1       \cr
+% issue       & 0         & 2       & 2       \cr
+% watch       & 5         & 3       & 6
 
-\todo{cross references with hyperlink hypertarget}
-The dictionary is usually \hyperlink{stemming}{preprocessed} to eliminate punctuation and stop-words (e.g. I, a, and, be, by, for, the, on, etc.) that would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary' which can be seen as a domain specific taxonomy and are very useful for query expansion.
+% The total wordcount of the above files is as follows: Faustroll=\num{131891}, Gospel=\num{139669}, and Voyage=\num{497295}.
 
-%
-% s3://aws-publicdatasets/cc-index/collections/[CC-MAIN-YYYY-WW]/indexes/
-% s3://aws-publicdatasets/cc-index/collections/[CC-MAIN-2015-22]/indexes/segments/1432207930423.94/warc/CC-MAIN-20150521113210-00247-ip-10-180-206-219.ec2.internal.warc.gz
-%
-% https://gist.github.com/Smerity/e750f0ef0ab9aa366558#file-bbc-wet
-%
-% common-crawl/crawl-data/CC-MAIN-2015-22/segments/1432207930423.94/warc/CC-MAIN-20150521113210-00247-ip-10-180-206-219.ec2.internal.warc.gz
-
+\todo{fix link}
+The dictionary is usually preprocessed (see stemming \hyperlink{stemming}) to eliminate punctuation and so-called `stop-words' (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
 
 \paragraph{Ranking}
-
-Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{tf}-\acl{idf} or \acs{tf}-\acs{idf} for short. Given a \ac{tf} weight of $tf_{i,j}$ and a \ac{idf} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
+Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \ac{TF} weight of $tf_{i,j}$ and a \ac{IDF} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
 
 \begin{equation}
   w_{i,j} =
@@ -153,10 +138,10 @@ Ranking is the process of ordering search results using a given weight. One simp
 
 Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
 
-The \ac{tf} $tf_{i,j}$ is calculated and normalised using a log function as:
+The \ac{TF} $tf_{i,j}$ is calculated and normalised using a log function as:
 $1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
 
-The total \ac{tf} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
+The total \ac{TF} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
 
 The \ac{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{idf} of term $k_i$. The more often a term occurs in different documents the lower the \ac{idf}.
 
@@ -525,7 +510,7 @@ Goals of \ac{nlp} are to get computers to perform useful tasks involving human l
 
 e.g.\ machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
 
-
+\label{stemming}
 \hypertarget{stemming}{Techniques} that are useful for this are the following \autocite[Ch.2]{Manning2009}.
 
 \begin{description}

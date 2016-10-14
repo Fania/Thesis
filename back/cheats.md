@@ -2,6 +2,8 @@
 
 \todo{Message}
 
+\faicon{code} Code
+$\bm{\Sigma}$ Equation
 \faicon{table} Table
 \faicon{object-group} Figure
 \faicon{picture-o}] Image
