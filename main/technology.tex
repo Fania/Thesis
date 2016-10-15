@@ -67,12 +67,10 @@ Most big Web search engines like Google, Baidu or Bing focus on usefulness and r
 Any \ac{IR} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ single-word vs.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors---for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages.
 
 \paragraph{Crawler}
-The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot\footnote{\href{https://support.google.com/webmasters/answer/182072}{Googlebot} (\url{https://support.google.com/webmasters/answer/182072})} and the Bingbot\footnote{\href{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0}{Bingbot} (\url{http://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0})} are well-known examples.
-\todo{add proper refs}
-
+The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \citeyear{Google2016} and the Bingbot \citeyear{Bing2016} are well-known examples.
 
 \paragraph{Index}
-An index is a list of keywords (called the dictionary or vocabulary) together with a list called postings list that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginnote{$\bm{\Sigma}$~\ref{eq:tdm}}.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginnote{$\bm{\Sigma}$~\ref{eq:tdm}}.
 
 \begin{equation}
   \bbordermatrix{~ & d_1 & d_2 \cr
@@ -83,14 +81,12 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 \end{equation}
 % \myequations{Term-document matrix}
 
-Where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$.
-
-To illustrate this with a concrete example, figure~\ref{fig:termdocs} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}: 
+where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustrate this with a concrete example, figure~\ref{fig:termdocs}\marginnote{\faicon{object-group}~\ref{fig:termdocs}} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}.
 
 \begin{itemize}
   \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (Faustroll) \citeyear{Jarry1996}
-  \item Saint Luke: \emph{The Gospel} (Gospel)
-  \item Jules Verne: \emph{A Journey to the Centre of the Earth} (Voyage)
+  \item Saint Luke: \emph{The Gospel} (Gospel) \citeyear{Luke2005}
+  \item Jules Verne: \emph{A Journey to the Centre of the Earth} (Voyage) \citeyear{Verne2010}
 \end{itemize}
 
 \begin{figure}[!htbp]
@@ -121,11 +117,10 @@ To illustrate this with a concrete example, figure~\ref{fig:termdocs} shows a \a
 
 % The total wordcount of the above files is as follows: Faustroll=\num{131891}, Gospel=\num{139669}, and Voyage=\num{497295}.
 
-\todo{fix link}
-The dictionary is usually preprocessed (see stemming \hyperlink{stemming}) to eliminate punctuation and so-called `stop-words' (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
+The dictionary is usually preprocessed (see page~\pageref{stemming}) to eliminate punctuation and so-called `stop-words' (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
 
 \paragraph{Ranking}
-Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \ac{TF} weight of $tf_{i,j}$ and a \ac{IDF} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
+Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} weight of $tf_{i,j}$ and a \acs{IDF} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
 
 \begin{equation}
   w_{i,j} =
@@ -144,7 +139,7 @@ $1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
 
 The total \ac{TF} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
 
-The \ac{idf} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{idf} of term $k_i$. The more often a term occurs in different documents the lower the \ac{idf}.
+The \ac{IDF} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}.
 
 % \begin{equation}
 %   tf_{i,j}=

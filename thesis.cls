@@ -841,6 +841,19 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 
 % \usepackage{tocloft}
 
+\newenvironment{conditions*}
+  {\par\vspace{\abovedisplayskip}\noindent
+   \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
+  {\endtabularx\par\vspace{\belowdisplayskip}}
+
+% where:
+% \begin{conditions*}
+%  P    &  notional permeability factor and something 
+%           longer that needs to be taken at the next line\\
+% N     &  number of waves \\
+% S_{d} &  damage level
+% \end{conditions*}
+
 %%gmedina solution
 % \newcommand{\listequationsname}{List of Equations}
 % \newlistof{myequations}{equ}{\listequationsname}
