@@ -129,7 +129,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] list of equations
 - [ ] fix all citations (to autocite or not?)
 - [x] make main TOC only show sections, not subsections (chapter TOC will show all detail)
-- [ ] put link to TOC into footer?
+- [x] put link to TOC into footer?
 - [ ] add header and footer again?
 - [ ] add "interludes" ? pages containing relevant quotes and sayings for the upcoming chapter? 
 - [ ] remove page num from parts in toc
@@ -157,6 +157,9 @@ pdflatex --file-line-error -shell-escape main
 - [ ] cut pdf with spiral in it for line \spirals
 - [ ] remove indent in inline code style
 - [ ] add Olston2010 reference and Gulli2005 on crawling and size of web
+- [x] sourceatright font and size
+- [ ] refer back to oulipo technique table in later chapters
+
 
 
 

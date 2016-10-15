@@ -2,6 +2,8 @@
 
 \todo{Message}
 
+\faicon{code} Code
+$\bm{\Sigma}$ Equation
 \faicon{table} Table
 \faicon{object-group} Figure
 \faicon{picture-o}] Image
@@ -58,4 +60,58 @@ word emph in italics
   \caption[figure3]{jpicasso}
 \label{img3}
 \end{minipage}
+\end{figure}
+
+
+
+## TIKZ
+
+paths can be draw, fill or clip
+
+\draw == \path[draw]
+
+\draw[color=red] (0,0) rectangle (2,1);
+\draw (0,0) -- (2,1);
+\draw[->] (0,0) -- (2,1);
+
+arrows etc
+dotted, |<->|, dashed, o-), >->>
+
+use scope env to group
+
+nodes
+\node[options] (node_name) at (x,y) {Name}
+
+\path[draw] (0, 0) node {A} -- (1,0) -- (1,1) node {B}
+
+\draw (v0) -- (v1) 
+      (v0) -- (v2) 
+      (v0) -- (v3) 
+      (v0) -- (v4) 
+      (v0) -- (v5);
+
+\draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {x axis};
+\draw[thick,->] (0,0) -- (0,4.5) node[anchor=south east] {y axis};
+
+\tikzstyle{box} = [draw, minimum height = 2em, minimum width = 2cm]
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}[node distance = 1cm and 2cm]
+    % \begin{scope}[]
+    \node [box] (web) {Web};
+    \node [box, below = of web] (crawl) {Crawler};
+    \node [box, below = of crawl] (index) {Index};
+    \node [box, right = of web] (user) {User};
+    \node [box, below = of user] (query) {Query};
+    \node [box, below = of query] (rank) {Ranking};
+    \draw [->] (web) -- (crawl);
+    \draw [->] (crawl) -- (index);
+    \draw [->] (user) -- (query);
+    \draw [->] (index) -- (rank);
+    \draw [->] (rank) -| +(1.4,0) |- (user);
+    \draw [->] (query.west) -| +(-1,0) |- (index.north east);
+    % \end{scope}
+  \end{tikzpicture}
+\caption[Search Engine Architecture]{Abstract search engine architecture}
+\label{fig:sea}
 \end{figure}

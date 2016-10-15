@@ -218,21 +218,27 @@
 
 % \usepackagee[autostyle,english=british,french=guillemets]{csquotes}
 % \usepackage{dirtytalk}
+% \renewenvironment{quotation}
+%                {\list{}{\rightmargin\leftmargin}%
+%                 \item\relax\sffamily\SingleSpacing\color{gray}\ignorespaces}
+%                {\unskip\unskip\endlist}
+
 \renewenvironment{quotation}
                {\list{}{\rightmargin\leftmargin}%
-                \item\relax\sffamily\SingleSpacing\color{gray}\ignorespaces}
+                \item\relax\sffamily\small\SingleSpacing\ignorespaces}
                {\unskip\unskip\endlist}
-
 
 % \newcommand*{\attr}[2][2em]{{%
 %   \unskip\nobreak\hfil\penalty50
 %   \hskip#1\hbox{}\nobreak\hfil\tiny{#2}
 %   \parfillskip\z@\finalhyphendemerits=0\par}}
 
-% \newcommand*{\sourceatright}[2][2em]{{%
-%   \unskip\nobreak\hfil\penalty50
-%   \hskip#1\hbox{}\nobreak\hfil{#2}
-%   \parfillskip\z@\finalhyphendemerits=0\par}}
+\makeatletter
+\renewcommand*{\sourceatright}[2][2em]{{%
+  \unskip\nobreak\hfil\penalty50
+  \hskip#1\hbox{}\nobreak\hfil{\tiny\sffamily#2}%
+  \parfillskip\z@\finalhyphendemerits=\z@\par}}
+\makeatother
 
 
 % MULTICOLUMN
@@ -528,9 +534,10 @@ breaklines=true
 % \makeevenhead{fania}{}{}{}
 % \makeoddhead{fania}{\slshape\rightmark}{}{\slshape\leftmark}
 % \makeevenfoot{fania}{}{}{}
-\makeoddfoot{fania}{Hello World}{}{\thepage}
+\makeoddfoot{fania}{}{}{\thepage}
 % \makeevenhead{fania}{\thepage}{}{\leftmark}
-\makeoddhead{fania}{\leftmark}{}{\rightmark}
+\makeoddhead{fania}{}{}{}
+% \makeoddhead{fania}{\leftmark}{}{\rightmark}
 % \makerunningwidth{fania}{1.1\textwidth}
 % \makeheadrule{fania}{1.1\textwidth}{\normalrulethickness}
 % \makefootrule{fania}{1.1\textwidth}{\normalrulethickness}
@@ -671,6 +678,7 @@ breaklines=true
 \SIthousandsep{,}
 
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage{tikz}
 \usetikzlibrary{quotes,arrows,angles,decorations,
 fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
@@ -684,7 +692,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
-
+\tikzstyle{box} = [draw, minimum height = 2em, minimum width = 2cm]
 
 \forestset{
   folders/.style={
@@ -790,6 +798,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \usepackage{tabu}
 \newtabulinestyle{outer=1.2pt}
 \tabulinesep = 2mm
+\usepackage{longtable}
 
 % \usepackage{caption} % for subtables
 % \usepackage{subcaption} % for subtables
