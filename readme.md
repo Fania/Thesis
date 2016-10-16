@@ -159,7 +159,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] add Olston2010 reference and Gulli2005 on crawling and size of web
 - [x] sourceatright font and size
 - [ ] refer back to oulipo technique table in later chapters
-
+- [ ] capitalise web or not? internet?
 
 
 

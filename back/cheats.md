@@ -11,7 +11,10 @@ $\bm{\Sigma}$ Equation
 
 \marginnote{§~\ref{ch:intro}}
 
-\ac{nlp}
+\ac  - acronym full first and then short
+\acf - acronym full again
+\acs - acronym short
+\acl - acronym long
 
 \textcolor{red}{300 words\ldots}
 
@@ -19,6 +22,12 @@ titles of books etc in italics
 quotes from books in double quotes
 word emph in italics
 
+% \begin{conditions*}
+%  P    &  notional permeability factor and something 
+%           longer that needs to be taken at the next line\\
+% N     &  number of waves \\
+% S_{d} &  damage level
+% \end{conditions*}
 
 ## FIGURES
 \begin{figure}[!htb] % (here, top, bottom, page)
