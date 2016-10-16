@@ -31,8 +31,6 @@ I am also your subject so the Sultan told the grand.
 \minicontents
 \spirals
 
-\todo{update all graphics with tikz}
-
 
 \section{Information Retrieval}
 
@@ -66,10 +64,8 @@ Most big Web search engines like Google, Baidu or Bing focus on usefulness and r
 
 Any \ac{IR} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ single-word vs.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors---for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages.
 
-\paragraph{Crawler}
 The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \citeyear{Google2016} and the Bingbot \citeyear{Bing2016} are well-known examples.
 
-\paragraph{Index}
 An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginnote{$\bm{\Sigma}$~\ref{eq:tdm}}.
 
 \begin{equation}
@@ -84,9 +80,9 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustrate this with a concrete example, figure~\ref{fig:termdocs}\marginnote{\faicon{object-group}~\ref{fig:termdocs}} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}.
 
 \begin{itemize}
-  \item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (Faustroll) \citeyear{Jarry1996}
-  \item Saint Luke: \emph{The Gospel} (Gospel) \citeyear{Luke2005}
-  \item Jules Verne: \emph{A Journey to the Centre of the Earth} (Voyage) \citeyear{Verne2010}
+  \item Alfred Jarry: \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (`Faustroll') \citeyear{Jarry1996}
+  \item Saint Luke: \textit{The Gospel} (`Gospel') \citeyear{Luke2005}
+  \item Jules Verne: \textit{A Journey to the Centre of the Earth} (`Voyage') \citeyear{Verne2010}
 \end{itemize}
 
 \begin{figure}[!htbp]
@@ -117,69 +113,23 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 
 % The total wordcount of the above files is as follows: Faustroll=\num{131891}, Gospel=\num{139669}, and Voyage=\num{497295}.
 
-The dictionary is usually preprocessed (see page~\pageref{stemming}) to eliminate punctuation and so-called `stop-words' (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
-
-\paragraph{Ranking}
-Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} weight of $tf_{i,j}$ and a \acs{IDF} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
-
-\begin{equation}
-  w_{i,j} =
-  \begin{cases}
-  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
-  0 & \text{otherwise}
-  \end{cases}
-  \label{eq:wij}
-\end{equation}
-% \myequations{TF-IDF Ranking}
-
-Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
-
-The \ac{TF} $tf_{i,j}$ is calculated and normalised using a log function as:
-$1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
-
-The total \ac{TF} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
-
-The \ac{IDF} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}.
-
-% \begin{equation}
-%   tf_{i,j}=
-%   \begin{cases}
-%   1+\log f_{i,j} & \text{if} \ f_{i,j} > 0\\
-%   0 & \text{otherwise}
-%   \end{cases}
-%   \label{eq:tfij}
-% \end{equation}
-% % \myequations{tfij}
-
-% \begin{equation}
-%   F_i = \sum_{j=1}^{N}f_{i,j}
-%   \label{eq:Fi}
-% \end{equation}
-% % \myequations{Fi}
-
-% \begin{equation}
-%   idf_j = \log \frac{N}{df_i}
-%   \label{eq:idfj}
-% \end{equation}
-% % \myequations{idfj}
+The dictionary is usually preprocessed (see section~\ref{s:nlp})\marginnote{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{app:stopwords}.}\marginnote{§~\ref{app:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
 
 
 \subsection{Searching vs. Browsing}
 
-\todo{rewrite to match current style}
+What is actually meant by the word `searching'? Usually it implies that there is something to be found, an \ac{IN}; although that doesn't necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
 
-What do we actually mean by searching? Usually it implies that there is something to be found, an \ac{in}; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
-
-From the users' point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques \autocite{Polya1957}:
+From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\marginnote{§~\ref{s:4stages}}\autocite{Polya1957}:
 
 \begin{description}
-  \item [Problem identification] \ac{in},
-  \item [Need articulation] \ac{in} in natural language terms,
-  \item [Query formulation] translate \ac{in} into query terms, and
-  \item [Results evaluation] compare against \ac{in}.
+  \item [Problem identification] \acf{IN},
+  \item [Need articulation] \ac{IN} in natural language terms,
+  \item [Query formulation] translate \ac{IN} into query terms, and
+  \item [Results evaluation] compare against \ac{IN}.
 \end{description}
 
-This model poses problems when we consider a situation where an \ac{in} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that `the setting within which information-seeking takes place constrains the search process' \autocite{Marchionini1988} and they laid out a framework with the following main elements.
+This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \citeyear{Marchionini1988} and they laid out a framework with the following main elements.
 
 \begin{itemize}
   \item Setting (the context of the search and external factors such as time, cost)
@@ -189,51 +139,53 @@ This model poses problems when we consider a situation where an \ac{in} cannot e
   \item Outcomes (the assessment of the results/answers)
 \end{itemize}
 
-Searching can be thought of in two ways, information lookup (\textbf{searching}) and exploratory search (\textbf{browsing}) \autocite{DeVries1993, Marchionini2006}. A situation where an \ac{in} cannot easily be articulated or in fact is not existent (the user is not looking for anything specific) can be considered a typical case of exploratory search and describes the kind of search that is most suited to our proposed tool. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
+Searching can be thought of in two ways, `information lookup' (searching) and `exploratory search' (browsing) \autocite{DeVries1993, Marchionini2006}. A situation where an \ac{IN} cannot easily be articulated or is not existent (i.e. the user is not looking for anything specific) can be considered a typical case of exploratory search. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
 
-Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
+Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require a certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
 
-When it comes to exploratory search though, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploring \autocite{Marchionini2006}.
+With exploratory search, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploratory search \autocite{Marchionini2006}.
 
 \begin{quotation}
-  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulat-ing queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
+  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
 \end{quotation}
 
-De Vries called this form of browsing an `enlargement of the problem space', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \autocite{DeVries1993}. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the `territory of structural possibilities' and exploration of that space `exploratory creativity' \autocite{Boden2003}.
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \citeyear{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\marginnote{§~\ref{s:boden}}).
 
-All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
+% All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
 
 \subsection{IR Models}
 \label{s:irmodels}
 
-\begin{fcom}
-  \ac{ir} models describe ranking algorithms formally. ???
-\end{fcom}
+There are different models for different needs, for example a multimedia system is going to be different than a text based \ac{IR} system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections and paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model \autocite{Brin1998}.
 
-There are different models for different needs, for example a multimedia system is going to be different than a text based system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections or paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model.
+The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[adapted from][p.58]{Baeza-Yates2011} where,
 
-The notation for \ac{IR} models is as follows \autocite[adapted from][p.58]{Baeza-Yates2011}:
+\begin{conditions}
+D &  the set of documents \\
+Q &  the set of queries \\
+F &  the framework e.g.\ sets, Boolean relations, vectors, linear algebra\ldots \\
+R(q_i, d_j) & the ranking function, with $q_i \in Q$ and $d_j \in D$ \\
+t & the number of index terms in a document collection \\
+V & the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document collection (vocabulary)
+\end{conditions}
 
-An \ac{IR} model is a quadruple $[D,Q,F,R(q_i, d_j)]$ where:\\
-\itab{$D$} \tab{is the set of documents,}\\
-\itab{$Q$} \tab{is the set of queries,}\\
-\itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors}\\
-\itab{}    \tab{~~~linear algebra\ldots}\\
-\itab{$R(q_i, d_j)$}
-            \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
-\itab{$t$} \tab{is the number of index terms in a document collection,}\\
-\itab{$V$} \tab{is the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document}\\
-\itab{}     \tab~~~{collection (vocabulary).}
+% \itab{$D$} \tab{is the set of documents,}\\
+% \itab{$Q$} \tab{is the set of queries,}\\
+% \itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors}\\
+% \itab{}    \tab{~~~linear algebra\ldots}\\
+% \itab{$R(q_i, d_j)$}
+%             \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
+% \itab{$t$} \tab{is the number of index terms in a document collection,}\\
+% \itab{$V$} \tab{is the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document}\\
+% \itab{}     \tab~~~{collection (vocabulary).}
 
 This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
-
-\todo{decide on which method for highlighting words --- italic or apostophe}
 
 
 \subsubsection{The Boolean Model}
 
-One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows (quoted from \autocite[p.65]{Baeza-Yates2011})
+One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows \autocite[p.65]{Baeza-Yates2011}
 
 \begin{equation}
   sim(d_j,q) =
@@ -245,15 +197,32 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 % \myequations{sim}
 
-A `conjunctive component' describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_{1},\ldots, k_{t}\}$, if the terms $[ k_{1},k_{2},k_{3}]$ occur in document $d_{j}$ then the conjunctive component would be $(1,1,1)$, or $(1,0,0)$ if only term $k_{1}$ appears in $d_{j}$.
+where $c(x)$ is the `conjunctive component' of $x$. A conjunctive component describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example.
+
+Figure~\ref{fig:termdocs} shows a vocabulary of 9 terms over 3 documents. 
+
+\begin{conditions}
+V & $\{Faustroll, father, time, background, water, doctor, without, bishop, God\}$ \\
+d_0 & Faustroll \\
+d_1 & Gospel \\
+d_2 & Voyage \\
+c(d_0) & $(1,1,1,0,1,1,1,1,1)$ \\
+c(d_1) & $(0,1,1,0,1,0,1,0,1)$ \\
+c(d_2) & $(0,1,1,0,1,0,1,1,1)$ \\
+q & $[doctor \land (Faustroll \lor \neg God)]$ \\
+
+\end{conditions}
+
 
 % \begin{description}
 %   \item [$c(d)$] is the term conjunctive component for document $d$
 %   \item [$c(q)$] is the term conjunctive component for query $q$
 % \end{description}
 
-\itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
-\itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
+% \itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
+% \itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
+
+The Boolean model 
 
 Sometimes things are not quite black and white though and we need to weigh the importance of words somehow. The easiest way to do that is by looking at the frequency in which a word occurs.
 
@@ -345,6 +314,49 @@ There are several other common \ac{ir} models that I won't discuss in detail her
 
 \subsection{Ranking}
 
+Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} weight of $tf_{i,j}$ and a \acs{IDF} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
+
+\begin{equation}
+  w_{i,j} =
+  \begin{cases}
+  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
+  0 & \text{otherwise}
+  \end{cases}
+  \label{eq:wij}
+\end{equation}
+% \myequations{TF-IDF Ranking}
+
+Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
+
+The \ac{TF} $tf_{i,j}$ is calculated and normalised using a log function as:
+$1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
+
+The total \ac{TF} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
+
+The \ac{IDF} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}.
+
+% \begin{equation}
+%   tf_{i,j}=
+%   \begin{cases}
+%   1+\log f_{i,j} & \text{if} \ f_{i,j} > 0\\
+%   0 & \text{otherwise}
+%   \end{cases}
+%   \label{eq:tfij}
+% \end{equation}
+% % \myequations{tfij}
+
+% \begin{equation}
+%   F_i = \sum_{j=1}^{N}f_{i,j}
+%   \label{eq:Fi}
+% \end{equation}
+% % \myequations{Fi}
+
+% \begin{equation}
+%   idf_j = \log \frac{N}{df_i}
+%   \label{eq:idfj}
+% \end{equation}
+% % \myequations{idfj}
+
 Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
 Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing\footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
@@ -429,6 +441,7 @@ Ranking can be done at different stages of the search process. Depending on how 
 
 
 \section{Natural Language Processing}
+\label{s:nlp}
 
 \todo{describe NLTK and the core functionality}
 \ac{nltk} Python library\footnote{\url{http://www.nltk.org/}}.
