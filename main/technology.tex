@@ -88,16 +88,16 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 \begin{figure}[!htbp]
 \[
   \bbordermatrix{
-    ~           & Faustroll & Gospel  & Voyage  \cr
-    Faustroll   & 77        & 0       & 0       \cr
-    father      & 1         & 28      & 2       \cr
-    time        & 34        & 16      & 129     \cr
-    background  & 0         & 0       & 0       \cr
-    water       & 29        & 7       & 120     \cr
-    doctor      & 30        & 0       & 0       \cr
-    without     & 27        & 7       & 117     \cr
-    bishop      & 27        & 0       & 2       \cr
-    God         & 25        & 123     & 2
+    ~                  & \text{Faustroll} & \text{Gospel} & \text{Voyage} \cr
+    \text{Faustroll}   & 77               & 0             & 0             \cr
+    \text{father}      & 1                & 28            & 2             \cr
+    \text{time}        & 34               & 16            & 129           \cr
+    \text{background}  & 0                & 0             & 0             \cr
+    \text{water}       & 29               & 7             & 120           \cr
+    \text{doctor}      & 30               & 0             & 0             \cr
+    \text{without}     & 27               & 7             & 117           \cr
+    \text{bishop}      & 27               & 0             & 2             \cr
+    \text{God}         & 25               & 123           & 2
   }
 \]
 \caption[Various wordcounts]{Various wordcounts in Faustroll, Gospel and Voyage}
@@ -116,44 +116,6 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 The dictionary is usually preprocessed (see section~\ref{s:nlp})\marginnote{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{app:stopwords}.}\marginnote{§~\ref{app:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
 
 
-\subsection{Searching vs. Browsing}
-
-What is actually meant by the word `searching'? Usually it implies that there is something to be found, an \ac{IN}; although that doesn't necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
-
-From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\marginnote{§~\ref{s:4stages}}\autocite{Polya1957}:
-
-\begin{description}
-  \item [Problem identification] \acf{IN},
-  \item [Need articulation] \ac{IN} in natural language terms,
-  \item [Query formulation] translate \ac{IN} into query terms, and
-  \item [Results evaluation] compare against \ac{IN}.
-\end{description}
-
-This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \citeyear{Marchionini1988} and they laid out a framework with the following main elements.
-
-\begin{itemize}
-  \item Setting (the context of the search and external factors such as time, cost)
-  \item Task domain (the body of knowledge, the subject)
-  \item Search system (the database or web search engine)
-  \item User (the user’s experience)
-  \item Outcomes (the assessment of the results/answers)
-\end{itemize}
-
-Searching can be thought of in two ways, `information lookup' (searching) and `exploratory search' (browsing) \autocite{DeVries1993, Marchionini2006}. A situation where an \ac{IN} cannot easily be articulated or is not existent (i.e. the user is not looking for anything specific) can be considered a typical case of exploratory search. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
-
-Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require a certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
-
-With exploratory search, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploratory search \autocite{Marchionini2006}.
-
-\begin{quotation}
-  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
-\end{quotation}
-
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \citeyear{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\marginnote{§~\ref{s:boden}}).
-
-% All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
-
-
 \subsection{IR Models}
 \label{s:irmodels}
 
@@ -169,16 +131,6 @@ R(q_i, d_j) & the ranking function, with $q_i \in Q$ and $d_j \in D$ \\
 t & the number of index terms in a document collection \\
 V & the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document collection (vocabulary)
 \end{conditions}
-
-% \itab{$D$} \tab{is the set of documents,}\\
-% \itab{$Q$} \tab{is the set of queries,}\\
-% \itab{$F$} \tab{is the framework e.g.\ sets, Boolean relations, vectors}\\
-% \itab{}    \tab{~~~linear algebra\ldots}\\
-% \itab{$R(q_i, d_j)$}
-%             \tab{is the ranking function, where $q_i \in Q$ and $d_j \in D$,}\\
-% \itab{$t$} \tab{is the number of index terms in a document collection,}\\
-% \itab{$V$} \tab{is the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document}\\
-% \itab{}     \tab~~~{collection (vocabulary).}
 
 This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
 
@@ -197,40 +149,95 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 % \myequations{sim}
 
-where $c(x)$ is the `conjunctive component' of $x$. A conjunctive component describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example.
+where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
 
-Figure~\ref{fig:termdocs} shows a vocabulary of 9 terms over 3 documents. 
+\begin{figure}[!htbp]
+\[
+  \bbordermatrix{
+    ~                  & \text{Faustroll} & \text{Gospel} & \text{Voyage} \cr
+    \text{Faustroll}   & 77               & 0             & 0             \cr
+    \text{time}        & 34               & 16            & 129           \cr
+    \text{doctor}      & 30               & 0             & 0             \cr
+    \text{God}         & 25               & 123           & 2
+  }
+\]
+\caption[Various wordcounts (short)]{Various wordcounts in Faustroll, Gospel and Voyage (short)}
+\label{fig:termdocs2}
+\end{figure}
+
+So, for a vocabulary $V$ of \{Faustroll, time, doctor and God\} and three documents $d_0 =$ Faustroll, $d_1 =$ Gospel and $d_2 =$ Voyage. The conjunctive component for $d_0$ is $(1,1,1,1)$. This is because each term in $V$ occurs at least once. $c(d_1)$ and $c(d_2)$ are both $(0,1,0,1)$ since the terms `Faustroll' and `doctor' do not occur in either of them.
+
+Assume we have a query $q =$ doctor $\land$ (Faustroll $\lor$ $\neg$ God). Translating this query into \ac{DNF} will result in the following expression: $q_{DNF} = (1,0,1,1) \lor (1,1,1,1) \lor (1,0,1,0) \lor (1,1,1,0) \lor (0,0,1,0) \lor (0,1,1,0)$, where each component $(x_0,x_1,x_2,x_3)$ is the same as $(x_0 \land x_1 \land x_2 \land x_3)$.
+
+% (1,0,1,1) F,D,G
+% (1,1,1,1) F,T,D,G
+% (1,0,1,0) F,D
+% (1,1,1,0) F,T,D
+% (0,0,1,0) D
+% (0,1,1,0) T,D
+
+One of the conjunctive components in $q_{DNF}$ must match a document conjunctive component in order to return a positive result. In this case $c(d_0)$ matches the second component in $q_{DNF}$ and therefore the Faustroll document matches the query $q$ but the other two documents do not.
+
+The Boolean model gives `Boolean' results. This means something is either true or false. Sometimes things are not quite black and white though and we need to weigh the importance of words somehow.
+
+
+\subsubsection{TF-IDF}
+
+One simple method of assigning a weight to terms is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} of $tf_{i,j}$ and a \acs{IDF} of $idf_j$ it is defined as $tf_{i,j}\times idf_j$ \autocite{Baeza-Yates2011}.
+
+The \ac{TF} $tf_{i,j}$ is calculated and normalised using a log function as:
+$1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$ where $f_{i,j}$ is the frequency of term $k_i$ in document $d_j$.
+
+The \ac{IDF} $idf_i$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}. $N$ is the total number of documents.
+
+\begin{equation}
+  tf-idf_{i,j} =
+  \begin{cases}
+  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
+  0 & \text{otherwise}
+  \end{cases}
+  \label{eq:tfidfij}
+\end{equation}
+% \myequations{TF-IDF Ranking}
+
+Where $tf-idf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf} shows the following details.
 
 \begin{conditions}
-V & $\{Faustroll, father, time, background, water, doctor, without, bishop, God\}$ \\
-d_0 & Faustroll \\
-d_1 & Gospel \\
-d_2 & Voyage \\
-c(d_0) & $(1,1,1,0,1,1,1,1,1)$ \\
-c(d_1) & $(0,1,1,0,1,0,1,0,1)$ \\
-c(d_2) & $(0,1,1,0,1,0,1,1,1)$ \\
-q & $[doctor \land (Faustroll \lor \neg God)]$ \\
-
+  k_{0}-k_{8} & the 9 terms in the vocabulary (see figure~\ref{fig:termdocs}) \\
+  d_{0}-d_{2} & the three documents in the corpus (see figure~\ref{fig:termdocs}) \\
+  \text{F}_{i,j} & the frequence (count) of term $k_i$ \\
+  \text{TF}_{i,j} & the \acl{TF} weight \\
+  \text{IDF}_{i} & the \acl{IDF} weight \\
+  \text{TF-IDF}_{i,j} & the \ac{TF}-\ac{IDF} weight
 \end{conditions}
 
-
-% \begin{description}
-%   \item [$c(d)$] is the term conjunctive component for document $d$
-%   \item [$c(q)$] is the term conjunctive component for query $q$
-% \end{description}
-
-% \itab{$c(d)$}\tab{is the term conjunctive component for document $d$}\\
-% \itab{$c(q)$}\tab{is the term conjunctive component for query $q$}
-
-The Boolean model 
-
-Sometimes things are not quite black and white though and we need to weigh the importance of words somehow. The easiest way to do that is by looking at the frequency in which a word occurs.
-
+\begin{table}[!htbp]
+\centering\small
+\caption[TF-IDF weights]{\ac{TF}-\ac{IDF} weights}
+\label{tab:tfidf}
+\begin{tabu}{lllllllllllllll}
+\toprule
+& & & & \multicolumn{3}{c}{$\bm{d_0}$} & & \multicolumn{3}{c}{$\bm{d_1}$} & & \multicolumn{3}{c}{$\bm{d_2}$} \\
+\cmidrule{5-7}\cmidrule{9-11}\cmidrule{13-15}
+& & IDF & & F & TF & TF-IDF & & F & TF & TF-IDF & & F & TF & TF-IDF \\
+\midrule
+$\bm{k_0}$ & & 1.58 & & 77 & 7.27 & 11.49 & & 0 & 0 & 0 & & 0 & 0 & 0 \\
+$\bm{k_1}$ & & 0 & & 1 & 1 & 0 & & 28 & 5.81 & 0 & & 2 & 2 & 0 \\
+$\bm{k_2}$ & & 0 & & 34 & 6.09 & 0 & & 16 & 5 & 0 & & 129 & 8.01 & 0 \\
+$\bm{k_3}$ & & 0 & & 0 & 0 & 0 & & 0 & 0 & 0 & & 0 & 0 & 0 \\
+$\bm{k_4}$ & & 0 & & 29 & 5.86 & 0 & & 7 & 3.81 & 0 & & 120 & 7.91 & 0 \\
+$\bm{k_5}$ & & 1.58 & & 30 & 5.91 & 9.34 & & 0 & 0 & 0 & & 0 & 0 & 0 \\
+$\bm{k_6}$ & & 0 & & 27 & 5.75 & 0 & & 7 & 3.81 & 0 & & 117 & 7.87 & 0 \\
+$\bm{k_7}$ & & 0.58 & & 27 & 5.75 & 3.34 & & 0 & 0 & 0 & & 2 & 2 & 1.16 \\
+$\bm{k_8}$ & & 0 & & 25 & 5.64 & 0 & & 123 & 7.94 & 0 & & 2 & 2 & 0 \\ 
+\bottomrule
+\end{tabu}
+\end{table}
 
 
 \subsubsection{The Vector Model}
 
-The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents (taken from \autocite[p.78]{Baeza-Yates2011}).
+The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents\autocite[p.78]{Baeza-Yates2011}.
 
 \begin{equation}
   \begin{split}
@@ -302,60 +309,51 @@ Where,\\
 There are several other common \ac{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
 
 
+\subsection{Searching vs. Browsing}
+
+What is actually meant by the word `searching'? Usually it implies that there is something to be found, an \ac{IN}; although that doesn't necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
+
+From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\marginnote{§~\ref{s:4stages}}\autocite{Polya1957}:
+
+\begin{description}
+  \item [Problem identification] \acf{IN},
+  \item [Need articulation] \ac{IN} in natural language terms,
+  \item [Query formulation] translate \ac{IN} into query terms, and
+  \item [Results evaluation] compare against \ac{IN}.
+\end{description}
+
+This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \citeyear{Marchionini1988} and they laid out a framework with the following main elements.
+
+\begin{itemize}
+  \item Setting (the context of the search and external factors such as time, cost)
+  \item Task domain (the body of knowledge, the subject)
+  \item Search system (the database or web search engine)
+  \item User (the user’s experience)
+  \item Outcomes (the assessment of the results/answers)
+\end{itemize}
+
+Searching can be thought of in two ways, `information lookup' (searching) and `exploratory search' (browsing) \autocite{DeVries1993, Marchionini2006}. A situation where an \ac{IN} cannot easily be articulated or is not existent (i.e. the user is not looking for anything specific) can be considered a typical case of exploratory search. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
+
+Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require a certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
+
+With exploratory search, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploratory search \autocite{Marchionini2006}.
+
+\begin{quotation}
+  Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
+\end{quotation}
+
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \citeyear{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\marginnote{§~\ref{s:boden}}).
+
+% All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
+
 
 \subsubsection*{Architecture}
-
-
-
 
 
 \subsubsection*{Search Algorithms}
 
 
 \subsection{Ranking}
-
-Ranking is the process of ordering search results using a given weight. One simple method of ranking is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} weight of $tf_{i,j}$ and a \acs{IDF} weight of $idf_j$ it is defined as $tf_{i,j}\times idf_j$.
-
-\begin{equation}
-  w_{i,j} =
-  \begin{cases}
-  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
-  0 & \text{otherwise}
-  \end{cases}
-  \label{eq:wij}
-\end{equation}
-% \myequations{TF-IDF Ranking}
-
-Where $w_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document.
-
-The \ac{TF} $tf_{i,j}$ is calculated and normalised using a log function as:
-$1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$.
-
-The total \ac{TF} $F_i$ is calculated as $\sum_{j=1}^{N}f_{i,j}$, where $F_i$ is the total frequency of term $k_i$ in the collection and $f_{i,j}$ is the frequency of occurrence of term $k_i$ in document $d_j$ and $N$ is the total number of documents.
-
-The \ac{IDF} $idf_j$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}.
-
-% \begin{equation}
-%   tf_{i,j}=
-%   \begin{cases}
-%   1+\log f_{i,j} & \text{if} \ f_{i,j} > 0\\
-%   0 & \text{otherwise}
-%   \end{cases}
-%   \label{eq:tfij}
-% \end{equation}
-% % \myequations{tfij}
-
-% \begin{equation}
-%   F_i = \sum_{j=1}^{N}f_{i,j}
-%   \label{eq:Fi}
-% \end{equation}
-% % \myequations{Fi}
-
-% \begin{equation}
-%   idf_j = \log \frac{N}{df_i}
-%   \label{eq:idfj}
-% \end{equation}
-% % \myequations{idfj}
 
 Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
