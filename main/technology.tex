@@ -182,33 +182,34 @@ The Boolean model gives `Boolean' results. This means something is either true o
 
 
 \subsubsection{TF-IDF}
+\label{s:tfidf}
 
-One simple method of assigning a weight to terms is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} of $tf_{i,j}$ and a \acs{IDF} of $idf_j$ it is defined as $tf_{i,j}\times idf_j$ \autocite{Baeza-Yates2011}.
+One simple method of assigning a weight to terms is the so-called \acl{TF}-\acl{IDF} or \acs{TF}-\acs{IDF} for short. Given a \acs{TF} of $tf_{i,j}$ and a \acs{IDF} of $idf_i$ it is defined as $tf_{i,j}\times idf_i$ \autocite{Baeza-Yates2011}.
 
 The \ac{TF} $tf_{i,j}$ is calculated and normalised using a log function as:
-$1+\log f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$ where $f_{i,j}$ is the frequency of term $k_i$ in document $d_j$.
+$1+\log_2 f_{i,j} \ \text{if} \ f_{i,j} > 0 \ \text{or} \ 0 \ \text{otherwise}$ where $f_{i,j}$ is the frequency of term $k_i$ in document $d_j$.
 
-The \ac{IDF} $idf_i$ weight is calculated as $\log \frac{N}{df_i}$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}. $N$ is the total number of documents.
+The \ac{IDF} $idf_i$ weight is calculated as $\log_2 (N/df_i)$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the \ac{IDF} of term $k_i$. The more often a term occurs in different documents the lower the \ac{IDF}. $N$ is the total number of documents.
 
 \begin{equation}
-  tf-idf_{i,j} =
+  tfidf_{i,j} =
   \begin{cases}
-  (1+\log f_{i,j})\times \log\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
+  (1+\log_2 f_{i,j})\times \log_2\frac{N}{df_i} & \text{if} \ f_{i,j} > 0 \\
   0 & \text{otherwise}
   \end{cases}
   \label{eq:tfidfij}
 \end{equation}
 % \myequations{TF-IDF Ranking}
 
-Where $tf-idf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf} shows the following details.
+Where $tfidf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf}\marginnote{\faicon{table}~\ref{tab:tfidf}} shows the following details.
 
 \begin{conditions}
-  k_{0}-k_{8} & the 9 terms in the vocabulary (see figure~\ref{fig:termdocs}) \\
-  d_{0}-d_{2} & the three documents in the corpus (see figure~\ref{fig:termdocs}) \\
-  \text{F}_{i,j} & the frequence (count) of term $k_i$ \\
-  \text{TF}_{i,j} & the \acl{TF} weight \\
-  \text{IDF}_{i} & the \acl{IDF} weight \\
-  \text{TF-IDF}_{i,j} & the \ac{TF}-\ac{IDF} weight
+  k_{0}-k_{8} & [Faustroll,father,time,background,water,doctor,without,bishop,God] \\
+  d_{0}-d_{2} & [Faustroll, Gospel, Voyage] (see figure~\ref{fig:termdocs}) \\
+  f_{i,j} & the frequence (count) of term $k_i$ \\
+  tf_{i,j} & the \acl{TF} weight \\
+  idf_{i} & the \acl{IDF} weight \\
+  tfidf_{i,j} & the \ac{TF}-\ac{IDF} weight
 \end{conditions}
 
 \begin{table}[!htbp]
@@ -219,7 +220,7 @@ Where $tf-idf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formu
 \toprule
 & & & & \multicolumn{3}{c}{$\bm{d_0}$} & & \multicolumn{3}{c}{$\bm{d_1}$} & & \multicolumn{3}{c}{$\bm{d_2}$} \\
 \cmidrule{5-7}\cmidrule{9-11}\cmidrule{13-15}
-& & IDF & & F & TF & TF-IDF & & F & TF & TF-IDF & & F & TF & TF-IDF \\
+& & $idf$ & & $f$ & $tf$ & $tfidf$ & & $f$ & $tf$ & $tfidf$ & & $f$ & $tf$ & $tfidf$ \\
 \midrule
 $\bm{k_0}$ & & 1.58 & & 77 & 7.27 & 11.49 & & 0 & 0 & 0 & & 0 & 0 & 0 \\
 $\bm{k_1}$ & & 0 & & 1 & 1 & 0 & & 28 & 5.81 & 0 & & 2 & 2 & 0 \\
@@ -234,10 +235,64 @@ $\bm{k_8}$ & & 0 & & 25 & 5.64 & 0 & & 123 & 7.94 & 0 & & 2 & 2 & 0 \\
 \end{tabu}
 \end{table}
 
+What stands out in table~\ref{tab:tfidf}\marginnote{\faicon{table}~\ref{tab:tfidf}} is that the $tfidf_{i,j}$ function returns \num{0} quite often. This is partially due to the $idf_i$ algorithm returning \num{0} when a term appears in all documents in the corpus. In the given example this is the case a lot but in a real-world example it might not occur as much.
+
 
 \subsubsection{The Vector Model}
 
-The vector model allows a more flexible scoring since it basically computes the various degrees of similarity between documents\autocite[p.78]{Baeza-Yates2011}.
+\todo{revise verctor model section}
+The vector model allows more flexible scoring since it basically computes the `degree' of similarity between a document and a query \autocite{Baeza-Yates2011}. Each document $d_j$ in the corpus is represented by a document vector $\vec{d_j}$ in $t$-dimensional space, where $t$ is the total number of terms in the vocabulary. Figure~\ref{fig:docvect} gives an example of $\vec{d_j}$ in 3-dimensional space.
+
+
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \begin{minipage}[t]{.45\linewidth}
+    \tdplotsetmaincoords{60}{120} %xz
+    \begin{tikzpicture} [tdplot_main_coords, 
+    axis/.style={->}, 
+    vector/.style={-stealth,thick}, 
+    vector guide/.style={dashed,gray}]
+    %standard tikz coordinate definition using x, y, z coords
+    \coordinate (O) at (0,0,0);
+    %tikz-3dplot coordinate definition using x, y, z coords
+    \pgfmathsetmacro{\ax}{2.5}
+    \pgfmathsetmacro{\ay}{2.5}
+    \pgfmathsetmacro{\az}{2.5}
+    \coordinate (P) at (\ax,\ay,\az);
+    %draw axes
+    \draw[axis] (0,0,0) -- (3,0,0) node[anchor=north east]{$k_a$};
+    \draw[axis] (0,0,0) -- (0,3,0) node[anchor=north west]{$k_b$};
+    \draw[axis] (0,0,0) -- (0,0,3) node[anchor=south]{$k_c$};
+    %draw a vector from O to P
+    \draw[vector] (O) -- (P);
+    %draw guide lines to components
+    \draw[vector guide] (\ax,\ay,0) -- (P);
+    \draw[vector guide]         (P) -- (0,0,\az);
+    \draw[vector guide] (\ax,\ay,0) -- (0,\ay,0);
+    \draw[vector guide] (\ax,\ay,0) -- (0,\ay,0);
+    \draw[vector guide] (\ax,\ay,0) -- (\ax,0,0);
+    %label vector
+    \node[tdplot_main_coords,anchor=west]
+    at (P){$\vec{d_j}$};
+    \end{tikzpicture}
+    \caption[A document vector]{A document vector $\vec{d_j}$}
+    \label{fig:docvect}
+  \end{minipage}
+  \hspace{.05\linewidth}
+  \begin{minipage}[t]{.45\linewidth}
+    \begin{tikzpicture}
+    \draw[->] (0,0) -- (3,0) coordinate (a) node[right] {$q$};
+    \draw[->] (0,0) -- (2,2) coordinate (c) node[above right] {$d_j$};
+    \draw (0,0) coordinate (b) node[left] {};
+    \draw pic["$\theta$", draw=black, angle eccentricity=1.2, angle radius=1cm]
+    {angle=a--b--c};
+    \end{tikzpicture}
+    \caption[The Vector Model]{The Vector Model}
+    \label{fig:VM}
+  \end{minipage}
+\end{figure}
+
 
 \begin{equation}
   \begin{split}
@@ -248,21 +303,7 @@ The vector model allows a more flexible scoring since it basically computes the 
 \end{equation}
 % \myequations{vector}
 
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \begin{tikzpicture}
-  \draw
-  (3,0) coordinate (a) node[right] {$q$}
-  -- (0,0) coordinate (b) node[left] {}
-  -- (2,2) coordinate (c) node[above right] {$d_j$}
-  pic["$\theta$", draw=black, angle eccentricity=1.2, angle radius=1cm]
-  {angle=a--b--c};
-  \end{tikzpicture}
-\caption[Vector Model]{The Vector Model}
-\label{fig:VM}
-\end{figure}
-
-Where $t$ is the total number of terms in the index and $w_{i,j}$ is the TF-IDF weight for each component of the vector. The similarity between the document and the query vector is the cosine of $\theta$.
+Where $t$ is the total number of terms in the index and $w_{i,j}$ is the \ac{TF}-\ac{IDF} weight for each component of the vector. The similarity between the document and the query vector is the cosine of $\theta$.
 
 \begin{equation}
   \begin{split}
@@ -274,39 +315,47 @@ Where $t$ is the total number of terms in the index and $w_{i,j}$ is the TF-IDF 
 \end{equation}
 % \myequations{sim2}
 
+\begin{equation}
+  |\vec{d_j}| = \sqrt{\sum_{i}^{t}w_{i,j}^{2}}
+  \label{eq:vectorlength}
+\end{equation}
+% \myequations{vectorlength}
+
 Here is an example algorithm for computing this score taken from \autocite[p.125]{Manning2009}.
 
-\begin{listing}[htb]
-  \begin{minted}{python}
-    CosineScore (q)
-      float Scores[N] = 0
-      for each d
-      do Initialise Length[d] to the length of document d
-      for each query term t
-      do calculate wt,q and fetch postings list for t
-        for each pair (d, tft,d) in postings list
-        do add wft,d to Scores[d]
-      Read the array Length[d]
-      for each d
-      	do Divide Scores[d] by Length[d]
-      	return Top K components of Scores[]
-  \end{minted}
-\caption[Pseudo-code for computing vector scores]{Pseudo-code for computing vector scores}
-\label{code:VectorScores}
-\end{listing}
+% \begin{listing}[htb]
+%   \begin{minted}{python}
+%     CosineScore (q)
+%       float Scores[N] = 0
+%       for each d
+%       do Initialise Length[d] to the length of document d
+%       for each query term t
+%       do calculate wt,q and fetch postings list for t
+%         for each pair (d, tft,d) in postings list
+%         do add wft,d to Scores[d]
+%       Read the array Length[d]
+%       for each d
+%       	do Divide Scores[d] by Length[d]
+%       	return Top K components of Scores[]
+%   \end{minted}
+% \caption[Pseudo-code for computing vector scores]{Pseudo-code for computing vector scores}
+% \label{code:VectorScores}
+% \end{listing}
 
-Where,\\
-\itab{$q$} \tab{is the query}\\
-\itab{$N$} \tab{is the total number of documents}\\
-\itab{$d$} \tab{is a document}\\
-\itab{$t$} \tab{is a query term}\\
-\itab{$wt_q$} \tab{is the weight of the term in the query}\\
-\itab{$tft_d$} \tab{is the term frequency of $t$ in $d$}\\
-\itab{$wft_d$} \tab{is the $tf-idf$ weight of t in $d$}\\
-\itab{$K$} \tab{is the number of results we want}\\
-\itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
+% Where,\\
+% \itab{$q$} \tab{is the query}\\
+% \itab{$N$} \tab{is the total number of documents}\\
+% \itab{$d$} \tab{is a document}\\
+% \itab{$t$} \tab{is a query term}\\
+% \itab{$wt_q$} \tab{is the weight of the term in the query}\\
+% \itab{$tft_d$} \tab{is the term frequency of $t$ in $d$}\\
+% \itab{$wft_d$} \tab{is the $tf-idf$ weight of t in $d$}\\
+% \itab{$K$} \tab{is the number of results we want}\\
+% \itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
 
-There are several other common \ac{ir} models that I won't discuss in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
+\spirals
+
+There are several other common \ac{IR} models that aren't covered in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
 
 
 \subsection{Searching vs. Browsing}
@@ -347,26 +396,15 @@ De Vries called this form of browsing an ``enlargement of the problem space'', w
 % All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
 
-\subsubsection*{Architecture}
-
-
-\subsubsection*{Search Algorithms}
-
-
 \subsection{Ranking}
 
-Ranking signals contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream.  This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
+Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\marginnote{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
-Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing\footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers. Here is a survey of the most notable algorithms.
+\todo{fix link ref}
+Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing\footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
 
-PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine and announced in their often cited paper \autocite{Brin1998b} and they further describe the algorithm here \autocite{Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \autocite[p.472]{Baeza-Yates2011}.
-
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=.75\linewidth]{pagerank}
-\caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
-\label{fig:pagerank2}
-\end{figure}
+\paragraph{PageRank}
+PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine \citeyear{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \autocite[p.472]{Baeza-Yates2011}.
 
 \begin{equation}
   PR(a) =
@@ -376,6 +414,7 @@ PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Go
 \end{equation}
 % \myequations{PR}
 
+\todo{change to conditions env}
 Where,\\
 \itab{$L(p)$} \tab{is the number of outgoing links of page $p$,}\\
 \itab{$a$} \tab{is the page we want to rank and is pointed to by pages $p_1$ to $p_n$,}\\
@@ -383,7 +422,16 @@ Where,\\
 \itab{$q$} \tab{is the is a parameter to be set by the system (typically 0.15)}\\
 \itab{} \tab{needed to deal with dead ends in the graph.}
 
-The HITS algorithm also works on the links between pages. It was first described by Kleinberg \autocite[p.472]{Kleinberg1999, Kleinberg} in 1999. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Again, the following formula is taken from \autocite[p.471]{Baeza-Yates2011}. S is the set of pages.
+\todo{add ref for image}
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=.75\linewidth]{pagerank}
+\caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
+\label{fig:pagerank2}
+\end{figure}
+
+\paragraph{HITS}
+The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citeyear{Kleinberg1999, Kleinberg}. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}. S is the set of pages.
 
 \begin{equation}
   \begin{split}
@@ -394,9 +442,11 @@ The HITS algorithm also works on the links between pages. It was first described
 \end{equation}
 % \myequations{HITS}
 
-Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila in 2000 in \autocite{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
+\paragraph{Hilltop}
+Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila \citeyear{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
 
-Another algorithm is the so called Fish search algorithm. It was first described by De Bra in 1994 \autocite{DeBra1994, DeBra1994a, DeBra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
+\paragraph{Fish search}
+Another algorithm is the so called Fish search algorithm \citeyear{DeBra1994, DeBra1994a, DeBra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
 
 There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \autocite{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
 
@@ -406,12 +456,13 @@ Other variations include the incorporation of user behaviour \autocite{Agichtein
 \subsection{Query Expansion and Relevance Feedback}
 \label{s:qexpansion}
 
-Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysis the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
+Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
+\todo{add ref}
 
 
-\subsubsection*{Challenges of Web Search}
+\subsection{Challenges}
 
-Other issues that arise when trying to search the World Wide Web are as follows (\autocite[p.449]{Baeza-Yates2011}).
+Other issues that arise when trying to search the World Wide Web are as follows \autocite[p.449]{Baeza-Yates2011}.
 
 \begin{itemize}
   \item Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.
@@ -422,20 +473,7 @@ Other issues that arise when trying to search the World Wide Web are as follows 
   \item Data is not heterogeneous. Different data types (text, images, sound, video) and different languages exist.
 \end{itemize}
 
-Since a single query for a popular word can results in  millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite[p.459]{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite[p.459]{Baeza-Yates2011}. Google for example uses over 15,000 commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
-
-
-\subsubsection*{Summary}
-
-\ac{ir} refers to the retrieval of information from a collection. In terms of the Internet it is often called Web search. A Web search engine is divided into different components, being the crawler to build an index of the collection and a ranking algorithm which stands between the index and the user.
-
-Different retrieval models exist including the Boolean and the Vector model. Other methods exist to make search results more accurate, including relevance feedback and query expansion.
-
-Search quality is generally measured using the metrics of precision and recall but for Web search precision is more important and usually a metric called `precision at n' is used for measurements.
-
-Challenges are the size of the World Wide Web and ambiguous, unstructured nature of Web pages among others.
-
-Ranking can be done at different stages of the search process. Depending on how the index is formatted and what information can be pre-computed at that stage, the ranking algorithm evaluates every page for relevance and returns them in order. There exist lots of different approaches on ranking, including PageRank and HITS (both analyse the link structure of the WWW), or more dynamic models like Fish search or genetic approaches.
+Since a single query for a popular word can results in millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite[p.459]{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite[p.459]{Baeza-Yates2011}. Google for example uses over 15,000 commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
 
 
 \section{Natural Language Processing}

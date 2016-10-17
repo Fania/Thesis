@@ -689,6 +689,7 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % pathmorphing
 \usepackage{qtree}
 \usepackage{mathtools}
+\usepackage{tikz-3dplot} 
 % \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
