@@ -115,6 +115,8 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 
 The dictionary is usually preprocessed (see section~\ref{s:nlp})\marginnote{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{app:stopwords}.}\marginnote{§~\ref{app:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
 
+Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
+
 
 \subsection{IR Models}
 \label{s:irmodels}
@@ -240,10 +242,7 @@ What stands out in table~\ref{tab:tfidf}\marginnote{\faicon{table}~\ref{tab:tfid
 
 \subsubsection{The Vector Model}
 
-\todo{revise verctor model section}
-The vector model allows more flexible scoring since it basically computes the `degree' of similarity between a document and a query \autocite{Baeza-Yates2011}. Each document $d_j$ in the corpus is represented by a document vector $\vec{d_j}$ in $t$-dimensional space, where $t$ is the total number of terms in the vocabulary. Figure~\ref{fig:docvect} gives an example of $\vec{d_j}$ in 3-dimensional space.
-
-
+The vector model allows more flexible scoring since it basically computes the `degree' of similarity between a document and a query \autocite{Baeza-Yates2011}. Each document $d_j$ in the corpus is represented by a document vector $\vec{d_j}$ in $t$-dimensional space, where $t$ is the total number of terms in the vocabulary. Figure~\ref{fig:docvect}\marginnote{\faicon{object-group}~\ref{fig:docvect}} gives an example of vector $\vec{d_j}$ for document $d_j$ in 3-dimensional space. That is, the vocabulary of this system consists of three terms $k_a$, $k_b$ and $k_c$. A similar vector $\vec{q}$ can be constructed for query $q$. Figure~\ref{fig:VM}\marginnote{\faicon{object-group}~\ref{fig:VM}} then shows the similarity between the document and the query vector as the cosine of $\theta$.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -288,22 +287,12 @@ The vector model allows more flexible scoring since it basically computes the `d
     \draw pic["$\theta$", draw=black, angle eccentricity=1.2, angle radius=1cm]
     {angle=a--b--c};
     \end{tikzpicture}
-    \caption[The Vector Model]{The Vector Model}
+    \caption[The vector model]{The vector model}
     \label{fig:VM}
   \end{minipage}
 \end{figure}
 
-
-\begin{equation}
-  \begin{split}
-  \vec{d_j} &= (w_{1,j}, w_{2,j}, \ldots, w_{t,j})\\
-  \vec{q} &= (w_{1,q}, w_{2,q}, \ldots, w_{t,q})
-  \end{split}
-  \label{eq:vector}
-\end{equation}
-% \myequations{vector}
-
-Where $t$ is the total number of terms in the index and $w_{i,j}$ is the \ac{TF}-\ac{IDF} weight for each component of the vector. The similarity between the document and the query vector is the cosine of $\theta$.
+$\vec{d_j}$ is defined as $(w_{1,j}, w_{2,j}, \ldots, w_{t,j})$ and similarly $\vec{q}$ is defined as $(w_{1,q}, w_{2,q}, \ldots, w_{t,q})$, where $w_{i,j}$ and $w_{i,q}$ correspond to the \ac{TF}-\ac{IDF} weights per term of the relevant document or query respectively. $t$ is the total number of terms in the vocabulary. The similarity between a document $d_j$ and a query $q$ is defined in equation~\ref{eq:sim2}\marginnote{$\bm{\Sigma}$~\ref{eq:sim2}}.
 
 \begin{equation}
   \begin{split}
@@ -315,45 +304,61 @@ Where $t$ is the total number of terms in the index and $w_{i,j}$ is the \ac{TF}
 \end{equation}
 % \myequations{sim2}
 
-\begin{equation}
-  |\vec{d_j}| = \sqrt{\sum_{i}^{t}w_{i,j}^{2}}
-  \label{eq:vectorlength}
-\end{equation}
-% \myequations{vectorlength}
+Let's consider an example similar to the one used for the \nameref{s:tfidf} section. We have a corpus of three documents ($d_0$ = Faustroll, $d_1$ = Gospel, and $d_2$ = Voyage) and nine terms in the vocabulary ($k_0, \ldots, k_8$ = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant \ac{TF}-\ac{IDF} weights taken from table~\ref{tab:tfidf}\marginnote{\faicon{table}~\ref{tab:tfidf}}).
 
-Here is an example algorithm for computing this score taken from \autocite[p.125]{Manning2009}.
+\begin{conditions}
+  \vec{d_0} & (11.49,0,0,0,0,9.34,0,3.34,0) \\
+  |\vec{d_0}| & 15.18 \\
+  \vec{d_1} & (0,0,0,0,0,0,0,0,0) \\
+  |\vec{d_1}| & 0 \\
+  \vec{d_2} & (0,0,0,0,0,0,0,1.16,0) \\
+  |\vec{d_2}| & 1.16
+\end{conditions}
 
-% \begin{listing}[htb]
-%   \begin{minted}{python}
-%     CosineScore (q)
-%       float Scores[N] = 0
-%       for each d
-%       do Initialise Length[d] to the length of document d
-%       for each query term t
-%       do calculate wt,q and fetch postings list for t
-%         for each pair (d, tft,d) in postings list
-%         do add wft,d to Scores[d]
-%       Read the array Length[d]
-%       for each d
-%       	do Divide Scores[d] by Length[d]
-%       	return Top K components of Scores[]
-%   \end{minted}
-% \caption[Pseudo-code for computing vector scores]{Pseudo-code for computing vector scores}
-% \label{code:VectorScores}
-% \end{listing}
+For this example we will use two queries: $q_0$ and $q_1$. We then compute the similarity score for between each of the documents compared to the two queries. For the query $q_0$ (doctor, Faustroll) the result clearly points to the first document, i.e. the Faustroll text. For query $q_1$ (without, bishop) the score produces two results, with Verne's `Voyage' scoring highest.
 
-% Where,\\
-% \itab{$q$} \tab{is the query}\\
-% \itab{$N$} \tab{is the total number of documents}\\
-% \itab{$d$} \tab{is a document}\\
-% \itab{$t$} \tab{is a query term}\\
-% \itab{$wt_q$} \tab{is the weight of the term in the query}\\
-% \itab{$tft_d$} \tab{is the term frequency of $t$ in $d$}\\
-% \itab{$wft_d$} \tab{is the $tf-idf$ weight of t in $d$}\\
-% \itab{$K$} \tab{is the number of results we want}\\
-% \itab{$postings list$} \tab{is the list of all ($d$, $tft_d$) for a given $t$.}
-
-\spirals
+\begin{figure}[!h] % (here, top, bottom, page)
+  \centering
+  \begin{minipage}[t]{.475\linewidth}
+    \begin{conditions}
+      q_0 & (doctor, Faustroll) \\
+      \vec{q_0} & (1.58,0,0,0,0,1.58,0,0,0) \\
+      |\vec{q_0}| & 2.24 \\
+      sim(d_0,q_0) & 0.97 \\
+      % 18.15 + 0 + 0 + 0 + 0 + 14.76 + 0 + 0 + 0 = 32.91
+      % 15.18 * 2.24 = 34.00
+      % 32.91 / 34 = 0.97
+      sim(d_1,q_0) & 0 \\
+      % 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0
+      % 0 * 2.24 = 0
+      % 0 / 0 = 0
+      sim(d_2,q_0) & 0
+      % 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0
+      % 1.16 * 2.24 = 2.60
+      % 0 / 2.60 = 0
+    \end{conditions}
+  \end{minipage}
+  \hspace{.05\linewidth}
+  \begin{minipage}[t]{.45\linewidth}
+    \begin{conditions}
+      q_1 & (without, bishop) \\
+      \vec{q_1} & (0,0,0,0,0,0,0,0.58,0) \\
+      |\vec{q_1}| & 0.58 \\
+      sim(d_0,q_1) & 0.22 \\
+      % 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1.94 + 0 = 1.94
+      % 15.18 * 0.58 = 8.80
+      % 1.94 / 8.80 = 0.22
+      sim(d_1,q_1) & 0 \\
+      % 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0
+      % 0 * 0.58 = 0
+      % 0 / 0 = 0
+      sim(d_2,q_1) & 1
+      % 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0.67 + 0 = 0.67
+      % 1.16 * 0.58 = 0.67
+      % 0.67 / 0.67 = 1
+    \end{conditions}
+  \end{minipage}
+\end{figure}
 
 There are several other common \ac{IR} models that aren't covered in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze}.
 
@@ -400,12 +405,14 @@ De Vries called this form of browsing an ``enlargement of the problem space'', w
 
 Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\marginnote{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
-\todo{fix link ref}
-Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing\footnote{\url{http://www.searchenginepeople.com/blog/incredible-google-bombs.html}} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
+Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing \autocite{Nicole2010} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
 
-\paragraph{PageRank}
-PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Google search engine \citeyear{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank PR is taken from \autocite[p.472]{Baeza-Yates2011}.
 
+\subsubsection{Algorithms}
+
+\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \citeyear{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank $PR$ is taken from \autocite[p.472]{Baeza-Yates2011}.
+
+\todo{check at home}
 \begin{equation}
   PR(a) =
   \frac{q}{T} + (1 - q)
@@ -414,13 +421,12 @@ PageRank was developed in 1998 by Larry Page and Sergey Brin as part of their Go
 \end{equation}
 % \myequations{PR}
 
-\todo{change to conditions env}
-Where,\\
-\itab{$L(p)$} \tab{is the number of outgoing links of page $p$,}\\
-\itab{$a$} \tab{is the page we want to rank and is pointed to by pages $p_1$ to $p_n$,}\\
-\itab{$T$} \tab{is the total number of pages on the Web graph, and}\\
-\itab{$q$} \tab{is the is a parameter to be set by the system (typically 0.15)}\\
-\itab{} \tab{needed to deal with dead ends in the graph.}
+\begin{conditions}
+  a & is the page we want to rank and is pointed to by pages $p_1$ to $p_n$ \\
+  L(p_i) & is the number of outgoing links of page $p_i$ \\
+  T & is the total number of pages on the Web graph \\
+  q & is a parameter set by the system (typically 0.15) needed to deal with dead ends in the graph
+\end{conditions}
 
 \todo{add ref for image}
 \begin{figure}[!htbp] % (here, top, bottom, page)
@@ -430,7 +436,6 @@ Where,\\
 \label{fig:pagerank2}
 \end{figure}
 
-\paragraph{HITS}
 The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citeyear{Kleinberg1999, Kleinberg}. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}. S is the set of pages.
 
 \begin{equation}
@@ -442,10 +447,8 @@ The HITS algorithm also works on the links between pages. It was first described
 \end{equation}
 % \myequations{HITS}
 
-\paragraph{Hilltop}
 Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila \citeyear{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
 
-\paragraph{Fish search}
 Another algorithm is the so called Fish search algorithm \citeyear{DeBra1994, DeBra1994a, DeBra}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
 
 There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \autocite{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
@@ -453,16 +456,9 @@ There are various algorithms that follow this approach. For example the shark se
 Other variations include the incorporation of user behaviour \autocite{Agichtein2006}, social annotations \autocite{Bao2007}, trust \autocite{Garcia-Molina2004}, query modifications \autocite{Glover2001}, topic sensitive PageRank [59] (p430) \autocite{Haveliwala2003}, folksonomies \autocite{Hotho}, SimRank \autocite{Jeh}, neural-networks \autocite{Shu1999}, and semantic Web \autocite{Widyantoro2001,Du2007,Ding,Kamps,Taye2009}.
 
 
-\subsection{Query Expansion and Relevance Feedback}
-\label{s:qexpansion}
-
-Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
-\todo{add ref}
-
-
 \subsection{Challenges}
 
-Other issues that arise when trying to search the World Wide Web are as follows \autocite[p.449]{Baeza-Yates2011}.
+Other issues that arise when trying to search the World Wide Web were indetified by Baeza-Yates and Ribeiro-Neto as follows \citeyear[p.449]{Baeza-Yates2011}.
 
 \begin{itemize}
   \item Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.
@@ -479,8 +475,45 @@ Since a single query for a popular word can results in millions of retrieved doc
 \section{Natural Language Processing}
 \label{s:nlp}
 
+\ac{NLP} is a discipline within computer science
+
+Bird, S., Klein, E. and Loper, E., 2009. \ac{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\autocite{Bird2009}
+
+Taken from \autocite{Jurafsky2009}, also known as:
+\begin{itemize}
+  \item Speech and language processing
+  \item Human language technology
+  \item \ac{nlp}
+  \item Computational linguistics
+  \item Speech recognition and synthesis
+\end{itemize}
+
+Goals of \ac{nlp} are to get computers to perform useful tasks involving human language like:
+\begin{itemize}
+  \item Enabling human-machine communication
+  \item Improving human-human communication
+  \item Text and speech processing
+\end{itemize}
+
+e.g.\ machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
+
+\label{stemming}
+\hypertarget{stemming}{Techniques} that are useful for this are the following \autocite[Ch.2]{Manning2009}.
+
+\begin{description}
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
+\end{description}
+
+
+
+
+
 \todo{describe NLTK and the core functionality}
-\ac{nltk} Python library\footnote{\url{http://www.nltk.org/}}.
+\ac{NLTK} Python library\footnote{\url{http://www.nltk.org/}}.
 
 \begin{description}
   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
@@ -526,45 +559,6 @@ $d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
 $d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
 $d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
 $d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
-
-
-
-
-
-\ac{nlp} blah blah blah\ldots
-
-Bird, S., Klein, E. and Loper, E., 2009. \ac{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\autocite{Bird2009}
-
-Manning, C., Raghavan, P. and Schuetze, H., 2008. Introduction to Information Retrieval 1st ed., Cambridge: Cambridge University Press.\autocite{Manning2009}
-
-Taken from \autocite{Jurafsky2009}, also known as:
-\begin{itemize}
-  \item Speech and language processing
-  \item Human language technology
-  \item \ac{nlp}
-  \item Computational linguistics
-  \item Speech recognition and synthesis
-\end{itemize}
-
-Goals of \ac{nlp} are to get computers to perform useful tasks involving human language like:
-\begin{itemize}
-  \item Enabling human-machine communication
-  \item Improving human-human communication
-  \item Text and speech processing
-\end{itemize}
-
-e.g.\ machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, grammar checking…
-
-\label{stemming}
-\hypertarget{stemming}{Techniques} that are useful for this are the following \autocite[Ch.2]{Manning2009}.
-
-\begin{description}
-  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
-  \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
-\end{description}
 
 
 \subsection*{Regular Expressions}
@@ -986,7 +980,7 @@ This particular tree was generated using the Stanford Parser at \url{http://nlp.
 Given the rather complicated nature of the words and sentence structure, some of the labels might be wrong.
 
 
-\section{Linguistics / WordNet}
+\subsection{Linguistics / WordNet}
 
 Here’s my \ac{hyper} term. \ac{holo} \ac{hyper}
 
@@ -1013,71 +1007,71 @@ I need to find REFERENCES for this section.
 
 
 
-\section{Algorithm Formalisation}
+% \section{Algorithm Formalisation}
 
-Algorithm Classification
+% Algorithm Classification
 
-\begin{multicols}{2}
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By implementation:}
-  \item Recursive/iterative
-  \item Logical
-  \item Serial/parallel/distributed
-  \item Deterministic/non-deterministic
-  \item Exact/approximate
-  \item Quantum
-\end{itemize}
+% \begin{multicols}{2}
+% \begin{itemize}
+%   {\setlength\itemindent{-26pt} \item[] By implementation:}
+%   \item Recursive/iterative
+%   \item Logical
+%   \item Serial/parallel/distributed
+%   \item Deterministic/non-deterministic
+%   \item Exact/approximate
+%   \item Quantum
+% \end{itemize}
 
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By design paradigm:}
-  \item Brute-force/exhaustive search
-  \item Divide and conquer
-  \item Dynamic
-  \item Greedy
-  \item Linear
-  \item Reduction
-  \item Search and enumeration
-\end{itemize}
+% \begin{itemize}
+%   {\setlength\itemindent{-26pt} \item[] By design paradigm:}
+%   \item Brute-force/exhaustive search
+%   \item Divide and conquer
+%   \item Dynamic
+%   \item Greedy
+%   \item Linear
+%   \item Reduction
+%   \item Search and enumeration
+% \end{itemize}
 
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By field of study:}
-  \item Search
-  \item Sorting
-  \item Merge
-  \item Numerical
-  \item Graph
-  \item String
-  \item Computational geometrics
-  \item Combinatorial
-  \item Medical
-  \item Machine learning
-  \item Cryptography
-  \item Data compression
-  \item Parsing
-\end{itemize}
+% \begin{itemize}
+%   {\setlength\itemindent{-26pt} \item[] By field of study:}
+%   \item Search
+%   \item Sorting
+%   \item Merge
+%   \item Numerical
+%   \item Graph
+%   \item String
+%   \item Computational geometrics
+%   \item Combinatorial
+%   \item Medical
+%   \item Machine learning
+%   \item Cryptography
+%   \item Data compression
+%   \item Parsing
+% \end{itemize}
 
-\begin{itemize}
-  {\setlength\itemindent{-26pt} \item[] By complexity:}
-  \item Big-O-Notation
-\end{itemize}
-\end{multicols}
+% \begin{itemize}
+%   {\setlength\itemindent{-26pt} \item[] By complexity:}
+%   \item Big-O-Notation
+% \end{itemize}
+% \end{multicols}
 
-\begin{description}
-  \item [High-Level Description] in prose, ignoring implementation details.
-  \item [Implementation Description] in prose, describing implementation in detail.
-  \item [Formal description] lowest level, most detailed.
-\end{description}
+% \begin{description}
+%   \item [High-Level Description] in prose, ignoring implementation details.
+%   \item [Implementation Description] in prose, describing implementation in detail.
+%   \item [Formal description] lowest level, most detailed.
+% \end{description}
 
-\itab{$D = \{d_1, \ldots, d_n\}$} \tab{is the set of documents}\\
-\itab{$Q = \{q_1, \ldots, q_n\}$} \tab{is the set of queries}\\
-\itab{$q = \{t_1, \ldots, t_n\}$} \tab{is the set of query terms}\\
-\itab{$V = \{v_1, \ldots, v_t\}$} \tab{is the set of all distinct index terms in a document collection (the Vocabulary)}\\
-\itab{$R (q_i,d_j)$} \tab{is the ranking function, where $q_i \in{} Q$ and $d_j  \in{} D$}\\
-\itab{$N$} \tab{is the total number of documents}\\
-\itab{$w_{t,q}$} \tab{is the weight of the term in the query}\\
-\itab{$tf_{t,d}$} \tab{is the term frequency of $t$ in $d$}\\
-\itab{$wf_{t,d}$} \tab{is the tf-idf weight of $t$ in $d$}\\
-\itab{$P_t$} \tab{is the postings list of all ($d$, $tf_{t,d}$) for a given $t$}
-% chktex 16
+% \itab{$D = \{d_1, \ldots, d_n\}$} \tab{is the set of documents}\\
+% \itab{$Q = \{q_1, \ldots, q_n\}$} \tab{is the set of queries}\\
+% \itab{$q = \{t_1, \ldots, t_n\}$} \tab{is the set of query terms}\\
+% \itab{$V = \{v_1, \ldots, v_t\}$} \tab{is the set of all distinct index terms in a document collection (the Vocabulary)}\\
+% \itab{$R (q_i,d_j)$} \tab{is the ranking function, where $q_i \in{} Q$ and $d_j  \in{} D$}\\
+% \itab{$N$} \tab{is the total number of documents}\\
+% \itab{$w_{t,q}$} \tab{is the weight of the term in the query}\\
+% \itab{$tf_{t,d}$} \tab{is the term frequency of $t$ in $d$}\\
+% \itab{$wf_{t,d}$} \tab{is the tf-idf weight of $t$ in $d$}\\
+% \itab{$P_t$} \tab{is the postings list of all ($d$, $tf_{t,d}$) for a given $t$}
+% % chktex 16
 
 \stopcontents[chapters]

@@ -160,6 +160,7 @@ pdflatex --file-line-error -shell-escape main
 - [x] sourceatright font and size
 - [ ] refer back to oulipo technique table in later chapters
 - [ ] capitalise web or not? internet?
+- [ ] capitalise disciplines or not?
 
 
 
