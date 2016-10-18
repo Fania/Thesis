@@ -126,12 +126,12 @@ There are different models for different needs, for example a multimedia system 
 The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[adapted from][p.58]{Baeza-Yates2011} where,
 
 \begin{conditions}
-D &  the set of documents \\
-Q &  the set of queries \\
-F &  the framework e.g.\ sets, Boolean relations, vectors, linear algebra\ldots \\
-R(q_i, d_j) & the ranking function, with $q_i \in Q$ and $d_j \in D$ \\
-t & the number of index terms in a document collection \\
-V & the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document collection (vocabulary)
+  D           & the set of documents \\
+  Q           & the set of queries \\
+  F           & the framework e.g.\ sets, Boolean relations, vectors, linear algebra\ldots \\
+  R(q_i, d_j) & the ranking function, with $q_i \in Q$ and $d_j \in D$ \\
+  t           & the number of index terms in a document collection \\
+  V           & the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document collection (vocabulary)
 \end{conditions}
 
 This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
@@ -208,9 +208,9 @@ Where $tfidf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formul
 \begin{conditions}
   k_{0}-k_{8} & [Faustroll,father,time,background,water,doctor,without,bishop,God] \\
   d_{0}-d_{2} & [Faustroll, Gospel, Voyage] (see figure~\ref{fig:termdocs}) \\
-  f_{i,j} & the frequence (count) of term $k_i$ \\
-  tf_{i,j} & the \acl{TF} weight \\
-  idf_{i} & the \acl{IDF} weight \\
+  f_{i,j}     & the frequence (count) of term $k_i$ \\
+  tf_{i,j}    & the \acl{TF} weight \\
+  idf_{i}     & the \acl{IDF} weight \\
   tfidf_{i,j} & the \ac{TF}-\ac{IDF} weight
 \end{conditions}
 
@@ -307,11 +307,11 @@ $\vec{d_j}$ is defined as $(w_{1,j}, w_{2,j}, \ldots, w_{t,j})$ and similarly $\
 Let's consider an example similar to the one used for the \nameref{s:tfidf} section. We have a corpus of three documents ($d_0$ = Faustroll, $d_1$ = Gospel, and $d_2$ = Voyage) and nine terms in the vocabulary ($k_0, \ldots, k_8$ = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant \ac{TF}-\ac{IDF} weights taken from table~\ref{tab:tfidf}\marginnote{\faicon{table}~\ref{tab:tfidf}}).
 
 \begin{conditions}
-  \vec{d_0} & (11.49,0,0,0,0,9.34,0,3.34,0) \\
+  \vec{d_0}   & (11.49,0,0,0,0,9.34,0,3.34,0) \\
   |\vec{d_0}| & 15.18 \\
-  \vec{d_1} & (0,0,0,0,0,0,0,0,0) \\
+  \vec{d_1}   & (0,0,0,0,0,0,0,0,0) \\
   |\vec{d_1}| & 0 \\
-  \vec{d_2} & (0,0,0,0,0,0,0,1.16,0) \\
+  \vec{d_2}   & (0,0,0,0,0,0,0,1.16,0) \\
   |\vec{d_2}| & 1.16
 \end{conditions}
 
@@ -321,9 +321,9 @@ For this example we will use two queries: $q_0$ and $q_1$. We then compute the s
   \centering
   \begin{minipage}[t]{.475\linewidth}
     \begin{conditions}
-      q_0 & (doctor, Faustroll) \\
-      \vec{q_0} & (1.58,0,0,0,0,1.58,0,0,0) \\
-      |\vec{q_0}| & 2.24 \\
+      q_0          & (doctor, Faustroll) \\
+      \vec{q_0}    & (1.58,0,0,0,0,1.58,0,0,0) \\
+      |\vec{q_0}|  & 2.24 \\
       sim(d_0,q_0) & 0.97 \\
       % 18.15 + 0 + 0 + 0 + 0 + 14.76 + 0 + 0 + 0 = 32.91
       % 15.18 * 2.24 = 34.00
@@ -341,9 +341,9 @@ For this example we will use two queries: $q_0$ and $q_1$. We then compute the s
   \hspace{.05\linewidth}
   \begin{minipage}[t]{.45\linewidth}
     \begin{conditions}
-      q_1 & (without, bishop) \\
-      \vec{q_1} & (0,0,0,0,0,0,0,0.58,0) \\
-      |\vec{q_1}| & 0.58 \\
+      q_1          & (without, bishop) \\
+      \vec{q_1}    & (0,0,0,0,0,0,0,0.58,0) \\
+      |\vec{q_1}|  & 0.58 \\
       sim(d_0,q_1) & 0.22 \\
       % 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1.94 + 0 = 1.94
       % 15.18 * 0.58 = 8.80
@@ -396,7 +396,7 @@ With exploratory search, the user’s success in finding the right information d
   Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
 \end{quotation}
 
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the information need \citeyear{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\marginnote{§~\ref{s:boden}}).
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \citeyear{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\marginnote{§~\ref{s:boden}}).
 
 % All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
@@ -410,33 +410,32 @@ Ranking algorithms are the essence of any Web search engine and as such guarded 
 
 \subsubsection{Algorithms}
 
-\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \citeyear{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. The following formula for calculating a PageRank $PR$ is taken from \autocite[p.472]{Baeza-Yates2011}.
+\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \citeyear{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \citeyear{Brin1998b}.
 
-\todo{check at home}
 \begin{equation}
-  PR(a) =
-  \frac{q}{T} + (1 - q)
-  \sum_{i=1}^{n} \frac{PR(p_i)}{L(p_i)}
-  \label{eq:PRt}
+  PR(A) =
+  (1 - d) + d (\sum_{i=1}^{n} \frac{PR(T_i)}{C(T_i)})
+  \label{eq:PR}
 \end{equation}
 % \myequations{PR}
 
 \begin{conditions}
-  a & is the page we want to rank and is pointed to by pages $p_1$ to $p_n$ \\
-  L(p_i) & is the number of outgoing links of page $p_i$ \\
-  T & is the total number of pages on the Web graph \\
-  q & is a parameter set by the system (typically 0.15) needed to deal with dead ends in the graph
+  A    & the page we want to rank and is pointed to by pages $T_1$ to $T_n$ \\
+  n    & the total number of pages on the Web graph \\
+  C(A) & the number of outgoing links of page $A$ \\
+  d    & a `damping' parameter set by the system (typically 0.85) needed to deal with dead ends in the graph
 \end{conditions}
 
-\todo{add ref for image}
+Figure~\ref{fig:pagerank}\marginnote{\faicon{image}~\ref{fig:pagerank}} which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequense. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.
+
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \includegraphics[width=.75\linewidth]{pagerank}
-\caption[PageRank algorithm]{PageRank algorithm illustration from Wikipedia}
-\label{fig:pagerank2}
+\caption[PageRank algorithm]{PageRank algorithm illustration \autocite{Wikimedia2012}}
+\label{fig:pagerank}
 \end{figure}
 
-The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citeyear{Kleinberg1999, Kleinberg}. HITS stands for Hyperlink Induced Topic Search and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and page with many outgoing links are called hubs. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}. S is the set of pages.
+The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citeyear{Kleinberg1999, Kleinberg}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
 
 \begin{equation}
   \begin{split}
@@ -475,9 +474,7 @@ Since a single query for a popular word can results in millions of retrieved doc
 \section{Natural Language Processing}
 \label{s:nlp}
 
-% Bird, S., Klein, E. and Loper, E., 2009. \ac{nlp} with Python 1st ed., Sebasopol, CA:\@ O'Reilly Media.\autocite{Bird2009}
-
-\ac{NLP} is a discipline within computer science which is also known as follows \autocite{Jurafsky2009}.
+\ac{NLP} is a discipline within computer science which is also known as follows \autocite{Jurafsky2009}\footnote{The organisational structure of this chapter is borrowed from \autocite{Jurafsky2009}.}.
 
 \begin{itemize}
   \item Speech and language processing
@@ -488,134 +485,53 @@ Since a single query for a popular word can results in millions of retrieved doc
 
 Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing. For example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
 
-\spirals
+There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library I used for \url{pata.physics.wtf} \autocite{Bird2009, NLTK2016}.
 
-Damerau–Levenshtein
-NLTK
-stemming
-regex
-language models
-n-grams
-Max likelihood est
-eval n-grams
-perplexity
-smoothing
-add-one
-adjusted count
-good turing Discounting
-naive Bayes
-max ent
-evaluation
-information extraction
-named entity recognition
-part of speech
-parsing
-Grammars
-linguistics/wordnet
+% \begin{description}
+%   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
+%   \item [Text] A wrapper around a sequence of simple (string) tokens, which is intended to support initial exploration of texts (via the interactive console). Its methods perform a variety of analyses on the text’s contexts (e.g., counting, concordancing, collocation discovery), and display the results.
+%   \item [index (word)] Find the index of the first occurrence of the word in the text.
+%   \item [count (word)] Count the number of times this word appears in the text.
+% \end{description}
 
 
-\spirals
-
-\todo{move?}
-\label{stemming}
-\hypertarget{stemming}{Techniques} that are useful for this are the following \autocite[Ch.2]{Manning2009}.
-
-\begin{description}
-  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
-  \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
-\end{description}
+\subsection{Words}
 
 
+\subsubsection{Regular Expressions}
+\label{s:regex}
+
+Regular expressions (often shortened to the term `regex') are used to search a corpus of texts for the occurance of a specific string pattern\footnote{Or you can just use it to play Regex Crosswords online: \url{http://regexcrossword.com/}.}. 
+
+% Online tools such as \url{http://regexr.com/} or \url{https://regex101.com/} can help create a particular expression and test it. 
+
+Table~\ref{tab:regex}\marginnote{\faicon{table}~\ref{tab:regex}} shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used: \py{([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})}. Most modern text editors support a form of search using regex and it is often used in \ac{NLP}.
+
+\begin{table}[!htbp]
+\centering
+\caption[Regular expression syntax]{Regular expression syntax}
+\label{tab:regex}
+\begin{tabu}{ll}
+\toprule
+\textbf{Command}           & \textbf{Description}         \\ 
+\midrule
+.                          & any character except newline \\
+\textbackslash w \textbackslash d \textbackslash s                   & word, digit, whitespace      \\
+\textbackslash W \textbackslash D \textbackslash S                   & not word, digit, whitespace  \\
+{[}abc{]}                  & any of a, b, or c            \\
+{[}\textasciicircum abc{]} & not a, b, or c               \\
+{[}a-g{]}                  & character between a \& g     \\
+\textasciicircum abc\$     & start / end of the string    \\
+a* a+ a?                   & 0 or more, 1 or more, 0 or 1 \\
+a\{5\} a\{2,\}             & exactly five, two or more    \\
+ab|cd                      & match ab or cd               \\ 
+\bottomrule
+\end{tabu}
+\end{table}
 
 
-
-\todo{describe NLTK and the core functionality}
-\ac{NLTK} Python library\footnote{\url{http://www.nltk.org/}}.
-
-\begin{description}
-  \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
-  \item [Text] A wrapper around a sequence of simple (string) tokens, which is intended to support initial exploration of texts (via the interactive console). Its methods perform a variety of analyses on the text’s contexts (e.g., counting, concordancing, collocation discovery), and display the results.
-  \item [index (word)] Find the index of the first occurrence of the word in the text.
-  \item [count (word)] Count the number of times this word appears in the text.
-\end{description}
-
-
-\subsection{Damerau-Levensthein}
-
-\begin{fcom}
-  Damerau-Levensthein for clinamen!
-  \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
-\end{fcom}
-
-The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
-
-\begin{equation}
-  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]% chktex 21
-  \max(i,j) & \textrm{if}\min(i,j)=0\\
-  \min\left\{\begin{matrix*}[l]% chktex 21
-  d_{a,b}(i-1,j)+1\\
-  d_{a,b}(i,j-1)+1\\
-  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
-  d_{a,b}(i-2,j-2)+1
-  \end{matrix*}\right. & \textrm{if}\ i,j > 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
-  \min\left\{\begin{matrix*}[l]% chktex 21
-  d_{a,b}(i-1,j)+1\\
-  d_{a,b}(i,j-1)+1\\
-  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
-\end{matrix*}\right. & \textrm{otherwise.}
-  \end{matrix*}\right.
-  \label{eq:DL}
-\end{equation}
-% \myequations{DL}
-
-where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
-
-Each recursive call matches one of the cases covered by the Dame\-rau-Leven\-shtein distance:
-
-$d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
-$d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
-$d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
-$d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
-
-
-\subsection*{Regular Expressions}
-
-Used to specify text strings in text.
-
-RE search requires a pattern that we want to search for and a corpus of texts to search through.
-
-Errors can be false positives (FP) and false negatives (FN).
-
-\begin{itemize}
-  \item Increasing accuracy (minimizing FP)
-  \item Increasing coverage (minimizing FN)
-\end{itemize}
-
-RE's can be expressed as Finite-State Automata (FSA).
-
-
-\subsection*{Language Models (LM)}
-
-Probabilities are based on counting things. Counting things in natural language is based on a corpus (pl corpora), a computer readable collection of text or speech.
-
-Cats versus cat?
-
-Same lemma but different wordforms.
-
-\begin{itemize}
-  \item A lemma is a set of lexical forms that have the same stem. (e.g.\ go)
-  \item A wordform is the full inflected or derived form of the word. (e.g.\ goes)
-  \item A word type is a distinct word in a corpus (repetitions are not counted but case sensitive).
-  \item A word token is any word (repetitions are counted repeatedly)
-\end{itemize}
-
-The process of converting all words in a text to their lemma (e.g.\ goes $\to$ go) is called lemmatisation and the process of separating out all words in a text is called tokenisation or word segmentation.
-
-
-\subsection*{$N$-Grams}
+HERE
+\subsubsection{N-Grams \& Smoothing}
 
 We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words.
 
@@ -627,7 +543,7 @@ We want to compute the probability for $P(w|h)$ where $w$ is a word and $h$ is a
 \end{equation}
 % \myequations{Probwh}
 
-Using the \textbf{chain rule of probability}:
+\paragraph{Chain rule of probability}
 
 \begin{equation}
   \begin{split}
@@ -638,7 +554,7 @@ Using the \textbf{chain rule of probability}:
 \end{equation}
 % \myequations{Probw1n}
 
-Using the \textbf{Markov assumption} that probability of a word depends only on the previous word (or $n$ words).
+\paragraph{Markov assumption} that probability of a word depends only on the previous word (or $n$ words).
 
 \begin{equation}
   P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
@@ -646,10 +562,7 @@ Using the \textbf{Markov assumption} that probability of a word depends only on 
 \end{equation}
 % \myequations{Probw1n2}
 
-Using the \textbf{maximum likelihood estimation (MLE)} for $N$-Grams we can normalise counts to be between 0 and 1. $C$ stands for count.
-
-
-\subsection*{Maximum likelihood estimation (MLE)}
+\paragraph{maximum likelihood estimation (MLE)} for $N$-Grams we can normalise counts to be between 0 and 1. $C$ stands for count.
 
 \begin{equation}
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
@@ -671,8 +584,7 @@ Google offers its $N$-Gram data for free on:
 \end{itemize}
 
 
-\subsection*{Evaluating N-Grams}
-
+\paragraph{Evaluating N-Grams}
 Extrinsic and intrinsic evaluation.
 
 \begin{description}
@@ -680,8 +592,7 @@ Extrinsic and intrinsic evaluation.
   \item [Intrinsic]: evaluate independent on any application, e.g.\ perplexity.
 \end{description}
 
-
-\subsection*{Perplexity}
+\paragraph{Perplexity}
 
 \begin{equation}
   PP(W) = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{P(w_i \mid w_{i-1})}}
@@ -689,11 +600,8 @@ Extrinsic and intrinsic evaluation.
 \end{equation}
 % \myequations{ppw}
 
-
-\subsection*{Smoothing}
-
-
-\subsection*{Add-One: Laplace smoothing for bigrams}
+\paragraph{Smoothing}
+Add-One: Laplace smoothing for bigrams
 
 \begin{equation}
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
@@ -701,8 +609,7 @@ Extrinsic and intrinsic evaluation.
 \end{equation}
 % \myequations{padd1}
 
-
-\subsection*{Adjusted count}
+Adjusted count
 
 \begin{equation}
   c_i^* = (c_i+1)\frac{N}{N+V}
@@ -717,7 +624,7 @@ Most commonly used is Kneser-Ney extended interpolated.
 For very large N-grams like the Web “Stupid Backoff” is used.
 
 
-\subsection*{Good Turing Discounting}
+Good Turing Discounting
 
 $N_c$ is the frequency of frequency $c$.
 
@@ -728,121 +635,7 @@ $N_c$ is the frequency of frequency $c$.
 % \myequations{cstar}
 
 
-\subsection*{Naive Bayes}
-
-[3] page 234…
-
-\begin{quote}
-  (Wikipedia): A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be ``independent feature model''.
-\end{quote}
-
-
-\subsection*{Maximum Entropy Models (MaxEnt)}
-
-Page 227 \ldots in [1]
-
-MaxEnt models are also widely known as \textbf{multinomial logistic regression}. They are used for sequence classification, e.g.\ part-of-speech tagging. They belong to a family of classifiers known as \textbf{exponential or log-linear classifiers}.
-
-The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. A probabilistic classifier also gives the probability of the observation being in that class; it gives a probability distribution over all classes.
-
-MaxEnt works by extracting some set of features from the input, combining them linearly (meaning that each feature is multiplied by a weight and then added up), and then using this sum as an exponent.
-Formula below shows how to calculate the probability of class $c$ given an observed datum (a given data point) $d$ and $\lambda$ is a weight that is assigned to feature $f$. Taking the exponent makes the result always positive. Dividing by the Sum of that for all classes makes it a probability.
-
-\begin{equation}
-  P(c \mid d, \lambda) = \frac{\exp\sum_i\lambda_i f_i (c,d)}
-  {\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d)}
-  \label{eq:pcdlambda}
-\end{equation}
-% \myequations{pcdlambda}
-
-To get the single best class with the highest probability we need to compute the following.
-
-\begin{equation}
-  \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
-  \label{eq:hatc}
-\end{equation}
-% \myequations{hatc}
-
-\begin{table}[!htbp]
-\caption[MaxEnt Example table]{MaxEnt Example table}
-\label{tab:maxent}
-  \centering
-  \begin{tabu}{lll}
-  \toprule
-  PERSON    & LOCATION   & DRUG      \\ \midrule
-  In Québec & In Québec  & In Québec \\
-  0         & 1.8 + -0.6 & 0.3       \\
-  \bottomrule
-  \end{tabu}
-\end{table}
-
-Features:
-
-$f1(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ w-1 = \text{``in''} \wedge \ \text{isCapitalized}(w)]$\\
-$f2(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ \text{hasAccentedLatinChar}(w)]$\\
-$f3(c,d) \equiv [ \ c = \text{DRUG} \ \wedge \ \text{ends}(w,\text{``c''})]$
-
-$P(\text{LOCATION} \mid \text{in Québec}) = \frac{e^{1.8} e^{–0.6}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.586$\\
-$P(\text{DRUG} \mid \text{in Québec}) = \frac{e^{0.3}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.238$\\
-$P(\text{PERSON} \mid \text{in Québec}) = \frac{e^0}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.176$
-
-The empirical expectation is the sum of all occurrences where a feature is true for one of our observed datums.
-
-\begin{equation}
-  empirical \ E(f_i)= \sum_{(c,d) \ \in \ observed(C,D)}f_i(c,d)
-  \label{eq:epirical}
-\end{equation}
-% \myequations{epirical}
-
-
-\subsection*{Evaluation}
-
-\begin{equation}
-  Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
-  \label{eq:preci}
-\end{equation}
-% \myequations{preci}
-
-\begin{equation}
-  Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
-  \label{eq:reca}
-\end{equation}
-% \myequations{reca}
-
-\begin{equation}
-  F_1 = \frac{2PR}{P+R}
-  \label{eq:f1mes}
-\end{equation}
-% \myequations{f1mes}
-
-
-\subsection*{Information Extraction}
-
-[1] Chapter 22, p 759…
-
-``The process of information extraction (IE), also called text analytics, turns the unstructured information embedded in texts into structured data.''
-
-IE involves named entity recognition (NER), relation detection and classification, event detection and classification and temporal analysis.
-
-
-\subsection*{Named Entity Recognition}
-
-A named entity can be anything that can be referred to by a proper name, such as person-, place- or organisation names and times and amounts.
-
-Example (first sentence in Faustroll):
-
-\begin{quote}
-  In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough.
-\end{quote}
-
-\begin{quote}
-  In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]$^{\text{TIME}}$, Pursuant to article [819]$^{\text{NUMBER}}$ of the [Code of Civil Procedure]$^{\text{DOCUMENT}}$ and at the request of [M. and Mme. Bonhomme (Jacques)]$^{\text{PERSON}}$, proprietors of a house situate at [Paris, 100 bis, rue Richer]$^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the [Town Hall]$^{\text{FACILITY}}$ of [Q borough]$^{\text{LOCATION}}$.
-\end{quote}
-
-Gazetteers (lists of place or person names for example) can help with the detection of these named entities.
-
-
-\subsection*{Part of Speech Tagging}
+\subsubsection{Part-of-Speech Tagging}
 
 Parts of speech (POS) are lexical tags for describing the different elements of a sentence. The eight main parts-of-speech (originating from ca. 100 B.C.) are noun, verb, pronoun, preposition, adverb, conjunction, participle and article.
 Wikipedia:
@@ -901,12 +694,167 @@ Given that there are $116,454$ occurrences of DT in the corpus and of these $56,
 Or the probability of a third person singular verb being `is' is 0.47.
 
 
-\subsection*{Parsing}
+\subsubsection{Markov Chains \& Maximum Entropy}
 
-Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar a parsing algorithm should produce a parse tree for the given sentence.
+Page 227 \ldots in [1]
+
+MaxEnt models are also widely known as \textbf{multinomial logistic regression}. They are used for sequence classification, e.g.\ part-of-speech tagging. They belong to a family of classifiers known as \textbf{exponential or log-linear classifiers}.
+
+The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. A probabilistic classifier also gives the probability of the observation being in that class; it gives a probability distribution over all classes.
+
+MaxEnt works by extracting some set of features from the input, combining them linearly (meaning that each feature is multiplied by a weight and then added up), and then using this sum as an exponent.
+Formula below shows how to calculate the probability of class $c$ given an observed datum (a given data point) $d$ and $\lambda$ is a weight that is assigned to feature $f$. Taking the exponent makes the result always positive. Dividing by the Sum of that for all classes makes it a probability.
+
+\begin{equation}
+  P(c \mid d, \lambda) = \frac{\exp\sum_i\lambda_i f_i (c,d)}
+  {\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d)}
+  \label{eq:pcdlambda}
+\end{equation}
+% \myequations{pcdlambda}
+
+To get the single best class with the highest probability we need to compute the following.
+
+\begin{equation}
+  \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
+  \label{eq:hatc}
+\end{equation}
+% \myequations{hatc}
+
+\begin{table}[!htbp]
+\caption[MaxEnt Example table]{MaxEnt Example table}
+\label{tab:maxent}
+  \centering
+  \begin{tabu}{lll}
+  \toprule
+  PERSON    & LOCATION   & DRUG      \\ \midrule
+  In Québec & In Québec  & In Québec \\
+  0         & 1.8 + -0.6 & 0.3       \\
+  \bottomrule
+  \end{tabu}
+\end{table}
+
+Features:
+
+$f1(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ w-1 = \text{``in''} \wedge \ \text{isCapitalized}(w)]$\\
+$f2(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ \text{hasAccentedLatinChar}(w)]$\\
+$f3(c,d) \equiv [ \ c = \text{DRUG} \ \wedge \ \text{ends}(w,\text{``c''})]$
+
+$P(\text{LOCATION} \mid \text{in Québec}) = \frac{e^{1.8} e^{–0.6}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.586$\\
+$P(\text{DRUG} \mid \text{in Québec}) = \frac{e^{0.3}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.238$\\
+$P(\text{PERSON} \mid \text{in Québec}) = \frac{e^0}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.176$
+
+The empirical expectation is the sum of all occurrences where a feature is true for one of our observed datums.
+
+\begin{equation}
+  empirical \ E(f_i)= \sum_{(c,d) \ \in \ observed(C,D)}f_i(c,d)
+  \label{eq:epirical}
+\end{equation}
+% \myequations{epirical}
+
+\paragraph{Evaluation}
+
+\begin{equation}
+  Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
+  \label{eq:preci}
+\end{equation}
+% \myequations{preci}
+
+\begin{equation}
+  Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
+  \label{eq:reca}
+\end{equation}
+% \myequations{reca}
+
+\begin{equation}
+  F_1 = \frac{2PR}{P+R}
+  \label{eq:f1mes}
+\end{equation}
+% \myequations{f1mes}
+
+Errors can be false positives (FP) and false negatives (FN).
+
+\begin{itemize}
+  \item Increasing accuracy (minimizing FP)
+  \item Increasing coverage (minimizing FN)
+\end{itemize}
 
 
-\subsection*{Grammar}
+\subsubsection{Damerau-Levensthein}
+
+\begin{fcom}
+  Damerau-Levensthein for clinamen!
+  \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
+\end{fcom}
+
+The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
+
+\begin{equation}
+  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]% chktex 21
+  \max(i,j) & \textrm{if}\min(i,j)=0\\
+  \min\left\{\begin{matrix*}[l]% chktex 21
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
+  d_{a,b}(i-2,j-2)+1
+  \end{matrix*}\right. & \textrm{if}\ i,j > 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
+  \min\left\{\begin{matrix*}[l]% chktex 21
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
+\end{matrix*}\right. & \textrm{otherwise.}
+  \end{matrix*}\right.
+  \label{eq:DL}
+\end{equation}
+% \myequations{DL}
+
+where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
+
+Each recursive call matches one of the cases covered by the Dame\-rau-Leven\-shtein distance:
+
+$d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
+$d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
+$d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
+$d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
+
+
+\subsection{Speech}
+
+
+\subsubsection{Text Normalisation}
+
+Stemming techniques that are useful for this are the following \autocite[Ch.2]{Manning2009}.
+
+\begin{description}
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
+\end{description}
+
+
+\subsubsection{Tokenisation}
+
+
+\subsection{Syntax}
+
+Probabilities are based on counting things. Counting things in natural language is based on a corpus (pl corpora), a computer readable collection of text or speech.
+
+Cats versus cat?
+
+Same lemma but different wordforms.
+
+\begin{itemize}
+  \item A lemma is a set of lexical forms that have the same stem. (e.g.\ go)
+  \item A wordform is the full inflected or derived form of the word. (e.g.\ goes)
+  \item A word type is a distinct word in a corpus (repetitions are not counted but case sensitive).
+  \item A word token is any word (repetitions are counted repeatedly)
+\end{itemize}
+
+The process of converting all words in a text to their lemma (e.g.\ goes $\to$ go) is called lemmatisation and the process of separating out all words in a text is called tokenisation or word segmentation.
+
+
+\subsubsection{Grammars}
 
 A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG.\@ Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. The two parse trees would then look like this:
 
@@ -1000,7 +948,15 @@ This particular tree was generated using the Stanford Parser at \url{http://nlp.
 Given the rather complicated nature of the words and sentence structure, some of the labels might be wrong.
 
 
-\subsection{Linguistics / WordNet}
+\subsubsection{Parsing}
+
+Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar a parsing algorithm should produce a parse tree for the given sentence.
+
+
+\subsection{Semantics}
+
+
+\subsubsection{Word Sense}
 
 Here’s my \ac{hyper} term. \ac{holo} \ac{hyper}
 
@@ -1019,79 +975,48 @@ I looked into linguistics for the purpose of patadata. This section definitely n
 
 I need to find REFERENCES for this section.
 
-% For a project of this kind of speciality, it is hard to find directly related work. There is no real  precedent to the idea of a pataphysical search tool.
-% Looking at more broadly related work shows a few worthwhile mentions as follows. They are mostly examples of creative computing in various forms, some of which have pataphysical foundations, whether they are aware of it or not, and others don't. The list could be extended endlessly, so I will only include a selection of the most interesting ones. I have also included some examples of other kinds of projects that have pataphysical elements in them but are not related to computers or searching. Finally, I have added a few examples of current Web search engines and ranking algorithms, though they probably cannot be considered creative or pataphysical.
+
+\subsubsection{WordNet}
 
 
+\subsubsection{Naive Bayes}
+
+[3] page 234…
+
+\begin{quote}
+  (Wikipedia): A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be ``independent feature model''.
+\end{quote}
 
 
+\subsection{Applications}
 
 
-% \section{Algorithm Formalisation}
+\subsubsection{Named Entity Recognition}
 
-% Algorithm Classification
+A named entity can be anything that can be referred to by a proper name, such as person-, place- or organisation names and times and amounts.
 
-% \begin{multicols}{2}
-% \begin{itemize}
-%   {\setlength\itemindent{-26pt} \item[] By implementation:}
-%   \item Recursive/iterative
-%   \item Logical
-%   \item Serial/parallel/distributed
-%   \item Deterministic/non-deterministic
-%   \item Exact/approximate
-%   \item Quantum
-% \end{itemize}
+Example (first sentence in Faustroll):
 
-% \begin{itemize}
-%   {\setlength\itemindent{-26pt} \item[] By design paradigm:}
-%   \item Brute-force/exhaustive search
-%   \item Divide and conquer
-%   \item Dynamic
-%   \item Greedy
-%   \item Linear
-%   \item Reduction
-%   \item Search and enumeration
-% \end{itemize}
+\begin{quote}
+  In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough.
+\end{quote}
 
-% \begin{itemize}
-%   {\setlength\itemindent{-26pt} \item[] By field of study:}
-%   \item Search
-%   \item Sorting
-%   \item Merge
-%   \item Numerical
-%   \item Graph
-%   \item String
-%   \item Computational geometrics
-%   \item Combinatorial
-%   \item Medical
-%   \item Machine learning
-%   \item Cryptography
-%   \item Data compression
-%   \item Parsing
-% \end{itemize}
+\begin{quote}
+  In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]$^{\text{TIME}}$, Pursuant to article [819]$^{\text{NUMBER}}$ of the [Code of Civil Procedure]$^{\text{DOCUMENT}}$ and at the request of [M. and Mme. Bonhomme (Jacques)]$^{\text{PERSON}}$, proprietors of a house situate at [Paris, 100 bis, rue Richer]$^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the [Town Hall]$^{\text{FACILITY}}$ of [Q borough]$^{\text{LOCATION}}$.
+\end{quote}
 
-% \begin{itemize}
-%   {\setlength\itemindent{-26pt} \item[] By complexity:}
-%   \item Big-O-Notation
-% \end{itemize}
-% \end{multicols}
+Gazetteers (lists of place or person names for example) can help with the detection of these named entities.
 
-% \begin{description}
-%   \item [High-Level Description] in prose, ignoring implementation details.
-%   \item [Implementation Description] in prose, describing implementation in detail.
-%   \item [Formal description] lowest level, most detailed.
-% \end{description}
 
-% \itab{$D = \{d_1, \ldots, d_n\}$} \tab{is the set of documents}\\
-% \itab{$Q = \{q_1, \ldots, q_n\}$} \tab{is the set of queries}\\
-% \itab{$q = \{t_1, \ldots, t_n\}$} \tab{is the set of query terms}\\
-% \itab{$V = \{v_1, \ldots, v_t\}$} \tab{is the set of all distinct index terms in a document collection (the Vocabulary)}\\
-% \itab{$R (q_i,d_j)$} \tab{is the ranking function, where $q_i \in{} Q$ and $d_j  \in{} D$}\\
-% \itab{$N$} \tab{is the total number of documents}\\
-% \itab{$w_{t,q}$} \tab{is the weight of the term in the query}\\
-% \itab{$tf_{t,d}$} \tab{is the term frequency of $t$ in $d$}\\
-% \itab{$wf_{t,d}$} \tab{is the tf-idf weight of $t$ in $d$}\\
-% \itab{$P_t$} \tab{is the postings list of all ($d$, $tf_{t,d}$) for a given $t$}
-% % chktex 16
+\subsubsection{Information Retrieval}
+
+
+\paragraph{Information Extraction}
+[1] Chapter 22, p 759…
+
+``The process of information extraction (IE), also called text analytics, turns the unstructured information embedded in texts into structured data.''
+
+IE involves named entity recognition (NER), relation detection and classification, event detection and classification and temporal analysis.
+
 
 \stopcontents[chapters]
