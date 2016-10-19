@@ -501,7 +501,7 @@ There are many tools and libraries available for \ac{NLP}, including the \ac{NLT
 \subsubsection{Regular Expressions}
 \label{s:regex}
 
-Regular expressions (often shortened to the term `regex') are used to search a corpus of texts for the occurance of a specific string pattern\footnote{Or you can just use it to play Regex Crosswords online: \url{http://regexcrossword.com/}.}. 
+Regular expressions (often shortened to the term `regex') are used to search a corpus of texts for the occurance of a specific string pattern\footnote{There is also a Regex Crossword puzzle \autocite{Michelsen2016}.}.
 
 % Online tools such as \url{http://regexr.com/} or \url{https://regex101.com/} can help create a particular expression and test it. 
 
@@ -516,8 +516,8 @@ Table~\ref{tab:regex}\marginnote{\faicon{table}~\ref{tab:regex}} shows the most 
 \textbf{Command}           & \textbf{Description}         \\ 
 \midrule
 .                          & any character except newline \\
-\textbackslash w \textbackslash d \textbackslash s                   & word, digit, whitespace      \\
-\textbackslash W \textbackslash D \textbackslash S                   & not word, digit, whitespace  \\
+\textbackslash w \textbackslash d \textbackslash s & word, digit, whitespace      \\
+\textbackslash W \textbackslash D \textbackslash S & not word, digit, whitespace  \\
 {[}abc{]}                  & any of a, b, or c            \\
 {[}\textasciicircum abc{]} & not a, b, or c               \\
 {[}a-g{]}                  & character between a \& g     \\
@@ -530,78 +530,48 @@ ab|cd                      & match ab or cd               \\
 \end{table}
 
 
-HERE
 \subsubsection{N-Grams \& Smoothing}
 
-We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words.
+We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words \autocite{Jurafsky2009}. A 2-gram is usually called a `bigram' and a 3-gram a `trigram'.
 
-We want to compute the probability for $P(w|h)$ where $w$ is a word and $h$ is a history (the previous words). How many times occurred h followed by $w$ divided by how many times occurred $h$?
+The basic way to compute the probability of an N-gram is shown in equation~\ref{eq:probwh}\marginnote{$\bm{\Sigma}$~\ref{eq:probwh}} \autocite{Jurafsky2009} $P(w|h)$ of a word $w$ given some history $h$ (i.e. the previous words).
 
 \begin{equation}
   P(w \mid h) = \frac{count(hw)}{count(h)}
-  \label{eq:Probwh}
+  \label{eq:probwh}
 \end{equation}
 % \myequations{Probwh}
 
-\paragraph{Chain rule of probability}
+To calculate the probability of a whole sentence of $n$ words ($P(w_1,w_2,\ldots,w_n)$ or $P(w_1^n)$ for short) we can use the chain rule of probability defined as shown in equation~\ref{eq:probw1n}\marginnote{$\bm{\Sigma}$~\ref{eq:probw1n}} \autocite{Jurafsky2009}.
 
 \begin{equation}
   \begin{split}
   P(w_1^n) &= P(w_1)P(w_2 \mid w_1)P(w_3 \mid w_1^2 ) \ldots P(w_n \mid w_1^{n-1})\\
   &= \prod_{k=1}^{n}P(w_k \mid w_1^{k-1})
   \end{split}
-  \label{eq:Probw1n}
+  \label{eq:probw1n}
 \end{equation}
 % \myequations{Probw1n}
 
-\paragraph{Markov assumption} that probability of a word depends only on the previous word (or $n$ words).
+Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation~\ref{eq:probw1n2}\marginnote{$\bm{\Sigma}$~\ref{eq:probw1n2}} \autocite{Jurafsky2009}).
 
 \begin{equation}
   P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
-  \label{eq:Probw1n2}
+  \label{eq:probw1n2}
 \end{equation}
 % \myequations{Probw1n2}
 
-\paragraph{maximum likelihood estimation (MLE)} for $N$-Grams we can normalise counts to be between 0 and 1. $C$ stands for count.
+The \ac{MLE} can be used to actually calculate these probabilities mentioned above. Counts ($C$) are normalised between 0 and 1. The \ac{MLE} in equation~\ref{eq:probwnt}\marginnote{$\bm{\Sigma}$~\ref{eq:probwnt}} \autocite{Jurafsky2009} is based on N-grams rather than bigrams.
 
 \begin{equation}
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
-  \label{eq:Probwnt}
+  \label{eq:probwnt}
 \end{equation}
-% \myequations{Probwn}
+% \myequations{Probwn} 
 
-Usually instead of calculating the counts based on products we calculate them based on sums of logs.
+These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain n-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
 
-So instead of  $p_1 \times p_2 \times p_3 \times p_4 = \log p_1 + \log p_2 + \log p_3 + \log p_4$
-
-Google offers its $N$-Gram data for free on:
-
-\begin{itemize}
-  \item \url{http://bit.ly/1baDXAW} % http://googleresearch.blogspot.co.uk/2006/08/all-our-n-gram-are-belong-to-you.html
-  \item \url{http://books.google.com/ngrams/}
-  \item	\url{http://www.speech.sri.com/projects/srilm/}
-  \item	\url{http://bit.ly/1G3ZJmX} % http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp?catalogId=LDC2006T13
-\end{itemize}
-
-
-\paragraph{Evaluating N-Grams}
-Extrinsic and intrinsic evaluation.
-
-\begin{description}
-  \item [Extrinsic]: evaluate performance of a language model by embedding it into an independent application.
-  \item [Intrinsic]: evaluate independent on any application, e.g.\ perplexity.
-\end{description}
-
-\paragraph{Perplexity}
-
-\begin{equation}
-  PP(W) = \sqrt[N]{\prod_{i=1}^{N}\frac{1}{P(w_i \mid w_{i-1})}}
-  \label{eq:ppw}
-\end{equation}
-% \myequations{ppw}
-
-\paragraph{Smoothing}
-Add-One: Laplace smoothing for bigrams
+One example is the so-called Laplace or add-one smoothing, which basically just adds 1 to each count. See equation~\ref{eq:padd1}\marginnote{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}.
 
 \begin{equation}
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
@@ -609,115 +579,139 @@ Add-One: Laplace smoothing for bigrams
 \end{equation}
 % \myequations{padd1}
 
-Adjusted count
-
-\begin{equation}
-  c_i^* = (c_i+1)\frac{N}{N+V}
-  \label{eq:ci}
-\end{equation}
-% \myequations{ci}
-
-Add-1 smoothing is ok for text categorisation but not so much for language modelling.
-
-Most commonly used is Kneser-Ney extended interpolated.
-
-For very large N-grams like the Web “Stupid Backoff” is used.
-
-
-Good Turing Discounting
-
-$N_c$ is the frequency of frequency $c$.
-
-\begin{equation}
-  c^* = (c+1)\frac{N_{c+1}}{N_c}
-  \label{eq:cstar}
-\end{equation}
-% \myequations{cstar}
+Another example of smoothing is the so-called Good Turing discounting. It uses ``the count of things you've seen \textit{once} to help estimate the count of things you've \textit{never seen}'' \autocite[their emphasis]{Jurafsky2009}.
 
 
 \subsubsection{Part-of-Speech Tagging}
 
-Parts of speech (POS) are lexical tags for describing the different elements of a sentence. The eight main parts-of-speech (originating from ca. 100 B.C.) are noun, verb, pronoun, preposition, adverb, conjunction, participle and article.
-Wikipedia:
+\ac{POS} are lexical tags for describing the different elements of a sentence. The eight most well-known \ac{POS} are as follows.
 
 \begin{description}
-  \item [Noun]: any abstract or concrete entity; a person (police officer, Michael), place (coastline, London), thing (necktie, television), idea (happiness), or quality (bravery)
-  \item [Pronoun]: any substitute for a noun or noun phrase
-  \item [Adjective]: any qualifier of a noun
-  \item [Verb]: any action (walk), occurrence (happen), or state of being (be)
-  \item [Adverb]: any qualifier of an adjective, verb, or other adverb
-  \item [Preposition]: any establisher of relation and syntactic context
-  \item [Conjunction]: any syntactic connector
-  \item [Interjection]: any emotional greeting (or `exclamation')
+  \item [Noun] an abstract or concrete entity
+  \item [Pronoun] a substitute for a noun or noun phrase
+  \item [Adjective] a qualifier of a noun
+  \item [Verb] an action, occurrence, or state of being
+  \item [Adverb] a qualifier of an adjective, verb, or other adverb
+  \item [Preposition] an establisher of relation and context
+  \item [Conjunction] a syntactic connector
+  \item [Interjection] an emotional greeting or exclamation
 \end{description}
 
-Building a Large Annotated Corpus of English \autocite{Marcus1993}
+More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc.
 
-There exist other sets of tags, like the Penn Treebank with divides those \num{8} tags into a total of 45, for example $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, etc.
-
-The process of adding tags to the words of a text is called parts-of-speech tagging or just tagging. This usually is done together with the tokenisation of the text.
-
-Example (first sentence in Faustroll):
+The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Fausroll book \citeyear{Jarry1996}.}.
 
 \begin{quote}
   In\slash{}IN this\slash{}DT [year\slash{}NN Eighteen\slash{}CD Hundred\slash{}CD and\slash{}CC Ninety-eight\slash{}CD,\slash{}, the\slash{}DT Eighth\slash{}CD day\slash{}NN of\slash{}IN February\slash{}NNP]$^{\text{TIME}}$,\slash{}, Pursuant\slash{}JJ to\slash{}IN article\slash{}NN [819\slash{}CD]$^{\text{NUMBER}}$ of\slash{}IN the\slash{}DT [Code\slash{}NN of\slash{}IN Civil\slash{}NNP Procedure\slash{}NNP]$^{\text{DOCUMENT}}$ and\slash{}CC at\slash{}IN the\slash{}DT request\slash{}NN of\slash{}IN [M.\slash{}NN and\slash{}CC Mme.\slash{}NN Bonhomme\slash{}NNP (\slash{}(Jacques\slash{}NNP)\slash{})]$^{\text{PERSON}}$,\slash{}, proprietors\slash{}NNS of\slash{}IN a\slash{}DT house\slash{}NN situate\slash{}JJ at\slash{}IN [Paris\slash{}NNP,\slash{}, 100\slash{}CD bis\slash{}NN,\slash{}, rue\slash{}NN Richer\slash{}NNP]$^{\text{LOCATION}}$,\slash{}, the\slash{}DT aforementioned\slash{}JJ having\slash{}VBG address\slash{}NN for\slash{}IN service\slash{}NN at\slash{}IN my\slash{}PRP residence\slash{}NN and\slash{}CC further\slash{}JJ at\slash{}IN the\slash{}DT [Town\slash{}NNP Hall\slash{}NNP]$^{\text{FACILITY}}$ of\slash{}IN [Q\slash{}NNP borough\slash{}NN]$^{\text{LOCATION}}$.\slash{}.
 \end{quote}
 
-\begin{equation}
-  t_1^n = \underset{t_1^n}{\text{argmax}} \ P(w_1^n \mid t_1^n) P(t_1^n)
-  \label{eq:tn1}
-\end{equation}
-% \myequations{tn1}
+
+
+% \begin{equation}
+%   t_1^n = \underset{t_1^n}{\text{argmax}} \ P(w_1^n \mid t_1^n) P(t_1^n)
+%   \label{eq:tn1}
+% \end{equation}
+% % \myequations{tn1}
+
+% \begin{equation}
+%   P(t_i \mid t_{i-1}) = \frac{C(t_{i-1},t_i)}{C(t_{i-1})}
+%   \label{eq:pti}
+% \end{equation}
+% % \myequations{pti}
+
+% For example: the probability of getting a common noun after a determiner is:
+
+% \begin{equation}
+%   P(\text{NN} \mid \text{DT}) = \frac{C(\text{DT},\text{NN})}{C(\text{DT})} = \frac{56,509}{116,454} = 0.49
+%   \label{eq:pnndtt}
+% \end{equation}
+% % \myequations{pnndt}
+
+% Given that there are $116,454$ occurrences of DT in the corpus and of these $56,509$ occurrences where a NN follows after the DT.% chktex 13
+
+% \begin{equation}
+%   P(\text{is} \mid \text{VBZ}) = \frac{C(\text{VBZ},\text{is})}{C(\text{VBZ})} = \frac{10,073}{21,627} = 0.47
+%   \label{eq:pisvbz}
+% \end{equation}
+% % \myequations{pisvbz}
+
+% Or the probability of a third person singular verb being `is' is 0.47.
+
+
+\subsubsection{Hidden Markov \& Maximum Entropy}
+
+Hidden Markov or maximum entropy models are used for sequence classification, e.g.\ part-of-speech tagging. 
+
+\begin{quotation}
+  The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. \sourceatright{\autocite{Jurafsky2009}}
+\end{quotation}
+
+A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\marginnote{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate such a probability \autocite{Jurafsky2009}.
 
 \begin{equation}
-  P(t_i \mid t_{i-1}) = \frac{C(t_{i-1},t_i)}{C(t_{i-1})}
-  \label{eq:pti}
-\end{equation}
-% \myequations{pti}
-
-For example: the probability of getting a common noun after a determiner is:
-
-\begin{equation}
-  P(\text{NN} \mid \text{DT}) = \frac{C(\text{DT},\text{NN})}{C(\text{DT})} = \frac{56,509}{116,454} = 0.49
-  \label{eq:pnndtt}
-\end{equation}
-% \myequations{pnndt}
-
-Given that there are $116,454$ occurrences of DT in the corpus and of these $56,509$ occurrences where a NN follows after the DT.% chktex 13
-
-\begin{equation}
-  P(\text{is} \mid \text{VBZ}) = \frac{C(\text{VBZ},\text{is})}{C(\text{VBZ})} = \frac{10,073}{21,627} = 0.47
-  \label{eq:pisvbz}
-\end{equation}
-% \myequations{pisvbz}
-
-Or the probability of a third person singular verb being `is' is 0.47.
-
-
-\subsubsection{Markov Chains \& Maximum Entropy}
-
-Page 227 \ldots in [1]
-
-MaxEnt models are also widely known as \textbf{multinomial logistic regression}. They are used for sequence classification, e.g.\ part-of-speech tagging. They belong to a family of classifiers known as \textbf{exponential or log-linear classifiers}.
-
-The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. A probabilistic classifier also gives the probability of the observation being in that class; it gives a probability distribution over all classes.
-
-MaxEnt works by extracting some set of features from the input, combining them linearly (meaning that each feature is multiplied by a weight and then added up), and then using this sum as an exponent.
-Formula below shows how to calculate the probability of class $c$ given an observed datum (a given data point) $d$ and $\lambda$ is a weight that is assigned to feature $f$. Taking the exponent makes the result always positive. Dividing by the Sum of that for all classes makes it a probability.
-
-\begin{equation}
-  P(c \mid d, \lambda) = \frac{\exp\sum_i\lambda_i f_i (c,d)}
-  {\sum_{c\prime}\exp\sum_{i}\lambda_i f_i (c\prime,d)}
-  \label{eq:pcdlambda}
+  p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
+  \label{eq:pcx}
 \end{equation}
 % \myequations{pcdlambda}
 
-To get the single best class with the highest probability we need to compute the following.
+\begin{conditions}
+p(c|x)   & the probability of something being of class $c$ given $x$ \\
+c        & the class \\
+x        & the observation (i.e. the word) \\
+f_i(c,x) & the feature (e.g. ``this word ends in \textit{-ing}'' or ``the previous word was \textit{the}'') \\
+w_i      & the weight of the feature $f_i$
+\end{conditions}
 
-\begin{equation}
-  \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
-  \label{eq:hatc}
-\end{equation}
+This is best understood using an example from Jurafsky and Martin \citeyear{Jurafsky2009}.
+
+Consider the incompletely tagged sentence below. We want to find the most suitable tag for the word ``race''.
+
+\begin{quote}
+  Secretariat/NNP is/BEZ expected/VBN to/TO race/?? tomorrow/NR
+\end{quote}
+
+Features for $f_i(c,x)$ might have the following conditions. If these are true, the result would be 1, if false then 0.
+
+\begin{itemize}
+  \item $x= \text{``race'' } \& \ c = \text{NN}$
+  \item $t_{i-1}= \text{TO } \& \ c = \text{VB}$
+  \item $\text{suffix}(x)= \text{``ing'' } \& \ c = \text{VBG}$
+  \item $\text{is\_lower\_case}(x) \ \& \ c = \text{VB}$
+  \item $x = \text{``race''}\ \& \ c = \text{VB}$
+  \item $t_{i-1} = \text{TO}\ \& \ c = \text{NN}$
+\end{itemize}
+
+Weights are then assigned:
+
+\begin{table}[!htbp]
+\centering
+\caption{My caption}
+\label{tab:featweights}
+\begin{tabu}{llllllll}
+\toprule
+   &   & $\bm{f_1}$ & $\bm{f_2}$ & $\bm{f_3}$ & $\bm{f_4}$ & $\bm{f_5}$ & $\bm{f_6}$ \\
+\midrule
+\textbf{VB} & f & 0     & 1     & 0     & 1     & 1     & 0     \\
+\textbf{VB} & w &       & 0.8   &       & 0.01  & 0.1   &       \\
+\textbf{NN} & f & 1     & 0     & 0     & 0     & 0     & 1     \\
+\textbf{NN} & w &       & 0.8   &       &       &       & -1.3  \\
+\bottomrule
+\end{tabu}
+\end{table}
+
+
+19 april - 24 april
+miami
+
+
+
+
+% To get the single best class with the highest probability we need to compute the following.
+
+% \begin{equation}
+%   \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
+%   \label{eq:hatc}
+% \end{equation}
 % \myequations{hatc}
 
 \begin{table}[!htbp]
