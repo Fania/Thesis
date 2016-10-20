@@ -369,7 +369,7 @@ What is actually meant by the word `searching'? Usually it implies that there is
 
 From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\marginnote{§~\ref{s:4stages}}\autocite{Polya1957}:
 
-\begin{description}
+\begin{description}[leftmargin=5cm]
   \item [Problem identification] \acf{IN},
   \item [Need articulation] \ac{IN} in natural language terms,
   \item [Query formulation] translate \ac{IN} into query terms, and
@@ -402,6 +402,7 @@ De Vries called this form of browsing an ``enlargement of the problem space'', w
 
 
 \subsection{Ranking}
+\label{s:ranking}
 
 Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\marginnote{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
@@ -485,7 +486,7 @@ Since a single query for a popular word can results in millions of retrieved doc
 
 Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing. For example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
 
-There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library I used for \url{pata.physics.wtf} \autocite{Bird2009, NLTK2016}.
+There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} I used for \url{pata.physics.wtf}.
 
 % \begin{description}
 %   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
@@ -496,6 +497,41 @@ There are many tools and libraries available for \ac{NLP}, including the \ac{NLT
 
 
 \subsection{Words}
+
+% Cats versus cat?
+% Same lemma but different wordforms.
+
+A lemma is a set of lexical forms that have the same stem (e.g.\ go). A wordform is the full inflected or derived form of the word (e.g.\ goes). A word type is a distinct word in a corpus (repetitions are not counted but case sensitive). A word token is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to word processing of text \autocite{Manning2009}.
+
+\begin{description}
+  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
+  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
+  \item [Case-folding] converting everything to lower case
+  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
+  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
+\end{description}
+
+
+\subsubsection{WordNet}
+\label{s:wordnet}
+
+WordNet is a large lexical database for English, containing \num{166000} word form and sense pairs, useful for computational linguistics and \ac{NLP} \autocite{Miller1995}. A synset is a set of synonyms to represent a specific word sense. It is the basic bulding block of WordNet's hierarchical structure of lexical relationships.
+
+\begin{quotation}
+  Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations. \sourceatright{\autocite{Princeton2010}}
+\end{quotation}
+
+\begin{description}[leftmargin=2.75cm]
+  \item [Synonymy] (same-name) a symmetric relation between word forms
+  \item [Antonymy] (opposing-name) a symmetric relation between word forms
+  \item [Hyponymy] (sub-name) a transitive relation between synsets
+  \item [Hypernymy] (super-name) inverse of hyponymy
+  \item [Meronymy] (part-name) complex semantic relation
+  \item [Holonymy] (whole-name) inverse of meronymy
+  \item [Troponymy] (manner-name) is for verbs what hyponomy is for nouns
+\end{description}
+
+Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).
 
 
 \subsubsection{Regular Expressions}
@@ -530,19 +566,78 @@ ab|cd                      & match ab or cd               \\
 \end{table}
 
 
-\subsubsection{N-Grams \& Smoothing}
+\subsubsection{Damerau-Levensthein}
+
+\begin{fcom}
+  Damerau-Levensthein for clinamen!
+  \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
+\end{fcom}
+
+
+\todo{use algo from better source}
+The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
+
+\begin{equation}
+  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
+  \max(i,j) & \textrm{if}\min(i,j)=0\\
+  \min\left\{\begin{matrix*}[l]
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
+  d_{a,b}(i-2,j-2)+1
+  \end{matrix*}\right. & \textrm{if}\ i,j > 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
+  \min\left\{\begin{matrix*}[l]
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
+\end{matrix*}\right. & \textrm{otherwise.}
+  \end{matrix*}\right.
+  \label{eq:DL}
+\end{equation}
+% \myequations{DL}
+
+where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
+
+Each recursive call matches one of the cases covered by the Dame\-rau-Leven\-shtein distance:
+
+$d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
+$d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
+$d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
+$d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
+
+
+\subsection{Sequences}
+
+
+\subsubsection{N-Grams}
 
 We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words \autocite{Jurafsky2009}. A 2-gram is usually called a `bigram' and a 3-gram a `trigram'.
 
-The basic way to compute the probability of an N-gram is shown in equation~\ref{eq:probwh}\marginnote{$\bm{\Sigma}$~\ref{eq:probwh}} \autocite{Jurafsky2009} $P(w|h)$ of a word $w$ given some history $h$ (i.e. the previous words).
+The basic way to compute the probability of an N-gram is using \ac{MLE} shown in equation~\ref{eq:mle}\marginnote{$\bm{\Sigma}$~\ref{eq:mle}} \autocite{Jurafsky2009} of a word $w_n$ given some history $w_{n-N+1}^{n-1}$ (i.e. the previous words in the sentence for example).
 
 \begin{equation}
-  P(w \mid h) = \frac{count(hw)}{count(h)}
-  \label{eq:probwh}
+  P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
+  \label{eq:mle}
 \end{equation}
-% \myequations{Probwh}
+% \myequations{Probwn} 
 
-To calculate the probability of a whole sentence of $n$ words ($P(w_1,w_2,\ldots,w_n)$ or $P(w_1^n)$ for short) we can use the chain rule of probability defined as shown in equation~\ref{eq:probw1n}\marginnote{$\bm{\Sigma}$~\ref{eq:probw1n}} \autocite{Jurafsky2009}.
+For instance, if we want to check which of two words ``shining'' and ``cold'' has a higher probability of being the next word given a history of ``the sun is'', we would need to compute $P$(shining|the sun is) and $P$(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence ``the sun is shining'' occured in a training corpus by the number of times ``the sun is'' occured and the same for the word ``cold''.
+
+Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain n-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
+
+One example is the so-called Laplace or add-one smoothing, which basically just adds 1 to each count. See equation~\ref{eq:padd1}\marginnote{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}. $V$ is the number of terms in the vocabulary.
+
+\begin{equation}
+  P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
+  \label{eq:padd1}
+\end{equation}
+% \myequations{padd1}
+
+Another example of smoothing is the so-called Good Turing discounting. It uses ``the count of things you've seen \textit{once} to help estimate the count of things you've \textit{never seen}'' \autocite[their emphasis]{Jurafsky2009}.
+
+\spirals
+
+To calculate the probability of a sequence of $n$ words ($P(w_1,w_2,\ldots,w_n)$ or $P(w_1^n)$ for short) we can use the chain rule of probability as shown in equation~\ref{eq:probw1n}\marginnote{$\bm{\Sigma}$~\ref{eq:probw1n}} \autocite{Jurafsky2009}.
 
 \begin{equation}
   \begin{split}
@@ -561,32 +656,12 @@ Instead of using the complete history of previous words when calculating the pro
 \end{equation}
 % \myequations{Probw1n2}
 
-The \ac{MLE} can be used to actually calculate these probabilities mentioned above. Counts ($C$) are normalised between 0 and 1. The \ac{MLE} in equation~\ref{eq:probwnt}\marginnote{$\bm{\Sigma}$~\ref{eq:probwnt}} \autocite{Jurafsky2009} is based on N-grams rather than bigrams.
-
-\begin{equation}
-  P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
-  \label{eq:probwnt}
-\end{equation}
-% \myequations{Probwn} 
-
-These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain n-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
-
-One example is the so-called Laplace or add-one smoothing, which basically just adds 1 to each count. See equation~\ref{eq:padd1}\marginnote{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}.
-
-\begin{equation}
-  P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
-  \label{eq:padd1}
-\end{equation}
-% \myequations{padd1}
-
-Another example of smoothing is the so-called Good Turing discounting. It uses ``the count of things you've seen \textit{once} to help estimate the count of things you've \textit{never seen}'' \autocite[their emphasis]{Jurafsky2009}.
-
 
 \subsubsection{Part-of-Speech Tagging}
 
 \ac{POS} are lexical tags for describing the different elements of a sentence. The eight most well-known \ac{POS} are as follows.
 
-\begin{description}
+\begin{description}[leftmargin=2.75cm]
   \item [Noun] an abstract or concrete entity
   \item [Pronoun] a substitute for a noun or noun phrase
   \item [Adjective] a qualifier of a noun
@@ -597,15 +672,13 @@ Another example of smoothing is the so-called Good Turing discounting. It uses `
   \item [Interjection] an emotional greeting or exclamation
 \end{description}
 
-More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc.
+More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix~\ref{app:penntreebank}\marginnote{§~\ref{app:penntreebank}}.
 
 The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Fausroll book \citeyear{Jarry1996}.}.
 
 \begin{quote}
-  In\slash{}IN this\slash{}DT [year\slash{}NN Eighteen\slash{}CD Hundred\slash{}CD and\slash{}CC Ninety-eight\slash{}CD,\slash{}, the\slash{}DT Eighth\slash{}CD day\slash{}NN of\slash{}IN February\slash{}NNP]$^{\text{TIME}}$,\slash{}, Pursuant\slash{}JJ to\slash{}IN article\slash{}NN [819\slash{}CD]$^{\text{NUMBER}}$ of\slash{}IN the\slash{}DT [Code\slash{}NN of\slash{}IN Civil\slash{}NNP Procedure\slash{}NNP]$^{\text{DOCUMENT}}$ and\slash{}CC at\slash{}IN the\slash{}DT request\slash{}NN of\slash{}IN [M.\slash{}NN and\slash{}CC Mme.\slash{}NN Bonhomme\slash{}NNP (\slash{}(Jacques\slash{}NNP)\slash{})]$^{\text{PERSON}}$,\slash{}, proprietors\slash{}NNS of\slash{}IN a\slash{}DT house\slash{}NN situate\slash{}JJ at\slash{}IN [Paris\slash{}NNP,\slash{}, 100\slash{}CD bis\slash{}NN,\slash{}, rue\slash{}NN Richer\slash{}NNP]$^{\text{LOCATION}}$,\slash{}, the\slash{}DT aforementioned\slash{}JJ having\slash{}VBG address\slash{}NN for\slash{}IN service\slash{}NN at\slash{}IN my\slash{}PRP residence\slash{}NN and\slash{}CC further\slash{}JJ at\slash{}IN the\slash{}DT [Town\slash{}NNP Hall\slash{}NNP]$^{\text{FACILITY}}$ of\slash{}IN [Q\slash{}NNP borough\slash{}NN]$^{\text{LOCATION}}$.\slash{}.
+  In\slash{}IN this\slash{}DT year\slash{}NN Eighteen\slash{}CD Hundred\slash{}CD and\slash{}CC Ninety-eight\slash{}CD,\slash{}, the\slash{}DT Eighth\slash{}CD day\slash{}NN of\slash{}IN February\slash{}NNP,\slash{}, Pursuant\slash{}JJ to\slash{}IN article\slash{}NN 819\slash{}CD of\slash{}IN the\slash{}DT Code\slash{}NN of\slash{}IN Civil\slash{}NNP Procedure\slash{}NNP and\slash{}CC at\slash{}IN the\slash{}DT request\slash{}NN of\slash{}IN M.\slash{}NN and\slash{}CC Mme.\slash{}NN Bonhomme\slash{}NNP (\slash{}(Jacques\slash{}NNP)\slash{}),\slash{}, proprietors\slash{}NNS of\slash{}IN a\slash{}DT house\slash{}NN situate\slash{}JJ at\slash{}IN Paris\slash{}NNP,\slash{}, 100\slash{}CD bis\slash{}NN,\slash{}, rue\slash{}NN Richer\slash{}NNP,\slash{}, the\slash{}DT aforementioned\slash{}JJ having\slash{}VBG address\slash{}NN for\slash{}IN service\slash{}NN at\slash{}IN my\slash{}PRP residence\slash{}NN and\slash{}CC further\slash{}JJ at\slash{}IN the\slash{}DT Town\slash{}NNP Hall\slash{}NNP of\slash{}IN Q\slash{}NNP borough\slash{}NN .\slash{}.
 \end{quote}
-
-
 
 % \begin{equation}
 %   t_1^n = \underset{t_1^n}{\text{argmax}} \ P(w_1^n \mid t_1^n) P(t_1^n)
@@ -638,15 +711,15 @@ The process of adding tags to the words of a text is called `\ac{POS} tagging' o
 % Or the probability of a third person singular verb being `is' is 0.47.
 
 
-\subsubsection{Hidden Markov \& Maximum Entropy}
+\subsubsection{Maximum Entropy}
 
-Hidden Markov or maximum entropy models are used for sequence classification, e.g.\ part-of-speech tagging. 
+Hidden Markov or maximum entropy models can be used for sequence classification, e.g.\ part-of-speech tagging. 
 
 \begin{quotation}
   The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. \sourceatright{\autocite{Jurafsky2009}}
 \end{quotation}
 
-A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\marginnote{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate such a probability \autocite{Jurafsky2009}.
+A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\marginnote{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$, where  \autocite{Jurafsky2009}.
 
 \begin{equation}
   p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
@@ -655,55 +728,48 @@ A classifier like the maximum entropy model will usually produce a probability o
 % \myequations{pcdlambda}
 
 \begin{conditions}
-p(c|x)   & the probability of something being of class $c$ given $x$ \\
-c        & the class \\
-x        & the observation (i.e. the word) \\
 f_i(c,x) & the feature (e.g. ``this word ends in \textit{-ing}'' or ``the previous word was \textit{the}'') \\
 w_i      & the weight of the feature $f_i$
 \end{conditions}
 
 This is best understood using an example from Jurafsky and Martin \citeyear{Jurafsky2009}.
 
-Consider the incompletely tagged sentence below. We want to find the most suitable tag for the word ``race''.
+\todo{finish example}
 
-\begin{quote}
-  Secretariat/NNP is/BEZ expected/VBN to/TO race/?? tomorrow/NR
-\end{quote}
+% Consider the incompletely tagged sentence below. We want to find the most suitable tag for the word ``race''.
 
-Features for $f_i(c,x)$ might have the following conditions. If these are true, the result would be 1, if false then 0.
+% \begin{quote}
+%   Secretariat/NNP is/BEZ expected/VBN to/TO race/?? tomorrow/NR
+% \end{quote}
 
-\begin{itemize}
-  \item $x= \text{``race'' } \& \ c = \text{NN}$
-  \item $t_{i-1}= \text{TO } \& \ c = \text{VB}$
-  \item $\text{suffix}(x)= \text{``ing'' } \& \ c = \text{VBG}$
-  \item $\text{is\_lower\_case}(x) \ \& \ c = \text{VB}$
-  \item $x = \text{``race''}\ \& \ c = \text{VB}$
-  \item $t_{i-1} = \text{TO}\ \& \ c = \text{NN}$
-\end{itemize}
+% Features for $f_i(c,x)$ might have the following conditions. If these are true, the result would be 1, if false then 0.
 
-Weights are then assigned:
+% \begin{itemize}
+%   \item $x= \text{``race'' } \& \ c = \text{NN}$
+%   \item $t_{i-1}= \text{TO } \& \ c = \text{VB}$
+%   \item $\text{suffix}(x)= \text{``ing'' } \& \ c = \text{VBG}$
+%   \item $\text{is\_lower\_case}(x) \ \& \ c = \text{VB}$
+%   \item $x = \text{``race''}\ \& \ c = \text{VB}$
+%   \item $t_{i-1} = \text{TO}\ \& \ c = \text{NN}$
+% \end{itemize}
 
-\begin{table}[!htbp]
-\centering
-\caption{My caption}
-\label{tab:featweights}
-\begin{tabu}{llllllll}
-\toprule
-   &   & $\bm{f_1}$ & $\bm{f_2}$ & $\bm{f_3}$ & $\bm{f_4}$ & $\bm{f_5}$ & $\bm{f_6}$ \\
-\midrule
-\textbf{VB} & f & 0     & 1     & 0     & 1     & 1     & 0     \\
-\textbf{VB} & w &       & 0.8   &       & 0.01  & 0.1   &       \\
-\textbf{NN} & f & 1     & 0     & 0     & 0     & 0     & 1     \\
-\textbf{NN} & w &       & 0.8   &       &       &       & -1.3  \\
-\bottomrule
-\end{tabu}
-\end{table}
+% Weights are then assigned:
 
-
-19 april - 24 april
-miami
-
-
+% \begin{table}[!htbp]
+% \centering
+% \caption{My caption}
+% \label{tab:featweights}
+% \begin{tabu}{llllllll}
+% \toprule
+%    &   & $\bm{f_1}$ & $\bm{f_2}$ & $\bm{f_3}$ & $\bm{f_4}$ & $\bm{f_5}$ & $\bm{f_6}$ \\
+% \midrule
+% \textbf{VB} & f & 0     & 1     & 0     & 1     & 1     & 0     \\
+% \textbf{VB} & w &       & 0.8   &       & 0.01  & 0.1   &       \\
+% \textbf{NN} & f & 1     & 0     & 0     & 0     & 0     & 1     \\
+% \textbf{NN} & w &       & 0.8   &       &       &       & -1.3  \\
+% \bottomrule
+% \end{tabu}
+% \end{table}
 
 
 % To get the single best class with the highest probability we need to compute the following.
@@ -745,112 +811,37 @@ The empirical expectation is the sum of all occurrences where a feature is true 
 \end{equation}
 % \myequations{epirical}
 
-\paragraph{Evaluation}
+% \paragraph{Evaluation}
 
-\begin{equation}
-  Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
-  \label{eq:preci}
-\end{equation}
-% \myequations{preci}
+% \begin{equation}
+%   Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
+%   \label{eq:preci}
+% \end{equation}
+% % \myequations{preci}
 
-\begin{equation}
-  Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
-  \label{eq:reca}
-\end{equation}
-% \myequations{reca}
+% \begin{equation}
+%   Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
+%   \label{eq:reca}
+% \end{equation}
+% % \myequations{reca}
 
-\begin{equation}
-  F_1 = \frac{2PR}{P+R}
-  \label{eq:f1mes}
-\end{equation}
-% \myequations{f1mes}
+% \begin{equation}
+%   F_1 = \frac{2PR}{P+R}
+%   \label{eq:f1mes}
+% \end{equation}
+% % \myequations{f1mes}
 
-Errors can be false positives (FP) and false negatives (FN).
+% Errors can be false positives (FP) and false negatives (FN).
 
-\begin{itemize}
-  \item Increasing accuracy (minimizing FP)
-  \item Increasing coverage (minimizing FN)
-\end{itemize}
-
-
-\subsubsection{Damerau-Levensthein}
-
-\begin{fcom}
-  Damerau-Levensthein for clinamen!
-  \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
-\end{fcom}
-
-The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
-
-\begin{equation}
-  d_{a,b}(i,j)=\left\{\begin{matrix*}[l]% chktex 21
-  \max(i,j) & \textrm{if}\min(i,j)=0\\
-  \min\left\{\begin{matrix*}[l]% chktex 21
-  d_{a,b}(i-1,j)+1\\
-  d_{a,b}(i,j-1)+1\\
-  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
-  d_{a,b}(i-2,j-2)+1
-  \end{matrix*}\right. & \textrm{if}\ i,j > 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
-  \min\left\{\begin{matrix*}[l]% chktex 21
-  d_{a,b}(i-1,j)+1\\
-  d_{a,b}(i,j-1)+1\\
-  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
-\end{matrix*}\right. & \textrm{otherwise.}
-  \end{matrix*}\right.
-  \label{eq:DL}
-\end{equation}
-% \myequations{DL}
-
-where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
-
-Each recursive call matches one of the cases covered by the Dame\-rau-Leven\-shtein distance:
-
-$d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
-$d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
-$d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
-$d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
-
-
-\subsection{Speech}
-
-
-\subsubsection{Text Normalisation}
-
-Stemming techniques that are useful for this are the following \autocite[Ch.2]{Manning2009}.
-
-\begin{description}
-  \item [Tokenisation] discarding white spaces and punctuation and making every term a token
-  \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
-  \item [Case-folding] converting everything to lower case
-  \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
-\end{description}
-
-
-\subsubsection{Tokenisation}
-
-
-\subsection{Syntax}
-
-Probabilities are based on counting things. Counting things in natural language is based on a corpus (pl corpora), a computer readable collection of text or speech.
-
-Cats versus cat?
-
-Same lemma but different wordforms.
-
-\begin{itemize}
-  \item A lemma is a set of lexical forms that have the same stem. (e.g.\ go)
-  \item A wordform is the full inflected or derived form of the word. (e.g.\ goes)
-  \item A word type is a distinct word in a corpus (repetitions are not counted but case sensitive).
-  \item A word token is any word (repetitions are counted repeatedly)
-\end{itemize}
-
-The process of converting all words in a text to their lemma (e.g.\ goes $\to$ go) is called lemmatisation and the process of separating out all words in a text is called tokenisation or word segmentation.
+% \begin{itemize}
+%   \item Increasing accuracy (minimizing FP)
+%   \item Increasing coverage (minimizing FN)
+% \end{itemize}
 
 
 \subsubsection{Grammars}
 
-A language is modelled using a grammar, specifically a Context-Free-Grammar or CFG.\@ Such a grammar normally consists or rules and a lexicon. For example a rule could be NP $\to$ Det Noun, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. The two parse trees would then look like this:
+A language is modelled using a grammar, specifically a Context-Free-Grammar. Such a grammar normally consists or rules and a lexicon. For example a rule could be `NP $\to$ Det Noun', where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. Its two parse trees would then look like this (see figure~\ref{fig:trees}\marginnote{\faicon{object-group}~\ref{fig:trees}}):
 
 \begin{figure}[!htbp]
   \centering
@@ -863,8 +854,8 @@ A language is modelled using a grammar, specifically a Context-Free-Grammar or C
   \Tree[.NP [.Det \emph{the} ]
   [.Noun \emph{book} ]]
   \end{minipage}
-\caption[Grammars]{Grammars}
-\label{Grammars}
+\caption[Parse trees]{Two parse trees}
+\label{fig:trees}
 \end{figure}
 
 The parse tree for the previous example sentence from Faustroll is shown below, in horizontal for convenience.
@@ -876,11 +867,11 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
       (NP (DT this) (NN year) (NNPS Eighteen) (NNP Hundred)
         (CC and)
         (NNP Ninety-eight)))
-    (, ,)% chktex 26
+    (, ,)
     (NP
       (NP (DT the) (JJ Eighth) (NN day))
       (PP (IN of)
-        (NP (NNP February) (, ,) (NNP Pursuant)))% chktex 26
+        (NP (NNP February) (, ,) (NNP Pursuant)))
       (PP
         (PP (TO to)
           (NP
@@ -901,7 +892,7 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
       (PRN (-LRB- -LRB-)
         (NP (NNP Jacques))
         (-RRB- -RRB-))
-      (, ,)% chktex 26
+      (, ,)
       (NP
         (NP (NNS proprietors))
         (PP (IN of)
@@ -909,13 +900,13 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
             (NP (DT a) (NN house) (NN situate))
             (PP (IN at)
               (NP (NNP Paris))))))
-      (, ,)% chktex 26
+      (, ,)
       (NP (CD 100) (NN bis))
-      (, ,))% chktex 26
+      (, ,))
     (VP (VBP rue)
       (NP
         (NP (NNP Richer))
-        (, ,)% chktex 26
+        (, ,)
         (NP (DT the) (JJ aforementioned)
           (UCP
             (S
@@ -935,54 +926,13 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
                 (PP (IN of)
                   (NP (NNP Q))))))
           (NN borough))))
-    (. .)))% chktex 26
+    (. .)))
 \end{alltt}
 
 This particular tree was generated using the Stanford Parser at \url{http://nlp.stanford.edu:8080/parser/index.jsp}.
 Given the rather complicated nature of the words and sentence structure, some of the labels might be wrong.
 
-
-\subsubsection{Parsing}
-
 Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar a parsing algorithm should produce a parse tree for the given sentence.
-
-
-\subsection{Semantics}
-
-
-\subsubsection{Word Sense}
-
-Here’s my \ac{hyper} term. \ac{holo} \ac{hyper}
-
-I looked into linguistics for the purpose of patadata. This section definitely needs some expanding. Some concepts that might be relevant include (taken from Wikipedia):
-
-\begin{description}
-  \item [Hyponym] – subcategory of something
-  \item [Hypernym] – top category of some things
-  \item [Meronym] – member of something (e.g. finger is meronym to hand, wheel to car)
-  \item [Holonym] – e.g. tree is holonym of bark, trunk, limb… opposite of meronym
-  \item [Troponym] – presence of “manner” between things (e.g. to traipse and to mince = walk a certain way)
-  \item [Homonym] – same spelling but different sound and meaning = heteronym – same sound but different spelling = heterography – same meaning = synonym
-  \item [Antonym] – opposite
-  \item [Metonym] – figure of speech (e.g. Hollywood for American movies) not quite metaphor but similar.
-\end{description}
-
-I need to find REFERENCES for this section.
-
-
-\subsubsection{WordNet}
-
-
-\subsubsection{Naive Bayes}
-
-[3] page 234…
-
-\begin{quote}
-  (Wikipedia): A naive Bayes classifier is a simple probabilistic classifier based on applying Bayes' theorem with strong (naive) independence assumptions. A more descriptive term for the underlying probability model would be ``independent feature model''.
-\end{quote}
-
-
-\subsection{Applications}
 
 
 \subsubsection{Named Entity Recognition}
@@ -992,25 +942,10 @@ A named entity can be anything that can be referred to by a proper name, such as
 Example (first sentence in Faustroll):
 
 \begin{quote}
-  In this year Eighteen Hundred and Ninety-eight, the Eighth day of February, Pursuant to article 819 of the Code of Civil Procedure and at the request of M. and Mme. Bonhomme (Jacques), proprietors of a house situate at Paris, 100 bis, rue Richer, the aforementioned having address for service at my residence and further at the Town Hall of Q borough.
-\end{quote}
-
-\begin{quote}
   In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]$^{\text{TIME}}$, Pursuant to article [819]$^{\text{NUMBER}}$ of the [Code of Civil Procedure]$^{\text{DOCUMENT}}$ and at the request of [M. and Mme. Bonhomme (Jacques)]$^{\text{PERSON}}$, proprietors of a house situate at [Paris, 100 bis, rue Richer]$^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the [Town Hall]$^{\text{FACILITY}}$ of [Q borough]$^{\text{LOCATION}}$.
 \end{quote}
 
-Gazetteers (lists of place or person names for example) can help with the detection of these named entities.
-
-
-\subsubsection{Information Retrieval}
-
-
-\paragraph{Information Extraction}
-[1] Chapter 22, p 759…
-
-``The process of information extraction (IE), also called text analytics, turns the unstructured information embedded in texts into structured data.''
-
-IE involves named entity recognition (NER), relation detection and classification, event detection and classification and temporal analysis.
+So-called gazetteers (lists of place or person names for example) can help with the detection of these named entities.
 
 
 \stopcontents[chapters]
