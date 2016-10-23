@@ -486,7 +486,7 @@ Since a single query for a popular word can results in millions of retrieved doc
 
 Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing. For example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
 
-There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} I used for \url{pata.physics.wtf}.
+There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} used for \url{pata.physics.wtf}.
 
 % \begin{description}
 %   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
@@ -568,14 +568,7 @@ ab|cd                      & match ab or cd               \\
 
 \subsubsection{Damerau-Levensthein}
 
-\begin{fcom}
-  Damerau-Levensthein for clinamen!
-  \url{https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance}
-\end{fcom}
-
-
-\todo{use algo from better source}
-The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ where:
+The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}\marginnote{$\bm{\Sigma}$~\ref{eq:DL}})\autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word.
 
 \begin{equation}
   d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
@@ -596,14 +589,15 @@ The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $
 \end{equation}
 % \myequations{DL}
 
-where $1_{(a_i \neq b_j)}$ is the indicator function equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.
+$1_{(a_i \neq b_j)}$ is equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise. 
 
-Each recursive call matches one of the cases covered by the Dame\-rau-Leven\-shtein distance:
-
-$d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b).\\
-$d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b).\\
-$d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same.\\
-$d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols.
+\begin{itemize}
+  \item $d_{a,b}(i-1,j) + 1$ corresponds to a deletion (from a to b)
+  \item $d_{a,b}(i,j-1) + 1$ corresponds to an insertion (from a to b)
+  \item $d_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}$  corresponds to a match or mismatch, depending on whether the respective symbols are the same
+  \item $d_{a,b}(i-2,j-2) + 1$  corresponds to a transposition between two successive symbols
+\end{itemize}
+\todo{refer back to this from implementation}
 
 
 \subsection{Sequences}
@@ -732,14 +726,16 @@ f_i(c,x) & the feature (e.g. ``this word ends in \textit{-ing}'' or ``the previo
 w_i      & the weight of the feature $f_i$
 \end{conditions}
 
-This is best understood using an example from Jurafsky and Martin \citeyear{Jurafsky2009}.
+% \spirals
 
-\todo{finish example}
+% This is best understood using an example from Jurafsky and Martin \citeyear{Jurafsky2009}.
+
+% \todo{finish example}
 
 % Consider the incompletely tagged sentence below. We want to find the most suitable tag for the word ``race''.
 
 % \begin{quote}
-%   Secretariat/NNP is/BEZ expected/VBN to/TO race/?? tomorrow/NR
+%   Secretariat/NNP is/BEZ expected/VBN to/TO race/?? tomorrow/
 % \end{quote}
 
 % Features for $f_i(c,x)$ might have the following conditions. If these are true, the result would be 1, if false then 0.
@@ -778,38 +774,43 @@ This is best understood using an example from Jurafsky and Martin \citeyear{Jura
 %   \hat{c} = \underset{c\in C}{\text{argmax}} \ P(c \mid d,\lambda)
 %   \label{eq:hatc}
 % \end{equation}
-% \myequations{hatc}
+% % \myequations{hatc}
 
-\begin{table}[!htbp]
-\caption[MaxEnt Example table]{MaxEnt Example table}
-\label{tab:maxent}
-  \centering
-  \begin{tabu}{lll}
-  \toprule
-  PERSON    & LOCATION   & DRUG      \\ \midrule
-  In Québec & In Québec  & In Québec \\
-  0         & 1.8 + -0.6 & 0.3       \\
-  \bottomrule
-  \end{tabu}
-\end{table}
 
-Features:
+% in quebec example
+% \begin{table}[!htbp]
+% \caption[MaxEnt Example table]{MaxEnt Example table}
+% \label{tab:maxent}
+%   \centering
+%   \begin{tabu}{lll}
+%   \toprule
+%   PERSON    & LOCATION   & DRUG      \\ \midrule
+%   In Québec & In Québec  & In Québec \\
+%   0         & 1.8 + -0.6 & 0.3       \\
+%   \bottomrule
+%   \end{tabu}
+% \end{table}
 
-$f1(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ w-1 = \text{``in''} \wedge \ \text{isCapitalized}(w)]$\\
-$f2(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ \text{hasAccentedLatinChar}(w)]$\\
-$f3(c,d) \equiv [ \ c = \text{DRUG} \ \wedge \ \text{ends}(w,\text{``c''})]$
+% Features:
 
-$P(\text{LOCATION} \mid \text{in Québec}) = \frac{e^{1.8} e^{–0.6}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.586$\\
-$P(\text{DRUG} \mid \text{in Québec}) = \frac{e^{0.3}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.238$\\
-$P(\text{PERSON} \mid \text{in Québec}) = \frac{e^0}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.176$
+% $f1(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ w-1 = \text{``in''} \wedge \ \text{isCapitalized}(w)]$\\
+% $f2(c,d) \equiv [ \ c = \text{LOCATION} \ \wedge \ \text{hasAccentedLatinChar}(w)]$\\
+% $f3(c,d) \equiv [ \ c = \text{DRUG} \ \wedge \ \text{ends}(w,\text{``c''})]$
 
-The empirical expectation is the sum of all occurrences where a feature is true for one of our observed datums.
+% $P(\text{LOCATION} \mid \text{in Québec}) = \frac{e^{1.8} e^{–0.6}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.586$\\
+% $P(\text{DRUG} \mid \text{in Québec}) = \frac{e^{0.3}}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.238$\\
+% $P(\text{PERSON} \mid \text{in Québec}) = \frac{e^0}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.176$
 
-\begin{equation}
-  empirical \ E(f_i)= \sum_{(c,d) \ \in \ observed(C,D)}f_i(c,d)
-  \label{eq:epirical}
-\end{equation}
-% \myequations{epirical}
+
+
+
+% The empirical expectation is the sum of all occurrences where a feature is true for one of our observed datums.
+
+% \begin{equation}
+%   empirical \ E(f_i)= \sum_{(c,d) \ \in \ observed(C,D)}f_i(c,d)
+%   \label{eq:epirical}
+% \end{equation}
+% % \myequations{epirical}
 
 % \paragraph{Evaluation}
 
@@ -858,7 +859,7 @@ A language is modelled using a grammar, specifically a Context-Free-Grammar. Suc
 \label{fig:trees}
 \end{figure}
 
-The parse tree for the previous example sentence from Faustroll is shown below, in horizontal for convenience.
+Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar, a parsing algorithm should produce a parse tree for the given sentence. The parse tree for the first sentence from Faustroll is shown below, in horizontal for convenience. 
 
 \begin{alltt}
 (ROOT
@@ -930,14 +931,11 @@ The parse tree for the previous example sentence from Faustroll is shown below, 
 \end{alltt}
 
 This particular tree was generated using the Stanford Parser at \url{http://nlp.stanford.edu:8080/parser/index.jsp}.
-Given the rather complicated nature of the words and sentence structure, some of the labels might be wrong.
-
-Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar a parsing algorithm should produce a parse tree for the given sentence.
 
 
 \subsubsection{Named Entity Recognition}
 
-A named entity can be anything that can be referred to by a proper name, such as person-, place- or organisation names and times and amounts.
+A named entity can be anything that can be referred to by a proper name, such as person, place or organisation names and times and amounts.
 
 Example (first sentence in Faustroll):
 
@@ -946,12 +944,6 @@ Example (first sentence in Faustroll):
 \end{quote}
 
 So-called gazetteers (lists of place or person names for example) can help with the detection of these named entities.
-
-\todo{discuss}
-http://dev.null.org/dadaengine/
-https://pdos.csail.mit.edu/archive/scigen/
-https://artybollocks.com/
-
 
 
 \stopcontents[chapters]
