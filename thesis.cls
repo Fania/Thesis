@@ -693,6 +693,12 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+
+% We need layers to draw the block diagram
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
 \tikzstyle{box} = [draw, minimum height = 2em, minimum width = 2cm]
 
 \forestset{

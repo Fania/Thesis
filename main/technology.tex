@@ -475,7 +475,7 @@ Since a single query for a popular word can results in millions of retrieved doc
 \section{Natural Language Processing}
 \label{s:nlp}
 
-\ac{NLP} is a discipline within computer science which is also known as follows \autocite{Jurafsky2009}\footnote{The organisational structure of this chapter is borrowed from \autocite{Jurafsky2009}.}.
+\ac{NLP} is a discipline within computer science which is also known as follows \autocite{Jurafsky2009}.
 
 \begin{itemize}
   \item Speech and language processing
@@ -488,20 +488,10 @@ Goals of \ac{NLP} are to get computers to perform useful tasks involving human l
 
 There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} used for \url{pata.physics.wtf}.
 
-% \begin{description}
-%   \item [PlaintextCorpusReader] Reader for corpora that consist of plaintext documents. Paragraphs are assumed to be split using blank lines. Sentences and words can be tokenized using the default tokenizers, or by custom tokenizers specificed as parameters to the constructor.
-%   \item [Text] A wrapper around a sequence of simple (string) tokens, which is intended to support initial exploration of texts (via the interactive console). Its methods perform a variety of analyses on the text’s contexts (e.g., counting, concordancing, collocation discovery), and display the results.
-%   \item [index (word)] Find the index of the first occurrence of the word in the text.
-%   \item [count (word)] Count the number of times this word appears in the text.
-% \end{description}
-
 
 \subsection{Words}
 
-% Cats versus cat?
-% Same lemma but different wordforms.
-
-A lemma is a set of lexical forms that have the same stem (e.g.\ go). A wordform is the full inflected or derived form of the word (e.g.\ goes). A word type is a distinct word in a corpus (repetitions are not counted but case sensitive). A word token is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to word processing of text \autocite{Manning2009}.
+A lemma is a set of lexical forms that have the same stem (e.g.\ go). A wordform is the full inflected or derived form of the word (e.g.\ goes). A word type is a distinct word in a corpus (repetitions are not counted but case sensitive). A word token is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text \autocite{Manning2009}.
 
 \begin{description}
   \item [Tokenisation] discarding white spaces and punctuation and making every term a token
@@ -532,6 +522,8 @@ WordNet is a large lexical database for English, containing \num{166000} word fo
 \end{description}
 
 Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).
+
+Appendix~\ref{app:wordnet}\marginnote{§~\ref{app:wordnet}} shows an example result produced by WordNet rendered for a web browser. 
 
 
 \subsubsection{Regular Expressions}
@@ -568,7 +560,7 @@ ab|cd                      & match ab or cd               \\
 
 \subsubsection{Damerau-Levensthein}
 
-The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}\marginnote{$\bm{\Sigma}$~\ref{eq:DL}})\autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word.
+The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}\marginnote{$\bm{\Sigma}$~\ref{eq:DL}})\autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
 
 \begin{equation}
   d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
