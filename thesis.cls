@@ -810,6 +810,12 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{caption} % for subtables
 % \usepackage{subcaption} % for subtables
 
+% memoir style for captions
+\captionnamefont{\sffamily\footnotesize}
+\captiontitlefont{\sffamily\footnotesize}
+\captionwidth{0.7\linewidth}
+
+
 \usepackage{multirow}
 
 
