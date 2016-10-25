@@ -37,13 +37,13 @@ and to draw a judgement from Heaven upon you for the Injustice.
 Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional \ac{IR} however is usually evaluated using two metrics known as precision and recall \autocite{Baeza-Yates2011}. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.
 
 \begin{equation}
-  Precision = \frac{relevant \ documents \ retrieved}{retrieved \ documents}
+  Precision = \frac{\text{relevant documents retrieved}}{\text{retrieved documents}}
   \label{eq:precision}
 \end{equation}
 % \myequations{precision}
 
 \begin{equation}
-  Recall = \frac{relevant \ documents \ retrieved}{relevant \ documents}
+  Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 \label{eq:recall}
 \end{equation}
 % \myequations{recall}
@@ -70,7 +70,7 @@ But for many web searches is it not necessary to calculate the average of all re
 The Text REtrieval Conference (TREC) \autocite{Nist2016} is a conference that provides large test sets of data \autocite{Trec2011} to participants and let's them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages for example.
 
 There are certain other factors that can be or should be evaluated when looking at a complete search system, as shown below. 
-\todo{check ref}
+\todo{check ref, is this in baeza yates?}
 
 \begin{itemize}
   \item Speed of crawling.
@@ -92,8 +92,7 @@ Sawle, Raczinski and Yang \citeyear{Sawle2011} discussed an initial approach to 
 \section{Evaluating Creative Computers}
 \label{s:creattributes}
 
-This section moves on from evaluating search and focuses on evaluating creativity in computers. It will not cover measurements of creativity in humans. 
-\todo{am i sure?}
+This section moves on from evaluating search and focuses on evaluating creativity in computers.
 
 Evaluating human creativity objectively seems problematic; evaluating computer creativity seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity (see section~\ref{s:humancreativity}\marginnote{§~\ref{s:humancreativity}}) and directly applying them to machines (see section~\ref{s:compcreativity}\marginnote{§~\ref{s:compcreativity}}) seems logical but may be the wrong (anthropomorphic) approach. Adapting Mayer's five big questions \citeyear{Mayer1999} to machines does not seem to capture the real issues at play. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of any or all of the following:
 
@@ -113,9 +112,8 @@ For instance, is the programmer the only creative agent, or are users (i.e. audi
   \item web-based (e.g. is distributed and/or open to interactions, perhaps via an API)
 \end{itemize}
 
-\todo{write better lit review for this section}
 \todo{add francois stuff}
-\todo{check ICCC conference 2014 and 2015}
+\todo{check ICCC conference 2014 and 2015 and 2016}
 
 
 \subsection{Output minus Input}
@@ -230,7 +228,7 @@ Evaluation happens at every stage of the process (i.e. from design $\to$ impleme
   \item reflective practice
 \end{itemize}
 
-She goes on to introduce the \ac{MMCE} in figure~\ref{fig:candy02}\marginnote{\faicon{object-group}~\ref{fig:candy02}} with four main elements of people, process, product and context \citeyear[p.11]{Candy2012} similar to some of the models of creativity\marginnote{§~\ref{ch:creativity}} we have seen in chapter~\ref{ch:creativity}.
+She goes on to introduce the \ac{MMCE} in figure~\ref{fig:mmce}\marginnote{\faicon{object-group}~\ref{fig:mmce}} with four main elements of people, process, product and context \citeyear[p.11]{Candy2012} similar to some of the models of creativity\marginnote{§~\ref{ch:creativity}} we have seen in chapter~\ref{ch:creativity}.
 
 \begin{figure}[!htbp]
   \centering
@@ -294,24 +292,28 @@ She proposes the following values or criterias for measurement \citeyear{Candy20
   \item [Context] studio, living laboratory, public space, museum, constraints, opportunities, acceptability, leading edge (design quality, usable, convincing, adaptable, effective, innovative, transcendent)
 \end{description}
 
-Furthermore it is interesting to know the judging criteria for the Prix Ars Electronica, an international competition for Cyber Arts to be``aesthetics, originality, excellence of execution, compelling conception and innovation in technique of the presentation'' \autocite[cited in][p.18]{Candy2012}.
-\todo{do i see my product as cyber art?}
 
-
-\todo{rewrite}
 \subsection{CSF}
 
-Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems \citeyear{Wiggins2006} which is largely based on Boden's theory of creativity \citeyear{Boden2003}\marginnote{§~\ref{s:boden}}. The framework uses three criteria for measuring creativity: ``relevance, acceptability and quality''.
+Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems called \ac{CSF}\citeyear{Wiggins2006} which is largely based on Boden's theory of creativity \citeyear{Boden2003}\marginnote{§~\ref{s:boden}}. The framework uses three criteria for measuring creativity: ``relevance, acceptability and quality''. Graeme Ritchie then contributed to this framework with several revisions \citeyear{Ritchie2012}.
 
-Geraint Wiggins previously described a formal notation and set of rules for the description, analysis and comparison of creative systems in the form of his \ac{CSF} \citeyear{Wiggins2006} which was largely based on Margaret Boden's theory of creativity \autocite{Boden2003}. Graeme Ritchie then contributed to this framework with several revisions \citeyear{Ritchie2012}.
-
-\todo{It's not an aesthetic framework, but rather a functionalist framework}
+% \todo{It's not an aesthetic framework, but rather a functionalist framework}
 
 The \ac{CSF} provides a formal description for Boden's concepts of exploratory and transformational creativity. Wiggins's `R–transformation' and `T–transformation' is akin to Boden's `H-creativity' and `P-creativity' respectively. To enable the transition from exploratory to transformational creativity in his framework, Wiggins introduced meta-rules which allow us to redefine our conceptual space in a new way.
 
-It is important to note here that the exploratory search in an information retrieval sense should not be mistaken with what is discussed here. Exploratory search (for a creative solution to a problem) in the Wiggins/Ritchie/Boden sense happens one step before transformational search. This means that we want to end up with transformational tools from this framework (rather than exploratory ones) to use in our exploratory Web search system.
+It is important to note here that the exploratory search in an \ac{IR} sense (as discussed in section~\ref{s:browsing}\marginnote{§~\ref{s:browsing}}) should not be mistaken with the topic at hand. Exploratory search (for a creative solution to a problem) in the Wiggins/Ritchie/Boden sense happens one step before transformational search. This means that we want to end up with transformational tools from this framework (rather than exploratory ones) to use in our exploratory Web search system.
 
 Ritchie described the \ac{CSF} as a set of initial concepts, which create `further concepts one after another, thus ``exploring the space''' but also argued that a search system would practically only go through a limited number of steps and therefore proposed some changes and additions to the framework \citeyear{Ritchie2012}. He summarised Wiggins' original \ac{CSF} as consisting of the following basic elements:
+
+% \begin{conditions}
+%   U & the universal set of concepts \\
+%   L & the language for expressing the relevant mappings \\
+%   R & a symbolic representation of the acceptability map \\
+%   E & a symbolic representation of the quality mapping \\
+%   T & a symbolic representation of the search mechanism \\
+%   \[ \] & an interpreter for expressions like $R$ and $E$ \\
+%   \langle , , \rangle & an interpreter for expressions like $T$
+% \end{conditions}
 
 \begin{enumerate}
 	\item the universal set of concepts $U$,
@@ -319,88 +321,46 @@ Ritchie described the \ac{CSF} as a set of initial concepts, which create `furth
 	\item a symbolic representation of the acceptability map $R$,
 	\item a symbolic representation of the quality mapping $E$,
   \item a symbolic representation of the search mechanism $T$,
-	\item an interpreter for expressions like 3 and 4 $[ ]$, and
-	\item an interpreter for expressions like 5 $\langle , , \rangle$.
+	\item an interpreter for expressions like 3 and 4 $[ \ ]$, and
+	\item an interpreter for expressions like 5 $\langle \ , \ , \ \rangle$.
 \end{enumerate}
 
-This set of elements is described as the object-level (enabling exploratory search). The meta-level (enabling transformational search) has the same seven elements with one exception; the universal set of concepts $U$ contains concepts described at the object-level. This allows transformations to happen; concepts from the object-level are searched using criteria and mechanisms (elements 2 to 5) from the meta-level, giving rise to a new and different subset of concepts to those which an object-level search would have produced.
+This set of elements is described as the `object-level' (enabling exploratory search). The `meta-level' (enabling transformational search) has the same seven elements with one exception; the universal set of concepts $U$ contains concepts described at the object-level. This allows transformations to happen; concepts from the object-level are searched using criteria and mechanisms (elements 2 to 5) from the meta-level, giving rise to a new and different subset of concepts to those which an object-level search would have produced.
 
-A typical search process would go as follows. We start with an initial set of concepts C that represent our conceptual space and a query. We then explore C and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden's sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden's transformational search) with slightly different quality criteria, as suggested in the next section.
+A typical search process would go as follows. We start with an initial set of concepts $C$ that represent our conceptual space and a query. We then explore $C$ and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden's sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden's transformational search) with slightly different quality criteria.
 
-\spirals
+Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework as shown below. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \ac{CSF}.
 
-\paragraph{Uncreativity}
-Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework\marginnote{\faicon{table}~\ref{tab:wiggins}}. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \ac{CSF}.
-\todo{explain more}
+\begin{description}
+  \item [Hopeless Uninspiration] $V_\alpha (X) = \emptyset$\\ valued set of concepts is empty
+  \item [Conceptual Uninspiration] $V_\alpha (N_\alpha (X)) = \emptyset$\\ no accepted concepts are valuable
+  \item [Generative Uninspiration] $elements(A) = \emptyset$\\ set of reachable concepts is empty
+  \item [Aberration] $B$ is the set of reachable concepts not in $[N]_\alpha (X)$ and $B \neq \emptyset$\\ search goes outside normal boundaries
+  \item [Perfect Aberration] $V_\alpha (B) = B$
+  \item [Productive Aberration] $V_\alpha (B) \neq \emptyset$ and $V_\alpha (B) \neq B$
+  \item [Pointless Aberration] $V_\alpha (B) = \emptyset$
+\end{description}
 
-\begin{table}[!htbp]
-\caption[Wiggins' uncreative concepts]{Wiggins' uncreative concepts in Ritchie's notation}
-\label{tab:wiggins}
-  \centering
-  \begin{tabu}{XXX}
-  \toprule
-  Hopeless Uninspiration & $V_\alpha (X) = \emptyset$ & valued set of concepts is empty \\
-  Conceptual Uninspiration & $V_\alpha (N_\alpha (X)) = \emptyset$ & no accepted concepts are valuable \\
-  Generative Uninspiration & $elements(A) = \emptyset$ & set of reachable concepts is empty \\
-  Aberration	& $B$ is the set of reachable concepts not in $[N]_\alpha (X)$ and $B \neq \emptyset$ & search goes outside normal boundaries \\
-  Perfect Aberration & $V_\alpha (B) = B$ & \\
-  Productive Aberration &	$V_\alpha (B) \neq \emptyset$ and $V_\alpha (B) \neq B$ & \\
-  Pointless Aberration & $V_\alpha (B) = \emptyset$ & \\
-  \bottomrule
-  \end{tabu}
-\end{table}
+The potential of these definitions of `uncreativity' is further explored in chapter~\ref{ch:aspirations}\marginnote{§~\ref{ch:aspirations}}.
 
-\spirals
+% \spirals
 
-\todo{finish section}
-Researchers at IBM have fallen into the trap of over-simplifying creativity and computational creativity \autocite{Varshney2013}. First they define machine creativity to be a system that produces `novel, useful and quality' artefacts.
+% \todo{finish section}
+% Researchers at IBM have fallen into the trap of over-simplifying creativity and computational creativity \autocite{Varshney2013}. First they define machine creativity to be a system that produces `novel, useful and quality' artefacts.
 
 
-novelty = Bayesian surprise \autocite{Baldi2010}
+% novelty = Bayesian surprise \autocite{Baldi2010}
 
 
-In a diagram on the difference between `computational creativity' and `cognitive informatics and computing' they describe the former as consisting of:
+% In a diagram on the difference between `computational creativity' and `cognitive informatics and computing' they describe the former as consisting of:
 
-\begin{itemize}
-  \item Planning how to make
-  \item Idea generation
-  \item Defining creativity
-  \item Curiosity
-  \item Assessment of creative artefacts
-\end{itemize}
-
-
-
-% Pataphysical Search Framework
-% We have explained earlier that evaluating creative search results largely depends on the user's understanding of relevance, usefulness and creativity. We can define pataphysical concepts and evaluation criteria in terms of the \ac{CSF} to provide a common ground for this understanding. The suggested definitions should provide more suitable criteria for the analysis of creative search results rather than traditional results.
-% Norm	N_α (X)={c ∈X ┤|N(c)> α}
-%  N∈ [0,1]^X
-% Value	V_α (X)={c ∈X ┤|V(c)> α}
-%  V∈ [0,1]^X
-% Pata	P_α (X)={c ∈X ┤|  c∈(CLI(X)∪〖ANT〗_α (X)∪〖ANO〗_α (X)∪SYZ(X)∪ABS(X))}
-%
-% Clinamen	CLI(X)={c ∈X ┤| 〖 N〗_0.9 (N_0.1 (c))} given X ⊆ U
-% (smallest aberration to make biggest difference)
-% Antinomy	〖ANT〗_α (X)={c ∈X ┤|  V(N_0 (c))  > α}
-% given X ⊆ U
-% (reachable  abnormal concepts with value)
-% Anomaly	〖ANO〗_α (X)={c ∈X ┤|N(c)< α}  given X ⊆ U
-% (reachable concepts outside the norm)
-% Syzygy (1)	SYZ(query)= ⋃_(n=0)^3▒〖elements(Q(N,V)^n (query))〗
-% (concepts reachable within 3 steps)
-% Syzygy (2)	SYZ(X)= S'(X)
-% (the transformed set of concepts)
-%  S_obj→ S^meta→ 〖S'〗_obj
-% Absolute	V_1 (N_1 (X))  ≠ \emptyset
-% (criteria for value and norm must be perfectly matched)
-% Table 3 – Extension to the \ac{CSF} to provide a notation for pataphysical concepts. Norm and value are defined in a traditional sense, with the other pataphysical concepts being defined around those two.
-% Table 3 shows various definitions for pataphysical principles that can be applied as criteria in search processes. There are of course more ways in which they could be expressed but as a demonstration this should suffice.
-% 	Combined with a set of evaluative rules inspired by Ritchie (2001), this forms an essential part of creative exploratory search systems. Some example evaluative criteria are shown here:
-% 	The norm and value ratings by themselves have lower importance than the pata rating,
-% 	the average pata rating should be suitably high,
-% 	results with good pata rating should form a significant proportion of the results, and
-% 	there should be a good mixture of the different pataphysical concepts present in the results.
-% Producing, interpreting and evaluating search results based on these ideas, together with a healthy knowledge and apprehension about the system's purpose, should be much more suitable and “fair” than trying to apply conventional measures such as precision and recall to something so subjective.
+% \begin{itemize}
+%   \item Planning how to make
+%   \item Idea generation
+%   \item Defining creativity
+%   \item Curiosity
+%   \item Assessment of creative artefacts
+% \end{itemize}
 
 
 \stopcontents[chapters]
