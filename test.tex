@@ -8,7 +8,58 @@
 
 \begin{document}
 
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}%[node distance = 2cm and 7cm]
 
+    % Mid circle
+    \begin{pgfonlayer}{foreground}
+    \fill[white] (0,0) circle [radius=0.75cm];
+    \draw [->,thick] (0,0.75) to [out=0,in=90] (0.75,0);
+    \draw [->,thick] (0.75,0) to [out=-90,in=0] (0,-0.75);
+    \draw [->,thick] (0,-0.75) to [out=180,in=-90] (-0.75,0);
+    \draw [->,thick] (-0.75,0) to [out=90,in=180] (0,0.75);
+    \end{pgfonlayer}
+
+    % North east
+    \fill [fill=white,draw] (3.5,0.2) -- (0.2,0.2) -- (0.2,3.5) to [out=0,in=90] (3.5,0.2);
+    \draw (1.5,1.5) node {Process};
+    \begin{pgfonlayer}{background}
+    \draw [rounded corners] (2,1) rectangle (7,4);
+    \draw (4.5,2.5) node [node font=\tiny,align=right]{\textbf{Evaluation-2 How?}\\ Problem finding, solution oriented,\\ explanatory, systematic,\\ practice-based, opportunistic\\ empirical reflective,\\ rules, standards};
+    \end{pgfonlayer}
+    \draw (4.5,5) node [node font=\tiny,align=right]{\textbf{Interactions}\\ Working practices, interactive experiences};
+
+    % South east
+    \fill [fill=white,draw] (3.5,-0.2) -- (0.2,-0.2) -- (0.2,-3.5) to [out=0,in=-90] (3.5,-0.2);
+    \draw (1.5,-1.5) node {Product};
+    \begin{pgfonlayer}{background}
+    \draw [rounded corners] (2,-1) rectangle (7,-4);
+    \draw (5,-2.5) node [node font=\tiny, align=right]{\textbf{Evaluation-3 What?}\\ Novel, original, appropriate,\\ useful, surprising, flexible,\\ fluent, engaging};
+    \end{pgfonlayer}
+    \draw (4,-5) node [node font=\tiny,align=right]{\textbf{Outcomes}\\ Artifacts, installations, performances, exhibitions};
+
+    % South west
+    \fill [fill=white,draw] (-0.2,-3.5) -- (-0.2,-0.2) -- (-3.5,-0.2) to [out=-90,in=180] (-0.2,-3.5);
+    \draw (-1.5,-1.5) node {Context};
+    \begin{pgfonlayer}{background}
+    \draw [rounded corners] (-2,-1) rectangle (-7,-4);
+    \draw (-5,-2.5) node [node font=\tiny, align=left]{\textbf{Evaluation-4 Where?}\\ Studio, living laboratory,\\ public space, museum,\\ constraints, opportunities,\\ acceptability, leading edge};
+    \end{pgfonlayer}
+    \draw (-5.3,-5) node [node font=\tiny,align=left]{\textbf{Environment}\\ Resources, costs, tools, time};
+
+    % North west
+    \fill [fill=white,draw] (-0.2,3.5) -- (-0.2,0.2) -- (-3.5,0.2) to [out=90,in=180] (-0.2,3.5);
+    \draw (-1.5,1.5) node {People};
+    \begin{pgfonlayer}{background}
+    \draw [rounded corners] (-2,1) rectangle (-7,4);
+    \draw (-5,2.5) node [node font=\tiny, align=left]{\textbf{Evaluation-1 Who?}\\ Capability, characteristics,\\ track record, reputation,\\ impact, influence};
+    \end{pgfonlayer}
+    \draw (-4.5,5) node [node font=\tiny,align=left]{\textbf{Creators}\\ Artists, designers, participants, performers};
+  \end{tikzpicture}
+  \caption[Candy's MMCE]{Candy's Multi-dimensional Model of Creativity and Evaluation}
+  \label{fig:mmce}
+\end{figure}
 
 % \newpage
 
