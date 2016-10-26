@@ -185,12 +185,12 @@
 % Section Break Line
 \newcommand*\spirals{%
   \begin{center}
-    $\spiral\hspace{1cm}\spiral\hspace{1cm}\spiral$
+    $\spiralimg\hspace{1cm}\spiralimg\hspace{1cm}\spiralimg$
   \end{center}}
 
 
 % SPIRAL
-\newcommand{\spiral}[1][]{\includegraphics[
+\newcommand{\spiralimg}[1][]{\includegraphics[
   height=.7\baselineskip,
   origin=c,% For rotation purposes, rotate around centre
   % viewport=154mm 173mm 0mm 194mm,clip,
@@ -693,6 +693,77 @@ fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 % \usepackage{pgfplots}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+
+% TIKZ SPIRAL
+% USAGE:
+% start radius = <num>, (default is 0)
+% end radius = <num>, (default is 1)
+% start angle = <degrees>, (default is 0)
+% end angle = <degrees>, (default is 0)
+% name = <text>, (defaul is nameless) % This is useful to have coordinates at start and end of spiral
+% revolutions = <num>, (default is 2)
+% center = {<coordinate>}, (default is (0,0)) % Equivalent to shift={<coordinate>}
+% sample rate = <degrees>, (default is 5) % Means: plot one point each <degrees>
+% clockwise (default is false) % This is used as boolean, when present spiral is clockwise
+\makeatletter
+\newif\ifspiral@is@clockwise
+  \pgfkeys{
+    spiral/.is family,
+    spiral,
+    start angle/.initial=0,
+    end angle/.initial=0,
+    start radius/.initial=0,
+    end radius/.initial=1,
+    revolutions/.initial=2,
+    name/.initial=,
+    center/.initial={(0,0)},
+    sample rate/.initial =5,
+    clockwise spiral/.is if=spiral@is@clockwise,
+    clockwise spiral/.default=false,
+    clockwise/.style={clockwise spiral=true},
+    default spiral/.style={start angle=0,end angle=0, start radius=0, end radius=1, revolutions=2, name=, center={(0,0)}, sample rate=5, clockwise spiral=false}
+  }
+  \newcommand\spiral[2][]{
+    \pgfkeys{spiral, default spiral,#2,
+      start angle/.get=\spiral@start@angle,
+      end angle/.get=\spiral@end@angle,
+      start radius/.get=\spiral@start@radius,
+      end radius/.get=\spiral@end@radius,
+      revolutions/.get=\spiral@revolutions,
+      name/.get=\spiral@name,
+      sample rate/.get=\spiral@sample@rate,
+      center/.get=\spiral@center
+      }
+  \def\spiral@start@name{}
+  \def\spiral@end@name{}
+  \ifspiral@is@clockwise
+        \renewcommand*{\spiral@start@angle}{\pgfkeysvalueof{/spiral/end angle}}
+        \renewcommand*{\spiral@end@angle}{\pgfkeysvalueof{/spiral/start angle}}
+        \renewcommand*{\spiral@start@radius}{\pgfkeysvalueof{/spiral/end radius}}
+        \renewcommand*{\spiral@end@radius}{\pgfkeysvalueof{/spiral/start radius}}
+        \if\relax\detokenize{\spiral@name}\relax
+        \else
+          \renewcommand*{\spiral@start@name}{\spiral@name end}
+          \renewcommand*{\spiral@end@name}{\spiral@name start}
+        \fi
+    \else
+        \if\relax\detokenize{\spiral@name}\relax
+        \else
+          \renewcommand*{\spiral@start@name}{\spiral@name start}
+          \renewcommand*{\spiral@end@name}{\spiral@name end}
+        \fi
+  \fi
+  \pgfmathsetmacro{\spiral@domain}{\spiral@end@angle+\spiral@revolutions*360}
+  \pgfmathsetmacro{\spiral@growth}{180*(\spiral@end@radius-\spiral@start@radius)/(pi*(\spiral@domain-\spiral@start@angle))}
+  \draw [#1,
+         shift={\spiral@center},
+         domain=\spiral@start@angle*pi/180:\spiral@domain*pi/180,
+         variable=\t,
+         smooth,
+         samples=int(\spiral@domain/\spiral@sample@rate)] node[coordinate,shift={(\spiral@start@angle:\spiral@start@radius)}](\spiral@start@name){} plot ({\t r}: {\spiral@start@radius+\spiral@growth*\t-\spiral@growth*\spiral@start@angle*pi/180}) node[coordinate](\spiral@end@name){}
+  }
+\makeatother
+
 
 % We need layers to draw the block diagram
 \pgfdeclarelayer{background}

@@ -192,6 +192,37 @@ https://artybollocks.com/
 
 \todo{pageinate results for speed?}
 
+
+\todo{if pataphysicalisation happens at different locations... }
+They are all possible and will maybe be done all at the same time\marginnote{\faicon{object-group}~\ref{fig:patasearch02f}}. We can consider the possibility of a `patametric index', rather than a parametric index or a `patasaurus' (pataphysical thesaurus/ontology).
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \def\svgwidth{\columnwidth}
+  \input{images/pataphysicalisation.pdf_tex}
+\caption[Pataphysicalisation]{Pataphysicalisation}
+\label{fig:patasearch02f}
+\end{figure}
+\todo{copy and adapt figure }
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}[node distance = 1.5cm and 2cm]
+    \spiral[]{center={(4,-2.3)}, end angle=45, end radius= 0.3, revolutions=4};
+    \node [box] (corpus) {Corpus};
+    \node [box, below = of corpus] (index) {Index};
+    \node [box, right = of index] (pata) {};
+    \node [box, above = of pata] (user) {User};
+    \draw [->] (corpus) -- (index);
+    \draw [->] (user) -- (pata);
+    \draw [->] (pata) -- (index);
+    \draw [->] (index) -- (user);
+  \end{tikzpicture}
+  \caption[Pataphysical system architecture]{Pataphysical system architecture}
+  \label{fig:patarc}
+\end{figure}
+
+
+
 \section{Theoretical}
 
 \paragraph{Focus group}
