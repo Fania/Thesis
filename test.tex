@@ -8,15 +8,28 @@
 
 \begin{document}
 
-% \begin{figure}[!htbp] % (here, top, bottom, page)
-%   \centering
-%   % \def\svgwidth{\columnwidth}
-%   \input{images/patasearch01.pdf_tex}
-% \caption[Pata centrala2]{Pata centrala2}
-% \label{fig:patasearch02}
-% \end{figure}
-
-
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  % \tikzset{every fit/.append style=text badly centered}
+  \tikzset{class/.style={draw,rectangle},
+           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,
+           inner xsep=2pt,outer xsep=2pt, node distance=4pt}}
+  \begin{tikzpicture}
+  \node [class] (prod) {Product};
+  \node [label, right=0.7cm of prod] (proc) {Process};
+  \node [label, right=1cm of proc] (purp) {Purpose};
+  \node [label, right=1cm of purp] (pers) {Person};
+  \node [label, right=1cm of pers] (plac) {Place};
+  \begin{pgfonlayer}{background}
+  \node [class, inner xsep=1em, inner ysep=1em, fit=(prod) (proc)] {};
+  \node [class, inner xsep=2em, inner ysep=2em, fit=(prod) (proc) (purp)] {};
+  \node [class, inner xsep=3em, inner ysep=3em, fit=(prod) (proc) (purp) (pers)] {};
+  \node [class, inner xsep=4em, inner ysep=4em, fit=(prod) (proc) (purp) (pers) (plac)] {};
+  \end{pgfonlayer}
+  \end{tikzpicture}
+\caption[5 P Model]{5 P Model}
+\label{fig:5PModel}
+\end{figure}
 
 
 
