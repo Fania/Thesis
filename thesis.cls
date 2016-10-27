@@ -680,8 +680,7 @@ breaklines=true
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{tikz}
-\usetikzlibrary{quotes,arrows,angles,decorations,
-fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
+\usetikzlibrary{quotes,arrows,angles,decorations,mindmap,fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
 \usepackage[edges]{forest}
 % \usepackage{forest}
 % \ProvidesForestLibrary{edges}[2015/11/14 v0.1]

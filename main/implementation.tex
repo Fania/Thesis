@@ -31,38 +31,24 @@ a sad variety of woes I mourn.
 \minicontents
 \spirals
 
-\todo{add stuff about website as a whole, dont go directly into nitty gritty}
-\todo{add example code snippets from shakespeare}
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/fullscreenshot1}
+\caption[pata.physics.wtf]{pata.physics.wtf}
+\label{img:fullscreenshot1}
+\end{figure}
 
-\begin{draft}
-  \begin{itemize}
-    \item List all small features
-    \item note each one, explain why I did it, explain tech used
-    \item User interface design (UI Design) UX (User Experience)
-    \item subliminal cues
-    \item git history (gut history)
-    \item software was designed to be scalable (eg shakespeare)
-    \item ephemeral and serendipidous but create a sense of permanence (eg emails)
-    \item sentences, poetry, shakespeare, email
-  \end{itemize}
-\end{draft}
+% \spirals
 
+% \todo{add stuff about website as a whole, dont go directly into nitty gritty}
+% \todo{add example code snippets from shakespeare}
 
-\todo{add section about which pieces of code are not written by me}
-
-The website \url{http://pata.physics.wtf} embodies the knowledge of this doctoral research and showcases the pataphysical algorithms. This chapter gives an overview of the structure of the website and the development process.
-
-Typically, software development is divided into so-called front- and back-ends. The frontend includes web design and web development and is meant to provide an interface for the end-user to communicate with the backend which involves a server, an application and a database (although this is not completely true in this project).
-
-The frontend design is created using the \textbf{w3.css} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).\footnote{frontend links: \url{http://www.w3schools.com/w3css/}, \url{https://www.javascript.com/}}
-
-The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
-
-The folder structure is as follows:
-
-\begin{figure}[!htbp]
-\centering
-\begin{minipage}{.45\linewidth}
+% \begingroup
+% % \setlength{\intextsep}{5pt}%
+% \setlength{\columnsep}{5pt}%
+\begin{wrapfigure}{o}{0.4\textwidth}
+  \centering
+  \scalebox{.8}{
   \begin{forest} folders,
     [pata.physics.wtf, folder
       [app, folder
@@ -110,128 +96,195 @@ The folder structure is as follows:
       [readme.md]
     ]
   \end{forest}
-  \caption[projectdir]{Project directory}
-\label{dir}
-\end{minipage}
-\hspace{.02\linewidth}
-\begin{minipage}{.45\linewidth}
-  \begin{forest} folders,
-    [images, folder
-      %[Bing_logo.svg]
-      [dmu.png]
-      [DocteurFaustroll.jpg]
-      [favicon.ico]
-      %[flickr.png]
-      %[freesound_logo_large.png]
-      %[freesound_logo_small.png]
-      [JaneAvril.png]
-      %[library.png]
-      %[loading.gif]
-      [loadspiral.gif]
-      %[mini_spiral_white.svg]
-      %[MSTIcon24.png]
-      %[MSTLogo300.png]
-      [polyglot-404.png]
-      [RevueBlanche.jpg]
-      [SaintCado.jpg]
-      [spiral.png]
-      %[spiral.svg]
-      %[youtube_logo_onecolor_againstblack.png]
-      %[youtube_logo_onecolor_againstwhite.png]
-      %[youtube_logo_standard_againstblack.png]
-      %[youtube_logo_standard_againstwhite.png]
-    ]
-  \end{forest}
-  \caption[projectimages]{Project images}
-\end{minipage}
-\end{figure}
+  }
+  \caption[Project directory]{Project directory}
+  \label{fig:dir}
+  \vspace{-20pt}
+\end{wrapfigure}
+% \endgroup
+
+% \begin{draft}
+%   \begin{itemize}
+%     \item List all small features
+%     \item note each one, explain why I did it, explain tech used
+%     \item User interface design (UI Design) UX (User Experience)
+%     \item subliminal cues
+%     \item git history (gut history)
+%     \item software was designed to be scalable (eg shakespeare)
+%     \item ephemeral and serendipidous but create a sense of permanence (eg emails)
+%     \item sentences, poetry, shakespeare, email
+%   \end{itemize}
+% \end{draft}
 
 
-\begin{figure}[!htbp]
+% \todo{add section about which pieces of code are not written by me}
+
+The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot1}\marginnote{\faicon{picture-o}~\ref{img:fullscreenshot1}}) embodies the knowledge of this doctoral research and showcases \ac{AMC} and patalgorithms. This chapter gives an overview of the structure of the website and the development process.
+
+Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not directly the case in this project).
+
+The front-end design uses the \textbf{W3.CSS} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and desktop screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).
+
+The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
+
+The folder structure is as follows:
+
+
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \begin{minipage}{.45\linewidth}
-    \begin{forest} folders, 
-      [faustroll, folder
-        [00.faustroll.txt]
-        [01.poe1.txt]
-        [01.poe2.txt]
-        [01.poe3.txt]
-        [01.poe4.txt]
-        [01.poe5.txt]
-        [02.bergerac.txt]
-        [03.gospel.txt]
-        [04.bloy\_french.txt]
-        [05.coleridge.txt]
-        [06.darien\_french.txt]
-        [07.desbordes\_french.txt]
-        [08.elskamp\_french.txt]
-        [09.florian\_french.txt]
-        [10.arabiannights.txt]
-        [11.grabbe\_german.txt]
-        [12.kahn\_french.txt]
-        [13.lautreamont\_french.txt]
-        [14.maeterlinck.txt]
-        [15.mallarme\_french.txt]
-        [16.mendes.txt]
-        [17.odyssey.txt]
-        [19.rabelais.txt]
-        [22.rimbaud\_french.txt]
-        [23.schwob\_german.txt]
-        [24.ubu\_french.txt]
-        [25.verlaine.txt]
-        [26.verhaeren.txt]
-        [27.verne.txt]
-      ]
-    \end{forest}
-    \caption[corpusfaustroll]{Project corpus Faustroll}
-  \end{minipage}
-  \hspace{.02\linewidth}
-  \begin{minipage}{.45\linewidth}
-    \begin{forest} folders,
-      [shakespeare, folder
-        [00.sonnets.txt]
-        [01.alls\_well.txt]
-        [02.antony\_cleopatra.txt]
-        [03.as\_you\_like\_it.txt]
-        [04.comedy\_of\_errors.txt]
-        [05.coriolanus.txt]
-        [06.cymbeline.txt]
-        [07.hamlet.txt]
-        [08.king\_henry\_IV\_1.txt]
-        [09.king\_henry\_IV\_2.txt]
-        [10.king\_henry\_V.txt]
-        [11.king\_henry\_VI\_1.txt]
-        [12.king\_henry\_VI\_2.txt]
-        [13.king\_henry\_VI\_3.txt]
-        [14.king\_henry\_VIII.txt]
-        [15.king\_john.txt]
-        [16.julius\_caesar.txt]
-        [17.king\_lear.txt]
-        [18.loves\_labours\_lost.txt]
-        [19.macbeth.txt]
-        [20.measure\_for\_measure.txt]
-        [21.merchant\_of\_venice.txt]
-        [22.merry\_wives\_of\_windsor.txt]
-        [23.midsummer\_nights\_dream.txt]
-        [24.much\_ado\_about\_nothing.txt]
-        [25.othello.txt]
-        [26.king\_richard\_II.txt]
-        [27.king\_richard\_III.txt]
-        [28.romeo\_and\_juliet.txt]
-        [29.taming\_of\_the\_shrew.txt]
-        [30.tempest.txt]
-        [31.timon\_of\_athens.txt]
-        [32.titus\_andronicus.txt]
-        [33.troilus\_and\_cressida.txt]
-        [34.twelfth\_night.txt]
-        [35.two\_gentlemen\_of\_verona.txt]
-        [36.winters\_tale.txt]
-        [37.lovers\_complaint.txt]
-      ]
-    \end{forest}
-  \caption[projectcorpus]{Project corpus Shakespeare}
-\end{minipage}
+  \begin{tikzpicture}
+    % \draw[help lines, color=gray] (0,0) grid (13,10);
+
+    \fill [blue] (2,7) circle (2pt) node (faust) {}; % 1
+    \fill [blue] (2,7.15) circle (2pt); % 2
+    \fill [blue] (2.15,7) circle (2pt); % 3
+    \fill [blue] (2.15,7.15) circle (2pt); % 4
+    \fill [blue] (2.15,7.3) circle (2pt); % 5
+    \fill [blue] (2.3,7.15) circle (2pt); % 6
+    \fill [blue] (2.3,7.3) circle (2pt); % 7
+    \fill [blue] (1.85,7) circle (2pt); % 8
+    \fill [blue] (2,6.85) circle (2pt); % 9
+    \fill [blue] (1.85,6.85) circle (2pt); % 10
+    \fill [blue] (1.7,6.85) circle (2pt); % 11
+    \fill [blue] (1.7,7) circle (2pt); % 12
+    \fill [blue] (1.85,7.15) circle (2pt); % 13
+    \fill [blue] (1.85,7.3) circle (2pt); % 14
+    \fill [blue] (1.85,6.7) circle (2pt); % 15
+    \fill [blue] (1.7,6.7) circle (2pt); % 16
+    \fill [blue] (2,6.7) circle (2pt); % 17
+    \fill [blue] (1.85,6.85) circle (2pt); % 18
+    \fill [blue] (2,7.3) circle (2pt); % 19
+    \fill [blue] (2.3,7) circle (2pt); % 20
+    \fill [blue] (2.15,7.45) circle (2pt); % 21
+    \fill [blue] (2.15,6.85) circle (2pt); % 22
+    \fill [blue] (1.55,7) circle (2pt); % 23
+    \fill [blue] (1.55,6.85) circle (2pt); % 24
+    \fill [blue] (1.7,7.15) circle (2pt); % 25
+    \fill [blue] (1.7,7.3) circle (2pt); % 26
+    \fill [blue] (1.55,7.15) circle (2pt); % 27
+    \fill [blue] (2,7.45) circle (2pt); % 28
+    \fill [blue] (1.85,7.45) circle (2pt); % 29
+
+    \fill [blue] (2,4) circle (2pt) node (shake) {}; % 1
+    \fill [blue] (2,4.15) circle (2pt); % 2
+    \fill [blue] (2,4.3) circle (2pt); % 3
+    \fill [blue] (2,4.45) circle (2pt); % 4
+    \fill [blue] (1.7,4.3) circle (2pt); % 5
+    \fill [blue] (2,3.85) circle (2pt); % 6
+    \fill [blue] (2,3.7) circle (2pt); % 7
+    \fill [blue] (2,3.55) circle (2pt); % 8
+    \fill [blue] (1.85,4) circle (2pt); % 9
+    \fill [blue] (1.7,4) circle (2pt); % 10
+    \fill [blue] (1.55,4) circle (2pt); % 11
+    \fill [blue] (2.15,3.7) circle (2pt); % 12
+    \fill [blue] (2.15,4) circle (2pt); % 13
+    \fill [blue] (2.3,4) circle (2pt); % 14
+    \fill [blue] (2.45,4) circle (2pt); % 15
+    \fill [blue] (2.45,3.85) circle (2pt); % 16
+    \fill [blue] (2.3,3.85) circle (2pt); % 17
+    \fill [blue] (2.15,3.55) circle (2pt); % 18
+    \fill [blue] (2.15,4.15) circle (2pt); % 19
+    \fill [blue] (2.3,4.15) circle (2pt); % 20
+    \fill [blue] (2.3,4.3) circle (2pt); % 21
+    \fill [blue] (2.3,4.45) circle (2pt); % 22
+    \fill [blue] (2.45,4.15) circle (2pt); % 23
+    \fill [blue] (2.3,3.7) circle (2pt); % 24
+    \fill [blue] (2.15,4.3) circle (2pt); % 25
+    \fill [blue] (2.15,4.45) circle (2pt); % 26
+    \fill [blue] (1.85,4.15) circle (2pt); % 27
+    \fill [blue] (1.85,4.3) circle (2pt); % 28
+    \fill [blue] (1.85,4.45) circle (2pt); % 29
+    \fill [blue] (1.7,4.15) circle (2pt); % 30
+    \fill [blue] (1.55,4.15) circle (2pt); % 31
+    \fill [blue] (1.85,3.85) circle (2pt); % 32
+    \fill [blue] (1.85,3.7) circle (2pt); % 33
+    \fill [blue] (1.85,3.55) circle (2pt); % 34
+    \fill [blue] (1.7,3.85) circle (2pt); % 35
+    \fill [blue] (1.7,3.7) circle (2pt); % 36
+    \fill [blue] (1.55,3.85) circle (2pt); % 37
+    \fill [blue] (2.15,3.85) circle (2pt); % 38
+    
+    \fill [purple] (6,4) circle (2pt) node (css) {}; % 1
+    \fill [purple] (6,3.85) circle (2pt); % 2
+    \fill [teal] (6,3.7) circle (2pt); % 3
+    \fill [teal] (5.85,3.85) circle (2pt); % 4
+    \fill [teal] (5.85,4) circle (2pt); % 5
+    \fill [teal] (6.15,3.85) circle (2pt); % 6
+    \fill [teal] (6.15,4) circle (2pt); % 7
+    \fill [teal] (6.3,3.85) circle (2pt); % 8
+    
+    \fill [green] (6,7) circle (2pt) node (imgs) {}; % 1
+    \fill [green] (6,6.85) circle (2pt); % 2
+    \fill [green] (6,6.7) circle (2pt); % 3
+    \fill [green] (5.85,6.85) circle (2pt); % 4
+    \fill [green] (5.85,7) circle (2pt); % 5
+    \fill [green] (6.15,6.85) circle (2pt); % 6
+    \fill [green] (6.15,7) circle (2pt); % 7
+    \fill [green] (6.3,6.85) circle (2pt); % 8
+    \fill [green] (6.15,6.7) circle (2pt); % 9
+    
+    \fill (3,5) circle (2pt) node (corpus) {};
+    \draw (6,5.3) circle (2pt) node (static) {};
+    
+    \fill [red] (10,4) circle (2pt) node (temp) {}; % 1
+    \fill [red] (10,4.15) circle (2pt); % 2
+    \fill [red] (10,4.3) circle (2pt); % 3
+    \fill [red] (10.15,4.15) circle (2pt); % 4
+    \fill [red] (9.85,4.15) circle (2pt); % 5
+    \fill [red] (10,3.85) circle (2pt); % 6
+    \fill [red] (10.15,3.85) circle (2pt); % 7
+    \fill [red] (10.15,4) circle (2pt); % 8
+    \fill [red] (9.85,4) circle (2pt); % 9
+    \fill [red] (9.7,4) circle (2pt); % 10
+    \fill [red] (9.85,3.85) circle (2pt); % 11
+    
+    \fill [orange] (9,5) circle (2pt) node (app) {}; % 1
+    \fill [orange] (9,4.85) circle (2pt); % 2
+    \fill [orange] (9,4.7) circle (2pt); % 3
+    \fill [orange] (8.85,4.85) circle (2pt); % 4
+    \fill [orange] (8.85,5) circle (2pt); % 5
+    \fill [orange] (9.15,4.85) circle (2pt); % 6
+    \fill [orange] (9.15,5) circle (2pt); % 7
+    \fill [orange] (9,5.15) circle (2pt); % 8
+      
+    \fill [blue] (11,6) circle (2pt) node (main) {}; % 1
+    \fill [blue] (11,5.85) circle (2pt); % 2
+    \fill [orange] (11,5.7) circle (2pt); % 3
+    \fill [orange] (10.85,5.85) circle (2pt); % 4
+    \fill [orange] (10.85,6) circle (2pt); % 5
+    
+    \draw (faust) -- (corpus);
+    \node at (3.4,7.1) {faustroll};
+    \draw (shake) -- (corpus);
+    \node at (3.9,4) {shakespeare};
+    \draw (corpus) -- (static);
+    \node at (3.5,5.6) {corpus};
+    \draw (imgs) -- (static);
+    \node at (6.9,7.3) {images};
+    \draw (css) --(static);
+    \node at (6.9,3.9) {css};
+    \draw (static) -- (app);
+    \node at (6.7,5.6) {static};
+    \draw (temp) -- (app);
+    \node at (11.4,4) {templates};
+    \draw (app) -- (main);
+    \node at (9,5.6) {app};
+    \node at (11.2,6.5) {pata};
+    
+    \fill [blue] (0.5,2) circle (4pt) node [right=2pt, black] (txt) {text};
+    \fill [green] (8.5,2) circle (4pt) node [right=2pt, black] (img) {image};
+    \fill [orange] (10.5,2) circle (4pt) node [right=2pt, black] (py) {python};
+    \fill [red] (2.5,2) circle (4pt) node [right=2pt, black] (html) {html};
+    \fill [purple] (4.5,2) circle (4pt) node [right=2pt, black] (css) {css};
+    \fill [teal] (6,2) circle (4pt) node [right=2pt, black] (js) {javascript};
+    
+  \end{tikzpicture}
+\caption[Folder structure]{Folder structure}
+\label{fig:files}
 \end{figure}
+
+
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -240,14 +293,13 @@ The folder structure is as follows:
 \label{img:flow}
 \end{figure}
 
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/gource}
-\caption[gource]{gource}
-\label{img:gource}
-\end{figure}
+% \begin{figure}[!htbp] % (here, top, bottom, page)
+%   \centering
+%   \includegraphics[width=\linewidth]{images/gource}
+% \caption[gource]{gource}
+% \label{img:gource}
+% \end{figure}
 
-\todo{folder structure}
 
 \begin{fcom}
   To provide a short overview, the tools’s workflow can be described as follows:
