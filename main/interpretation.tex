@@ -268,14 +268,13 @@ From these, I have derived the following \hypertarget{creadef}{\emph{creativity 
 
 In reference to the many kinds of `4 P' models\marginnote{§~\ref{ch:creativity}} of creativity and the `four P\rq s' of Stahl's computer ethics framework, I propose a set of evaluation constraints called the `5 P Model' --- product, process, people, place and purpose.
 
-\begin{quote}
+\begin{quotation}
   One way of characterizing these processes is to use [\ldots] the four P's, which are: product, process, purpose and people. The purpose of using the four P's is to draw attention to the fact that, in addition to the widely recognized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation [\ldots]. \sourceatright{\autocite[p.203]{Stahl2013}}
-\end{quote}
+\end{quotation}
 
-HERE
+The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all components of any creative artefact (see table~\ref{tab:objcreat}\marginnote{\faicon{table}~\ref{tab:objcreat}}). They are nested in a similar fashion to figure~\ref{fig:4Crea}\marginnote{\faicon{object-group}~\ref{fig:4Crea}}.
 
-The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all components of any creative artefact (see table~\ref{table_objcreat}).
-
+\todo{redraw diagram?}
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \tikzset{every fit/.append style=text badly centered}
@@ -301,9 +300,9 @@ The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all com
 
 \begin{table}[!htbp]
 \caption[Objective Criteria of Creativity]{Objective Criteria of Creativity}
-\label{table_objcreat}
+\label{tab:objcreat}
   \centering
-  \begin{tabu}{cc}
+  \begin{tabu}{ll}
   \toprule
   \textbf{Criteria} & \textbf{Note} \\
   \midrule
@@ -316,13 +315,6 @@ The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all com
   \end{tabu}
 \end{table}
 
-
-
-\begin{fcom}
-  Why is the purpose important?\\
-  Interpreting or Measuring?\\
-  Maybe we should not be looking for metrics but rather guidelines for interpretations of creativity.
-\end{fcom}
 
 % \begin{draft}
 %   In the end I believe it is impossible to measure creativity objectively. I don’t just think it is impossible, I think it is unwise to try and do so. It would be silly to put a percentage on how creative something is just like it would be silly to say a certain product is 50percent ethical. In fact there are lots of parallels between (computer) ethics and (computer) creativity. Both are subjective, both are highly dependent on context.
@@ -339,22 +331,51 @@ The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all com
 \subsection{Combined Framework}
 \label{s:framework}
 
-The \textbf{criteria} listed in table~\ref{table_objcreat} should be considered objectively, while the \textbf{scales} in table~\ref{table_subcreat} are judged subjectively. The set of scales is directly derived from the various frameworks for evaluating creativity reviewed in the previous sections.
+The \textbf{criteria} listed in table~\ref{tab:objcreat} should be considered objectively, while the \textbf{scales} in table~\ref{tab:subcreat} are judged subjectively. The set of scales is directly derived from the various frameworks for evaluating creativity reviewed in the previous sections\marginnote{§~\ref{ch:evaluation}}.
 
 This evaluation framework can apply to any kind of creativity, from the traditional arts to digital works to computational creativity. Because the scale element allows for the measurement of subjective qualities, it circumvents binary yes/no or check-box approaches and therefore makes it possible to gather quantitative values from the subjective judgements involved in evaluating creativity in general.
 
-The terms on each end of the scales are suggestions only and should not be taken as value judgements. Rather, they should be adapted for each project individually. Numeric values can be assigned to the scales if needed according to specific evaulative requirements.
+The terms on each end of the scales as shown in table~\ref{tab:subcreat}\marginnote{\faicon{table}~\ref{tab:subcreat}} are suggestions only and should not be taken as value judgements. Rather, they should be adapted for each project individually. Numeric values can be assigned to the scales if needed according to specific evaulative requirements.
 
-\todo{explain matrix!}
+% \begin{figure}[!htbp]
+%   \centering
+%   \includegraphics[width=\linewidth]{evalmatrix}
+%   \caption[Evaluation Matrix]{Creative Evaluation Matrix}
+% \label{evalmatrix}
+% \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{evalmatrix}
-  \caption[Evaluation Matrix]{Creative Evaluation Matrix}
-\label{evalmatrix}
+  \begin{tikzpicture}
+  \draw[help lines] (0,0) grid (7,5);
+  \node [anchor=east] at (-0.2,4.5) {Place};
+  \node [anchor=east] at (-0.2,3.5) {Person};
+  \node [anchor=east] at (-0.2,2.5) {Purpose};
+  \node [anchor=east] at (-0.2,1.5) {Process};
+  \node [anchor=east] at (-0.2,0.5) {Product};
+  \node [rotate=90, anchor=west] at (0.5,5.2) {Novelty};
+  \node [rotate=90, anchor=west] at (1.5,5.2) {Quality};
+  \node [rotate=90, anchor=west] at (2.5,5.2) {Value};
+  \node [rotate=90, anchor=west] at (3.5,5.2) {Purpose};
+  \node [rotate=90, anchor=west] at (4.5,5.2) {Spatial};
+  \node [rotate=90, anchor=west] at (5.5,5.2) {Temporal};
+  \node [rotate=90, anchor=west] at (6.5,5.2) {Ephemeral};
+  \end{tikzpicture}
+\caption[Interpretation and evaluation matrix]{Interpretation and evaluation matrix}
+\label{fig:matrix}
 \end{figure}
 
-This matrix should be able to address issues such as:
+Figure~\ref{fig:matrix} shows a blank matrix to be filled. The rows and columns correspond to the objective constraints discussed in section~\ref{s:oec}\marginnote{§~\ref{s:oec}} and the subjective criteria from section~\ref{s:sec}\marginnote{§~\ref{s:sec}} respectively. Scales such as the ones mentioned in table~\ref{tab:subcreat} should be used to fill each cell of the grid. 
+
+The process of evaluating or interpreting an artefact consists of three steps inspired by Jordanous' \ac{SPECS} model (see chapter~\ref{s:specs}\marginnote{§~\ref{s:specs}}) as shown below.
+
+\begin{description}[leftmargin=2cm]
+  \item[Step 1] Create master matrix to measure against.
+  \item[Step 2] Fill matrix, ideally by several judges.
+  \item[Step 3] Check against matrix from step 1.
+\end{description}
+
+This system would be useful in scenarios such as art competitions or funding bodies which have a clear outline of requirements or themes which artists address in their artefacts. Alternatively this could be used without step 1 if a more open judgement is needed. Generally, the interpretation / evaluation matrix should be able to address issues such as:
 
 \begin{itemize}
   \item The design of the product might be very innovative but the process that was used quite established and old.
@@ -369,18 +390,71 @@ This matrix should be able to address issues such as:
 
 \subsubsection{An example application}
 
-\todo{finish this example}
-A complete
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \begin{tikzpicture}
+  \draw[help lines] (0,0) grid (7,5);
 
-\begin{itemize}
-  \item[\textbf{Step 1 --}] Create master matrix to measure against.
-  \item[\textbf{Step 2 --}] Fill matrix, potentially by several judges.
-  \item[\textbf{Step 3 --}] Check against criteria from step 1.
-\end{itemize}
+  \node [anchor=east] at (-0.2,4.5) {Place};
+  \node [anchor=east] at (-0.2,3.5) {Person};
+  \node [anchor=east] at (-0.2,2.5) {Purpose};
+  \node [anchor=east] at (-0.2,1.5) {Process};
+  \node [anchor=east] at (-0.2,0.5) {Product};
 
-\spirals
+  \node [rotate=90, anchor=west] at (0.5,5.2) {Novelty};
+  \node [rotate=90, anchor=west] at (1.5,5.2) {Quality};
+  \node [rotate=90, anchor=west] at (2.5,5.2) {Value};
+  \node [rotate=90, anchor=west] at (3.5,5.2) {Purpose};
+  \node [rotate=90, anchor=west] at (4.5,5.2) {Spatial};
+  \node [rotate=90, anchor=west] at (5.5,5.2) {Temporal};
+  \node [rotate=90, anchor=west] at (6.5,5.2) {Ephemeral};
 
-Below is an example assessment for a hypothetical piece of art:\\
+  \node at (0.5,0.5) {7}; % Product Novelty
+  \node at (1.5,0.5) {6.5}; % Product Quality
+  \node at (2.5,0.5) {2}; % Product Value
+  \node at (3.5,0.5) {2}; % Product Purpose
+  \node at (4.5,0.5) {8}; % Product Spatial
+  \node at (5.5,0.5) {7}; % Product Temporal
+  \node at (6.5,0.5) {7}; % Product Ephemeral
+
+  \node at (0.5,1.5) {2}; % Process Novelty
+  \node at (1.5,1.5) {6}; % Process Quality
+  \node at (2.5,1.5) {4}; % Process Value
+  \node at (3.5,1.5) {4}; % Process Purpose
+  \node at (4.5,1.5) {8}; % Process Spatial
+  \node at (5.5,1.5) {8}; % Process Temporal
+  \node at (6.5,1.5) {6}; % Process Ephemeral 
+
+  \node at (0.5,2.5) {3}; % Purpose Novelty
+  \node at (1.5,2.5) {6}; % Purpose Quality
+  \node at (2.5,2.5) {2}; % Purpose Value
+  \node at (3.5,2.5) {8}; % Purpose Purpose
+  \node at (4.5,2.5) {8}; % Purpose Spatial
+  \node at (5.5,2.5) {9}; % Purpose Temporal
+  \node at (6.5,2.5) {7}; % Purpose Ephemeral 
+
+  \node at (0.5,3.5) {2}; % Person Novelty
+  \node at (1.5,3.5) {8.5}; % Person Quality
+  \node at (2.5,3.5) {2}; % Person Value
+  \node at (3.5,3.5) {8}; % Person Purpose
+  \node at (4.5,3.5) {2.5}; % Person Spatial
+  \node at (5.5,3.5) {7}; % Person Temporal
+  \node at (6.5,3.5) {5}; % Person Ephemeral 
+
+  \node at (0.5,4.5) {2}; % Place Novelty
+  \node at (1.5,4.5) {9}; % Place Quality
+  \node at (2.5,4.5) {9}; % Place Value
+  \node at (3.5,4.5) {8}; % Place Purpose
+  \node at (4.5,4.5) {8.5}; % Place Spatial
+  \node at (5.5,4.5) {8.5}; % Place Temporal
+  \node at (6.5,4.5) {1}; % Place Ephemeral 
+  
+  \end{tikzpicture}
+\caption[Example matrix]{Example matrix}
+\label{fig:exmatrix}
+\end{figure}
+
+In this section I will present an example assessment for a hypothetical piece of art. Let's assume that the scales are represented numerically from 0 to 10, although they could equally be represented by a colour spectrum from red to blue for example to remove the sense of value judgements. These scales might look like this:
 
 \noindent \textbf{PRODUCT}:\\
 \itab{Established} \tab{---------------x-----} \stab{Novel}\\
@@ -427,140 +501,221 @@ Below is an example assessment for a hypothetical piece of art:\\
 \itab{Instant} \tab{----------------x----} \stab{Persistent}\\
 \itab{Accidental} \tab{--x------------------} \stab{Experimental}\\
 
+Figure~\ref{fig:exmatrix}\marginnote{\faicon{table}~\ref{fig:exmatrix}} shows an example grid filled with numerical values for each cell. Figure~\ref{fig:excmatrix}\marginnote{\faicon{table}~\ref{fig:excmatrix}} shows how a colour coded grid could look like.
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \begin{tikzpicture}
+  [%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    cell/.style={rectangle,draw=black, minimum size=1cm, fill opacity=0.5},
+  ]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \foreach \x in {0,...,6}{
+    \foreach \y in {0,...,4}
+        \node[cell] at (\x,\y){};
+  } 
+
+  \node[cell, fill=red] at (-2,-2) {\textcolor{white}{0}};
+  \node[cell, fill=red!90!blue] at (-1,-2) {\textcolor{white}{1}};
+  \node[cell, fill=red!80!blue] at (0,-2) {\textcolor{white}{2}};
+  \node[cell, fill=red!70!blue] at (1,-2) {\textcolor{white}{3}};
+  \node[cell, fill=red!60!blue] at (2,-2) {\textcolor{white}{4}};
+  \node[cell, fill=red!50!blue] at (3,-2) {\textcolor{white}{5}};
+  \node[cell, fill=red!40!blue] at (4,-2) {\textcolor{white}{6}};
+  \node[cell, fill=red!30!blue] at (5,-2) {\textcolor{white}{7}};
+  \node[cell, fill=red!20!blue] at (6,-2) {\textcolor{white}{8}};
+  \node[cell, fill=red!10!blue] at (7,-2) {\textcolor{white}{9}};
+  \node[cell, fill=blue] at (8,-2) {\textcolor{white}{10}};
+
+  \node [anchor=east] at (-0.7,4) {Place};
+  \node [anchor=east] at (-0.7,3) {Person};
+  \node [anchor=east] at (-0.7,2) {Purpose};
+  \node [anchor=east] at (-0.7,1) {Process};
+  \node [anchor=east] at (-0.7,0) {Product};
+
+  \node [rotate=90, anchor=west] at (0,4.7) {Novelty};
+  \node [rotate=90, anchor=west] at (1,4.7) {Quality};
+  \node [rotate=90, anchor=west] at (2,4.7) {Value};
+  \node [rotate=90, anchor=west] at (3,4.7) {Purpose};
+  \node [rotate=90, anchor=west] at (4,4.7) {Spatial};
+  \node [rotate=90, anchor=west] at (5,4.7) {Temporal};
+  \node [rotate=90, anchor=west] at (6,4.7) {Ephemeral};
+
+  \node [cell,fill=red!30!blue] at (0,0) {}; % Product Novelty
+  \node [cell,fill=red!35!blue] at (1,0) {}; % Product Quality
+  \node [cell,fill=red!80!blue] at (2,0) {}; % Product Value
+  \node [cell,fill=red!80!blue] at (3,0) {}; % Product Purpose
+  \node [cell,fill=red!20!blue] at (4,0) {}; % Product Spatial
+  \node [cell,fill=red!30!blue] at (5,0) {}; % Product Temporal
+  \node [cell,fill=red!30!blue] at (6,0) {}; % Product Ephemeral
+
+  \node [cell,fill=red!80!blue] at (0,1) {}; % Process Novelty
+  \node [cell,fill=red!40!blue] at (1,1) {}; % Process Quality
+  \node [cell,fill=red!60!blue] at (2,1) {}; % Process Value
+  \node [cell,fill=red!60!blue] at (3,1) {}; % Process Purpose
+  \node [cell,fill=red!20!blue] at (4,1) {}; % Process Spatial
+  \node [cell,fill=red!20!blue] at (5,1) {}; % Process Temporal
+  \node [cell,fill=red!40!blue] at (6,1) {}; % Process Ephemeral 
+
+  \node [cell,fill=red!70!blue] at (0,2) {}; % Purpose Novelty
+  \node [cell,fill=red!40!blue] at (1,2) {}; % Purpose Quality
+  \node [cell,fill=red!80!blue] at (2,2) {}; % Purpose Value
+  \node [cell,fill=red!20!blue] at (3,2) {}; % Purpose Purpose
+  \node [cell,fill=red!20!blue] at (4,2) {}; % Purpose Spatial
+  \node [cell,fill=red!10!blue] at (5,2) {}; % Purpose Temporal
+  \node [cell,fill=red!30!blue] at (6,2) {}; % Purpose Ephemeral 
+
+  \node [cell,fill=red!80!blue] at (0,3) {}; % Person Novelty
+  \node [cell,fill=red!15!blue] at (1,3) {}; % Person Quality
+  \node [cell,fill=red!80!blue] at (2,3) {}; % Person Value
+  \node [cell,fill=red!20!blue] at (3,3) {}; % Person Purpose
+  \node [cell,fill=red!75!blue] at (4,3) {}; % Person Spatial
+  \node [cell,fill=red!30!blue] at (5,3) {}; % Person Temporal
+  \node [cell,fill=red!50!blue] at (6,3) {}; % Person Ephemeral 
+
+  \node [cell,fill=red!80!blue] at (0,4) {}; % Place Novelty
+  \node [cell,fill=red!10!blue] at (1,4) {}; % Place Quality
+  \node [cell,fill=red!10!blue] at (2,4) {}; % Place Value
+  \node [cell,fill=red!20!blue] at (3,4) {}; % Place Purpose
+  \node [cell,fill=red!15!blue] at (4,4) {}; % Place Spatial
+  \node [cell,fill=red!15!blue] at (5,4) {}; % Place Temporal
+  \node [cell,fill=red!90!blue] at (6,4) {}; % Place Ephemeral 
+  
+  \end{tikzpicture}
+\caption[Example colour matrix]{Example colour matrix}
+\label{fig:excmatrix}
+\end{figure}
+
 Ideally, these scales would need to be applied by several people during the evaluation process, generating an intuitive assessment of the various values (e.g. Playful---Purposive) for each of the criteria (e.g. Product).
-\todo{OK, I like these. Perhaps the word 'fuzzy' is misleading though? It's more like a Likert scale or something from psychology. However, the matrix is useful and I would lead with it or at least announce it much sooner.
-}
-
-\todo{apply my own framework to my own product and discuss results}
-\todo{apply my own framework to my own framework and discuss results---recursion}
 
 
-\section[Ejaculation]{Ejaculation\footnote{Autocorrect or nottocorrect---that is the question\ldots}}
+% \section{Evaluation}
 
-\todo{im evaluating the website - not the project !!!!!!!}
-\todo{change font size, capitalisation and dashes}
+% \todo{im evaluating the website - not the project !!!!!!!}
+% \todo{change font size, capitalisation and dashes}
 
-The website \url{pata.physics.wtf} is supposed to be an example of \ac{AMC}.
+% The website \url{pata.physics.wtf} is supposed to be an example of \ac{AMC}.
 
-It seems appropriate to start the critical evaluation of the artefact created as part of this research project with an application of my own framework as suggested in chapter~\ref{ch:interpretation}. I will do this in two ways. FIrst I will sketch a matrix similar to the one shown in figure XYZ to give an overview of the evaluation at a glance. Second I will explain each point in the matrix in a bit more detail to try and bring across the thoughts triggered by the framework. In the end the decision of whether or not the artefact has `passed' the criteria/threshold for \ac{AMC} is subjective.\todo{So are you saying that the artefact could get maximum creativity rating from the matrix, but I would overrule it and say it's not creative?} The framework is only a guideline. Of course it should be considered that ideally this process should be done by an external party or a panel of judges rather than the artist herself.\todo{why?}
+% It seems appropriate to start the critical evaluation of the artefact created as part of this research project with an application of my own framework as suggested in chapter~\ref{ch:interpretation}. I will do this in two ways. FIrst I will sketch a matrix similar to the one shown in figure XYZ to give an overview of the evaluation at a glance. Second I will explain each point in the matrix in a bit more detail to try and bring across the thoughts triggered by the framework. In the end the decision of whether or not the artefact has `passed' the criteria/threshold for \ac{AMC} is subjective.\todo{So are you saying that the artefact could get maximum creativity rating from the matrix, but I would overrule it and say it's not creative?} The framework is only a guideline. Of course it should be considered that ideally this process should be done by an external party or a panel of judges rather than the artist herself.\todo{why?}
 
-\begin{description}
-  \item[WHO?] Myself, the programmer and artist of \url{pata.physics.wtf}.
-  \item[Person---Novelty] The person behind \url{pata.physics.wtf} is myself. As the sole developer and designer of the product I was responsible for all decisions and all creative input. At the time, I had never worked with Python before, never heard of Pataphysics, and never create a website of this complexity. Of course I had some familiarity with programming in general and I had interests in arts but overall the majority of subjects relevant for the project were novel to me.
-  \item[Person---Quality] The quality of my work could perhaps be measured by the existence of bugs in my code or the beauty of the design. Given that the subject area was mostly novel to me and my previous education didn't fully prepare me for this sort of work, there are surprisingly few problems with the code. \todo{not true} The performance is way too slow, the design is not great and not user friendly enough.\todo{Depends how it is being judged. As a fulfilment of the challenge you set yourself, it is fine. Thius is the danger of going ahead with a "practice-based" portfolio. If you are judged as an artist would be judged then you may  fall short. Judged as a computer scientist who is crossing discplines into the arts/humanities, you will succeed by going "beyond" expectations.}
-  \item[PERSON - VALUE] The value of myself as the researcher on this project is clear in my background. I brought in a varied background and many interests. I had done Computer Science as an undergraduate degree - which gave me an understanding of code necessary to complete the practical aspect of the project but also some of the more theoretical ideas. Having then done a postgraduate degree in Creative Technologies helped introduce me to interdisciplinary work and allowed me to experiment with my creative side. This was essential for the project at hand. It allowed me to see problems from different perspectives.
-  \item[PERSON - PURPOSE] I was chosen for this project presumably because of the skills and interests I had demonstrated in the past. On a more insteresting note perhaps---a website doesn't build itself. I created the backend and frontend all by myself. I created the algorithms which form the core of the website.
-  \item[PERSON - SPATIAL] Luckily spatial issues are not much of an issue when it comes to Web development. I could work anywhere with an Internet connection and a laptop or computer at hand. This allowed me to be very flexible with my location. Another aspect to this was my nationality and upbringing. I am originally from Germany. I grew up near a museum on `Art and Media Technology'\footnote{`ZKM'---see \url{http://on1.zkm.de/zkm/e/}} which got me interested in digital art quite early on in live. Also, my father was an office equipment mechanic and I grew up around computers and have always had a strong interest in Web development.
-  \item[PERSON - TEMPORAL] A temporal aspect regarding my person was perhaps the time scale and time management of the project. I studied full time, took a year interruption and more to finish. \todo{update timing} Someone else could have done this faster perhaps. The coding is never finished.
-  \item[PERSON - EPHEMERAL] I did not actually apply for this PhD programme but my application was forwarded from another department after an unsuccessful application there. This is quite serendipitous.
-\end{description}
-\todo{If you are going to go into this level of personal detail, then you should probably mention your health as well. I do wonder whether it is a good idea, though. I guess your argukent is that "subjectivity" requires "auto-ethnography". But I think the work stands up on its own, to be honest. The personal stuff can be found out in conversation (in the viva) if necessary.
-}
-\spirals
+% \begin{description}
+%   \item[WHO?] Myself, the programmer and artist of \url{pata.physics.wtf}.
+%   \item[Person---Novelty] The person behind \url{pata.physics.wtf} is myself. As the sole developer and designer of the product I was responsible for all decisions and all creative input. At the time, I had never worked with Python before, never heard of Pataphysics, and never create a website of this complexity. Of course I had some familiarity with programming in general and I had interests in arts but overall the majority of subjects relevant for the project were novel to me.
+%   \item[Person---Quality] The quality of my work could perhaps be measured by the existence of bugs in my code or the beauty of the design. Given that the subject area was mostly novel to me and my previous education didn't fully prepare me for this sort of work, there are surprisingly few problems with the code. \todo{not true} The performance is way too slow, the design is not great and not user friendly enough.\todo{Depends how it is being judged. As a fulfilment of the challenge you set yourself, it is fine. Thius is the danger of going ahead with a "practice-based" portfolio. If you are judged as an artist would be judged then you may  fall short. Judged as a computer scientist who is crossing discplines into the arts/humanities, you will succeed by going "beyond" expectations.}
+%   \item[PERSON - VALUE] The value of myself as the researcher on this project is clear in my background. I brought in a varied background and many interests. I had done Computer Science as an undergraduate degree - which gave me an understanding of code necessary to complete the practical aspect of the project but also some of the more theoretical ideas. Having then done a postgraduate degree in Creative Technologies helped introduce me to interdisciplinary work and allowed me to experiment with my creative side. This was essential for the project at hand. It allowed me to see problems from different perspectives.
+%   \item[PERSON - PURPOSE] I was chosen for this project presumably because of the skills and interests I had demonstrated in the past. On a more insteresting note perhaps---a website doesn't build itself. I created the backend and frontend all by myself. I created the algorithms which form the core of the website.
+%   \item[PERSON - SPATIAL] Luckily spatial issues are not much of an issue when it comes to Web development. I could work anywhere with an Internet connection and a laptop or computer at hand. This allowed me to be very flexible with my location. Another aspect to this was my nationality and upbringing. I am originally from Germany. I grew up near a museum on `Art and Media Technology'\footnote{`ZKM'---see \url{http://on1.zkm.de/zkm/e/}} which got me interested in digital art quite early on in live. Also, my father was an office equipment mechanic and I grew up around computers and have always had a strong interest in Web development.
+%   \item[PERSON - TEMPORAL] A temporal aspect regarding my person was perhaps the time scale and time management of the project. I studied full time, took a year interruption and more to finish. \todo{update timing} Someone else could have done this faster perhaps. The coding is never finished.
+%   \item[PERSON - EPHEMERAL] I did not actually apply for this PhD programme but my application was forwarded from another department after an unsuccessful application there. This is quite serendipitous.
+% \end{description}
+% \todo{If you are going to go into this level of personal detail, then you should probably mention your health as well. I do wonder whether it is a good idea, though. I guess your argukent is that "subjectivity" requires "auto-ethnography". But I think the work stands up on its own, to be honest. The personal stuff can be found out in conversation (in the viva) if necessary.
+% }
+% \spirals
 
-\begin{description}
-  \item[Where?] On the Internet via \url{pata.physics.wtf}.
-  \item[PLACE - Novelty] The location of \url{pata.physics.wtf} is online. Other art projects have been put online in the past. This is certainly not new. The \ac{IOCT} was already established but Professor Andrew Hugill published his monograph on pataphysics the year I started which meant my research into developing pataphysical algorithms was cutting edge. \todo{check dates} 
-  \item[PLACE - QUALITY] The site is hosted on a server provided by `OVH'\footnote{\url{https://www.ovh.co.uk/}}. The cost is reasonable and allows enough freedom to run the Python application which forms the search tool. The speed of the server and security and reliablity is high but out of my control.
-  \item[PLACE - VALUE] The site is found through a custom \ac{URL} (\url{pata.physics.wtf}) and is findable on google. This was chosen because it is a memorable name and the top level domain name (`.wtf') conveys some of the humour needed to appreciate the project.
-  \item[PLACE - PURPOSE] The purpose of putting the project online is of course for users to actually be able to use it whenever and whereever they want. Sticking the search tool on a local machine in a museum space for example would not be very interesting. Of course the project is `interactive' in very simple terms, i.e. the user needs to enter a keyword to trigger the pataphysicalisation and the display of the results and then needs to spend some time reading through them or looking throigh the results.
-  \item[PLACE - SPATIAL] The OVH server is hosted in France, although that is not really relevant. It should be accessible from all over the world, unless it gets blocked.
-  \item[PLACE - TEMPORAL] The hosting and domain name need renewing each year. Website design goes out of date quickly nowadays, so it may have to be redesigned to stay appealing. Being online, the site is available all day every day, so access is not limited to viewing times in a museum or similar constraints.
-  \item[PLACE - EPHEMERAL] N/A
-\end{description}
+% \begin{description}
+%   \item[Where?] On the Internet via \url{pata.physics.wtf}.
+%   \item[PLACE - Novelty] The location of \url{pata.physics.wtf} is online. Other art projects have been put online in the past. This is certainly not new. The \ac{IOCT} was already established but Professor Andrew Hugill published his monograph on pataphysics the year I started which meant my research into developing pataphysical algorithms was cutting edge. \todo{check dates} 
+%   \item[PLACE - QUALITY] The site is hosted on a server provided by `OVH'\footnote{\url{https://www.ovh.co.uk/}}. The cost is reasonable and allows enough freedom to run the Python application which forms the search tool. The speed of the server and security and reliablity is high but out of my control.
+%   \item[PLACE - VALUE] The site is found through a custom \ac{URL} (\url{pata.physics.wtf}) and is findable on google. This was chosen because it is a memorable name and the top level domain name (`.wtf') conveys some of the humour needed to appreciate the project.
+%   \item[PLACE - PURPOSE] The purpose of putting the project online is of course for users to actually be able to use it whenever and whereever they want. Sticking the search tool on a local machine in a museum space for example would not be very interesting. Of course the project is `interactive' in very simple terms, i.e. the user needs to enter a keyword to trigger the pataphysicalisation and the display of the results and then needs to spend some time reading through them or looking throigh the results.
+%   \item[PLACE - SPATIAL] The OVH server is hosted in France, although that is not really relevant. It should be accessible from all over the world, unless it gets blocked.
+%   \item[PLACE - TEMPORAL] The hosting and domain name need renewing each year. Website design goes out of date quickly nowadays, so it may have to be redesigned to stay appealing. Being online, the site is available all day every day, so access is not limited to viewing times in a museum or similar constraints.
+%   \item[PLACE - EPHEMERAL] N/A
+% \end{description}
 
-\spirals
+% \spirals
 
-\begin{description}
-  \item[Why?] To demonstrate pataphysical creative exploratory search algorithms---overall an example of \ac{AMC}.
-  \item[PURPOSE - Novelty] The concepts behind the search tool are novel. Creative search has been attempted before as discussed in chapter CYZ but not specifically with Pataphysics as its inspiration.
-  \item[PURPOSE - QUALITY] Whether or not the use of pataphysics over another creative technique is better can only be determined with further study.
-  \item[PURPOSE - VALUE] Having a clear aim is always helpful, and in the case of \url{pata.physics.wtf} that aim pervades the site through and through. The main functionality is to provide creative search not relevant lookup search. The value is subjective to each user.
-  \item[PURPOSE - PURPOSE] N/A
-  \item[PURPOSE - SPATIAL] The fact that some of the texts in the search results are french or german is a conscious choice not accident or necessity. This language barrier reminds users of language spaces, borders, inaccessibility and originality. It reminds users that some texts may be translated from a different language. Its a sign of equality to include different languages representing different locations. From a different perspective, it was also imperative to make the system available from all over the world. This is also why the site was created to be responsive---to allow users to access it comfortably from their phones, tablets, laptops or desktop computers.
-  \item[PURPOSE - TEMPORAL] A similar point is true for the time aspect. The idea was to allow users to access the system anytime.
-  \item[PURPOSE - EPHEMERAL] Of course the system may appear serendipitous or random at times but the underlying logic certainly is not random. It was important to bring across a sense of structure in the results and the pataphysical algorithms hopefully achieve that.
-\end{description}
+% \begin{description}
+%   \item[Why?] To demonstrate pataphysical creative exploratory search algorithms---overall an example of \ac{AMC}.
+%   \item[PURPOSE - Novelty] The concepts behind the search tool are novel. Creative search has been attempted before as discussed in chapter CYZ but not specifically with Pataphysics as its inspiration.
+%   \item[PURPOSE - QUALITY] Whether or not the use of pataphysics over another creative technique is better can only be determined with further study.
+%   \item[PURPOSE - VALUE] Having a clear aim is always helpful, and in the case of \url{pata.physics.wtf} that aim pervades the site through and through. The main functionality is to provide creative search not relevant lookup search. The value is subjective to each user.
+%   \item[PURPOSE - PURPOSE] N/A
+%   \item[PURPOSE - SPATIAL] The fact that some of the texts in the search results are french or german is a conscious choice not accident or necessity. This language barrier reminds users of language spaces, borders, inaccessibility and originality. It reminds users that some texts may be translated from a different language. Its a sign of equality to include different languages representing different locations. From a different perspective, it was also imperative to make the system available from all over the world. This is also why the site was created to be responsive---to allow users to access it comfortably from their phones, tablets, laptops or desktop computers.
+%   \item[PURPOSE - TEMPORAL] A similar point is true for the time aspect. The idea was to allow users to access the system anytime.
+%   \item[PURPOSE - EPHEMERAL] Of course the system may appear serendipitous or random at times but the underlying logic certainly is not random. It was important to bring across a sense of structure in the results and the pataphysical algorithms hopefully achieve that.
+% \end{description}
 
-\spirals
+% \spirals
 
-\begin{description}
-  \item[What?] \url{pata.physics.wtf}: an exploratory algorithmic meta-creative search tool.
-  \item[Product - Novelty] The actual website itself doesn't use any groundbreakingly new frameworks or techniques other than the patalgorithms described in chapter XYZ. 
-  \item[Product - Quality] The website looks polished and functions without major incidents.
-  \item[Product - Value] The value of the website is discussed in chapter XYZ and the fact that it has been used to create a libretto for an opera is great.
-  \item[Product - Purpose] The purpose was to create an example of \ac{AMC}.
-  \item[Product - Spatial] 
-  \item[Product - Temporal]
-  \item[Product - Ephemeral]
-\end{description}
+% \begin{description}
+%   \item[What?] \url{pata.physics.wtf}: an exploratory algorithmic meta-creative search tool.
+%   \item[Product - Novelty] The actual website itself doesn't use any groundbreakingly new frameworks or techniques other than the patalgorithms described in chapter XYZ. 
+%   \item[Product - Quality] The website looks polished and functions without major incidents.
+%   \item[Product - Value] The value of the website is discussed in chapter XYZ and the fact that it has been used to create a libretto for an opera is great.
+%   \item[Product - Purpose] The purpose was to create an example of \ac{AMC}.
+%   \item[Product - Spatial] 
+%   \item[Product - Temporal]
+%   \item[Product - Ephemeral]
+% \end{description}
 
-\spirals
+% \spirals
 
-\begin{description}
-  \item[How?] By combining pataphysics with creativity to create patalgotihms.
-  \item[PROCESS - NOVELTY] The algorithms are novel. The approach of using pataphysics to inspire the creative element of the project is novel.
-  \item[PROCESS - QUALITY] The development process was experimental. It involved a lot of trial and error to get things right.
-  \item[PROCESS - VALUE] The algorithms produce interesting results.
-  \item[PROCESS - PURPOSE] The algorithms are an example of creative computing using pataphyscs.
-  \item[PROCESS - SPATIAL] The algorithms rely on corpora which they need access to, to work properly.
-  \item[PROCESS - TEMPORAL] The startup process is long and pataphysicalisation can take some time.
-  \item[PROCESS - EPHEMERAL] There is an element of randomness in some of the algorithms, e.g. the image and video search.
-\end{description}
+% \begin{description}
+%   \item[How?] By combining pataphysics with creativity to create patalgotihms.
+%   \item[PROCESS - NOVELTY] The algorithms are novel. The approach of using pataphysics to inspire the creative element of the project is novel.
+%   \item[PROCESS - QUALITY] The development process was experimental. It involved a lot of trial and error to get things right.
+%   \item[PROCESS - VALUE] The algorithms produce interesting results.
+%   \item[PROCESS - PURPOSE] The algorithms are an example of creative computing using pataphyscs.
+%   \item[PROCESS - SPATIAL] The algorithms rely on corpora which they need access to, to work properly.
+%   \item[PROCESS - TEMPORAL] The startup process is long and pataphysicalisation can take some time.
+%   \item[PROCESS - EPHEMERAL] There is an element of randomness in some of the algorithms, e.g. the image and video search.
+% \end{description}
 
-What does this description of the 
-\todo{create a template matrix to fill in with colours or whatever and then summarise the above items underneath - only highlighting the interesting ones}
+% What does this description of the 
+% \todo{create a template matrix to fill in with colours or whatever and then summarise the above items underneath - only highlighting the interesting ones}
 
-\begin{draft}
-  What does this now tell us? It shows that we can almost always argue for creative aspects in each of the points raised in the matrix. Is the product fit for purpose? That's subjective but I would argue that yes. Is the product robust and working as planned? Yes, it works reliably and as planned.
+% \begin{draft}
+%   What does this now tell us? It shows that we can almost always argue for creative aspects in each of the points raised in the matrix. Is the product fit for purpose? That's subjective but I would argue that yes. Is the product robust and working as planned? Yes, it works reliably and as planned.
 
-  This evaluation is subjective.
-\end{draft}
-
-
-\section{Some Kind of Conclusion}
+%   This evaluation is subjective.
+% \end{draft}
 
 
+% \section{Some Kind of Conclusion}
 
-To sum up our approach: rather than a linear or cyclic series, or criteria that can be answered in a binary manner (i.e. present or not) we propose scales or spectra to aid in the evaluation of a creative artefact of any kind, by applying a series of overlapping principles that encourages a more intuitive assessment.
+% To sum up our approach: rather than a linear or cyclic series, or criteria that can be answered in a binary manner (i.e. present or not) we propose scales or spectra to aid in the evaluation of a creative artefact of any kind, by applying a series of overlapping principles that encourages a more intuitive assessment.
 
-\begin{quotation}
-  Boden suggests that it is helpful to regard aspects such as novelty, quality and process as dimensions of creativity. Instead of asking ‘is x creative?’ (assuming a boolean judgement) or ‘how creative is x?’ (assuming a linear judgement) we should ask ‘where does x lie in creativity space?’ (assuming an n-dimensional space for n criteria where we can measure each dimension). \sourceatright{\autocite[p.8]{Pease2001}}
-\end{quotation}
+% \begin{quotation}
+%   Boden suggests that it is helpful to regard aspects such as novelty, quality and process as dimensions of creativity. Instead of asking ‘is x creative?’ (assuming a boolean judgement) or ‘how creative is x?’ (assuming a linear judgement) we should ask ‘where does x lie in creativity space?’ (assuming an n-dimensional space for n criteria where we can measure each dimension). \sourceatright{\autocite[p.8]{Pease2001}}
+% \end{quotation}
 
-The next stage for this approach would be to test the evaluation framework with real-world examples and individuals responsible for creative output or its assessment, for instance: artists, dancers, musicians, arts administrators, critics, curators and commentators.
-\todo{Exactly! You have built a system. It can be used by others (perhaps including yourself) to create artwork. That would be "practice-based".
-}
+% The next stage for this approach would be to test the evaluation framework with real-world examples and individuals responsible for creative output or its assessment, for instance: artists, dancers, musicians, arts administrators, critics, curators and commentators.
+% \todo{Exactly! You have built a system. It can be used by others (perhaps including yourself) to create artwork. That would be "practice-based".
+% }
 
-If anything that falls short of true computational creativity is considered a \emph{zombie}, then as long as computers continue to be regarded as autonomously creative, we may already be trapped in a \emph{zombie apocalypse}.
-\todo{Amusing, and Brian Reffin Smith would agree. But it's not true though...
-}
+% If anything that falls short of true computational creativity is considered a \emph{zombie}, then as long as computers continue to be regarded as autonomously creative, we may already be trapped in a \emph{zombie apocalypse}.
+% \todo{Amusing, and Brian Reffin Smith would agree. But it's not true though...
+% }
 
-\section{Open Questions}
 
-To conclude this chapter I will raise some questions to which I do not have answers and attempting to research them is beyond the scope of this project.
+% \section{Open Questions}
 
-\todo{revise questions here}
+% To conclude this chapter I will raise some questions to which I do not have answers and attempting to research them is beyond the scope of this project.
 
-\begin{itemize}
-  \item Can machines self-evaluate or self-assess?
-  \item Where is consciousness located? In the braincells? In the stomach or heart? In the complex interactions of the brain? How does this translate to computers? Is creativiy or consciouness in the algorithms? The hardware?
-  \item Could a machine judge whether a human is creative?
-  \item Is mimicking human creativity really enough and appropriate?
-  \item Should we define machine creativity from scratch?
-  \item In respect to P or H creativity?
-  \item Output minus input? (we don’t have the same strict judgement on humans)
-  \item Does context matter? (Blind deaf dumb person = computer?)
-  \item Does time matter?
-  \item Does purpose or intention matter?
-  \item AGI vs AI? Artificial general creativity vs artificial creativity?
-  \item What is the impact, if any?
-  \item What is the maintenance plan, if any?
-\end{itemize}
+% \todo{revise questions here}
 
-\todo{conscisnous: Please, Fania, do not go there! This is a completely different PhD if you do. Save it up for your postdoctoral work!}
-\todo{I think you've answered all these above though, haven't you? Perhaps it would be best to signal them at the start of the thesis, to show the kinds of questions you have addressed.
-}
+% \begin{itemize}
+%   \item Can machines self-evaluate or self-assess?
+%   \item Where is consciousness located? In the braincells? In the stomach or heart? In the complex interactions of the brain? How does this translate to computers? Is creativiy or consciouness in the algorithms? The hardware?
+%   \item Could a machine judge whether a human is creative?
+%   \item Is mimicking human creativity really enough and appropriate?
+%   \item Should we define machine creativity from scratch?
+%   \item In respect to P or H creativity?
+%   \item Output minus input? (we don’t have the same strict judgement on humans)
+%   \item Does context matter? (Blind deaf dumb person = computer?)
+%   \item Does time matter?
+%   \item Does purpose or intention matter?
+%   \item AGI vs AI? Artificial general creativity vs artificial creativity?
+%   \item What is the impact, if any?
+%   \item What is the maintenance plan, if any?
+% \end{itemize}
+
+% \todo{conscisnous: Please, Fania, do not go there! This is a completely different PhD if you do. Save it up for your postdoctoral work!}
+% \todo{I think you've answered all these above though, haven't you? Perhaps it would be best to signal them at the start of the thesis, to show the kinds of questions you have addressed.
+% }
+
+% \spirals
+
 % \begin{leftbar}
 % The word useless is defined as ``not fulfilling or not expected to achieve the intended purpose or desired outcome'' in the Oxford dictionary (2010). Given this definition most of the search results we have in mind would be classed as useless. That is at least if we considered every result individually, outside of context and with an information-lookup query in mind. If we have an exploratory search in mind however things get more interesting and we will explain why in the remainder of the paper.
 % \end{leftbar}

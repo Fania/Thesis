@@ -10,25 +10,65 @@
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  % \tikzset{every fit/.append style=text badly centered}
-  \tikzset{class/.style={draw,rectangle},
-           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,
-           inner xsep=2pt,outer xsep=2pt, node distance=4pt}}
   \begin{tikzpicture}
-  \node [class] (prod) {Product};
-  \node [label, right=0.7cm of prod] (proc) {Process};
-  \node [label, right=1cm of proc] (purp) {Purpose};
-  \node [label, right=1cm of purp] (pers) {Person};
-  \node [label, right=1cm of pers] (plac) {Place};
-  \begin{pgfonlayer}{background}
-  \node [class, inner xsep=1em, inner ysep=1em, fit=(prod) (proc)] {};
-  \node [class, inner xsep=2em, inner ysep=2em, fit=(prod) (proc) (purp)] {};
-  \node [class, inner xsep=3em, inner ysep=3em, fit=(prod) (proc) (purp) (pers)] {};
-  \node [class, inner xsep=4em, inner ysep=4em, fit=(prod) (proc) (purp) (pers) (plac)] {};
-  \end{pgfonlayer}
+  \draw[help lines] (0,0) grid (7,5);
+
+  \node [anchor=east] at (-0.2,4.5) {Place};
+  \node [anchor=east] at (-0.2,3.5) {Person};
+  \node [anchor=east] at (-0.2,2.5) {Purpose};
+  \node [anchor=east] at (-0.2,1.5) {Process};
+  \node [anchor=east] at (-0.2,0.5) {Product};
+
+  \node [rotate=90, anchor=west] at (0.5,5.2) {Novelty};
+  \node [rotate=90, anchor=west] at (1.5,5.2) {Quality};
+  \node [rotate=90, anchor=west] at (2.5,5.2) {Value};
+  \node [rotate=90, anchor=west] at (3.5,5.2) {Purpose};
+  \node [rotate=90, anchor=west] at (4.5,5.2) {Spatial};
+  \node [rotate=90, anchor=west] at (5.5,5.2) {Temporal};
+  \node [rotate=90, anchor=west] at (6.5,5.2) {Ephemeral};
+
+  \node at (0.5,0.5) {7}; % Product Novelty
+  \node at (1.5,0.5) {6.5}; % Product Quality
+  \node at (2.5,0.5) {2}; % Product Value
+  \node at (3.5,0.5) {2}; % Product Purpose
+  \node at (4.5,0.5) {8}; % Product Spatial
+  \node at (5.5,0.5) {7}; % Product Temporal
+  \node at (6.5,0.5) {7}; % Product Ephemeral
+
+  \node at (0.5,1.5) {2}; % Process Novelty
+  \node at (1.5,1.5) {6}; % Process Quality
+  \node at (2.5,1.5) {4}; % Process Value
+  \node at (3.5,1.5) {4}; % Process Purpose
+  \node at (4.5,1.5) {8}; % Process Spatial
+  \node at (5.5,1.5) {8}; % Process Temporal
+  \node at (6.5,1.5) {6}; % Process Ephemeral 
+
+  \node at (0.5,2.5) {3}; % Purpose Novelty
+  \node at (1.5,2.5) {6}; % Purpose Quality
+  \node at (2.5,2.5) {2}; % Purpose Value
+  \node at (3.5,2.5) {8}; % Purpose Purpose
+  \node at (4.5,2.5) {8}; % Purpose Spatial
+  \node at (5.5,2.5) {9}; % Purpose Temporal
+  \node at (6.5,2.5) {7}; % Purpose Ephemeral 
+
+  \node at (0.5,3.5) {2}; % Person Novelty
+  \node at (1.5,3.5) {8.5}; % Person Quality
+  \node at (2.5,3.5) {2}; % Person Value
+  \node at (3.5,3.5) {8}; % Person Purpose
+  \node at (4.5,3.5) {2.5}; % Person Spatial
+  \node at (5.5,3.5) {7}; % Person Temporal
+  \node at (6.5,3.5) {5}; % Person Ephemeral 
+
+  \node at (0.5,4.5) {2}; % Place Novelty
+  \node at (1.5,4.5) {9}; % Place Quality
+  \node at (2.5,4.5) {9}; % Place Value
+  \node at (3.5,4.5) {8}; % Place Purpose
+  \node at (4.5,4.5) {8.5}; % Place Spatial
+  \node at (5.5,4.5) {8.5}; % Place Temporal
+  \node at (6.5,4.5) {1}; % Place Ephemeral 
   \end{tikzpicture}
-\caption[5 P Model]{5 P Model}
-\label{fig:5PModel}
+\caption[Example matrix]{Example matrix}
+\label{fig:exmatrix}
 \end{figure}
 
 

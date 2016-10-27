@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.6)  26 OCT 2016 20:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.6)  27 OCT 2016 11:47
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2941,7 +2941,7 @@ runsystem(del main.aex)...executed.
 
  (./main.aux
 (./front/title.aux) (./front/abstract.aux) (./front/publications.aux)
-(./front/acronyms.aux) (./back/interlude1.aux) (./main/foundation.aux)
+(./front/acronyms.aux) (./back/interlude1.aux) (./main/interpretation.aux)
 (./back/interlude2.aux) (./back/interlude3.aux))
 \openout1 = `main.aux'.
 
@@ -3208,7 +3208,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 27.
 
-<images/spiral_pre.pdf, id=125, 156.48964pt x 156.48964pt>
+<images/spiral_pre.pdf, id=139, 156.48964pt x 156.48964pt>
 File: images/spiral_pre.pdf Graphic file (type pdf)
 
 <use images/spiral_pre.pdf>
@@ -3244,7 +3244,7 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
 \openout2 = `front/publications.aux'.
 
  (./front/publications.tex
-<images/spirals.png, id=156, 482.80376pt x 473.77pt>
+<images/spirals.png, id=170, 482.80376pt x 473.77pt>
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 16.
@@ -3410,7 +3410,7 @@ LaTeX Font Warning: Font shape `U/wasy/m/n' in size <39.83366> not available
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <28.45274> not available
 (Font)              size <24.88> substituted on input line 89.
 
-<images/spiral_hello.pdf, id=238, 156.48964pt x 156.48964pt>
+<images/spiral_hello.pdf, id=251, 156.48964pt x 156.48964pt>
 File: images/spiral_hello.pdf Graphic file (type pdf)
 
 <use images/spiral_hello.pdf>
@@ -3426,7 +3426,7 @@ l.89 ...2}{$\boldsymbol\Theta$}RLD}{Introduction}}
 
 
 
- <./images/spiral_hello.pdf>] <images/spiral_trade.pdf, id=249, 156.48964pt x 1
+ <./images/spiral_hello.pdf>] <images/spiral_trade.pdf, id=262, 156.48964pt x 1
 56.48964pt>
 File: images/spiral_trade.pdf Graphic file (type pdf)
 
@@ -3443,7 +3443,7 @@ Package pdftex.def Info: images/spiral_trade.pdf used on input line 98.
 
 
 ])
-<images/spiral_core.pdf, id=278, 156.48964pt x 156.48964pt>
+<images/spiral_core.pdf, id=291, 156.48964pt x 156.48964pt>
 File: images/spiral_core.pdf Graphic file (type pdf)
 
 <use images/spiral_core.pdf>
@@ -3480,15 +3480,13 @@ Package pdftex.def Info: images/spirals.png used on input line 32.
 
 LaTeX Warning: Citation 'Raczinski2016' on page 6 undefined on input line 34.
 
-Package marginnote Info: Margin note 17.1 is on absolute page 17
-(marginnote)              on input line 34.
 Package marginnote Info: right page because not two side mode on input line 34.
 
 
 LaTeX Warning: Reference `app:pub' on page 6 undefined on input line 34.
 
-Package marginnote Info: xpos seems to be 442.46082pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 34.
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 34.
 File: images/spirals.png Graphic file (type png)
 <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 36.
@@ -3500,22 +3498,22 @@ Package pdftex.def Info: images/spirals.png used on input line 36.
 File: images/spirals.png Graphic file (type png)
  <use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 36.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 48.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 48.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 48.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 
 [6]
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 48.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 48.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+File: images/spirals.png Graphic file (type png)
+ <use images/spirals.png>
+Package pdftex.def Info: images/spirals.png used on input line 48.
+(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
+
 
 LaTeX Warning: Citation 'Candy2011' on page 7 undefined on input line 50.
 
@@ -3544,40 +3542,34 @@ Package marginnote Info: right page because not two side mode on input line 61.
 
 LaTeX Warning: Reference `ch:creativity' on page 7 undefined on input line 61.
 
-Package marginnote Info: xpos seems to be 172.22821pt,
+Package marginnote Info: xpos seems to be 457.13387pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 61.
-Package marginnote Info: Margin note 18.2 is on absolute page 18
-(marginnote)              on input line 61.
 Package marginnote Info: right page because not two side mode on input line 61.
 
 
 LaTeX Warning: Reference `ch:evaluation' on page 7 undefined on input line 61.
 
-Package marginnote Info: xpos seems to be 113.81102pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 61.
-Package marginnote Info: Margin note 18.3 is on absolute page 19
-(marginnote)              on input line 61.
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 61.
 Package marginnote Info: right page because not two side mode on input line 61.
 
 
 LaTeX Warning: Reference `s:evalsearch' on page 7 undefined on input line 61.
 
-Package marginnote Info: xpos seems to be 213.61539pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 61.
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 61.
+[7]
 
-LaTeX Warning: Citation 'Mcbride2012' on page 7 undefined on input line 65.
+LaTeX Warning: Citation 'Mcbride2012' on page 8 undefined on input line 65.
 
 LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <7> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 65.
-[7]
 Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
 although it is yet undefined on input line 68.
 File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
+<use images/spirals.png>
 Package pdftex.def Info: images/spirals.png used on input line 70.
 (pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
 File: images/spirals.png Graphic file (type png)
@@ -3599,7 +3591,7 @@ Package marginnote Info: right page because not two side mode on input line 72.
 
 LaTeX Warning: Reference `ch:evaluation' on page 8 undefined on input line 72.
 
-Package marginnote Info: xpos seems to be 540.60237pt,
+Package marginnote Info: xpos seems to be 351.16797pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 72.
 LaTeX Font Info:    Try loading font information for TS1+pbk on input line 75.
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pbk.fd
@@ -3635,6 +3627,8 @@ LaTeX Warning: Citation 'Copeland2016' on page 9 undefined on input line 101.
 
 LaTeX Warning: Citation 'Cohen1999' on page 9 undefined on input line 110.
 
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 110.
 [9]
 
 LaTeX Warning: Citation 'Cohen1999' on page 10 undefined on input line 113.
@@ -3651,21 +3645,19 @@ LaTeX Warning: Citation 'Barthes1967' on page 10 undefined on input line 119.
 
 LaTeX Warning: Citation 'Walker2012' on page 10 undefined on input line 121.
 
+[10]
 
-LaTeX Warning: Reference `ch:evaluation' on page 10 undefined on input line 127
+LaTeX Warning: Reference `ch:evaluation' on page 11 undefined on input line 127
 .
 
-Package marginnote Info: Margin note 21.1 is on absolute page 21
-(marginnote)              on input line 127.
 Package marginnote Info: right page because not two side mode on input line 127
 .
 
-LaTeX Warning: Reference `ch:evaluation' on page 10 undefined on input line 127
+LaTeX Warning: Reference `ch:evaluation' on page 11 undefined on input line 127
 .
 
-Package marginnote Info: xpos seems to be 301.87222pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 127.
-[10]
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 127.
 
 LaTeX Warning: Citation 'Turing1950' on page 11 undefined on input line 129.
 
@@ -3679,19 +3671,18 @@ LaTeX Warning: Citation 'Chalmers1996' on page 11 undefined on input line 129.
 LaTeX Warning: Citation 'Hofstadter1981' on page 11 undefined on input line 129
 .
 
-
-LaTeX Warning: Citation 'Dijkstra1988' on page 11 undefined on input line 138.
-
 [11]
+
+LaTeX Warning: Citation 'Dijkstra1988' on page 12 undefined on input line 138.
+
 Package marginnote Info: Margin note 23.1 is on absolute page 23
 (marginnote)              on input line 190.
 Package marginnote Info: right page because not two side mode on input line 190
 .
 
-
 LaTeX Warning: Reference `s:specs' on page 12 undefined on input line 190.
 
-Package marginnote Info: xpos seems to be 376.36362pt,
+Package marginnote Info: xpos seems to be 429.99571pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 190.
 
 LaTeX Warning: Reference `ch:evaluation' on page 12 undefined on input line 190
@@ -3707,7 +3698,7 @@ Package marginnote Info: right page because not two side mode on input line 217
 LaTeX Warning: Reference `ch:creativity' on page 13 undefined on input line 217
 .
 
-Package marginnote Info: xpos seems to be 169.78123pt,
+Package marginnote Info: xpos seems to be 520.23557pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 217.
 Package marginnote Info: right page because not two side mode on input line 217
 .
@@ -3723,23 +3714,14 @@ LaTeX Warning: Citation 'Schmidhuber2006' on page 13 undefined on input line 21
 
 Package marginnote Info: right page because not two side mode on input line 224
 .
-
-LaTeX Warning: Reference `s:sec' on page 13 undefined on input line 224.
-
 Package marginnote Info: xpos not known,
 (marginnote)             using \marginnoteleftadjust on input line 224.
 Package marginnote Info: right page because not two side mode on input line 225
 .
-
-LaTeX Warning: Reference `s:oec' on page 13 undefined on input line 225.
-
 Package marginnote Info: xpos not known,
 (marginnote)             using \marginnoteleftadjust on input line 225.
 Package marginnote Info: right page because not two side mode on input line 226
 .
-
-LaTeX Warning: Reference `s:framework' on page 13 undefined on input line 226.
-
 Package marginnote Info: xpos not known,
 (marginnote)             using \marginnoteleftadjust on input line 226.
 Package marginnote Info: right page because not two side mode on input line 232
@@ -3750,241 +3732,186 @@ LaTeX Warning: Reference `s:specs' on page 13 undefined on input line 232.
 Package marginnote Info: xpos not known,
 (marginnote)             using \marginnoteleftadjust on input line 232.
 [13]
-
-LaTeX Warning: Reference `tab:subcreat' on page 14 undefined on input line 244.
-
-
 Package marginnote Info: Margin note 25.1 is on absolute page 25
 (marginnote)              on input line 244.
 Package marginnote Info: right page because not two side mode on input line 244
 .
 LaTeX Font Info:    Try loading font information for U+fontawesomethree on inpu
 t line 244.
-(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+ (c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
 File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )
-
-LaTeX Warning: Reference `tab:subcreat' on page 14 undefined on input line 244.
-
-
-Package marginnote Info: xpos seems to be 452.49117pt,
+Package marginnote Info: xpos seems to be 281.6933pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 244.
+Package marginnote Info: Margin note 25.2 is on absolute page 25
+(marginnote)              on input line 269.
 Package marginnote Info: right page because not two side mode on input line 269
 .
+
 
 LaTeX Warning: Reference `ch:creativity' on page 14 undefined on input line 269
 .
 
-Package marginnote Info: xpos not known,
-(marginnote)             using \marginnoteleftadjust on input line 269.
-
-LaTeX Warning: Citation 'Stahl2013' on page 14 undefined on input line 272.
-
+Package marginnote Info: xpos seems to be 383.66359pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 269.
 [14]
 
-LaTeX Warning: Reference `table_objcreat' on page 15 undefined on input line 27
-5.
+LaTeX Warning: Citation 'Stahl2013' on page 15 undefined on input line 272.
 
+Package marginnote Info: Margin note 26.1 is on absolute page 26
+(marginnote)              on input line 275.
+Package marginnote Info: right page because not two side mode on input line 275
+.
+Package marginnote Info: xpos seems to be 346.09544pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 275.
 
-LaTeX Warning: Reference `table_objcreat' on page 15 undefined on input line 34
-0.
+LaTeX Warning: Reference `fig:4Crea' on page 15 undefined on input line 275.
 
+Package marginnote Info: Margin note 26.2 is on absolute page 27
+(marginnote)              on input line 275.
+Package marginnote Info: right page because not two side mode on input line 275
+.
+LaTeX Font Info:    Try loading font information for U+fontawesomeone on input 
+line 275.
+(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
+File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
+)
 
-LaTeX Warning: Reference `table_subcreat' on page 15 undefined on input line 34
-0.
+LaTeX Warning: Reference `fig:4Crea' on page 15 undefined on input line 275.
 
-[15]
+Package marginnote Info: xpos seems to be 377.38744pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 275.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 346.
- <images/evalmatrix.png, id=419, 997.85297pt x 549.92953pt>
-File: images/evalmatrix.png Graphic file (type png)
+ine 277.
+Package marginnote Info: right page because not two side mode on input line 334
+.
 
-<use images/evalmatrix.png>
-Package pdftex.def Info: images/evalmatrix.png used on input line 350.
-(pdftex.def)             Requested size: 426.79135pt x 235.2064pt.
- [16 <./images/evalmatrix.png>]
-File: images/spirals.png Graphic file (type png)
+LaTeX Warning: Reference `ch:evaluation' on page 15 undefined on input line 334
+.
 
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 379.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 379.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 379.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--391
-
- []
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 334.
+[15]
+Package marginnote Info: Margin note 27.1 is on absolute page 27
+(marginnote)              on input line 338.
+Package marginnote Info: right page because not two side mode on input line 338
+.
+Package marginnote Info: xpos seems to be 305.6812pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 338.
+Package marginnote Info: Margin note 27.2 is on absolute page 27
+(marginnote)              on input line 368.
+Package marginnote Info: right page because not two side mode on input line 368
+.
+Package marginnote Info: xpos seems to be 162.50505pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 368.
+Package marginnote Info: Margin note 27.3 is on absolute page 28
+(marginnote)              on input line 368.
+Package marginnote Info: right page because not two side mode on input line 368
+.
+Package marginnote Info: xpos seems to be 529.47888pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 368.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--400
+LaTeX Warning: Reference `s:specs' on page 16 undefined on input line 370.
 
- []
+Package marginnote Info: right page because not two side mode on input line 370
+.
 
+LaTeX Warning: Reference `s:specs' on page 16 undefined on input line 370.
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--409
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 410--418
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 370.
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 459--467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--427
+Underfull \hbox (badness 10000) in paragraph at lines 468--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--494
 
  []
 
 [18]
-
-LaTeX Warning: Reference `ch:interpretation' on page 19 undefined on input line
- 443.
-
-[19] [20]
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 457.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 457.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 457.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package acronym Info: Label `acro:IOCT' newly defined as it shall be overridden
-
-although it is yet undefined on input line 461.
-Package acronym Info: Label `acro:URL' newly defined as it shall be overridden
-although it is yet undefined on input line 463.
- [21]
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 470.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 470.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 470.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
- [22]
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 483.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 483.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 483.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 492--492
+Underfull \hbox (badness 10000) in paragraph at lines 495--503
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--493
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--494
-
- []
-
-File: images/spirals.png Graphic file (type png)
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 496.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 496.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 496.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-
-[23] [24]) [25] [26]
-<images/spiral_practice.pdf, id=529, 156.48964pt x 156.48964pt>
+Package marginnote Info: right page because not two side mode on input line 504
+.
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 504.
+Package marginnote Info: right page because not two side mode on input line 504
+.
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoteleftadjust on input line 504.
+) [19] <images/spiral_practice.pdf, id=477, 156.48964pt x 156.48964pt>
 File: images/spiral_practice.pdf Graphic file (type pdf)
 
 <use images/spiral_practice.pdf>
 Package pdftex.def Info: images/spiral_practice.pdf used on input line 122.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [27
+ [20
 
 
  <./images/spiral_practice.pdf>]
 \openout2 = `back/interlude2.aux'.
 
 
-(./back/interlude2.tex [28
+(./back/interlude2.tex [21
 
 
-] [29])
-<images/spiral_meta.pdf, id=575, 156.48964pt x 156.48964pt>
+] [22])
+<images/spiral_meta.pdf, id=523, 156.48964pt x 156.48964pt>
 File: images/spiral_meta.pdf Graphic file (type pdf)
 
 <use images/spiral_meta.pdf>
 Package pdftex.def Info: images/spiral_meta.pdf used on input line 136.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [30
+ [23
 
 
 
  <./images/spiral_meta.pdf>]
-<images/spiral_after.pdf, id=587, 156.48964pt x 156.48964pt>
+<images/spiral_after.pdf, id=535, 156.48964pt x 156.48964pt>
 File: images/spiral_after.pdf Graphic file (type pdf)
 
 <use images/spiral_after.pdf>
 Package pdftex.def Info: images/spiral_after.pdf used on input line 144.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [31
+ [24
 
  <./images/spiral_after.pdf>]
 \openout2 = `back/interlude3.aux'.
 
 
-(./back/interlude3.tex [32
+(./back/interlude3.tex [25
 
 
 ])
-<images/spiral_post.pdf, id=606, 156.48964pt x 156.48964pt>
+<images/spiral_post.pdf, id=552, 156.48964pt x 156.48964pt>
 File: images/spiral_post.pdf Graphic file (type pdf)
 
 <use images/spiral_post.pdf>
 Package pdftex.def Info: images/spiral_post.pdf used on input line 160.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [33
+ [26
 
 
 
- <./images/spiral_post.pdf>] [34
+ <./images/spiral_post.pdf>] [27
 
 
-] [35]
+] [28]
 Overfull \hbox (12.1257pt too wide) in paragraph at lines 174--174
 \T1/pbk/l/n/10.95 Web site map-ping'. In: \T1/pbk/db/it/10.95 Com-puter Net-wor
 ks and ISDN Sys-tems \T1/pbk/l/n/10.95 30.1-7, pp. 317^^U|
@@ -3996,25 +3923,25 @@ Overfull \hbox (7.31467pt too wide) in paragraph at lines 174--174
 t/10.95 Speech and Lan-guage Pro-cessing\T1/pbk/l/n/10.95 .|
  []
 
-[36]
+[29]
 Overfull \hbox (31.36778pt too wide) in paragraph at lines 174--174
 [][]\T1/pbk/l/n/10.95 Mayhaymate (2012). \T1/pbk/db/it/10.95 File:PageRank-hi-r
 es.png\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pc
 r/m/n/10.95 https : / / commons . wikimedia .|
  []
 
-[37]
+[30]
 Overfull \hbox (22.75479pt too wide) in paragraph at lines 174--174
 [][]\T1/pbk/l/n/10.95 University, Prin-ceton (2010). \T1/pbk/db/it/10.95 What i
 s Word-Net? \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pcr/m/n/10.95 ht
 tp : / / wordnet . princeton .|
  []
 
-[38] [39]
+[31] [32]
 \tf@ptc=\write10
 \openout10 = `main.ptc'.
 
- [40
+ [33
 
 ]
 \tf@tdo=\write11
@@ -4039,15 +3966,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
 (./main/interpretation.aux) (./back/interlude2.aux) (./back/interlude3.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D0ED582892E2D1228B98683726306069;1642.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 01E74D9F317A3CD1EA29AC192489B403;1416
-(rerunfilecheck)             After:  CC00A3DBF24736D8EBAFB0A91690A73B;1843.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 32.0255pt have occurred.
@@ -4068,57 +3989,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64336 strings out of 493013
- 1231293 string characters out of 6136994
- 1909388 words of memory out of 5000000
- 66547 multiletter control sequences out of 15000+600000
- 117978 words of font info for 184 fonts, out of 8000000 for 9000
+ 64270 strings out of 493013
+ 1230748 string characters out of 6136994
+ 1925469 words of memory out of 5000000
+ 66525 multiletter control sequences out of 15000+600000
+ 111484 words of font info for 161 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,82p,10377b,2011s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{URL} has been referenced but does not exist, repl
-aced by a fixed one
-
-pdfTeX warning (dest): name{IOCT} has been referenced but does not exist, repla
-ced by a fixed one
-
-pdfTeX warning (dest): name{CSF} has been referenced but does not exist, replac
-ed by a fixed one
-
-pdfTeX warning (dest): name{MMCE} has been referenced but does not exist, repla
-ced by a fixed one
-
-pdfTeX warning (dest): name{SPECS} has been referenced but does not exist, repl
-aced by a fixed one
-
-pdfTeX warning (dest): name{table.1.5} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{table.1.4} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{table.1.3} has been referenced but does not exist, 
-replaced by a fixed one
-
-{c:/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{c
-:/texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{c:/texlive/2016/te
-xmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvip
-s/tex-gyre/q-ec-sc.enc}<c:/texlive/2016/texmf-dist/fonts/type1/public/fontaweso
-me/FontAwesome.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/
-texmf-dist/fonts/type1/public/tex-gyre/qagb.pfb><c:/texlive/2016/texmf-dist/fon
-ts/type1/public/tex-gyre/qagr.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/b
-ookman/ubkd8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkdi8a.p
-fb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb><c:/texlive/2
-016/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2016/texmf-dist/
-fonts/type1/urw/courier/ucrb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/
-courier/ucrr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/wasy2-ps/wasy
-b10.pfb>
-Output written on main.pdf (51 pages, 839448 bytes).
+{c:/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{c
+:/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{c:/
+texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{c:/texlive/2016/texm
+f-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/
+tex-gyre/q-ec-sc.enc}<c:/texlive/2016/texmf-dist/fonts/type1/public/fontawesome
+/FontAwesome.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+sy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/te
+xmf-dist/fonts/type1/public/tex-gyre/qagb.pfb><c:/texlive/2016/texmf-dist/fonts
+/type1/public/tex-gyre/qagr.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/boo
+kman/ubkd8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkdi8a.pfb
+><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb><c:/texlive/201
+6/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2016/texmf-dist/fo
+nts/type1/urw/courier/ucrb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/co
+urier/ucrr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/wasy2-ps/wasyb1
+0.pfb>
+Output written on main.pdf (44 pages, 473519 bytes).
 PDF statistics:
- 863 PDF objects out of 1000 (max. 8388607)
- 766 compressed objects within 8 object streams
- 246 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 799 PDF objects out of 1000 (max. 8388607)
+ 708 compressed objects within 8 object streams
+ 207 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 
