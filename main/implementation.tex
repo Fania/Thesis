@@ -38,14 +38,6 @@ a sad variety of woes I mourn.
 \label{img:fullscreenshot1}
 \end{figure}
 
-% \spirals
-
-% \todo{add stuff about website as a whole, dont go directly into nitty gritty}
-% \todo{add example code snippets from shakespeare}
-
-% \begingroup
-% % \setlength{\intextsep}{5pt}%
-% \setlength{\columnsep}{5pt}%
 \begin{wrapfigure}{o}{0.4\textwidth}
   \centering
   \scalebox{.8}{
@@ -101,7 +93,6 @@ a sad variety of woes I mourn.
   \label{fig:dir}
   \vspace{-20pt}
 \end{wrapfigure}
-% \endgroup
 
 % \begin{draft}
 %   \begin{itemize}
@@ -116,16 +107,30 @@ a sad variety of woes I mourn.
 %   \end{itemize}
 % \end{draft}
 
-
-% \todo{add section about which pieces of code are not written by me}
-
 The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot1}\marginnote{\faicon{picture-o}~\ref{img:fullscreenshot1}}) embodies the knowledge of this doctoral research and showcases \ac{AMC} and patalgorithms. This chapter gives an overview of the structure of the website and the development process.
+
+\todo{add top level description of the site first}
+repeat arty bollocks from intro 
+add arty bollocks to abstract
+
+a pataphysical search engine
+subverts conventional expectations
+recombining source texts into emergent user directed poetical structures
+ephemeral connections made concrete by emails
+unpredictable spirals of pataphysicalised visual Media
+illustrate AMC
+
+
 
 Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not directly the case in this project).
 
 The front-end design uses the \textbf{W3.CSS} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and desktop screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).
 
 The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
+
+
+\todo{add stuff about website as a whole, dont go directly into nitty gritty}
+
 
 The folder structure is as follows:
 
