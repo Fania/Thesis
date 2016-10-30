@@ -91,36 +91,14 @@ a sad variety of woes I mourn.
   }
   \caption[Project directory]{Project directory}
   \label{fig:dir}
-  \vspace{-20pt}
+  \vspace{-2cm}
 \end{wrapfigure}
-
-% \begin{draft}
-%   \begin{itemize}
-%     \item List all small features
-%     \item note each one, explain why I did it, explain tech used
-%     \item User interface design (UI Design) UX (User Experience)
-%     \item subliminal cues
-%     \item git history (gut history)
-%     \item software was designed to be scalable (eg shakespeare)
-%     \item ephemeral and serendipidous but create a sense of permanence (eg emails)
-%     \item sentences, poetry, shakespeare, email
-%   \end{itemize}
-% \end{draft}
 
 The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot1}\marginnote{\faicon{picture-o}~\ref{img:fullscreenshot1}}) embodies the knowledge of this doctoral research and showcases \ac{AMC} and patalgorithms. This chapter gives an overview of the structure of the website and the development process.
 
-\todo{add top level description of the site first}
-repeat arty bollocks from intro 
-add arty bollocks to abstract
+A high level view of the site would be that it is a pataphysical search engine that subverts conventional expectations by recombining literary texts into emergent user directed and ephemeral poetical structures or unpredictable spirals of pataphysicaled visual media. 
 
-a pataphysical search engine
-subverts conventional expectations
-recombining source texts into emergent user directed poetical structures
-ephemeral connections made concrete by emails
-unpredictable spirals of pataphysicalised visual Media
-illustrate AMC
-
-
+It is written in \num{5} different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to \num{6} external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over \num{30} files. 
 
 Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not directly the case in this project).
 
@@ -128,19 +106,12 @@ The front-end design uses the \textbf{W3.CSS} stylesheet as a basis. The website
 
 The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
 
-
-\todo{add stuff about website as a whole, dont go directly into nitty gritty}
-
-
-The folder structure is as follows:
-
-
+The folder structure is shown in figure~\ref{fig:files}\marginnote{\faicon{object-group}~\ref{fig:files}}.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \begin{tikzpicture}
     % \draw[help lines, color=gray] (0,0) grid (13,10);
-
     \fill [blue] (2,7) circle (2pt) node (faust) {}; % 1
     \fill [blue] (2,7.15) circle (2pt); % 2
     \fill [blue] (2.15,7) circle (2pt); % 3
@@ -229,7 +200,7 @@ The folder structure is as follows:
     \fill [green] (6.3,6.85) circle (2pt); % 8
     \fill [green] (6.15,6.7) circle (2pt); % 9
     
-    \fill (3,5) circle (2pt) node (corpus) {};
+    \fill [blue] (3,5) circle (2pt) node (corpus) {};
     \draw (6,5.3) circle (2pt) node (static) {};
     
     \fill [red] (10,4) circle (2pt) node (temp) {}; % 1
@@ -283,43 +254,243 @@ The folder structure is as follows:
     \fill [red] (2.5,2) circle (4pt) node [right=2pt, black] (html) {html};
     \fill [purple] (4.5,2) circle (4pt) node [right=2pt, black] (css) {css};
     \fill [teal] (6,2) circle (4pt) node [right=2pt, black] (js) {javascript};
-    
   \end{tikzpicture}
 \caption[Folder structure]{Folder structure}
 \label{fig:files}
 \end{figure}
 
+Figures~\ref{fig:textsearch} and~\ref{fig:visualsearch}\marginnote{\faicon{object-group}~\ref{fig:textsearch} \& \ref{fig:visualsearch}} show the two main workflow scenarios of \url{pata.physics.wtf} in the form of sequence diagrams. The columns are labeled with the main agents (this includes the user and the various main files responsible for key actions in the system). Going down vertically represents time. 
 
+Figure~\ref{fig:textsearch} demonstrates an outline of how the text search process works. A user enters a query which into a search box in the \py{text.html} file which is rendered by the \py{textviews.py} file. From there it gets forwarded to the \py{textsurfer.py} file which then handles the pataphysicalisation process and returns patadata back to the \py{textviews.py} file. The python file then forwards to the \py{textresults.html} file which retrieves and renders the results to the user. The user then has the option to randomise the results (if displayed as a poem) which is handled by the \py{fania.js} file. A very similar process is in place for image and video search as shown in figure~~\ref{fig:visualsearch}. The main difference is the results are retrieved in the \py{fania.js} file rather than the \py{imgresults.html} file.
 
-\begin{figure}[!htbp] % (here, top, bottom, page)
+\begin{figure}[!p] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/flow}
-\caption[Flowchart]{Flowchart}
-\label{img:flow}
+  \begin{minipage}[c]{\textwidth}
+    \begin{tikzpicture}[every node/.style={font=\normalsize,
+      minimum height=0.5cm,minimum width=0.5cm},]
+
+    % Matrix
+    \node [matrix, very thin,column sep=2cm,row sep=0.5cm] (matrix) at (0,0) {
+      % files
+      \node(user){}; &[-0.8cm] \node(th){}; &[-0.1cm] \node(tvp){}; &[0.3cm] \node(tsp){}; &[0.6cm] \node(trh){}; &[0.2cm] \node(fj){}; \\
+      % row 1
+      \node(user 1){}; & \node(th 1){}; & \node(tvp 1){}; & \node(tsp 1){}; & & \\
+      % horizontal line 1
+      \node(t1 left){}; & & & & & \node(t1 right){};\\
+      % row 2
+      & & \node(tvp 2){}; & \node(tsp 2){}; & & \\
+      % horizontal line 2
+      \node(t2 left){}; & & & & & \node(t2 right){};\\
+      % row 3
+      & & \node(tvp 3){}; & \node(tsp 3){}; & \node(trh 3){}; & \node(fj 3){};\\
+      % horizontal line 3
+      \node(t3 left){}; & & & & & \node(t3 right){};\\
+      % row 4
+      \node(user 4){}; & \node(th 4){}; & \node(tvp 4){}; & \node(tsp 4){}; & \node(trh 4){}; & \node(fj 4){};\\
+      % horizontal line 4
+      \node(t4 left){}; & & & & & \node(t4 right){};\\
+      % row 5
+      \node(user 5){}; & \node(th 5){}; & \node(tvp 5){}; & \node(tsp 5){}; & \node(trh 5){}; & \node(fj 5){};\\
+      % horizontal line 5
+      \node(t5 left){}; & & & & & \node(t5 right){};\\
+      % row 6
+      \node(user 6){}; & \node(th 6){}; & \node(tvp 6){}; & \node(tsp 6){}; & \node(trh 6){}; & \node(fj 6){};\\
+      % last row
+      \node(user 7){}; & \node(th 7){}; & \node(tvp 7){}; & \node(tsp 7){}; & \node(trh 7){}; & \node(fj 7){};\\
+    };
+
+    % Files
+    \fill 
+      (user) node[draw,fill=white] {User}
+      (th) node[draw,fill=white] {text.html}
+      (tvp) node[draw,fill=white] {textviews.py}
+      (tsp) node[draw,fill=white] {textsurfer.py}
+      (trh) node[draw,fill=white] {textresults.html}
+      (fj) node[draw,fill=white] {fania.js};
+
+    % Horizontal lines
+    \draw [dotted] 
+      (t1 left) -- (t1 right)
+      (t2 left) -- (t2 right)
+      (t3 left) -- (t3 right)
+      (t4 left) -- (t4 right)
+      (t5 left) -- (t5 right);
+
+    % Vertical lines
+    \draw [dashed] 
+      (user) -- (user 7)
+      (th) -- (th 7)
+      (tvp) -- (tvp 7)
+      (tsp) -- (tsp 7)
+      (trh) -- (trh 7)
+      (fj) -- (fj 7);
+
+    % Blocks
+    \filldraw[fill=white]
+      (user 1.north west) rectangle (user 6.south east)
+      (th 1.north west) rectangle (th 1.south east)
+      (tvp 1.north west) rectangle (tvp 3.south east)
+      (tsp 1.north west) rectangle (tsp 2.south east)
+      (trh 3.north west) rectangle (trh 4.south east)
+      (trh 5.north west) rectangle (trh 6.south east)
+      (fj 5.north west) rectangle (fj 6.south east);
+
+    % Horizontal flows
+    \draw [arr] (user 1) -- node[txt]{query} (th 1);
+    \draw [arr] (th 1) -- node[txt]{query} (tvp 1);
+    \draw [arr] (tvp 1) -- node[txt]{query} (tsp 1);
+    \draw [arr] (tsp 2) -- node[txt]{patadata} (tvp 2);
+    \draw [arr] (tvp 3) -- node[txt]{results} (tsp 3.west) arc(180:0:0.25cm) -- (trh 3);
+    \draw [arr] (trh 4) -- node[txt]{results} (tsp 4.east) arc(0:180:0.25cm) -- (tvp 4.east) arc(0:180:0.25cm) -- (th 4.east) arc(0:180:0.25cm) -- (user 4);
+
+    \draw [arr] (user 5) -- (th 5.west) arc(180:0:0.25cm) -- (tvp 5.west) arc(180:0:0.25cm) -- (tsp 5.west) arc(180:0:0.25cm) -- node[txt]{randomise} (trh 5);
+    \draw [arr] (trh 5) -- node[txt]{randomise} (fj 5);
+    \draw [arr] (fj 6) -- node[txt]{results} (trh 6);
+    \draw [arr] (trh 6) -- node[txt]{results} (tsp 6.east) arc(0:180:0.25cm) -- (tvp 6.east) arc(0:180:0.25cm) -- (th 6.east) arc(0:180:0.25cm) -- (user 6);
+    \end{tikzpicture}
+    \vspace{-1cm}
+    \captionof{figure}{Top-level overview of text search}
+    \label{fig:textsearch}
+  \end{minipage}%
+  % \vspace{0.5\textheight}
+  % \vfill%
+  \vspace{2cm}
+  \begin{minipage}[c]{\textwidth}
+    \begin{tikzpicture}[every node/.style={font=\normalsize,
+      minimum height=0.5cm,minimum width=0.5cm},]
+
+    % Matrix
+    \node [matrix, very thin,column sep=2cm,row sep=0.5cm] (matrix) at (0,0) {
+      % files
+      \node(user){}; &[-0.6cm] \node(th){}; &[0.15cm] \node(tvp){}; &[0.35cm] \node(tsp){}; &[0.7cm] \node(trh){}; &[0.2cm] \node(fj){}; \\
+      % row 1
+      \node(user 1){}; & \node(th 1){}; & \node(tvp 1){}; & \node(tsp 1){}; & & \\
+      % horizontal line 1
+      \node(t1 left){}; & & & & & \node(t1 right){};\\
+      % row 2
+      & & \node(tvp 2){}; & \node(tsp 2){}; & & \\
+      % horizontal line 2
+      \node(t2 left){}; & & & & & \node(t2 right){};\\
+      % row 3
+      & & \node(tvp 3){}; & \node(tsp 3){}; & \node(trh 3){}; & \node(fj 3){};\\
+      % horizontal line 3
+      \node(t3 left){}; & & & & & \node(t3 right){};\\
+      % row 4
+      \node(user 4){}; & \node(th 4){}; & \node(tvp 4){}; & \node(tsp 4){}; & \node(trh 4){}; & \node(fj 4){};\\
+      % last row
+      \node(user 7){}; & \node(th 7){}; & \node(tvp 7){}; & \node(tsp 7){}; & \node(trh 7){}; & \node(fj 7){};\\
+    };
+
+    % Files
+    \fill 
+      (user) node[draw,fill=white] {User}
+      (th) node[draw,fill=white] {image.html}
+      (tvp) node[draw,fill=white] {imgviews.py}
+      (tsp) node[draw,fill=white] {imgsurfer.py}
+        (trh) node[draw,fill=white] {imgresults.html}
+        (fj) node[draw,fill=white] {fania.js};
+
+    % Horizontal lines
+    \draw [dotted] 
+      (t1 left) -- (t1 right)
+      (t2 left) -- (t2 right)
+      (t3 left) -- (t3 right)
+      (t4 left) -- (t4 right);
+
+    % Vertical lines
+    \draw [dashed] 
+      (user) -- (user 7)
+      (th) -- (th 7)
+      (tvp) -- (tvp 7)
+      (tsp) -- (tsp 7)
+      (trh) -- (trh 7)
+      (fj) -- (fj 7);
+
+    % Blocks
+    \filldraw[fill=white]
+      (user 1.north west) rectangle (user 4.south east)
+      (th 1.north west) rectangle (th 1.south east)
+      (tvp 1.north west) rectangle (tvp 3.south east)
+      (tsp 1.north west) rectangle (tsp 2.south east)
+      (trh 3.north west) rectangle (trh 4.south east)
+      (fj 3.north west) rectangle (fj 4.south east);
+
+    % Horizontal flows
+    \draw [arr] (user 1) -- node[txt]{query} (th 1);
+    \draw [arr] (th 1) -- node[txt]{query} (tvp 1);
+    \draw [arr] (tvp 1) -- node[txt]{query} (tsp 1);
+    \draw [arr] (tsp 2) -- node[txt]{patadata} (tvp 2);
+    \draw [arr] (tvp 3) -- node[txt]{patadata} (tsp 3.west) arc(180:0:0.25cm) -- (trh 3);
+    \draw [arr] (trh 3) -- node[txt]{patadata} (fj 3);
+    \draw [arr] (fj 4) -- node[txt]{results} (trh 4);
+    \draw [arr] (trh 4) -- node[txt]{results} (tsp 4.east) arc(0:180:0.25cm) -- (tvp 4.east) arc(0:180:0.25cm) -- (th 4.east) arc(0:180:0.25cm) -- (user 4);
+    \end{tikzpicture}
+    \vspace{-1cm}
+    \captionof{figure}{Top-level overview of image / video search}
+    \label{fig:visualsearch}
+  \end{minipage}
 \end{figure}
+	
+% \begin{tikzpicture}[every node/.style={font=\normalsize,
+%       minimum height=0.5cm,minimum width=0.5cm},]
+%   % Matrix
+%   \node [matrix, very thin,column sep=2cm,row sep=0.5cm] (matrix) at (0,0) {
+%   % files
+%   \node(pata){}; & \node(setup){}; & \node(corpus){};\\
+%   % row 1
+%   \node(pata 1){}; & \node(setup 1){}; & \node(corpus 1){};\\
+%   % horizontal line 1
+%   \node(t1 left){}; & & \node(t1 right){};\\
+%   % row 2
+%   \node(pata 2){}; & \node(setup 2){}; & \node(corpus 2){};\\
+%   % horizontal line 2
+%   \node(t2 left){}; & & \node(t2 right){};\\
+%   % row 3
+%   \node(pata 3){}; & \node(setup 3){}; & \node(corpus 3){};\\
+%   % last row
+%   \node(pata 7){}; & \node(setup 7){}; & \node(corpus 7){};\\
+%   };
 
-% \begin{figure}[!htbp] % (here, top, bottom, page)
-%   \centering
-%   \includegraphics[width=\linewidth]{images/gource}
-% \caption[gource]{gource}
-% \label{img:gource}
-% \end{figure}
+%   % Files
+%   \fill 
+%     (pata) node[draw,fill=white] {Pata}
+%     (setup) node[draw,fill=white] {Setup}
+%     (corpus) node[draw,fill=white] {Corpus};
 
+%   % Horizontal lines
+%   \draw [dotted] 
+%     (t1 left) -- (t1 right)
+%     (t2 left) -- (t2 right);
 
-\begin{fcom}
-  To provide a short overview, the tools’s workflow can be described as follows:
-  \begin{enumerate}
-    \item Tokenise texts and remove stopwords to build index,
-    \item a query triggers the three pataphysical algorithms,
-    \item each algorithm finds results for the query,
-    \item retrieve some words before/after match for context, and
-    \item render the resulting sentences.
-  \end{enumerate}
-\end{fcom}
+%   % Vertical lines
+%   \draw [dashed] 
+%     (pata) -- (pata 7)
+%     (setup) -- (setup 7)
+%     (corpus) -- (corpus 7);
 
-\todo{add audio? update this section depending on what I do}
+%   % Blocks
+%   \filldraw[fill=white]
+%     (pata 1.north west) rectangle (pata 3.south east)
+%     (setup 1.north west) rectangle (setup 2.south east)
+%     (setup 3.north west) rectangle (setup 3.south east)
+%     (corpus 1.north west) rectangle (corpus 2.south east);
 
-From the homepage users can choose between text, image and video search. Then they can enter a query --- in the case of text search this should be single words only, image and video search support multi word queries.
+%   % Horizontal flows
+%   \draw [arr] (pata 1) -- node[txt]{load} (setup 1);
+  
+%   \draw [arr] (setup 1) -- node[txt]{open file} (corpus 1);
+%   \draw [arr] (corpus 2) -- node[txt]{read text} (setup 2);
+%   \draw [arr] (setup 2) -- node[txt,right,fill=white]{add to index} (setup 3);
+%   \draw (2.7,1) node[txt,fill=white]{loop};
+%   \draw (-0.6,0.9) rectangle (3.2,6); % loop
+%   \draw [arr] (setup 3) -- node[txt]{} (pata 3);
+%   \end{tikzpicture}
+
+Putting it another way, (1) the system setup tokenises each of the source texts, removes stopwords and then adds terms and their location to the index (see section~\ref{s:index}\marginnote{§~\ref{s:index}}), (2) a query then triggers the three pataphysical algorithms, (3) each algorithm finds results for the query (see section~\ref{s:algorithms}\marginnote{§~\ref{s:algorithms}}), (4) some words before/after the match are retrieved for context, and (5) the resulting sentences are rendered for the user.
+
+\spirals
+
+This chapter explains how \url{pata.physics.wtf} was created and how it operates technically. Specifically it will discuss the intitial setup of the system when it is first started up, the text search algorithms, the image and video \ac{API} calls and the main design elements (text poetry and image spirals).
 
 
 \section{Setup}
@@ -327,89 +498,87 @@ From the homepage users can choose between text, image and video search. Then th
 \subsection{Corpora}
 \label{s:corpora}
 
-Instead of crawling the Internet the present tool uses a local collection of texts in its text-search. The corpus used resembles the fictional library of `equivalent books' from Alfred Jarry's \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}\footnote{`In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.'\parencite[p.12]{Jarry1996}}. In principle the \hypertarget{corpus}{corpus}\label{ref:corpus} is just a folder within the tool's directory structure which contains the following files:
+Instead of crawling the Internet \url{pata.physics.wtf} uses a local collection of texts for its text search. Setting up a custom web crawler would require a lot more resources (in terms of hardware, time and money) than practical for this project. There are two corpora containing \num{65} text files together. 
 
-\todo{Have you explained anywhere that some of your content is not in English? And what you have done to address that problem?
-}
+The first corpus resembles the fictional library of `equivalent books' from Alfred Jarry's \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear{Jarry1996}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
+
+% \footnote{`In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.'\parencite[p.12]{Jarry1996}}
 
 \begin{enumerate}[start=0]
-\item Alfred Jarry: \emph{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
-\item Edgar Allen Poe: \emph{Collected Works}
-\item Cyrano de Bergerac: \emph{A Voyage to the Moon}
-\item Saint Luke: \emph{The Gospel}
-\item Leon Bloy: \emph{Le Desespere} (French)
-\item Samuel Taylor Coleridge: \emph{The Rime of the Ancient Mariner}
-\item Georges Darien: \emph{Le Voleur} (French)
-\item Marceline Desbordes-Valmore: \emph{Le Livre des Meres et des Enfants} (French)
-\item Max Elskamp: \emph{Enluminures} (French)
-\item Jean-Pierre Claris de Florian: \emph{Les Deux Billets} (French)
-\item \emph{One Thousand and One Nights}
-\item Christian Grabbe: \emph{Scherz, Satire, Ironie und tiefere Bedeutung} (German)
-\item Gustave Kahn: \emph{Le Conte de l'Or et Du Silence} (French)
-\item Le Comte de Lautreamont: \emph{Les Chants de Maldoror} (French)
-\item Maurice Maeterlinck: \emph{Aglavaine and Selysette}
-\item Stephane Mallarme: \emph{Verse and Prose} (French)
-\item Catulle Mendes: \emph{The Mirror} and \emph{la Divina Aventure} (English and Spanish)
-\item Homer: \emph{The Odyssey}
-\item Josephin Peladan: \emph{Babylon} (EMPTY FILE)\footnote{I have not been able to find any source texts online.\label{emptyfile}}
-\item Francois Rabelais: \emph{Gargantua and Pantagruel}
-\item Jean de Chilra: \emph{L'Heure Sexuelle} (EMPTY FILE)\textsuperscript{\ref{emptyfile}}
-\item Henri de Regnier: \emph{La Canne de Jaspe} (EMPTY FILE)\textsuperscript{\ref{emptyfile}}
-\item Arthur Rimbaud: \emph{Poesies Completes} (French)
-\item Marcel Schwob: \emph{Der Kinderkreuzzug} (German)
-\item Alfred Jarry: \emph{Ubu Roi} (French)
-\item Paul Verlaine: \emph{Poems}
-\item Emile Verhaeren: \emph{Poems}
-\item Jules Verne: \emph{A Journey to the Centre of the Earth}
+\item Alfred Jarry: \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician}
+\item Edgar Allen Poe: \textit{Collected Works}
+\item Cyrano de Bergerac: \textit{A Voyage to the Moon}
+\item Saint Luke: \textit{The Gospel}
+\item Leon Bloy: \textit{Le Desespere} (French)
+\item Samuel Taylor Coleridge: \textit{The Rime of the Ancient Mariner}
+\item Georges Darien: \textit{Le Voleur} (French)
+\item Marceline Desbordes-Valmore: \textit{Le Livre des Meres et des Enfants} (French)
+\item Max Elskamp: \textit{Enluminures} (French)
+\item Jean-Pierre Claris de Florian: \textit{Les Deux Billets} (French)
+\item \textit{One Thousand and One Nights}
+\item Christian Grabbe: \textit{Scherz, Satire, Ironie und tiefere Bedeutung} (German)
+\item Gustave Kahn: \textit{Le Conte de l'Or et Du Silence} (French)
+\item Le Comte de Lautreamont: \textit{Les Chants de Maldoror} (French)
+\item Maurice Maeterlinck: \textit{Aglavaine and Selysette}
+\item Stephane Mallarme: \textit{Verse and Prose} (French)
+\item Catulle Mendes: \textit{The Mirror} and \textit{la Divina Aventure} (English and Spanish)
+\item Homer: \textit{The Odyssey}
+\item Josephin Peladan: \textit{Babylon} (EMPTY FILE)\footnote{I have not been able to find any source texts online.\label{emptyfile}}
+\item Francois Rabelais: \textit{Gargantua and Pantagruel}
+\item Jean de Chilra: \textit{L'Heure Sexuelle} (EMPTY FILE)\textsuperscript{\ref{emptyfile}}
+\item Henri de Regnier: \textit{La Canne de Jaspe} (EMPTY FILE)\textsuperscript{\ref{emptyfile}}
+\item Arthur Rimbaud: \textit{Poesies Completes} (French)
+\item Marcel Schwob: \textit{Der Kinderkreuzzug} (German)
+\item Alfred Jarry: \textit{Ubu Roi} (French)
+\item Paul Verlaine: \textit{Poems}
+\item Emile Verhaeren: \textit{Poems}
+\item Jules Verne: \textit{A Journey to the Centre of the Earth}
 \end{enumerate}
 
-\todo{check spelling of all names}
+The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. `For literary, dramatic, musical or artistic works \num{70} years from the end of the calendar year in which the last remaining author of the work dies.' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than \num{70} years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. `Private and research study purposes', so for the purposes of this project copyright should not apply.} in their original languages. The decision to get foreign language texts was partially due to the lack of out-of-copyright translated versions and partially because the original library in `Faustroll' was also multi-lingual.
 
-The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Only three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. `For literary, dramatic, musical or artistic works \num{70} years from the end of the calendar year in which the last remaining author of the work dies.' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than \num{70} years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. `Private and research study purposes', so for the purposes of this project copyright should not apply.} in their original languages.
-
-\todo{add shakespeare}
+The second corpus is a collection of \num{38} texts by William Shakespeare \citeyear{Shakespeare2011}.
 
 \begin{enumerate}
-  \item The Sonnets
-  \item Alls Well That Ends Well
-  \item The Tragedy of Antony and Cleopatra
-  \item As You Like It
-  \item The Comedy of Errors
-  \item The Tragedy of Coriolanus
-  \item Cymbeline
-  \item The Tragedy of Hamlet, Prince of Denmark
-  \item The First Part of King Henry the Fourth
-  \item The Second Part of King Henry the Fourth
-  \item The Life of Kind Henry the Fifth
-  \item The First Part of Henry the Sixth
-  \item The Second Part of Henry the Sixth
-  \item The Third Part of Henry the Sixth
-  \item King Henry the Eigth
-  \item King John
-  \item The Tragedy of Julius Caesar
-  \item The Tragedy of King Lear
-  \item Love's Labour's Lost
-  \item The Tragedy of Macbeth
-  \item Measure for Measure
-  \item The Merchant of Venice
-  \item The Merry Wives of Windsor
-  \item A Midsummer Night's Dream
-  \item Much Ado About Nothing
-  \item The Tragedy of Othello, Moor of Venice
-  \item King Richard the Second
-  \item Kind Richard III
-  \item The Tragedy of Romeo and Juliet
-  \item The Taming of the Shrew
-  \item The Tempest
-  \item The Life of Timon of Athens
-  \item The Tragedy of Titus Andronicus
-  \item The History of Troilus and Cressida
-  \item Twelfth Night or What You Will
-  \item The Two Gentlemen of Verona
-  \item The Winter's Tale
-  \item A Lover's Complaint
+  \item \textit{The Sonnets}
+  \item \textit{Alls Well That Ends Well}
+  \item \textit{The Tragedy of Antony and Cleopatra}
+  \item \textit{As You Like It}
+  \item \textit{The Comedy of Errors}
+  \item \textit{The Tragedy of Coriolanus}
+  \item \textit{Cymbeline}
+  \item \textit{The Tragedy of Hamlet, Prince of Denmark}
+  \item \textit{The First Part of King Henry the Fourth}
+  \item \textit{The Second Part of King Henry the Fourth}
+  \item \textit{The Life of Kind Henry the Fifth}
+  \item \textit{The First Part of Henry the Sixth}
+  \item \textit{The Second Part of Henry the Sixth}
+  \item \textit{The Third Part of Henry the Sixth}
+  \item \textit{King Henry the Eigth}
+  \item \textit{King John}
+  \item \textit{The Tragedy of Julius Caesar}
+  \item \textit{The Tragedy of King Lear}
+  \item \textit{Love's Labour's Lost}
+  \item \textit{The Tragedy of Macbeth}
+  \item \textit{Measure for Measure}
+  \item \textit{The Merchant of Venice}
+  \item \textit{The Merry Wives of Windsor}
+  \item \textit{A Midsummer Night's Dream}
+  \item \textit{Much Ado About Nothing}
+  \item \textit{The Tragedy of Othello, Moor of Venice}
+  \item \textit{King Richard the Second}
+  \item \textit{Kind Richard III}
+  \item \textit{The Tragedy of Romeo and Juliet}
+  \item \textit{The Taming of the Shrew}
+  \item \textit{The Tempest}
+  \item \textit{The Life of Timon of Athens}
+  \item \textit{The Tragedy of Titus Andronicus}
+  \item \textit{The History of Troilus and Cressida}
+  \item \textit{Twelfth Night or What You Will}
+  \item \textit{The Two Gentlemen of Verona}
+  \item \textit{The Winter's Tale}
+  \item \textit{A Lover's Complaint}
 \end{enumerate}
-
 
 % \begin{figure}[!htbp]
 % \centering
@@ -442,9 +611,9 @@ The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustl
 \subsection{Startup}
 \label{s:index}
 
-When the server is first started various setup functions are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
+When the server is first started various setup functions (such as the creation of the index) are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
 
-Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library\footnote{\url{http://www.nltk.org/}} for \acl{nlp}.
+Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library \autocite{NLTK2016} for \acl{NLP}.
 
 \begin{listing}
   \begin{minted}{python}
@@ -454,35 +623,36 @@ l_01 = library.words('01.poe1.txt')
 ...
 l_27 = library.words('27.verne.txt')
   \end{minted}
-\caption{Adding text files to the corpus library.}
+\caption{Adding text files to the corpus library}
 \label{code:addtocorpus}
 \end{listing}
 
-The \py{setupcorpus} function (see source~\ref{code:setupcorpus}) is called for each of the text files in the corpus to populate the index data structure \py{l_dict}.
+The \py{setupcorpus} function (see source~\ref{code:setupcorpus}) is called for each of the text files in the two corpora to populate the index data structures \py{l_dict} (for the Faustroll vocabulary) and \py{s_dict} (for the Shakespeare vocabulary).
 
 \begin{minted}{text}
-l_dict = dictionary { dictionary { list [ ] } }
+dict = dictionary { dictionary { list [ ] } }
 \end{minted}
 
-A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \textbf{key: value} pairs. The \py{l_dict} used here is a dictionary where each key has another dictionary as it's value. Each nested dictionary has a list as the value for each key.
+A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \emph{key: value} pairs. The \py{dict} used here is a dictionary where each key has another dictionary as it's value. Each nested dictionary has a list as the value for each key.
 
 \begin{listing}
   \begin{minted}{python}
-# $f$ = input text file variable
-# $l$ = stopwords file variable
-def setupcorpus(f, l):
-    # $x$ = counter/position
-    # $w$ = word in file $f$
+# $f$ = input text
+# $lang$ = stopwords
+# $dic$ = dictionary
+# $d$ = $l$ for Faustroll or $s$ for Shakespeare
+def setupcorpus(f, lang, dic, d):
+    # $x$ = counter, $w$ = word in file $f$
     for x, w in enumerate(f):
-        if w.isalpha() and (w.lower() not in l):
-            y = 'l_' + (re.search(r"((\d\d).(\w)+.txt)", f.fileid)).group(2)
-            l_dict[w.lower()][y].append(x)
+        if w.isalpha() and (w.lower() not in lang):
+            y = d + '_' + (re.search(r"((\d\d).(\w)+.txt)", f.fileid)).group(2)
+            dic[w.lower()][y].append(x)
   \end{minted}
-\caption{`setupcorpus' function to process the corpus and create the index.}
+\caption[`setupcorpus']{`setupcorpus': process a text file and create the index}
 \label{code:setupcorpus}
 \end{listing}
 
-Line \num{6} in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line \num{7} checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stopword file \py{l} (for a list of english stopwords see appendix~\ref{app:code}). If both of those conditions are true variable \py{y} is created on line \num{8} (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to \py{l_dict} together with the file \py{y} and the current position \py{x} on line 9. After all files are processed, the index looks like this:
+Line 7 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line 8 checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stopword file \py{lang} (for a list of English stopwords see appendix~\ref{app:stopwords}). If both of those conditions are true, a variable \py{y} is created on line \num{9} (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to the relevant dictionary file \py{dic} together with \py{y} and the current position \py{x} on line 10. After all files are processed, the two index strcutures look roughly like this:
 
 \begin{minted}{text}
 {
@@ -492,7 +662,7 @@ Line \num{6} in source~\ref{code:setupcorpus} starts looping through file \py{f}
 }
 \end{minted}
 
-Using one of the terms from figure~\ref{termdocs} on page~\pageref{termdocs}, here are their entries in the index file (the files are represented by their number in the \hyperlink{corpus}{corpus} (see page~\pageref{ref:corpus}), i.e. \textbf{l\_00} is the `Faustroll' file, \textbf{l\_01} is the `Poe' file, etc.). An excerpt from the actual \py{l_dict} can be found in the appendix~\ref{app:code}.
+Using one of the terms from figure~\ref{fig:termdocs} on page~\pageref{fig:termdocs} as an example, here are their entries in the index file (the files are represented by their number in the corpus, i.e. \py{l_00} is the `Faustroll' file, \py{l_01} is the `Poe' file, etc.). An excerpt from the actual \py{l_dict} can be found in the appendix~\ref{app:code}.
 
 \label{c:pos}
 \begin{minted}{text}

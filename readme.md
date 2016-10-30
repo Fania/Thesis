@@ -155,7 +155,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] add space before floats
 - [ ] description list spacing by adding [longest word] after environment
 - [ ] cut pdf with spiral in it for line \spirals
-- [ ] remove indent in inline code style
+- [x] remove indent in inline code style
 - [ ] add Olston2010 reference and Gulli2005 on crawling and size of web
 - [x] sourceatright font and size
 - [ ] refer back to oulipo technique table in later chapters

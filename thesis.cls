@@ -533,8 +533,8 @@ breaklines=true
 \makepagestyle{fania} 
 % \makeevenhead{fania}{}{}{}
 % \makeoddhead{fania}{\slshape\rightmark}{}{\slshape\leftmark}
-% \makeevenfoot{fania}{}{}{}
-\makeoddfoot{fania}{}{}{\thepage}
+\makeevenfoot{fania}{}{}{\thepage}
+\makeoddfoot{fania}{\thepage}{}{}
 % \makeevenhead{fania}{\thepage}{}{\leftmark}
 \makeoddhead{fania}{}{}{}
 % \makeoddhead{fania}{\leftmark}{}{\rightmark}
@@ -591,7 +591,6 @@ breaklines=true
 \setlength\cftfigurenumwidth{1.5cm}
 \setlength\cfttablenumwidth{1.5cm}
 
-
 \setminted[python]{
   linenos,
   bgcolor=lavendermist,
@@ -638,10 +637,15 @@ breaklines=true
   xrightmargin=1cm,
 }
 
-\newmintinline[py]{python}{
+\newmintinline[py]{c}{
   bgcolor={lavendermist},
   fontsize=\footnotesize,
   mathescape=true,
+  stripall,
+  xleftmargin=0mm,
+  framesep=0mm,
+  startinline=true,
+  framesep=0mm,
 }
 % \newmintinline['macro name']{'language'}{'options'}
 % If a 'macro name' is not specified,
@@ -691,7 +695,7 @@ breaklines=true
 \usepackage{tikz-3dplot} 
 % \usepackage{pgfplots}
 
-\usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+\usetikzlibrary{calc,shapes.callouts,shapes.arrows,decorations.markings}
 
 % TIKZ SPIRAL
 % USAGE:
@@ -770,6 +774,13 @@ breaklines=true
 \pgfsetlayers{background,main,foreground}
 
 \tikzstyle{box} = [draw, minimum height = 2em, minimum width = 2cm]
+\tikzstyle{arr} = [decoration={markings,mark=at position 1 with %
+    {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
+% \tikzset{arr/.style={decoration={markings,mark=at position 1 with %
+    % {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}}}
+% \tikzset{txt/.style={font=\footnotesize},above}
+\tikzstyle{txt} = [font=\footnotesize,above]
+
 
 \forestset{
   folders/.style={
@@ -877,13 +888,13 @@ breaklines=true
 \tabulinesep = 2mm
 \usepackage{longtable}
 
-% \usepackage{caption} % for subtables
+\usepackage{caption} % for subtables, minipages etc
 % \usepackage{subcaption} % for subtables
 
 % memoir style for captions
 \captionnamefont{\sffamily\footnotesize}
 \captiontitlefont{\sffamily\footnotesize}
-\captionwidth{0.7\linewidth}
+% \captionwidth{0.7\linewidth}
 
 
 \usepackage{multirow}
