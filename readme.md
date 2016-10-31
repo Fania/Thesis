@@ -161,7 +161,7 @@ pdflatex --file-line-error -shell-escape main
 - [ ] refer back to oulipo technique table in later chapters
 - [ ] capitalise web or not? internet?
 - [ ] capitalise disciplines or not?
-
+- [ ] remove syntax highlighting? make background gray
 
 
 Wordcount after Boot Camp 54715 total

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{} $w$ = query word}
+\PYG{c+c1}{\PYGZsh{} $c$ = corpus}
+\PYG{c+c1}{\PYGZsh{} $i$ = assigned distance}
+\PYG{k}{def} \PYG{n+nf}{clinamen}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{c}\PYG{p}{,} \PYG{n}{i}\PYG{p}{):}
+    \PYG{c+c1}{\PYGZsh{} $l_00$ = Faustroll text}
+    \PYG{n}{words} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{([}\PYG{n}{term} \PYG{k}{for} \PYG{n}{term} \PYG{o+ow}{in} \PYG{n}{l\PYGZus{}00} \PYG{k}{if} \PYG{n}{dameraulevenshtein}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{term}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{i}\PYG{p}{])}
+    \PYG{n}{out}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{get\PYGZus{}results}\PYG{p}{(}\PYG{n}{words}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Clinamen\PYGZsq{}}\PYG{p}{,} \PYG{n}{c}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{words}\PYG{p}{,} \PYG{n}{sources}\PYG{p}{,} \PYG{n}{total}
+\end{Verbatim}
