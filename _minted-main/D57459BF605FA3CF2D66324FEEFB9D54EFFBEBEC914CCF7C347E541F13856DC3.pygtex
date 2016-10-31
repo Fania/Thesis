@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{var} \PYG{n+nx}{allImages} \PYG{o}{=} \PYG{p}{[];}
+\PYG{k+kd}{function} \PYG{n+nx}{imgList}\PYG{p}{(}\PYG{n+nx}{img}\PYG{p}{)\PYGZob{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{allImages}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{allImages}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(}\PYG{n+nx}{img}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{allImages}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{===} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{createSpiral}\PYG{p}{(}\PYG{n+nx}{allImages}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

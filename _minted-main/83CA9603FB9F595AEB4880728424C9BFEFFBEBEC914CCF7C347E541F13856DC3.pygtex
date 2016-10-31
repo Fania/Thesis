@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{gettysearch}\PYG{p}{(}\PYG{n+nx}{query}\PYG{p}{)\PYGZob{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{appendApiKeyHeader} \PYG{o}{=} \PYG{k+kd}{function}\PYG{p}{(} \PYG{n+nx}{xhr} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{xhr}\PYG{p}{.}\PYG{n+nx}{setRequestHeader}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Api\PYGZhy{}Key\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}XYZ\PYGZsq{}}\PYG{p}{)}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{searchRequest} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}phrase\PYGZdq{}}\PYG{o}{:} \PYG{n+nx}{query}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}page\PYGZus{}size\PYGZdq{}}\PYG{o}{:} \PYG{l+m+mi}{10}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k+kd}{function} \PYG{n+nx}{GetSearchResults}\PYG{p}{(}\PYG{n+nx}{callback}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{err}{\PYGZbs{}}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{.}\PYG{n+nx}{ajax}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{type}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}GET\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nx}{beforeSend}\PYG{o}{:} \PYG{n+nx}{appendApiKeyHeader}\PYG{p}{,}
+      \PYG{n+nx}{url}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}https://api.gettyimages.com/v3/search/images/creative\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{searchRequest}\PYG{p}{\PYGZcb{})}
+      \PYG{p}{.}\PYG{n+nx}{success}\PYG{p}{(}\PYG{k+kd}{function} \PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{,} \PYG{n+nx}{textStatus}\PYG{p}{,} \PYG{n+nx}{jqXHR}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{var} \PYG{n+nx}{imgs} \PYG{o}{=} \PYG{p}{[];}
+        \PYG{err}{\PYGZbs{}}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{.}\PYG{n+nx}{each}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{images}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{i}\PYG{p}{,}\PYG{n+nx}{item}\PYG{p}{)\PYGZob{}}
+          \PYG{n+nx}{imgs}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{([}\PYG{n+nx}{item}\PYG{p}{.}\PYG{n+nx}{title}\PYG{p}{,} \PYG{n+nx}{item}\PYG{p}{.}\PYG{n+nx}{display\PYGZus{}sizes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{].}\PYG{n+nx}{uri}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{]);}
+        \PYG{p}{\PYGZcb{});}
+        \PYG{n+nx}{createSpiral}\PYG{p}{(}\PYG{n+nx}{imgs}\PYG{p}{)}
+      \PYG{p}{\PYGZcb{})}
+      \PYG{p}{.}\PYG{n+nx}{fail}\PYG{p}{(}\PYG{k+kd}{function} \PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{,} \PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}API error\PYGZsq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{GetSearchResults}\PYG{p}{();}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}

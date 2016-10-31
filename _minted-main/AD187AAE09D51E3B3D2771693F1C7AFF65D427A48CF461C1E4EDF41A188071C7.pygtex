@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{} $w$ = the word (lower case)}
+\PYG{c+c1}{\PYGZsh{} $f$ = the file}
+\PYG{c+c1}{\PYGZsh{} $p$ = the list of positions}
+\PYG{k}{def} \PYG{n+nf}{pp\PYGZus{}sent}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{p}\PYG{p}{):}
+  \PYG{n}{out}\PYG{p}{,} \PYG{n}{pos} \PYG{o}{=} \PYG{p}{[],} \PYG{n}{p}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} FIRST OCCURENCE}
+  \PYG{n}{ff} \PYG{o}{=} \PYG{n+nb}{eval}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+  \PYG{n}{pos\PYGZus{}b}\PYG{p}{,} \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos}\PYG{p}{,} \PYG{n}{pos}
+  \PYG{n}{punct} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{},\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}.\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}!\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}?\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{})\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}:\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{};\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZsq{}}\PYG{p}{]}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{pos} \PYG{o}{\PYGZgt{}} \PYG{n}{i}\PYG{p}{:}
+      \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{n}{i}\PYG{p}{]} \PYG{o+ow}{in} \PYG{n}{punct}\PYG{p}{:}
+        \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+        \PYG{k}{break}
+      \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{5}\PYG{p}{]:} \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{5}
+        \PYG{k}{else}\PYG{p}{:}           \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos}
+    \PYG{k}{else}\PYG{p}{:} \PYG{n}{pos\PYGZus{}b} \PYG{o}{=} \PYG{n}{pos}
+  \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{):}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{):}
+      \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}\PYG{p}{]} \PYG{o+ow}{in} \PYG{n}{punct}\PYG{p}{:}
+        \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}
+        \PYG{k}{break}
+      \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}\PYG{p}{]:} \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos} \PYG{o}{+} \PYG{n}{j}
+        \PYG{k}{else}\PYG{p}{:}           \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos}
+    \PYG{k}{else}\PYG{p}{:} \PYG{n}{pos\PYGZus{}a} \PYG{o}{=} \PYG{n}{pos}
+  \PYG{k}{if} \PYG{n}{pos\PYGZus{}b} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{pos\PYGZus{}a} \PYG{o}{\PYGZlt{}=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{):}
+    \PYG{n}{pre} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos\PYGZus{}b}\PYG{p}{:}\PYG{n}{pos}\PYG{p}{])}
+    \PYG{n}{post} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{ff}\PYG{p}{[}\PYG{n}{pos}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{pos\PYGZus{}a}\PYG{p}{])}
+    \PYG{n}{out} \PYG{o}{=} \PYG{p}{(}\PYG{n}{pre}\PYG{p}{,} \PYG{n}{w}\PYG{p}{,} \PYG{n}{post}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{out}
+\end{Verbatim}

@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{bingsearch}\PYG{p}{(}\PYG{n+nx}{query}\PYG{p}{)\PYGZob{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{myurl1} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}https://api.datamarket.azure.com/Bing/Search/Image?\PYGZdq{}}\PYG{p}{;}
+  \PYG{k+kd}{var} \PYG{n+nx}{myurl2} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Query=\PYGZdq{}} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}\PYGZsq{}\PYGZdq{}} \PYG{o}{+} \PYG{n+nx}{query} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}\PYGZsq{}\PYGZdq{}} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}\PYGZam{}\PYGZdl{}top=10\PYGZam{}\PYGZdl{}format=json\PYGZdq{}}\PYG{p}{;}
+  \PYG{k+kd}{var} \PYG{n+nx}{furl} \PYG{o}{=} \PYG{n+nx}{myurl1} \PYG{o}{+} \PYG{n+nx}{myurl2}\PYG{p}{;}
+  \PYG{k+kd}{function} \PYG{n+nx}{GetSearchResults}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{err}{\PYGZbs{}}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{.}\PYG{n+nx}{ajax}\PYG{p}{(\PYGZob{}}
+      \PYG{n+nx}{method}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}post\PYGZdq{}}\PYG{p}{,}
+      \PYG{n+nx}{url}\PYG{o}{:} \PYG{n+nx}{furl}\PYG{p}{,}
+      \PYG{n+nx}{headers}\PYG{o}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}Authorization\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}Basic XYZ\PYGZsq{}}\PYG{p}{\PYGZcb{},}
+      \PYG{n+nx}{success}\PYG{o}{:} \PYG{k+kd}{function} \PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{var} \PYG{n+nx}{imglist} \PYG{o}{=} \PYG{p}{[]}
+        \PYG{err}{\PYGZbs{}}\PYG{n+nx}{\PYGZdl{}}\PYG{p}{.}\PYG{n+nx}{each}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{d}\PYG{p}{.}\PYG{n+nx}{results}\PYG{p}{,} \PYG{k+kd}{function}\PYG{p}{(}\PYG{n+nx}{i}\PYG{p}{,}\PYG{n+nx}{item}\PYG{p}{)\PYGZob{}}
+          \PYG{n+nx}{imglist}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{([}\PYG{n+nx}{item}\PYG{p}{.}\PYG{n+nx}{Title}\PYG{p}{,} \PYG{n+nx}{item}\PYG{p}{.}\PYG{n+nx}{Thumbnail}\PYG{p}{.}\PYG{n+nx}{MediaUrl}\PYG{p}{,} \PYG{n+nx}{item}\PYG{p}{.}\PYG{n+nx}{SourceUrl}\PYG{p}{]);}
+        \PYG{p}{\PYGZcb{});}
+        \PYG{n+nx}{createSpiral}\PYG{p}{(}\PYG{n+nx}{imglist}\PYG{p}{)}
+      \PYG{p}{\PYGZcb{},}
+      \PYG{n+nx}{failure}\PYG{o}{:} \PYG{k+kd}{function} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}API error\PYGZsq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{GetSearchResults}\PYG{p}{();}
+\PYG{p}{\PYGZcb{};}
+\end{Verbatim}
