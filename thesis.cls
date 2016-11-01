@@ -597,7 +597,9 @@ breaklines=true
   fontsize=\footnotesize,
   mathescape=true,
   framesep=2mm,
-  breaklines,
+  breaklines=true,
+  % breakbytokenanywhere=true,
+  breakbefore={/,?,_},
   % xleftmargin=1cm,
   % numbersep=24pt,
   xrightmargin=1cm,
@@ -609,7 +611,9 @@ breaklines=true
   fontsize=\footnotesize,
   mathescape=true,
   framesep=2mm,
-  breaklines,
+  breaklines=true,
+  % breakbytokenanywhere=true,
+  breakbefore={/,?,_},
   % xleftmargin=1cm,
   % numbersep=24pt,
   xrightmargin=1cm,
@@ -621,7 +625,8 @@ breaklines=true
   mathescape=false,
   % escapeinside={\%}{)},
   framesep=2mm,
-  breaklines,
+  breaklines=true,
+  breakbefore={/,?,_},
   % xleftmargin=1cm,
   % numbersep=24pt,
   xrightmargin=1cm,
@@ -632,7 +637,9 @@ breaklines=true
   fontsize=\footnotesize,
   mathescape=true,
   framesep=2mm,
-  breaklines,
+  breaklines=true,
+  breakbytokenanywhere=true,
+  breakbefore={/,?,_},
   breaksymbolindentleft={\temporarydimen},
   xleftmargin=1cm,
   xrightmargin=1cm,
@@ -663,6 +670,12 @@ breaklines=true
 \expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{{\strut ##1}}}
 \makeatother
 
+% line breaks
+% \makeatletter
+% \let\oldPYGdefault\PYGdefault
+% \def\PYGdefault#1#2{\hbox{\oldPYGdefault{#1}{#2}}\allowbreak{}}
+% \makeatother
+
 
 % PDF
 \usepackage{pdfpages}
@@ -685,7 +698,7 @@ breaklines=true
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{tikz}
-\usetikzlibrary{quotes,arrows,angles,decorations,mindmap,fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees}
+\usetikzlibrary{quotes,arrows,angles,decorations,mindmap,fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees,calc,shapes.callouts,shapes.arrows,decorations.markings}
 \usepackage[edges]{forest}
 % \usepackage{forest}
 % \ProvidesForestLibrary{edges}[2015/11/14 v0.1]
@@ -695,8 +708,6 @@ breaklines=true
 \usepackage{mathtools}
 \usepackage{tikz-3dplot} 
 % \usepackage{pgfplots}
-
-\usetikzlibrary{calc,shapes.callouts,shapes.arrows,decorations.markings}
 
 % TIKZ SPIRAL
 % USAGE:
@@ -857,6 +868,7 @@ breaklines=true
         \def\pgf@lib@dec@text@endscale{#1}%
     }
 }
+\makeatother
 
 
 % BORDER MATRIX SQUARE
@@ -936,10 +948,12 @@ breaklines=true
 
 % \usepackage{tocloft}
 
+\makeatletter
 \newenvironment{conditions}
   {\par\vspace{\abovedisplayskip}\noindent
    \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
   {\endtabularx\par\vspace{\belowdisplayskip}}
+\makeatother
 
 % where:
 % \begin{conditions}
@@ -1019,7 +1033,16 @@ breaklines=true
 
 % LINKS
 
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z}
+
 % WANTS TO BE RIGHT AT THE BOTTOM
+% \PassOptionsToPackage{hyphens}{url} for linebreaks
 \usepackage[pdfencoding=auto,
             colorlinks=true,
             citecolor=green,

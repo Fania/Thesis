@@ -31,10 +31,11 @@ a sad variety of woes I mourn.
 \minicontents
 \spirals
 
+\todo{fix final layout}
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/fullscreenshot1}
-\caption[pata.physics.wtf]{pata.physics.wtf}
+  \includegraphics[width=0.8\linewidth]{images/fullscreenshot1}
+\caption[Screenshot of \url{pata.physics.wtf}]{Screenshot of \url{pata.physics.wtf}}
 \label{img:fullscreenshot1}
 \end{figure}
 
@@ -104,7 +105,7 @@ Typically, software development is divided into so-called front- and back-ends. 
 
 The front-end design uses the \textbf{W3.CSS} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and desktop screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).
 
-The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{api}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
+The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{API}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
 
 The folder structure is shown in figure~\ref{fig:files}\marginnote{\faicon{object-group}~\ref{fig:files}}.
 
@@ -538,7 +539,9 @@ The first corpus resembles the fictional library of `equivalent books' from Alfr
 \item Jules Verne: \textit{A Journey to the Centre of the Earth}
 \end{enumerate}
 
-The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \textbf{Project Gutenberg}\footnote{See \url{https://www.gutenberg.org/}}\footnote{\textbf{A note on copyright:} Duration of copyright: §5. `For literary, dramatic, musical or artistic works \num{70} years from the end of the calendar year in which the last remaining author of the work dies.' (\url{https://www.copyrightservice.co.uk/ukcs/docs/edupack.pdf}) Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than \num{70} years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected.  (\url{http://www.copyrightservice.co.uk/copyright/p22_derivative_works}) \emph{Fair dealing}: §7. `Private and research study purposes', so for the purposes of this project copyright should not apply.} in their original languages. The decision to get foreign language texts was partially due to the lack of out-of-copyright translated versions and partially because the original library in `Faustroll' was also multi-lingual.
+The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustlib}\marginnote{§~\ref{s:faustlib}}. Three of the items have not been found as a resource. Some others have been approximated by using another text by the same author for example. Most of these were sourced from \emph{Project Gutenberg} \autocite{Gutenberg2016} in their original languages. The decision to get foreign language texts was partially due to the lack of out-of-copyright translated versions and partially because the original library in `Faustroll' was also multi-lingual.
+
+\textbf{A note on copyright:} UK copyright law states in section 5 that the duration of copyright for ``literary, dramatic, musical or artistic works'' is ``70 years from the end of the calendar year in which the last remaining author of the work dies'' \autocite{Copyright2015}. Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected. However, copyright does not apply when used for ``private and research study purposes'' as stated in section 7 on \textit{Fair dealing} of \autocite{Copyright2016}.
 
 The second corpus is a collection of \num{38} texts by William Shakespeare \citeyear{Shakespeare2011}.
 
@@ -618,7 +621,7 @@ When the server is first started various setup functions (such as the creation o
 
 Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library \autocite{NLTK2016} for \acl{NLP}. The \py{words} function tokenises the text, that is it splits it into individual words and stores them as an ordered list.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 library = PlaintextCorpusReader(corpus_root, '.*\.txt')
 l_00 = library.words('00.faustroll.txt')
@@ -638,7 +641,7 @@ dict = dictionary { dictionary { list [ ] } }
 
 A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \emph{key: value} pairs. The \py{dict} used here is a dictionary where each key has another dictionary as it's value. Each nested dictionary has a list as the value for each key.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $f$ = input text
 # $lang$ = stopwords
@@ -709,7 +712,7 @@ In simple terms, the clinamen algorithm works in two steps:
 
 It uses the \textit{Faustroll} text by Alfred Jarry \citeyear{Jarry1996} as a base document and the Damerau-Levenshtein algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with \num{0} indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $w$ = query word
 # $c$ = corpus
@@ -726,7 +729,7 @@ def clinamen(w, c, i):
 
 Source~\ref{code:clinamen}\marginnote{\faicon{code}~\ref{code:clinamen}} line 6 creates the set of clinamen words using a list comprehension. It retrieves matches from the Faustroll file \py{l_00} with the condition that they are of Damerau-Levenshtein distance \py{i} or less to the query term \py{w} (see source~\ref{code:dl}\marginnote{\faicon{code}~\ref{code:dl}}). Duplicates are removed. Line 7 then makes a call to the generic \py{get_results} function to get all relevant result sentences, the list of source files and the total number of results.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # Michael Homer 2009
 # MIT license
@@ -759,7 +762,7 @@ The clinamen algorithm mimics the unpredictable swerve, the smallest possible ab
 %   ...
 % }
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $words$ = patadata words
 # $algo$ = name of algorithm
@@ -786,7 +789,7 @@ def get_results(words, algo, corp):
 
 The \py{get_results} function (see source~\ref{code:getresults}\marginnote{\faicon{code}~\ref{code:getresults}}) is used by all three algorithms (clinamen, syzygy and antinomy). Given the nested structure of the indexes \py{l_dict} and \py{s_dict}, the function loops through each of the \py{words} passed to it (\py{r}) first and then each file in \py{files}. Lines 8 and 9 retrieve the dictionary of files for term \py{r} from the relevant dictionary. Line 13 gets the author and full title of file \py{e} and adds it to the list of sources in line 14. Line 15 makes use of another function called \py{pp_sent} (see source~\ref{code:ppsent}\marginnote{\faicon{code}~\ref{code:ppsent}}) to get an actual sentence fragment for the current word \py{r} in file \py{e}, which is then added to the output. The output is structured as a triple containing the author and title, the list of resulting sentences and the name of the algorithm used.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $w$ = the word (lower case)
 # $f$ = the file
@@ -842,7 +845,7 @@ In simple terms, the syzygy algorithm works in two steps:
 
 The syzygy function makes heavy use of WordNet \autocite{Miller1995} through the \ac{NLTK} Python library \autocite{NLTK2016} to find suitable results (\py{from nltk.corpus import wordnet as wn}). Specifically, as shown in source~\ref{code:syzygy}\marginnote{\faicon{code}~\ref{code:syzygy}}, the algorithm fetches the set of synonyms (synsets) on line 5. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 7--20. It finds any hyponyms, hypernyms or holonyms for \py{ws} (each of which denotes some sort of relationship or membership with its parent synonym) using the \py{get_nym}\marginnote{\faicon{code}~\ref{code:getnym}} function (see lines 8, 11, 14, and 17). Line 21 makes use of the \py{get_results} function (see source~\ref{code:getresults}\marginnote{\faicon{code}~\ref{code:getresults}}) in the same was as the clinamen function does.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $w$ = word
 # $c$ = corpus
@@ -873,7 +876,7 @@ def syzygy(w, c):
 
 The \py{get_nym} function in source~\ref{code:getnym}\marginnote{\faicon{code}~\ref{code:getnym}} shows how the relevant `nyms' are retrieved for a given synset. Line 5 initialises the variable \py{hhh} which gets overwritten later on. Several \py{if} statements seperate out the code run for the different `nyms'. Lines 6-7 retrieves any hyponyms using \ac{NLTK}'s \py{hyponyms()} function . Similarly lines 8-9 retrieve hypernyms, lines 10-14 retrieve holonyms, and lines 15-19 retrieve meronyms. Finally, line 23 adds the contents of \py{hhh} to the output of the function.
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $nym$ = name of nym
 # $wset$ = synset
@@ -918,7 +921,7 @@ In simple terms, the antinomy algorithm works in two steps:
   \item get sentences from corpus that match antinomy words.
 \end{enumerate}
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $w$ = input query term
 # $c$ = name of corpus
@@ -1035,7 +1038,7 @@ In simple terms, the image and video search works in three steps:
 
 The first step is to translate the search terms as shown in source~\ref{code:transent}\marginnote{\faicon{code}~\ref{code:transent}}. Lines 2 and 4 set up the \ac{API} connection to the Microsoft Translator tool \autocite{TranslatorAPI} given an ID and `secret', neither of which are included here for security reasons. The query \py{sent} then passes through a chain (alignment) of three translations in true syzygy fashion: from English $\to$ French, from French $\to$ Japanese, and from Japanese $\to$ English (lines 5-7). All three languages are then returned in a triple (line 9).
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $sent$ = the query string
 from microsofttranslator import Translator
@@ -1055,7 +1058,7 @@ The next step is to pataphysicalise the translated query (see source~\ref{code:p
 
 In line 5 WordNet synsets are retrieved using \ac{NLTK}'s \py{synsets} function. For each of these synsets we get a list of synonyms (line 8) which we add to the output in a normalised form (line 11).
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
 # $words$ = query term(s)
 def pataphysicalise(words):
@@ -1082,25 +1085,28 @@ And finally, \ac{API} calls to the various external tools are made. This is desc
 \subsection{REST \& API}
 \label{s:api}
 
-The final step of the image and video search process described on page~\pageref{s:imgvid}\marginnote{§~\ref{s:api}} is to retrieve matching images/videos using \ac{API} calls to Flickr \autocite{FlickrAPI,FlickrGuideAPI}, Getty \autocite{GettyAPI,GettyOverviewAPI}, Bing \autocite{BingAPI,BingAzureAPI} and YouTube \autocite{YouTubeAPI}.
+The final step of the image and video search process described on page~\pageref{s:imgvid}\marginnote{§~\ref{s:api}} is to retrieve matching images/videos using \ac{API} calls to Flickr \autocite{FlickrAPI,FlickrGuideAPI}, Getty \autocite{GettyAPI,GettyOverviewAPI}, Bing \autocite{BingAPI,BingAzureAPI}, YouTube \autocite{YouTubeAPI} and Microsoft Translator \autocite{TranslatorAPI}.
 
-The patadata used to make the \ac{API} calls is limited to 10 keywords using \py{random.sample(pata, 10)}, where \py{pata} is the set of terms obtained by pataphysicalising the query translation.
+The patadata used to make the \ac{API} calls is limited to 10 keywords and uses the function \py{random.sample(pata, 10)}, where \py{pata} is the set of terms obtained by pataphysicalising the query translation.
 
-% A \acs{REST}ful \ac{API} allows browsers (`clients') to communicate with a web server via \acs{HTTP} methods such as GET and POST. The idea is that a given service, like the Microsoft Bing search \ac{API}, can be accessed in a few simple steps using a Python library like \textit{Requests} \autocite{Reitz2016} and \ac{JSON} \autocite{JSON2016}. These are:
+A \acs{REST}ful \ac{API} allows browsers (`clients') to communicate with a web server via \acs{HTTP} methods such as GET and POST. The idea is that a given service, like the Microsoft Bing search \ac{API}, can be accessed in a few simple steps using  \ac{JSON} \autocite{JSON2016}. These are:
+% using a Python library like \textit{Requests} \autocite{Reitz2016}
 
-% \begin{enumerate}
-%   \item Construct the \ac{URL}
-%   \item get an \ac{API} key
-%   \item send \ac{URL} and key using GET method
-%   \item receive and process response in requested format
-% \end{enumerate}
+\begin{enumerate}
+  \item for each of the 10 query terms do:
+  \begin{enumerate}
+    \item construct the \ac{URL} with the query request
+    \item setup authentication
+    \item send \ac{URL} and authentication
+    \item receive response in \ac{JSON}
+    \item add result to output list \py{imglist}
+  \end{enumerate}
+  \item once 10 results are reached, render results as spiral
+\end{enumerate}
 
+Source~\ref{code:getFlickr}\marginnote{\faicon{code}~\ref{code:getFlickr}} shows how such an \ac{API} call is made using JavaScript. Figure~\ref{fig:visualsearch}\marginnote{\faicon{object-group}~\ref{fig:visualsearch}} previously showed the rough sequence of events in an image or video search and highlighted that the production of results given some patadata happens in the \py{fania.js} JavaScript file. Source~\ref{code:imglist}\marginnote{\faicon{code}~\ref{code:imglist}} below shows how 10 seperate images are collected into one results list and the \py{createSpiral} function is called to render the images to the user in HTML.
 
-\subsubsection{Images}
-
-Source~\ref{code:getFlickr}\marginnote{\faicon{code}~\ref{code:getFlickr}} shows how such an \ac{API} call is made using JavaScript. Figure~\ref{fig:visualsearch}\marginnote{\faicon{object-group}~\ref{fig:visualsearch}} previously showed the rough sequence of events in an image or video search and highlighted that the production of results given some patadata happens in the \py{fania.js} JavaScript file. Source~\ref{code:imglist}\marginnote{\faicon{code}~\ref{code:imglist}} below shows how 10 seperate images are collected into one results list and the \py{createSpiral} function\marginnote{\faicon{code}~\ref{code:createSpiral}} is called to render the images to the user in HTML.
-
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{javascript}
 function flickrsearch(patadata){
   for(var x=0; x<10; x++){
@@ -1111,24 +1117,23 @@ function flickrsearch(patadata){
         format: "json"
       },
       function(data,status,ajax) {
-        var title = "", media = "", link = "", queryx = "TEST";
+        var title = "", media = "", link = "";
         if (data.items[0] != undefined) {
           title = data.items[0].title;
           media = data.items[0].media.m;
           link = data.items[0].link;
         }
-        // call external function with current first result
-        imgList([title, media, link, queryx]);
+        imgList([title, media, link]);
       }
     );
   }
 };
   \end{minted}
-\caption[Flickr API call]{Using the Flickr API to retrieve images}
+\caption[`flickrsearch' function]{`flickrsearch': using the Flickr API to retrieve images}
 \label{code:getFlickr}
 \end{listing}
 
-\begin{listing}
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{javascript}
 var allImages = [];
 function imgList(img){
@@ -1144,176 +1149,84 @@ function imgList(img){
 \label{code:imglist}
 \end{listing}
 
-The Bing and Getty searches work in a similar way. Source~\ref{code:bingsearch}\marginnote{\faicon{code}~\ref{code:bingsearch}} shows the Bing \ac{API} call. Lines 2--4 construct the \ac{URL} used to call the \ac{API} service which is then executed on lines 6--20. Line 13 shows how an image is added to the \py{imglist} function\marginnote{\faicon{code}~\ref{code:imglist}}. Line 15 then calls the \py{createSpiral} function\marginnote{\faicon{code}~\ref{code:createSpiral}} as before with Flickr.
-
-\begin{listing}
-  \begin{minted}{javascript}
-function bingsearch(query){
-  var myurl1 = "https://api.datamarket.azure.com/Bing/Search/Image?";
-  var myurl2 = "Query=" + "'" + query + "'" + "&$top=10&$format=json";
-  var furl = myurl1 + myurl2;
-  function GetSearchResults() {
-    \$.ajax({
-      method: "post",
-      url: furl,
-      headers: {'Authorization': 'Basic XYZ'},
-      success: function (data) {
-        var imglist = []
-        \$.each(data.d.results, function(i,item){
-          imglist.push([item.Title, item.Thumbnail.MediaUrl, item.SourceUrl]);
-        });
-        createSpiral(imglist)
-      },
-      failure: function (err) {
-        console.log('API error');
-      }
-    });
-  }
-  GetSearchResults();
-};
-  \end{minted}
-\caption[`bingsearch' function]{`bingsearch': using the Bing API to retrieve images}
-\label{code:bingsearch}
-\end{listing}
-
-Source~\ref{code:gettysearch}\marginnote{\faicon{code}~\ref{code:gettysearch}} shows the same process for Getty.
-
-\begin{listing}
-  \begin{minted}{javascript}
-function gettysearch(query){
-  var appendApiKeyHeader = function( xhr ) {
-    xhr.setRequestHeader('Api-Key', 'XYZ')
-  }
-  var searchRequest = {
-    "phrase": query,
-    "page_size": 10
-  }
-  function GetSearchResults(callback) {
-    \$.ajax({
-      type: "GET",
-      beforeSend: appendApiKeyHeader,
-      url: "https://api.gettyimages.com/v3/search/images/creative",
-      data: searchRequest})
-      .success(function (data, textStatus, jqXHR) {
-        var imgs = [];
-        \$.each(data.images, function(i,item){
-          imgs.push([item.title, item.display_sizes[0].uri, ""]);
-        });
-        createSpiral(imgs)
-      })
-      .fail(function (data, err) {
-        console.log('API error');
-      });
-  }
-  GetSearchResults();
-};
-  \end{minted}
-\caption[`gettysearch' function]{`gettysearch': using the Getty API to retrieve images}
-\label{code:gettysearch}
-\end{listing}
-
-
+The Bing and Getty searches work in a similar way with one exception. Getty does not populate the output list by doing 10 individual \ac{API} calls but rather by adding 10 results from 1 call. This is due to a time restriction in the Getty \ac{API}; it doesn not allow 10 calls in a second.
 
 \spirals
 
-An example \ac{URL} for the Bing image search with the query term of `kittens' and a requested response format of \ac{JSON} is this:
-\url{https://api.datamarket.azure.com/Bing/Search/Image?$format=json&Query='kittens'}. There are many other parameters that can be specified, such as `Adult' (which can be set to `Moderate' for example) and `ImageFilters' (which allows users to specify size or aspect ratio)\footnote{see \url{https://datamarket.azure.com/dataset/bing/search\#schema}}.
-
-Bing will then send back the response in \ac{JSON} format. One entry of the list of results looks like this (with whitespace formatting added for convenience). The algorithm only retrieves the \py{Title}, \py{MediaUrl} and \py{SourceUrl} and ignores all other data fields.
+An example \ac{URL} request for the Flickr image search with the query term of `kittens' and a requested response format of \ac{JSON} is this:
+\url{http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?tags=kittens&tagmode=all&format=json}. Flickr will then send back the response in \ac{JSON} format. One entry of the list of results is shown below (with whitespace formatting added for convenience). The algorithm in source~\ref{code:getFlickr}\marginnote{\faicon{code}~\ref{code:getFlickr}} only retrieves the \py{data.items[0].title}, \py{data.items[0].media.m} and \py{data.items[0].link} and ignores all other data fields.
 
 \begin{minted}{text}
-"d": { "results": [
-  { "__metadata":
-    { "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1",
-      "type": "ImageResult"
-    }, // __metadata
-    "ID": "e09072a2-faf3-47ac-b77d-46a8df8941aa",
-    "Title": "Cute Kittens - Pictures - The Wondrous Pics",
-    "MediaUrl": "http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg",
-    "SourceUrl": "http://wondrouspics.com/cute-kittens-pictures/",
-    "DisplayUrl": "wondrouspics.com/cute-kittens-pictures",
-    "Width": "1440",
-    "Height": "900",
-    "FileSize": "238015",
-    "ContentType": "image/jpeg",
-    "Thumbnail":
-    { "__metadata":
-      { "type": "Bing.Thumbnail"
-      },
-      "MediaUrl": "http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0&pid=15.1",
-      "ContentType": "image/jpg",
-      "Width": "480",
-      "Height": "300",
-      "FileSize": "13856"
-    } // Tumbnail
-  }, ...
-  ], // results
-  "__next": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=50"
-} // d
+({...
+  "items": 
+    [{
+      "title": "P_20161101_191123",
+      "link": "http://www.flickr.com/photos/pinknancy/30078720153/",
+      "media": {"m":"http://farm6.staticflickr.com/5759/30078720153_f03e036e89_m.jpg"},
+      "date_taken": "2016-11-01T19:11:23-08:00",
+      "description": ...,
+      "published": "2016-11-01T15:28:10Z",
+      "author": "nobody@flickr.com (pinknancy)",
+      "author_id": "8748781@N08",
+      "tags": ""
+    },...]
+})
 \end{minted}
+
+Once the \py{imglist} contains 10 items it is passed to the \py{createSpiral} function which renders it to HTML.
+
+\spirals
+
+The video search also uses an \ac{API} to retrieve results. This function is written in Python and uses the \textit{Requests} library to make the \ac{API} calls to YouTube \autocite{YouTubeAPI} as shown in source~\ref{code:videosearch}\marginnote{\faicon{code}~\ref{code:videosearch}}.
+
+First, the query is translated using the \py{transent} function mentioned in source~\ref{code:transent}\marginnote{\faicon{code}~\ref{code:transent}} on line 3. Line 4 seperates the English translation into its own list \py{transplit} which is then pataphysicalised on line 5 using the algorithm described in source~\ref{code:pataph}\marginnote{\faicon{code}~\ref{code:pataph}}.
+
+Lines 6--9 construct the first part of the \ac{URL} to use for the \ac{REST} request. Lines 10--23 then loop through each of the patadata terms generated by the \py{pataphysicalise} function on line 5 to make a call and retrieve some video details (title, thumbnail and ID) as seen on lines 18--20. On line 21 these details are added to the output list. 
+
+\begin{listing}
+  \begin{minted}{python}
+def getvideos(query):
+  out = []
+  translations = transent(query)
+  transplit = translations[2].split(' ')
+  tmp = pataphysicalise(transplit)
+  b0 = "https://www.googleapis.com/youtube/v3/search?"
+  b1 = "&order=viewCount&part=snippet&"
+  b3 = "&type=video&key=%s" % yt_key
+  b4 = "&maxResults=10&safeSearch=strict"
+  for x in tmp:
+    y = ' '.join(x)
+    b2 = "q=%s" % translations[2]
+    yturl = ''.join([b0, b1, b2, b3, b4])
+    vids = requests.get(yturl)
+    if vids.json()['items']:
+      for i in vids.json()['items']:
+        vidtitle = i['snippet']['title']
+        vidthumb = i['snippet']['thumbnails']['default']['url']
+        vidid = i['id']['videoId']
+        out.append((vidtitle, vidthumb, vidid))
+      break
+    else:
+      out = []
+  return out, translations
+  \end{minted}
+\caption[`getvideos' function]{`getvideos': using the YouTube API to retrieve images in Python}
+\label{code:videosearch}
+\end{listing}
+
+The video results are then also displayed in a golden spiral in the same way as the images. This is described in section~\ref{s:spiral}\marginnote{§~\ref{s:spiral}}.
 
 
 \section{Design}
 
-Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja and \ac{HTML} (with \ac{CSS} stylesheets and some JavaScript).
+Once the three algorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja \autocite{Jinja2016} and \ac{HTML} (with \ac{CSS} stylesheets and some JavaScript).
 
-`the user should be able to choose the techniques they use' \autocite{Hendler2011}
+One of the key requirements for the \textit{Syzygy Surfer} tool\marginnote{§~\ref{s:surfer}} was that ``the user should be able to choose the techniques they use'' \autocite{Hendler2011}. This has been adopted for \url{pata.physics.wtf} in the sense that the user has different options for the display of results.
 
+The text results page has three different result styles, with `Poetry --- Queneau' being the default.
 
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/proto3screen}
-\caption[proto3screen]{proto3screen}
-\label{img:proto3screen}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \centering
-  \begin{minipage}{\linewidth}
-    \includegraphics[width=\linewidth]{proto3screen}
-  \end{minipage}
-  \hspace{.05\linewidth}
-  \begin{minipage}{\linewidth}
-    \includegraphics[width=\linewidth]{proto2screen}
-  \end{minipage}
-  \hspace{.05\linewidth}
-  \begin{minipage}{\linewidth}
-    \includegraphics[width=\linewidth]{proto1screen}
-  \end{minipage}
-  \caption[responsive screenshots]{Responsive Screenshot}
-\label{Respscreenshots}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \centering
-  \begin{minipage}{.57\linewidth}
-    \includegraphics[width=\linewidth]{screen_rpoetry_full}
-  \end{minipage}
-  \hspace{.05\linewidth}
-  \begin{minipage}{.27\linewidth}
-    \includegraphics[width=\linewidth]{screen_rpoetry_mobile}
-  \end{minipage}
-  \caption[screenshots]{Poetry results screenshot \& mobile}
-\label{screenshots}
-\end{figure}
-
-% \begin{figure}[!htbp] % (here, top, bottom, page)
-%   \centering
-%   \includegraphics[width=0.6\linewidth]{images/screen_rpoetry_full}
-% \caption[Poetry results screenshot]{Poetry results screenshot}
-% \label{img:PoetrySS}
-% \end{figure}
-%
-% \begin{figure}[!htbp] % (here, top, bottom, page)
-%   \centering
-%   \includegraphics[width=0.3\linewidth]{images/screen_rpoetry_mobile}
-% \caption[Poetry results mobile screenshot]{Poetry results screenshot for mobile screens}
-% \label{img:PoetrySSM}
-% \end{figure}
-
-The text results page has three options for how the results are presented, with `Poetry --- Queneau' being the default.
-\begin{description}
-  \item [Poetry] Displayed in sonnet style (two quatrains and two tercets) if possible, although no rhyming pattern is used.\footnote{\url{https://en.wikipedia.org/wiki/Sonnet}}
+\begin{description}[leftmargin=2.8cm]
+  \item [Poetry] Displayed in sonnet style (two quatrains and two tercets) if possible, although no rhyming pattern is used.
     \begin{itemize}
       \item Queneau --- Each line can be changed manually.
       \item Random --- The whole poem can be randomised.
@@ -1322,188 +1235,169 @@ The text results page has three options for how the results are presented, with 
   \item [Algorithms] Ordered by algorithm.
 \end{description}
 
-\todo{get proper ref for sonnet style}
+The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default. The spirals are modelled on the idea of golden spirals (more precisely an approximation in the form of a Fibonacci spiral).
 
-The image and video results pages work the same way. They both have two display options, with the `Spiral' option being the default. The spirals are modelled on the idea of Fibonacci spirals.
-\begin{description}
-  \item [Spiral] Displayed square images/videos as a golden spiral.
+\begin{description}[leftmargin=1.8cm]
+  \item [Spiral] Displayed as square images/videos in a spiral.
   \item [List] Displayed as a simple list.
 \end{description}
+
+\spirals
+
+The overal visual design is shown in image~\ref{img:proto3screen}\marginnote{\faicon{picture-o}}.
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/proto3screen}
+\caption[Design of \url{pata.physics.wtf}]{Design of \url{pata.physics.wtf}}
+\label{img:proto3screen}
+\end{figure}
 
 
 \subsection{Poetry}
 \label{s:poetry}
 
-\begin{listing}[h!]
+Source~\ref{code:qpoems}\marginnote{\faicon{code}~\ref{code:qpoems}} shows the segment of HTML/Jinja code that renders the Queneau poetry. The code renders the 4 stanzas of the poem. This is done using two nested Jinja `for' loops (line 2 and line 10). Line 2 loops through the (ideally) 14 lines of the poem. \py{lol} can be considered a masterlist of all sublists for each poem line.
+
+Functionality for sending the currently showing poem per email is added via a button which calls a JavaScript function \py{onclick=`return getContent(this)'} which then retrieves the content of each line in the poem and sends it to the body of the email. 
+
+\py{all_sens} is structured as \py{[(title, (pre, word, post), algorithm), ...]}. \py{lol} is structured as \py{[all_sens[0], all_sens[1], ... all_sens[x]]} where x is the number of possible sentences minus 1 per line in a poem.
+
+% \begin{minted}{text}
+%   # all_sens list:
+%     [(title, (pre, word, post), algorithm), ...]
+%   # lol list:
+%     [all_sens[0], all_sens[1], ... all_sens[x]]
+%     # where x is the number of possible sentences minus 1 per line in a poem
+% \end{minted}
+
+\begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{html+jinja}
-    <div class=``subtab_content'' id=``q_tab''>
-      <p class=``w3-center''>
-        <a class=``emailbutton w3-btn w3-blue-grey'' href=``#'' onclick=``return getContent(this)''>
-          Email this poem!
-        </a>
-      </p>
-      <div class="poetry w3-container w3-theme-l5">
-        {% for n in range(1, lol|length + 1) %}
-          {% set wid = ['wn', n|string]|join %}
-          {% set lid = ['lyr', n|string]|join %}
-          {% set sid = ['scrollLinks', n|string]|join %}
-          {% set aid = lol[n-1] %}
-          <div id="poems">
-            <div id="{{wid}}" class="wn">
-              <div id="{{lid}}" class="lyr">
-                {% for sens in aid %}<span title="{{ sens[0] }}, {{ sens[2] }}">{{ sens[1][0] }} <form class="inform" action="../textresults" method="post"><input class="inlink" type="submit" name="query" value="{{ sens[1][1] }}" onclick="loading();"></input></form> {{ sens[1][2] }}</span>{% endfor %}
-              </div>
-            </div>
-            <div id="{{sid}}" class="scrollLinks"></div>
-          </div>
-        {% endfor %}
+<div>
+  {% for n in range(1, lol|length + 1) %}
+    {% set wid = [`wn', n|string]|join %}
+    {% set lid = [`lyr', n|string]|join %}
+    {% set sid = [`scrollLinks', n|string]|join %}
+    {% set aid = lol[n-1] %}
+    <div id=`poems'>
+      <div id=`{{wid}}' class=`wn'>
+        <div id=`{{lid}}' class=`lyr'>
+          {% for sens in aid %}<span title=`{{ sens[0] }}, {{ sens[2] }}'>{{ sens[1][0] }} <form class=`inform' action=`../textresults' method=`post'><input class=`inlink' type=`submit' name=`query' value=`{{ sens[1][1] }}' onclick=`loading();'></input></form> {{ sens[1][2] }}</span>{% endfor %}
+        </div>
       </div>
+      <div id=`{{sid}}' class=`scrollLinks'></div>
     </div>
+  {% endfor %}
+</div>
   \end{minted}
-\caption{Code for rendering Queneau style poems.}
+\caption[HTML for Queneau style poems]{Simplified HTML code for rendering Queneau style poems}
 \label{code:qpoems}
 \end{listing}
 
-Source~\ref{code:qpoems} shows the segment of HTML/Jinja code that renders the Queneau Poetry. Lines 2-6 creates a button for sending the currently showing poem per email. Specifically line \num{3} calls the Javascript function \py{onclick="return getContent(this)"} which retrieves the content of each line in the poem and sends it to the body of the email. Lines \num{7}-\num{22} render the \num{4} stanzas of the poem. This is done using two nested Jinja `for' loops (line \num{8} and line \num{16}). Line \num{8} loops through the (ideally) \num{14} lines of the poem. \py{lol} can be considered a masterlist of all sublists for each poem line.
+Changing a line of the poem is achieved by clicking on one of the buttons on either side of the poem's line (as shown in image~\ref{img:qpoemtree}\marginnote{\faicon{picture-o}~\ref{img:qpoemtree}}). This will trigger a JavaScript function (based on \autocite{DYNWEB2016}) to automatically scroll to the next sentence. 
 
-\todo{get structure of lol as opposed to all\_sens}
-
-\begin{minted}{text}
-  # all_sens list:
-    [(title, (pre, word, post), algorithm), ...]
-  # lol list:
-    [all_sens[0], all_sens[1], ...]
-\end{minted}
-
-
-\begin{listing}[h!]
-  \begin{minted}{javascript}
-    var cnt = 0;
-    function shufflePoem() {
-      cnt += 1;
-      var sentences = {{ all_sens|tojson }};
-      // [[file, [s1,s2,s3], algo],...]
-      var n = {{ all_sens|length }};
-      var rlist = [];
-      for (var i = 0; i < 14; i++) {
-        var r = Math.floor(Math.random() * n);
-        var t = sentences[r][0];
-        var al = sentences[r][2];
-        var b = sentences[r][1][0];
-        var m = sentences[r][1][1];
-        var a = sentences[r][1][2];
-        var str1 = "<span title='" + t +', '+ al;
-        var str2 = "'>" + b + " <form class='inform' action='../textresults' method='post'><input class='inlink' type='submit' name='query' value='";
-        var str3 = m + "' onclick='loading();'></input></form> " + a;
-        var str4 = "</span>";
-        var fullsent = str1 + str2 + str3 + str4;
-        rlist[i] = fullsent;
-      }
-      rlist[3] = rlist[3].concat('<br>');
-      rlist[7] = rlist[7].concat('<br>');
-      rlist[10] = rlist[10].concat('<br>');
-      var output = rlist.join('<br>');
-      document.getElementById('clickcount').innerHTML = cnt;
-      document.getElementById('random_poem').innerHTML = output;
-      return false;
-    }
-  \end{minted}
-\caption{Code for randomising poems.}
-\label{code:rpoemsjs}
-\end{listing}
-
-
-\subsection{Spiral}
-
-\todo{http://www.texample.net/tikz/examples/fibonacci-spiral/}
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=0.5\linewidth]{images/Fibonacci}
-\caption[Fibonacci Spiral]{Fibonacci Spiral\footnote{Image taken from \url{https://upload.wikimedia.org/wikipedia/commons/9/93/Fibonacci_spiral_34.svg}}}
-\label{img:Fibonacci}
+  \includegraphics[width=\linewidth]{images/qpoemtree}
+\caption[Queneau poem for query `tree']{Example Queneau poem for query `tree'}
+\label{img:qpoemtree}
+\end{figure}
+
+Non-Queneau poems have a slightly different functionality. It is not possible to change the poem line by line but rather the whole poem can be randomised on demand. This relies on a random number generator in JavaScript. A function \py{shufflePoem()} creates a random variable \py{r} as \py{Math.floor(Math.random() * n)}, which can then be used to generate a new list of 14 lines for the poem randomly selected from the pool of sentences \py{all_sens}.
+
+
+\subsection{Lists}
+
+The two other ways to display text results are as a list ordered by source or by patalgorithm which works in a similar way to what is described in source~\ref{code:textlists}\marginnote{\faicon{code}~\ref{code:textlists}}. The code is wrapped in an HTML unordered list tag \py{<ul>}. A Jinja \py{for} loop generates the individual \py{<li>} tags on line 4.
+
+A \py{sens} in \py{all_sens} is structured as \py{(title, (pre, word, post), algorithm)}. This means that to access the name of the algorithm we need to call the Jinja template \py{{{ sens[2] }}}, to get the first half of the sentence we need \py{{{ sens[1][0] }}}, the middle keyword (i.e. the patadata term) \py{{{ sens[1][1] }}} and the second half of the sentence \py{{{ sens[1][2] }}}.
+
+\begin{listing}[!htbp] % (here, top, bottom, page)
+  \begin{minted}{html+jinja}
+<ul>
+  {% for sens in all_sens %}
+    {% if file == sens[0] %}
+      <li title=`{{ sens[2] }}'>...{{ sens[1][0] }} <form class=`inform' action=`../textresults' method=`post'><input class=`w3-hide' type=`radio' name=`corpus' value=`{{ corpus }}' checked><input class=`inlink' type=`submit' name=`query' value=`{{ sens[1][1] }}' onclick=`loading();'></input></form> {{ sens[1][2] }}...</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+  \end{minted}
+\caption[HTML for results by source]{Simplified HTML code for rendering a list of text results by source}
+\label{code:textlists}
+\end{listing}
+
+Image~\ref{img:listsourcetree}\marginnote{\faicon{picture-o}~\ref{img:listsourcetree}} shows a shortened example set of results for query `tree' ordered by source, that is, ordered by original file.
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/listsourcetree}
+\caption[Source result list for query `tree']{Example results for query `tree' ordered by source}
+\label{img:listsourcetree}
+\end{figure}
+
+Image~\ref{img:listalgotree}\marginnote{\faicon{picture-o}~\ref{img:listalgotree}} shows a shortened example set of results for query `tree' ordered by patalgorithm, that is, ordered by the algorithm which produced the patadata.
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/listalgotree}
+\caption[Source result list for query `tree']{Example results for query `tree' ordered by patalgorithm}
+\label{img:listalgotree}
 \end{figure}
 
 
-\begin{listing}
-  \begin{minted}{html}
-function createSpiral(imglist){
-  if (imglist.length === 10){
-    var spiral_code = ' \
-    <div class="spouter"> \
-      <div class="spleft"> \
-        <div class="spltop"> \
-          <div class="spltleft"> \
-            <a id="a3" class="spimg" href="'+imglist[3][2]+'" ><img id="img3" src="'+imglist[3][1]+'" title="'+imglist[3][0]+' --- '+imglist[3][3]+'" height="210" width="210"/></a> \
-          </div> \
-          <div class="spltright"> \
-            <div class="spltrtop"> \
-              <a id="a8" class="spimg" href="'+imglist[8][2]+'" ><img id="img8" src="'+imglist[8][1]+'" title="'+imglist[8][0]+'" height="130" width="130"/></a> \
-            </div> \
-            <div class="spltrbottom"> \
-              <div class="spltrbleft"> \
-                <div class="spltrbltop"> \
-                  <div class="spltrbltleft"> \
-                    <a id="a0" class="spimg" href="'+imglist[0][2]+'" ><img id="img0" src="'+imglist[0][1]+'" title="'+imglist[0][0]+'" height="30" width="30"/></a> \
-                  </div> \
-                  <div class="spltrbltright"> \
-                    <div class="spltrbltrtop"> \
-                      <a id="a1" class="spimg" href="'+imglist[1][2]+'" ><img id="img1" src="'+imglist[1][1]+'" title="'+imglist[1][0]+'" height="20" width="20"/></a> \
-                    </div> \
-                    <div class="spltrbltrbottom"> \
-                      <div class="spltrbltrbleft"> \
-                        <a id="a5" class="spimg" href="'+imglist[5][2]+'" ><img id="img5" src="'+imglist[5][1]+'" title="'+imglist[5][0]+'" height="10" width="10"/></a> \
-                      </div> \
-                      <div class="spltrbltrbright"> \
-                        <a id="a6" class="spimg" href="'+imglist[6][2]+'" ><img id="img6" src="'+imglist[6][1]+'" title="'+imglist[6][0]+'" height="10" width="10"/></a> \
-                      </div> \
-                    </div> \
-                  </div> \
-                </div> \
-                <div class="spltrblbottom"> \
-                  <a id="a7" class="spimg" href="'+imglist[7][2]+'" ><img id="img7" src="'+imglist[7][1]+'" title="'+imglist[7][0]+'" height="50" width="50"/></a> \
-                </div> \
-              </div> \
-              <div class="spltrbright"> \
-                <a id="a2" class="spimg" href="'+imglist[2][2]+'" ><img id="img2" src="'+imglist[2][1]+'" title="'+imglist[2][0]+'" height="80" width="80"/></a> \
-              </div> \
-            </div> \
-          </div> \
-        </div> \
-        <div class="splbottom"> \
-          <a id="a9" class="spimg" href="'+imglist[9][2]+'" ><img id="img9" src="'+imglist[9][1]+'" title="'+imglist[9][0]+'" height="340" width="340"/></a> \
-        </div> \
-      </div> \
-      <div class="spright"> \
-        <a id="a4" class="spimg" href="'+imglist[4][2]+'" ><img id="img4" src="'+imglist[4][1]+'" title="'+imglist[4][0]+'" height="550" width="550"/></a> \
-      </div> \
-    </div> \
-    ';
-    var list_code = [];
-    for (i in imglist) {
-      var img = ' \
-        <div class="w3-col s12 m6 l3 w3-padding"> \
-          <a href="'+imglist[i][2]+'"> \
-            <img src="'+imglist[i][1]+'" \
-            title="'+imglist[i][0]+'" style="width:100%"> \
-          </a> \
-        </div> \
-      ';
-      list_code.push(img);
-    } // end for
-    $('#img_spiral_div').html(spiral_code);
-    $('#img_list_div').html(list_code);
-  } // end if
-  else{
-    // console.log("inside else");
-    $('.img_empty').wrap("<div>Not enough results found.</div>");
-  } // end else
-}
-  \end{minted}
-\caption[`createSpiral' function]{`createSpiral': constructing the HTML to display an image spiral}
-\label{code:createSpiral}
-\end{listing}
+\subsection{Spiral}
+\label{s:spiral}
+
+The image and video spirals are constructed in complicated nested HTML components. The code for generating an image spiral is shown in appendix~\ref{app:imgspiral}\marginnote{§~\ref{app:imgspiral}}. The video spiral is constructed in a similar way but directly in the HTML file as opposed to in the JavaScript file.
+
+Generally, the idea was taken from the pataphysical \emph{grand gidouille} (see chapter~\ref{ch:pataphysics}\marginnote{§~\ref{ch:pataphysics}}) and represented as a Fibonacci spiral. 
+
+Figure~\ref{img:fibspiral}\marginnote{\faicon{object-group}~\ref{img:fibspiral}} shows a spiral created using the Flickr image search for query `blue mountains' overlaid with a white Fibonacci spiral to highlight the structure.
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \begin{tikzpicture}
+    \node[anchor=south west] at (-10.8,-2.7) {\includegraphics[width=14.7cm, height=9.1cm]{images/bluemountains-flickr}};
+    \begin{scope}[rotate=180, xshift=6.6cm, yshift=-4cm, draw=white,ultra thick]
+      % Example from http://www.texample.net/tikz/examples/fibonacci-spiral/
+      \newcounter{a}
+      \newcounter{b}
+      \newcounter{temp}
+      \setcounter{a}{0}
+      \setcounter{b}{1}
+      \coordinate (0) at (0,0);
+      \foreach \i in {1,...,18}
+      {
+        \pgfmathsetmacro{\lastpoint}{\i-1}
+        \pgfmathsetmacro{\startangle}{mod(\i-1,4) * 90}
+        \draw (\lastpoint) arc 
+          (\startangle : \startangle + 90 : \value{b}/10.0pt) coordinate (\i);
+        \setcounter{temp}{\value{b}}
+        \addtocounter{b}{\value{a}}
+        \setcounter{a}{\value{temp}}
+      }
+      \foreach \i in {1,3,...,17}
+      {
+        \pgfmathsetmacro{\lastpoint}{\i-1}
+        \draw (\lastpoint) -| (\i);
+      }
+      \foreach \i in {2,4,...,16}
+      {
+        \pgfmathsetmacro{\lastpoint}{\i-1}
+        \draw (\lastpoint) |- (\i);
+      }
+      \draw (17) -- (17 |- 18);
+    \end{scope}
+  \end{tikzpicture}
+  \caption[Fibonacci image spiral]{Fibonacci spiral overlaid onto an image spiral}
+  \label{img:fibspiral}
+\end{figure}
 
 
+HERE
+
+\todo{add development stuff, ie git}
+\todo{update tables for prototype 4 (final)}
 \section{Prototypes}
 
 \begin{table}[!htbp]
@@ -1602,15 +1496,7 @@ An small update to the prototype included the addition of clickable links for ea
 
 The original version ran on Heroku and was written in Python using the Django framework to run a website.
 
-\todo{get new screenshots for prototype 1}
 \todo{don't mention James?}
-
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[height=0.6\textheight]{images/prototype01}
-\caption[Prototype 1 screenshot]{Prototype 1 screenshot}
-\label{img:Prototype1x}
-\end{figure}
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -1640,13 +1526,6 @@ Image and video search functionality was added.
 Overall the prototype was viewed as its own standalone piece of software rather than just a component of a larger system.
 
 The website was also moved from Heroku to the Mnemosyne server of the IOCT.
-
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=0.6\linewidth]{images/prototype02}
-\caption[Prototype 2 screenshot]{Prototype 2 screenshot}
-\label{img:Prototype2x}
-\end{figure}
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
