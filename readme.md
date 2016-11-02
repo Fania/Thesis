@@ -250,19 +250,3 @@ http://www.artybollocks.com/#abg_full
 % \subsubsection 3
 % \paragraph 4
 % \subparagraph 5
-
-
-<!-- MINTED  -->
-\begin{minted}{python}
-  def boring(args = None):
-  pass
-\end{minted}
-
-\mininline{python}{xyz}
-
-\newmintinline['macro name']{'language'}{'options'}. If a 'macro name' is not specified, then the created macro is called \'language'inline
-\py{xyz}
-
-\mint{python}|import this|
-
-\inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}

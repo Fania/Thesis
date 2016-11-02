@@ -31,12 +31,11 @@ a sad variety of woes I mourn.
 \minicontents
 \spirals
 
-\todo{fix final layout}
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=0.8\linewidth]{images/fullscreenshot1}
+  \includegraphics[width=\linewidth]{images/fullscreenshot}
 \caption[Screenshot of \url{pata.physics.wtf}]{Screenshot of \url{pata.physics.wtf}}
-\label{img:fullscreenshot1}
+\label{img:fullscreenshot}
 \end{figure}
 
 \begin{wrapfigure}{o}{0.4\textwidth}
@@ -953,6 +952,7 @@ A formal description of the \url{pata.physics.wtf} system in terms of an \ac{IR}
 
 Making relevant changes to the specification by Baeza-Yates and Ribeiro-Neto \citeyear{Baeza-Yates2011}, an approximate system description for the Faustroll corpus text search could be as follows.
 
+\begin{figure}[!htbp]
 \begin{conditions}
   D       & the set of documents $\{d_1,\ldots, d_{m}\}$ \\
   m       & the number of all documents in $D$ ($|D| = 28$) \\
@@ -967,6 +967,7 @@ Making relevant changes to the specification by Baeza-Yates and Ribeiro-Neto \ci
   R(P(q)) & the set of results $\{R(P(q)_C) \cup R(P(q)_S) \cup R(P(q)_A)\}$ produced by each algorithm in $F$ \\
   r       & a result of form ($d$, sentence, $f$) \\
 \end{conditions}
+\end{figure}
 
 % \itab{$D$} \tab{is the set of documents $\{d_1,\ldots, d_{m}\}$,}\\
 % \itab{$m$} \tab{is the number of all documents in $D$ ($|D| = 28$),}\\
@@ -1223,6 +1224,13 @@ Once the three algorithms have produced their respective results, the page displ
 
 One of the key requirements for the \textit{Syzygy Surfer} tool\marginnote{§~\ref{s:surfer}} was that ``the user should be able to choose the techniques they use'' \autocite{Hendler2011}. This has been adopted for \url{pata.physics.wtf} in the sense that the user has different options for the display of results.
 
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \includegraphics[width=\linewidth]{images/proto3screen}
+\caption[Design of \url{pata.physics.wtf}]{Design of \url{pata.physics.wtf}}
+\label{img:proto3screen}
+\end{figure}
+
 The text results page has three different result styles, with `Poetry --- Queneau' being the default.
 
 \begin{description}[leftmargin=2.8cm]
@@ -1242,16 +1250,7 @@ The image and video results pages work the same way. They both have two display 
   \item [List] Displayed as a simple list.
 \end{description}
 
-\spirals
-
-The overal visual design is shown in image~\ref{img:proto3screen}\marginnote{\faicon{picture-o}}.
-
-\begin{figure}[!htbp] % (here, top, bottom, page)
-  \centering
-  \includegraphics[width=\linewidth]{images/proto3screen}
-\caption[Design of \url{pata.physics.wtf}]{Design of \url{pata.physics.wtf}}
-\label{img:proto3screen}
-\end{figure}
+The overal visual design is shown in image~\ref{img:proto3screen}\marginnote{\faicon{picture-o}~\ref{img:proto3screen}}.
 
 
 \subsection{Poetry}
@@ -1389,162 +1388,54 @@ Figure~\ref{img:fibspiral}\marginnote{\faicon{object-group}~\ref{img:fibspiral}}
       \draw (17) -- (17 |- 18);
     \end{scope}
   \end{tikzpicture}
-  \caption[Fibonacci image spiral]{Fibonacci spiral overlaid onto an image spiral}
+  \caption[Fibonacci image spiral]{Fibonacci spiral overlaid onto an image results for query `blue mountains' using Flickr}
   \label{img:fibspiral}
 \end{figure}
 
 
-HERE
-
-\todo{add development stuff, ie git}
-\todo{update tables for prototype 4 (final)}
 \section{Prototypes}
 
-\begin{table}[!htbp]
-\caption{Comparison of prototypes}
-\label{tab:Compproto}
-\centering
-\begin{tabu}{X[2]X[2]X[3]X[3]}
-\toprule
-&
-\textbf{Prototype 1}
-&
-\textbf{Prototype 2}
-&
-\textbf{Prototype 3}
-\\ \midrule
-\textbf{Language(s)}
-&
-Python, Django & Python, Flask
-&
-Python, Flask
-\\
-\textbf{Server}
-&
-Django, Heroku & Flask, Mnemosyne
-&
-Flask, Gunicorn, Mnemosyne
-\\
-\textbf{Features}
-&
-Text
-&
-Text, Image, Video
-&
-Text, Image, Video
-\\
-\textbf{Corpus}
-&
-Faustroll only
-&
-Faustroll only
-&
-Faustroll's Library
-\\
-\textbf{API(s)}
-&
-WordNet
-&
-WordNet, Flickr, Bing, YouTube, Microsoft Translator
-&
-WordNet, Bing, YouTube, Microsoft Translator
-\\
-\textbf{Design}
-&
-Algorithm
-&
-Algorithm, Spiral
-&
-Algorithm, Source, Poetry, Spiral, List
-\\ \bottomrule
-\end{tabu}
-\end{table}
+The final website \url{pata.physics.wtf} went through several iterations of development since it was first conceived in 2012. This included 3 major technical updates since the first prototype and 2 new visual re-designs.
+
+Table~\ref{tab:versions}\marginnote{\faicon{table}~\ref{tab:versions}} shows the main differences and similarities between the versions. 
 
 \begin{table}[!htbp]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{@{}llll@{}}
-\toprule
-Prototype   & 1 & 2 & 3 \\ \midrule
-Python      & x           & x           & x           \\
-Django      & x           &             &             \\
-Flask       &             & x           & x           \\
-Faustroll   & x           & x           &             \\
-Library     &             &             & x           \\
-Text        & x           & x           & x           \\
-Image       &             & x           & x           \\
-Video       &             & x           & x           \\
-Poetry      &             &             & x           \\
-plusminus5  & x           & x           &             \\
-punctuation &             &             & x           \\
-            &             &             &             \\
-            &             &             &             \\
-            &             &             &             \\
-            &             &             &             \\
-            &             &             &             \\ \bottomrule
-\end{tabular}
+  \centering
+  \footnotesize
+  \caption[Comparison of different versions of \url{pata.physics.wtf}]{Comparison of different versions of \url{pata.physics.wtf}}
+  \label{tab:versions}
+  \begin{tabu}{X[l]X[l]X[l,1.2]X[l,1.5]X[l,2]}
+  \toprule
+  & \textbf{Version 1} & \textbf{Version 2} & \textbf{Version 3} & \textbf{Version 4} \\ 
+  \midrule
+  \textbf{Language(s)} & Python, Django & Python, Flask & Python, Flask & Python, Flask, JavaScript \\
+  \textbf{Server} & Django, Heroku & Flask, Mnemosyne & Flask, Gunicorn, Mnemosyne & Flask, Gunicorn, OVH \\
+  \textbf{Features} & Text & Text, Image, Video & Text, Image, Video & Text, Image, Video \\
+  \textbf{Corpus} & Faustroll text & Faustroll text & Faustroll's library & Faustroll's library and Shakespeare \\
+  \textbf{API's} & WordNet & WordNet, Flickr, Bing, YouTube, Microsoft Translator & WordNet, Bing, YouTube, Microsoft Translator & WordNet, Flickr, Getty, Bing, YouTube, Microsoft Translator \\
+  \textbf{Design} & Algorithms & Algorithms, Spiral & Algorithms, Source, Poetry, Spiral, List & Algorithms, Source, Poetry, Spiral, List \\ 
+  \textbf{Responsive} & No & Yes & Yes & Yes \\ 
+  \bottomrule
+  \end{tabu}
 \end{table}
 
-The first version of the prototype was hacked together over a short period of time with collaboration in mind. It was originally build to demonstrate the three algorithms in action before James' architecture was finished. The design of the website was simple and plain.
-
-Results were displayed in three sets per algorithm. Each keyword was preceded and followed by exactly \num{5} words.
-
-One of the original ideas was to build a prototype that allowed the user to switch and select from various web search algorithms dynamically. The system architecture was never built. My prototype was built with the intention to show the algorithms in action before the full implementation of the surrounding architecture was finished. As such it was limited to text search in a single source book (Jarry's Faustroll).
-
-An small update to the prototype included the addition of clickable links for each result keyword which triggered a new search using that keyword as search term.
-
-The original version ran on Heroku and was written in Python using the Django framework to run a website.
-
-\todo{don't mention James?}
+Images~\ref{img:proto1screen}, \ref{img:proto2screen} and \ref{img:proto3screen} show the 3 main visual designs.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \includegraphics[width=\linewidth]{images/proto1screen}
-\caption[proto1screen]{proto1screen}
+\caption[First version of \url{pata.physics.wtf}]{First version of \url{pata.physics.wtf}}
 \label{img:proto1screen}
 \end{figure}
-
-The main differences between prototype 1 and prototype 2 are:
-\begin{itemize}
-  \item text results were displayed sorted by algorithm only
-  \item image and video search was not yet supported
-  \item Django backend
-  \item didn't have an about section
-  \item didn't have random quotes
-\end{itemize}
-
----
-
-This version introduced the move from Django to Flask. It also included the first major re-design of the website. Flask made things simpler than Django.
-
-It is still available online at \url{pata.fania.eu}.
-
-A responsive design was created.
-Image and video search functionality was added.
-
-Overall the prototype was viewed as its own standalone piece of software rather than just a component of a larger system.
-
-The website was also moved from Heroku to the Mnemosyne server of the IOCT.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \includegraphics[width=\linewidth]{images/proto2screen}
-\caption[proto2screen]{proto2screen}
+\caption[Second major version of \url{pata.physics.wtf}]{Second major version of \url{pata.physics.wtf}}
 \label{img:proto2screen}
 \end{figure}
 
-The main differences between the current version and prototype 2 are:
-\begin{itemize}
-  \item the corpus consisted of the faustroll text only
-  \item results were keyword $\pm$ 5 words per line
-  \item text results were displayed sorted by algorithm only
-  \item image and video results were displayed as spiral only
-\end{itemize}
-
----
-
-This version introduced major changes to the initial setup stage and a lot of the code was refactored. Another design update was also implemented. To the user the most obvious change will be the presentation of results. There are now various display choices. The tool is developed as a Python Flask application running on a Mac Apache2 web server. The flask development server is started using the `python dev.py` command. This mode is set up for debugging and will give detailed error messages. Starting the live gunicorn server on apache2 use `guni ..... guni.py`. This uses several threads etc. The stylesheet is based on the **w3.css**.
+The latest version, which is now live at \url{pata.physics.wtf}, introduced major changes to the initial setup stage of the system and a lot of the code was refactored and improved. As of the date of writing this, there were over 360 commits in the git repository since 2012.
 
 
 \stopcontents[chapters]
