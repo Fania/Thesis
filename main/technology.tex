@@ -100,7 +100,7 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
     \text{God}         & 25               & 123           & 2
   }
 \]
-\caption[Various wordcounts]{Various wordcounts in Faustroll, Gospel and Voyage}
+\caption[Various word-counts]{Various word-counts in Faustroll, Gospel and Voyage}
 \label{fig:termdocs}
 \end{figure}
 
@@ -113,7 +113,7 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 
 % The total wordcount of the above files is as follows: Faustroll=\num{131891}, Gospel=\num{139669}, and Voyage=\num{497295}.
 
-The dictionary is usually preprocessed (see section~\ref{s:nlp})\marginnote{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{app:stopwords}.}\marginnote{§~\ref{app:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
+The dictionary is usually pre-processed (see section~\ref{s:nlp})\marginnote{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{app:stopwords}.}\marginnote{§~\ref{app:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
 
 Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
@@ -163,7 +163,7 @@ where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one
     \text{God}         & 25               & 123           & 2
   }
 \]
-\caption[Various wordcounts (short)]{Various wordcounts in Faustroll, Gospel and Voyage (short)}
+\caption[Various word-counts (short)]{Various word-counts in Faustroll, Gospel and Voyage (short)}
 \label{fig:termdocs2}
 \end{figure}
 
@@ -405,7 +405,7 @@ De Vries called this form of browsing an ``enlargement of the problem space'', w
 \subsection{Ranking}
 \label{s:ranking}
 
-Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\marginnote{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the clickstream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
+Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\marginnote{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
 Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing \autocite{Nicole2010} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
 
@@ -428,7 +428,7 @@ Ranking algorithms are the essence of any Web search engine and as such guarded 
   d    & a `damping' parameter set by the system (typically 0.85) needed to deal with dead ends in the graph
 \end{conditions}
 
-Figure~\ref{fig:pagerank}\marginnote{\faicon{image}~\ref{fig:pagerank}} which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequense. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.
+Figure~\ref{fig:pagerank}\marginnote{\faicon{image}~\ref{fig:pagerank}} which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -459,7 +459,7 @@ Other variations include the incorporation of user behaviour \autocite{Agichtein
 
 \subsection{Challenges}
 
-Other issues that arise when trying to search the World Wide Web were indetified by Baeza-Yates and Ribeiro-Neto as follows \citeyear[p.449]{Baeza-Yates2011}.
+Other issues that arise when trying to search the World Wide Web were identified by Baeza-Yates and Ribeiro-Neto as follows \citeyear[p.449]{Baeza-Yates2011}.
 
 \begin{itemize}
   \item Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.
@@ -492,21 +492,21 @@ There are many tools and libraries available for \ac{NLP}, including the \ac{NLT
 
 \subsection{Words}
 
-A lemma is a set of lexical forms that have the same stem (e.g.\ go). A wordform is the full inflected or derived form of the word (e.g.\ goes). A word type is a distinct word in a corpus (repetitions are not counted but case sensitive). A word token is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text \autocite{Manning2009}.
+A lemma is a set of lexical forms that have the same stem (e.g.\ go). A word-form is the full inflected or derived form of the word (e.g.\ goes). A word type is a distinct word in a corpus (repetitions are not counted but case sensitive). A word token is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text \autocite{Manning2009}.
 
 \begin{description}
   \item [Tokenisation] discarding white spaces and punctuation and making every term a token
   \item [Normalisation] making sets of words with same meanings, e.g.\ car and automobile
   \item [Case-folding] converting everything to lower case
   \item [Stemming] removing word endings, e.g.\ connection, connecting, connected $\to$ connect
-  \item [Lemmatization] returning dictionary form of a word, e.g.\ went $\to$ go
+  \item [Lemmatisation] returning dictionary form of a word, e.g.\ went $\to$ go
 \end{description}
 
 
 \subsubsection{WordNet}
 \label{s:wordnet}
 
-WordNet is a large lexical database for English, containing \num{166000} word form and sense pairs, useful for computational linguistics and \ac{NLP} \autocite{Miller1995}. A synset is a set of synonyms to represent a specific word sense. It is the basic bulding block of WordNet's hierarchical structure of lexical relationships.
+WordNet is a large lexical database for English, containing \num{166000} word form and sense pairs, useful for computational linguistics and \ac{NLP} \autocite{Miller1995}. A synset is a set of synonyms to represent a specific word sense. It is the basic building block of WordNet's hierarchical structure of lexical relationships.
 
 \begin{quotation}
   Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations. \sourceatright{\autocite{Princeton2010}}
@@ -519,7 +519,7 @@ WordNet is a large lexical database for English, containing \num{166000} word fo
   \item [Hypernymy] (super-name) inverse of hyponymy
   \item [Meronymy] (part-name) complex semantic relation
   \item [Holonymy] (whole-name) inverse of meronymy
-  \item [Troponymy] (manner-name) is for verbs what hyponomy is for nouns
+  \item [Troponymy] (manner-name) is for verbs what hyponymy is for nouns
 \end{description}
 
 Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).
@@ -530,7 +530,7 @@ Appendix~\ref{app:wordnet}\marginnote{§~\ref{app:wordnet}} shows an example res
 \subsubsection{Regular Expressions}
 \label{s:regex}
 
-Regular expressions (often shortened to the term `regex') are used to search a corpus of texts for the occurance of a specific string pattern\footnote{There is also a Regex Crossword puzzle \autocite{Michelsen2016}.}.
+Regular expressions (often shortened to the term `regex') are used to search a corpus of texts for the occurrence of a specific string pattern\footnote{There is also a Regex Crossword puzzle \autocite{Michelsen2016}.}.
 
 % Online tools such as \url{http://regexr.com/} or \url{https://regex101.com/} can help create a particular expression and test it. 
 
@@ -608,7 +608,7 @@ The basic way to compute the probability of an N-gram is using \ac{MLE} shown in
 \end{equation}
 % \myequations{Probwn} 
 
-For instance, if we want to check which of two words ``shining'' and ``cold'' has a higher probability of being the next word given a history of ``the sun is'', we would need to compute $P$(shining|the sun is) and $P$(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence ``the sun is shining'' occured in a training corpus by the number of times ``the sun is'' occured and the same for the word ``cold''.
+For instance, if we want to check which of two words ``shining'' and ``cold'' has a higher probability of being the next word given a history of ``the sun is'', we would need to compute $P$(shining|the sun is) and $P$(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence ``the sun is shining'' occurred in a training corpus by the number of times ``the sun is'' occurred and the same for the word ``cold''.
 
 Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain n-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
 
@@ -661,7 +661,7 @@ Instead of using the complete history of previous words when calculating the pro
 
 More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix~\ref{app:penntreebank}\marginnote{§~\ref{app:penntreebank}}.
 
-The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Fausroll book \citeyear{Jarry1996}.}.
+The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Faustroll book \citeyear{Jarry1996}.}.
 
 \begin{quote}
   In\slash{}IN this\slash{}DT year\slash{}NN Eighteen\slash{}CD Hundred\slash{}CD and\slash{}CC Ninety-eight\slash{}CD,\slash{}, the\slash{}DT Eighth\slash{}CD day\slash{}NN of\slash{}IN February\slash{}NNP,\slash{}, Pursuant\slash{}JJ to\slash{}IN article\slash{}NN 819\slash{}CD of\slash{}IN the\slash{}DT Code\slash{}NN of\slash{}IN Civil\slash{}NNP Procedure\slash{}NNP and\slash{}CC at\slash{}IN the\slash{}DT request\slash{}NN of\slash{}IN M.\slash{}NN and\slash{}CC Mme.\slash{}NN Bonhomme\slash{}NNP (\slash{}(Jacques\slash{}NNP)\slash{}),\slash{}, proprietors\slash{}NNS of\slash{}IN a\slash{}DT house\slash{}NN situate\slash{}JJ at\slash{}IN Paris\slash{}NNP,\slash{}, 100\slash{}CD bis\slash{}NN,\slash{}, rue\slash{}NN Richer\slash{}NNP,\slash{}, the\slash{}DT aforementioned\slash{}JJ having\slash{}VBG address\slash{}NN for\slash{}IN service\slash{}NN at\slash{}IN my\slash{}PRP residence\slash{}NN and\slash{}CC further\slash{}JJ at\slash{}IN the\slash{}DT Town\slash{}NNP Hall\slash{}NNP of\slash{}IN Q\slash{}NNP borough\slash{}NN .\slash{}.

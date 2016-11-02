@@ -96,15 +96,15 @@ a sad variety of woes I mourn.
 
 The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot1}\marginnote{\faicon{picture-o}~\ref{img:fullscreenshot1}}) embodies the knowledge of this doctoral research and showcases \ac{AMC} and patalgorithms. This chapter gives an overview of the structure of the website and the development process.
 
-A high level view of the site would be that it is a pataphysical search engine that subverts conventional expectations by recombining literary texts into emergent user directed and ephemeral poetical structures or unpredictable spirals of pataphysicaled visual media. 
+A high level view of the site would be that it is a pataphysical search engine that subverts conventional expectations by recombining literary texts into emergent user directed and ephemeral poetical structures or unpredictable spirals of pataphysicalised visual media. 
 
-It is written in \num{5} different programming languages\footnote{Python, HTML, CSS, Jinja, JavaScript}, making calls to \num{6} external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over \num{30} files. 
+It is written in \num{5} different programming languages\footnote{Python,\ac{HTML}, CSS, Jinja, JavaScript}, making calls to \num{6} external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over \num{30} files. 
 
 Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not directly the case in this project).
 
 The front-end design uses the \textbf{W3.CSS} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and desktop screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).
 
-The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into HTML. The application uses several \acs{API}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
+The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into\ac{HTML}. The application uses several \acs{API}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
 
 The folder structure is shown in figure~\ref{fig:files}\marginnote{\faicon{object-group}~\ref{fig:files}}.
 
@@ -490,7 +490,7 @@ Putting it another way, (1) the system setup tokenises each of the source texts,
 
 \spirals
 
-This chapter explains how \url{pata.physics.wtf} was created and how it operates technically. Specifically it will discuss the intitial setup of the system when it is first started up, the text search algorithms, the image and video \ac{API} calls and the main design elements (text poetry and image spirals).
+This chapter explains how \url{pata.physics.wtf} was created and how it operates technically. Specifically it will discuss the initial setup of the system when it is first started up, the text search algorithms, the image and video \ac{API} calls and the main design elements (text poetry and image spirals).
 
 
 \section{Setup}
@@ -616,7 +616,7 @@ The second corpus is a collection of \num{38} texts by William Shakespeare \cite
 \subsection{Index}
 \label{s:index}
 
-When the server is first started various setup functions (such as the creation of the index) are executed before any HTML is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
+When the server is first started various setup functions (such as the creation of the index) are executed before any\ac{HTML}is rendered. The search algorithms are triggered once a user enters a search term into the query field on any of the text, image or video pages.
 
 Each plain text file in the corpus is added to the internal library one by one. Source~\ref{code:addtocorpus} shows how this is done. The \py{PlaintextCorpusReader} is a feature of the \ac{NLTK} Python library \autocite{NLTK2016} for \acl{NLP}. The \py{words} function tokenises the text, that is it splits it into individual words and stores them as an ordered list.
 
@@ -657,7 +657,7 @@ def setupcorpus(f, lang, dic, d):
 \label{code:setupcorpus}
 \end{listing}
 
-Line 7 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line 8 checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stopword file \py{lang} (for a list of English stopwords see appendix~\ref{app:stopwords}). If both of those conditions are true, a variable \py{y} is created on line \num{9} (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to the relevant dictionary file \py{dic} together with \py{y} and the current position \py{x} on line 10. After all files are processed, the two index strcutures look roughly like this:
+Line 7 in source~\ref{code:setupcorpus} starts looping through file \py{f}. Line 8 checks if the current word \py{w} contains anything other than alphabetical characters and whether or not \py{w} is contained in the relevant stop-word file \py{lang} (for a list of English stopwords see appendix~\ref{app:stopwords}). If both of those conditions are true, a variable \py{y} is created on line \num{9} (such as `l\_00' based on `00.faustroll.txt') and \py{w} is added to the relevant dictionary file \py{dic} together with \py{y} and the current position \py{x} on line 10. After all files are processed, the two index structures look roughly like this:
 
 \begin{minted}{text}
 {
@@ -794,7 +794,7 @@ The \py{get_results} function (see source~\ref{code:getresults}\marginnote{\faic
 # $f$ = the file
 # $p$ = the list of positions
 def pp_sent(w, f, p):
-  out, pos = [], p[0] # FIRST OCCURENCE
+  out, pos = [], p[0] # FIRST OCCURRENCE
   ff = eval(f)
   pos_b, pos_a = pos, pos
   punct = [',', '.', '!', '?', '(', ')', ':', ';', '\n', '-', '_']
@@ -826,7 +826,7 @@ def pp_sent(w, f, p):
 \label{code:ppsent}
 \end{listing}
 
-In function \py{pp_sent} (source~\ref{code:ppsent}\marginnote{\faicon{code}~\ref{code:ppsent}}) line 5 is important to note because it is a key functionality point. Even though the index files store a full list of all possible positions of a given word in each file, the \py{pp_sent} function only retrieves the sentence of the very first occurance of the word rather than each one. This decision was taken to avoid overcrowding of results for the same keyword.
+In function \py{pp_sent} (source~\ref{code:ppsent}\marginnote{\faicon{code}~\ref{code:ppsent}}) line 5 is important to note because it is a key functionality point. Even though the index files store a full list of all possible positions of a given word in each file, the \py{pp_sent} function only retrieves the sentence of the very first occurrence of the word rather than each one. This decision was taken to avoid overcrowding of results for the same keyword.
 
 Line 8 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 9--17 and 18--26 set the \py{pos_b} (position before) and \py{pos_a} (position after) variables respectively. These positions can be up to 10 words before and after the keyword \py{w} depending on the sentence structure (punctuation marks). In line 28 the actual sentence fragment up to the keyword is retrieved, while in line 29 the fragment just after the keyword is retrieved. \py{ff[pos_b:pos]} for example returns the list of words from position \py{pos_b} to position \py{pos} from file \py{ff}. The built-in Python \py{.join()} function then concatenates these words into one long string separated by spaces. On line 30 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.
 
@@ -873,7 +873,7 @@ def syzygy(w, c):
 \label{code:syzygy}
 \end{listing}
 
-The \py{get_nym} function in source~\ref{code:getnym}\marginnote{\faicon{code}~\ref{code:getnym}} shows how the relevant `nyms' are retrieved for a given synset. Line 5 initialises the variable \py{hhh} which gets overwritten later on. Several \py{if} statements seperate out the code run for the different `nyms'. Lines 6-7 retrieves any hyponyms using \ac{NLTK}'s \py{hyponyms()} function . Similarly lines 8-9 retrieve hypernyms, lines 10-14 retrieve holonyms, and lines 15-19 retrieve meronyms. Finally, line 23 adds the contents of \py{hhh} to the output of the function.
+The \py{get_nym} function in source~\ref{code:getnym}\marginnote{\faicon{code}~\ref{code:getnym}} shows how the relevant `nyms' are retrieved for a given synset. Line 5 initialises the variable \py{hhh} which gets overwritten later on. Several \py{if} statements separate out the code run for the different `nyms'. Lines 6-7 retrieves any hyponyms using \ac{NLTK}'s \py{hyponyms()} function . Similarly lines 8-9 retrieve hypernyms, lines 10-14 retrieve holonyms, and lines 15-19 retrieve meronyms. Finally, line 23 adds the contents of \py{hhh} to the output of the function.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -1105,7 +1105,7 @@ A \acs{REST}ful \ac{API} allows browsers (`clients') to communicate with a web s
   \item once 10 results are reached, render results as spiral
 \end{enumerate}
 
-Source~\ref{code:getFlickr}\marginnote{\faicon{code}~\ref{code:getFlickr}} shows how such an \ac{API} call is made using JavaScript. Figure~\ref{fig:visualsearch}\marginnote{\faicon{object-group}~\ref{fig:visualsearch}} previously showed the rough sequence of events in an image or video search and highlighted that the production of results given some patadata happens in the \py{fania.js} JavaScript file. Source~\ref{code:imglist}\marginnote{\faicon{code}~\ref{code:imglist}} below shows how 10 seperate images are collected into one results list and the \py{createSpiral} function is called to render the images to the user in HTML.
+Source~\ref{code:getFlickr}\marginnote{\faicon{code}~\ref{code:getFlickr}} shows how such an \ac{API} call is made using JavaScript. Figure~\ref{fig:visualsearch}\marginnote{\faicon{object-group}~\ref{fig:visualsearch}} previously showed the rough sequence of events in an image or video search and highlighted that the production of results given some patadata happens in the \py{fania.js} JavaScript file. Source~\ref{code:imglist}\marginnote{\faicon{code}~\ref{code:imglist}} below shows how 10 seperate images are collected into one results list and the \py{createSpiral} function is called to render the images to the user in\ac{HTML}.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{javascript}
@@ -1174,7 +1174,7 @@ An example \ac{URL} request for the Flickr image search with the query term of `
 })
 \end{minted}
 
-Once the \py{imglist} contains 10 items it is passed to the \py{createSpiral} function which renders it to HTML.
+Once the \py{imglist} contains 10 items it is passed to the \py{createSpiral} function which renders it to\ac{HTML}.
 
 \spirals
 
@@ -1256,7 +1256,7 @@ The overal visual design is shown in image~\ref{img:proto3screen}\marginnote{\fa
 \subsection{Poetry}
 \label{s:poetry}
 
-Source~\ref{code:qpoems}\marginnote{\faicon{code}~\ref{code:qpoems}} shows the segment of HTML/Jinja code that renders the Queneau poetry. The code renders the 4 stanzas of the poem. This is done using two nested Jinja `for' loops (line 2 and line 10). Line 2 loops through the (ideally) 14 lines of the poem. \py{lol} can be considered a masterlist of all sublists for each poem line.
+Source~\ref{code:qpoems}\marginnote{\faicon{code}~\ref{code:qpoems}} shows the segment of\ac{HTML}/Jinja code that renders the Queneau poetry. The code renders the 4 stanzas of the poem. This is done using two nested Jinja `for' loops (line 2 and line 10). Line 2 loops through the (ideally) 14 lines of the poem. \py{lol} can be considered a masterlist of all sublists for each poem line.
 
 Functionality for sending the currently showing poem per email is added via a button which calls a JavaScript function \py{onclick=`return getContent(this)'} which then retrieves the content of each line in the poem and sends it to the body of the email. 
 
@@ -1289,7 +1289,7 @@ Functionality for sending the currently showing poem per email is added via a bu
   {% endfor %}
 </div>
   \end{minted}
-\caption[HTML for Queneau style poems]{Simplified HTML code for rendering Queneau style poems}
+\caption[HTML for Queneau style poems]{Simplified\ac{HTML}code for rendering Queneau style poems}
 \label{code:qpoems}
 \end{listing}
 
@@ -1307,7 +1307,7 @@ Non-Queneau poems have a slightly different functionality. It is not possible to
 
 \subsection{Lists}
 
-The two other ways to display text results are as a list ordered by source or by patalgorithm which works in a similar way to what is described in source~\ref{code:textlists}\marginnote{\faicon{code}~\ref{code:textlists}}. The code is wrapped in an HTML unordered list tag \py{<ul>}. A Jinja \py{for} loop generates the individual \py{<li>} tags on line 4.
+The two other ways to display text results are as a list ordered by source or by patalgorithm which works in a similar way to what is described in source~\ref{code:textlists}\marginnote{\faicon{code}~\ref{code:textlists}}. The code is wrapped in an\ac{HTML}unordered list tag \py{<ul>}. A Jinja \py{for} loop generates the individual \py{<li>} tags on line 4.
 
 A \py{sens} in \py{all_sens} is structured as \py{(title, (pre, word, post), algorithm)}. This means that to access the name of the algorithm we need to call the Jinja template \py{{{ sens[2] }}}, to get the first half of the sentence we need \py{{{ sens[1][0] }}}, the middle keyword (i.e. the patadata term) \py{{{ sens[1][1] }}} and the second half of the sentence \py{{{ sens[1][2] }}}.
 
@@ -1321,7 +1321,7 @@ A \py{sens} in \py{all_sens} is structured as \py{(title, (pre, word, post), alg
   {% endfor %}
 </ul>
   \end{minted}
-\caption[HTML for results by source]{Simplified HTML code for rendering a list of text results by source}
+\caption[HTML for results by source]{Simplified\ac{HTML}code for rendering a list of text results by source}
 \label{code:textlists}
 \end{listing}
 
@@ -1347,7 +1347,7 @@ Image~\ref{img:listalgotree}\marginnote{\faicon{picture-o}~\ref{img:listalgotree
 \subsection{Spiral}
 \label{s:spiral}
 
-The image and video spirals are constructed in complicated nested HTML components. The code for generating an image spiral is shown in appendix~\ref{app:imgspiral}\marginnote{§~\ref{app:imgspiral}}. The video spiral is constructed in a similar way but directly in the HTML file as opposed to in the JavaScript file.
+The image and video spirals are constructed in complicated nested\ac{HTML}components. The code for generating an image spiral is shown in appendix~\ref{app:imgspiral}\marginnote{§~\ref{app:imgspiral}}. The video spiral is constructed in a similar way but directly in the\ac{HTML}file as opposed to in the JavaScript file.
 
 Generally, the idea was taken from the pataphysical \emph{grand gidouille} (see chapter~\ref{ch:pataphysics}\marginnote{§~\ref{ch:pataphysics}}) and represented as a Fibonacci spiral. 
 
@@ -1394,6 +1394,7 @@ Figure~\ref{img:fibspiral}\marginnote{\faicon{object-group}~\ref{img:fibspiral}}
 
 
 \section{Prototypes}
+\label{s:prototypes}
 
 The final website \url{pata.physics.wtf} went through several iterations of development since it was first conceived in 2012. This included 3 major technical updates since the first prototype and 2 new visual re-designs.
 

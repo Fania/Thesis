@@ -605,6 +605,20 @@ breaklines=true
   xrightmargin=1cm,
 }
 
+\setminted[yaml]{
+  linenos,
+  bgcolor=lavendermist,
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines=true,
+  % breakbytokenanywhere=true,
+  breakbefore={/,?,_},
+  % xleftmargin=1cm,
+  % numbersep=24pt,
+  xrightmargin=1cm,
+}
+
 \setminted[html+jinja]{
   linenos,
   bgcolor=lavendermist,

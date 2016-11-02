@@ -124,6 +124,7 @@ Arguably, the Pro-c should perhaps be called Pro-C instead, as it takes a certai
   \item [Problem Solving] George Pólya came up with a description of the `problem solving' process\footnote{\autocite{Polya1957}}.\marginnote{§~\ref{s:4stages}}
 \end{description}
 
+\todo{fix spelling of polya, poincare}
 % \todo{add comb, trans, expl.? and koestler?}
 
 Looking at table~\ref{tab:4SPPS}\marginnote{\faicon{table}~\ref{tab:4SPPS}} highlights the similarities of the two models above and compares them to the `4 P Model'\marginnote{\faicon{object-group}~\ref{fig:4Crea}} of creativity from the previous section. Both the 4 Stage Model and the problem solving steps are linear. They're a sequence of steps followed one after the other. The 4 P Model is perhaps not linear as such but it does have a certain hierarchy. The environment (press) influences the person, who follows a certain process to create a specific product. In table~\ref{tab:4SPPS}\marginnote{\faicon{table}~\ref{tab:4SPPS}} the first two stages happen within the person and environment. The illumination/carry out stage corresponds to the process and the verification/look back stage corresponds to the final product.
@@ -179,7 +180,7 @@ Operation & Prototyping & Product  & Product \\
 
 Table~\ref{tab:ccdhcc}\marginnote{\faicon{table}~\ref{tab:ccdhcc}} shows the four steps of creative computing defined by Hugill and Yang \citeyear{Hugill2013c} and lines them up with corresponding activities in \ac{DH} \autocite{Burdick2012}, \ac{CompC} \autocite{Colton2012} and Computer Ethics \autocite{Stahl2013}.
 
-Table~\ref{tab:cpcd}\marginnote{\faicon{table}~\ref{tab:cpcd}} is inspired by Hugill and Yang's comparison of two superficially very different processes, namely artistic creation and software engineering \citeyear{Hugill2013c}. They use this comparison to four layers of abstraction as the basis of their definition of the creative computing process, i.e. motivation, ideation, implementation and operation. Their observation that artistic creation and software engineering both represent a move from the abstract to the concerete is important here.
+Table~\ref{tab:cpcd}\marginnote{\faicon{table}~\ref{tab:cpcd}} is inspired by Hugill and Yang's comparison of two superficially very different processes, namely artistic creation and software engineering \citeyear{Hugill2013c}. They use this comparison to four layers of abstraction as the basis of their definition of the creative computing process, i.e. motivation, ideation, implementation and operation. Their observation that artistic creation and software engineering both represent a move from the abstract to the concrete is important here.
 
 \begin{table}[!htbp]
 \centering
@@ -286,9 +287,9 @@ The infusion of computing with pataphysics is one of the main themes of this the
   \item [Pranking] Pataphysical ranking.
 \end{description}
 
-The conceptual space for \url{pata.physics.wtf} is `pataphysical searching'. The constraints of this conceptual space are the pataphysical rules that apply to the data. Those rules are used to explore, combine and transform this space; providing the flexibility and freedom to find interesting results. Pataphysical algorithms, or `patalagorithms' for short, implement such rules.
+The conceptual space for \url{pata.physics.wtf} is `pataphysical searching'. The constraints of this conceptual space are the pataphysical rules that apply to the data. Those rules are used to explore, combine and transform this space; providing the flexibility and freedom to find interesting results. Pataphysical algorithms, or `patalgorithms' for short, implement such rules.
 
-`Pataphysicalision' of data is the process of applying such patalgorithms in order to produce creative search results. This pataphysicalisation\marginnote{\faicon{object-group}~\ref{fig:patarc}} process forms a central component of the system and influences all areas of the search tool. Figure~\ref{fig:patarc} roughly demonstrates how this might work. The index is created based on the corpus, the user's query is pataphysicalised (represented here by a spiral) and the patadata is then passed on to the index to retrieve results which are then sent back to the user.
+`Pataphysicalisation' of data is the process of applying such patalgorithms in order to produce creative search results. This pataphysicalisation\marginnote{\faicon{object-group}~\ref{fig:patarc}} process forms a central component of the system and influences all areas of the search tool. Figure~\ref{fig:patarc} roughly demonstrates how this might work. The index is created based on the corpus, the user's query is pataphysicalised (represented here by a spiral) and the patadata is then passed on to the index to retrieve results which are then sent back to the user.
 
 \begin{figure}[!htbp]
   \centering
@@ -339,7 +340,7 @@ Patadata = [Sun God Ra (equivalent), Slave (opposite), Holiday (antinomy),\\ Blu
 
 \spirals
 
-In traditional web search, ranking signals contribute to the improvement of the ranking process (see chapter~\ref{s:ranking}\marginnote{§~\ref{s:ranking}}). These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the clickstream. This also includes ideas such as the Facebook `like' button or the Google `+1' button which could be seen as direct user relevance feedback.
+In traditional web search, ranking signals contribute to the improvement of the ranking process (see chapter~\ref{s:ranking}\marginnote{§~\ref{s:ranking}}). These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes ideas such as the Facebook `like' button or the Google `+1' button which could be seen as direct user relevance feedback.
 
 Ranking can be done at different stages of the search process. Depending on how the index is formatted and what information can be pre-computed at that stage, a ranking algorithm evaluates every web page for relevance and returns them in order. There exist lots of different approaches on ranking, including PageRank \autocite{Brin1998} and HITS \autocite{Kleinberg1999}, which both analyse the link structure of the World Wide Web. They analyse the incoming and outgoing links on pages. PageRank for example assigns a numerical weight to each document, where each link counts as a vote of support in a sense. It is executed at indexing time, so the ranks are stored with each page directly in the index. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and pages with many outgoing links are called hubs.
 
@@ -348,6 +349,6 @@ Given a query term $q$, what is considered a relevant match though? Do we simply
 The way ranking works in \url{pata.physics.wtf} is described in chapter~\ref{ch:implementation}\marginnote{§~\ref{ch:implementation}}.
 
 % What kinds of ranking signals do we need for our pataphysical web search tool? We could say that a page $p$ is relevant if it matches the patadata for query $q$. So, for example, $p$ would be a relevant result if it is a clinamen or syzygy to $q$. The more patadata matches there are the higher the ranking maybe. We don't necessarily have to assign a numerical ranking value to each page. Depending on how we structure our results page that might not be necessary. Shuffling the results list or the results tree could be an option.
-% \todo{It weould be nice to conclude these thoughts with some more positive suggestions about ways to do this}
+% \todo{It would be nice to conclude these thoughts with some more positive suggestions about ways to do this}
 
 \stopcontents[chapters]

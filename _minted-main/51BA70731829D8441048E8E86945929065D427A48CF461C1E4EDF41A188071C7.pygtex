@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{function} \PYG{n}{generate\PYGZus{}synonym}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{):}
+  \PYG{n}{synonym\PYGZus{}list} \PYG{o}{=} \PYG{p}{[]}
+  \PYG{k}{for} \PYG{n}{word} \PYG{o+ow}{in} \PYG{n}{synonym\PYGZus{}set}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{word} \PYG{o+ow}{is} \PYG{n}{noun} \PYG{o+ow}{or} \PYG{n}{word} \PYG{o+ow}{is} \PYG{n}{verb}\PYG{p}{:}
+      \PYG{k}{return} \PYG{n}{word}
+  \PYG{k}{return} \PYG{n+nb}{input}
+\end{Verbatim}
