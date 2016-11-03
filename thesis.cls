@@ -916,7 +916,7 @@ breaklines=true
 \usepackage{longtable}
 
 \usepackage{caption} % for subtables, minipages etc
-% \usepackage{subcaption} % for subtables
+\usepackage{subcaption} % for subtables, subfigures
 
 % memoir style for captions
 \captionnamefont{\sffamily\footnotesize}
