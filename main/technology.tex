@@ -597,6 +597,7 @@ $1_{(a_i \neq b_j)}$ is equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise
 
 
 \subsubsection{N-Grams}
+\label{s:ngrams}
 
 We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words \autocite{Jurafsky2009}. A 2-gram is usually called a `bigram' and a 3-gram a `trigram'.
 
@@ -645,6 +646,7 @@ Instead of using the complete history of previous words when calculating the pro
 
 
 \subsubsection{Part-of-Speech Tagging}
+\label{s:pos}
 
 \ac{POS} are lexical tags for describing the different elements of a sentence. The eight most well-known \ac{POS} are as follows.
 
@@ -699,6 +701,7 @@ The process of adding tags to the words of a text is called `\ac{POS} tagging' o
 
 
 \subsubsection{Maximum Entropy}
+\label{s:maxent}
 
 Hidden Markov or maximum entropy models can be used for sequence classification, e.g.\ part-of-speech tagging. 
 
@@ -834,6 +837,7 @@ w_i      & the weight of the feature $f_i$
 
 
 \subsubsection{Grammars}
+\label{s:grammars}
 
 A language is modelled using a grammar, specifically a Context-Free-Grammar. Such a grammar normally consists or rules and a lexicon. For example a rule could be `NP $\to$ Det Noun', where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. Its two parse trees would then look like this (see figure~\ref{fig:trees}\marginnote{\faicon{object-group}~\ref{fig:trees}}):
 

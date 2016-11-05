@@ -494,6 +494,7 @@ This chapter explains how \url{pata.physics.wtf} was created and how it operates
 
 
 \section{Setup}
+\label{s:setup}
 
 The Python web framework Flask \autocite{Ronacher2016} looks after loading and rendering the various pages for \url{pata.physics.wtf} (home, text-search, text-results, image-search, image-results, video-search, video-results, about and errors), which means most of the backend related code is written in Python. Although Flask contains a small development server, in a production environment a more capable server is needed. For this reason the Flask site runs on a Gunicorn server \autocite{Gunicorn2016} and is hosted on a UNIX machine.
 
@@ -753,7 +754,9 @@ def dameraulevenshtein(seq1, seq2):
 
 The clinamen algorithm mimics the unpredictable swerve, the smallest possible aberration that can make the greatest possible difference, or the smallest possible perturbations with the most drastic consequences. 
 
-\spirals
+
+\section{Result Sentences}
+\label{s:ressent}
 
 % {
 %   word1: {fileA: [pos1, pos2, ...], fileB: [pos], ...},

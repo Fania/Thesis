@@ -658,6 +658,17 @@ breaklines=true
   xleftmargin=1cm,
   xrightmargin=1cm,
 }
+\setminted[haskell]{ % GIT
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines=true,
+  breakbytokenanywhere=true,
+  breakbefore={/,?,_},
+  breaksymbolindentleft={\temporarydimen},
+  xleftmargin=0cm,
+  xrightmargin=0cm,
+}
 
 \newmintinline[py]{c}{
   bgcolor={lavendermist},
