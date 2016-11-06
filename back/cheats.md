@@ -11,6 +11,8 @@ $\bm{\Sigma}$ Equation
 
 \marginnote{§~\ref{ch:intro}}
 
+\begin{description}[leftmargin=2.8cm]
+
 \ac  - acronym full first and then short
 \acf - acronym full again
 \acs - acronym short

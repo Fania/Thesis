@@ -922,12 +922,15 @@ breaklines=true
 
 \usepackage{booktabs}
 \usepackage{tabu}
+\usepackage{tabularx}
 \newtabulinestyle{outer=1.2pt}
 \tabulinesep = 2mm
 \usepackage{longtable}
 
 \usepackage{caption} % for subtables, minipages etc
 \usepackage{subcaption} % for subtables, subfigures
+\usepackage{changepage} % for indenting paragraphs or whatever
+
 
 % memoir style for captions
 \captionnamefont{\sffamily\footnotesize}
