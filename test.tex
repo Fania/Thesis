@@ -319,33 +319,27 @@ She further explains that original contributions to knowledge required in PhD pr
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=.5\textwidth]{tmpr}
-  \caption[Trajectory Model]{Edmonds and Candy's Trajectory Model (W = Works, C = Criteria, F = Frameworks, R = Results)}
-\label{fig:tmpr}
-\end{figure}
-
-\begin{tikzpicture}
-	\draw (0,0) rectangle (8,9);
+  \begin{tikzpicture}
+    \draw (0,0) rectangle (8,9);
     \draw [draw,dashed] (0,3) -- (8,3);
     \draw [draw,dashed] (0,6) -- (8,6);
     \node at (1,8.5) (p) {Practice};
     \node at (1,5.5) (t) {Theory};
-    \node at (1,2.5) (e) {Evaluation};
-%     \node [draw, minimum height = 2em, minimum width = 2em] at (4.5,1.5) (results) {R};
-%     \node [draw, minimum height = 2em, minimum width = 2em] at (2.5,4.5) (criteria) {C};
-%     \node [draw, minimum height = 2em, minimum width = 2em] at (6.5,4.5) (frameworks) {F};
-%     \node [draw, minimum height = 2em, minimum width = 2em] at (4.5,7.5) (works) {W};
+    \node at (1.3,2.5) (e) {Evaluation};
     \node [box] at (4.5,1.5) (results) {Results};
     \node [box] at (2.5,4.5) (criteria) {Criteria};
     \node [box] at (6.5,4.5) (frameworks) {Frameworks};
     \node [box] at (4.5,7.5) (works) {Works};
-    \draw [<->] (results) -- (criteria);
-    \draw [<->] (results) -- (frameworks);
-    \draw [<->] (results) -- (works);
-    \draw [<->] (works) -- (criteria);
-    \draw [<->] (works) -- (frameworks);
-    \draw [<->] (criteria) -- (frameworks);
-\end{tikzpicture}
+    \draw [da] (results) -- (criteria);
+    \draw [da] (results) -- (frameworks);
+    \draw [da] (results) -- (works);
+    \draw [da] (works) -- (criteria);
+    \draw [da] (works) -- (frameworks);
+    \draw [da] (criteria) -- (frameworks);
+  \end{tikzpicture}
+  \caption[Trajectory Model]{Edmonds and Candy's Trajectory Model}
+\label{fig:tmpr}
+\end{figure}
 
 Figure~\ref{fig:tmpr}\marginnote{\faicon{object-group}~\ref{fig:tmpr}} shows the \ac{TMPR} developed by Ernest Edmonds and Linda Candy as a framework to `influence practice, inform theory and, in particular, shape evaluation' \autocite{Edmonds2010}. The model allows for different trajectories between practice, theory and evaluation. Table~\ref{tab:tmpr}\marginnote{\faicon{table}~\ref{tab:tmpr}} shows the various elements, activities and outcomes in this framework more clearly.
 
@@ -418,6 +412,28 @@ relates back to hugill and yang approach
 In regards to the practice based methodology, I followed the following trajectory inspired by the \ac{TMPR}\marginnote{\faicon{object-group}~\ref{fig:tmpr}}.
 
 \todo{create my own tmpr figure here}
+
+\begin{figure}[!htbp] % (here, top, bottom, page)
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) rectangle (8,9);
+    \draw [draw,dashed] (0,3) -- (8,3);
+    \draw [draw,dashed] (0,6) -- (8,6);
+    \node at (1,8.5) (p) {Practice};
+    \node at (1,5.5) (t) {Theory};
+    \node at (1.2,2.5) (e) {Evaluation};
+    \node [box] at (4.5,1.5) (results) {Results};
+    \node [box] at (2.5,4.5) (criteria) {Criteria};
+    \node [box] at (6.5,4.5) (frameworks) {Frameworks};
+    \node [box] at (4.5,7.5) (works) {Works};
+    \draw [sa] (criteria) -- (works);
+    \draw [da] (criteria) -- (results);
+    \draw [sa] (works) -- (results);
+    \draw [da] (results) -- (frameworks);
+  \end{tikzpicture}
+  \caption[Fania's Trajectory Model]{Fania's Trajectory Model}
+\label{fig:ftmpr}
+\end{figure}
 
 \begin{description}
   \item [Practice] (Works): Implementation of Algorithms, Development of Website

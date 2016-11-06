@@ -723,7 +723,7 @@ breaklines=true
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{tikz}
-\usetikzlibrary{quotes,arrows,angles,decorations,mindmap,fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees,calc,shapes.callouts,shapes.arrows,decorations.markings}
+\usetikzlibrary{quotes,arrows,angles,decorations,mindmap,fit,shapes,backgrounds,positioning,shapes.symbols,chains,trees,calc,shapes.callouts,shapes.arrows,decorations.markings,arrows.meta}
 \usepackage[edges]{forest}
 % \usepackage{forest}
 % \ProvidesForestLibrary{edges}[2015/11/14 v0.1]
@@ -817,7 +817,8 @@ breaklines=true
     % {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}}}
 % \tikzset{txt/.style={font=\footnotesize},above}
 \tikzstyle{txt} = [font=\footnotesize,above]
-
+\tikzstyle{da} = [{Stealth[scale=2]}-{Stealth[scale=2]}]
+\tikzstyle{sa} = [-{Stealth[scale=2]}]
 
 \forestset{
   folders/.style={
