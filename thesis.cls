@@ -21,7 +21,8 @@
 
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
 \ProcessOptions\relax
-\LoadClass[a4paper,oneside]{\baseclass}
+\LoadClass[a4paper,twoside]{\baseclass}
+% \LoadClass[a4paper,oneside]{\baseclass}
 
 \hfuzz=7pt
 \vfuzz=7pt
@@ -424,6 +425,7 @@ breaklines=true
 
 % BIBLIOGRAPHY
 
+\usepackage{refcheck}
 \usepackage[style=authoryear,
               bibencoding=ascii,
               backref=true,
@@ -432,7 +434,7 @@ breaklines=true
               hyperref=true,
               doi=false,
               backend=biber]{biblatex}
-\addbibresource{back/bib.bib}
+\addbibresource{back/refs.bib}
 \setcounter{highnamepenalty}{0}
 \setcounter{lownamepenalty}{0}
 

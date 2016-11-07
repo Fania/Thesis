@@ -1,0 +1,74 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{createSpiral}\PYG{p}{(}\PYG{n+nx}{imglist}\PYG{p}{)\PYGZob{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{imglist}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{===} \PYG{l+m+mi}{10}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kd}{var} \PYG{n+nx}{spiral\PYGZus{}code} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{} \PYGZbs{}}
+\PYG{l+s+s1}{    \PYGZlt{}div class=\PYGZdq{}spouter\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{      \PYGZlt{}div class=\PYGZdq{}spleft\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}div class=\PYGZdq{}spltop\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}div class=\PYGZdq{}spltleft\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{            \PYGZlt{}a id=\PYGZdq{}a3\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img3\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{} \PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{][}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}210\PYGZdq{} width=\PYGZdq{}210\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}div class=\PYGZdq{}spltright\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{            \PYGZlt{}div class=\PYGZdq{}spltrtop\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{              \PYGZlt{}a id=\PYGZdq{}a8\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img8\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}130\PYGZdq{} width=\PYGZdq{}130\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{            \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{            \PYGZlt{}div class=\PYGZdq{}spltrbottom\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{              \PYGZlt{}div class=\PYGZdq{}spltrbleft\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                \PYGZlt{}div class=\PYGZdq{}spltrbltop\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                  \PYGZlt{}div class=\PYGZdq{}spltrbltleft\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                    \PYGZlt{}a id=\PYGZdq{}a0\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img0\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}30\PYGZdq{} width=\PYGZdq{}30\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                  \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                  \PYGZlt{}div class=\PYGZdq{}spltrbltright\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                    \PYGZlt{}div class=\PYGZdq{}spltrbltrtop\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                      \PYGZlt{}a id=\PYGZdq{}a1\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img1\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}20\PYGZdq{} width=\PYGZdq{}20\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                    \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                    \PYGZlt{}div class=\PYGZdq{}spltrbltrbottom\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                      \PYGZlt{}div class=\PYGZdq{}spltrbltrbleft\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                        \PYGZlt{}a id=\PYGZdq{}a5\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img5\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}10\PYGZdq{} width=\PYGZdq{}10\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                      \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                      \PYGZlt{}div class=\PYGZdq{}spltrbltrbright\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                        \PYGZlt{}a id=\PYGZdq{}a6\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img6\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}10\PYGZdq{} width=\PYGZdq{}10\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                      \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                    \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                  \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                \PYGZlt{}div class=\PYGZdq{}spltrblbottom\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                  \PYGZlt{}a id=\PYGZdq{}a7\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img7\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}50\PYGZdq{} width=\PYGZdq{}50\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{              \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{              \PYGZlt{}div class=\PYGZdq{}spltrbright\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{                \PYGZlt{}a id=\PYGZdq{}a2\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img2\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}80\PYGZdq{} width=\PYGZdq{}80\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{              \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{            \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}div class=\PYGZdq{}splbottom\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}a id=\PYGZdq{}a9\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img9\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}340\PYGZdq{} width=\PYGZdq{}340\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{      \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{      \PYGZlt{}div class=\PYGZdq{}spright\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}a id=\PYGZdq{}a4\PYGZdq{} class=\PYGZdq{}spimg\PYGZdq{} href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZgt{}\PYGZlt{}img id=\PYGZdq{}img4\PYGZdq{} src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} height=\PYGZdq{}550\PYGZdq{} width=\PYGZdq{}550\PYGZdq{}/\PYGZgt{}\PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{      \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{    \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{    \PYGZsq{}}\PYG{p}{;}
+    \PYG{k+kd}{var} \PYG{n+nx}{list\PYGZus{}code} \PYG{o}{=} \PYG{p}{[];}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n+nx}{i} \PYG{k}{in} \PYG{n+nx}{imglist}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k+kd}{var} \PYG{n+nx}{img} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}div class=\PYGZdq{}w3\PYGZhy{}col s12 m6 l3 w3\PYGZhy{}padding\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}a href=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{            \PYGZlt{}img src=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} \PYGZbs{}}
+\PYG{l+s+s1}{            title=\PYGZdq{}\PYGZsq{}}\PYG{o}{+}\PYG{n+nx}{imglist}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}\PYGZdq{} style=\PYGZdq{}width:100\PYGZpc{}\PYGZdq{}\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{          \PYGZlt{}/a\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{        \PYGZlt{}/div\PYGZgt{} \PYGZbs{}}
+\PYG{l+s+s1}{      \PYGZsq{}}\PYG{p}{;}
+      \PYG{n+nx}{list\PYGZus{}code}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(}\PYG{n+nx}{img}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}} \PYG{c+c1}{// end for}
+    \PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}img\PYGZus{}spiral\PYGZus{}div\PYGZsq{}}\PYG{p}{).}\PYG{n+nx}{html}\PYG{p}{(}\PYG{n+nx}{spiral\PYGZus{}code}\PYG{p}{);}
+    \PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}img\PYGZus{}list\PYGZus{}div\PYGZsq{}}\PYG{p}{).}\PYG{n+nx}{html}\PYG{p}{(}\PYG{n+nx}{list\PYGZus{}code}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}} \PYG{c+c1}{// end if}
+  \PYG{k}{else}\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// console.log(\PYGZdq{}inside else\PYGZdq{});}
+    \PYG{n+nx}{\PYGZdl{}}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.img\PYGZus{}empty\PYGZsq{}}\PYG{p}{).}\PYG{n+nx}{wrap}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}div\PYGZgt{}Not enough results found.\PYGZlt{}/div\PYGZgt{}\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}} \PYG{c+c1}{// end else}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

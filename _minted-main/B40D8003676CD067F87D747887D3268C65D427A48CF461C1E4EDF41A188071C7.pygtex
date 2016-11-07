@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c}{\PYGZsh{} $nym$ = name of nym}
+\PYG{c}{\PYGZsh{} $wset$ = synset}
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}nym}\PYG{p}{(}\PYG{n}{nym}\PYG{p}{,} \PYG{n}{wset}\PYG{p}{):}
+  \PYG{n}{out} \PYG{o}{=} \PYG{p}{[]}
+  \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{hyponyms}\PYG{p}{()}
+  \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}hypo\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{hyponyms}\PYG{p}{()}
+  \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}hyper\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{hypernyms}\PYG{p}{()}
+  \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}holo\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{hhhm} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{member\PYGZus{}holonyms}\PYG{p}{()}
+    \PYG{n}{hhhs} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{substance\PYGZus{}holonyms}\PYG{p}{()}
+    \PYG{n}{hhhp} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{part\PYGZus{}holonyms}\PYG{p}{()}
+    \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{hhhm} \PYG{o}{+} \PYG{n}{hhhs} \PYG{o}{+} \PYG{n}{hhhp}
+  \PYG{k}{if} \PYG{n}{nym} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}mero\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{hhhm} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{member\PYGZus{}meronyms}\PYG{p}{()}
+    \PYG{n}{hhhs} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{substance\PYGZus{}meronyms}\PYG{p}{()}
+    \PYG{n}{hhhp} \PYG{o}{=} \PYG{n}{wset}\PYG{o}{.}\PYG{n}{part\PYGZus{}meronyms}\PYG{p}{()}
+    \PYG{n}{hhh} \PYG{o}{=} \PYG{n}{hhhm} \PYG{o}{+} \PYG{n}{hhhs} \PYG{o}{+} \PYG{n}{hhhp}
+  \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{hhh}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{h} \PYG{o+ow}{in} \PYG{n}{hhh}\PYG{p}{:}
+      \PYG{k}{for} \PYG{n}{l} \PYG{o+ow}{in} \PYG{n}{h}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{():}
+        \PYG{n}{out}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{l}\PYG{o}{.}\PYG{n}{name}\PYG{p}{()))}
+  \PYG{k}{return} \PYG{n}{out}
+\end{Verbatim}

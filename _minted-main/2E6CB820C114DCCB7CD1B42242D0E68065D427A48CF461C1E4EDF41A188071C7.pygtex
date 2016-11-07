@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c}{\PYGZsh{} $words$ = query term(s)}
+\PYG{k}{def} \PYG{n+nf}{pataphysicalise}\PYG{p}{(}\PYG{n}{words}\PYG{p}{):}
+  \PYG{n}{sys\PYGZus{}ws} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+  \PYG{k}{for} \PYG{n}{word} \PYG{o+ow}{in} \PYG{n}{words}\PYG{p}{:}
+    \PYG{n}{synonyms} \PYG{o}{=} \PYG{n}{wn}\PYG{o}{.}\PYG{n}{synsets}\PYG{p}{(}\PYG{n}{word}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{synonyms}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+      \PYG{k}{for} \PYG{n}{s} \PYG{o+ow}{in} \PYG{n}{synonyms}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{l} \PYG{o+ow}{in} \PYG{n}{s}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{():}
+          \PYG{n}{x} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{l}\PYG{o}{.}\PYG{n}{name}\PYG{p}{())}
+          \PYG{n}{o} \PYG{o}{=} \PYG{n}{x}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZus{}\PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)}
+          \PYG{n}{sys\PYGZus{}ws}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{o}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{sys\PYGZus{}ws}
+\end{Verbatim}

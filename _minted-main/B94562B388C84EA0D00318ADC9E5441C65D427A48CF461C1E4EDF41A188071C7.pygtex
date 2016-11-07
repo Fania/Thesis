@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c}{\PYGZsh{} $sent$ = the query string}
+\PYG{k+kn}{from} \PYG{n+nn}{microsofttranslator} \PYG{k+kn}{import} \PYG{n}{Translator}
+\PYG{k}{def} \PYG{n+nf}{transent}\PYG{p}{(}\PYG{n}{sent}\PYG{p}{):}
+  \PYG{n}{translator} \PYG{o}{=} \PYG{n}{Translator}\PYG{p}{(}\PYG{n}{microsoft\PYGZus{}id}\PYG{p}{,} \PYG{n}{microsoft\PYGZus{}secret}\PYG{p}{)}
+  \PYG{n}{french} \PYG{o}{=} \PYG{n}{translator}\PYG{o}{.}\PYG{n}{translate}\PYG{p}{(}\PYG{n}{sent}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}fr\PYGZdq{}}\PYG{p}{)}
+  \PYG{n}{japanese} \PYG{o}{=} \PYG{n}{translator}\PYG{o}{.}\PYG{n}{translate}\PYG{p}{(}\PYG{n}{french}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}ja\PYGZdq{}}\PYG{p}{)}
+  \PYG{n}{patawords} \PYG{o}{=} \PYG{n}{translator}\PYG{o}{.}\PYG{n}{translate}\PYG{p}{(}\PYG{n}{japanese}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}en\PYGZdq{}}\PYG{p}{)}
+  \PYG{n}{translations} \PYG{o}{=} \PYG{p}{(}\PYG{n}{french}\PYG{p}{,} \PYG{n}{japanese}\PYG{p}{,} \PYG{n}{patawords}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{translations}
+\end{Verbatim}
