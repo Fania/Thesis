@@ -155,13 +155,13 @@ pdflatex --file-line-error -shell-escape main
 - [ ] add space before floats
 - [ ] description list spacing by adding [longest word] after environment
 - [ ] cut pdf with spiral in it for line \spirals
-- [ ] remove indent in inline code style
+- [x] remove indent in inline code style
 - [ ] add Olston2010 reference and Gulli2005 on crawling and size of web
 - [x] sourceatright font and size
 - [ ] refer back to oulipo technique table in later chapters
 - [ ] capitalise web or not? internet?
 - [ ] capitalise disciplines or not?
-
+- [ ] remove syntax highlighting? make background gray
 
 
 Wordcount after Boot Camp 54715 total
@@ -250,19 +250,3 @@ http://www.artybollocks.com/#abg_full
 % \subsubsection 3
 % \paragraph 4
 % \subparagraph 5
-
-
-<!-- MINTED  -->
-\begin{minted}{python}
-  def boring(args = None):
-  pass
-\end{minted}
-
-\mininline{python}{xyz}
-
-\newmintinline['macro name']{'language'}{'options'}. If a 'macro name' is not specified, then the created macro is called \'language'inline
-\py{xyz}
-
-\mint{python}|import this|
-
-\inputminted[firstline=2, lastline=12]{octave}{BitXorMatrix.m}

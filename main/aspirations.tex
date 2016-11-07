@@ -32,148 +32,190 @@ I will pull down my barns.
 \spirals
 
 
-Developing a software product never finishes. Especially with creative products, where the functional requirements are more fluid perhaps, it is always tempting to add, improve, replace bits. \todo{software refactoring}
+Developing a software product rarely finishes. It is maintained, refactored, repurposed, updated, extended, etc. Especially with creative products, where the functional requirements are more fluid perhaps, it is always tempting to change things. 
 
-For the purpose of this doctoral project, the artefact (\url{pata.physics.wtf}) is a snapshot of a product in constant motion. The state of the code at the time of submission of this thesis is described in chapter~\ref{ch:implementation}\marginnote{§~\ref{ch:implementation}} and further elaborated on in the \nameref{ch:analysis} chapter\marginnote{§~\ref{ch:analysis}}.
+For the purpose of this doctoral project, the artefact \url{pata.physics.wtf} is a snapshot of a product in constant motion. The state of the code at the time of submission of this thesis is described in chapter~\ref{ch:implementation}\marginnote{§~\ref{ch:implementation}} and further elaborated on in the \nameref{ch:analysis} chapter\marginnote{§~\ref{ch:analysis}}. But it may very well continue to evolve.
 
-Here, in this chapter I will lay out some of the potential/likely further work for this project. This may continue on a private basis or in a more academic environment. I have grouped these ideas into two main categories: \emph{technical} and \emph{theoretical}. 
-
-
-\section{Technical}
-
-\todo{write these out all in one list and then group them as fit}
+Here, in this chapter I will lay out some of the potential further work for this project. This may continue on a private basis or in a more academic environment. 
 
 
-\paragraph{Responsive spirals} 
-Currently the image and video spirals are fixed size. This means that when the webpage is resized the spiral stays the same size and is left aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page. Percentages
+\section{Performance}
 
-\paragraph{Scalable image sizes} 
-At the moment images are retrieved at a given size through the various \ac{API} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \ac{HTML} code. This means that some of them look squished and pizelated. This limits the available choice of results through the API.
+\paragraph{Startup} 
+The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch (see chapter~\ref{s:setup}\marginnote{§~\ref{s:setup}}). This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index\marginnote{§~\ref{s:index}} is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
 
-\paragraph{Square aspect ratio} 
-Another issue is the aspect ratio of images and videos. For the spiral they need to be square. I currently achieve this by squishing them as opposed to cropping them or specifying an option in the \ac{API} calls to only retrieve square images.
+\paragraph{Query Response} 
+The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \ac{API}s such as Flickr and WordNet. See analysis on speed issues in table~\ref{tab:percent}\marginnote{\faicon{table}~\ref{tab:percent}}.
 
-\paragraph{Responsive poems} 
-A similar problem to the responsive spirals exists with the display of the Queneau poems. The random poems are centered on the page but the Queneau poems require a lot more formatting and styling to render them on the page and currently this is achieved my left aligning them and having a fixed `absolute' position on the page. Ideally this would also be centered as in the random poems. 
+\paragraph{Preprocessing Corpora} 
+At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text} (see chapter~\ref{s:corpora}\marginnote{§~\ref{s:corpora}}). Newlines and whitespace formatting varies, as does language and quality of spelling. Generally, chapter headings, chapter numberings, etc. were left untouched. The Shakespeare corpus contains poetry and plays for example. With the plays, scene information, stage directions, and voice details were kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``\ldots Athens and a wood near it ACT I \ldots'' from \textit{A Midsummer Night's Dream} or this example: ``\ldots Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge \ldots'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance and removing any text that might interfere with the readablility of results.
 
-\paragraph{Startup performance} 
-The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch. This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
+\paragraph{Image Sizes} 
+At the moment images are retrieved at one specified size through the various \ac{API} calls even though they are displayed at various different sizes depending on their location in the image spiral (unless they are displayed as a list). This process could certainly be optimised. Smaller image sizes could be accessed via the \ac{API}s.
 
-\paragraph{Query speed} 
-The time it takes from the user entering a query term and the system displaying the results page varies between unnoticable short and impatiently long. This is due to the pataphysicalisation process. This requires calls to external and internal \ac{API}s such as Flickr and WordNet.
 
-\paragraph{Preprocessing corpora} 
-At this point the texts in the corpora consist of almost unedited plaintext (`.txt') files\footnote{For text files downloaded from Project Gutenberg, the Gutenberg specifc copyright notices have been removed to only contain the relevant body of text}. Newlines and whitespace formatting varies, as does language and quality of spelling. OCR SOURCES Generally, chapter headings, chapter numberings, etc are left untouched. The Shakespeare corpus contains poetry and plays for example. STAGE DIRECTIONS With the plays, scene information is kept, voice details are kept. This means sentences that appear in the results of the search tool can contain peripheral words such as in this example: ``...Athens and a wood near it ACT I...'' from \textit{A Midsummer Night's Dream} or this example: ``...Exit SHERIFF Our abbeys and our priories shall pay This expedition's charge...'' from \textit{King John}. This could be addressed by preprocessing the individual texts in advance.
+\section{Design}
 
-\paragraph{Sentence fragments} 
-Currently the way results sentences are retrieved for the text search is based on punctuation. This means once a pataphysicalised keyword has been found, the system retrieves up to \num{10} words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments.
+\paragraph{Responsive Spirals} 
+Currently the image and video spirals (see chapter~\ref{s:imgvid}\marginnote{§~\ref{s:imgvid}}) are fixed size. This means that when the webpage is resized the spiral stays the same size and is left-aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page. This could be achieved using percentage widths, although it would require a lot of work to adapt the current code for the spirals (see chapter~\ref{s:spirals}\marginnote{§~\ref{s:spirals}}).
 
-\paragraph{More APIs} 
-Currently X \ac{API}s are used\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times.
+\paragraph{Scalable Image Sizes} 
+As mentioned above, images are retrieved at one size through the various \ac{API} calls. Because images in the spiral have different sizes according to where in the spiral they are located, they are scaled up or down directly in the \ac{HTML} code. This means that some of the images look distorted and pixelated if they have to be scaled up or down too much.
 
-\paragraph{Web search} 
-The use of \ac{API}s could also include web search results rather than just images and videos. This would needs its own interface section and a suitable display style for the results. The biggest problem for this is \ac{API} restrictions. Alternatively a ready-made index or crawl could be used but these are typically many terrabytes in size and have a cost attached. Crawling the Web myself is not an option due to the computational power, time and space required to do so.
+\paragraph{Square Aspect Ratio} 
+Another issue is the aspect ratio of images and videos. For the spiral they need to be square. They are currently distorted as opposed to cropped. It might be possible to specify an option in the \ac{API} calls to only retrieve square images which would help this problem.
 
-\paragraph{Audio search} 
-Originally audio search was going to be a part of this project. This has been abandoned due to time constraints. However it could be added using an \ac{API} such as SoundClouds. Technically the pataphysicalisation could work similar to the image and video searches, meaning it would be based on user tags. One idea would be to search in audio waves.
+\paragraph{Responsive Poems} 
+A similar problem to the responsive spirals exists with the display of the Queneau poems. The random poems are centered on the page but the Queneau poems require a lot more formatting and styling to render and currently this is achieved my left-aligning them and having a fixed `absolute' position on the page. Ideally this would also be centered as in the random poems. 
 
-\paragraph{More algorithms} 
-It would be nice to implement some more algorithms for the search tool. This could include the two additional algorithms suggested by Andrew Dennis (see chapter~\ref{ch:applications}\marginnote{§~\ref{ch:applications}}) or developing more of my own. This could involve implementing some of the other pataphysical principles, such as equivalence or anomaly. Or it could consist of implementing some of the more famous \ac{OULIPO} techniques. The repetoire of them is huge (see appendix XYZ).
+\paragraph{Paginate Results}
+For the text-by-source and text-by-algorithm search as well as the image- or video-as-list searche results, it may improve the loading speed of the results page to split the results into smaller chunks and display them on several pages instead of one long scrolling page. This is called pagination.
 
-\paragraph{Poetry rhyming scheme} 
-One of the biggest points for future work is to introduce a rhyming scheme for the poetry results. This would involve some more \ac{NLP} during the creation of the index\marginnote{§~\ref{ch:technology}}. It would make the poems much more readable. See more in chapter XYZ.
+\paragraph{Random Sentences} 
+Adding to the source of random sentences used in the top and bottom banner on the website should be an ongoing endevour. The current list of sentences used is shown in appendix~\ref{s:appsentences}\marginnote{§~\ref{s:appsentences}}.
 
-\paragraph{Random sentences} 
-Adding to the source of random sentences used in the top and bottom banner on the website should be an ongoing endevour.
 
-\paragraph{Custom API}
-It would be great to develop a custom \ac{API} for this the search tool. This would allow other people to use the search remotely without going through the interface and to use the results as they want. This would have been beneficial for the Digital Opera project\marginnote{§~\ref{ch:applications}} and certainly for other researchers/developers like Adnrew Dennis\marginnote{§~\ref{ch:applications}}.
+\section{Text}
 
-\paragraph{WordNet vocabulary}
-The vocabulary in WordNet is limited. According to it's website (\url{https://wordnet.princeton.edu/}) it contains \num{117000} `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms. Because of the way the process works, the link between Wordnet and source texts, results may be limited.
-\todo{add troponyms etc}
-\todo{check}
-
-\paragraph{WordNet Antonyms}
-The antinomy algorithms relies on WordNets antonyms. A lot of words simply do not have an opposite and no fallback is currently defined. This means a lot of the time the antinomy function will not produce any results.
-\ref{s:numbers}
-
-\paragraph{Stemming}
-Stemming could increase the number of results found by the algorithms. (See chapter XYZ). A danger of increasing the output of the pataphysicalisation is always that results become more boring. If the query term and potential matches were compared based on their stemmed form 
- 
-\paragraph{Queneau's poems}
-It would be nice to actually add Queneau's poem texts into the coprus of Faustroll as little easter eggs.
-
-\paragraph{Bitmap algorithms}
-The image and video search currently rely on extrenal \ac{API}s and user tags to work. One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the bitmaps themselves. So this could mean we could have a reverse image search that finds images related the original bitmap in pataphysical way or other.
-
-\paragraph{Index}
-One idea for the pataphysicalisation process was to add `patadata' to the index. This could include pronounciation tags for example to make an implementation of a rhyming scheme for the poetry easier. So each word in teh index dictionary would contain the following items.
-
-\begin{verbatim}
-  (``tree'': [``l_00'': [24,566,4990], ``s_14'': [234,5943]], IPA data)
-\end{verbatim}
-
-\todo{add ipa data or whatever is best for the rhyming stuff}
-storing rhyming data in index or other additional things like ranking
+\paragraph{Result Sentences} 
+Currently the way result sentences are retrieved for the text search is based on punctuation (see chapter~\ref{s:ressent}\marginnote{§~\ref{s:ressent}}). This means once a pataphysicalised keyword has been found, the system retrieves up to \num{10} words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments. This could be changed to rely on \ac{POS} tags for example or simply retrieving complete sentences.
 
 \paragraph{Stopwords}
-Using a different set of stopwords to see if that makes a difference. For example we could use a spanish set of stopwords on an english text. OR the other way around.
+When the index is created only words that are not considered stopwords are added. We could modify the list of stopwords (see appendix~\ref{app:stopwords}\marginnote{§~\ref{app:stopwords}}) to include a few more uninteresting words. Or we could simply remove everything but nouns for example. This would drastically influence the results produced by the system.
+
+\paragraph{Rhyming Scheme} 
+One of the biggest points for future work is to introduce a rhyming scheme for the poetry results. This might involve some more \ac{NLP} during the creation of the index\marginnote{§~\ref{s:index}}. It would make the poems much more readable. This could include pronounciation \ac{POS} tags or other \ac{IPA} like data (for example using an \ac{API} like Wordnik \autocite{Wordnik2016} or a library like \ac{NLTK}). So a word in the index dictionary might contain the following items.
+
+\begin{minted}{text}
+  (``tree'': [``l_00'': [24,566,4990], ``s_14'': [234,5943]], ``[tri]'')
+\end{minted}
+
+By doing \ac{POS} tagging\marginnote{§~\ref{s:pos}} with pronounciation data, we could retrieve sentences that match the sound of the last word of the previous line for example.
 
 
-\section{Creative NLP}
-N-grams are a \ac{NLP} technique introduced in chapter~\ref{ch:technology}\marginnote{Section~\ref{ch:technology}}. The idea is that it allows for prediction of likely word pairs, meaning if the word `sunny' often occurs just before the word `day' in a given training text or corpus then the probability for this particular n-gram is higher than say for `sunny dog'. This can be increased to predict the probability of longer chains of words. On can immediately see the attraction of abusing this to generate pseudo sentences or even of creating a formula similar in nature but for example ranking obscure combinations of words higher than common ones. So ffor example instead of having a \ac{MLE} (see chapter XYZ and formular 6.12) we could have a `Maximum Obscurity Estimation' defined as:
+\section{Pataphysicalisation}
 
-\begin{equation}
-  P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
-  \label{eq:probmoe}
-\end{equation}
-% \myequations{Probwn}
-\todo{work the maths out here for this example of MOE}
+\paragraph{WordNet}
+The vocabulary in WordNet is limited. According to it's website \autocite{Princeton2010} it contains \num{117000} `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms (namely the Syzygy and Antinomy algorithms). See also discussion in chapter~\ref{s:analsyzygy}\marginnote{§~\ref{s:analsyzygy}}. An option might be to somehow widen the amount of word matches by including different word-types/forms and relationships, such as troponyms, homonyms and heteronyms. Using these could introduce a whole new kind of pataphysical result. 
 
-Similarly, we could could play with maximum entropy models as shown on page \num{112} (see chapter XYZ) together with \ac{POS} tagging. What if we rigged the probability such that instead of `in Quebec' ranking high for a `location' \ac{POS} tag, it now ranks high as a `drug'?
-\todo{fix page num}
-
-Again there are endless possipilities of abusing these kinds of systems to create \ac{AMC}. This is also very reminiscent of \ac{OULIPO} techniques. We could create a whole new language grammar based on pataphysical principles.
-
-Another example of interesting uses of \ac{NLP} for \ac{AMC} is playing with homonyms and heteronyms. Homonyms are pronounced the same but mean something else (e.g. `write' and `right'). Heteronyms are words that are spelled the smae but have a different meaning (e.g. `close to the edge' and `to close the door'). There are similar techniques in the \ac{OULIPO}. Homophones are often used to create puns (and remember---puns are syzygy's of words), for example ``past your eyes'' and ``pasteurize''. 
+Homonyms are pronounced the same but mean something else (e.g. `write' and `right'). Heteronyms are words that are spelled the smae but have a different meaning (e.g. `close to the edge' and `to close the door'). Homophones are often used to create puns (and remember---puns are syzygys of words), for example ``past your eyes'' and ``pasteurize''. 
 
 \begin{quotation}
    You can tune a guitar, but you can't tuna fish. Unless of course, you play bass. \sourceatright{attributed to Douglas Adams}
 \end{quotation}
 
-\todo{look into rhyming tags in nlp}
-\ac{NLP} would also be useful for introducing a rhyming pattern into auto-generated poetry. BY doing \ac{POS} tagging with pronounciation data, we could retrieve sentences that match the sound of the last word of the previous line, etc.
+\paragraph{Antinomy}
+The antinomy algorithms relies on WordNets antonyms. A lot of words simply do not have an opposite and no fallback is currently defined. This means a lot of the time the antinomy function will not produce any results. Andrew Dennis implemented the algorithm in the same way, as discussed in chapter~\ref{s:dennis}\marginnote{§~\ref{s:dennis}}. It would be great to come up with a better way of dealing with this concept to ensure results are produced everytime.
+
+\paragraph{Stemming}
+Stemming could increase the number of results found by all algorithms. (See chapter~\ref{s:nlp}\marginnote{§~\ref{s:nlp}}). A danger of increasing the output of the pataphysicalisation is always that results become more boring. Currently queries such as `clear' and `clearing' are treated as separate entities and would produce different results. Stemming would turn both of these words into the stem `clear' and they would return the same results. Now it becomes immediatly clear (no pun intended) though that this might not always be desirable as just illustrated in this sentence: the root meaning of `clear' can be very different to the meaning of `clearing'.
+
+\paragraph{Queneau's poems}
+It would be nice to actually add Queneau's poems \autocite{Queneau1961} into the Faustroll corpus as little easter egg (see chapter~\ref{s:culture}\marginnote{§~\ref{s:culture}}).
+
+\paragraph{Image Algorithms}
+The image and video search currently rely on external \ac{API}s (see chapter~\ref{s:imgvid}\marginnote{§~\ref{s:imgvid}}). One option to approach this in a totally differnet way would be to write algorithms that analyse and pataphysicalise the actual image or video data themselves. This might involve manipulating histograms or pixel maps.
+
+\paragraph{Maximum Obscurity}
+N-grams are a \ac{NLP} technique introduced in chapter~\ref{s:ngrams}\marginnote{§~\ref{s:ngrams}}. The idea is that it allows for prediction of likely word pairs, meaning if the word `sunny' often occurs just before the word `day' in a given training text or corpus then the probability for this particular n-gram is higher than say for `sunny dog'. This can be increased to predict the probability of longer chains of words. On can immediately see the attraction of abusing this to generate pseudo sentences or even of creating a formula similar in nature but for example ranking obscure combinations of words higher than common ones. So for example instead of having a \ac{MLE} (see equation~\ref{eq:mle}\marginnote{$\bm{\Sigma}$~\ref{eq:mle}}) we could have a `Maximum Obscurity Estimation' which returns the highest probabilty for word sequences that happen the rarest.
+
+\paragraph{Pataphysical Entropy}
+Similarly, we could could play with maximum entropy models as shown in chapter~\ref{s:maxent}\marginnote{§~\ref{s:maxent}} together with \ac{POS} tagging\marginnote{§~\ref{s:pos}} by rigging given probability for tags. There are endless possipilities of abusing these kinds of techniques. This is also very reminiscent of \ac{OULIPO} techniques. 
+
+\paragraph{Grammars}
+We could create a whole new language grammar based on pataphysical principles. Examples of using a standard grammar (see chapter~\ref{s:grammars}\marginnote{§~\ref{s:grammars}}) for generating `random' text are as follows\footnote{\autocite{Winter2016,Dada2016,Stribling2016}}.
+
+\begin{adjustwidth}{1cm}{}
+\begin{description}[leftmargin=3cm]
+  \item[ArtyBollocks] Generates artist statements.
+  \item[DadaEngine] A system for generating random text from grammars.
+  \item[SciGen] Generates random Computer Science research papers.
+\end{description}
+\end{adjustwidth}
+
+\paragraph{Uncreativity}
+In chapter~\ref{s:csf}\marginnote{§~\ref{s:csf}} I discussed the concepts of uninspiration and aberration by Wiggins and Ritchie \citeyear{Wiggins2006,Ritchie2012} in relation to their \ac{CSF}. We could define a `Pataphysical Search Framework' in the same way. Table~\ref{tab:csf}\marginnote{\faicon{table}~\ref{tab:csf}} shows some of their original definitions for various forms of aberration and uninspiration. Table~\ref{tab:patacsf}\marginnote{\faicon{table}~\ref{tab:patacsf}} then shows some rough ideas about how pataphysical concepts might be defined.
+
+\begin{adjustwidth}{1cm}{}
+\begin{description}[leftmargin=2.5cm]
+  \item[Clinamen] smallest possible aberration to make the biggest difference
+  \item[Antimomy] reachable, abnormal concepts with value
+  \item[Anomaly] reachable concepts outside the norm
+  \item[Absolute] criteria for value and norm must be perfectly matched
+  \item[Syzygy 1] concepts reachable within 3 steps from the query
+  \item[Syzygy 2] transformed set of concepts $S_{obj} \rightarrow S^{meta} \rightarrow S'{obj}$
+\end{description}
+\end{adjustwidth}
+
+This is definitely work in progress and out of the scope of this thesis to elaborate much further.
+
+\begin{table}[!htbp]
+\centering
+\caption{CSF concept definitions of uncreativity}
+\label{tab:csf}
+\begin{tabu}{ll}
+\toprule
+\textbf{Name} & \textbf{Equation} \\
+\midrule
+Universal set of concepts & $U$ and $X \subseteq U$ \\
+Aberration & $B \text{ where } B \notin N_\alpha (X) \ \wedge \ B \neq \emptyset$ \\
+Perfect Aberration & $V_\alpha (B) = B$ \\
+Productive Aberration & $V_\alpha(B) \neq \emptyset \ \wedge \ \neq B$ \\
+Pointless Aberration & $V_\alpha(B) = \emptyset$ \\
+Hopeless Uninspiration & $V_\alpha (X) = \emptyset$ \\
+Conceptual Uninspiration  & $V_\alpha (N_\alpha (X)) = \emptyset$ \\
+Generative Uninspiration  & $elements(A) = \emptyset$ \\
+\bottomrule
+\end{tabu}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption[CSF pataphysical concepts]{Possible definitions of pataphysical concepts in terms of the CSF}
+\label{tab:patacsf}
+\begin{tabu}{XX[5]} 
+\toprule
+\textbf{Name} & \textbf{Equation} \\
+\midrule
+Norm & $N_\alpha (X) = \{c \in X \ | \ N(c)> \alpha\} \text{ where } N \in [0,1]^X$ \\
+Value & $V_\alpha(X) = \{c \in X \ | \ V(c) > \alpha\} \text{ where } V \in [0,1]^X$ \\
+Pata & $P_\alpha(X) = $ \newline $\{c \ | \ c \in(CLI(X)\cup ANT_\alpha(X) \cup SYZ(X) \cup ANO_\alpha(X) \cup ABS(X))\}$ \\
+Clinamen & $CLI(X) = \{c \in X \ | \ N_{0.9} (N_{0.1} (c))\}$ \\
+Antinomy & $ANT_\alpha(X) = \{c \in X \ | \ V(N_0(c)) > \alpha\}$ \\
+Anomaly & $ANO_\alpha(X) = \{c \in X \ | \ N(c)< \alpha\}$ \\
+Absolute & $ABS(X) = \{c \in X \ | \ V_1 (N_1 (X)) \neq \emptyset\}$ \\
+Syzygy 1 & $SYZ(query) = \bigcup_{n=0}^{3} elements(Q(N,V)^n (query))$ \\
+Syzygy 2 & $SYZ(X) = S'(X) \text{ where } S_{obj} \rightarrow S^{meta} \rightarrow S'{obj}$ \\
+\bottomrule
+\end{tabu}
+\end{table}
 
 
-\todo{regex stuff}
-\todo{nlp stuff, links, grammar eg scigen}
-\todo{discuss}
-http://dev.null.org/dadaengine/
-https://pdos.csail.mit.edu/archive/scigen/
-https://artybollocks.com/
+\section{Extensions}
+
+\paragraph{Additional APIs} 
+Currently 5 \ac{API}s\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube} are used in \url{pata.physics.wtf}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times. Possible addiontional \ac{API}s to consider would be Instagram, Imgur, Facebook, Google Image Search, DeviantArt, Pinterest, Vimeo, Twitter, SoundCloud, etc.
+
+\paragraph{Web Search} 
+The use of \ac{API}s could also include web search results rather than just images and videos. This would needs its own interface section and a suitable display style for the results. The biggest problem for this are \ac{API} limitations as mentioned in chapter~\ref{s:apis}\marginnote{§~\ref{s:apis}}. Alternatively a ready-made index or crawl could be used but these are typically many terrabytes in size and have a cost attached. Crawling the web myself is not an option due to the computational power, time and space required to do so.
+
+\paragraph{Audio Search} 
+It would be nice to include audio search using an \ac{API} such as SoundCloud. Technically the pataphysicalisation could work similar to the image and video searches, meaning it would be based on user tags. One idea would be to work with audio waves directly although this needs to be explored further first.
+
+\paragraph{Additional Algorithms} 
+It would be nice to implement some more algorithms for the search tool. This could include the two additional algorithms suggested by Andrew Dennis (see chapter~\ref{s:dennis}\marginnote{§~\ref{s:dennis}}) or developing more of my own. This could involve implementing some of the other pataphysical principles, such as equivalence or anomaly. Or it could consist of implementing some of the more famous \ac{OULIPO} techniques. The repetoire of them is huge (see appendix~\ref{app:oulipo}\marginnote{§~\ref{app:oulipo}}).
+
+\paragraph{Custom API}
+Finally, it would be great to develop a custom \ac{API} for the algorithms of \url{pata.physics.wtf}. This would allow other people to use the search remotely without going through the interface and to use the results as they want. This would have been beneficial for the Digital Opera project\marginnote{§~\ref{s:opera}} and certainly for other researchers/developers like Adnrew Dennis\marginnote{§~\ref{s:dennis}}.
 
 
-
-\todo{https://wordnet.princeton.edu/wordnet/man/wngloss.7WN.html for glossary}
-\todo{fix all chapter XYZ mentions}
-\todo{group these into better sub groups and make them proper sections rather than paragraphs}
-
-\todo{pageinate results for speed?}
-
-\section{Theoretical}
+\section{User Testing}
 
 \paragraph{Focus group}
-It might be interesting to look at opinions of various people (general public and experts) about the interpretation/evaluation framework. This could be done by asking them to provide their own definition of computer creativity and then to analyse and evaluate a product (such as \url{pata.physics.wtf}) accoriding to their own criteria. Then follow this up by getting the same people to use my proposed framework to compare the results. This would include asking them about wether or not they thought that using the framewokr was beneficial to them or confusing.
+It might be interesting to look at opinions of various people (general public and experts) about the interpretation/evaluation framework. This could be done by asking them to provide their own definition of computer creativity and then to analyse and evaluate a product (such as \url{pata.physics.wtf}) according to their own criteria. Then follow this up by getting the same people to use my proposed framework to compare the results. This would include asking them about whether or not they thought that using the framework was beneficial to them or confusing.
 
-\paragraph{Questionnaires}
-I have shied away from doing a questionnaire study because of several reasons. One is that due to the creative and subjective nature of the artefact, opinions on it may vary wildly and I don't see how I could derive useful unbiased data from that. Yes, it depends what questions you ask. But even if I managed to get some half-decent data, what would that tell me? Half of the people like my site, the other half don't?
-
-
-\paragraph{Eye-tracking}
-To study the effects of using different styles of presenting the same results an eye-tracking experiment could be done. This would involve setting up participants with the necessary equipment and then introduce them to the website and moniter their eye movements as they naviagte the site. This could also provide details about how long users spend on each results page, what kind of style of results they prefer, etc. Some may prefer image or video search over the text search while others may not be interested in that at all. Generally of course one has to take into account that this is a creative piece of work and not everybody will like it. It has no clear immediate purpose and that may put users off.
-
-\paragraph{Performance Benchmarks?}
+\paragraph{Eye-Tracking}
+To study the effects of using different styles of presenting the same results, an eye-tracking experiment could be done. This would involve setting up participants with the necessary equipment and then introduce them to \url{pata.physics.wtf} and moniter their eye movements as they navigate the site. This could also provide details about how long users spend on each results page, what kind of style of results they prefer, etc. Some may prefer image or video search over the text search while others may not be interested in that at all. Generally of course one has to take into account that this is a creative piece of work and not everybody will like it. It purposefully purposeless and highly subjective, so user feedback may not provide unbiased and useful results.
 
 
 \stopcontents[chapters]

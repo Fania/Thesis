@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{function} \PYG{n}{generate\PYGZus{}antonym}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{):}
+  \PYG{n}{antonym\PYGZus{}list} \PYG{o}{=} \PYG{p}{[]}
+  \PYG{k}{for} \PYG{n}{word} \PYG{o+ow}{in} \PYG{n}{synonym\PYGZus{}set}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n+nb}{input} \PYG{o+ow}{is} \PYG{n}{noun}\PYG{p}{:}
+      \PYG{k}{if} \PYG{n}{word} \PYG{o+ow}{is} \PYG{n}{noun}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{lemma} \PYG{o+ow}{in} \PYG{n}{word}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{:}
+          \PYG{k}{if} \PYG{n}{lemma}\PYG{o}{.}\PYG{n}{antonyms}\PYG{o}{.}\PYG{n}{length} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{lemma}\PYG{o}{.}\PYG{n}{antonym}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+      \PYG{k}{else} \PYG{k}{if} \PYG{n}{word} \PYG{o+ow}{is} \PYG{n}{verb}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{lemma} \PYG{o+ow}{in} \PYG{n}{word}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{:}
+          \PYG{k}{if} \PYG{n}{lemma}\PYG{o}{.}\PYG{n}{antonyms}\PYG{o}{.}\PYG{n}{length} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{new\PYGZus{}word} \PYG{o+ow}{in} \PYG{n}{synonym\PYGZus{}set}\PYG{p}{(}\PYG{n}{lemma}\PYG{o}{.}\PYG{n}{antonyms}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]):}
+              \PYG{k}{if} \PYG{n}{new\PYGZus{}word} \PYG{o+ow}{is} \PYG{n}{noun}\PYG{p}{:}
+                \PYG{k}{return} \PYG{n}{new\PYGZus{}word}
+    \PYG{k}{else} \PYG{k}{if} \PYG{n+nb}{input} \PYG{o+ow}{is} \PYG{n}{verb}\PYG{p}{:}
+      \PYG{k}{if} \PYG{n}{word} \PYG{o+ow}{is} \PYG{n}{verb}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{lemma} \PYG{o+ow}{in} \PYG{n}{word}\PYG{o}{.}\PYG{n}{lemmas}\PYG{p}{:}
+          \PYG{k}{if} \PYG{n}{lemma}\PYG{o}{.}\PYG{n}{antonyms}\PYG{o}{.}\PYG{n}{length} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{lemma}\PYG{o}{.}\PYG{n}{antonym}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+  \PYG{k}{return} \PYG{n}{Null}
+\end{Verbatim}
