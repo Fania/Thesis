@@ -3,11 +3,86 @@
 \chapter{Code}
 \label{app:code}
 
+\vspace{5cm}
+
 
 \section{Index}
+\label{s:appindex}
 
-\begin{minted}{text}
-  defaultdict(<function <lambda> at 0x101d17938>, {u'fawn': defaultdict(<type 'list'>, {u'l_17': [101330, 111976], u'l_19': [345609], u'l_01': [92598, 469332, 469716, 469757, 469830, 469950]}), u'pl\xe4tze': defaultdict(<type 'list'>, {u'l_11': [18287, 35736]}), u'lenitives': defaultdict(<type 'list'>, {u'l_19': [121161]}), u'malheureuses': defaultdict(<type 'list'>, {u'l_06': [18950, 52631, 65053, 65792, 79960, 127861, 176200], u'l_04': [51545, 93611]}), u'{\'e}vit\xe2mes': defaultdict(<type 'list'>, {u'l_13': [82999]}), u'nunnery': defaultdict(<type 'list'>, {u'l_19': [38182, 160331]}), u'{\'e}difie': defaultdict(<type 'list'>, {u'l_12': [20278]}), u'nuzzing': defaultdict(<type 'list'>, {u'l_19': [147035]}), u'huileux': defaultdict(<type 'list'>, {u'l_04': [69998]}), u'lentuli': defaultdict(<type 'list'>, {u'l_19': [217454]}), u'porphyrogene': defaultdict(<type 'list'>, {u'l_01': [137368, 480308]}), u'woods': defaultdict(<type 'list'>, {u'l_14': [16256], u'l_05': [2890], u'l_17': [11445, 34923, 48413, 59186, 61062, 78084, 78681, 81374, 101319, 137624], u'l_10': [12500, 21691, 33136], u'l_02': [4596, 6221], u'l_01': [63176, 63622, 74535, 74807, 326433, 326464, 326472, 419835, 441374, 467791, 481003, 481113, 500201, 500331, 501595], u'l_27': [60731], u'l_26': [1120, 9622], u'l_19': [149538, 232296, 294503]}), u'clotted': defaultdict(<type 'list'>, {u'l_17': [92418], u'l_01': [53612, 133153, 200952, 241165]}), u'spiders': defaultdict(<type 'list'>, {u'l_19': [285105, 301556], u'l_00': [3085]}), u'hanging': defaultdict(<type 'list'>, {u'l_17': [84239], u'l_10': [35501, 92813, 126657], u'l_02': [6033, 33307, 34297], u'l_01': [10317, 102489, 114549, 134507, 193056, 210178, 251167, 266320, 287765, 311802, 342798, 379707, 417326, 417956, 448394, 469204], u'l_00': [1831, 5490, 6891, 11088, 13846], u'l_27': [19757, 45058, 83470], u'l_26': [6500], u'l_19': [8309, 15850, 17056, 20629, 25899, 47147, 47186, 49544, 108943, 177323, 200639, 252551, 334120, 341621]}), u'woody':
+An example excerpt from the Faustroll index data structure.
+
+\begin{minted}{haskell}
+  defaultdict(<function <lambda> at 0x101d17938>, 
+  {
+    u'fawn': defaultdict(<type 'list'>, 
+      {
+        u'l_17': [101330, 111976], 
+        u'l_19': [345609], 
+        u'l_01': [92598, 469332, 469716, 469757, 469830, 469950]
+      }), 
+    u'lenitives': defaultdict(<type 'list'>, 
+      {
+        u'l_19': [121161]
+      }), 
+    u'malheureuses': defaultdict(<type 'list'>, 
+      {
+        u'l_06': [18950, 52631, 65053, 65792, 79960, 127861, 176200], 
+        u'l_04': [51545, 93611]
+      }), 
+    u'nunnery': defaultdict(<type 'list'>, 
+      {
+        u'l_19': [38182, 160331]
+      }), 
+    u'nuzzing': defaultdict(<type 'list'>, 
+      {
+        u'l_19': [147035]
+      }), 
+    u'huileux': defaultdict(<type 'list'>, 
+      {
+        u'l_04': [69998]
+      }), 
+    u'lentuli': defaultdict(<type 'list'>, 
+      {
+        u'l_19': [217454]
+      }), 
+    u'porphyrogene': defaultdict(<type 'list'>, 
+      {
+        u'l_01': [137368, 480308]
+      }), 
+    u'woods': defaultdict(<type 'list'>, 
+      {
+        u'l_14': [16256], 
+        u'l_05': [2890], 
+        u'l_17': [11445, 34923, 48413, 59186, 61062, 78084, 78681, 81374, 101319, 137624], 
+        u'l_10': [12500, 21691, 33136], 
+        u'l_02': [4596, 6221], 
+        u'l_01': [63176, 63622, 74535, 74807, 326433, 326464, 326472, 419835, 441374, 467791, 481003, 481113, 500201, 500331, 501595], 
+        u'l_27': [60731], 
+        u'l_26': [1120, 9622], 
+        u'l_19': [149538, 232296, 294503]
+      }), 
+    u'clotted': defaultdict(<type 'list'>, 
+      {
+        u'l_17': [92418], 
+        u'l_01': [53612, 133153, 200952, 241165]
+      }), 
+    u'spiders': defaultdict(<type 'list'>, 
+      {
+        u'l_19': [285105, 301556], 
+        u'l_00': [3085]
+      }), 
+    u'hanging': defaultdict(<type 'list'>, 
+      {
+        u'l_17': [84239], 
+        u'l_10': [35501, 92813, 126657], 
+        u'l_02': [6033, 33307, 34297], 
+        u'l_01': [10317, 102489, 114549, 134507, 193056, 210178, 251167, 266320, 287765, 311802, 342798, 379707, 417326, 417956, 448394, 469204], 
+        u'l_00': [1831, 5490, 6891, 11088, 13846], 
+        u'l_27': [19757, 45058, 83470], 
+        u'l_26': [6500], 
+        u'l_19': [8309, 15850, 17056, 20629, 25899, 47147, 47186, 49544, 108943, 177323, 200639, 252551, 334120, 341621]
+      }),
+    ...
 \end{minted}
 
 
@@ -22,13 +97,33 @@
 
 
 \section{WordNet}
+\label{s:appwordnet}
+
 
 \subsection{Antinomy}
 
+\begin{minted}{text}
+[
+  Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), 
+  Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), 
+  Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), 
+  Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), 
+  Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), 
+  Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), 
+  Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), 
+  Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), 
+  Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), 
+  Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), 
+  Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), 
+  Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), 
+  Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), 
+  Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), 
+  Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')
+]
+\end{minted}
+
 \begin{multicols}{2}
-  \begin{lstlisting}
-  synsets:
-  [Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+  \begin{minted}{text}
   synset item:clear.n.01
   synset item:open.n.01
   synset item:unclutter.v.01
@@ -90,332 +185,367 @@
   synset item:clear.s.17
   synset item:clear.r.01
   synset item:clearly.r.04
-  \end{lstlisting}
+  \end{minted}
 \end{multicols}
 
 
 \subsection{Syzygy}
 \label{app:syzygy}
 
-\indent[Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear\_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+\begin{minted}{text}
+[
+  Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), 
+  Synset('clear.v.02'), Synset('clear\_up.v.04'), Synset('authorize.v.01'),
+  Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), 
+  Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), 
+  Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), 
+  Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), 
+  Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), 
+  Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), 
+  Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), 
+  Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), 
+  Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), 
+  Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), 
+  Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), 
+  Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), 
+  Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')
+]
+\end{minted}
 
 Step (2) then retrieves related terms. First it gets hypernyms.
 
 \begin{multicols}{2}
-% \begin{alltt}
-synset: clear.n.01\\
-hyponyms: ---\\
-hypernyms: innocence\\
+\begin{minted}{text}
+synset: clear.n.01
+hyponyms: ---
+hypernyms: innocence
 holonyms: ---
 
-synset: open.n.01\\
-hyponyms: ---\\
-hypernyms: area, country\\
+synset: open.n.01
+hyponyms: ---
+hypernyms: area, country
 holonyms: ---
 
-synset: unclutter.v.01\\
-hyponyms: ---\\
-hypernyms: change, alter, modify\\
+synset: unclutter.v.01
+hyponyms: ---
+hypernyms: change, alter, modify
 holonyms: ---
 
-synset: clear.v.02\\
-hyponyms: ---\\
-hypernyms: make, create\\
+synset: clear.v.02
+hyponyms: ---
+hypernyms: make, create
 holonyms: ---
 
-synset: clear\_up.v.04\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset: clear\_up.v.04
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset: authorize.v.01\\
-hyponyms: approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise\\
-hypernyms: permit, allow, let, countenance\\
+synset: authorize.v.01
+hyponyms: approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise
+hypernyms: permit, allow, let, countenance
 holonyms: ---
 
-synset: clear.v.05\\
-hyponyms: clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump\\
-hypernyms: remove, take, take\_away, withdraw\\
+synset: clear.v.05
+hyponyms: clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump
+hypernyms: remove, take, take\_away, withdraw
 holonyms: ---
 
-synset: pass.v.09\\
-hyponyms: clear\\
-hypernyms: succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods\\
+synset: pass.v.09
+hyponyms: clear
+hypernyms: succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods
 holonyms: ---
 
-synset: clear.v.07\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset: clear.v.07
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset: clear.v.08\\
-hyponyms: ---\\
-hypernyms: vanish, disappear, go\_away\\
+synset: clear.v.08
+hyponyms: ---
+hypernyms: vanish, disappear, go\_away
 holonyms: ---
 
-synset: clear.v.09\\
-hyponyms: hop\\
-hypernyms: pass, overtake, overhaul\\
+synset: clear.v.09
+hyponyms: hop
+hypernyms: pass, overtake, overhaul
 holonyms: ---
 
-synset: clear.v.10\\
-hyponyms: ---\\
-hypernyms: clarify, clear\_up, elucidate\\
+synset: clear.v.10
+hyponyms: ---
+hypernyms: clarify, clear\_up, elucidate
 holonyms: ---
 
-synset: clear.v.11\\
-hyponyms: ---\\
-hypernyms: free, discharge\\
+synset: clear.v.11
+hyponyms: ---
+hypernyms: free, discharge
 holonyms: ---
 
-synset: clear.v.12\\
-hyponyms: ---\\
-hypernyms: rid, free, disembarass\\
+synset: clear.v.12
+hyponyms: ---
+hypernyms: rid, free, disembarass
 holonyms: ---
 
-synset: net.v.02\\
-hyponyms: ---\\
-hypernyms: yield, pay, bear\\
+synset: net.v.02
+hyponyms: ---
+hypernyms: yield, pay, bear
 holonyms: ---
 
-synset: net.v.01\\
-hyponyms: ---\\
-hypernyms: profit, gain, benefit\\
+synset: net.v.01
+hyponyms: ---
+hypernyms: profit, gain, benefit
 holonyms: ---
 
-synset: gain.v.08\\
-hyponyms: eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear\\
-hypernyms: get, acquire\\
+synset: gain.v.08
+hyponyms: eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear
+hypernyms: get, acquire
 holonyms: ---
 
-synset: clear.v.16\\
-hyponyms: ---\\
-hypernyms: sell\\
+synset: clear.v.16
+hyponyms: ---
+hypernyms: sell
 holonyms: ---
 
-synset: clear.v.17\\
-hyponyms: ---\\
-hypernyms: pass, clear\\
+synset: clear.v.17
+hyponyms: ---
+hypernyms: pass, clear
 holonyms: ---
 
-synset: acquit.v.01\\
-hyponyms: ---\\
-hyponyms: purge, vindicate, whitewash, pronounce, label, judge\\
+synset: acquit.v.01
+hyponyms: ---
+hyponyms: purge, vindicate, whitewash, pronounce, label, judge
 holonyms: ---
 
-synset: clear.v.19\\
-hyponyms: ---\\
-hypernyms: settle, square\_off, square\_up, determine\\
+synset: clear.v.19
+hyponyms: ---
+hypernyms: settle, square\_off, square\_up, determine
 holonyms: ---
 
-synset item:clear.v.20\\
-hyponyms: ---\\
-hypernyms: change, alter, modify\\
+synset item:clear.v.20
+hyponyms: ---
+hypernyms: change, alter, modify
 holonyms: ---
 
-synset item:clear.v.21\\
-hyponyms: ---\\
-hypernyms: empty\\
+synset item:clear.v.21
+hyponyms: ---
+hypernyms: empty
 holonyms: ---
 
-synset item:clear.v.22\\
-hyponyms: ---\\
-hypernym out:take\_out, move\_out, remove\\
+synset item:clear.v.22
+hyponyms: ---
+hypernym out:take\_out, move\_out, remove
 holonyms: ---
 
-synset item:clear.v.23\\
-hyponyms: ---\\
-hypernym out:empty\\
+synset item:clear.v.23
+hyponyms: ---
+hypernym out:empty
 holonyms: ---
 
-synset item:clear.v.24\\
-hyponyms: ---\\
-hypernym out:remove, take, take\_away, withdraw\\
+synset item:clear.v.24
+hyponyms: ---
+hypernym out:remove, take, take\_away, withdraw
 holonyms: ---
 
-synset item:clear.a.01\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.a.01
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.02\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.02
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.03\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.03
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.a.04\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.a.04
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.05\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.05
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.06\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.06
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clean.s.03\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clean.s.03
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.08\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.08
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.09\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.09
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:well-defined.a.02\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:well-defined.a.02
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.a.11\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.a.11
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clean.s.02\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clean.s.02
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.13\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.13
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.14\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.14
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.15\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.15
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:absolved.s.01\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:absolved.s.01
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.s.17\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.s.17
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clear.r.01\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clear.r.01
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
 
-synset item:clearly.r.04\\
-hyponyms: ---\\
-hypernyms: ---\\
+synset item:clearly.r.04
+hyponyms: ---
+hypernyms: ---
 holonyms: ---
-% \end{alltt}
+\end{minted}
 \end{multicols}
 
-\todo{indent these paragraphs}
-% \begin{addmargin}{1cm}
-{\ttfamily
-synset: clear.n.01\\
+\begin{multicols}{2}
+\begin{minted}{text}
+synset: clear.n.01
 hypernyms: innocence
 
-synset: open.n.01\\
+synset: open.n.01
 hypernyms: area, country
 
-synset: unclutter.v.01\\
+synset: unclutter.v.01
 hypernyms: change, alter, modify
 
-synset: clear.v.02\\
+synset: clear.v.02
 hypernyms: make, create
 
-synset: authorize.v.01\\
-hyponyms: approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise\\
+synset: authorize.v.01
+hyponyms: approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise
 hypernyms: permit, allow, let, countenance
 
-synset: clear.v.05\\
-hyponyms: clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump\\
+synset: clear.v.05
+hyponyms: clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump
 hypernyms: remove, take, take\_away, withdraw
 
-synset: pass.v.09\\
-hyponyms: clear\\
+synset: pass.v.09
+hyponyms: clear
 hypernyms: succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods
 
-synset: clear.v.08\\
+synset: clear.v.08
 hypernyms: vanish, disappear, go\_away
 
-synset: clear.v.09\\
-hyponyms: hop\\
+synset: clear.v.09
+hyponyms: hop
 hypernyms: pass, overtake, overhaul
 
-synset: clear.v.10\\
+synset: clear.v.10
 hypernyms: clarify, clear\_up, elucidate
 
-synset: clear.v.11\\
+synset: clear.v.11
 hypernyms: free, discharge
 
-synset: clear.v.12\\
+synset: clear.v.12
 hypernyms: rid, free, disembarass
 
-synset: net.v.02\\
+synset: net.v.02
 hypernyms: yield, pay, bear
 
-synset: net.v.01\\
+synset: net.v.01
 hypernyms: profit, gain, benefit
 
-synset: gain.v.08\\
-hyponyms: eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear\\
+synset: gain.v.08
+hyponyms: eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear
 hypernyms: get, acquire
 
-synset: clear.v.16\\
+synset: clear.v.16
 hypernyms: sell
 
-synset: clear.v.17\\
+synset: clear.v.17
 hypernyms: pass, clear
 
-synset: acquit.v.01\\
+synset: acquit.v.01
 hyponyms: purge, vindicate, whitewash, pronounce, label, judge
 
-synset: clear.v.19\\
+synset: clear.v.19
 hypernyms: settle, square\_off, square\_up, determine
 
-synset: clear.v.20\\
+synset: clear.v.20
 hypernyms: change, alter, modify
 
-synset: clear.v.21\\
+synset: clear.v.21
 hypernyms: empty
 
-synset: clear.v.22\\
+synset: clear.v.22
 hypernyms: take\_out, move\_out, remove
 
-synset: clear.v.23\\
+synset: clear.v.23
 hypernyms: empty
 
-synset: clear.v.24\\
+synset: clear.v.24
 hypernyms: remove, take, take\_away, withdraw
-}
-% \end{addmargin}
+\end{minted}
+\end{multicols}
+
+\begin{minted}{text}
+[
+  Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), 
+  Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), 
+  Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), 
+  Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), 
+  Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), 
+  Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), 
+  Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), 
+  Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), 
+  Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), 
+  Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), 
+  Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), 
+  Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), 
+  Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), 
+  Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), 
+  Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')
+]
+\end{minted}
 
 \begin{multicols}{2}
-  \begin{lstlisting}
-  synsets:
-  [Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), Synset('clear.v.05'), Synset('pass.v.09'), Synset('clear.v.07'), Synset('clear.v.08'), Synset('clear.v.09'), Synset('clear.v.10'), Synset('clear.v.11'), Synset('clear.v.12'), Synset('net.v.02'), Synset('net.v.01'), Synset('gain.v.08'), Synset('clear.v.16'), Synset('clear.v.17'), Synset('acquit.v.01'), Synset('clear.v.19'), Synset('clear.v.20'), Synset('clear.v.21'), Synset('clear.v.22'), Synset('clear.v.23'), Synset('clear.v.24'), Synset('clear.a.01'), Synset('clear.s.02'), Synset('clear.s.03'), Synset('clear.a.04'), Synset('clear.s.05'), Synset('clear.s.06'), Synset('clean.s.03'), Synset('clear.s.08'), Synset('clear.s.09'), Synset('well-defined.a.02'), Synset('clear.a.11'), Synset('clean.s.02'), Synset('clear.s.13'), Synset('clear.s.14'), Synset('clear.s.15'), Synset('absolved.s.01'), Synset('clear.s.17'), Synset('clear.r.01'), Synset('clearly.r.04')]
+  \begin{minted}{text}
   synset item:clear.n.01
   hypernym out:innocence
   []
@@ -642,14 +772,13 @@ hypernyms: remove, take, take\_away, withdraw
   []
   synset item:clearly.r.04
   []
-  \end{lstlisting}
+  \end{minted}
 \end{multicols}
 
 
-\section{Bing API}
+\section{Bing JSON Results}
 
-Formatted:
-\begin{minted}{text}
+\begin{minted}{json}
 "d": { "results": [
   { "__metadata":
     { "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1",
@@ -680,26 +809,24 @@ Formatted:
 } // d
 \end{minted}
 
-Real:
-\begin{minted}{text}
-{"d":{"results":[{"__metadata":{"uri":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1","type":"ImageResult"},"ID":"e09072a2-faf3-47ac-b77d-46a8df8941aa","Title":"Cute Kittens - Pictures - The Wondrous Pics","MediaUrl":"http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg","SourceUrl":"http://wondrouspics.com/cute-kittens-pictures/","DisplayUrl":"wondrouspics.com/cute-kittens-pictures","Width":"1440","Height":"900","FileSize":"238015","ContentType":"image/jpeg","Thumbnail":{"__metadata":{"type":"Bing.Thumbnail"},"MediaUrl":"http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0&pid=15.1","ContentType":"image/jpg","Width":"480","Height":"300","FileSize":"13856"}},{"__metadata":{"uri":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=1&$top=1","type":"ImageResult"},"ID":"16f74e1b-9a64-4e5b-99b1-bc0b7bfe3121","Title":"Silver and red kitten, evo jedne slike s macama","MediaUrl":"http://stuffpoint.com/cats/image/192286-cats-silver-and-red-kitten.jpg","SourceUrl":"http://stuffpoint.com/cats/image/192286/silver-and-red-kitten-picture/","DisplayUrl":"stuffpoint.com/cats/image/192286/silver-and-red-kitten-picture","Width":"1332","Height":"984","FileSize":"133078","ContentType":"image/jpeg","Thumbnail":{"__metadata":{"type":"Bing.Thumbnail"},"MediaUrl":"http://ts3.mm.bing.net/th?id=OIP.Mf0ea1fd0a1675ba6c46daffd82bfd666H0&pid=15.1","ContentType":"image/jpg","Width":"300","Height":"221","FileSize":"6509"}},...],"__next":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=50"}}
-\end{minted}
+% Real:
+% \begin{minted}{text}
+% {"d":{"results":[{"__metadata":{"uri":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1","type":"ImageResult"},"ID":"e09072a2-faf3-47ac-b77d-46a8df8941aa","Title":"Cute Kittens - Pictures - The Wondrous Pics","MediaUrl":"http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg","SourceUrl":"http://wondrouspics.com/cute-kittens-pictures/","DisplayUrl":"wondrouspics.com/cute-kittens-pictures","Width":"1440","Height":"900","FileSize":"238015","ContentType":"image/jpeg","Thumbnail":{"__metadata":{"type":"Bing.Thumbnail"},"MediaUrl":"http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0&pid=15.1","ContentType":"image/jpg","Width":"480","Height":"300","FileSize":"13856"}},{"__metadata":{"uri":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=1&$top=1","type":"ImageResult"},"ID":"16f74e1b-9a64-4e5b-99b1-bc0b7bfe3121","Title":"Silver and red kitten, evo jedne slike s macama","MediaUrl":"http://stuffpoint.com/cats/image/192286-cats-silver-and-red-kitten.jpg","SourceUrl":"http://stuffpoint.com/cats/image/192286/silver-and-red-kitten-picture/","DisplayUrl":"stuffpoint.com/cats/image/192286/silver-and-red-kitten-picture","Width":"1332","Height":"984","FileSize":"133078","ContentType":"image/jpeg","Thumbnail":{"__metadata":{"type":"Bing.Thumbnail"},"MediaUrl":"http://ts3.mm.bing.net/th?id=OIP.Mf0ea1fd0a1675ba6c46daffd82bfd666H0&pid=15.1","ContentType":"image/jpg","Width":"300","Height":"221","FileSize":"6509"}},...],"__next":"https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=50"}}
+% \end{minted}
 
 
 \section{Random Quotes}
 
 \begin{minted}{python}
-  def getrandquote():
-      # RANDOM QUOTES
-      root_path = os.path.dirname(os.path.abspath(__file__))
-      root_path = root_path[:-4]
-      corpus_root = root_path + '/app/static/corpus'
-      path_b = corpus_root + '/quotes.txt'
-      quotes_text = codecs.open(path_b, "r", encoding='utf-8')
-      quotestext = quotes_text.readlines()
-      quotes_text.close()
-      # print random.choice(quotestext)
-      return random.choice(quotestext)
+def getrandquote():
+  root_path = os.path.dirname(os.path.abspath(__file__))
+  root_path = root_path[:-4]
+  corpus_root = root_path + '/app/static/corpus'
+  path_b = corpus_root + '/quotes.txt'
+  quotes_text = codecs.open(path_b, "r", encoding='utf-8')
+  quotestext = quotes_text.readlines()
+  quotes_text.close()
+  return random.choice(quotestext)
 \end{minted}
 
 
@@ -709,31 +836,22 @@ Real:
 
 \subsection{English}
  
-Total: 127
-
 i, me, my, myself, we, our, ours, ourselves, yo, your, yours, yourself, yourselves, he, him, his, himself, she, her, hers, herself, it, its, itself, they, them, their, theirs, themselves, what, which, who, whom, this, that, these, those, am, is, are, was, were, be, been, being, have, has, had, having, do, does, did, doing, a, an, the, and, but, if, or, because, as, until, while, of, at, by, for, with, about, against, between, into, through, during, before, after, above, below, to, from, up, down, in, out, on, off, over, under, again, further, then, once, here, there, when, where, why, how, all, any, both, each, few, more, most, other, some, such, no, nor, not, only, own, same, so, than, too, very, s, t, can, will, just, don, should, now
 
 
 \subsection{French}
 
-Total: 155
-
 a, aux, avec, ce, ces, dans, de, des, d, elle, en, et, eux, il, je, la, le, leur, lui, ma, mais, me, m{\^e}me, mes, moi, mon, ne, nos, notre, nous, on, o, par, pas, pour, q, que, qui, sa, se, ses, son, sur, ta, te, tes, toi, ton, t, un, une, vos, votre, vous, {\'e}t{\'e}, {\'e}t{\'e}e, {\'e}t{\'e}es, {\'e}t{\'e}s, {\'e}tant, {\'e}tante, {\'e}tants, {\'e}tantes, suis, es, est, sommes, {\^e}tes, sont, serai, seras, sera, serons, serez, seront, serais, serait, serions, seriez, seraient, {\'e}tais, {\'e}tait, {\'e}tions, {\'e}tiez, {\'e}taient, fus, fut, f{\^u}mes, f{\^u}tes, furent, sois, soit, soyons, soyez, soient, fusse, fusses, f{\^u}t, fussions, fussiez, fussent, ayant, ayante, ayantes, ayants, e, eue, eues, eus, ai, as, avons, avez, ont, aurai, auras, aura, aurons, aurez, auront, aurais, aurait, aurions, auriez, auraient, avais, avait, avions, aviez, avaient, eut, e{\^u}mes, e{\^u}tes, eurent, aie, aies, ait, ayons, ayez, aient, eusse, eusses, e{\^u}t, eussions, eussiez, eussent
 
 \subsection{German}
 
-Total: 231
-
 aber, alle, allem, allen, aller, alles, als, also, am, an, ander, andere, anderem, anderen, anderer, anderes, anderm, andern, anderr, anders, auch, auf, aus, bei, bin, bis, bist, da, damit, dann, der, den, des, dem, die, das, da{\ss}, derselbe, derselben, denselben, desselben, demselben, dieselbe, dieselben, dasselbe, daz, dein, deine, deinem, deinen, deiner, deines, denn, derer, dessen, dich, dir, d, dies, diese, diesem, diesen, dieser, dieses, doch, dort, durch, ein, eine, einem, einen, einer, eines, einig, einige, einigem, einigen, einiger, einiges, einmal, er, ihn, ihm, es, etwas, euer, eure, eurem, euren, eurer, eures, f{\"u}r, gegen, gewesen, hab, habe, haben, hat, hatte, hatten, hier, hin, hinter, ich, mich, mir, ihr, ihre, ihrem, ihren, ihrer, ihres, euch, im, in, indem, ins, ist, jede, jedem, jeden, jeder, jedes, jene, jenem, jenen, jener, jenes, jetzt, kann, kein, keine, keinem, keinen, keiner, keines, k{\"o}nnen, k{\"o}nnte, machen, man, manche, manchem, manchen, mancher, manches, mein, meine, meinem, meinen, meiner, meines, mit, muss, musste, nach, nicht, nichts, noch, nun, nur, ob, oder, ohne, sehr, sein, seine, seinem, seinen, seiner, seines, selbst, sich, sie, ihnen, sind, so, solche, solchem, solchen, solcher, solches, soll, sollte, sondern, sonst, {\"u}ber, um, und, uns, unse, unsem, unsen, unser, unses, unter, viel, vom, von, vor, w{\"a}hrend, war, waren, warst, was, weg, weil, weiter, welche, welchem, welchen, welcher, welches, wenn, werde, werden, wie, wieder, will, wir, wird, wirst, wo, wollen, wollte, w{\"u}rde, w{\"u}rden, z, zum, zur, zwar, zwischen
-
 
 
 \section{Image Spiral}
 \label{s:imgspiral}
 
-\begin{listing}[!htbp] % (here, top, bottom, page)
-  \tiny
-  \begin{minted}{javascript}
+\begin{minted}{javascript}
 function createSpiral(imglist){
   if (imglist.length === 10){
     var spiral_code = ' \
@@ -806,7 +924,4 @@ function createSpiral(imglist){
     $('.img_empty').wrap("<div>Not enough results found.</div>");
   } // end else
 }
-  \end{minted}
-\caption[]{}
-\label{code:imgspiral}
-\end{listing}
+\end{minted}

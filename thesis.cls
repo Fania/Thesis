@@ -587,7 +587,8 @@ breaklines=true
 % CODE
 
 \usepackage[chapter,newfloat]{minted}
-\usemintedstyle{emacs}
+\usemintedstyle{monokailight}
+% paraiso-light, manni, monokai
 % css, c, json, hs, lhs, js, py3, py, css+jinja, html+jinja, js+jinja
 
 \SetupFloatingEnvironment{listing}{
@@ -664,8 +665,8 @@ breaklines=true
   breakbytokenanywhere=true,
   breakbefore={/,?,_},
   breaksymbolindentleft={\temporarydimen},
-  xleftmargin=1cm,
-  xrightmargin=1cm,
+  % xleftmargin=1cm,
+  % xrightmargin=1cm,
 }
 \setminted[haskell]{ % GIT
   fontsize=\footnotesize,
@@ -1086,6 +1087,7 @@ breaklines=true
             citecolor=green,
             linkcolor=blue,
             pdftex,
+            bookmarks=false,
             pdfauthor={Fania Raczinski},
             pdftitle={PhD Thesis},
             pdfsubject={Algorithmic Meta-Creativity},

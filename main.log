@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.6)  10 NOV 2016 14:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.6)  10 NOV 2016 20:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2906,6 +2906,7 @@ Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
 )
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 4362.
+Package hyperref Info: Option `bookmarks' set `false' on input line 4362.
 
 (c:/texlive/2016/texmf-dist/tex/generic/oberdiek/se-pdfdoc.def
 File: se-pdfdoc.def 2016/05/16 v1.11 stringenc: PDFDocEncoding
@@ -2916,7 +2917,7 @@ Package hyperref Info: Hyper index ON on input line 4494.
 Package hyperref Info: Plain pages OFF on input line 4501.
 Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4735.
+Package hyperref Info: Bookmarks OFF on input line 4741.
 \c@Hy@tempcnt=\count542
 LaTeX Info: Redefining \url on input line 5088.
 \XeTeXLinkMargin=\dimen418
@@ -2998,9 +2999,9 @@ in.aex <nul: /p x=^%~$PATH:i>> main.aex)...executed.
 runsystem(del main.aex)...executed.
 
  (./main.aux
-(./front/title.aux) (./front/abstract.aux) (./front/dedication.aux)
-(./front/publications.aux) (./front/acronyms.aux) (./main/introduction.aux)
-(./back/interlude1.aux) (./back/interlude2.aux) (./back/interlude3.aux))
+(./front/title.aux) (./front/dedication.aux) (./back/interlude1.aux)
+(./back/interlude2.aux) (./back/interlude3.aux) (./back/random.aux)
+(./back/code.aux) (./back/wordnet.aux) (./back/git.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -3210,13 +3211,9 @@ LaTeX Info: Redefining \nameref on input line 10.
 LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
-(./main.out) (./main.out)
-\@outlinefile=\write9
-\openout9 = `main.out'.
-
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <142.26378> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 15.
- (./main.tdo) [1
+(./main.tdo) [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -3273,7 +3270,7 @@ LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <56.9055> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <56.9055> not available
 (Font)              size <24.88> substituted on input line 28.
 
-<images/spiral_pre.pdf, id=154, 156.48964pt x 156.48964pt>
+<images/spiral_pre.pdf, id=27, 156.48964pt x 156.48964pt>
 File: images/spiral_pre.pdf Graphic file (type pdf)
 
 <use images/spiral_pre.pdf>
@@ -3284,32 +3281,10 @@ Package pdftex.def Info: images/spiral_pre.pdf used on input line 28.
 
 
  <./images/spiral_pre.pdf>]
-\openout2 = `front/abstract.aux'.
-
- (./front/abstract.tex [2
-
-
-]
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <14.4> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <14.4> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <8> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <9> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <6> not available
-(Font)              Font shape `T1/pbk/l/n' tried instead on input line 8.
-Package acronym Info: Label `acro:AMC' newly defined as it shall be overridden
-although it is yet undefined on input line 12.
-LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pbk/l/it' tried instead on input line 14.
- [3])
 \openout2 = `front/dedication.aux'.
 
- (./front/dedication.tex [4
 
-
+(./front/dedication.tex [2
 
 
 ]
@@ -3336,53 +3311,15 @@ File: c70min.fd 2015/04/18 4.8.4
 )
 (c:/texlive/2016/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
 File: c70min.fdx 2015/04/18 4.8.4
-) [5])
-\openout2 = `front/publications.aux'.
+) [3])
+(./main.toc [4
 
 
-(./front/publications.tex [6
+]) [5] (./main.lof) [6
 
+] (./main.lot) [7
 
-
-
-]
-<images/spirals.png, id=211, 482.80376pt x 473.77pt>
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 16.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 16.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 16.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-
-
-LaTeX Warning: Reference `app:pub' on page vii undefined on input line 18.
-
-[7 <./images/spirals.png>]) (./main.toc [8
-
-
-]) [9] (./main.lof) [10
-
-] (./main.lot) [11
-
-] (./main.lol) [12
-
-]
-\openout2 = `front/acronyms.aux'.
-
- (./front/acronyms.tex) [13
-
-
-
-] [14
-
-
+] (./main.lol) [8
 
 ]
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <17.28> not available
@@ -3510,7 +3447,7 @@ LaTeX Font Warning: Font shape `U/wasy/m/n' in size <39.83366> not available
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <28.45274> not available
 (Font)              size <24.88> substituted on input line 90.
 
-<images/spiral_hello.pdf, id=287, 156.48964pt x 156.48964pt>
+<images/spiral_hello.pdf, id=161, 156.48964pt x 156.48964pt>
 File: images/spiral_hello.pdf Graphic file (type pdf)
 
 <use images/spiral_hello.pdf>
@@ -3523,510 +3460,473 @@ been already used, duplicate ignored
 l.90 ...2}{$\boldsymbol\Theta$}RLD}{Introduction}}
                                                    [1
 
- <./images/spiral_hello.pdf>]
-\openout2 = `main/introduction.aux'.
 
- (./main/introduction.texpdfTeX warning (ext4): destination with the same ident
-ifier (name{page.2}) has been already used, duplicate ignored
+
+
+ <./images/spiral_hello.pdf>]pdfTeX warning (ext4): destination with the same i
+dentifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3 \chapter
-            {Introduction} [2
-
-
-]
-\c@ttl@toc@chapters=\count560
-LaTeX Font Info:    Try loading font information for TS1+qag on input line 17.
-
-(c:/texlive/2016/texmf-dist/tex/latex/tex-gyre/ts1qag.fd
-File: ts1qag.fd 2009/09/25 v1.2 font definition file for TS1/qag
-) [3] (./main.ptc)
-File: images/spirals.png Graphic file (type png)
-
-<use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 33.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 33.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 33.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package marginnote Info: Margin note 21.1 is on absolute page 21
-(marginnote)              on input line 37.
-
-
-LaTeX Warning: Reference `ch:methodology' on page 4 undefined on input line 37.
-
-
-Package marginnote Info: xpos seems to be 241.8701pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 37.
-Package marginnote Info: Margin note 21.2 is on absolute page 21
-(marginnote)              on input line 37.
-
-LaTeX Warning: Reference `ch:pataphysics' on page 4 undefined on input line 37.
-
-
-Package marginnote Info: xpos seems to be 231.45087pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 37.
-Package marginnote Info: Margin note 21.3 is on absolute page 21
-(marginnote)              on input line 39.
-
-LaTeX Warning: Reference `ch:foundations' on page 4 undefined on input line 39.
-
-
-Package marginnote Info: xpos seems to be 130.42004pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 39.
-[4]
-Package marginnote Info: Margin note 22.1 is on absolute page 22
-(marginnote)              on input line 52.
-Package marginnote Info: xpos seems to be 241.86203pt,
-(marginnote)             \marginnoterightadjust ignored on input line 52.
-
-
-LaTeX Warning: Reference `ch:implementation' on page 5 undefined on input line 
-52.
-
-Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
-
-although it is yet undefined on input line 52.
-Package marginnote Info: Margin note 22.2 is on absolute page 22
-(marginnote)              on input line 56.
-Package marginnote Info: xpos seems to be 240.28955pt,
-(marginnote)             \marginnoterightadjust ignored on input line 56.
-
-LaTeX Warning: Reference `ch:inspirations' on page 5 undefined on input line 56
-.
-
-Package marginnote Info: Margin note 22.3 is on absolute page 22
-(marginnote)              on input line 62.
-Package marginnote Info: xpos seems to be 190.80998pt,
-(marginnote)             \marginnoterightadjust ignored on input line 62.
-
-LaTeX Warning: Reference `ch:interpretation' on page 5 undefined on input line 
-62.
-
-Package marginnote Info: Margin note 22.4 is on absolute page 22
-(marginnote)              on input line 64.
-Package marginnote Info: xpos seems to be 368.74614pt,
-(marginnote)             \marginnoterightadjust ignored on input line 64.
-
-LaTeX Warning: Reference `s:framework' on page 5 undefined on input line 64.
-
-Package marginnote Info: Margin note 22.5 is on absolute page 22
-(marginnote)              on input line 68.
-Package marginnote Info: xpos seems to be 251.12265pt,
-(marginnote)             \marginnoterightadjust ignored on input line 68.
-
-LaTeX Warning: Reference `s:sec' on page 5 undefined on input line 68.
-
-Package marginnote Info: Margin note 22.6 is on absolute page 23
-(marginnote)              on input line 69.
-
-LaTeX Warning: Reference `s:oec' on page 5 undefined on input line 69.
-
-Package marginnote Info: xpos seems to be 386.35463pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 69.
-Package marginnote Info: Margin note 22.7 is on absolute page 23
-(marginnote)              on input line 70.
-
-LaTeX Warning: Reference `s:framework' on page 5 undefined on input line 70.
-
-Package marginnote Info: xpos seems to be 291.40828pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 70.
-[5]
-Package acronym Info: Label `acro:DMU' newly defined as it shall be overridden
-although it is yet undefined on input line 75.
-Package acronym Info: Label `acro:IOCT' newly defined as it shall be overridden
-
-although it is yet undefined on input line 75.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 77.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 77.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-File: images/spirals.png Graphic file (type png)
- <use images/spirals.png>
-Package pdftex.def Info: images/spirals.png used on input line 77.
-(pdftex.def)             Requested size: 11.76506pt x 11.54768pt.
-Package marginnote Info: Margin note 23.1 is on absolute page 23
-(marginnote)              on input line 79.
-
-
-LaTeX Warning: Reference `ch:technology' on page 6 undefined on input line 79.
-
-Package marginnote Info: xpos seems to be 120.56866pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 79.
-Package marginnote Info: Margin note 23.2 is on absolute page 23
-(marginnote)              on input line 81.
-
-LaTeX Warning: Reference `ch:pataphysics' on page 6 undefined on input line 81.
-
-
-Package marginnote Info: xpos seems to be 124.41151pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 81.
-Package marginnote Info: Margin note 23.3 is on absolute page 23
-(marginnote)              on input line 83.
-
-LaTeX Warning: Reference `ch:creativity' on page 6 undefined on input line 83.
-
-Package marginnote Info: xpos seems to be 112.7239pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 83.
-LaTeX Font Info:    Try loading font information for TS1+pbk on input line 88.
-(c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pbk.fd
-File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
-)
-LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10.95> not available
-(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 88.
- [6]
-Package marginnote Info: Margin note 24.1 is on absolute page 24
-(marginnote)              on input line 98.
-Package marginnote Info: xpos seems to be 323.15205pt,
-(marginnote)             \marginnoterightadjust ignored on input line 98.
-LaTeX Font Info:    Try loading font information for U+fontawesomethree on inpu
-t line 98.
-
-(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)
-
-LaTeX Warning: Reference `tab:creatpata' on page 7 undefined on input line 98.
-
-Package marginnote Info: Margin note 24.2 is on absolute page 24
-(marginnote)              on input line 100.
-Package marginnote Info: xpos seems to be 303.48274pt,
-(marginnote)             \marginnoterightadjust ignored on input line 100.
-
-LaTeX Warning: Reference `ch:creativity' on page 7 undefined on input line 100.
-
-
-Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
-although it is yet undefined on input line 100.
-
-LaTeX Warning: Reference `s:answers' on page 7 undefined on input line 105.
-
-Package marginnote Info: Margin note 24.3 is on absolute page 24
-(marginnote)              on input line 105.
-Package marginnote Info: xpos seems to be 341.78789pt,
-(marginnote)             \marginnoterightadjust ignored on input line 105.
-
-LaTeX Warning: Reference `s:answers' on page 7 undefined on input line 105.
-
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 107.
-[7]
-Package marginnote Info: Margin note 25.1 is on absolute page 25
-(marginnote)              on input line 125.
-
-
-LaTeX Warning: Reference `ch:methodology' on page 8 undefined on input line 125
-.
-
-Package marginnote Info: xpos seems to be 227.52638pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 125.
-Package acronym Info: Label `acro:DH' newly defined as it shall be overridden
-although it is yet undefined on input line 129.
-Package acronym Info: Label `acro:IR' newly defined as it shall be overridden
-although it is yet undefined on input line 130.
-Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
-although it is yet undefined on input line 130.
-Package marginnote Info: Margin note 25.2 is on absolute page 25
-(marginnote)              on input line 141.
-
-LaTeX Warning: Reference `ch:implementation' on page 8 undefined on input line 
-141.
-
-Package marginnote Info: xpos seems to be 166.7108pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 141.
-
-LaTeX Warning: Reference `ch:foundations' on page 8 undefined on input line 179
-.
-
-
-LaTeX Warning: Reference `ch:interpretation' on page 8 undefined on input line 
-179.
-
-[8]
-Package marginnote Info: Margin note 26.1 is on absolute page 26
-(marginnote)              on input line 181.
-Package marginnote Info: xpos seems to be 480.90163pt,
-(marginnote)             \marginnoterightadjust ignored on input line 181.
-
-
-LaTeX Warning: Reference `app:pub' on page 9 undefined on input line 181.
-
-Package marginnote Info: Margin note 26.2 is on absolute page 26
-(marginnote)              on input line 181.
-Package marginnote Info: xpos seems to be 423.47417pt,
-(marginnote)             \marginnoterightadjust ignored on input line 181.
-
-LaTeX Warning: Reference `app:pub' on page 9 undefined on input line 181.
-
-
-LaTeX Font Warning: Font shape `U/fontawesomethree/b/n' undefined
-(Font)              using `U/fontawesomethree/m/n' instead on input line 204.
-
-LaTeX Font Info:    Try loading font information for U+fontawesomeone on input 
-line 205.
-(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
-File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
-)
-
-LaTeX Font Warning: Font shape `U/fontawesomeone/b/n' undefined
-(Font)              using `U/fontawesomeone/m/n' instead on input line 205.
-
-LaTeX Font Info:    Try loading font information for U+fontawesometwo on input 
-line 207.
-(c:/texlive/2016/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
-File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
-)
-
-LaTeX Font Warning: Font shape `U/fontawesometwo/b/n' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 207.
-
-[9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10])
-[11] [12
-
-
-] <images/spiral_trade.pdf, id=443, 156.48964pt x 156.48964pt>
+l.99 \part
+          {\texorpdfstring{T\scalebox{2.2}{$\boldsymbol\Theta\boldsymbol\The...
+[2
+
+] <images/spiral_trade.pdf, id=176, 156.48964pt x 156.48964pt>
 File: images/spiral_trade.pdf Graphic file (type pdf)
 
 <use images/spiral_trade.pdf>
 Package pdftex.def Info: images/spiral_trade.pdf used on input line 99.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [13 <./images/spiral_trade.pdf>]
+ [3 <./images/spiral_trade.pdf>]
 \openout2 = `back/interlude1.aux'.
 
 
-(./back/interlude1.tex [14
+(./back/interlude1.tex [4
 
 
-] [15]) [16
+] [5]) [6
 
 
 
 ]
-<images/spiral_core.pdf, id=482, 156.48964pt x 156.48964pt>
+<images/spiral_core.pdf, id=216, 156.48964pt x 156.48964pt>
 File: images/spiral_core.pdf Graphic file (type pdf)
 
 <use images/spiral_core.pdf>
 Package pdftex.def Info: images/spiral_core.pdf used on input line 115.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [17 <./images/spiral_core.pdf>] [18
+ [7 <./images/spiral_core.pdf>] [8
 
 ]
-<images/spiral_practice.pdf, id=496, 156.48964pt x 156.48964pt>
+<images/spiral_practice.pdf, id=231, 156.48964pt x 156.48964pt>
 File: images/spiral_practice.pdf Graphic file (type pdf)
 
 <use images/spiral_practice.pdf>
 Package pdftex.def Info: images/spiral_practice.pdf used on input line 123.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [19 <./images/spiral_practice.pdf>]
+ [9 <./images/spiral_practice.pdf>]
 \openout2 = `back/interlude2.aux'.
 
 
-(./back/interlude2.tex [20
+(./back/interlude2.tex [10
 
 
-] [21]) [22
+] [11]) [12
 
 
 
 ]
-<images/spiral_meta.pdf, id=533, 156.48964pt x 156.48964pt>
+<images/spiral_meta.pdf, id=267, 156.48964pt x 156.48964pt>
 File: images/spiral_meta.pdf Graphic file (type pdf)
 
 <use images/spiral_meta.pdf>
 Package pdftex.def Info: images/spiral_meta.pdf used on input line 137.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [23 <./images/spiral_meta.pdf>] [24
+ [13 <./images/spiral_meta.pdf>] [14
 
 ]
-<images/spiral_after.pdf, id=548, 156.48964pt x 156.48964pt>
+<images/spiral_after.pdf, id=282, 156.48964pt x 156.48964pt>
 File: images/spiral_after.pdf Graphic file (type pdf)
 
 <use images/spiral_after.pdf>
 Package pdftex.def Info: images/spiral_after.pdf used on input line 145.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [25 <./images/spiral_after.pdf>]
+ [15 <./images/spiral_after.pdf>]
 \openout2 = `back/interlude3.aux'.
 
 
-(./back/interlude3.tex [26
+(./back/interlude3.tex [16
 
 
-] [27]) [28
+] [17]) [18
 
 
 
 ]
-<images/spiral_post.pdf, id=580, 156.48964pt x 156.48964pt>
+<images/spiral_post.pdf, id=314, 156.48964pt x 156.48964pt>
 File: images/spiral_post.pdf Graphic file (type pdf)
 
 <use images/spiral_post.pdf>
 Package pdftex.def Info: images/spiral_post.pdf used on input line 161.
 (pdftex.def)             Requested size: 426.79135pt x 426.84727pt.
- [29 <./images/spiral_post.pdf>] [30
+ [19 <./images/spiral_post.pdf>]
+\openout2 = `back/random.aux'.
+
+ (./back/random.tex [20
 
 
-] [31]
-Overfull \hbox (39.52779pt too wide) in paragraph at lines 174--174
+]
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <14.4> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <14.4> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 9.
+
+
+LaTeX Warning: Reference `img:fullscreenshot' on page 21 undefined on input lin
+e 12.
+
+LaTeX Font Info:    Try loading font information for TS1+pbk on input line 15.
+(c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pbk.fd
+File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
+)
+LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <10.95> not available
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 15.
+ [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10.95> not available
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 125.
+
+[24] [25]
+Package acronym Info: Label `acro:POS' newly defined as it shall be overridden
+although it is yet undefined on input line 263.
+
+
+Package acronym Warning: Acronym `POS' is not defined on input line 263.
+
+
+Package acronym Warning: Acronym `POS' is not defined on input line 263.
+
+
+LaTeX Warning: Reference `s:pos' on page 26 undefined on input line 263.
+
+[26]
+LaTeX Font Info:    Try loading font information for TS1+qag on input line 327.
+
+ (c:/texlive/2016/texmf-dist/tex/latex/tex-gyre/ts1qag.fd
+File: ts1qag.fd 2009/09/25 v1.2 font definition file for TS1/qag
+)
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 373.
+ [27]
+Overfull \hbox (22.55504pt too wide) in paragraph at lines 419--420
+[]\T1/qag/m/n/10 Does Gödel's the-orem show that math-em-at-ical in-sight is no
+n-algorithmic? |
+ []
+
+
+LaTeX Warning: Citation 'WikiJarry2016' on page 28 undefined on input line 434.
+
+
+
+Underfull \vbox (badness 6204) has occurred while \output is active []
+
+ [28]
+[29]
+Overfull \hbox (8.16402pt too wide) in paragraph at lines 495--496
+[]\T1/pbk/l/n/10.95 La pa-pesse Jeanne (1907, trans-la-tion of Greek book by d'
+Emmanuel Rhoïdès) |
+ []
+
+) [30]
+\openout2 = `back/code.aux'.
+
+ (./back/code.tex
+\openout7 = `main.pyg'.
+
+ (./_minted-main/default-pyg-prefix.pygstyle)
+(./_minted-main/monokailight.pygstyle)
+(./_minted-main/AF3B646E684D10AA76DAAD2A75003AA5365EF86CA565FB64F0EE6CAC782C105
+B.pygtex
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <9> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 4.
+ (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+) [31
+
+
+
+]
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <7> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 43.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32])
+[33]
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/E0455C62BDCD34602B02C7CCD70C37938A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex [34])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/20A7C1176608C42942F38E42EA012EC78A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex)
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/07B19CDDFDF1D9F9C4D7652C1A041A058A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex [35])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/360C281F15C6D7D33461280B1F0306768A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex [36] [37])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/F6DBF77FAEE5B621AED217007455AA2E8A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex [38])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/E0455C62BDCD34602B02C7CCD70C37938A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex [39])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/B67CFF89E1A8B9619E189548E120FA998A6B04CDDF0492A16BBC30FCB74219E
+4.pygtex [40] [41])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/35617E0BA850C9A7ECEC9DE1593D3C3959903D0DCC0BD27D24705E832EFCA22
+7.pygtex [42])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/36C11852FEC0BF84F1D3FC194D47129E65D427A48CF461C1E4EDF41A188071C
+7.pygtex) [43]
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/82F16DDAE8C375C8EFAF89F4305E24EEEFFBEBEC914CCF7C347E541F13856DC
+3.pygtex)
+Underfull \vbox (badness 2057) detected at line 927
+ []
+
+[44]
+Underfull \vbox (badness 10000) detected at line 927
+ []
+
+[45]) [46]
+\openout2 = `back/wordnet.aux'.
+
+ (./back/wordnet.tex [47
+
+
+
+]
+Overfull \hbox (10.41301pt too wide) in paragraph at lines 38--39
+\T1/pbk/l/n/10.95 guilty of crim-inal charges) ``The sus-pect was cleared of th
+e murder charges'' |
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49])
+[50]
+\openout2 = `back/git.aux'.
+
+ (./back/git.tex
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/6A42899A1DD18795A47BC3844DF1DD89365EF86CA565FB64F0EE6CAC782C105
+B.pygtex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58])
+\openout7 = `main.pyg'.
+
+
+(./_minted-main/B48850FB5F1276327FDD9BEB0BDA4491365EF86CA565FB64F0EE6CAC782C105
+B.pygtex [59]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]))
+[64] [65
+
+
+
+]
+Overfull \hbox (39.52779pt too wide) in paragraph at lines 173--173
 \T1/pcr/m/n/10.95 com / photos / seancuttlefish / sets / 72157646116801940/$[][
 ] \T1/pbk/l/n/10.95 (vis-ited on 03/11/2016). |
  []
 
-[32] [33]
-Overfull \hbox (13.27571pt too wide) in paragraph at lines 174--174
+[66] [67]
+Overfull \hbox (13.27571pt too wide) in paragraph at lines 173--173
 \T1/pbk/l/n/10.95 spe-cies: How many words did Shakespeare know?' In: \T1/pbk/d
 b/it/10.95 Bio-met-rika \T1/pbk/l/n/10.95 63.3, pp. 435^^U|
  []
 
 
-Overfull \hbox (7.83928pt too wide) in paragraph at lines 174--174
+Overfull \hbox (7.83928pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 Evans, Clark (2016). \T1/pbk/db/it/10.95 YAML 1.2\T1/pbk/
 l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pcr/m/n/10.95 ht
 tp : / / yaml . org/$[][] \T1/pbk/l/n/10.95 (vis-ited on 02/11/2016). |
  []
 
 
-Overfull \hbox (16.1634pt too wide) in paragraph at lines 174--174
+Overfull \hbox (16.1634pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/db/it/10.95 Fact sheet P-22: De-riv-at-ive works \T1/pbk/l/n/10.95 
 (2016). \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pcr/m/n/10.95 http :
  / / www . copyrightservice .|
  []
 
-[34]
-Overfull \hbox (36.86937pt too wide) in paragraph at lines 174--174
+[68]
+Overfull \hbox (36.86937pt too wide) in paragraph at lines 173--173
 [][][]\T1/pbk/l/n/10.95 (2016b). \T1/pbk/db/it/10.95 Search For Cre-at-ive Im-a
 ges\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pcr/m
 /n/10.95 %7Bhttp : / / developers . gettyimages .|
  []
 
 
-Overfull \hbox (19.81781pt too wide) in paragraph at lines 174--174
+Overfull \hbox (19.81781pt too wide) in paragraph at lines 173--173
 \T1/pcr/m/n/10.95 com / api / docs / v3 / search / images / creative / get / %7
 D$[][] \T1/pbk/l/n/10.95 (vis-ited on 07/08/2016). |
  []
 
 
-Overfull \hbox (46.59778pt too wide) in paragraph at lines 174--174
+Overfull \hbox (46.59778pt too wide) in paragraph at lines 173--173
 \T1/pcr/m/n/10.95 insidesearch / howsearchworks / crawling -[] indexing . html$
 [][] \T1/pbk/l/n/10.95 (vis-ited on 04/08/2016). |
  []
 
-[35]
-Overfull \hbox (12.1257pt too wide) in paragraph at lines 174--174
+[69]
+Overfull \hbox (12.1257pt too wide) in paragraph at lines 173--173
 \T1/pbk/l/n/10.95 Web site map-ping'. In: \T1/pbk/db/it/10.95 Com-puter Net-wor
 ks and ISDN Sys-tems \T1/pbk/l/n/10.95 30.1-7, pp. 317^^U|
  []
 
-[36]
-Overfull \hbox (78.68678pt too wide) in paragraph at lines 174--174
+[70]
+Overfull \hbox (78.68678pt too wide) in paragraph at lines 173--173
 [][][]\T1/pbk/l/n/10.95 (2014). \T1/pbk/db/it/10.95 The Ima-gin-ary Voy-age (an
  on-line op-era)\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [
 ][]$\T1/pcr/m/n/10.95 http : / / www . theimaginaryvoyage .|
  []
 
 
-Overfull \hbox (9.64966pt too wide) in paragraph at lines 174--174
+Overfull \hbox (9.64966pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/db/it/10.95 Introducing JSON \T1/pbk/l/n/10.95 (2016). \T1/pbk/l/sc
 /10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pcr/m/n/10.95 http : / / www . json . or
 g/$[][] \T1/pbk/l/n/10.95 (vis-ited on 31/10/2016). |
  []
 
-[37]
-Overfull \hbox (7.31467pt too wide) in paragraph at lines 174--174
+
+Overfull \hbox (7.31467pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 Jurafsky, Daniel and James H Mar-tin (2009). \T1/pbk/db/i
 t/10.95 Speech and Lan-guage Pro-cessing\T1/pbk/l/n/10.95 .|
  []
 
-[38]
-Overfull \hbox (31.36778pt too wide) in paragraph at lines 174--174
+[71] [72]
+Overfull \hbox (31.36778pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 Mayhaymate (2012). \T1/pbk/db/it/10.95 File:PageRank-hi-r
 es.png\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pc
 r/m/n/10.95 https : / / commons . wikimedia .|
  []
 
 
-Overfull \hbox (12.13213pt too wide) in paragraph at lines 174--174
+Overfull \hbox (12.13213pt too wide) in paragraph at lines 173--173
 [][][]\T1/pbk/l/n/10.95 (2016c). \T1/pbk/db/it/10.95 Mi-crosoft Trans-lator - T
 ext Trans-la-tion\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : 
 [][]$\T1/pcr/m/n/10.95 https : / / datamarket .|
  []
 
-[39] [40]
-Overfull \hbox (11.0051pt too wide) in paragraph at lines 174--174
+[73] [74]
+Overfull \hbox (11.0051pt too wide) in paragraph at lines 173--173
 \T1/pbk/l/n/10.95 os-ity, cre-ativ-ity, mu-sic, and the fine arts'. In: \T1/pbk
 /db/it/10.95 Con-nec-tion Sci-ence \T1/pbk/l/n/10.95 18.2, pp. 173^^U|
  []
 
-[41]
-Overfull \hbox (8.91748pt too wide) in paragraph at lines 174--174
+[75]
+Overfull \hbox (8.91748pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 Singh, Push (2005). `  EM-ONE: An Ar-chi-tec-ture for Ref
 lect-ive Common-sense Think-|
  []
 
 
-Overfull \hbox (11.63657pt too wide) in paragraph at lines 174--174
+Overfull \hbox (11.63657pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 Turing, Alan (1950). `  Com-put-ing Ma-chinery and In-tel
 -li-gence'. In: \T1/pbk/db/it/10.95 Mind \T1/pbk/l/n/10.95 59, pp. 433^^U|
  []
 
-[42]
-Overfull \hbox (22.75479pt too wide) in paragraph at lines 174--174
+[76]
+Overfull \hbox (22.75479pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 University, Prin-ceton (2010). \T1/pbk/db/it/10.95 What i
 s Word-Net? \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T1/pcr/m/n/10.95 ht
 tp : / / wordnet . princeton .|
  []
 
 
-Overfull \hbox (15.65466pt too wide) in paragraph at lines 174--174
+Overfull \hbox (15.65466pt too wide) in paragraph at lines 173--173
 [][]\T1/pbk/l/n/10.95 Wikipedia (2016). \T1/pbk/db/it/10.95 Damerau-Levenshtein
  dis-tance\T1/pbk/l/n/10.95 . \T1/pbk/l/sc/10.95 url\T1/pbk/l/n/10.95 : [][]$\T
 1/pcr/m/n/10.95 https : / / en . wikipedia .|
  []
 
-[43] [44
+[77] [78
 
 
-]
-\tf@ptc=\write10
-\openout10 = `main.ptc'.
+] [79]
+\tf@tdo=\write9
+\openout9 = `main.tdo'.
 
- [45]
-\tf@tdo=\write11
-\openout11 = `main.tdo'.
+\tf@toc=\write10
+\openout10 = `main.toc'.
 
-\tf@toc=\write12
-\openout12 = `main.toc'.
+\tf@lof=\write11
+\openout11 = `main.lof'.
 
-\tf@lof=\write13
-\openout13 = `main.lof'.
+\tf@lot=\write12
+\openout12 = `main.lot'.
 
-\tf@lot=\write14
-\openout14 = `main.lot'.
+\tf@lol=\write13
+\openout13 = `main.lol'.
 
-\tf@lol=\write15
-\openout15 = `main.lol'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 189.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
- (./main.aux (./front/title.aux) (./front/abstract.aux)
-(./front/dedication.aux) (./front/publications.aux) (./front/acronyms.aux)
-(./main/introduction.aux) (./back/interlude1.aux) (./back/interlude2.aux)
-(./back/interlude3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A378AC01875F865734A050F9988B23D1;1577.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
+ (./main.aux (./front/title.aux) (./front/dedication.aux)
+(./back/interlude1.aux) (./back/interlude2.aux) (./back/interlude3.aux)
+(./back/random.aux) (./back/code.aux) (./back/wordnet.aux) (./back/git.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 188.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -4038,44 +3938,51 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+runsystem(del main.pyg)...executed.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 66857 strings out of 493013
- 1287228 string characters out of 6136994
- 1966205 words of memory out of 5000000
- 68846 multiletter control sequences out of 15000+600000
- 110053 words of font info for 182 fonts, out of 8000000 for 9000
+ 66879 strings out of 493013
+ 1292319 string characters out of 6136994
+ 1984303 words of memory out of 5000000
+ 68824 multiletter control sequences out of 15000+600000
+ 115034 words of font info for 187 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,94p,10377b,2032s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{c
-:/texlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{c:/te
-xlive/2016/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{c:/texl
-ive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/2016/texmf-d
-ist/fonts/enc/dvips/tex-gyre/q-ec.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvi
-ps/base/8r.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec-sc.enc
-}<c:/texlive/2016/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><c:
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/wadalab/dmj
-/dmjhira.pfb><c:/texlive/2016/texmf-dist/fonts/type1/wadalab/dmj/dmjka.pfb><c:/
-texlive/2016/texmf-dist/fonts/type1/wadalab/dmj/dmjkj.pfb><c:/texlive/2016/texm
-f-dist/fonts/type1/public/tex-gyre/qagb.pfb><c:/texlive/2016/texmf-dist/fonts/t
-ype1/public/tex-gyre/qagr.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/ti
-pa/tipa10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb><c
-:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkdi8a.pfb><c:/texlive/2016/
-texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb><c:/texlive/2016/texmf-dist/fonts
-/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/cour
-ier/ucrb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
-c:/texlive/2016/texmf-dist/fonts/type1/public/wasy2-ps/wasyb10.pfb>
-Output written on main.pdf (62 pages, 528465 bytes).
+ 75i,12n,94p,10377b,2027s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}{c:/texlive/20
+16/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{c:/texlive/2016/texmf-dist/fon
+ts/enc/dvips/base/8r.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/tex-gyre/q
+-ec-sc.enc}<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.p
+fb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/wadal
+ab/dmj/dmjhira.pfb><c:/texlive/2016/texmf-dist/fonts/type1/wadalab/dmj/dmjka.pf
+b><c:/texlive/2016/texmf-dist/fonts/type1/wadalab/dmj/dmjkj.pfb><c:/texlive/201
+6/texmf-dist/fonts/type1/public/tex-gyre/qagb.pfb><c:/texlive/2016/texmf-dist/f
+onts/type1/public/tex-gyre/qagr.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pub
+lic/tipa/tipa10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkd8a.
+pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/bookman/ubkdi8a.pfb><c:/texlive
+/2016/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb><c:/texlive/2016/texmf-dist
+/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/ur
+w/courier/ucrb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a
+.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/wasy2-ps/wasyb10.pfb>
+Output written on main.pdf (90 pages, 538394 bytes).
 PDF statistics:
- 1174 PDF objects out of 1200 (max. 8388607)
- 1055 compressed objects within 11 object streams
- 386 named destinations out of 1000 (max. 500000)
- 282 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1127 PDF objects out of 1200 (max. 8388607)
+ 992 compressed objects within 10 object streams
+ 400 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

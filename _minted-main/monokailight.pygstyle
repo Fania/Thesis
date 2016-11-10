@@ -1,0 +1,96 @@
+
+\makeatletter
+\def\PYGmonokailight@reset{\let\PYGmonokailight@it=\relax \let\PYGmonokailight@bf=\relax%
+    \let\PYGmonokailight@ul=\relax \let\PYGmonokailight@tc=\relax%
+    \let\PYGmonokailight@bc=\relax \let\PYGmonokailight@ff=\relax}
+\def\PYGmonokailight@tok#1{\csname PYGmonokailight@tok@#1\endcsname}
+\def\PYGmonokailight@toks#1+{\ifx\relax#1\empty\else%
+    \PYGmonokailight@tok{#1}\expandafter\PYGmonokailight@toks\fi}
+\def\PYGmonokailight@do#1{\PYGmonokailight@bc{\PYGmonokailight@tc{\PYGmonokailight@ul{%
+    \PYGmonokailight@it{\PYGmonokailight@bf{\PYGmonokailight@ff{#1}}}}}}}
+\def\PYGmonokailight#1#2{\PYGmonokailight@reset\PYGmonokailight@toks#1+\relax+\PYGmonokailight@do{#2}}
+
+\expandafter\def\csname PYGmonokailight@tok@\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.15,0.16,0.13}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ch\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@gs\endcsname{\let\PYGmonokailight@bf=\textbf}
+\expandafter\def\csname PYGmonokailight@tok@cm\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@vg\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@m\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@mh\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ge\endcsname{\let\PYGmonokailight@it=\textit}
+\expandafter\def\csname PYGmonokailight@tok@vc\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@il\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@cs\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@cp\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ni\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ld\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nl\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nn\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@no\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@na\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.69,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nb\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nc\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.69,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nd\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.69,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ne\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.69,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nf\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.69,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nx\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.69,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@si\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@s2\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@vi\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@py\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nt\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.98,0.15,0.45}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@nv\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@s1\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@kd\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@sx\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@sh\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ow\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.98,0.15,0.45}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@mf\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@bp\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@c1\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@o\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.98,0.15,0.45}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@kc\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@c\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@kr\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@err\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.59,0.00,0.31}{##1}}\def\PYGmonokailight@bc##1{\setlength{\fboxsep}{0pt}\colorbox[rgb]{0.12,0.00,0.06}{\strut ##1}}}
+\expandafter\def\csname PYGmonokailight@tok@mb\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@ss\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@sr\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@mo\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@kn\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.98,0.15,0.45}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@mi\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@l\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.68,0.51,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@cpf\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.46,0.44,0.37}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@n\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@p\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.07,0.07,0.07}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@s\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@kp\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@w\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.15,0.16,0.13}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@kt\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@sc\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@sb\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@k\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.00,0.66,0.78}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@se\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.50,0.27,1.00}{##1}}}
+\expandafter\def\csname PYGmonokailight@tok@sd\endcsname{\def\PYGmonokailight@tc##1{\textcolor[rgb]{0.85,0.51,0.00}{##1}}}
+
+\def\PYGmonokailightZbs{\char`\\}
+\def\PYGmonokailightZus{\char`\_}
+\def\PYGmonokailightZob{\char`\{}
+\def\PYGmonokailightZcb{\char`\}}
+\def\PYGmonokailightZca{\char`\^}
+\def\PYGmonokailightZam{\char`\&}
+\def\PYGmonokailightZlt{\char`\<}
+\def\PYGmonokailightZgt{\char`\>}
+\def\PYGmonokailightZsh{\char`\#}
+\def\PYGmonokailightZpc{\char`\%}
+\def\PYGmonokailightZdl{\char`\$}
+\def\PYGmonokailightZhy{\char`\-}
+\def\PYGmonokailightZsq{\char`\'}
+\def\PYGmonokailightZdq{\char`\"}
+\def\PYGmonokailightZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYGmonokailightZat{@}
+\def\PYGmonokailightZlb{[}
+\def\PYGmonokailightZrb{]}
+\makeatother
+
