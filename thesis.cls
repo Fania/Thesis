@@ -143,6 +143,13 @@
 }
 \makeatother
 
+\copypagestyle{chapter}{fania}
+% \copypagestyle{toc}{fania}
+\aliaspagestyle{cleared}{fania}
+% \createplainmark{toc}{both}{\contentsname}
+
+
+
 \makechapterstyle{fania}{%
 \renewcommand\printchaptername{\scshape\sffamily}
 
@@ -535,9 +542,9 @@ breaklines=true
 \makepagestyle{fania} 
 % \makeevenhead{fania}{}{}{}
 % \makeoddhead{fania}{\slshape\rightmark}{}{\slshape\leftmark}
-\makeevenfoot{fania}{}{}{\thepage}
-\makeoddfoot{fania}{\thepage}{}{}
-% \makeevenhead{fania}{\thepage}{}{\leftmark}
+\makeevenfoot{fania}{\thepage}{}{} % Left
+\makeoddfoot{fania}{}{}{\thepage} % Right
+\makeevenhead{fania}{}{}{}
 \makeoddhead{fania}{}{}{}
 % \makeoddhead{fania}{\leftmark}{}{\rightmark}
 % \makerunningwidth{fania}{1.1\textwidth}
@@ -546,14 +553,14 @@ breaklines=true
 % \pagestyle{fania}
 
 
-% LINK TO TOC
-\usepackage{eso-pic}
-\newcommand\AtPageBottomCentre[1]{%
- \put(\LenToUnit{.5\paperwidth},\LenToUnit{\textheight}){#1}%
-}
-\AddToShipoutPictureBG{%
-   \AtPageBottomCentre{\put(0,-620){\hyperlink{ch:contents}{Go to TOC}}}
-}
+% % LINK TO TOC
+% \usepackage{eso-pic}
+% \newcommand\AtPageBottomCentre[1]{%
+%  \put(\LenToUnit{.5\paperwidth},\LenToUnit{\textheight}){#1}%
+% }
+% \AddToShipoutPictureBG{%
+%    \AtPageBottomCentre{\put(0,-620){\hyperlink{ch:contents}{Go to TOC}}}
+% }
 
 
 
