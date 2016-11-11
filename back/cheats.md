@@ -8,7 +8,10 @@ $\bm{\Sigma}$ Equation
 \faicon{object-group} Figure
 \faicon{picture-o}] Image
 § Chapters + sections
+\textspiral Parts
 
+
+\sidepar{\textspiral~\ref{p:analysis}}
 \marginnote{§~\ref{ch:intro}}
 
 \begin{description}[leftmargin=2.8cm]
