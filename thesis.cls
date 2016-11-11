@@ -231,6 +231,7 @@
 %                 \item\relax\sffamily\SingleSpacing\color{gray}\ignorespaces}
 %                {\unskip\unskip\endlist}
 
+
 \renewenvironment{quotation}
                {\list{}{\rightmargin\leftmargin}%
                 \item\relax\sffamily\small\SingleSpacing\ignorespaces}
@@ -398,12 +399,12 @@ breaklines=true
 
 \usepackage[colorinlistoftodos]{todonotes}
 %Place notes in left margin where there is more space
-\reversemarginpar
+% \reversemarginpar
 %Number the todo item according to section numbering
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
 
-\usepackage{marginnote}
+% \usepackage{marginnote}
 
 % \todoin{}
 % \newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
@@ -413,21 +414,13 @@ breaklines=true
 
 % MARGINS
 
-\usepackage[a4paper, % twoside=false,
+\usepackage[a4paper,
             left=4cm, right=2cm,
             top=2cm, bottom=4cm, % showframe, showcrop,
-            marginparwidth=3.5cm, marginparsep=3mm
+            marginparwidth=1.5cm, marginparsep=3mm
             ]
             {geometry}
 % bindingoffset=6mm
-
-% \usepackage[top=2cm, bottom=1.3cm, left=5cm, right=0.5cm,
-% heightrounded,
-%   marginparwidth=4.6cm, marginparsep=3mm]{geometry}
-
-% INDENT
-% \usepackage{scrextend}
-
 
 
 % BIBLIOGRAPHY
@@ -673,7 +666,19 @@ breaklines=true
   mathescape=true,
   framesep=2mm,
   breaklines=true,
-  breakbytokenanywhere=true,
+  % breakbytokenanywhere=true,
+  breakbefore={/,?,_},
+  breaksymbolindentleft={\temporarydimen},
+  xleftmargin=0cm,
+  xrightmargin=0cm,
+}
+
+\setminted[json]{
+  fontsize=\footnotesize,
+  mathescape=true,
+  framesep=2mm,
+  breaklines=true,
+  % breakbytokenanywhere=true,
   breakbefore={/,?,_},
   breaksymbolindentleft={\temporarydimen},
   xleftmargin=0cm,
@@ -813,6 +818,59 @@ breaklines=true
          samples=int(\spiral@domain/\spiral@sample@rate)] node[coordinate,shift={(\spiral@start@angle:\spiral@start@radius)}](\spiral@start@name){} plot ({\t r}: {\spiral@start@radius+\spiral@growth*\t-\spiral@growth*\spiral@start@angle*pi/180}) node[coordinate](\spiral@end@name){}
   }
 \makeatother
+
+\newcommand\textspiral{%
+  \begin{tikzpicture}[y=.009ex,x=.009ex,yscale=-1]
+    \path[fill] (74.2500,379.5469) -- (62.4375,373.3594) .. controls
+      (83.4375,365.2031) and (99.6563,356.1563) .. (111.0938,346.2188) .. controls
+      (122.5313,336.2813) and (131.0625,324.9375) .. (136.6875,312.1875) .. controls
+      (142.3125,299.4375) and (145.1250,284.4375) .. (145.1250,267.1875) .. controls
+      (145.1250,256.6875) and (141.9375,247.5000) .. (135.5625,239.6250) .. controls
+      (129.1875,231.7500) and (121.7813,226.3125) .. (113.3438,223.3125) .. controls
+      (104.9063,220.3125) and (95.6250,218.8125) .. (85.5000,218.8125) .. controls
+      (75.3750,218.8125) and (66.0937,220.3125) .. (57.6562,223.3125) .. controls
+      (49.2187,226.3125) and (41.8125,231.7500) .. (35.4375,239.6250) .. controls
+      (29.0625,247.5000) and (25.8750,256.6875) .. (25.8750,267.1875) .. controls
+      (25.8750,277.6875) and (27.3750,286.9687) .. (30.3750,295.0312) .. controls
+      (33.3750,303.0937) and (38.1563,308.9063) .. (44.7188,312.4688) .. controls
+      (51.2813,316.0313) and (59.2500,317.8125) .. (68.6250,317.8125) .. controls
+      (73.6875,317.8125) and (77.5782,316.7813) .. (80.2969,314.7188) .. controls
+      (83.0156,312.6563) and (85.2187,309.7500) .. (86.9062,306.0000) .. controls
+      (88.5937,302.2500) and (89.4375,297.3750) .. (89.4375,291.3750) .. controls
+      (89.0625,288.3750) and (88.4063,285.6563) .. (87.4688,283.2188) .. controls
+      (86.5313,280.7813) and (85.0313,278.9063) .. (82.9688,277.5938) .. controls
+      (80.9063,276.2813) and (78.3750,275.6250) .. (75.3750,275.6250) .. controls
+      (72.9375,275.6250) and (70.5469,277.1250) .. (68.2031,280.1250) .. controls
+      (65.8594,283.1250) and (63.7500,288.4219) .. (61.8750,296.0156) --
+      (57.6562,295.8750) .. controls (55.5937,295.8750) and (54.0937,295.4063) ..
+      (53.1562,294.4688) .. controls (52.2187,293.5313) and (51.7500,292.5000) ..
+      (51.7500,291.3750) .. controls (51.7500,286.5000) and (52.6875,281.7187) ..
+      (54.5625,277.0312) .. controls (56.4375,272.3437) and (59.2500,268.5000) ..
+      (63.0000,265.5000) .. controls (66.7500,262.5000) and (70.8750,261.0000) ..
+      (75.3750,261.0000) .. controls (80.6250,261.0000) and (85.4063,262.1250) ..
+      (89.7188,264.3750) .. controls (94.0313,266.6250) and (97.4063,270.0937) ..
+      (99.8438,274.7812) .. controls (102.2813,279.4687) and (103.5000,285.0000) ..
+      (103.5000,291.3750) .. controls (103.5000,299.6250) and (102.3750,306.5625) ..
+      (100.1250,312.1875) .. controls (97.8750,317.8125) and (94.0313,322.5937) ..
+      (88.5938,326.5312) .. controls (83.1563,330.4687) and (76.5000,332.4375) ..
+      (68.6250,332.4375) .. controls (57.3750,332.4375) and (47.0625,329.8125) ..
+      (37.6875,324.5625) .. controls (28.3125,319.3125) and (21.5625,311.5313) ..
+      (17.4375,301.2188) .. controls (13.3125,290.9063) and (11.2500,279.5625) ..
+      (11.2500,267.1875) .. controls (11.2500,254.0625) and (14.2500,241.9687) ..
+      (20.2500,230.9062) .. controls (26.2500,219.8437) and (35.1563,211.3125) ..
+      (46.9688,205.3125) .. controls (58.7813,199.3125) and (71.6250,196.3125) ..
+      (85.5000,196.3125) .. controls (99.3750,196.3125) and (112.2187,199.3125) ..
+      (124.0312,205.3125) .. controls (135.8437,211.3125) and (144.7500,219.8437) ..
+      (150.7500,230.9062) .. controls (156.7500,241.9687) and (159.7500,254.0625) ..
+      (159.7500,267.1875) .. controls (159.7500,287.4375) and (156.5625,304.7813) ..
+      (150.1875,319.2188) .. controls (143.8125,333.6563) and (134.0625,346.1250) ..
+      (120.9375,356.6250) .. controls (107.8125,367.1250) and (92.2500,374.7656) ..
+      (74.2500,379.5469) -- cycle;
+  \end{tikzpicture}%
+}
+
+
+
 
 
 % We need layers to draw the block diagram

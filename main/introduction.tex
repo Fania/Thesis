@@ -32,15 +32,15 @@ as any person at all conversant with authorship may satisfy himself at.
 \minicontents
 \spirals
 
-This thesis describes \ac{AMC}. More precisely it is about using creative computing to achieve computer creativity.
+This thesis describes \acl{AMC}. In other words it is about using creative computing to achieve computer creativity.
 
-The project is transdisciplinary;\marginnote{§~\ref{ch:methodology}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\marginnote{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
+The project is transdisciplinary;\sidepar{§~\ref{ch:methodology}} it is heavily inspired by the absurd french pseudo-philosophy pataphysics\sidepar{§~\ref{ch:pataphysics}} and draws from a wide range of subject areas such as computer science, psychology, linguistics, literature, art and poetry, languages and mathematics.
 
-The research\marginnote{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines, how pataphysics relates to creativity and how creativity should be evaluated in machines.
+The research\sidepar{§~\ref{ch:foundations}} included exploring what it means to be creative as a human, how this translates to machines, how pataphysics relates to creativity and how creativity should be evaluated in machines\sidepar{§~\ref{ch:interpretation}}.
 
 Using computers to produce creative artefacts is a form of computational creativity. Using creative techniques computationally is creative computing. \ac{AMC} spans the two---whether this is to achieve a creative or non-creative output. It is the use of digital tools (which may not be creative themselves) and the way they are used forms the creative process or product. 
 
-Creativity in humans needs to be interpreted differently to machines. Humans and machines differ in many ways, we have different `brains/memory', `thinking processes/software' and `bodies/hardware'. Too often creative output by machines is judged as we would a humans. 
+Creativity in humans needs to be interpreted differently to machines\sidepar{§~\ref{s:theoryanalysis}}. Humans and machines differ in many ways, we have different `brains/memory', `thinking processes/software' and `bodies/hardware'. Too often creative output by machines is judged as we would a humans. 
 
 Computers which are truly artificially intelligent might be capable of true artificial creativity. Until then they are (philosophical) zombie robots: machines that behave like humans but aren't conscious. The only alternative is to see any computer creativity as a direct or indirect expression of human creativity using digital means and evaluate it as such. \ac{AMC} is neither machine creativity nor human creativity---it is both. By acknowledging the undeniable link between computer creativity and its human influence (the machine is just a tool for the human) we enter a new realm of thought. How is \ac{AMC} defined and evaluated? This thesis address this issue. 
 
@@ -49,38 +49,38 @@ Computers which are truly artificially intelligent might be capable of true arti
   \item a theoretical framework to help interpret and evaluate products of \ac{AMC}
 \end{enumerate}
 
-The outcome of step (1)\marginnote{§~\ref{ch:implementation}} is presented as a website---\url{pata.physics.wtf}---written in \num{5} different programming languages\footnote{Python, \ac{HTML}, CSS, Jinja, JavaScript}, making calls to \num{6} external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over \num{30} files.
+The outcome of step (1)\sidepar{§~\ref{ch:implementation}} is presented as a website---\url{pata.physics.wtf}---written in \num{5} different programming languages\footnote{Python, \ac{HTML}, CSS, Jinja, JavaScript}, making calls to \num{6} external Web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over \num{30} files.
 
-The main purpose of the system above is to demonstrate three creative \emph{patalgorithms} in the context of exploratory information retrieval. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. The system partially automates the creative process, generating results on demand, which allows users to focus on their own personal artistic evaluation rather than production.
+The main purpose of the system above is to demonstrate the three creative \emph{patalgorithms} in the context of exploratory information retrieval\sidepar{§~\ref{s:algorithms}}. A browsing rather than a search engine, it presents results in various formats such as sonnets and golden spirals. The system partially automates the creative process, generating results on demand, which allows users to focus on their own personal artistic evaluation rather than production.
 
-Immediate inspirations\marginnote{§~\ref{ch:inspirations}} come from fictional character \textit{Doctor Faustroll} created by french absurdist and `father' of pataphysics Alfred Jarry \citeyear{Jarry1996}, the fantastic taxonomy of the \textit{Celestial Emporium of Benevolent Knowledge} by magical realist Jorge Luis Borges \citeyear{Borges2000} and \textit{A Hundred Thousand Billion Poems} by pataphysician and Oulipo co-founder Raymond Queneau \citeyear{Queneau1961} amongst others.
+Immediate inspirations\sidepar{§~\ref{ch:inspirations}} come from fictional character \textit{Doctor Faustroll} created by french absurdist and `father' of pataphysics Alfred Jarry \citeyear{Jarry1996}, the fantastic taxonomy of the \textit{Celestial Emporium of Benevolent Knowledge} by magical realist Jorge Luis Borges \citeyear{Borges2000} and \textit{A Hundred Thousand Billion Poems} by pataphysician and Oulipo co-founder Raymond Queneau \citeyear{Queneau1961}, amongst others.
 
 % \begin{draft}
 %   The creative process or problem solving is a move from the abstract to the concrete. Creative evaluation is a move from subjective to objective (defining the subjective criteria for creating a product in terms of objective understanding).
 % \end{draft}
 
-To address step (2) above, I explored the problem of objective evaluation and interpretation\marginnote{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to computers. I have argued that the most appropriate way to approach this is by looking at five objective constraints (person, process, product, place, purpose) and seven subjective criteria (novelty, value, quality, purpose, spatial, temporal, ephemeral) holistically and by understanding that humour and art `lie in the ear and eye of the beholder'\ldots
+To address step (2) above, I explored the problem of objective evaluation and interpretation\sidepar{§~\ref{ch:interpretation}} of subjective creativity specifically in regards to \ac{AMC}. I have argued that the most appropriate way to approach this is by looking at five objective constraints (person, process, product, place, purpose) and seven subjective criteria (novelty, value, quality, purpose, spatial, temporal, ephemeral) holistically and by understanding that humour and art `lie in the ear and eye of the beholder'.
 
-This resulted in an \emph{interpretation framework}\marginnote{§~\ref{s:framework}} visualised as an evaluation matrix (\num{5} constraints x \num{7} criteria) which can be used to qualitatively and/or quantitatively measure the creativity of a given \ac{AMC} artefact (be that man-made or machine-made):
+This resulted in an \emph{interpretation framework}\sidepar{§~\ref{s:framework}} visualised as an evaluation matrix (\num{5} constraints x \num{7} criteria)\sidepar{\faicon{object-group}~\ref{fig:matrix}} which can be used to qualitatively and/or quantitatively measure the creativity of a given \ac{AMC} artefact:
 
 \begin{enumerate}
-  \item a set of scales that can be used to approximate a `rating' for the creative value of an artefact,\marginnote{§~\ref{s:sec}}
-  \item a set of criteria to be considered using the scales above,\marginnote{§~\ref{s:oec}}
-  \item a combined framework for evaluation.\marginnote{§~\ref{s:framework}}
+  \item a set of scales that can be used to approximate a `rating' for the creative value of an artefact,\sidepar{§~\ref{s:sec}}
+  \item a set of criteria to be considered using the scales above,\sidepar{§~\ref{s:oec}}
+  \item a combined framework for evaluation.\sidepar{§~\ref{s:framework}}
 \end{enumerate}
 
 
 \section{Motivation}
 
-My personal interest in this project comes from a background in computer science and a longstanding interest in art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \ac{DMU}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. I knew Andrew Hugill through his involvement in the \ac{IOCT} at \ac{DMU} and when he pitched his \textit{Syzygy Surfer} \autocite{Hendler2011, Hendler2013} idea to me in an interview, I was immediately drawn in by its underlying sense of humour and the transdisciplinary nature of the project.
+Computers\sidepar{§~\ref{ch:technology}} are binary machines; the world is black and white to them (0 and 1, on and off). Programmers can run abstract high-level commands which are executed in sequence (with fast speeds giving the illusion of multitasking). They are precise, structured, logical, and generally abide by strict standards. Computers can only be creative if they are given clear instructions as to how. \acl{IR} is generally focused on relevance of results in regards to the query.
 
-\spirals
+\begin{quotation}
+  The Analytical Engine has no pretensions whatever to \textit{originate} anything. It can do \textit{whatever we know how to order it} to perform. \sourceatright{\autocite[Ada Lovelace, in][her emphasis]{Menabrea1842}}
+\end{quotation}
 
-Computers\marginnote{§~\ref{ch:technology}} are binary machines; the world is black and white to them (0 and 1, on and off). Programmers can run abstract high-level commands which are executed in sequence (fast speed gives the illusion of multitasking). They are precise, structured, logical and generally abide by strict standards. Computers can only be creative if they are given clear instructions as to how. Information retrieval is generally focused on relevance of results in regards to the query.
+Pataphysics\sidepar{§~\ref{ch:pataphysics}} emerged during the \textit{Belle Époque}\footnote{1871---1914} in France and has either directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values exceptions, the imaginary and the mutually incompatible.
 
-Pataphysics\marginnote{§~\ref{ch:pataphysics}} emerged during the \textit{Belle Époque}\footnote{1871---1914} in France and has directly or indirectly influenced various artistic movements such as Dada, Symbolism, Surrealism, Oulipo and Absurdist Theatre. Pataphysics is highly subjective and particular, values exceptions, the imaginary and the mutually incompatible.
-
-Creativity\marginnote{§~\ref{ch:creativity}} is often studied at various levels (neurological, cognitive, and holistic/systemic), from different perspectives (subjective and objective) and characteristics (combinational, exploratory and transformative). It is usually defined in terms of value, originality and skill.
+Creativity\sidepar{§~\ref{ch:creativity}} is often studied at various levels (neurological, cognitive, and holistic/systemic), from different perspectives (subjective and objective) and characteristics (combinational, exploratory and transformative). It is usually defined in terms of value, originality and skill.
 
 Combining computing with pataphysics seems impossible---although the antinomies below (juxtaposing principles in computing on the left with ideas from pataphysics on the right) highlight just how intriguing a possible combination of the two would be.
 
@@ -93,36 +93,36 @@ Combining computing with pataphysics seems impossible---although the antinomies 
   \item Relevance opposes the creative.
 \end{itemize}
 
-This apparent dichotomy of computing and pataphysics is alluring. Christian B{\"o}k argued that pataphysics `sets the parameters for the contemporary relationship between science and poetry.' \citeyear{Bok2002} Pataphysics suddenly seems like the perfect choice infusing computers (science) with creativity (poetry).
+This apparent dichotomy of computing and pataphysics is alluring. Christian B{\"o}k argued that pataphysics ``sets the parameters for the contemporary relationship between science and poetry'' \citeyear{Bok2002}. Pataphysics suddenly seems like the perfect choice infusing computers (science) with creativity (poetry).
 
-Combining pataphysics with creativity\marginnote{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly. 
+Combining pataphysics with creativity\sidepar{\faicon{table}~\ref{tab:creatpata}} is easier. The ideas of combinatorial, exploratory and transformative creativity map quite nicely onto some pataphysical concepts such as clinamen, syzygy, antinomy and anomaly. 
 
-Another motivating factor for this project was the lack of research in the particular area of creative computing\marginnote{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \ac{AI}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
+Another motivating factor for this project was the lack of research in the particular area of creative computing\sidepar{§~\ref{ch:creativity}} in general. The discipline of computational creativity has emerged fairly recently\footnote{The first International Conferences on Computational Creativity ran in 2010 for example.} from a background in \ac{AI}. It appears to focus a lot more on the outcome of a product that would be judged creative rather than the actual process. Creative computing focuses on producing creative algorithms which may or may not have creative outputs. This was first addressed in \autocite{Raczinski2013}\sidepar{§~\ref{s:dc243article}} and later expanded into a definite description of this new discipline \autocite{Hugill2013c}.
+
+\spirals
+
+My personal interest in this project comes from a background in computer science and a longstanding interest in art. Most recently I managed to successfully combine my technical skills with my creative side for a Master of Science degree in Creative Technologies at \ac{DMU}\footnote{A passive interactive installation, augmenting a live video stream of users with interactive elements using motion tracking algorithms. See \url{msc.fania.eu}.}. 
 
 
 \section{Questions}
 
-Research dealing with subjective ideas and concepts like creativity throws up a lot of questions. My intention is to address them all throughout this thesis, although some of them will not have definite binary answers. A list of answers can be found in the conclusion chapter~\ref{s:answers}\marginnote{§~\ref{s:answers}}.
-
-\todo{add section refs of answers to each question}
-\todo{add more questions}
+Research dealing with subjective ideas and concepts like creativity throws up a lot of questions. My intention is to address them all throughout this thesis, although some of them will not have definite binary answers. An attempt to answer them can be found in the conclusion chapter~\ref{s:answers}\sidepar{§~\ref{s:answers}}.
 
 \begin{itemize}
-  \item Can computers or algorithms be considered creative?
-  \item Can pataphysics facilitate creativity?
-  \item Can a creative process be automated or emulated by a computer?
-  \item Can human and computer creativity be objectively measured?
-  \item Can information retrieval be creative?
-  \item Can search results be creative rather than relevant?
+  \item What is the relationship between pataphysics and creativity?
+  \item How might pataphysics be used to enable or enhance creativity?
+  \item How is computer creativity related to artificial intelligence?
+  \item Is there a clear distinction between computationally automated or emulated creative processes and the programmer's input?
+  \item How can a machine's creative output be evaluated?
+  \item How can these evaluatuative systems be improved?
+  \item How can information retrieval be infused with creativity?
 \end{itemize}
-
-\todo{answer research questions in conclusion - check they match}
 
 
 \section{Methodology}
 \label{s:intromethod}
 
-This project combines research\marginnote{§~\ref{ch:methodology}} in science and art making it transdisciplinary.
+This project combines research\sidepar{§~\ref{ch:methodology}} in science and art making it transdisciplinary.
 
 \begin{description}[leftmargin=3cm]
   \item [Pataphysics] Literature, Philosophy, Art
@@ -138,15 +138,15 @@ This project combines research\marginnote{§~\ref{ch:methodology}} in science an
   \item [Methods] Artefact, literature synthesis, algorithm design, theoretical framework, critical reflection and analysis, rapid incremental prototyping
 \end{description}
 
-The general process\marginnote{§~\ref{ch:implementation}} of my project was as follows.
+The general process of my project was as follows.
 
 \begin{enumerate}
-  \item Critically analyse and synthesise existing literature,
-  \item develop pataphysical algorithms,
-  \item design a system to demonstrate algorithms,
-  \item develop a website as an artefact,
-  \item define an evaluation and interpretation framework,
-  \item analyse results.
+  \item Critically analyse and synthesise existing literature,\sidepar{\textspiral~\ref{p:lit}}
+  \item develop pataphysical algorithms,\sidepar{\textspiral~\ref{p:practice}}
+  \item design a system to demonstrate algorithms,\sidepar{\textspiral~\ref{p:practice}}
+  \item develop a website as an artefact,\sidepar{\textspiral~\ref{p:practice}}
+  \item define an evaluation and interpretation framework,\sidepar{\textspiral~\ref{p:theory}}
+  \item analyse results.\sidepar{\textspiral~\ref{p:analysis}}
 \end{enumerate}
 
 
@@ -156,9 +156,9 @@ The key contributions to knowledge described in this thesis are:
 
 \begin{itemize}
   \item Three pataphysical search algorithms (clinamen, syzygy and antinomy).
-  \item A creative exploratory search tool demonstrating the algorithms in the form of a website \url{http://pata.physics.wtf}.
-  \item A set of subjective parameters for defining creativity.
-  \item An objective framework for evaluating creativity.
+  \item A creative exploratory search tool demonstrating the algorithms \url{pata.physics.wtf}.
+  \item A set of 7 subjective criteria and 5 objective constraints for defining creativity.
+  \item A combined framework for evaluating and interpreting creativity.
 \end{itemize}
 
 % \begin{comment}
@@ -178,7 +178,7 @@ The key contributions to knowledge described in this thesis are:
 
 Some chapters (especially \nameref{ch:foundations} and \nameref{ch:interpretation}) in this thesis are based partially on articles published during this research. I have used fragments from those papers freely without specific citations unless clearly indicated. I had several co-authors (Hongji Yang, Andrew Hugill, James Sawle and Dave Everitt) for these pieces and I hereby acknowledge their contributions.
 
-The full list of publications can be found in the preface on page~\pageref{pre:pub}\marginnote{§~\ref{pre:pub}}. This also includes a full list of talks and exhibitions in appendix~\ref{app:pub}\marginnote{§~\ref{app:pub}}.
+The full list of publications can be found in the preface on page~\pageref{pre:pub}\sidepar{§~\ref{pre:pub}}. This also includes a full list of talks and exhibitions in appendix~\ref{app:pub}\sidepar{§~\ref{app:pub}}.
 
 
 \section{The Hitchhiker's Guide to this Thesis}

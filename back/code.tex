@@ -86,8 +86,10 @@ An example excerpt from the Faustroll index data structure.
 \end{minted}
 
 
-\section{Clinamen with up to 3 errors, Faustroll corpus}
+\section{Clinamen Errors}
 \label{app:clin3errors}
+
+This section show the Clinamen function allowing up to 3 errors. See chapter~\ref{s:clinerrors}.
 
 \begin{description}
   \item[clear] afar, ahead, Alas, altar, appear, bar, beam, beard, bears, beat, beer, ble, bleed, blew, bluer, bread, break, Caesar, calvary, can, canal, care, cedar, cellar, chair, charm, cheek, chen, chere, chern, choir, clad, claim, clasp, claws, clean, clear, clearly, clerks, climb, clock, clogs, close, cloth, color, coral, crab, crap, cresc, crest, Dead, dead, dear, Dewar, ear, ears, eat, ever, far, fear, Fear, feat, flag, flat, flesh, floor, Friar, glare, Great, great, head, hear, heard, heart, heat, Her, her, idea, ideal, ideas, jar, law, lay, lead, leaf, leap, least, leave, led, lees, left, leg, legs, lent, leper, less, lest, let, mean, meat, near, oar, Ocean, Opera, over, peak, pearl, per, plat, pleas, read, Read, real, rear, sea, Sea, seat, sheer, slab, sleep, solar, speak, star, steam, sugar, swear, swears, sweat, tean, tears, their, vulgar, war, year, years, zeal
@@ -102,7 +104,7 @@ An example excerpt from the Faustroll index data structure.
 
 \subsection{Antinomy}
 
-\begin{minted}{text}
+\begin{minted}{javascript}
 [
   Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), 
   Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), 
@@ -123,7 +125,7 @@ An example excerpt from the Faustroll index data structure.
 \end{minted}
 
 \begin{multicols}{2}
-  \begin{minted}{text}
+  \begin{minted}{haskell}
   synset item:clear.n.01
   synset item:open.n.01
   synset item:unclutter.v.01
@@ -192,7 +194,7 @@ An example excerpt from the Faustroll index data structure.
 \subsection{Syzygy}
 \label{app:syzygy}
 
-\begin{minted}{text}
+\begin{minted}{javascript}
 [
   Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), 
   Synset('clear.v.02'), Synset('clear\_up.v.04'), Synset('authorize.v.01'),
@@ -215,7 +217,7 @@ An example excerpt from the Faustroll index data structure.
 Step (2) then retrieves related terms. First it gets hypernyms.
 
 \begin{multicols}{2}
-\begin{minted}{text}
+\begin{minted}{haskell}
 synset: clear.n.01
 hyponyms: ---
 hypernyms: innocence
@@ -444,7 +446,7 @@ holonyms: ---
 \end{multicols}
 
 \begin{multicols}{2}
-\begin{minted}{text}
+\begin{minted}{haskell}
 synset: clear.n.01
 hypernyms: innocence
 
@@ -524,7 +526,7 @@ hypernyms: remove, take, take\_away, withdraw
 \end{minted}
 \end{multicols}
 
-\begin{minted}{text}
+\begin{minted}{javascript}
 [
   Synset('clear.n.01'), Synset('open.n.01'), Synset('unclutter.v.01'), 
   Synset('clear.v.02'), Synset('clear_up.v.04'), Synset('authorize.v.01'), 
@@ -545,7 +547,7 @@ hypernyms: remove, take, take\_away, withdraw
 \end{minted}
 
 \begin{multicols}{2}
-  \begin{minted}{text}
+  \begin{minted}{haskell}
   synset item:clear.n.01
   hypernym out:innocence
   []
@@ -779,11 +781,11 @@ hypernyms: remove, take, take\_away, withdraw
 \section{Bing JSON Results}
 
 \begin{minted}{json}
-"d": { "results": [
+{"d": { "results": [
   { "__metadata":
     { "uri": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=0&$top=1",
       "type": "ImageResult"
-    }, // __metadata
+    },
     "ID": "e09072a2-faf3-47ac-b77d-46a8df8941aa",
     "Title": "Cute Kittens - Pictures - The Wondrous Pics",
     "MediaUrl": "http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg",
@@ -802,11 +804,11 @@ hypernyms: remove, take, take\_away, withdraw
       "Width": "480",
       "Height": "300",
       "FileSize": "13856"
-    } // Tumbnail
-  }, ...
-  ], // results
+    }
+  },
+  ],
   "__next": "https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=\u0027kittens\u0027&$skip=50"
-} // d
+}}
 \end{minted}
 
 % Real:

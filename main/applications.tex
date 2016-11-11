@@ -59,7 +59,7 @@ Dennis differentiates between nouns and verbs in his algorithms which allows his
 
 \subsection{Algorithms}
 
-The synonym algorithm works by generating WordNet synonyms for a given keyword. Source~\ref{code:dennissyn}\marginnote{\faicon{code}~\ref{code:dennissyn}} shows the pseudo-code for this algorithm.
+The synonym algorithm works by generating WordNet synonyms for a given keyword. Source~\ref{code:dennissyn}\sidepar{\faicon{code}~\ref{code:dennissyn}} shows the pseudo-code for this algorithm.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -70,11 +70,11 @@ function generate_synonym(input):
       return word
   return input
   \end{minted}
-\caption[Dennis synonym generation]{Andrew Dennis synonym generation algorithm}
+\caption[Dennis' synonym generation]{Andrew Dennis' synonym generation algorithm}
 \label{code:dennissyn}
 \end{listing}
 
-The antonym algorithm in source~\ref{code:dennisanto}\marginnote{\faicon{code}~\ref{code:dennisanto}} generates WordNet synonyms and then retrieves antonyms for each of those synonyms. This is very similar to the antinomy algorithm presented in section~\ref{s:antinomy}\marginnote{§~\ref{s:antinomy}} with the additional handling of nouns and verbs as separate entities.
+The antonym algorithm in source~\ref{code:dennisanto}\sidepar{\faicon{code}~\ref{code:dennisanto}} generates WordNet synonyms and then retrieves antonyms for each of those synonyms. This is very similar to the antinomy algorithm presented in section~\ref{s:antinomy}\sidepar{§~\ref{s:antinomy}} with the additional handling of nouns and verbs as separate entities.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -99,11 +99,11 @@ function generate_antonym(input):
             return lemma.antonym[0]
   return Null
   \end{minted}
-\caption[Dennis antonym generation]{Andrew Dennis antonym generation algorithm}
+\caption[Dennis' antonym generation]{Andrew Dennis' antonym generation algorithm}
 \label{code:dennisanto}
 \end{listing}
 
-The algorithm for the anomaly works by generating a random number $x$ and retrieving item number $x$ in the dictionary. Source~\ref{code:dennisano}\marginnote{\faicon{code}~\ref{code:dennisano}} shows the pseudo-code for this algorithm.
+The algorithm for the anomaly works by generating a random number $x$ and retrieving item number $x$ in the dictionary. Source~\ref{code:dennisano}\sidepar{\faicon{code}~\ref{code:dennisano}} shows the pseudo-code for this algorithm.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -115,11 +115,11 @@ function generate_anomaly(input):
       not_found = false
       return dictionary[index]
   \end{minted}
-\caption[Dennis anomaly generation]{Andrew Dennis anomaly generation algorithm}
+\caption[Dennis' anomaly generation]{Andrew Dennis' anomaly generation algorithm}
 \label{code:dennisano}
 \end{listing}
 
-The syzygy algorithm works by generating WordNet synonyms and retrieving hypernyms for each of those and then retrieving any synonyms for those hypernyms (i.e. it creates a syzygy alignment from synonym $\to$ hypernym $\to$ synonym). Source~\ref{code:dennissyz}\marginnote{\faicon{code}~\ref{code:dennissyz}} shows the pseudo-code for this algorithm. This is slightly different to the syzygy algorithm presented in section~\ref{s:syzygy}\marginnote{§~\ref{s:syzygy}} in that it aligns keyword---synonyms---hypernyms---synonyms rather than keyword---synonyms---hyper/hypo/holo/meronyms.
+The syzygy algorithm works by generating WordNet synonyms and retrieving hypernyms for each of those and then retrieving any synonyms for those hypernyms (i.e. it creates a syzygy alignment from synonym $\to$ hypernym $\to$ synonym). Source~\ref{code:dennissyz}\sidepar{\faicon{code}~\ref{code:dennissyz}} shows the pseudo-code for this algorithm. This is slightly different to the syzygy algorithm presented in section~\ref{s:syzygy}\sidepar{§~\ref{s:syzygy}} in that it aligns keyword---synonyms---hypernyms---synonyms rather than keyword---synonyms---hyper/hypo/holo/meronyms.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -131,11 +131,11 @@ function generate_syzygy(input):
         if synonym_set(word.hypernyms[0]).length > 0:
           return synsets_set(word.hypernyms[0])[0].name
   \end{minted}
-\caption[Dennis syzygy generation]{Andrew Dennis syzygy generation algorithm}
+\caption[Dennis' syzygy generation]{Andrew Dennis' syzygy generation algorithm}
 \label{code:dennissyz}
 \end{listing}
 
-Finally, the clinamen algorithm works by finding words in the dictionary that have a Damerau-Levenshtein distance of 2 to the keyword. Source~\ref{code:dennisclin}\marginnote{\faicon{code}~\ref{code:dennisclin}} shows the pseudo-code for this algorithm. This is based almost directly on the clinamen algorithm presented in section~\ref{s:clinamen}\marginnote{§~\ref{s:clinamen}} with the only difference being that Dennis forces a distance of 2, where \url{pata.physics.wtf} uses a distance of 1 or 2.
+Finally, the clinamen algorithm works by finding words in the dictionary that have a Damerau-Levenshtein distance of 2 to the keyword. Source~\ref{code:dennisclin}\sidepar{\faicon{code}~\ref{code:dennisclin}} shows the pseudo-code for this algorithm. This is based almost directly on the clinamen algorithm presented in section~\ref{s:clinamen}\sidepar{§~\ref{s:clinamen}} with the only difference being that Dennis forces a distance of 2, where \url{pata.physics.wtf} uses a distance of 1 or 2.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -145,32 +145,32 @@ function generate_clinamen(input):
     if match == 2:
       return word
   \end{minted}
-\caption[Dennis clinamen generation]{Andrew Dennis clinamen generation algorithm}
+\caption[Dennis' clinamen generation]{Andrew Dennis' clinamen generation algorithm}
 \label{code:dennisclin}
 \end{listing}
 
 
 \subsection{Search and Replace}
 
-A screenshot of Dennis' ``search and replace'' tool \citeyear{Dennis2016} is shown in figure~\ref{img:dennis}\marginnote{\faicon{picture-o}~\ref{img:dennis}}. It gives a good idea of the functionality of the tool. It's a standalone application that allows users to upload or use an existing ontology. They can then enter a search term and a source text and the search term is replaced by a pataphysicalised term. Users can choose which algorithm to use for the pataphysicalisation and further manually edit the text and export it as an \ac{HTML} file.
+A screenshot of Dennis' ``search and replace'' tool \citeyear{Dennis2016} is shown in figure~\ref{img:dennis}\sidepar{\faicon{picture-o}~\ref{img:dennis}}. It gives a good idea of the functionality of the tool. It's a standalone application that allows users to upload or use an existing ontology. They can then enter a search term and a source text and the search term is replaced by a pataphysicalised term. Users can choose which algorithm to use for the pataphysicalisation and further manually edit the text and export it as an \ac{HTML} file.
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=\linewidth]{dennis}
-\caption[Andrew Dennis' search and replace]{Andrew Dennis' patadata based search and replace tool}
+\caption[Andrew Dennis' search and replace tool]{Andrew Dennis' patadata based search and replace tool}
 \label{img:dennis}
 \end{figure}
 
-The premise of the search and replace tool is simple but has great potential for creative use. It is highly reminiscent of \ac{OULIPO} procedures (such as ``N+7'') (see section~\ref{s:patalipo}\marginnote{§~\ref{s:patalipo}}) and could be used in the generation of poetry, literature and art.
+The premise of the search and replace tool is simple but has great potential for creative use. It is highly reminiscent of \ac{OULIPO} procedures (such as ``N+7'') (see section~\ref{s:patalipo}\sidepar{§~\ref{s:patalipo}}) and could be used in the generation of poetry, literature and art.
 
 Dennis has made his algorithms available on GitHub in the form of a library called \textit{PataLib} \autocite{Dennis2016a}.
 
-He identified various issues (some similar issues will be discussed in relation to \url{pata.physics.wtf} in chapter~\ref{ch:analysis}\marginnote{§~\ref{ch:analysis}}) such as the vocabulary limitations in WordNet, the stemming problem, and the performance of patadata-generation. He also addressed the potential future inclusion of adjectives and adverbs in his search and replace algorithms.
+He identified various issues (some similar issues will be discussed in relation to \url{pata.physics.wtf} in chapter~\ref{ch:analysis}\sidepar{§~\ref{ch:analysis}}) such as the vocabulary limitations in WordNet, the stemming problem, and the performance of patadata-generation. He also addressed the potential future inclusion of adjectives and adverbs in his search and replace algorithms.
 
 
 \subsection{Ontology}
 
-His ontology is structured in \ac{YAML}\footnote{The name of this language was originally called ``Yet Another Markup Language'' but then changed to a recursive acronym ``YAML Ain't Markup Language''.} format---``a human friendly data serialization standard for all programming languages'' \autocite{Evans2016}. Source~\ref{code:dennisont}\marginnote{\faicon{code}~\ref{code:dennisont}} shows two example entries in his patadata ontology. Each word (see lines 1 and 7) have one sub-entry for each of the 5 algorithms.
+His ontology is structured in \ac{YAML}\footnote{The name of this language was originally called ``Yet Another Markup Language'' but then changed to a recursive acronym ``YAML Ain't Markup Language''.} format---``a human friendly data serialization standard for all programming languages'' \autocite{Evans2016}. Source~\ref{code:dennisont}\sidepar{\faicon{code}~\ref{code:dennisont}} shows two example entries in his patadata ontology. Each word (see lines 1 and 7) have one sub-entry for each of the 5 algorithms.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{yaml}
@@ -187,7 +187,7 @@ His ontology is structured in \ac{YAML}\footnote{The name of this language was o
   synonym: meagerness
   syzygy: insufficiency
   \end{minted}
-\caption[Dennis patadata ontology]{Andrew Dennis \ac{YAML} patadata ontology example}
+\caption[Dennis' patadata ontology]{Andrew Dennis' \ac{YAML} patadata ontology example}
 \label{code:dennisont}
 \end{listing}
 
@@ -195,16 +195,16 @@ His ontology is structured in \ac{YAML}\footnote{The name of this language was o
 \section{Digital Opera}
 \label{s:opera}
 
-Version 2 of \url{pata.physics.wtf} (see section~\ref{s:prototypes}\marginnote{§~\ref{s:prototypes}}) was used in the production of a ``Digital Opera'' called \textit{The Imaginary Voyage} \autocite{Hugill2014,Hugill2013a} by Andrew Hugill, Lee Scott, Frederic Wake-Walker and The Opera Group \autocite{Mahogany2016}.
+Version 2 of \url{pata.physics.wtf} (see section~\ref{s:prototypes}\sidepar{§~\ref{s:prototypes}}) was used in the production of a ``Digital Opera'' called \textit{The Imaginary Voyage} \autocite{Hugill2014,Hugill2013a} by Andrew Hugill, Lee Scott, Frederic Wake-Walker and The Opera Group \autocite{Mahogany2016}.
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=\linewidth]{opera}
-\caption[Imaginary Voyage: Amorphous Isle]{The Imaginary Voyage: the Amorphous Isle screenshot}
+\caption[Imaginary Voyage: \textit{Amorphous Isle}]{The Imaginary Voyage: \textit{the Amorphous Isle} screenshot}
 \label{img:opera}
 \end{figure}
 
-The specific title of the relevant act of the opera is \emph{The Amorphous Isle} \autocite{Hugill2014a} (see image~\ref{img:opera}\marginnote{\faicon{picture-o}~\ref{img:opera}}). It is described below in the words of Alfred Jarry:
+The specific title of the relevant act of the opera is \emph{The Amorphous Isle} \autocite{Hugill2014a} (see image~\ref{img:opera}\sidepar{\faicon{picture-o}~\ref{img:opera}}). It is described below in the words of Alfred Jarry:
 
 \begin{quotation}
   The Island is like soft coral, amoeboid and protoplasmic: its trees closely resemble the gesture of snails making horns at us. \sourceatright{\autocite{Jarry1996}}
@@ -212,7 +212,7 @@ The specific title of the relevant act of the opera is \emph{The Amorphous Isle}
 
 The music for this act was created by Andrew Hugill and the visual design by Lee Scott. The libretto was generated by Lee Scott using the text search functionality of version 2 of \url{pata.physics.wtf}.
 
-Practically, the idea of this act of the opera is to navigate the map shown in image~\ref{img:opera}\marginnote{\faicon{picture-o}~\ref{img:opera}} to explore the different musical themes and hear different parts of the libretto. In the centre is a circle which displays images based on the current mood.
+Practically, the idea of this act of the opera is to navigate the map shown in image~\ref{img:opera}\sidepar{\faicon{picture-o}~\ref{img:opera}} to explore the different musical themes and hear different parts of the libretto. In the centre is a circle which displays images based on the current mood.
 
 \begin{quotation}
   It is languid and drifting, shapeless and ambiguous. [\ldots] The island is presented as a quincuncial projection [\ldots], complete with pulsing gridlines and curious symbols that mark musical settlements. There are thirty settlements in total: seven of these are dedicated to Jarry's description of the three `kings' that reside on The Amorphous Isle, ten are `lighthouses' that appear on the coastline, and thirteen exist as `nebulas', pockets of activity that have no fixed location. Each settlement is assigned a visual theme such as cyclical movement, abstract pattern or light in motion, as well as a specific `feel' that is determined by its musical content. [\ldots] The music includes slow, subtle transformations, gentle textures, drones and a fairly static harmonic structure. \sourceatright{\autocite{Hugill2013a}}
@@ -245,11 +245,11 @@ The source text for the libretto is shown below courtesy of Lee Scott \citeyear{
 
 \subsection{Publications}
 
-The research presented in this thesis was published\marginnote{§~\ref{pre:pub}} in 3 main sources briefly described below.
+The research presented in this thesis was published\sidepar{§~\ref{pre:pub}} in 3 main sources briefly described below.
 
-\paragraph{Fania Raczinski and Dave Everitt} \textit{Creative Zombie Apocalypse: A Critique of Computer Creativity Evaluation} \citeyear{Raczinski2016}. This conference paper critiqued issues in creative computing evaluation and by concatenating and enhancing existing models of creativity, proposed an initial outline of the interpretation and evaluation framework elaborated further in this thesis in chapter~\ref{ch:interpretation}\marginnote{§~\ref{ch:interpretation}}. It was presented at the 2nd International Symposium for Creative Computing in Oxford in mid 2016. This paper did not mention pataphysics.
+\paragraph{Fania Raczinski and Dave Everitt} \textit{Creative Zombie Apocalypse: A Critique of Computer Creativity Evaluation} \citeyear{Raczinski2016}. This conference paper critiqued issues in creative computing evaluation and by concatenating and enhancing existing models of creativity, proposed an initial outline of the interpretation and evaluation framework elaborated further in this thesis in chapter~\ref{ch:interpretation}\sidepar{§~\ref{ch:interpretation}}. It was presented at the 2nd International Symposium for Creative Computing in Oxford in mid 2016. This paper did not mention pataphysics.
 
-\paragraph{Fania Raczinski, Hongji Yang and Andrew Hugill} \textit{Creative Search Using Pataphysics} \citeyear{Raczinski2013}. This conference paper described an earlier version of the \url{pata.physics.wtf} system (see chapter~\ref{s:prototypes}\marginnote{§~\ref{s:prototypes}}), describing the 3 pataphysical algorithms and an overall outline of the motivation and implementation of this early prototype. The paper was presented in Sydney at the 9th ACM Conference on Creativity and Cognition in mid 2013.
+\paragraph{Fania Raczinski, Hongji Yang and Andrew Hugill} \textit{Creative Search Using Pataphysics} \citeyear{Raczinski2013}. This conference paper described an earlier version of the \url{pata.physics.wtf} system (see chapter~\ref{s:prototypes}\sidepar{§~\ref{s:prototypes}}), describing the 3 pataphysical algorithms and an overall outline of the motivation and implementation of this early prototype. The paper was presented in Sydney at the 9th ACM Conference on Creativity and Cognition in mid 2013.
 
 \paragraph{Andrew Hugill, Hongji Yang, Fania Raczinski and James Sawle} \textit{The pataphysics of creativity: developing a tool for creative search} \citeyear{Hugill2013d}. This article was published in the Digital Creativity journal in late 2013. It introduced the motivation for using pataphysics to support computer creativity and discussed early thoughts on a possible architecture and design of a pataphysical search system. This article was written before the development of the first prototype so only discussed theoretical work.
 
@@ -274,12 +274,12 @@ In addition to the conference talks, \url{pata.physics.wtf} and the related rese
 
 \url{pata.physics.wtf} has received some nice feedback from the community. 
 
-In 2014 the site was featured on \url{patakosmos.com}, a \textit{Pataphysical Terrestrial and Extraterrestrial Institutes Tourist Map} by Giovanni Ricciardi \citeyear{Ricciardi2014}. He called it an ``exceptional tool, an online project that dismantles and continually redefines all meaning. La $'$pataphysique est la fin des fins.''. Image~\ref{img:patakosmos}\marginnote{\faicon{picture-o}~\ref{img:patakosmos}} shows a screenshot of the site from late 2014.
+In 2014 the site was featured on \url{patakosmos.com}, a \textit{Pataphysical Terrestrial and Extraterrestrial Institutes Tourist Map} by Giovanni Ricciardi \citeyear{Ricciardi2014}. He called it an ``exceptional tool, an online project that dismantles and continually redefines all meaning. La $'$pataphysique est la fin des fins.''. Image~\ref{img:patakosmos}\sidepar{\faicon{picture-o}~\ref{img:patakosmos}} shows a screenshot of the site from late 2014.
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=\linewidth]{patakosmos}
-\caption[\url{patakosmos.com} in 2014]{Screenshot of \url{patakosmos.com} in 2014}
+\caption[Screenshot of \url{patakosmos.com} in 2014]{Screenshot of \url{patakosmos.com} in 2014}
 \label{img:patakosmos}
 \end{figure}
 

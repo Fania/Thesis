@@ -53,9 +53,9 @@ My project has since moved on from the idea of using the Semantic Web to create 
 \section{Faustroll's Library of Equivalent Books}
 \label{s:faustlib}
 
-The artefact created to demonstrate the search algorithms---\url{pata.physics.wtf}---uses two collections of texts rather than the open Web as source material\marginnote{§~\ref{ch:implementation}}. One of these corpora is based on the fictional library of `equivalent books' from Alfred Jarry's \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}
+The artefact created to demonstrate the search algorithms---\url{pata.physics.wtf}---uses two collections of texts rather than the open Web as source material\sidepar{§~\ref{ch:implementation}}. One of these corpora is based on the fictional library of `equivalent books' from Alfred Jarry's \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear[p.10-12]{Jarry1996}
 
-The library also contains three prints (a poster of `Jane Avril' by Toulouse-Lautrec, an advert for the `Revue Blanche' by Bonnard, and a portrait of Doctor Faustroll by Aubrey Beardsley) and a picture `Saint Cado' by the Oberthuer printing house of Rennes.\autocite[p.12]{Jarry1996}.\marginnote{\faicon{picture-o}~\ref{fig:libimgs}}
+The library also contains three prints (a poster of `Jane Avril' by Toulouse-Lautrec, an advert for the `Revue Blanche' by Bonnard, and a portrait of Doctor Faustroll by Aubrey Beardsley) and a picture `Saint Cado' by the Oberthuer printing house of Rennes.\autocite[p.12]{Jarry1996}.\sidepar{\faicon{picture-o}~\ref{fig:libimgs}}
 
 This library contains the following books.
 
@@ -125,7 +125,7 @@ This library contains the following books.
 \section{100.000.000.000.000 Poems}
 \label{s:queneau}
 
-The interface design\marginnote{§~\ref{s:poetry}} of some of my search results is directly inspired by
+The interface design\sidepar{§~\ref{s:poetry}} of some of my search results is directly inspired by
 Raymond Queneau's \textit{Cent Mille Milliards de Poèmes} \citeyear{Queneau1961}, a prime example of Oulipian art. The book is essentially made up of \num{10} pages containing one sonnet each. Each page however is split into \num{14} thin strips, one for each line. This means that mathematically there are $10^{14}$ possible poems to be read by combining different lines every time. My implementation of this resulted in a sonnet, each line of which can be changed individually using mouse clicks.
 
 \begin{figure}[!htbp]
@@ -137,10 +137,10 @@ Raymond Queneau's \textit{Cent Mille Milliards de Poèmes} \citeyear{Queneau1961
 \begin{minipage}{.45\linewidth}
   \includegraphics[width=\linewidth]{queneau2}
 \end{minipage}
-\caption[Queneau's `Cent Mille Milliards de Poèmes']{Raymond Queneau's `Cent Mille Milliards de Poèmes'\footnotemark}
+\caption[Queneau's \textit{Cent Mille Milliards de Poèmes}]{Raymond Queneau's \textit{Cent Mille Milliards de Poèmes}\footnotemark}
 \label{fig:queneau12}
 \end{figure}
-\footnotetext{Images of Queneau's book in the Gallimard 2006 edition by Martin Pyper \url{http://www.mestudio.info/2010/02/28/one-hundred-thousand-billion-poems/}}
+\footnotetext{Images of Queneau's book in the Gallimard 2006 edition by Martin Pyper \citeyear{mestudio2010}}
 \todo{place footnote text on correct page on final runthrough}
 
 
@@ -220,7 +220,7 @@ It is hard to say what exactly influenced my project most. I think the idea of c
 
 \todo{replace all references to Queneau with an abbreviation using 10to the power of xyz to shorten the title...}
 
-The \ac{OULIPO} is an originally literary movement\footnote{It has since spread to other disciplines. The generic term for oulipian groups is OUXPO (``Ouvroir d'X Potentielle''), where the X can be replaced with whatever particular subject area you like (typically in french): fine art---OUPEINPO, music---OUMUPO, etc.} from the 1960's, originating in France as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique''. It therefore has roots in pataphysics although it eventually separated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from \autocite{Mathews2005}, invented and used by them are shown below (and many more can be seen in chapter~\ref{ch:pataphysics} in tables~\ref{tab:oulipo1} and~\ref{tab:oulipo2}\marginnote{\faicon{table}~\ref{tab:oulipo1} + \ref{tab:oulipo2}}).
+The \ac{OULIPO} is an originally literary movement\footnote{It has since spread to other disciplines. The generic term for oulipian groups is OUXPO (``Ouvroir d'X Potentielle''), where the X can be replaced with whatever particular subject area you like (typically in french): fine art---OUPEINPO, music---OUMUPO, etc.} from the 1960's, originating in France as a subcommittee of the ``Coll\`{e}ge de \'Pataphysique''. It therefore has roots in pataphysics although it eventually separated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from \autocite{Mathews2005}, invented and used by them are shown below (and many more can be seen in chapter~\ref{ch:pataphysics} in tables~\ref{tab:oulipo1} and~\ref{tab:oulipo2}\sidepar{\faicon{table}~\ref{tab:oulipo1} + \ref{tab:oulipo2}}).
 
 \begin{description}
   \item[N+7] Invented by Jean Lescure. It's a simple method of replacing each noun with the next seventh noun in a dictionary. For example: \textit{tree} $\rightarrow$ \textit{trend}, \textit{shoreline} $\rightarrow$ \textit{shotgun}\footnote{Generated using \url{http://www.spoonbill.org/n+7/}.}.
@@ -290,7 +290,7 @@ The \ac{OULIPO} is an originally literary movement\footnote{It has since spread 
     \text{I}&\text{N}&\text{E}&\text{V}
   \end{matrix}$
 \end{minipage}
-\caption[Algol Poem, Melting Snowball, Mathew's Algorithm]{Algol Poem (left), Melting Snowball (middle), Mathew's Algorithm (right)}
+\caption[Algol poem, melting snowball, Mathew's algorithm]{Algol poem (left), melting snowball (middle), Mathew's algorithm (right)}
 \label{fig:poems}
 \end{figure}
 
@@ -372,7 +372,7 @@ r++)),z));}g(){M();R(h,0);}f(){P(O(r));e('f',g);}p(){P();e('a',f);}d(){P(O(r));
 e('n',p);}c(u){u=r[-2];T(Ar=d);R(f,Q(u^'"'));}n(){e(w(O(l+*r%8)),c);}a(){I();R(
 n,0);}main(){S(Q(Ar),a)();}H              Ar;t*ist="Rene Magritte"-(1898-1967);
   \end{minted}
-\caption{An example entry by Uri Goren from the \ac{IOCCC} contest from 2011.}
+\caption[Uri Goren: IOCCC contest entry 2011]{An example entry by Uri Goren from the IOCCC contest from 2011.}
 \label{code:goren}
 \end{listing}
 

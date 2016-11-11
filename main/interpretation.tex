@@ -31,7 +31,7 @@ owing to some misunderstanding.
 \minicontents
 \spirals
 
-\emph{Elements of this chapter were published in \autocite{Raczinski2016}\marginnote{§~\ref{app:pub}}.}
+\emph{Elements of this chapter were published in \autocite{Raczinski2016}\sidepar{§~\ref{app:pub}}.}
 
 \spirals
 
@@ -58,7 +58,7 @@ Hypothetical `zombies' (popularised by philosopher David Chalmers \citeyear{Chal
 
 \section{Problems}
 
-Creativity and the subjective properties associated with it, lack a universally accepted definition as I have shown in the~\nameref{ch:creativity}\marginnote{§~\ref{ch:creativity}} chapter. As a human quality it has definitions that don't necessarily lend themselves to be applied to computers. However, there are several important theories and evaluation frameworks concerning human and computer creativity\marginnote{§~\ref{ch:evaluation}}, and these are the basis for this chapter. Some aspects, like `novelty' and `value', recur in many models of creativity but some, like `relevance' and `variety', rarely appear; while other terms are problematic when it comes to computing. Computer systems are generally evaluated\marginnote{§~\ref{s:evalsearch}} against functional requirements and performance specifications, but creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
+Creativity and the subjective properties associated with it, lack a universally accepted definition as I have shown in the~\nameref{ch:creativity}\sidepar{§~\ref{ch:creativity}} chapter. As a human quality it has definitions that don't necessarily lend themselves to be applied to computers. However, there are several important theories and evaluation frameworks concerning human and computer creativity\sidepar{§~\ref{ch:evaluation}}, and these are the basis for this chapter. Some aspects, like `novelty' and `value', recur in many models of creativity but some, like `relevance' and `variety', rarely appear; while other terms are problematic when it comes to computing. Computer systems are generally evaluated\sidepar{§~\ref{s:evalsearch}} against functional requirements and performance specifications, but creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
 % \todo{Indeed. Which makes your decision to evaluate using Wiggins a bit perplexing.}
 
 \begin{quotation}
@@ -69,7 +69,7 @@ True \ac{AI} and true computational creativity are equally elusive. For a comput
 
 \spirals
 
-Some of the key ideas introduced in the \nameref{ch:evaluation} chapter\marginnote{§~\ref{ch:evaluation}} are listed here as a reminder:
+Some of the key ideas introduced in the \nameref{ch:evaluation} chapter\sidepar{§~\ref{ch:evaluation}} are listed here as a reminder:
 
 \begin{itemize}
   \item Output minus input (ignoring the inspiring set/training data)
@@ -124,7 +124,7 @@ Initiatives like the Human Brain project suggest that we are far from the capaci
 \subsection{Mimicry}
 \label{s:mimicry}
 
-Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the \nameref{ch:evaluation}\marginnote{§~\ref{ch:evaluation}} chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines `mimic' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precisely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers in their vast potential so that they \emph{appear} more human.
+Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the \nameref{ch:evaluation}\sidepar{§~\ref{ch:evaluation}} chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines `mimic' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precisely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers in their vast potential so that they \emph{appear} more human.
 
 True \ac{AI} and computational creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimicry), the view that something \emph{is} creative because it \emph{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese room argument \citeyear{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to `know' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimic human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\emph{Zombies} \citeyear{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his \textit{Conversation with Einstein's Brain} \citeyear{Hofstadter1981}. This school of thought is employed to demonstrate that \emph{mind} is not just physical \emph{brain}. It is introduced here to argue that computers do not \emph{consciously create} as do humans, because they are not conscious.
 % \todo{OK, but I wonder whether all this is strictly necessary? As I understand it, the thesis concerns some software that enhance human creativity. That should be enough, If you start to discuss machine consciousness (fascinating though it is), this will turn into a different thesis altogether.}
@@ -187,7 +187,7 @@ Creativity is a complex human phenomenon that is:
 
 \subsection{Undefinitions}
 
-Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \citeyear{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposed `\ac{SPECS}'\marginnote{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \citeyear{Jordanous2012a}:
+Anna Jordanous found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \citeyear{Jordanous2011}, which further confuses the problem of objective evaluation. To remedy this she proposed `\ac{SPECS}'\sidepar{§~\ref{s:specs}} (see chapter~\ref{ch:evaluation} for more details) \citeyear{Jordanous2012a}:
 
 \begin{quote}
   \begin{enumerate}
@@ -214,22 +214,22 @@ Since many problems with evaluating creativity in computers (and humans alike) s
 
 \section{Creative Interpretation}
 
-All of the theories of creativity\marginnote{§~\ref{ch:creativity}} and its evaluation\marginnote{§~\ref{ch:evaluation}} mentioned above have value, but each alone may be incomplete and contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As J{\"u}rgen Schmidhuber suggests---``any objective theory of what is good art must take the subjective observer as a parameter'' \citeyear{Schmidhuber2006}---evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.
+All of the theories of creativity\sidepar{§~\ref{ch:creativity}} and its evaluation\sidepar{§~\ref{ch:evaluation}} mentioned above have value, but each alone may be incomplete and contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As J{\"u}rgen Schmidhuber suggests---``any objective theory of what is good art must take the subjective observer as a parameter'' \citeyear{Schmidhuber2006}---evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.
 
 This thesis therefore proposes two facets of a new approach that aims to obtain a more honest measure of the subjective judgments implied when evaluating creativity:
 % \todo{If this is a major finding of the research, you need to signal it much earlier. Fuzzy logics are fine, but do bear in mind they are normally concerned with a sliding scale relating to uncertainty, which may not be the same thing as the (pataphysically inspired) creativity you have been describing so far, which is much more about the collision of opposites and an unknowable central term}
 
 \begin{enumerate}
-  \item a set of scales that can be used to approximate a `rating' for the creative value of an artefact,\marginnote{§~\ref{s:sec}}
-  \item a set of criteria to be considered using the scales above,\marginnote{§~\ref{s:oec}}
-  \item a combined framework for evaluation.\marginnote{§~\ref{s:framework}}
+  \item a set of scales that can be used to approximate a `rating' for the creative value of an artefact,\sidepar{§~\ref{s:sec}}
+  \item a set of criteria to be considered using the scales above,\sidepar{§~\ref{s:oec}}
+  \item a combined framework for evaluation.\sidepar{§~\ref{s:framework}}
 \end{enumerate}
 
 
 \subsection{Subjective Evaluation Criteria}
 \label{s:sec}
 
-Following Jordanous' \ac{SPECS} model\marginnote{§~\ref{s:specs}}, we need to state our own definition of creativity in regards to the computer system being evaluated. An overview of recurring keywords in existing approaches suggests the following distillation of seven groups:
+Following Jordanous' \ac{SPECS} model\sidepar{§~\ref{s:specs}}, we need to state our own definition of creativity in regards to the computer system being evaluated. An overview of recurring keywords in existing approaches suggests the following distillation of seven groups:
 
 \begin{description}
   \item [Novelty] originality, newness, variety, typicality, imagination, archetype, surprise
@@ -241,10 +241,10 @@ Following Jordanous' \ac{SPECS} model\marginnote{§~\ref{s:specs}}, we need to s
   \item [Ephemeral] serendipity, randomness, uncertainty, experimentation, emotional response
 \end{description}
 
-From these, I have derived the following \hypertarget{creadef}{\emph{creativity criteria}} --- \num{3} key criteria of creativity in relation to \num{4} major factors --- novelty, value, quality and purpose $\to$ spatial, temporal and ephemeral. Table~\ref{tab:subcreat}\marginnote{\faicon{table}~\ref{tab:subcreat}} shows each of the seven criteria with example indicators of the two extreme ends of each scale.
+From these, I have derived the following \hypertarget{creadef}{\emph{creativity criteria}} --- \num{3} key criteria of creativity in relation to \num{4} major factors --- novelty, value, quality and purpose $\to$ spatial, temporal and ephemeral. Table~\ref{tab:subcreat}\sidepar{\faicon{table}~\ref{tab:subcreat}} shows each of the seven criteria with example indicators of the two extreme ends of each scale.
 
 \begin{table}[!htbp]
-\caption[Subjective Scales for Creativity]{Subjective Scales for Creativity}
+\caption[Subjective scales for creativity]{Subjective scales for creativity}
 \label{tab:subcreat}
 \centering
   \begin{tabu}{cc}
@@ -266,13 +266,13 @@ From these, I have derived the following \hypertarget{creadef}{\emph{creativity 
 \subsection{Objective Evaluation Constraints}
 \label{s:oec}
 
-In reference to the many kinds of `4 P' models\marginnote{§~\ref{ch:creativity}} of creativity and the `four P\rq s' of Stahl's computer ethics framework, I propose a set of evaluation constraints called the `5 P Model' --- product, process, people, place and purpose.
+In reference to the many kinds of `4 P' models\sidepar{§~\ref{ch:creativity}} of creativity and the `four P\rq s' of Stahl's computer ethics framework, I propose a set of evaluation constraints called the `5 P Model' --- product, process, people, place and purpose.
 
 \begin{quotation}
   One way of characterizing these processes is to use [\ldots] the four P's, which are: product, process, purpose and people. The purpose of using the four P's is to draw attention to the fact that, in addition to the widely recognized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation [\ldots]. \sourceatright{\autocite[p.203]{Stahl2013}}
 \end{quotation}
 
-The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all components of any creative artefact (see table~\ref{tab:objcreat}\marginnote{\faicon{table}~\ref{tab:objcreat}}). They are nested in a similar fashion to figure~\ref{fig:4Crea}\marginnote{\faicon{object-group}~\ref{fig:4Crea}}.
+The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all components of any creative artefact (see table~\ref{tab:objcreat}\sidepar{\faicon{table}~\ref{tab:objcreat}}). They are nested in a similar fashion to figure~\ref{fig:4Crea}\sidepar{\faicon{object-group}~\ref{fig:4Crea}}.
 
 \todo{redraw diagram?}
 \begin{figure}[!htbp] % (here, top, bottom, page)
@@ -294,12 +294,12 @@ The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all com
   \node [class, inner xsep=4em, inner ysep=4em, fit=(prod) (proc) (purp) (pers) (plac)] {};
   \end{pgfonlayer}
   \end{tikzpicture}
-\caption[5 P Model]{5 P Model}
+\caption[5 P model]{5 P model}
 \label{fig:5PModel}
 \end{figure}
 
 \begin{table}[!htbp]
-\caption[Objective Criteria of Creativity]{Objective Criteria of Creativity}
+\caption[Objective criteria of creativity]{Objective criteria of creativity}
 \label{tab:objcreat}
   \centering
   \begin{tabu}{ll}
@@ -331,11 +331,11 @@ The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all com
 \subsection{Combined Framework}
 \label{s:framework}
 
-The \textbf{criteria} listed in table~\ref{tab:objcreat} should be considered objectively, while the \textbf{scales} in table~\ref{tab:subcreat} are judged subjectively. The set of scales is directly derived from the various frameworks for evaluating creativity reviewed in the previous sections\marginnote{§~\ref{ch:evaluation}}.
+The \textbf{criteria} listed in table~\ref{tab:objcreat} should be considered objectively, while the \textbf{scales} in table~\ref{tab:subcreat} are judged subjectively. The set of scales is directly derived from the various frameworks for evaluating creativity reviewed in the previous sections\sidepar{§~\ref{ch:evaluation}}.
 
 This evaluation framework can apply to any kind of creativity, from the traditional arts to digital works to computational creativity. Because the scale element allows for the measurement of subjective qualities, it circumvents binary yes/no or check-box approaches and therefore makes it possible to gather quantitative values from the subjective judgments involved in evaluating creativity in general.
 
-The terms on each end of the scales as shown in table~\ref{tab:subcreat}\marginnote{\faicon{table}~\ref{tab:subcreat}} are suggestions only and should not be taken as value judgments. Rather, they should be adapted for each project individually. Numeric values can be assigned to the scales if needed according to specific evaluative requirements.
+The terms on each end of the scales as shown in table~\ref{tab:subcreat}\sidepar{\faicon{table}~\ref{tab:subcreat}} are suggestions only and should not be taken as value judgments. Rather, they should be adapted for each project individually. Numeric values can be assigned to the scales if needed according to specific evaluative requirements.
 
 % \begin{figure}[!htbp]
 %   \centering
@@ -365,9 +365,9 @@ The terms on each end of the scales as shown in table~\ref{tab:subcreat}\marginn
 \label{fig:matrix}
 \end{figure}
 
-Figure~\ref{fig:matrix} shows a blank matrix to be filled. The rows and columns correspond to the objective constraints discussed in section~\ref{s:oec}\marginnote{§~\ref{s:oec}} and the subjective criteria from section~\ref{s:sec}\marginnote{§~\ref{s:sec}} respectively. Scales such as the ones mentioned in table~\ref{tab:subcreat} should be used to fill each cell of the grid. 
+Figure~\ref{fig:matrix} shows a blank matrix to be filled. The rows and columns correspond to the objective constraints discussed in section~\ref{s:oec}\sidepar{§~\ref{s:oec}} and the subjective criteria from section~\ref{s:sec}\sidepar{§~\ref{s:sec}} respectively. Scales such as the ones mentioned in table~\ref{tab:subcreat} should be used to fill each cell of the grid. 
 
-The process of evaluating or interpreting an artefact consists of three steps inspired by Jordanous' \ac{SPECS} model (see chapter~\ref{s:specs}\marginnote{§~\ref{s:specs}}) as shown below.
+The process of evaluating or interpreting an artefact consists of three steps inspired by Jordanous' \ac{SPECS} model (see chapter~\ref{s:specs}\sidepar{§~\ref{s:specs}}) as shown below.
 
 \begin{description}[leftmargin=2cm]
   \item[Step 1] Create master matrix to measure against.
@@ -450,7 +450,7 @@ This system would be useful in scenarios such as art competitions or funding bod
   \node at (6.5,4.5) {1}; % Place Ephemeral 
   
   \end{tikzpicture}
-\caption[Example matrix]{Example matrix}
+\caption[Example completed matrix]{Example completed matrix}
 \label{fig:exmatrix}
 \end{figure}
 
@@ -501,7 +501,7 @@ In this section I will present an example assessment for a hypothetical piece of
 \itab{Instant} \tab{----------------x----} \stab{Persistent}\\
 \itab{Accidental} \tab{--x------------------} \stab{Experimental}\\
 
-Figure~\ref{fig:exmatrix}\marginnote{\faicon{table}~\ref{fig:exmatrix}} shows an example grid filled with numerical values for each cell. Figure~\ref{fig:excmatrix}\marginnote{\faicon{table}~\ref{fig:excmatrix}} shows how a colour coded grid could look like.
+Figure~\ref{fig:exmatrix}\sidepar{\faicon{table}~\ref{fig:exmatrix}} shows an example grid filled with numerical values for each cell. Figure~\ref{fig:excmatrix}\sidepar{\faicon{table}~\ref{fig:excmatrix}} shows how a colour coded grid could look like.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -581,7 +581,7 @@ Figure~\ref{fig:exmatrix}\marginnote{\faicon{table}~\ref{fig:exmatrix}} shows an
   \node [cell,fill=red!90!blue] at (6,4) {}; % Place Ephemeral 
   
   \end{tikzpicture}
-\caption[Example colour matrix]{Example colour matrix}
+\caption[Example completed colour matrix]{Example completed colour matrix}
 \label{fig:excmatrix}
 \end{figure}
 
