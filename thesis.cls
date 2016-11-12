@@ -404,6 +404,7 @@ breaklines=true
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
 
+\usepackage{mparhack} % to fix sidepar on wrong side near top of pages
 % \usepackage{marginnote}
 
 % \todoin{}
@@ -425,15 +426,19 @@ breaklines=true
 
 % BIBLIOGRAPHY
 
-\usepackage{refcheck}
+% \usepackage{refcheck}
 \usepackage[style=authoryear,
-              bibencoding=ascii,
-              backref=true,
-              isbn=false,
-              url=false,
-              hyperref=true,
-              doi=false,
-              backend=biber]{biblatex}
+            citestyle=authoryear-comp,
+            mergedate=minimum,
+            bibencoding=ascii,
+            backref=true,
+            isbn=false,
+            url=false,
+            hyperref=true,
+            doi=false,
+            % autocite=inline,
+            sorting=nyt, % name, year, title
+            backend=biber]{biblatex}
 \addbibresource{back/refs.bib}
 \setcounter{highnamepenalty}{0}
 \setcounter{lownamepenalty}{0}
@@ -442,58 +447,28 @@ breaklines=true
   \renewcommand{\bibname}{References}
 }
 
-\DeclareCiteCommand{\cite}
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{\usebibmacro{cite}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+% to make hyperref for full (author year) block rather than just year
+\makeatletter
+%Works without the last bracket ;-)
+\let\abx@macro@citeOrig\abx@macro@cite
+\renewbibmacro{cite}{%
+   \bibhyperref{%
+   \let\bibhyperref\relax\relax%
+   \abx@macro@citeOrig%
+   }%
+}
+\let\abx@macro@textciteOrig\abx@macro@textcite
+\renewbibmacro{textcite}{%
+   \bibhyperref{%
+   \let\bibhyperref\relax\relax%
+   \abx@macro@textciteOrig%
+   }%
+}%
+\makeatother
 
-\DeclareCiteCommand*{\cite}
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-   \printtext[bibhyperref]{\usebibmacro{citeyear}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+% \autocite[prenote][postnote]{key} = (Author 2000)
+% \autocite*[prenote][postnote]{key} = (2000)
 
-\DeclareCiteCommand{\parencite}[\mkbibparens]
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-    \printtext[bibhyperref]{\usebibmacro{cite}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-\DeclareCiteCommand*{\parencite}[\mkbibparens]
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-\DeclareCiteCommand{\citeyear}[\mkbibparens]
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-\DeclareCiteCommand{\citeauthor}[\mkbibparens]
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-    \printtext[bibhyperref]{\usebibmacro{citeauthor}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-% \textcite for "Author (Year)"
-% \citeauthor "Author"
-% \citeyear "Year"
-% \parencite "(Author Year)"
-
-% \usepackage[sort&compress]{natbib}
-% \bibliographystyle{unsrtnat}
-% \setcitestyle{aysep={}}
-
-% \usepackage{textcomp}
 
 
 % IMAGES
@@ -996,7 +971,9 @@ breaklines=true
 \tabulinesep = 2mm
 \usepackage{longtable}
 
-\usepackage{caption} % for subtables, minipages etc
+\usepackage[%
+  margin=10pt,justification=centering,font={footnotesize,sf},labelsep=endash]%
+  {caption} % for subtables, minipages etc
 \usepackage{subcaption} % for subtables, subfigures
 \usepackage{changepage} % for indenting paragraphs or whatever
 

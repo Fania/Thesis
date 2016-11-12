@@ -38,22 +38,22 @@ pdflatex --file-line-error -shell-escape main
 ## TODO
 
 - [x] Linespacing
-- [ ] Header and Footer style ?
-- [ ] Title, abstract design spacing
-- [ ] Finish style
+- [x] Header and Footer style ?
+- [x] Title, abstract design spacing
+- [x] Finish style
 - [ ] Index?
-- [ ] Colours
-- [ ] Diagrams
+- [x] Colours
+- [x] Diagrams
 - [x] Epigraphs
 - [x] Tables, Figures add [htbp!]
 - [x] Table style, booktabs style?
 - [x] Figures images linewidth [h!]
 - [x] Image file size?
 - [x] Preface?
-- [ ] Code listings math symbols?
+- [x] Code listings math symbols?
 - [x] Code style?
-- [ ] Align algorithms
-- [ ] Flow charts per algorithm
+- [x] Align algorithms
+- [x] Flow charts per algorithm
 - [x] Debugging stuff
 - [x] Comment package
 - [x] Align all equations
@@ -61,7 +61,7 @@ pdflatex --file-line-error -shell-escape main
 - [x] Footnotes in captions not working
 - [x] Rewrite equations to match double lines
 - [x] URL line breaks
-- [ ] bit.ly all urls
+- [x] bit.ly all urls
 - [x] Fancyhdr Warnings
 - [x] Finish adding table of equations
 - [x] Add Phoenix exhibition LMS showcase
@@ -73,7 +73,7 @@ pdflatex --file-line-error -shell-escape main
 - [x] Remove dotted line from preface and chapter headings in toc
 - [ ] Pataphysical chapter numbering (binary)
 - [ ] Add crotty to methodology see image
-- [ ] Arty Bollocks
+- [x] Arty Bollocks
 - [ ] Add odd pages, pataphysical stuff. comments. jokes. quotes
 - [ ] Formatting marks on odd pages
 - [x] Anticipations Introduction chapter rename
@@ -85,80 +85,80 @@ pdflatex --file-line-error -shell-escape main
 - [x] Chapter sign §
 - [ ] Check emphasis notes in citations
 - [x] Conjecture as chapter title in intro?
-- [ ] Change note on publications in chapters
+- [x] Change note on publications in chapters
 - [ ] Table of contents move from left to right, from creative to precise
 - [x] Mini index (summary with page numbers) for each chapter
 - [x] Word Count?
-- [ ] Inkscape export messes up colour of page?
+- [x] Inkscape export messes up colour of page?
 - [ ] Make sure rejected papers are included in thesis
 - [ ] Chapter headings in IPA [pʌtʌfɪzɪks]
 - [ ] Change numbering order of chapters?
 - [x] Tools of the Trade?
 - [ ] Academia it's own chapter?
-- [ ] pata.fania.eu stuff
+- [x] pata.fania.eu stuff
 - [x] Change to biblatex
 - [ ] Add change-log to website
-- [ ] Flowchart of website prototype workflow from query to results
+- [x] Flowchart of website prototype workflow from query to results
 - [x] Put inspiration into lit review? Queneau and library of faustroll etc
 - [x] Explain why I only use the first occurance
 - [x] PEP20
 - [ ] AVOID: so, in principle,
-- [ ] double check line numbers in code
+- [x] double check line numbers in code
 - [x] Rhyming pattern for future work
-- [ ] Go over all table of contents figure captions
+- [x] Go over all table of contents figure captions
 - [x] glossary entries with back links to pages
 - [x] add line with three stars/spirals in middle to separate paragraphs
 - [ ] state of the art versus state of the science
-- [ ] when to use italics and when quotes
+- [x] when to use italics and when quotes
 - [x] Use Avant Garde font
 - [ ] double check hyperref links in pdf toc
-- [ ] Add stars line where appropriate (\spirals)
+- [x] Add stars line where appropriate (\spirals)
 - [x] fix overflow of minicontents for each chapter
-- [ ] make sure I mention everything covered in foundations in the lit review
+- [x] make sure I mention everything covered in foundations in the lit review
 - [ ] add some \nameref{ch:test} references instead of just \ref{}
-- [ ] add margin notes for references to my publications
+- [x] add margin notes for references to my publications
 - [ ] Boden argues ?? Boden argued ??
 - [x] Redesign chapter title pages (put toc on new page)
 - [x] Redesign part title pages (fonts?)
 - [ ] Check spelling of Web/web and Internet/internet
 - [x] TODO add new spiral for techno-practice
-- [ ] Set caption font to sans serif?
+- [x] Set caption font to sans serif?
 - [ ] do todos for pata.physics.wtf and fania.uk
-- [ ] deal with Hongji's feedback
-- [ ] add gource, gitgraph.js
+- [x] deal with Hongji's feedback
+- [x] add gource, gitgraph.js
 - [ ] list of equations
 - [ ] fix all citations (to autocite or not?)
 - [x] make main TOC only show sections, not subsections (chapter TOC will show all detail)
 - [x] put link to TOC into footer?
-- [ ] add header and footer again?
-- [ ] add "interludes" ? pages containing relevant quotes and sayings for the upcoming chapter? 
-- [ ] remove page num from parts in toc
+- [x] add header and footer again?
+- [x] add "interludes" ? pages containing relevant quotes and sayings for the upcoming chapter? 
+- [x] remove page num from parts in toc
 - [ ] make pre and postface fonts italic in toc
-- [ ] indent parts in toc
+- [x] indent parts in toc
 - [x] weird space after mini toc?
 - [ ] turn code into art. each aspect of phd is art.
 - [ ] remove publications in preface and just describe fully in first chapter
-- [ ] make all chapter poems sans serif or monospace
+- [x] make all chapter poems sans serif or monospace
 - [ ] remove spacing between preface and postface items in toc 
-- [ ] replace some chapter poems with shakespeare versions to be able to refer back to them later
-- [ ] key of code stuff in intro (e.g. oreilly)
-- [ ] Make it clear that you are presenting a thesis that embodies knowledge in an artefact (the software) but avoid the "practice-based" argument altogether. 
+- [x] replace some chapter poems with shakespeare versions to be able to refer back to them later
+- [x] key of code stuff in intro (e.g. oreilly)
+- [x] Make it clear that you are presenting a thesis that embodies knowledge in an artefact (the software) but avoid the "practice-based" argument altogether. 
 - [x] format all numbers using \num{} also \num{1.5e10}
 - [ ] check spelling of all names (foreign ones especially)
 - [ ] add glossary at beginning of pata terms
 - [x] different style (underline) subsubsections?
 - [ ] add images as seperate figure items, also in toc
 - [ ] convert all urls to proper references
-- [ ] pataphysicalised terms == patadata
+- [x] pataphysicalised terms == patadata
 - [x] quotations in gray
 - [x] table captions on top?
 - [ ] add space before floats
-- [ ] description list spacing by adding [longest word] after environment
-- [ ] cut pdf with spiral in it for line \spirals
+- [x] description list spacing by adding [longest word] after environment
+- [x] cut pdf with spiral in it for line \spirals
 - [x] remove indent in inline code style
-- [ ] add Olston2010 reference and Gulli2005 on crawling and size of web
+- [x] add Olston2010 reference and Gulli2005 on crawling and size of web
 - [x] sourceatright font and size
-- [ ] refer back to oulipo technique table in later chapters
+- [x] refer back to oulipo technique table in later chapters
 - [ ] capitalise web or not? internet?
 - [ ] capitalise disciplines or not?
 - [ ] remove syntax highlighting? make background gray
@@ -166,6 +166,7 @@ pdflatex --file-line-error -shell-escape main
 
 Wordcount after Boot Camp 54715 total
 11.08.16 56630
+11.11.16 65564
 
 
 ## Hongji feedback

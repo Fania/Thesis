@@ -504,7 +504,7 @@ The Python web framework Flask \autocite{Ronacher2016} looks after loading and r
 
 Instead of crawling the Internet \url{pata.physics.wtf} uses a local collection of texts for its text search. Setting up a custom web crawler would require a lot more resources (in terms of hardware, time and money) than practical for this project. There are two corpora containing \num{65} text files together. 
 
-The first corpus resembles the fictional library of `equivalent books' from Alfred Jarry's \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \citeyear{Jarry1996}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
+The first corpus resembles the fictional library of `equivalent books' from Alfred Jarry's \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} \autocite*{Jarry1996}. In principle the corpus is just a folder within the tool's directory structure which contains the following files:
 
 % \footnote{`In addition, three prints hanging on the walls, a poster by TOULOUSE-LAUTREC, \emph{Jane Avril}; one by BONNARD, advertising the \emph{Revue Blanche}; a portrait of Doctor Faustroll, by AUBREY BEARDSLEY\@; and an old picture, which appeared to us to be valueless, \emph{Saint Cado}, issued by the Oberthuer printing house of Rennes.'\parencite[p.12]{Jarry1996}}
 
@@ -543,7 +543,7 @@ The original list as it appears in `Faustroll' is shown in chapter~\ref{s:faustl
 
 \textbf{A note on copyright:} UK copyright law states in section 5 that the duration of copyright for ``literary, dramatic, musical or artistic works'' is ``70 years from the end of the calendar year in which the last remaining author of the work dies'' \autocite{Copyright2015}. Maurice Maeterlinck and Marguerite Vallette-Eymery (a.k.a. Rachilde or Jean de Chilra) died less than 70 years ago and their work should still be under copyright. Alfred Jarry in the Simon Watson Taylor translation is a derivative work and is probably also still protected. However, copyright does not apply when used for ``private and research study purposes'' as stated in section 7 on \textit{Fair dealing} of \autocite{Copyright2016}.
 
-The second corpus is a collection of \num{38} texts by William Shakespeare \citeyear{Shakespeare2011}.
+The second corpus is a collection of \num{38} texts by William Shakespeare \autocite*{Shakespeare2011}.
 
 \begin{enumerate}
   \item \textit{The Sonnets}
@@ -698,7 +698,7 @@ Figure~\ref{fig:textsearch}\sidepar{\faicon{object-group}~\ref{fig:textsearch}} 
 \subsection{Clinamen}
 \label{s:clinamenalgo}
 
-The clinamen was introduced in chapter~\ref{s:clinamen}\sidepar{§~\ref{s:clinamen}} but to briefly summarise it, it is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' \citeyear{Bok2002}.
+The clinamen was introduced in chapter~\ref{s:clinamen}\sidepar{§~\ref{s:clinamen}} but to briefly summarise it, it is the unpredictable swerve that Bök calls ``the smallest possible aberration that can make the greatest possible difference'' \autocite*{Bok2002}.
 
 \begin{quotation}
   Like all digitally encoded information, it has unavoidably the uncomfortable property that the smallest possible perturbations —i.e. changes of a single bit— can have the most drastic consequences. \sourceatright{\autocite{Dijkstra1988}}
@@ -710,7 +710,7 @@ In simple terms, the clinamen algorithm works in two steps:
   \item get sentences from corpus that match clinamen words.
 \end{enumerate}
 
-It uses the \textit{Faustroll} text by Alfred Jarry \citeyear{Jarry1996} as a base document and the Damerau-Levenshtein algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with \num{0} indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
+It uses the \textit{Faustroll} text by Alfred Jarry \autocite*{Jarry1996} as a base document and the Damerau-Levenshtein algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with \num{0} indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -953,7 +953,7 @@ The antinomy algorithm mimics the mutually incompatible or polar opposites.
 
 A formal description of the \url{pata.physics.wtf} system in terms of an \ac{IR} model described in chapter~\ref{s:irmodels}\sidepar{§~\ref{s:irmodels}} is unsuitable. It assumes for example the presence of some sort of ranking algorithm $R(q_i, d_j)$.
 
-Making relevant changes to the specification by Baeza-Yates and Ribeiro-Neto \citeyear{Baeza-Yates2011}, an approximate system description for the Faustroll corpus text search could be as follows.
+Making relevant changes to the specification by Baeza-Yates and Ribeiro-Neto \autocite*{Baeza-Yates2011}, an approximate system description for the Faustroll corpus text search could be as follows.
 
 \begin{figure}[!htbp]
 \begin{conditions}

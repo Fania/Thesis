@@ -60,11 +60,11 @@ In simple terms, a typical search process can be described as follows (see figur
 \label{fig:sea}
 \end{figure}
 
-Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results \autocite{Google2012, Baidu2012, Microsoft2012a}. Google uses over \num{200} signals \citeyear{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
+Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results \autocite{Google2012, Baidu2012, Microsoft2012a}. Google uses over \num{200} signals \autocite*{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
 
 Any \ac{IR} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ single-word vs.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors---for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages.
 
-The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \citeyear{Google2016} and the Bingbot \citeyear{Bing2016} are well-known examples.
+The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \autocite*{Google2016} and the Bingbot \autocite*{Bing2016} are well-known examples.
 
 An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\sidepar{$\bm{\Sigma}$~\ref{eq:tdm}}.
 
@@ -80,9 +80,9 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustrate this with a concrete example, figure~\ref{fig:termdocs}\sidepar{\faicon{object-group}~\ref{fig:termdocs}} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}.
 
 \begin{itemize}
-  \item Alfred Jarry: \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (`Faustroll') \citeyear{Jarry1996}
-  \item Saint Luke: \textit{The Gospel} (`Gospel') \citeyear{Luke2005}
-  \item Jules Verne: \textit{A Journey to the Centre of the Earth} (`Voyage') \citeyear{Verne2010}
+  \item Alfred Jarry: \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (`Faustroll') \autocite*{Jarry1996}
+  \item Saint Luke: \textit{The Gospel} (`Gospel') \autocite*{Luke2005}
+  \item Jules Verne: \textit{A Journey to the Centre of the Earth} (`Voyage') \autocite*{Verne2010}
 \end{itemize}
 
 \begin{figure}[!htbp]
@@ -377,7 +377,7 @@ From the user's point of view the search process can be broken down into four ac
   \item [Results evaluation] compare against \ac{IN}.
 \end{description}
 
-This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \citeyear{Marchionini1988} and they laid out a framework with the following main elements.
+This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \autocite*{Marchionini1988} and they laid out a framework with the following main elements.
 
 \begin{itemize}
   \item Setting (the context of the search and external factors such as time, cost)
@@ -397,7 +397,7 @@ With exploratory search, the user’s success in finding the right information d
   Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
 \end{quotation}
 
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \citeyear{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\sidepar{§~\ref{s:boden}}).
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \autocite*{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\sidepar{§~\ref{s:boden}}).
 
 % All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
@@ -412,7 +412,7 @@ Ranking algorithms are the essence of any Web search engine and as such guarded 
 
 \subsubsection{Algorithms}
 
-\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \citeyear{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \citeyear{Brin1998b}.
+\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \autocite*{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \autocite*{Brin1998b}.
 
 \begin{equation}
   PR(A) =
@@ -437,7 +437,7 @@ Figure~\ref{fig:pagerank}\sidepar{\faicon{image}~\ref{fig:pagerank}} which shows
 \label{fig:pagerank}
 \end{figure}
 
-The HITS algorithm also works on the links between pages. It was first described by Kleinberg \citeyear{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
+The HITS algorithm also works on the links between pages. It was first described by Kleinberg \autocite*{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
 
 \begin{equation}
   \begin{split}
@@ -448,9 +448,9 @@ The HITS algorithm also works on the links between pages. It was first described
 \end{equation}
 % \myequations{HITS}
 
-Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila \citeyear{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
+Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila \autocite*{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
 
-Another algorithm is the so called Fish search algorithm \citeyear{DeBra1994, DeBra1994a, DeBra1994b}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
+Another algorithm is the so called Fish search algorithm \autocite*{DeBra1994, DeBra1994a, DeBra1994b}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
 
 There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \autocite{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
 
@@ -662,7 +662,7 @@ Instead of using the complete history of previous words when calculating the pro
 
 More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix~\ref{s:penntreebank}\sidepar{§~\ref{s:penntreebank}}.
 
-The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Faustroll book \citeyear{Jarry1996}.}.
+The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Faustroll book \autocite*{Jarry1996}.}.
 
 \begin{quote}
   In\slash{}IN this\slash{}DT year\slash{}NN Eighteen\slash{}CD Hundred\slash{}CD and\slash{}CC Ninety-eight\slash{}CD,\slash{}, the\slash{}DT Eighth\slash{}CD day\slash{}NN of\slash{}IN February\slash{}NNP,\slash{}, Pursuant\slash{}JJ to\slash{}IN article\slash{}NN 819\slash{}CD of\slash{}IN the\slash{}DT Code\slash{}NN of\slash{}IN Civil\slash{}NNP Procedure\slash{}NNP and\slash{}CC at\slash{}IN the\slash{}DT request\slash{}NN of\slash{}IN M.\slash{}NN and\slash{}CC Mme.\slash{}NN Bonhomme\slash{}NNP (\slash{}(Jacques\slash{}NNP)\slash{}),\slash{}, proprietors\slash{}NNS of\slash{}IN a\slash{}DT house\slash{}NN situate\slash{}JJ at\slash{}IN Paris\slash{}NNP,\slash{}, 100\slash{}CD bis\slash{}NN,\slash{}, rue\slash{}NN Richer\slash{}NNP,\slash{}, the\slash{}DT aforementioned\slash{}JJ having\slash{}VBG address\slash{}NN for\slash{}IN service\slash{}NN at\slash{}IN my\slash{}PRP residence\slash{}NN and\slash{}CC further\slash{}JJ at\slash{}IN the\slash{}DT Town\slash{}NNP Hall\slash{}NNP of\slash{}IN Q\slash{}NNP borough\slash{}NN .\slash{}.
@@ -723,7 +723,7 @@ w_i      & the weight of the feature $f_i$
 
 % \spirals
 
-% This is best understood using an example from Jurafsky and Martin \citeyear{Jurafsky2009}.
+% This is best understood using an example from Jurafsky and Martin \autocite*{Jurafsky2009}.
 
 % \todo{finish example}
 

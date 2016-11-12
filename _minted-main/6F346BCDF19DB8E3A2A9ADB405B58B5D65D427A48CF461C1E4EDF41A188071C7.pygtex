@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{def} \PYG{n+nf}{getvideos}\PYG{p}{(}\PYG{n}{query}\PYG{p}{):}
+  \PYG{n}{out} \PYG{o}{=} \PYG{p}{[]}
+  \PYG{n}{translations} \PYG{o}{=} \PYG{n}{transent}\PYG{p}{(}\PYG{n}{query}\PYG{p}{)}
+  \PYG{n}{transplit} \PYG{o}{=} \PYG{n}{translations}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{tmp} \PYG{o}{=} \PYG{n}{pataphysicalise}\PYG{p}{(}\PYG{n}{transplit}\PYG{p}{)}
+  \PYG{n}{b0} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}https://www.googleapis.com/youtube/v3/search?\PYGZdq{}}
+  \PYG{n}{b1} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZam{}order=viewCount\PYGZam{}part=snippet\PYGZam{}\PYGZdq{}}
+  \PYG{n}{b3} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZam{}type=video\PYGZam{}key=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}} \PYG{n}{yt\PYGZus{}key}
+  \PYG{n}{b4} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZam{}maxResults=10\PYGZam{}safeSearch=strict\PYGZdq{}}
+  \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{tmp}\PYG{p}{:}
+    \PYG{n}{y} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+    \PYG{n}{b2} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}q=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}} \PYG{n}{translations}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+    \PYG{n}{yturl} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{([}\PYG{n}{b0}\PYG{p}{,} \PYG{n}{b1}\PYG{p}{,} \PYG{n}{b2}\PYG{p}{,} \PYG{n}{b3}\PYG{p}{,} \PYG{n}{b4}\PYG{p}{])}
+    \PYG{n}{vids} \PYG{o}{=} \PYG{n}{requests}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{yturl}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{vids}\PYG{o}{.}\PYG{n}{json}\PYG{p}{()[}\PYG{l+s+s1}{\PYGZsq{}items\PYGZsq{}}\PYG{p}{]:}
+      \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{vids}\PYG{o}{.}\PYG{n}{json}\PYG{p}{()[}\PYG{l+s+s1}{\PYGZsq{}items\PYGZsq{}}\PYG{p}{]:}
+        \PYG{n}{vidtitle} \PYG{o}{=} \PYG{n}{i}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}snippet\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}title\PYGZsq{}}\PYG{p}{]}
+        \PYG{n}{vidthumb} \PYG{o}{=} \PYG{n}{i}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}snippet\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}thumbnails\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}default\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}url\PYGZsq{}}\PYG{p}{]}
+        \PYG{n}{vidid} \PYG{o}{=} \PYG{n}{i}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}videoId\PYGZsq{}}\PYG{p}{]}
+        \PYG{n}{out}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{vidtitle}\PYG{p}{,} \PYG{n}{vidthumb}\PYG{p}{,} \PYG{n}{vidid}\PYG{p}{))}
+      \PYG{k}{break}
+    \PYG{k}{else}\PYG{p}{:}
+      \PYG{n}{out} \PYG{o}{=} \PYG{p}{[]}
+  \PYG{k}{return} \PYG{n}{out}\PYG{p}{,} \PYG{n}{translations}
+\end{Verbatim}
