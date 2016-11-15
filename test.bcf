@@ -8,7 +8,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>input_encoding</bcf:key>
-      <bcf:value>ascii</bcf:value>
+      <bcf:value>utf8</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>debug</bcf:key>
@@ -2097,6 +2097,7 @@
     <bcf:datasource type="file" datatype="bibtex">back/refs.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+<<<<<<< HEAD
     <bcf:citekey order="0">*</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nyt/global/" type="entry" sortscheme="nyt" sortnamekeyscheme="global" labelprefix="">
@@ -2130,3 +2131,5 @@
   </bcf:sorting>
   </bcf:sortlist>
 </bcf:controlfile>
+=======
+>>>>>>> bb5cee296f1d13fee067096404bf129330cc9afe
