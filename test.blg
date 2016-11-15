@@ -1,15 +1,15 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [1] Config.pm:346> INFO - Logfile is 'test.blg'
-[53] biber-MSWIN64:290> INFO - === 
-[86] Biber.pm:351> INFO - Reading 'test.bcf'
-[252] Biber.pm:776> INFO - Found 1 citekeys in bib section 0
-[275] Biber.pm:3493> INFO - Processing section 0
-[305] Biber.pm:3657> INFO - Looking for bibtex format file 'back/refs.bib' for section 0
-[327] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[343] bibtex.pm:1048> INFO - Found BibTeX data source 'back/refs.bib'
-[399] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[399] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[399] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-UK'
-[399] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-UK'
-[401] bbl.pm:526> INFO - Writing 'test.bbl' with encoding 'UTF-8'
-[402] bbl.pm:619> INFO - Output to test.bbl
+[67] biber-MSWIN32:290> INFO - === 
+[115] Biber.pm:351> INFO - Reading 'test.bcf'
+[298] Biber.pm:773> INFO - Using all citekeys in bib section 0
+[322] Biber.pm:3493> INFO - Processing section 0
+[363] Biber.pm:3657> INFO - Looking for bibtex format file 'back/refs.bib' for section 0
+[395] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[425] bibtex.pm:1048> INFO - Found BibTeX data source 'back/refs.bib'
+[1807] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1808] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1808] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-UK'
+[1808] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-UK'
+[2623] bbl.pm:526> INFO - Writing 'test.bbl' with encoding 'UTF-8'
+[2698] bbl.pm:619> INFO - Output to test.bbl

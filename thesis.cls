@@ -442,6 +442,9 @@ breaklines=true
 \addbibresource{back/refs.bib}
 \setcounter{highnamepenalty}{0}
 \setcounter{lownamepenalty}{0}
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 \AtBeginDocument{%
   \renewcommand{\bibname}{References}
