@@ -725,8 +725,6 @@ w_i      & the weight of the feature $f_i$
 
 % This is best understood using an example from Jurafsky and Martin \autocite*{Jurafsky2009}.
 
-% \todo{finish example}
-
 % Consider the incompletely tagged sentence below. We want to find the most suitable tag for the word ``race''.
 
 % \begin{quote}
@@ -797,8 +795,6 @@ w_i      & the weight of the feature $f_i$
 % $P(\text{PERSON} \mid \text{in Québec}) = \frac{e^0}{e^{1.8} e^{–0.6} + e^{0.3} + e^0} = 0.176$
 
 
-
-
 % The empirical expectation is the sum of all occurrences where a feature is true for one of our observed datums.
 
 % \begin{equation}
@@ -806,33 +802,6 @@ w_i      & the weight of the feature $f_i$
 %   \label{eq:epirical}
 % \end{equation}
 % % \myequations{epirical}
-
-% \paragraph{Evaluation}
-
-% \begin{equation}
-%   Precision = \frac{\text{number of correctly labeled}}{\text{total number of extracted}}
-%   \label{eq:preci}
-% \end{equation}
-% % \myequations{preci}
-
-% \begin{equation}
-%   Recall = \frac{\text{number of correctly labeled}}{\text{total number of gold}}
-%   \label{eq:reca}
-% \end{equation}
-% % \myequations{reca}
-
-% \begin{equation}
-%   F_1 = \frac{2PR}{P+R}
-%   \label{eq:f1mes}
-% \end{equation}
-% % \myequations{f1mes}
-
-% Errors can be false positives (FP) and false negatives (FN).
-
-% \begin{itemize}
-%   \item Increasing accuracy (minimizing FP)
-%   \item Increasing coverage (minimizing FN)
-% \end{itemize}
 
 
 \subsubsection{Grammars}

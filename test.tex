@@ -5,11 +5,23 @@
 \author{Fania Raczinski}
 \date{March 2015}
 
+\usepackage{lipsum}
 
 \begin{document}
 
-\nocite{*}
+% \clearpage
+\pagestyle{empty}
 
-\printbibliography 
+\include{front/title}
+\pagestyle{empty}
+
+% FRONT
+\frontmatter
+\include{front/abstract}
+
+\mainmatter
+\chapter{Test}
+\lipsum[1-3]
+
 
 \end{document}

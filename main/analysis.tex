@@ -231,7 +231,6 @@ Regarding the final column showing the number of possible poems, let's look at t
 
 A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table~\ref{tab:algonums}\sidepar{\faicon{table}~\ref{tab:algonums}} shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using four example query terms (`clear', `shine', `disorder' and `stuck') for each of the two corpora (`Faustroll' and `Shakespeare').
 
-% \todo{add french query term cœur}
 \begin{table}[!htbp]
 \caption[Numbers per algorithm]{Results-Reverberations-Origin numbers per algorithm}
 \label{tab:algonums}
@@ -964,6 +963,7 @@ Perhaps this also relates to the concepts of P and H creativity mentioned in cha
 
 
 \section{Design}
+\label{s:designanal}
 
 It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:aspirations},~\ref{ch:aspirations}). 
 
@@ -974,6 +974,53 @@ The poetry\sidepar{\faicon{picture-o}~\ref{img:qpoemtree}} is compact and invite
 Personally I feel that the poetry results are automatically read with more gravity. Sorting by sources or algorithms is a game of exploration---finding the similarities within the result sets. They are different ways to view the same things and yet have a drastic influence of how the results are perceived. 
 
 This also applies to the image and video search. Presenting results in spiral form is weird. Its hard to see where one image ends and another starts, they just kind of blur into each other. However when listed as a list they immediately become more boring.
+
+
+\section{Limiting Factors}
+
+
+\subsection{Biases}
+
+\begin{quotation}
+  Biases can be observed in information retrieval in situations where searchers seek or are presented with information that significantly deviates from the truth. There is little understanding of the impact of such biases in search. \sourceatright{\autocite{White2013}}
+\end{quotation}
+
+The Cambridge Dictionary defines `bias' as ``the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment'' or ``the fact of preferring a particular subject or thing'' \autocite*{CamDict}.
+
+Biases can be good and bad. It is important to consider the implications of their existence though, especially when trying to measure the success of something objectively. An example of when biases can be advantageous is location signals that the search tool takes into account when producing results. An Englishmen would probably not have much use of a Chinese website and vice-versa, even if the actual content matches the original query (unless of course the user happens to understand both languages perfectly). Another example of this is location queries such as `Chinese restaurants in Cambridge', which should return web pages about restaurants based in Cambridge, UK or Massachusetts, USA, depending on the user's IP address.  This might seem logical, but in the truest sense it is a bias employed by the search engine to help provide more relevant results to individuals. Truly unbiased search results are probably impossible to come by nowadays.
+
+There is a general move from objectivity to subjectivity in the sense that users become the subject of search results as much as the query they pose. Instead of neutrally providing results for a query alone, the results are tailored around the information known about the user (e.g.\ language, location, clickstream, social media likes, bookmarks, etc.) to make up the missing context. The user becomes the subject and context of a query, while the results become an objective list of matches for all those values rather than just the query term (s).
+
+So in standard web search we now have the user as the subject and the results as the object. In creative search this may be reversed: the user is the object and the results become the subject.
+
+
+\subsection{Constraints}
+
+There are certain factors and constraints that influence the perception and success of search results. Some can be taken into account when building a search system but others cannot be avoided. User education is one way to deal with those issues. External constraints such as the setting in which the search takes place come to mind. Is the user operating from a handheld device or a desktop computer? Is he or she in a hurry to find answers or just leisurely browsing for them? Is the search system web-based or is the user querying a database?
+
+\paragraph{User Expectations} It is important to note that ``search systems are not used in isolation from their surrounding context, i.e. they are used by real people who are influenced by environmental and situational constraints such as their current task'' \autocite{White2004}. User expectations should be taken into consideration during the evaluation of search results. Users who are hoping to find precise answers to a specific question might not be satisfied by exploratory search results. Someone browsing for inspiration on a broad topic on the other hand could benefit from them. Fewer expectations (an open mind) allow creativity to happen more easily. Empirical experiences form expectations, which hinder our ability to accept creative ideas when they happen. In order to be able to recognise creative ideas we need to be able to see what they all have in common and in what way they differ and not reject unusual, unexpected ones. We can link this very nicely to the idea of exploratory search. Lowering expectations or opening the mind implies extending the task domain or problem space. 
+
+\paragraph{User Skill} The searching skills of a user matter. Specifically his or her ability to articulate an \acf{IN} and any knowledge of special search techniques (use of Boolean modifiers, quotation marks, wildcards, etc.) are two important factors that influence the results obtained greatly. This is very much based on the old idea of `garbage-in, garbage-out' \autocite{Lidwell2010}.
+
+\paragraph{Visual Representation} The way that results are presented affects how the user perceives them. A diversity of different document types, for example text, images, sound, or video results could improve how well the results are rated \autocite{Sawle2011}. An alphabetical list is a typical model for representing text data sets for example. But a ranked list might not be the best way to represent search results. Other models could be a differently ranked or ordered list, a tree structure, a matrix, a one-to-many relationship, etc. See also section~\ref{s:designanal}\sidepar{§~\ref{s:designanal}}.
+
+\paragraph{Structure of Results} As suggested by Sawle et al \autocite*{Sawle2011} we need to consider different ways to structure and measure search results. A single, perfectly good result might be deemed irrelevant and useless if it is surrounded by several unsuitable results. Therefore there might be certain advantages to measuring and evaluating the value or relevance of individual results over a whole set of results.
+
+\paragraph{Direct User Relevance Feedback} Relevance feedback lets users rate individual results or sets of results either directly (through manual ratings) or indirectly (through click-stream data). This data is then congregated and used for webpage rankings or other purposes such as suggesting other query terms. It can improve results for similar queries in the future but also lets the user stir the direction his search is taking in real-time. Users can adjust their query to manipulate the results; this basically means they adjust some of their own constraints.
+
+\begin{quotation}
+  Relevance feedback---asking information seekers to make relevance judgments about returned objects and then executing a revised query based on those judgments---is a powerful way to improve retrieval. \sourceatright{\autocite{Marchionini2006}}
+\end{quotation}
+
+\paragraph{Automatic Query Expansion} As opposed to integrating and involving the user actively in the refinement of a query, in automatic query expansion the improvements are done passively, often completely without the user’s knowledge. Information gathering methods include, for example, the analysis of mouse clicks, so called like buttons (e.g. Facebook, Google+) or eye tracking, etc. How the collected data is then used varies. Simple examples of automatic query expansion are the correction of spelling errors or the hidden inclusion of synonyms when evaluating a query.
+
+\spirals
+
+Depending on these factors and constraints, search results can be viewed as useful or useless. In a way the usefulness or correctness of an idea or result cannot always be judged fairly – there are always conditions that will affect how the outcome is interpreted. In the scenario of a creative search tool, results could be very useful, while they might be completely useless in another.
+
+We would need to investigate each individual search result in terms of its value and creativity. This could be done by user ratings or satisfaction questionnaires. Rather than measuring the success of individual results we could look at evaluation them as one set instead.
+
+The search results produced by \url{pata.physics.wtf} can be quite surprising sometimes and it not always clear how they connect to the initial query (especially if the inner workings of the algorithms are unknown), even if we identify through which function a result has been obtained. The names of these algorithms might not be helpful to users though if they are unfamiliar with the concept of pataphysics and might therefore appear rather nonsensical. Whilst there is a clear logic to each search result, they might appear anomalous to the user's expectations if he or she received these results without knowing the philosophy of the search tool. The results could possibly appear random then, and might therefore appear useless to the user.
 
 
 \section{Meta Analysis}

@@ -64,19 +64,14 @@ Rhodes `4 P' model and Mooney's `4 aspects' are essentially one and the same. Th
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \tikzset{every fit/.append style=text badly centered}
-  \tikzset{class/.style={draw,rectangle},
-           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,node distance=4pt}}
   \begin{tikzpicture}
-  \node [class] (prod) {Product};
-  \node [label, below=of prod] (proc) {Process};
-  \node [label, below=of proc] (pers) {Person};
-  \node [label, below=of pers] (env) {Environment};
-  \begin{pgfonlayer}{background}
-  \node [class, inner xsep=1em, fit=(prod) (proc)] {};
-  \node [class, inner xsep=2em, fit=(prod) (proc) (pers)] {};
-  \node [class, inner xsep=2em, fit=(prod) (proc) (pers) (env)] {};
-  \end{pgfonlayer}
+    \node [draw, rectangle] (prod) {Product};
+    \node [below= 0.2cm of prod] (proc) {Process};
+    \node [below= 0.2cm of proc] (pers) {Person};
+    \node [below= 0.2cm of pers] (env) {Environment};
+    \draw (-1,-1.15) rectangle (1,0.5);
+    \draw (-1.2,-1.85) rectangle (1.2,0.7);
+    \draw (-1.4,-2.65) rectangle (1.4,0.9);
   \end{tikzpicture}
 \caption[Four aspects of creativity]{Four aspects of creativity}
 \label{fig:4Crea}
@@ -123,9 +118,6 @@ Arguably, the Pro-c should perhaps be called Pro-C instead, as it takes a certai
   \item [4 Stage Model] Henri Poincaré suggested a `4 Stage Model' (formulated by Graham Wallas in 1926). The stages are: preparation, incubation, illumination and verification\footnote{\autocite{Poincare2001, Wallas1926}}.\sidepar{§~\ref{s:4stages}}
   \item [Problem Solving] George Pólya came up with a description of the `problem solving' process\footnote{\autocite{Polya1957}}.\sidepar{§~\ref{s:4stages}}
 \end{description}
-
-\todo{fix spelling of polya, poincare}
-% \todo{add comb, trans, expl.? and koestler?}
 
 Looking at table~\ref{tab:4SPPS}\sidepar{\faicon{table}~\ref{tab:4SPPS}} highlights the similarities of the two models above and compares them to the `4 P Model'\sidepar{\faicon{object-group}~\ref{fig:4Crea}} of creativity from the previous section. Both the 4 Stage Model and the problem solving steps are linear. They're a sequence of steps followed one after the other. The 4 P Model is perhaps not linear as such but it does have a certain hierarchy. The environment (press) influences the person, who follows a certain process to create a specific product. In table~\ref{tab:4SPPS}\sidepar{\faicon{table}~\ref{tab:4SPPS}} the first two stages happen within the person and environment. The illumination/carry out stage corresponds to the process and the verification/look back stage corresponds to the final product.
 
@@ -205,11 +197,6 @@ Table~\ref{tab:cpcd}\sidepar{\faicon{table}~\ref{tab:cpcd}} is inspired by Hugil
 \end{table}
 
 The spectrum from abstract to concrete as shown in table~\ref{tab:cpcd}\sidepar{\faicon{table}~\ref{tab:cpcd}} relates to the creative process models\sidepar{\faicon{table}~\ref{tab:4SPPS}} we have seen as well as the 4 P Model\sidepar{\faicon{object-group}~\ref{fig:4Crea}}.
-
-% \begin{draft}
-%   Abstract to Concrete is more about the practical process of artistic creation, not the conceptual development of a creative idea. That process is more of a move from concrete to abstract (known to unknown) using methods such as combinatorial, transformative and exploratory.
-% \end{draft}
-% \todo{add this to intro}
 
 
 \section{Relating Pataphysics}
@@ -349,7 +336,5 @@ Given a query term $q$, what is considered a relevant match though? Do we simply
 
 The way ranking works in \url{pata.physics.wtf} is described in chapter~\ref{ch:implementation}\sidepar{§~\ref{ch:implementation}}.
 
-% What kinds of ranking signals do we need for our pataphysical web search tool? We could say that a page $p$ is relevant if it matches the patadata for query $q$. So, for example, $p$ would be a relevant result if it is a clinamen or syzygy to $q$. The more patadata matches there are the higher the ranking maybe. We don't necessarily have to assign a numerical ranking value to each page. Depending on how we structure our results page that might not be necessary. Shuffling the results list or the results tree could be an option.
-% \todo{It would be nice to conclude these thoughts with some more positive suggestions about ways to do this}
 
 \stopcontents[chapters]

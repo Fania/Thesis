@@ -998,6 +998,16 @@ breaklines=true
 
 
 
+% CLEAR DOUBLE EMPTY PAGE
+\usepackage{emptypage}
+% \let\origdoublepage\cleardoublepage
+% \newcommand{\clearemptydoublepage}{%
+%   \clearpage
+%   {\pagestyle{empty}\origdoublepage}%
+% }
+% \let\cleardoublepage\clearemptydoublepage
+
+
 % JAPANESE
 
 \usepackage{CJKutf8}

@@ -9,18 +9,20 @@
 
 \begin{document}
 
+% \pagestyle{empty}
+% \todototoc
+% \setcounter{tocdepth}{1}  % needed to display the todos
+% \listoftodos[List of Todos]
+% \clearpage
 \pagestyle{empty}
-\todototoc
-\setcounter{tocdepth}{1}  % needed to display the todos
-\listoftodos[List of Todos]
-\clearpage
 
 \include{front/title}
 
-% FRONT
-% \pagestyle{plain}
 \pagestyle{fania}
+
+% FRONT
 \frontmatter
+\pagestyle{fania}
 
 \phantomsection
 \addcontentsline{toc}{part}{\texorpdfstring{PREFACE}{Preface}}
@@ -47,12 +49,12 @@
 
 \phantomsection
 % \addcontentsline{toc}{chapter}{Figures}
-\listoffigures
+\pagestyle{fania}\listoffigures
 \clearpage
 
 \phantomsection
 % \addcontentsline{toc}{chapter}{Tables}
-\listoftables
+\pagestyle{fania}\listoftables
 \clearpage
 
 % \phantomsection
@@ -62,7 +64,7 @@
 
 \phantomsection{}
 % \addcontentsline{toc}{chapter}{Source Code}
-\listoflistings{}
+\pagestyle{fania}\listoflistings{}
 \clearpage
 
 \phantomsection

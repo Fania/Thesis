@@ -65,7 +65,6 @@ Perhaps the problem starts in the etymology of the word `creativity'. Still and 
 As a human quality it has definitions that don't necessarily lend themselves to be applied to computers. However, there are several important theories and evaluation frameworks concerning human and computer creativity\sidepar{§~\ref{ch:evaluation}}, and these are the basis for this chapter. Some aspects, like `novelty' and `value', recur in many models of creativity but some, like `relevance' and `variety', rarely appear; while other terms are problematic when it comes to computing. 
 
 Computer systems are generally evaluated\sidepar{§~\ref{s:evalsearch}} against functional requirements and performance specifications, but creativity should be seen as a continuum, there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.
-% \todo{Indeed. Which makes your decision to evaluate using Wiggins a bit perplexing.}
 
 \begin{quotation}
   The expression of our language systems in computer code confers no semantic understanding autonomously on the computer system. The computer system only acts as a tool for transferring symbols and communicating meaning between humans. \sourceatright{\autocite{Mcbride2012}}
@@ -151,7 +150,6 @@ However, of course, he adds that ``all human creativity occurs in the context of
 Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the \nameref{ch:evaluation}\sidepar{§~\ref{ch:evaluation}} chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines `mimic' humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precisely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers in their vast potential so that they \emph{appear} more human.
 
 True \ac{AI} and computational creativity are equally elusive. Just as the Turing Test \autocite{Turing1950} is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimicry), the view that something \emph{is} creative because it \emph{appears} creative is similarly flawed. This is the premise behind by John Searle's Chinese room argument \autocite*{Searle1980} where an individual with a map of English to Chinese symbols can appear to someone outside the room to `know' Chinese. By inference, just because a computer program appears to produce a creative output, this doesn't mean that it is inherently creative---it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimic human creativity and produce artefacts that appear creative are---in the philosophical manner defined by David Chalmers---\emph{Zombies} \autocite*{Chalmers1996}. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his \textit{Conversation with Einstein's Brain} \autocite*{Hofstadter1981}. This school of thought is employed to demonstrate that \emph{mind} is not just physical \emph{brain}. It is introduced here to argue that computers do not \emph{consciously create} as do humans, because they are not conscious.
-% \todo{OK, but I wonder whether all this is strictly necessary? As I understand it, the thesis concerns some software that enhance human creativity. That should be enough, If you start to discuss machine consciousness (fascinating though it is), this will turn into a different thesis altogether.}
 
 
 \subsection{Infantalisation}
@@ -237,11 +235,11 @@ Since many problems with evaluating creativity in computers (and humans alike) s
 
 
 \section{Creative Interpretation}
+\label{s:creatint}
 
 All of the theories of creativity\sidepar{§~\ref{ch:creativity}} and its evaluation\sidepar{§~\ref{ch:evaluation}} mentioned above have value, but each alone may be incomplete and contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As J{\"u}rgen Schmidhuber suggests---``any objective theory of what is good art must take the subjective observer as a parameter'' \autocite*{Schmidhuber2006}---evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.
 
 This thesis therefore proposes two facets of a new approach that aims to obtain a more honest measure of the subjective judgments implied when evaluating creativity:
-% \todo{If this is a major finding of the research, you need to signal it much earlier. Fuzzy logics are fine, but do bear in mind they are normally concerned with a sliding scale relating to uncertainty, which may not be the same thing as the (pataphysically inspired) creativity you have been describing so far, which is much more about the collision of opposites and an unknowable central term}
 
 \begin{enumerate}
   \item a set of scales that can be used to approximate a `rating' for the creative value of an artefact,\sidepar{§~\ref{s:sec}}
@@ -298,25 +296,18 @@ In reference to the many kinds of `4 P' models\sidepar{§~\ref{ch:creativity}} o
 
 The `5 P\rq s'---\textbf{Product, Process, Purpose, Person, Place}---are all components of any creative artefact (see table~\ref{tab:objcreat}\sidepar{\faicon{table}~\ref{tab:objcreat}}). They are nested in a similar fashion to figure~\ref{fig:4Crea}\sidepar{\faicon{object-group}~\ref{fig:4Crea}}.
 
-\todo{redraw diagram?}
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \tikzset{every fit/.append style=text badly centered}
-  \tikzset{class/.style={draw,rectangle},
-           label/.style={align=center,inner ysep=2pt,outer ysep=2pt,
-           inner xsep=2pt,outer xsep=2pt, node distance=4pt}}
   \begin{tikzpicture}
-  \node [class] (prod) {Product};
-  \node [label, right=1em of prod] (proc) {Process};
-  \node [label, right=6.5em of prod] (purp) {Purpose};
-  \node [label, right=13em of prod] (pers) {Person};
-  \node [label, right=20em of prod] (plac) {Place};
-  \begin{pgfonlayer}{background}
-  \node [class, inner xsep=1em, inner ysep=1em, fit=(prod) (proc)] {};
-  \node [class, inner xsep=2em, inner ysep=2em, fit=(prod) (proc) (purp)] {};
-  \node [class, inner xsep=3em, inner ysep=3em, fit=(prod) (proc) (purp) (pers)] {};
-  \node [class, inner xsep=4em, inner ysep=4em, fit=(prod) (proc) (purp) (pers) (plac)] {};
-  \end{pgfonlayer}
+    \node [draw, rectangle] (prod) {Product};
+    \node [below= 0.2cm of prod] (proc) {Process};
+    \node [below= 0.2cm of proc] (purp) {Purpose};
+    \node [below= 0.2cm of purp] (pers) {Person};
+    \node [below= 0.2cm of pers] (plac) {Place};
+    \draw (-1,-1.15) rectangle (1,0.5);
+    \draw (-1.2,-1.85) rectangle (1.2,0.7);
+    \draw (-1.4,-2.65) rectangle (1.4,0.9);
+    \draw (-1.6,-3.4) rectangle (1.6,1.1);  
   \end{tikzpicture}
 \caption[5 P model]{5 P model}
 \label{fig:5PModel}
@@ -611,212 +602,5 @@ Figure~\ref{fig:exmatrix}\sidepar{\faicon{table}~\ref{fig:exmatrix}} shows an ex
 
 Ideally, these scales would need to be applied by several people during the evaluation process, generating an intuitive assessment of the various values (e.g. Playful---Purposive) for each of the criteria (e.g. Product).
 
-
-% \section{Evaluation}
-
-% \todo{im evaluating the website - not the project !!!!!!!}
-% \todo{change font size, capitalisation and dashes}
-
-% The website \url{pata.physics.wtf} is supposed to be an example of \ac{AMC}.
-
-% It seems appropriate to start the critical evaluation of the artefact created as part of this research project with an application of my own framework as suggested in chapter~\ref{ch:interpretation}. I will do this in two ways. FIrst I will sketch a matrix similar to the one shown in figure XYZ to give an overview of the evaluation at a glance. Second I will explain each point in the matrix in a bit more detail to try and bring across the thoughts triggered by the framework. In the end the decision of whether or not the artefact has `passed' the criteria/threshold for \ac{AMC} is subjective.\todo{So are you saying that the artefact could get maximum creativity rating from the matrix, but I would overrule it and say it's not creative?} The framework is only a guideline. Of course it should be considered that ideally this process should be done by an external party or a panel of judges rather than the artist herself.\todo{why?}
-
-% \begin{description}
-%   \item[WHO?] Myself, the programmer and artist of \url{pata.physics.wtf}.
-%   \item[Person---Novelty] The person behind \url{pata.physics.wtf} is myself. As the sole developer and designer of the product I was responsible for all decisions and all creative input. At the time, I had never worked with Python before, never heard of Pataphysics, and never create a website of this complexity. Of course I had some familiarity with programming in general and I had interests in arts but overall the majority of subjects relevant for the project were novel to me.
-%   \item[Person---Quality] The quality of my work could perhaps be measured by the existence of bugs in my code or the beauty of the design. Given that the subject area was mostly novel to me and my previous education didn't fully prepare me for this sort of work, there are surprisingly few problems with the code. \todo{not true} The performance is way too slow, the design is not great and not user friendly enough.\todo{Depends how it is being judged. As a fulfilment of the challenge you set yourself, it is fine. Thius is the danger of going ahead with a "practice-based" portfolio. If you are judged as an artist would be judged then you may  fall short. Judged as a computer scientist who is crossing discplines into the arts/humanities, you will succeed by going "beyond" expectations.}
-%   \item[PERSON - VALUE] The value of myself as the researcher on this project is clear in my background. I brought in a varied background and many interests. I had done Computer Science as an undergraduate degree - which gave me an understanding of code necessary to complete the practical aspect of the project but also some of the more theoretical ideas. Having then done a postgraduate degree in Creative Technologies helped introduce me to interdisciplinary work and allowed me to experiment with my creative side. This was essential for the project at hand. It allowed me to see problems from different perspectives.
-%   \item[PERSON - PURPOSE] I was chosen for this project presumably because of the skills and interests I had demonstrated in the past. On a more insteresting note perhaps---a website doesn't build itself. I created the backend and frontend all by myself. I created the algorithms which form the core of the website.
-%   \item[PERSON - SPATIAL] Luckily spatial issues are not much of an issue when it comes to Web development. I could work anywhere with an Internet connection and a laptop or computer at hand. This allowed me to be very flexible with my location. Another aspect to this was my nationality and upbringing. I am originally from Germany. I grew up near a museum on `Art and Media Technology'\footnote{`ZKM'---see \url{http://on1.zkm.de/zkm/e/}} which got me interested in digital art quite early on in live. Also, my father was an office equipment mechanic and I grew up around computers and have always had a strong interest in Web development.
-%   \item[PERSON - TEMPORAL] A temporal aspect regarding my person was perhaps the time scale and time management of the project. I studied full time, took a year interruption and more to finish. \todo{update timing} Someone else could have done this faster perhaps. The coding is never finished.
-%   \item[PERSON - EPHEMERAL] I did not actually apply for this PhD programme but my application was forwarded from another department after an unsuccessful application there. This is quite serendipitous.
-% \end{description}
-% \todo{If you are going to go into this level of personal detail, then you should probably mention your health as well. I do wonder whether it is a good idea, though. I guess your argukent is that "subjectivity" requires "auto-ethnography". But I think the work stands up on its own, to be honest. The personal stuff can be found out in conversation (in the viva) if necessary.
-% }
-% \spirals
-
-% \begin{description}
-%   \item[Where?] On the Internet via \url{pata.physics.wtf}.
-%   \item[PLACE - Novelty] The location of \url{pata.physics.wtf} is online. Other art projects have been put online in the past. This is certainly not new. The \ac{IOCT} was already established but Professor Andrew Hugill published his monograph on pataphysics the year I started which meant my research into developing pataphysical algorithms was cutting edge. \todo{check dates} 
-%   \item[PLACE - QUALITY] The site is hosted on a server provided by `OVH'\footnote{\url{https://www.ovh.co.uk/}}. The cost is reasonable and allows enough freedom to run the Python application which forms the search tool. The speed of the server and security and reliablity is high but out of my control.
-%   \item[PLACE - VALUE] The site is found through a custom \ac{URL} (\url{pata.physics.wtf}) and is findable on google. This was chosen because it is a memorable name and the top level domain name (`.wtf') conveys some of the humour needed to appreciate the project.
-%   \item[PLACE - PURPOSE] The purpose of putting the project online is of course for users to actually be able to use it whenever and whereever they want. Sticking the search tool on a local machine in a museum space for example would not be very interesting. Of course the project is `interactive' in very simple terms, i.e. the user needs to enter a keyword to trigger the pataphysicalisation and the display of the results and then needs to spend some time reading through them or looking throigh the results.
-%   \item[PLACE - SPATIAL] The OVH server is hosted in France, although that is not really relevant. It should be accessible from all over the world, unless it gets blocked.
-%   \item[PLACE - TEMPORAL] The hosting and domain name need renewing each year. Website design goes out of date quickly nowadays, so it may have to be redesigned to stay appealing. Being online, the site is available all day every day, so access is not limited to viewing times in a museum or similar constraints.
-%   \item[PLACE - EPHEMERAL] N/A
-% \end{description}
-
-% \spirals
-
-% \begin{description}
-%   \item[Why?] To demonstrate pataphysical creative exploratory search algorithms---overall an example of \ac{AMC}.
-%   \item[PURPOSE - Novelty] The concepts behind the search tool are novel. Creative search has been attempted before as discussed in chapter CYZ but not specifically with Pataphysics as its inspiration.
-%   \item[PURPOSE - QUALITY] Whether or not the use of pataphysics over another creative technique is better can only be determined with further study.
-%   \item[PURPOSE - VALUE] Having a clear aim is always helpful, and in the case of \url{pata.physics.wtf} that aim pervades the site through and through. The main functionality is to provide creative search not relevant lookup search. The value is subjective to each user.
-%   \item[PURPOSE - PURPOSE] N/A
-%   \item[PURPOSE - SPATIAL] The fact that some of the texts in the search results are french or german is a conscious choice not accident or necessity. This language barrier reminds users of language spaces, borders, inaccessibility and originality. It reminds users that some texts may be translated from a different language. Its a sign of equality to include different languages representing different locations. From a different perspective, it was also imperative to make the system available from all over the world. This is also why the site was created to be responsive---to allow users to access it comfortably from their phones, tablets, laptops or desktop computers.
-%   \item[PURPOSE - TEMPORAL] A similar point is true for the time aspect. The idea was to allow users to access the system anytime.
-%   \item[PURPOSE - EPHEMERAL] Of course the system may appear serendipitous or random at times but the underlying logic certainly is not random. It was important to bring across a sense of structure in the results and the pataphysical algorithms hopefully achieve that.
-% \end{description}
-
-% \spirals
-
-% \begin{description}
-%   \item[What?] \url{pata.physics.wtf}: an exploratory algorithmic meta-creative search tool.
-%   \item[Product - Novelty] The actual website itself doesn't use any groundbreakingly new frameworks or techniques other than the patalgorithms described in chapter XYZ. 
-%   \item[Product - Quality] The website looks polished and functions without major incidents.
-%   \item[Product - Value] The value of the website is discussed in chapter XYZ and the fact that it has been used to create a libretto for an opera is great.
-%   \item[Product - Purpose] The purpose was to create an example of \ac{AMC}.
-%   \item[Product - Spatial] 
-%   \item[Product - Temporal]
-%   \item[Product - Ephemeral]
-% \end{description}
-
-% \spirals
-
-% \begin{description}
-%   \item[How?] By combining pataphysics with creativity to create patalgotihms.
-%   \item[PROCESS - NOVELTY] The algorithms are novel. The approach of using pataphysics to inspire the creative element of the project is novel.
-%   \item[PROCESS - QUALITY] The development process was experimental. It involved a lot of trial and error to get things right.
-%   \item[PROCESS - VALUE] The algorithms produce interesting results.
-%   \item[PROCESS - PURPOSE] The algorithms are an example of creative computing using pataphyscs.
-%   \item[PROCESS - SPATIAL] The algorithms rely on corpora which they need access to, to work properly.
-%   \item[PROCESS - TEMPORAL] The startup process is long and pataphysicalisation can take some time.
-%   \item[PROCESS - EPHEMERAL] There is an element of randomness in some of the algorithms, e.g. the image and video search.
-% \end{description}
-
-% What does this description of the 
-% \todo{create a template matrix to fill in with colours or whatever and then summarise the above items underneath - only highlighting the interesting ones}
-
-% \begin{draft}
-%   What does this now tell us? It shows that we can almost always argue for creative aspects in each of the points raised in the matrix. Is the product fit for purpose? That's subjective but I would argue that yes. Is the product robust and working as planned? Yes, it works reliably and as planned.
-
-%   This evaluation is subjective.
-% \end{draft}
-
-
-% \section{Some Kind of Conclusion}
-
-% To sum up our approach: rather than a linear or cyclic series, or criteria that can be answered in a binary manner (i.e. present or not) we propose scales or spectra to aid in the evaluation of a creative artefact of any kind, by applying a series of overlapping principles that encourages a more intuitive assessment.
-
-% \begin{quotation}
-%   Boden suggests that it is helpful to regard aspects such as novelty, quality and process as dimensions of creativity. Instead of asking ‘is x creative?’ (assuming a boolean judgement) or ‘how creative is x?’ (assuming a linear judgement) we should ask ‘where does x lie in creativity space?’ (assuming an n-dimensional space for n criteria where we can measure each dimension). \sourceatright{\autocite[p.8]{Pease2001}}
-% \end{quotation}
-
-% The next stage for this approach would be to test the evaluation framework with real-world examples and individuals responsible for creative output or its assessment, for instance: artists, dancers, musicians, arts administrators, critics, curators and commentators.
-% \todo{Exactly! You have built a system. It can be used by others (perhaps including yourself) to create artwork. That would be "practice-based".
-% }
-
-% If anything that falls short of true computational creativity is considered a \emph{zombie}, then as long as computers continue to be regarded as autonomously creative, we may already be trapped in a \emph{zombie apocalypse}.
-% \todo{Amusing, and Brian Reffin Smith would agree. But it's not true though...
-% }
-
-
-% \section{Open Questions}
-
-% To conclude this chapter I will raise some questions to which I do not have answers and attempting to research them is beyond the scope of this project.
-
-% \todo{revise questions here}
-
-% \begin{itemize}
-%   \item Can machines self-evaluate or self-assess?
-%   \item Where is consciousness located? In the braincells? In the stomach or heart? In the complex interactions of the brain? How does this translate to computers? Is creativiy or consciouness in the algorithms? The hardware?
-%   \item Could a machine judge whether a human is creative?
-%   \item Is mimicking human creativity really enough and appropriate?
-%   \item Should we define machine creativity from scratch?
-%   \item In respect to P or H creativity?
-%   \item Output minus input? (we don’t have the same strict judgement on humans)
-%   \item Does context matter? (Blind deaf dumb person = computer?)
-%   \item Does time matter?
-%   \item Does purpose or intention matter?
-%   \item AGI vs AI? Artificial general creativity vs artificial creativity?
-%   \item What is the impact, if any?
-%   \item What is the maintenance plan, if any?
-% \end{itemize}
-
-% \todo{conscisnous: Please, Fania, do not go there! This is a completely different PhD if you do. Save it up for your postdoctoral work!}
-% \todo{I think you've answered all these above though, haven't you? Perhaps it would be best to signal them at the start of the thesis, to show the kinds of questions you have addressed.
-% }
-
-% \spirals
-
-% \begin{leftbar}
-% The word useless is defined as ``not fulfilling or not expected to achieve the intended purpose or desired outcome'' in the Oxford dictionary (2010). Given this definition most of the search results we have in mind would be classed as useless. That is at least if we considered every result individually, outside of context and with an information-lookup query in mind. If we have an exploratory search in mind however things get more interesting and we will explain why in the remainder of the paper.
-% \end{leftbar}
-%
-% Relevant versus Creative
-%
-% \begin{leftbar}
-% When we say relevant results we mean the kind of search results that any mainstream search engine would produce, the kind of results you would immediately understand their connection to the query for, the kind of results that just makes sense. Consider the example results in table 1.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% Results which might seem useless at first can be much more creative or even poetic. And creative results support exploratory search. Surprise and user expectations play a big role in creativity according to Boden (2003).
-% \end{leftbar}
-%
-% \begin{leftbar}
-% Fewer expectations (an open mind) allow creativity to happen more easily. Empirical experiences form expectations, which hinder our ability to accept creative ideas when they happen. In order to be able to recognise creative ideas we need to be able to see what they all have in common and in what way they differ and not reject unusual, unexpected ones.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% We can link this very nicely to the idea of exploratory search. Lowering expectations or opening the mind implies extending the task domain or problem space. Creativity and exploratory search seem predestined to work with each other.
-% \end{leftbar}
-%
-% Biases
-%
-% \begin{leftbar}
-% Wikipedia defines bias as ``an inclination to present or hold a partial perspective at the expense of (possibly equally valid) alternatives. Anything biased generally is one-sided, and therefore lacks a neutral point of view.'' (2012)
-% \end{leftbar}
-%
-% \begin{leftbar}
-% However, biases can be good and bad. It is important to consider the implications of their existence though, especially when trying to measure the success of something objectively. An example of when biases can be advantageous is location signals that the search tool takes into account when producing results. An Englishmen would probably not have much use of a Chinese website and vice-versa, even if the actual content matches the original query (unless of course the user happens to understand both languages perfectly). Another example of this is location queries such as `Chinese restaurants in Cambridge', which should return web pages about restaurants based in Cambridge, UK or Massachusetts, USA, depending on the user’s I.P. address.  This might seem logical, but in the truest sense it is a bias employed by the search engine to help provide more relevant results to individuals. Truly unbiased search results are probably impossible to come by nowadays.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% There is a general move from objectivity to subjectivity in the sense that users become the subject of search results as much as the query they pose. Instead of neutrally providing results for a query alone, the results are tailored around the information known about the user (e.g.\ language, location, clickstream, social media likes, bookmarks, etc.) to make up the missing context. The user becomes the subject and context of a query, while the results become an objective list of matches for all those values rather than just the query term (s).
-% \end{leftbar}
-%
-% Standard Web search:  Subject/User  Object/Results
-%
-% Constraints
-%
-% \begin{leftbar}
-% There are certain factors and constraints that influence the perception and success of the results. Some can be taken into account when building a search system but others cannot be avoided. User education is one way to deal with those issues. Earlier we briefly mentioned some external constraints such as the setting in which the search takes place. Is the user operating from a handheld device or a desktop computer? Is he or she in a hurry to find answers or just leisurely browsing for them? Is the search system web-based or is the user querying a database?
-% \end{leftbar}
-%
-% \begin{leftbar}
-% User Expectations  It is important to note that ``search systems are not used in isolation from their surrounding context, i.e., they are used by real people who are influenced by environmental and situational constraints such as their current task'' (White and Marchionini 2004). User expectations should be taken into consideration during the evaluation of search results. Users who are hoping to find precise answers to a specific question might not be satisfied by exploratory search results. Someone browsing for inspiration on a broad topic on the other hand could benefit from them. Users should therefore be informed about the nature of the search tool in some way.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% User Skill   The searching skills of the user matter. Specifically his or her ability to articulate an information need and any knowledge of special search techniques (use of Boolean modifiers, quotation marks, wildcards, etc.) are two important factors that influence the results obtained greatly. This is very much based on the old idea of garbage-in, garbage-out (Lidwell et al. 2010).
-% Visual Representation   The way that results are presented affects how the user perceives them. A diversity of different document types, for example text, images, sound, or video results could improve how well the results are rated (Sawle et al. 2011). Johanna Drucker had already pointed out that ``many information structures have graphical analogies and can be understood as diagrams that organise the relations of elements within the whole'' (2009). An alphabetical list is a typical model for representing text data sets for example. But is a ranked list really the best way to represent search results? Other models could be a differently ranked or ordered list, a tree structure, a matrix, a one-to-many relationship, etc.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% Structure of Results  As suggested by Sawle et al (2011) we need to consider different ways to structure and measure search results. A single, perfectly good result might be deemed irrelevant and useless if it is surrounded by several unsuitable results. Therefore there might be certain advantages to measuring and evaluating the value or relevance of individual results over a whole set of results.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% Direct User Relevance Feedback   Relevance feedback lets users rate individual results or sets of results either directly (through manual ratings) or indirectly (through click-stream data). This data is then congregated and used for webpage rankings or other purposes such as suggesting other query terms. It can improve results for similar queries in the future but also lets the user stir the direction his search is taking in real-time. Users can adjust their query to manipulate the results; this basically means they adjust some of their own constraints.
-% \end{leftbar}
-%
-% \begin{quote}
-% ``Relevance feedback---asking information seekers to make relevance judgments about returned objects and then executing a revised query based on those judgments---is a powerful way to improve retrieval.'' (Marchionini 2006)
-% \end{quote}
-%
-% \begin{leftbar}
-% Automatic Query Expansion   As opposed to integrating and involving the user actively in the refinement of a query, in automatic query expansion the improvements are done passively, often completely without the user’s knowledge. Information gathering methods include, for example, the analysis of mouse clicks, so called like buttons (e.g. Facebook, Google+) or eye tracking, etc. How the collected data is then used varies. Simple examples of automatic query expansion are the correction of spelling errors or the hidden inclusion of synonyms when evaluating a query.
-% \end{leftbar}
-%
-% \begin{leftbar}
-% Depending on these factors and constraints, search results can be viewed as useful or useless. In a way the usefulness or correctness of an idea or result cannot always be judged fairly – there are always conditions that will affect how the outcome is interpreted. In the scenario of a creative search tool, results could be very useful, while they might be completely useless in another.
-% \end{leftbar}
-
-% We would need to investigate each individual search result in terms of its value and creativity. This could be done by user ratings or satisfaction questionnaires. Rather than measuring the success of individual results we could look at evaluation them as one set instead, similar to the blind side-by-side comparisons by Bing or MillionShort.
-%
-% The search results produced by our tool can be quite surprising sometimes and it not always clear how they connect to the initial query (especially if the inner workings of the algorithms are unknown), even if we identify through which function a result has been obtained. Obviously these keywords might not be helpful to users unfamiliar with the concept of pataphysics and might therefore appear rather nonsensical. Whilst there is a clear logic to each search result, they might appear anomalous to the user’s expectations if he received these results without knowing the philosophy of the search tool. The results could possibly appear random then, and would therefore likely to be detrimental to the user.
-%
-% To prevent that, the level of interaction the user has with the system and the feedback the system gives to the user on decisions it is making will have a large influence on the overall effectiveness and appreciation of the tool. A quick and simple solution to this problem would be to add an icon to the side of each search result, which displays exactly how the original query was pataphysicalised.
 
 \stopcontents[chapters]

@@ -162,6 +162,8 @@ pdflatex --file-line-error -shell-escape main
 - [ ] capitalise web or not? internet?
 - [ ] capitalise disciplines or not?
 - [ ] remove syntax highlighting? make background gray
+\todo{check if i need to submit a CD?}
+
 
 
 Wordcount after Boot Camp 54715 total
