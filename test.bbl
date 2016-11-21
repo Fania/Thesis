@@ -70,7 +70,7 @@
       \field{urlyear}{2016}
       \field{year}{n.d.}
       \verb{url}
-      \verb https://fr.wikipedia.org/wiki/Alfred_Jarry
+      \verb https://fr.wikipedia.org/wiki/Alfred%5C_Jarry
       \endverb
     \endentry
     \entry{DeepMind2016}{online}{}
@@ -165,7 +165,7 @@
       \field{labelyear}{2010}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{OED}
+      \field{label}{Dictionary}
       \field{title}{animal, n.}
       \field{urlday}{10}
       \field{urlmonth}{12}
@@ -447,6 +447,34 @@
       \field{pages}{73\bibrangedash 79}
       \range{pages}{7}
     \endentry
+    \entry{TBL1998}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=d469e0df304c98f67b55d087ea6187a1}{%
+           family={Berners-Lee},
+           family_i={B\bibinithyphendelim L\bibinitperiod},
+           given={Tim},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {W3C}%
+      }
+      \strng{namehash}{d469e0df304c98f67b55d087ea6187a1}
+      \strng{fullhash}{d469e0df304c98f67b55d087ea6187a1}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1998}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Web Architecture from 50,000 feet}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{1998}
+      \verb{url}
+      \verb http://www.w3.org/DesignIssues/Architecture.html
+      \endverb
+    \endentry
     \entry{Bharat2000}{online}{}
       \name{author}{2}{}{%
         {{uniquename=0,hash=29a5fb28082a646136e3460b881a653b}{%
@@ -475,6 +503,25 @@
       \field{year}{2000}
       \verb{url}
       \verb ftp://ftp.cs.toronto.edu/csrg-technical-reports/405/hilltop.html
+      \endverb
+    \endentry
+    \entry{CamDict}{online}{}
+      \list{organization}{1}{%
+        {Cambridge Dictionary}%
+      }
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{Dictionary}
+      \field{title}{Bias}
+      \field{urlday}{16}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://dictionary.cambridge.org/dictionary/english/bias
       \endverb
     \endentry
     \entry{Microsoft2012a}{online}{}
@@ -840,6 +887,41 @@
       \field{title}{{'Pataphysics: Definitions and Citations}}
       \field{year}{2003}
     \endentry
+    \entry{Broukhis}{online}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=bf70b04b7c9ac7b9ba78a230b56c427c}{%
+           family={Broukhis},
+           family_i={B\bibinitperiod},
+           given={Leo},
+           given_i={L\bibinitperiod}}}%
+        {{uniquename=0,hash=7878f2b19ca0f8fa2331d9d2af402f57}{%
+           family={Cooper},
+           family_i={C\bibinitperiod},
+           given={Simon},
+           given_i={S\bibinitperiod}}}%
+        {{uniquename=0,hash=400587d50a09a913d822d3e3a02a2e32}{%
+           family={Noll},
+           family_i={N\bibinitperiod},
+           given={Landon\bibnamedelima Curt},
+           given_i={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6e0b09218aef4e195cbd79154ba09cf}
+      \strng{fullhash}{c6e0b09218aef4e195cbd79154ba09cf}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The International Obfuscated C Code Contest}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://www.ioccc.org/
+      \endverb
+    \endentry
     \entry{Wired2011}{online}{}
       \name{author}{1}{}{%
         {{uniquename=1,hash=ded96e8c8681436bb90e0ad619a01a84}{%
@@ -1142,6 +1224,26 @@
       \verb http://interactlabs.co.uk/news/2015/10/ioct-talks---videos-now-available
       \endverb
     \endentry
+    \entry{StackBowlnd}{online}{}
+      \list{organization}{1}{%
+        {StackExchange}%
+      }
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{StackExchange}
+      \field{title}{Code Bowling}
+      \field{titleaddon}{{Programming Puzzles \& Code Golf}}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://codegolf.stackexchange.com/questions/tagged/code-bowling
+      \endverb
+    \endentry
     \entry{Cohen1999}{online}{}
       \name{author}{1}{}{%
         {{uniquename=1,hash=686b0001846f52b4ece5b660500a6e57}{%
@@ -1354,7 +1456,7 @@
       \field{urlyear}{2012}
       \field{year}{n.d.}
       \verb{url}
-      \verb http://ir.baidu.com/phoenix.zhtml?c=188488%7B%5C&%7Dp=irol-homeprofile
+      \verb http://ir.baidu.com/phoenix.zhtml?c=188488%5C&p=irol-homeprofile
       \endverb
     \endentry
     \entry{Copeland2016}{online}{}
@@ -1528,7 +1630,7 @@
       \field{urlyear}{2016}
       \field{year}{n.d.}
       \verb{url}
-      \verb https://en.wikipedia.org/wiki/Damerau-Levenshtein_distance
+      \verb https://en.wikipedia.org/wiki/Damerau-Levenshtein%5C_distance
       \endverb
     \endentry
     \entry{DeBra1994b}{inproceedings}{}
@@ -1766,7 +1868,7 @@
       \field{urlyear}{2016}
       \field{year}{2012}
       \verb{url}
-      \verb http://www.copyrightservice.co.uk/copyright/p22_derivative_works
+      \verb http://www.copyrightservice.co.uk/copyright/p22%5C_derivative%5C_works
       \endverb
     \endentry
     \entry{Wordnik2016}{online}{}
@@ -1782,7 +1884,7 @@
       \field{urlyear}{2016}
       \field{year}{2016}
       \verb{url}
-      \verb http://developer.wordnik.com/docs.html#!/word/getTextPronunciations_get_5
+      \verb http://developer.wordnik.com/docs.html#!/word/getTextPronunciations%5C_get%5C_5
       \endverb
     \endentry
     \entry{Dijkstra1988}{online}{}
@@ -2498,6 +2600,46 @@
       \verb https://github.com/
       \endverb
     \endentry
+    \entry{GoogleGlitch}{online}{}
+      \list{organization}{1}{%
+        {Google}%
+      }
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{Google}
+      \field{title}{Glitch Art}
+      \field{titleaddon}{Image Search Results}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://goo.gl/waiqKV
+      \endverb
+    \endentry
+    \entry{RedditGlitch}{online}{}
+      \list{organization}{1}{%
+        {Reddit}%
+      }
+      \field{sortinit}{g}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{Reddit}
+      \field{title}{glitch\_art}
+      \field{titleaddon}{subreddit}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb https://www.reddit.com/r/glitch%5C_art/
+      \endverb
+    \endentry
     \entry{Glover2001}{article}{}
       \name{author}{7}{}{%
         {{uniquename=0,hash=5e084b9d0ddc6d2dc7250aacb236bbcc}{%
@@ -2609,6 +2751,34 @@
       \field{year}{n.d.}
       \verb{url}
       \verb https://support.google.com/webmasters/answer/182072
+      \endverb
+    \endentry
+    \entry{Goren2011}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7188515ddaac41270c6bef085204a190}{%
+           family={Goren},
+           family_i={G\bibinitperiod},
+           given={Uri},
+           given_i={U\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IOCCC}%
+      }
+      \strng{namehash}{7188515ddaac41270c6bef085204a190}
+      \strng{fullhash}{7188515ddaac41270c6bef085204a190}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Most artistic 2011}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2011}
+      \verb{url}
+      \verb http://www.ioccc.org/2011/goren/hint.html
       \endverb
     \endentry
     \entry{Gray2004}{book}{}
@@ -3024,8 +3194,8 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{ITiCSE Innovation and technology in computer science education}
-      \field{title}{{Research Methods in Computing : What are they , and how should we teach them ?}}
+      \field{journaltitle}{Innovation and technology in computer science education}
+      \field{title}{{Research Methods in Computing: What are they, and how should we teach them ?}}
       \field{year}{2006}
       \field{pages}{96\bibrangedash 114}
       \range{pages}{19}
@@ -3259,7 +3429,7 @@
       \field{urlyear}{2016}
       \field{year}{2014}
       \verb{url}
-      \verb http://theimaginaryvoyage.com/Islands/Amorphous/amorphous_isle_high.php
+      \verb http://theimaginaryvoyage.com/Islands/Amorphous/amorphous%5C_isle%5C_high.php
       \endverb
     \endentry
     \entry{Hugill2014}{online}{}
@@ -3969,6 +4139,34 @@
       \field{title}{{The Web as a graph : measurements, models and methods}}
       \field{year}{1999}
     \endentry
+    \entry{KnuthHelp}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=1dd533466eb3313074d496394d319407}{%
+           family={Knuth},
+           family_i={K\bibinitperiod},
+           given={Donald},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Stanford University}%
+      }
+      \strng{namehash}{1dd533466eb3313074d496394d319407}
+      \strng{fullhash}{1dd533466eb3313074d496394d319407}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Help Wanted}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://www-cs-faculty.stanford.edu/~uno/help.html
+      \endverb
+    \endentry
     \entry{Koestler1964}{book}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=1586493221c4bf272acbef5d52806cc5}{%
@@ -4146,6 +4344,38 @@
       \field{year}{2013}
       \field{pages}{56\bibrangedash 63}
       \range{pages}{8}
+    \endentry
+    \entry{Lidwell2010}{book}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=794186d433b6ca0d5d6092a565064522}{%
+           family={Lidwell},
+           family_i={L\bibinitperiod},
+           given={William},
+           given_i={W\bibinitperiod}}}%
+        {{uniquename=0,hash=0e783502510d3013a0234303668e84bd}{%
+           family={Holden},
+           family_i={H\bibinitperiod},
+           given={Kritina},
+           given_i={K\bibinitperiod}}}%
+        {{uniquename=0,hash=4e305801191f5d279d7c04fab5a896ef}{%
+           family={Butler},
+           family_i={B\bibinitperiod},
+           given={Jill},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Rockport Publishers}%
+      }
+      \strng{namehash}{978b921d36f756bfe0c079d317a6887a}
+      \strng{fullhash}{978b921d36f756bfe0c079d317a6887a}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Universal Principles of Design}}
+      \field{year}{2010}
     \endentry
     \entry{Luo2005}{inproceedings}{}
       \name{author}{3}{}{%
@@ -5319,7 +5549,7 @@
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{OED}
+      \field{label}{Dictionary}
       \field{title}{pataphysics}
       \field{titleaddon}{Oxford Dictionaries | English}
       \field{urlday}{10}
@@ -5478,7 +5708,7 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{{PEP 20 -- The Zen of Python}}
+      \field{title}{{PEP 20 --- The Zen of Python}}
       \field{urlday}{26}
       \field{urlmonth}{04}
       \field{urlyear}{2016}
@@ -5571,6 +5801,25 @@
       \field{labeltitlesource}{title}
       \field{title}{{How To Solve It}}
       \field{year}{1957}
+    \endentry
+    \entry{StackExchangend}{online}{}
+      \list{organization}{1}{%
+        {StackExchange}%
+      }
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{StackExchange}
+      \field{title}{{Programming Puzzles \& Code Golf}}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://codegolf.stackexchange.com/questions/tagged/code-golf
+      \endverb
     \endentry
     \entry{mestudio2010}{online}{}
       \name{author}{1}{}{%
@@ -5719,6 +5968,31 @@
       \field{pages}{165\bibrangedash 176}
       \range{pages}{12}
     \endentry
+    \entry{Raymond2004}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=e8ad291e11fdb99a9e804d13078bb29b}{%
+           family={Raymond},
+           family_i={R\bibinitperiod},
+           given={Eric},
+           given_i={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{e8ad291e11fdb99a9e804d13078bb29b}
+      \strng{fullhash}{e8ad291e11fdb99a9e804d13078bb29b}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2004}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Jargon File, version 4.4.8}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2004}
+      \verb{url}
+      \verb http://www.catb.org/~esr/jargon/
+      \endverb
+    \endentry
     \entry{Rhodes1961}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=8e9691784598e3c254b3d45b87886757}{%
@@ -5768,7 +6042,7 @@
       \field{urlyear}{2016}
       \field{year}{2014}
       \verb{url}
-      \verb http://www.patakosmos.com/tool_pataphysical_search/
+      \verb http://www.patakosmos.com/tool%5C_pataphysical%5C_search/
       \endverb
     \endentry
     \entry{Ritchie2001}{inproceedings}{}
@@ -6135,7 +6409,7 @@
       \field{urlyear}{2016}
       \field{year}{n.d.}
       \verb{url}
-      \verb %7Bhttp://developers.gettyimages.com/api/docs/v3/search/images/creative/get/%7D
+      \verb http://developers.gettyimages.com/api/docs/v3/search/images/creative/get/
       \endverb
     \endentry
     \entry{YouTubeAPI}{online}{}
@@ -6416,6 +6690,30 @@
       \field{year}{2016}
       \verb{url}
       \verb http://sophiabot.com/
+      \endverb
+    \endentry
+    \entry{Spoonmaster2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=8e47b98accd956199323065dc6bf7351}{%
+           family={Spoonmaster},
+           family_i={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e47b98accd956199323065dc6bf7351}
+      \strng{fullhash}{8e47b98accd956199323065dc6bf7351}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{label}{{N+7}}
+      \field{title}{{The N+7 Machine}}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://www.spoonbill.org/n+7/
       \endverb
     \endentry
     \entry{Srinivasan2001}{article}{}
@@ -6713,6 +7011,30 @@
       \field{volume}{12}
       \field{year}{2007}
     \endentry
+    \entry{Thrid2002}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=071f2fe90614e9f86feb8a90e40b067f}{%
+           family={Thrid},
+           family_i={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{071f2fe90614e9f86feb8a90e40b067f}
+      \strng{fullhash}{071f2fe90614e9f86feb8a90e40b067f}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2002}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Explanation of l33t Speak}
+      \field{titleaddon}{The Hitchhiker's Guide to the Galaxy: Earth Edition}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2002}
+      \verb{url}
+      \verb http://h2g2.com/edited%5C_entry/A787917
+      \endverb
+    \endentry
     \entry{Toivanen2013}{inproceedings}{}
       \name{author}{3}{}{%
         {{uniquename=0,hash=d6f81ee1f1bdf9db9c4989a36858b831}{%
@@ -6805,14 +7127,14 @@
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
       \field{label}{TREC}
-      \field{title}{TREC Web, Terabyte {\&} Blog Tracks}
+      \field{title}{TREC Web, Terabyte \& Blog Tracks}
       \field{titleaddon}{Web Research Collections}
       \field{urlday}{20}
       \field{urlmonth}{10}
       \field{urlyear}{2016}
       \field{year}{2011}
       \verb{url}
-      \verb http://ir.dcs.gla.ac.uk/test_collections/
+      \verb http://ir.dcs.gla.ac.uk/test%5C_collections/
       \endverb
     \endentry
     \entry{Turing1950}{article}{}
@@ -6868,7 +7190,7 @@
       \field{urlyear}{2016}
       \field{year}{1951}
       \verb{url}
-      \verb http://www.turingarchive.org/viewer/?id=459%7B%5C&%7Dtitle=1
+      \verb http://www.turingarchive.org/viewer/?id=459%5C&title=1
       \endverb
     \endentry
     \entry{Turing2009}{incollection}{}
@@ -7190,7 +7512,7 @@
       \field{urlyear}{2016}
       \field{year}{2001}
       \verb{url}
-      \verb http://www.blather.net/theblather/2001/05/alfred_jarry_absinthe_bicycles/
+      \verb http://www.blather.net/theblather/2001/05/alfred%5C_jarry%5C_absinthe%5C_bicycles/
       \endverb
     \endentry
     \entry{Hanson2016}{online}{}
@@ -7230,6 +7552,73 @@
       \field{year}{n.d.}
       \verb{url}
       \verb http://wordnet.princeton.edu
+      \endverb
+    \endentry
+    \entry{White2004}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=2,hash=0840553d8eaedcc60497b90c47784381}{%
+           family={White},
+           family_i={W\bibinitperiod},
+           given={Ryen\bibnamedelima W},
+           given_i={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{uniquename=0,hash=34443e5f53d9622a82ef394045e2db5d}{%
+           family={Marchionini},
+           family_i={M\bibinitperiod},
+           given={Gary},
+           given_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba1347d6fb97b525776a44c2e224994a}
+      \strng{fullhash}{ba1347d6fb97b525776a44c2e224994a}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2004}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{433-436}
+      \field{journaltitle}{Information Processing \& Management}
+      \field{title}{{Evaluating Exploratory Search Systems}}
+      \field{volume}{44}
+      \field{year}{2004}
+    \endentry
+    \entry{White2013}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=2,hash=e9980c6d3b77ce9c7a129325e2253220}{%
+           family={White},
+           family_i={W\bibinitperiod},
+           given={Ryen\bibnamedelima William},
+           given_i={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dublin, Ireland}%
+      }
+      \strng{namehash}{e9980c6d3b77ce9c7a129325e2253220}
+      \strng{fullhash}{e9980c6d3b77ce9c7a129325e2253220}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 36th International ACM SIGIR Conference on Research and Development in Information Retrieval}
+      \field{title}{{Beliefs and biases in web search}}
+      \field{year}{2013}
+    \endentry
+    \entry{Python2016}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{Python}
+      \field{title}{Why is it called Python?}
+      \field{titleaddon}{General Python FAQ}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://docs.python.org/3/faq/general.html#why-is-it-called-python
       \endverb
     \endentry
     \entry{Wickson2006}{article}{}
@@ -7340,6 +7729,64 @@
       \field{year}{2016}
       \verb{url}
       \verb https://artybollocks.com/
+      \endverb
+    \endentry
+    \entry{Wolfnd}{online}{}
+      \name{author}{2}{}{%
+        {{uniquename=1,hash=f6639bf689873f573a058d17a59e6fd8}{%
+           family={Wolf},
+           family_i={W\bibinitperiod},
+           given={David},
+           given_i={D\bibinitperiod}}}%
+        {{uniquename=1,hash=ef9719cd1b395ebb82fb4ecc751932db}{%
+           family={Wolf},
+           family_i={W\bibinitperiod},
+           given={Anette},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8185e659dce40a2a2834e8654ecf92fd}
+      \strng{fullhash}{8185e659dce40a2a2834e8654ecf92fd}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Easter Egg Archive}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://www.eeggs.com/faq.html
+      \endverb
+    \endentry
+    \entry{Wong2013}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=1a1c454826cf29ef8bc087f7e21f86c0}{%
+           family={Wong},
+           family_i={W\bibinitperiod},
+           given={Grace},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {The Guardian}%
+      }
+      \strng{namehash}{1a1c454826cf29ef8bc087f7e21f86c0}
+      \strng{fullhash}{1a1c454826cf29ef8bc087f7e21f86c0}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{It's not a bug, it's a feature: the rise of glitch art}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2013}
+      \verb{url}
+      \verb https://www.theguardian.com/artanddesign/2013/oct/25/rise-of-glitch-art
       \endverb
     \endentry
     \entry{Yang2013}{article}{}

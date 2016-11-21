@@ -12,10 +12,10 @@ Entire regions of our planetary system,
 that great golden key with which you are playing,
 and of the system of this Universe,
 time to the necessity of performing this pilgrimage.
-
+ 
 Would arrive at the correct solution,
 face shews not the least wrinkle,
-through his rash opinion of the improbability of performing a so strange and impossible,
+through his rash opinion of the improbability of performing,
 faire ici le compte rendu technique de ma decouverte.
 
 Acting upon this hint,
@@ -43,16 +43,18 @@ This project combines research in science, art and the humanities---making it tr
 
 Traditional methodologies in these disciplines are very subject specific and a project combining elements of each field is left mixing and matching suitable methods from them all.
 
-In this chapter I will outline the reasons why none of the existing methodologies are suitable for this project and then explain the choice of more transdisciplinary methods and how I combined them to suit my needs.
+In this chapter I will outline the reasons why the existing intradisciplinary methodologies aren't completely suitable for this project and then explain the choice of more transdisciplinary methods and how I combined them to suit my needs.
 
-As mentioned in the~\nameref{ch:introduction}\sidepar{§~\ref{s:intromethod}} the overall objectives of this project are to create:
+As mentioned in the~\nameref{ch:introduction}\sidepar{§~\ref{s:intromethod}} the overall objectives of this project are to:
 
 \label{s:objectives}
 \begin{enumerate}
-  \item three pataphysical search algorithms,
-  \item a creative exploratory search tool incorporating the algorithms,
-  \item a set of subjective parameters for defining creativity,
-  \item an objective framework for evaluating creativity.
+  \item Critically analyse and synthesise existing literature,\sidepar{\textspiral~\ref{p:lit}}
+  \item develop pataphysical algorithms,\sidepar{\textspiral~\ref{p:practice}}
+  \item design a system to demonstrate algorithms,\sidepar{\textspiral~\ref{p:practice}}
+  \item develop a website as an artefact,\sidepar{\textspiral~\ref{p:practice}}
+  \item define an evaluation and interpretation framework,\sidepar{\textspiral~\ref{p:theory}}
+  \item analyse results.\sidepar{\textspiral~\ref{p:analysis}}
 \end{enumerate}
 
 Research methods that support these tasks are needed and I will address these four points again at the end of this chapter\sidepar{§~\ref{s:mymeth}}.
@@ -78,9 +80,9 @@ Different disciplines prefer different research methodologies. Of the various di
 
 Half of this project's objectives are related to computer science therefore it is important to consider how research in this discipline is traditionally approached.
 
-A framework for finding a suitable approach was suggested by Holz et al \autocite*{Holz2006}. The following four steps form an iterative process. ``What do we want to achieve?'' e.g. find out what is happening, develop something that works, evaluate an existing system/technology, compare existing systems, change human behaviour. ``Where does the data come from?'' e.g. how to collect? (read, observe, ask, measure, experiment, model) and where to collect? (field, laboratory, conceptual). ``What do we do with the data?'', e.g. identify themes/patterns/quotes, calculate numbers, identify trends, express via multimedia, create frameworks/taxonomies. ``Have we achieved our goal?'' e.g. draw conclusions, evaluate results, identify limitations.
+A framework for finding a suitable approach was suggested by Holz et al \autocite*{Holz2006}. The following four steps form an iterative process. (1) ``What do we want to achieve?'' e.g. find out what is happening, develop something that works, evaluate an existing system/technology, compare existing systems, or change human behaviour. (2) ``Where does the data come from?'' e.g. how to collect? (read, observe, ask, measure, experiment, model) and where to collect? (field, laboratory, conceptual). (3) ``What do we do with the data?'', e.g. identify themes/patterns/quotes, calculate numbers, identify trends, express via multimedia, create frameworks/taxonomies. (4) ``Have we achieved our goal?'' e.g. draw conclusions, evaluate results, or identify limitations.
 
-Another option is to look at what computer science researchers have done historically. In a rather old but still insightful analysis of over \num{600} papers\footnote{While the paper itself was published in 2004, the body of work they studied was based on publications from between 1995 and 1999---this suggests that a lot of the more ``recent'' research around Web technologies is not included in this study.} Ramesh et al \autocite*{Ramesh2004} have shown that---by far---the most common approach to research in computer science during this period was \emph{formulative} with almost 79\% use (as opposed to ``descriptive'' with 10\% and ``evaluative'' with 11\%) in particular in regards to ``processes, methods and algorithms'' which was used by just over 50\% of researchers. Not surprisingly the most popular research method was \emph{mathematical conceptual analysis} with about 75\% use.
+Another option is to look at what computer science researchers have done historically. In a rather old but still insightful analysis of over 600 papers\footnote{While the paper itself was published in 2004, the body of work was based on publications from between 1995 and 1999---this suggests that a lot of the more ``recent'' research around web technologies is not included in this study.} Ramesh et al \autocite*{Ramesh2004} have shown that---by far---the most common approach to research in computer science during this period was \emph{formulative} with almost 79\% use (as opposed to ``descriptive'' with 10\% and ``evaluative'' with 11\%). This was in particular in regards to ``processes, methods and algorithms'' which was used by just over 50\% of researchers. Not surprisingly the most popular research method was \emph{mathematical conceptual analysis} with about 75\% use.
 
 Jose Nelson Amaral \autocite*{Amaral2006} classifies methodologies in computer science into five main categories as shown below.
 
@@ -94,7 +96,7 @@ Jose Nelson Amaral \autocite*{Amaral2006} classifies methodologies in computer s
 
 \spirals
 
-Based on \autocite{Holz2006}, here are this projects answers to the four questions posed in the research.
+Here are this project's answers to the four questions posed by Holz et al \autocite*{Holz2006}.
 
 \begin{description}
   \item[What do we want to achieve?]~
@@ -109,18 +111,18 @@ Based on \autocite{Holz2006}, here are this projects answers to the four questio
     - Read pataphysical literature and research.\\
     - Collate existing research on creativity and evaluation.\\
     - Survey creative approaches to technology.\\
-    - Experimentation with algorithms and implementation.
+    - Experiment with algorithms and implementation.
 	\item[What do we do with the data?]~
     - Iterate through developmental stages of algorithmic outputs.\\
-    - Create an artefact that represents the underlying philosophy and research as a whole.\\
-    - Create evaluation framework based on theoretical research.
+    - Create an artefact that represents the underlying philosophy and research.\\
+    - Create an evaluation framework based on theoretical research.
   \item[Have we achieved our goal?]~
     - See conclusion chapter~\ref{ch:observations}\sidepar{§~\ref{ch:observations}}.
 \end{description}
 
-Referring back to the objectives above (see page~\pageref{s:objectives}), objective \num{1} is to create new creative search algorithms. This is not supposed to happen on a purely abstract basis but in a practical fashion (`experimental'), with a working implementation (`build') as proof of concept (see objective 2). While the algorithms need to be defined in formal terms (`formal'), the goal here is not to create a theoretical proof of correctness (given the creative and rather subjective nature of the underlying philosophy this is virtually impossible) but a practical demonstration of the creative processes behind. Given the creative nature of the algorithms, rigorous testing would be irrelevant. Overall this would suggest an experimental approach with prototyping of an artefact. Objective \num{3} is to come up with a suitable definition of creativity (`process'). This should be informed by existing research. Again, we are not interested in formulating this in mathematical terms and proofs but rather a more esoteric and systemic view. Because the definition needs to apply to humans and machines it needs to be precise enough. Objective \num{4} is then to create an overall theoretical framework (`model') for the evaluation of creativity in humans and machines.
+Referring back to the four objectives above (see page~\pageref{s:objectives}), objective 1 is to create new creative search algorithms. This is not supposed to happen on a purely abstract basis but in a practical fashion (i.e. `experimental'), with a working implementation (i.e. `build') as proof-of-concept (see objective 2). While the algorithms need to be defined in formal terms (i.e. `formal'), the goal here is not to create a theoretical proof of correctness (given the creative and rather subjective nature of the underlying philosophy this is virtually impossible) but a practical demonstration of the creative processes behind. Overall this would suggest an experimental approach with prototyping of an artefact. Objective \num{3} is to come up with a suitable definition of creativity (i.e. `process'). This should be informed by existing research. Again, we are not interested in formulating this in mathematical terms and proofs but rather a more esoteric and systemic view. Because the definition needs to apply to humans and machines it needs to be precise enough. Objective \num{4} is then to create an overall theoretical framework (i.e. `model') for the evaluation of creativity in humans and machines.
 
-By now we have managed to cover every one of the major methodologies mentioned in \autocite{Amaral2006} but we are still lacking ways to address the subjective and creative nature of the project. Furthermore, the philosophical and artistic inspirations that inform the development of the artefact don't get enough of a voice in these methods. In computer science, implementations are generally seen as a proof of concepts or prototypes---when really they should be seen as artefacts in the sense of artistic pieces of work. So, to really appreciate the scope of this practical element of this project we need to consider research in the arts and humanities too.
+By now we have managed to cover every one of the major methodologies mentioned by Amaral et al. \autocite*{Amaral2006} but we are still lacking ways to address the subjective and creative nature of the project. Furthermore, the philosophical and artistic inspirations that inform the development of the artefact don't get enough of a voice in these methods. In computer science, implementations are generally seen as a proof of concepts or prototypes---when really they should be seen as artefacts in the sense of artistic pieces of work. So, to really appreciate the scope of this practical element of this project we need to consider research in the arts and humanities too.
 
 
 \subsection{Arts and Humanities}
@@ -134,27 +136,27 @@ By now we have managed to cover every one of the major methodologies mentioned i
 Malins and Gray suggest the following ideas for arts-based researchers searching for the right methodology \autocite*{Malins1995}.
 
 \begin{itemize}
-  \item Consider a range of research strategies (from all disciplines)
-  \item `Tailor' the research project to the nature of project and the researcher's expertise
-  \item Carry out the research from the informed perspective of the reflective practitioner, as `participant observer'
-  \item Continually define and refine the research question, allowing methodologies to emerge
-  \item Acknowledge accessibility, discipline, rigour, transparency, transferability
-  \item Be aware of the critical context of practice and research and raise the level of critical debate
-  \item Consider interdisciplinary / multidisciplinary approaches to research
+  \item Consider a range of research strategies (from all disciplines).
+  \item `Tailor' the research to the nature of project and the researcher's expertise.
+  \item Carry out the research from an informed perspective, as `participant observer'.
+  \item Continually define and refine the research question, allowing methodologies to emerge.
+  \item Acknowledge accessibility, discipline, rigour, transparency, and transferability.
+  \item Be aware of the critical context of practice and research and raise the level of critical debate.
+  \item Consider interdisciplinary / multidisciplinary approaches to research.
 \end{itemize}
 
 They further elaborate on the key characteristics of arts methodologies as follows \autocite{Gray2004}.
 
 \begin{quotation}
 \begin{itemize}
-  \item Experiencing/exploring, gathering, documenting information and generating data/evidence
-  \item Reflecting on and evaluating information, selecting the most relevant information
-  \item Analysing, interpreting and making sense of information
-  \item Synthesizing and communicating research findings, planning new research
+  \item Experiencing/exploring, gathering, documenting information and generating data/evidence.
+  \item Reflecting on and evaluating information, selecting the most relevant information.
+  \item Analysing, interpreting and making sense of information.
+  \item Synthesizing and communicating research findings, planning new research.
 \end{itemize}\sourceatright{\autocite{Gray2004}}
 \end{quotation}
 
-They specify a whole set of individual methods used for the approaches above.
+They further specify a whole set of individual methods used for the approaches above.
 
 \begin{quotation}
 \begin{itemize}
@@ -184,7 +186,7 @@ They specify a whole set of individual methods used for the approaches above.
 \end{itemize}\sourceatright{\autocite{Gray2004}}
 \end{quotation}
 
-The discpiline of \ac{DH} (see chapter~\ref{s:digithuman}\sidepar{§~\ref{s:digithuman}}) seems like a logical choice to look for suitable methodologies. It is characterised by ``collaboration, transdisciplinarity and an engagement with computing'' \autocite{Burdick2012} but it should not simply be reduced to `doing the humanities digitally' \autocite{Burdick2012}. Transliteracy, an understanding of several kinds of tools and media, is an important aspect in this \autocite{Thomas2007}. \ac{DH} can be broken down into the following set of methodologies.
+The discpiline of \acf{DH} (see chapter~\ref{s:digithuman}\sidepar{§~\ref{s:digithuman}}) seems like a logical choice to look for suitable methodologies. It is characterised by ``collaboration, transdisciplinarity and an engagement with computing'' \autocite{Burdick2012} but it should not simply be reduced to ``doing the humanities digitally'' \autocite*{Burdick2012}. Transliteracy, an understanding of several kinds of tools and media, is an important aspect in this \autocite{Thomas2007}. \ac{DH} can be broken down into the following set of methodologies.
 
 \begin{description}
   \item [Design] shape, scheme, inform, experience, position, narrate,
@@ -196,7 +198,7 @@ The discpiline of \ac{DH} (see chapter~\ref{s:digithuman}\sidepar{§~\ref{s:digi
   \item [Versioning, prototyping, failures]	iterate, experiment, take-risks, redefine, beta-test
 \end{description}
 
-Some of the emerging methods Burdick et al. have identified are listed below \autocite*{Burdick2012} (The full list can be found in appendix~\ref{s:dhmap}\sidepar{§~\ref{s:dhmap}}).
+Some of the emerging research methods Burdick et al. have identified are listed below \autocite*{Burdick2012} (The full list can be found in appendix~\ref{s:dhmap}\sidepar{§~\ref{s:dhmap}}).
 
 \begin{multicols}{2}\raggedright
 \begin{itemize}
@@ -219,7 +221,7 @@ Some of the emerging methods Burdick et al. have identified are listed below \au
   \item	code as text
   \item	software in a cultural context
   \item repurposable content and remix culture
-  \item participatory Web
+  \item participatory web
   \item	read/write/rewrite
   \item	meta-medium
   \item	polymorphous browsing
@@ -228,14 +230,14 @@ Some of the emerging methods Burdick et al. have identified are listed below \au
 
 \spirals
 
-Applying the above methodologies from the arts and \ac{DH} to my research is useful. Several of the overall methodologies listed by Gray and Malins \autocite*{Gray2004} seem to apply to the research presented in this thesis. Exploring, evaluating, analysing, interpreting, synthesising and disseminating research all are part of it. However, looking at the specific methods they collated the difference becomes clearer as only the following 7 apply remotely (Visualization, experimentation with processes, multimedia/hypermedia applications, use of metaphor and analogy, organizational and analytical matrices, curation, and critical writing, publications).
+Several of the methodologies listed by Gray and Malins \autocite*{Gray2004} seem to apply to the research presented in this thesis. Exploring, evaluating, analysing, interpreting, synthesising and disseminating research all are part of it. However, looking at the specific methods they collated, the difference becomes clearer as only the following 7 appear relevant (visualization, experimentation with processes, multimedia/hypermedia applications, use of metaphor and analogy, organizational and analytical matrices, curation, and critical writing, publications).
 
-The \ac{DH} methodologies seem more useful. In terms of `design', \url{pata.physics.wtf} positions itself in context and the evaluation framework interprets and critiques \ac{AMC}. Before that I `curate' the two corpora, digitise them and organise them. `Computing' comes in at verious stages, to (dis)ambiguate (i.e. pataphysicalise), encode, index, search and match data. The `infrastructure' is cultural, technical and extensible, relying on the \ac{WWW} for several spects. `Versioning, prototyping and failures' all come in during the iterative development process, which involves a lot of experimentation and refactoring. Furthermore, the methods Burdick et al \autocite*{Burdick2012} list match this project much better (although of course the list above was already only a selection that was deemed relevant).
+The \ac{DH} methodologies seem more useful. In terms of \textbf{design}, \url{pata.physics.wtf} \textit{positions} itself in context and the evaluation framework \textit{interprets} and \textit{critiques} \ac{AMC}. Before that I \textbf{curate} the two corpora, \textit{digitise} them and \textit{organise} them. \textbf{Computing} comes in at verious stages, to \textit{(dis)ambiguate} (i.e. pataphysicalise), \textit{encode}, \textit{index}, \textit{search} and \textit{match} data. The \textbf{infrastructure} is \textit{cultural}, \textit{technical} and \textit{extensible}, relying on the \ac{WWW} for several spects. \textbf{Versioning, prototyping and failures} all come in during the \textit{iterative} development process, which involves a lot of \textit{experimentation} and refactoring. Furthermore, the research methods Burdick et al \autocite*{Burdick2012} list match this project much better (although of course the list above was already only a selection that was deemed relevant; the original list was much larger. See appendix~\ref{s:dhmap}\sidepar{§~\ref{s:dhmap}}).
 
 
 \section{Transdisciplinary}
 
-Basarab Nicolescu distinguished between three different kinds of research ``without stable boundaries between the disciplines''.\footnote{Nicolescu cites Jean Piaget here, who first coined the term `transdisciplinarity' in 1972.} \autocite*{Nicolescu2010}.
+Nicolescu distinguished between 3 different kinds of research ``without stable boundaries between the disciplines''.\footnote{Nicolescu cites Jean Piaget here, who first coined the term `transdisciplinarity' in 1972.} \autocite*{Nicolescu2010}.
 
 \begin{description}
   \item [Multidisciplinarity]	concerns itself with studying a research topic in not just one discipline but in several simultaneously.
@@ -245,16 +247,16 @@ Basarab Nicolescu distinguished between three different kinds of research ``with
 
 The standard epistemological view of science and art is that they are objective and subjective, respectively. So, what does that mean for research conducted between, across and beyond science and art, i.e. research that is transdisciplinary?
 
-Nicolescu criticises the view that science must be objective. He even claims that any non-scientific knowledge is ``cast into the inferno of subjectivity, tolerated at most as a meaningless embellishment or rejected with contempt as a fantasy, an illusion, a regression, or a product of the imagination'' \autocite*{Nicolescu2010}. Objectivity, he says, becomes the ``supreme criterion of Truth''\footnote{As we shall see later, pataphysics does the opposite: it reveres the Subject.}
+Nicolescu criticised the view that science must be objective. He even claimed that any non-scientific knowledge is ``cast into the inferno of subjectivity, tolerated at most as a meaningless embellishment or rejected with contempt as a fantasy, an illusion, a regression, or a product of the imagination'' \autocite*{Nicolescu2010}. Objectivity, he said, becomes the ``supreme criterion of Truth''\footnote{As we shall see later, pataphysics does the opposite: it reveres the Subject.}
 
 \begin{quotation}
   The death of the Subject is the price we pay for objective knowledge. \sourceatright{\autocite{Nicolescu2010}}
 \end{quotation}
 
-He goes on to quote Werner Heisenberg on the concepts of objective and subjective reality: ``we would make a very crude simplification if we want to divide the world in[to] one objective reality and one subjective reality. Many rigidities of the philosophy of the last centuries are born by this black and white view of the world'' \autocite[Heisenberg, cited in][]{Nicolescu2010}.
+He went on to quote Werner Heisenberg on the concepts of objective and subjective reality: ``we would make a very crude simplification if we want to divide the world in[to] one objective reality and one subjective reality. Many rigidities of the philosophy of the last centuries are born by this black and white view of the world'' \autocite[Heisenberg, cited in][]{Nicolescu2010}.
 
 \begin{quotation}
-  The too strong insistence on the difference between scientific knowledge and artistic knowledge comes from the wrong idea that concepts describe perfectly the `real things'. [\ldots] All true philosophy is situated on the threshold between science and poetry. \sourceatright{\autocite[Heisenberg, cited in]{Nicolescu2010}} \footnote{The full paragraph is worth quoting---see appendix~\ref{s:heisenberg}.}
+  The too strong insistence on the difference between scientific knowledge and artistic knowledge comes from the wrong idea that concepts describe perfectly the `real things'. [\ldots] All true philosophy is situated on the threshold between science and poetry. \sourceatright{\autocite[Heisenberg, cited in][]{Nicolescu2010}} \footnote{The full paragraph is worth quoting---see appendix~\ref{s:heisenberg}.}
 \end{quotation}
 
 In transdisciplinarity traditional disciplinary boundaries have no meaning.
@@ -272,7 +274,7 @@ In transdisciplinarity traditional disciplinary boundaries have no meaning.
 \label{fig:trans}
 \end{figure}
 
-Working across disciplines requires a new unique methodology. Nicolescu proposes a methodology of transdisciplinarity as a non-hierarchical ternary partition of `Subject, Object and Hidden Third' (as shown in figure~\ref{fig:trans}\sidepar{\faicon{object-group}~\ref{fig:trans}}) rather than the traditional binary partition of `Subject versus Object' \autocite*{Nicolescu2010}.
+Working across disciplines requires a new unique methodology. Nicolescu proposed a methodology of transdisciplinarity as a non-hierarchical ternary partition of `Subject, Object and Hidden Third' (as shown in figure~\ref{fig:trans}\sidepar{\faicon{object-group}~\ref{fig:trans}}) rather than the traditional binary partition of `Subject versus Object' \autocite*{Nicolescu2010}.
 
 \begin{quotation}
   The old principle ``unity in diversity and diversity from unity'' is embodied in transdisciplinarity.' \sourceatright{\autocite{Nicolescu2010}}
@@ -282,18 +284,18 @@ Working across disciplines requires a new unique methodology. Nicolescu proposes
   `unite and conquer' $\longleftrightarrow$ `divide and conquer' \sourceatright{\autocite{Yang2013}}
 \end{quotation}
 
-Hugill and Yang agree that existing research methodologies are unsuitable for transdisciplinary subjects such as \ac{CC}. The following is an example of a possible \ac{CC} research methodology they propose as a starting point \autocite{Hugill2013c}:
+Hugill and Yang agree that existing research methodologies are unsuitable for transdisciplinary subjects such as \acf{CC}. The following is an example of a possible \ac{CC} research methodology they propose as a starting point \autocite{Hugill2013c}:
 
 \begin{enumerate}
-  \item Review literature across disciplines
-  \item Identify key creative activities
-  \item Analyse the processes of creation
-  \item Propose approaches to support these activities and processes
-  \item Design and implement software following this approach
-  \item Experiment with the resulting system and propose framework
+  \item Review literature across disciplines.
+  \item Identify key creative activities.
+  \item Analyse the processes of creation.
+  \item Propose approaches to support these activities and processes.
+  \item Design and implement software following this approach.
+  \item Experiment with the resulting system and propose framework.
 \end{enumerate}
 
-They go on to propose four standards for \ac{CC} \autocite{Hugill2013c} namely, resist standardisation, perpetual novelty, continuous user interaction and combinational, exploratory and or transformational.
+They go on to propose four standards for \ac{CC} \autocite{Hugill2013c} namely, (1) resist standardisation, (2) perpetual novelty, (3) continuous user interaction and (4) combinational, exploratory and or transformational.
 
 A different model was suggested by Edmonds and Candy in their \ac{TMPR}, a framework to ``influence practice, inform theory and, in particular, shape evaluation'' \autocite*{Edmonds2010}. Figure~\ref{fig:tmpr}\sidepar{\faicon{object-group}~\ref{fig:tmpr}} shows the \ac{TMPR} which allows for different trajectories between practice, theory and evaluation. Table~\ref{tab:tmpr}\sidepar{\faicon{table}~\ref{tab:tmpr}} shows the various elements, activities and outcomes in this framework more clearly.
 
@@ -355,17 +357,17 @@ A different model was suggested by Edmonds and Candy in their \ac{TMPR}, a frame
 
 \spirals
 
-This project positions itself ``at once between the disciplines, across the different disciplines, and beyond all disciplines''---making it transdisciplinary. The abolishment of disciplinary boundaries suits the unique context of this research. Pataphysics specifically is highly subjective. John Searle highlighted that ontologically subjective topics (such as creativity) can be studied in epistemically objective ways \autocite*{Searle2015}.
+This project positions itself ``at once between the disciplines, across the different disciplines, and beyond all disciplines''---making it transdisciplinary. The abolishment of disciplinary boundaries suits the unique context of this research. Pataphysics specifically is highly subjective. Searle highlighted that ontologically subjective topics (such as creativity) can be studied in epistemically objective ways \autocite*{Searle2015}, which, as doctoral research, this project attempts to do.
 
-The Hugill and Yang \ac{CC} methodology seems general enough to fit the needs of this project, with all points covered in the various chapters of this thesis.
+The Hugill and Yang \ac{CC} methodology seems general enough to fit the needs of this project, with all 6 points covered in the various chapters of this thesis.
 
 \begin{enumerate}
   \item Review literature across disciplines (chapters~\ref{ch:inspirations}, \ref{ch:pataphysics}, \ref{ch:creativity}, \ref{ch:technology}, and \ref{ch:evaluation}).
-  \item Identify key activities in humans and machines (chapters~\ref{ch:pataphysics},~\ref{ch:creativity},~\ref{ch:technology} and \ref{ch:evaluation}).
+  \item Define creativity in humans and machines (chapters~\ref{ch:pataphysics},~\ref{ch:creativity},~\ref{ch:technology} and \ref{ch:evaluation}).
   \item Analyse the relation between the disciplines above (chapter~\ref{ch:foundations}).
   \item Propose algorithms to support creativity in machines (chapter~\ref{ch:implementation}).
   \item Design and implement software following this approach (chapter~\ref{ch:implementation}).
-  \item Experiment with the resulting system and propose interpretation/evaluation framework (chapters~\ref{ch:analysis}, \ref{ch:aspirations}, and \ref{ch:interpretation}).
+  \item Experiment with the resulting system and propose interpretation/evaluation framework (chapters~\ref{ch:analysis}, \ref{ch:future}, and \ref{ch:interpretation}).
 \end{enumerate}
 
 Figure~\ref{fig:ftmpr}\sidepar{\faicon{object-group}~\ref{fig:ftmpr}} on page~\pageref{fig:ftmpr} shows how the \ac{TMPR} could be applied to this project. 
@@ -415,11 +417,7 @@ The general workflow of this project was as follows.
 \label{fig:ftmpr}
 \end{figure}
 
-\begin{description}[leftmargin=2.7cm]
-  \item [Practice] (Works): Implementation of algorithms, website
-  \item [Theory] (Criteria, Frameworks): Algorithm design, context, evaluation framework
-  \item [Evaluation] (Results): Analysis and interpretation of work
-\end{description}
+As figure~\ref{fig:ftmpr}\sidepar{\faicon{object-group}~\ref{fig:ftmpr}} shows, the practive trajectory of this research is based on the practical development of a website to contain the exploratory search tool and implementation of the theoreical algorithms. The theory trajectory is about defining those algorithms formally in historic and topical context based on a critical survey of related literature. This also includes the development of a theoretical framework for the evaluation and interpretation of creative artefacts. The Evaluation trajectory then is all about the results. That includes an analysis of the work completed. The arrows in the figure indicate how these different trajectories influence each other.
 
 
 \stopcontents[chapters]
