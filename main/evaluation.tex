@@ -34,7 +34,7 @@ and to draw a judgement from Heaven upon you for the Injustice.
 \section{Evaluating Search}
 \label{s:evalsearch}
 
-Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional \ac{IR} however is usually evaluated using two metrics known as precision and recall \autocite{Baeza-Yates2011}. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.
+Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional \acf{IR} however is usually evaluated using two metrics known as precision and recall \autocite{Baeza-Yates2011}. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.
 
 \begin{equation}
   Precision = \frac{\text{relevant documents retrieved}}{\text{retrieved documents}}
@@ -57,7 +57,7 @@ Note the slight difference between the two. Precision tells us how many of all r
 \label{fig:PR}
 \end{figure}
 
-Precision is typically more important than recall in web search, so often evaluation is reduced to measuring the mean average precision value (MAP), which can be calculated using the formula in equation~\ref{eq:MAP}\sidepar{$\bm{\Sigma}$~\ref{eq:MAP}} \autocite[p.141]{Baeza-Yates2011}, where $R_i$ is the set of results for query $i$, $P(R_i[k])$ is the precision value for result $k$ for query $i$ and $|R_i|$ is the total number of results.
+Precision is typically more important than recall in web search, so often evaluation is reduced to measuring the \acf{MAP} value, which can be calculated using the formula in equation~\ref{eq:MAP}\sidepar{$\bm{\Sigma}$~\ref{eq:MAP}} \autocite{Baeza-Yates2011}, where $R_i$ is the set of results for query $i$, $P(R_i[k])$ is the precision value for result $k$ for query $i$ and $|R_i|$ is the total number of results.
 
 \begin{equation}
   MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
@@ -65,9 +65,9 @@ Precision is typically more important than recall in web search, so often evalua
 \end{equation}
 % \myequations{MAP}
 
-But for many web searches is it not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first page of results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called `Precision at n' or `P@n' \autocite{Baeza-Yates2011}. So for example this could be P@5 or P@10 or P@20. For example, to compare two ranking algorithms, we would calculate P@10 for each of them over an average of \num{100} queries maybe and compare the results and therefore the performance of the algorithm.
+But for many web searches ii is not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first page of results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called `Precision at n' or `P@n' \autocite{Baeza-Yates2011}. So for example this could be P@5, P@10, or P@20. To compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
 
-The Text REtrieval Conference (TREC) \autocite{Nist2016} is a conference that provides large test sets of data \autocite{Trec2011} to participants and let's them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages for example.
+The \acf{TREC \autocite{Nist2016} provides large test sets of data \autocite{Trec2011} to participants and let's them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages.
 
 There are certain other factors that can be or should be evaluated when looking at a complete search system, as shown below \autocite{Baeza-Yates2011}. 
 
@@ -79,13 +79,13 @@ There are certain other factors that can be or should be evaluated when looking 
   \item Amount of queries per given time period.
 \end{itemize}
 
-Ranking is another issue that could be considered to pre-evaluate web pages at indexing time rather than query time. This is further discussed in chapter~\ref{s:ranking}\sidepar{§~\ref{s:ranking}}.
+Ranking is another issue that could be considered to pre-evaluate web pages at indexing time rather than query time. This was previously discussed in chapter~\ref{s:ranking}\sidepar{§~\ref{s:ranking}}.
 
 \spirals
 
-Evaluating creative search is more complex as the notion of `relevance' is very different and this will be addressed in chapter~\ref{ch:interpretation}\sidepar{§~\ref{ch:interpretation}}. 
+Evaluating creative search is more complex, as the notion of `relevance' is very different and this will be addressed in chapter~\ref{ch:interpretation}\sidepar{§~\ref{ch:interpretation}}. 
 
-Sawle, Raczinski and Yang \autocite*{Sawle2011} discussed an initial approach to measure the creativity of search results. Based on a definition of creativity by Boden (as explained in chapter~\ref{s:boden}\sidepar{§~\ref{s:boden}}), they attempted to define creativity in a way which could be applied to search results and provide a simple metric to measure it. A copy of this paper can be found in appendix~\ref{app:pub}\sidepar{§~\ref{app:pub}}.
+Sawle, Raczinski and Yang \autocite*{Sawle2011} discussed an initial approach to measure the creativity of search results in 2011. Based on a definition of creativity by Boden (as explained in chapter~\ref{s:boden}\sidepar{§~\ref{s:boden}}), we attempted to define creativity in a way which could be applied to search results and provide a simple metric to measure it. A copy of this paper can be found in appendix~\ref{app:pub}\sidepar{§~\ref{app:pub}}.
 
 
 \section{Evaluating Creative Computers}
@@ -97,21 +97,21 @@ This section moves on from evaluating search and focuses on evaluating creativit
   The evaluation of artificial creative systems in the direct form currently practiced is not in itself empirically well-grounded, hindering the potential for incremental development in the field. \sourceatright{\autocite{Bown2014}}
 \end{quotation}
 
-Evaluating human creativity objectively seems problematic; evaluating computer creativity seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity (see section~\ref{s:humancreativity}\sidepar{§~\ref{s:humancreativity}}) and directly applying them to machines (see section~\ref{s:compcreativity}\sidepar{§~\ref{s:compcreativity}}) seems logical but may be the wrong (anthropomorphic) approach. Adapting Mayer's five big questions \autocite*{Mayer1999} to machines does not seem to capture the real issues at play. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of any or all of the following:
+Evaluating human creativity objectively seems problematic; evaluating computer creativity seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity (see section~\ref{s:humancreativity}\sidepar{§~\ref{s:humancreativity}}) and directly applying them to machines (see section~\ref{s:compcreativity}\sidepar{§~\ref{s:compcreativity}}) seems logical but may be the wrong (anthropomorphic) approach\sidepar{§~\ref{ss:anthropomorphism}}. Adapting Mayer's five big questions \autocite*{Mayer1999} to machines does not seem to capture the real issues at play. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of any or all of the following:
 
 \begin{itemize}
-  \item programmers (and collaborators)
-  \item users (audiences and participants)
-  \item machines (this is problematic until the posited AI singularity \cite{Schmidhuber2006a})
-  \item products (i.e. does a program output material that can be judged to be creative)
-  \item processes (e.g. a Processing sketch, or in a self-modifying/learning program)
+  \item programmers
+  \item users
+  \item machines\footnote{This is problematic until the posited \ac{AI} singularity \autocite{Schmidhuber2006a}.}
+  \item products
+  \item processes
 \end{itemize}
 
 For instance, is the programmer the only creative agent, or are users (i.e. audiences or participants in interactive work) able to modify the system with their own creative input? Similarly for any instance of machine creativity, we might ask if it is:
 
 \begin{itemize}
-  \item local (e.g. limited to a single machine or program?)
-  \item networked (i.e. interacts with other predefined machines)
+  \item local (e.g. limited to a single machine, program or agent)
+  \item networked (i.e. interacts with other predefined machines or programs)
   \item web-based (e.g. is distributed and/or open to interactions, perhaps via an API)
 \end{itemize}
 
@@ -133,22 +133,22 @@ This point is also strengthend by Lamb, Brown and Clarke, saying that ``non-expe
 
 Discussions from computational creativity often focus on very basic questions such as ``whether an idea or artefact is valuable or not, and whether a system is acting creatively or not'' \autocite{Pease2011}. Certain defining aspects of creativity, such as novelty and value (as discussed in chapter~\ref{ch:creativity}\sidepar{§~\ref{ch:creativity}}), are often used to measure the outcome of a creative process. These are highlighted throughout the following pages and further addressed in chapter~\ref{ch:interpretation}\sidepar{§~\ref{ch:interpretation}}.
  
-One recurring theme is the clear separation of training data input and creative output in computers. Pease, Winterstein and Colton called this principle ``output minus input'' \citeyear[p.2]{Pease2001}. The output in this case is the creative product but the input is not the process. Rather, it is the `inspiring set' (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) or training data of a piece of software.
+One recurring theme is the clear separation of training data input and creative output in computers. Pease, Winterstein and Colton called this principle ``output minus input'' \autocite*{Pease2001}. The output in this case is the creative product but the input is not the process. Rather, it is the `inspiring set' (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) or training data of a piece of software.
 
 \begin{quotation}
-  The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set. \sourceatright{\autocite[p.3]{Colton2001}}
+  The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set. \sourceatright{\autocite{Colton2001}}
 \end{quotation}
 
-They also suggest that all creative products must be ``novel and valuable'' \autocite[p.1]{Pease2001} and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss randomness as a measurable approach. Elsewhere, Pease et al discuss using serendipity as an approach \autocite*{Pease2013}.
+They also suggest that all creative products must be ``novel and valuable'' \autocite{Pease2001} and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss randomness as a measurable approach. Elsewhere, Pease et al discuss using serendipity as an approach \autocite*{Pease2013}.
 
-Graeme Ritchie supports the view that creativity in a computer system must be measured ``relative to its initial state of knowledge'' \citeyear[p.72]{Ritchie2007}. He identifies three main criteria for creativity as ``novelty, quality and typicality'' \citeyear[p.72-73]{Ritchie2007}, although he argues that ``novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality'' \citeyear[p.73]{Ritchie2007} \citeyear[see also][]{Ritchie2001}. He proposes several evaluation criteria which fall under the following categories: \citeyear[p.91-92]{Ritchie2007} basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those. Dan Ventura later suggested the addition of ``variety and efficiency'' to Ritchie's model \citeyear[p.7]{Ventura2008}.
+Graeme Ritchie supports the view that creativity in a computer system must be measured ``relative to its initial state of knowledge'' \autocite*{Ritchie2007}. He identifies three main criteria for creativity as ``novelty, quality and typicality'' \autocite*{Ritchie2007}, although he argues that ``novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality'' \autocite*{Ritchie2001,Ritchie2007}. He proposes several evaluation criteria which fall under the following categories \autocite*{Ritchie2007}: basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those. Dan Ventura later suggested the addition of ``variety and efficiency'' to Ritchie's model \autocite*{Ventura2008}.
 
-It should be noted that `output minus input' might easily be misinterpreted as `product minus process', however, that is not the case. In fact, Pease, Winterstein and Colton argue that ``the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity'' \citeyear[p.6]{Pease2001}, and that ``two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it'' \citeyear[p.7]{Pease2001}. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative and needs to be disqualified so to speak.
+It should be noted that `output minus input' might easily be misinterpreted as `product minus process', however, that is not the case. In fact, Pease, Winterstein and Colton argue that ``the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity'' \autocite*{Pease2001}, and that ``two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it'' \autocite*{Pease2001}. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative and needs to be disqualified so to speak.
 
 
 \subsection{Creative Tripod}
 
-Simon Colton came up with an evaluation framework called the ``creative tripod''. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent ``skill, appreciation, and imagination'' and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception ``that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative'' \autocite*{Colton2008a, Colton2008}. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative \autocite{Colton2008a, Colton2008}.
+Simon Colton came up with an evaluation framework called the \textit{creative tripod}. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent ``skill, appreciation, and imagination'' and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception ``that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative'' \autocite*{Colton2008, Colton2008a}. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative \autocite{Colton2008, Colton2008a}.
 
 \begin{quotation}
   Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same. \sourceatright{\autocite{Colton2008a}}
@@ -156,19 +156,19 @@ Simon Colton came up with an evaluation framework called the ``creative tripod''
 
 \spirals
 
-Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely ``novelty, usefulness/appropriateness and impact/influence'' \citeyear[p.258-259]{Piffer2012}. As an example of how this applies to measuring a person's creativity he proposes `citation counts' \autocite[p.261]{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example\footnote{The site \url{http://www.artfacts.net} seems to provide just that though.}.
+Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely ``novelty, usefulness/appropriateness and impact/influence'' \autocite*{Piffer2012}. As an example of how this applies to measuring a person's creativity he proposes `citation counts' \autocite{Piffer2012}. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example.
 
 
 \subsection{SPECS}
 \label{s:specs}
 
-Anna Jordanous proposed \num{14} key components of creativity (which she calls an ``ontology of creativity'') \citeyear[p.104-120]{Jordanous2012}, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics \citeyear[p.120]{Jordanous2012}.
+Anna Jordanous proposed \num{14} key components of creativity (which she calls an ``ontology of creativity'') \autocite*{Jordanous2012}, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics \autocite*{Jordanous2012}.
 
 \begin{quotation}
-  The themes identified in this linguistic analysis have collectively provided a clearer ``working'' understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts. \sourceatright{\autocite[p.120]{Jordanous2012}}
+  The themes identified in this linguistic analysis have collectively provided a clearer ``working'' understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts. \sourceatright{\autocite{Jordanous2012}}
 \end{quotation}
 
-The \num{14} components Jordanous collated are: \citeyear[p.118-120]{Jordanous2012}
+The 14 components Jordanous collated are: \autocite*{Jordanous2012}
 \begin{quotation}
   \begin{enumerate}
     \item Active Involvement and Persistence
@@ -188,7 +188,7 @@ The \num{14} components Jordanous collated are: \citeyear[p.118-120]{Jordanous20
   \end{enumerate}
 \end{quotation}
 
-Jordanous also found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \citeyear[p.2]{Jordanous2011} and proposed `\ac{SPECS}' \citeyear[p.137-140]{Jordanous2012a}:
+Jordanous also found that ``evaluation of computational creativity is not being performed in a systematic or standard way'' \autocite*{Jordanous2011} and proposed `\ac{SPECS}' \autocite*{Jordanous2012a}:
 
 \begin{quotation}
   \begin{enumerate}
@@ -232,7 +232,7 @@ Jordanous also defined 5 `meta-evaluation criteria' of correctness, usefulness, 
 \subsection{MMCE}
 \label{s:mmce}
 
-Linda Candy draws inspiration for the evaluation of (interactive) creative computer systems from \ac{HCI}. The focus of evaluation in \ac{HCI} has been on usability, she says \citeyear[p.23]{Candy2012}. She argues that in order to successfully evaluate an artefact, the practitioner needs to have ``the necessary information including constraints on the options under consideration'' \citeyear[p.7]{Candy2012}.
+Linda Candy draws inspiration for the evaluation of (interactive) creative computer systems from \ac{HCI}. The focus of evaluation in \ac{HCI} has been on usability, she says \autocite*{Candy2012}. She argues that in order to successfully evaluate an artefact, the practitioner needs to have ``the necessary information including constraints on the options under consideration'' \autocite*{Candy2012}.
 
 Evaluation happens at every stage of the process (i.e. from design $\to$ implementation $\to$ operation). Some of the key aspects of evaluation Candy highlights are:
 
@@ -243,7 +243,7 @@ Evaluation happens at every stage of the process (i.e. from design $\to$ impleme
   \item reflective practice
 \end{itemize}
 
-She goes on to introduce the \ac{MMCE} in figure~\ref{fig:mmce}\sidepar{\faicon{object-group}~\ref{fig:mmce}} with four main elements of people, process, product and context \citeyear[p.11]{Candy2012} similar to some of the models of creativity\sidepar{§~\ref{ch:creativity}} we have seen in chapter~\ref{ch:creativity}.
+She goes on to introduce the \ac{MMCE} (shown in figure~\ref{fig:mmce}\sidepar{\faicon{object-group}~\ref{fig:mmce}}) with four main elements of people, process, product and context \autocite*{Candy2012} similar to some of the models of creativity\sidepar{§~\ref{ch:creativity}} we have seen in chapter~\ref{ch:creativity}.
 
 \begin{figure}[!htbp]
   \centering
@@ -300,7 +300,7 @@ She goes on to introduce the \ac{MMCE} in figure~\ref{fig:mmce}\sidepar{\faicon{
 
 She proposes the following values or criteria for measurement \autocite*{Candy2012}.
 
-\begin{description}
+\begin{description}[leftmargin=1.8cm]
   \item [People] capabilities, characteristics, track record, reputation, impact, influence (profile, demographic, motivation, skills, experience, curiosity, commitment)
   \item [Process] problem finding, solution oriented, exploratory, systematic, practice-based, empirical, reflective, opportunistic, rules, standards (opportunistic, adventurous, curious, cautions, expert, knowledgeable, experienced)
   \item [Product] novel, original, appropriate, useful, surprising, flexible, fluent, engaging (immediate, engaging, enhancing, purposeful, exciting, disturbing)
@@ -343,7 +343,7 @@ This set of elements is described as the `object-level' (enabling exploratory se
 
 A typical search process would go as follows. We start with an initial set of concepts $C$ that represent our conceptual space and a query. We then explore $C$ and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden's sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden's transformational search) with slightly different quality criteria.
 
-Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework as shown below. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \ac{CSF}.
+Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework as shown below. For example, a system not finding any valuable concepts would be expressed as $[E](U) = 0$ (in Wiggins' original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the \ac{CSF} (see chapter~\ref{s:pataasp}\sidepar{§~\ref{s:pataasp}}).
 
 \begin{description}[leftmargin=10cm]
   \item [Hopeless Uninspiration] $V_\alpha (X) = \emptyset$\\ valued set of concepts is empty

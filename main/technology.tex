@@ -38,7 +38,7 @@ be an arch.
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \sourceatright{\autocite{Baeza-Yates2011}}
 \end{quotation}
 
-In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}\sidepar{\faicon{object-group}~\ref{fig:sea}}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a Web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
+In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}\sidepar{\faicon{object-group}~\ref{fig:sea}}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
 \begin{figure}[!htbp]
   \centering
@@ -60,9 +60,9 @@ In simple terms, a typical search process can be described as follows (see figur
 \label{fig:sea}
 \end{figure}
 
-Most big Web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results \autocite{Google2012, Baidu2012, Microsoft2012a}. Google uses over \num{200} signals \autocite*{Google2012} that influence the ranking of Web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
+Most big web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results \autocite{Google2012, Baidu2012, Microsoft2012a}. Google uses over 200 signals \autocite*{Google2012} that influence the ranking of web pages including their original PageRank algorithm \autocite{Brin1998, Brin1998b}.
 
-Any \ac{IR} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A Web crawler needs resources to crawl around the Web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ single-word vs.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors---for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from Web pages.
+Any \ac{IR} process is constrained by factors like subject, context, time, cost, system and user knowledge \autocite{Marchionini1988}. Such constraints should be taken into consideration in the development of any search tool. A web crawler needs resources to crawl around the web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g.\ single-word vs.\ multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors---for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from web pages.
 
 The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \autocite*{Google2016} and the Bingbot \autocite*{Bing2016} are well-known examples.
 
@@ -100,7 +100,7 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
     \text{God}         & 25               & 123           & 2
   }
 \]
-\caption[Various word-counts]{Various word-counts in Faustroll, Gospel and Voyage}
+\caption[Example TDM]{Example TDM for 3 documents and 9 words}
 \label{fig:termdocs}
 \end{figure}
 
@@ -113,17 +113,17 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 
 % The total wordcount of the above files is as follows: Faustroll=\num{131891}, Gospel=\num{139669}, and Voyage=\num{497295}.
 
-The dictionary is usually pre-processed (see section~\ref{s:nlp})\sidepar{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{app:stopwords}.}\sidepar{§~\ref{app:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion.
+The dictionary is usually pre-processed (see section~\ref{s:nlp})\sidepar{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{s:stopwords}.}\sidepar{§~\ref{s:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion (explained in the next paragraph).
 
-Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their relevance or collects that kind of information through analysis of mouse clicks, eye tracking etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by the search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decided whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
+Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their perceived relevance or collects that kind of information through analysis of mouse clicks, eye tracking, etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by a search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decides whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
 
 \subsection{IR Models}
 \label{s:irmodels}
 
-There are different models for different needs, for example a multimedia system is going to be different than a text based \ac{IR} system, or a Web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections and paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model \autocite{Brin1998}.
+There are different models for different needs, for example a multimedia system is going to be different than a text based \ac{IR} system, and a web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections and paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set-theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model \autocite{Brin1998}.
 
-The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[adapted from][p.58]{Baeza-Yates2011} where,
+The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[adapted from]{Baeza-Yates2011} where,
 
 \begin{conditions}
   D           & the set of documents \\
@@ -134,12 +134,12 @@ The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[a
   V           & the set of all distinct index terms $\{k_1,\ldots, k_t\}$ in a document collection (vocabulary)
 \end{conditions}
 
-This means, given a query $q$ and a set of documents $D$ in which we wish to search for $q$ in, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
+This means, given a query $q$ and a set of documents $D$, we need to produce a ranking score $R(q, d_j)$ for each document $d_j$ in $D$.
 
 
 \subsubsection{The Boolean Model}
 
-One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows \autocite[p.65]{Baeza-Yates2011}
+One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows \autocite{Baeza-Yates2011}
 
 \begin{equation}
   sim(d_j,q) =
@@ -151,7 +151,7 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 % \myequations{sim}
 
-where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. E.g.\ for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
+where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. For example, for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
 
 \begin{figure}[!htbp]
 \[
@@ -163,11 +163,11 @@ where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one
     \text{God}         & 25               & 123           & 2
   }
 \]
-\caption[Various word-counts (short)]{Various word-counts in Faustroll, Gospel and Voyage (short)}
+\caption[Example TDM (short)]{Example TDM for 9 words and 3 documents (short)}
 \label{fig:termdocs2}
 \end{figure}
 
-So, for a vocabulary $V$ of \{Faustroll, time, doctor and God\} and three documents $d_0 =$ Faustroll, $d_1 =$ Gospel and $d_2 =$ Voyage. The conjunctive component for $d_0$ is $(1,1,1,1)$. This is because each term in $V$ occurs at least once. $c(d_1)$ and $c(d_2)$ are both $(0,1,0,1)$ since the terms `Faustroll' and `doctor' do not occur in either of them.
+So, we have a vocabulary $V$ of \{Faustroll, time, doctor and God\} and three documents $d_0 =$ Faustroll, $d_1 =$ Gospel and $d_2 =$ Voyage. The conjunctive component for $d_0$ is $(1,1,1,1)$. This is because each term in $V$ occurs at least once. $c(d_1)$ and $c(d_2)$ are both $(0,1,0,1)$ since the terms `Faustroll' and `doctor' do not occur in either of them.
 
 Assume we have a query $q =$ doctor $\land$ (Faustroll $\lor$ $\neg$ God). Translating this query into \ac{DNF} will result in the following expression: $q_{DNF} = (1,0,1,1) \lor (1,1,1,1) \lor (1,0,1,0) \lor (1,1,1,0) \lor (0,0,1,0) \lor (0,1,1,0)$, where each component $(x_0,x_1,x_2,x_3)$ is the same as $(x_0 \land x_1 \land x_2 \land x_3)$.
 
@@ -203,12 +203,12 @@ The \ac{IDF} $idf_i$ weight is calculated as $\log_2 (N/df_i)$, where the docume
 \end{equation}
 % \myequations{TF-IDF Ranking}
 
-Where $tfidf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}} shows the following details.
+where $tfidf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}} shows the following details.
 
 \begin{conditions}
   k_{0}-k_{8} & [Faustroll,father,time,background,water,doctor,without,bishop,God] \\
   d_{0}-d_{2} & [Faustroll, Gospel, Voyage] (see figure~\ref{fig:termdocs}) \\
-  f_{i,j}     & the frequence (count) of term $k_i$ \\
+  f_{i,j}     & the frequence (count) of term $k_i$ in document $d_j$\\
   tf_{i,j}    & the \acl{TF} weight \\
   idf_{i}     & the \acl{IDF} weight \\
   tfidf_{i,j} & the \ac{TF}-\ac{IDF} weight
@@ -304,7 +304,7 @@ $\vec{d_j}$ is defined as $(w_{1,j}, w_{2,j}, \ldots, w_{t,j})$ and similarly $\
 \end{equation}
 % \myequations{sim2}
 
-Let's consider an example similar to the one used for the \nameref{s:tfidf} section. We have a corpus of three documents ($d_0$ = Faustroll, $d_1$ = Gospel, and $d_2$ = Voyage) and nine terms in the vocabulary ($k_0, \ldots, k_8$ = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant \ac{TF}-\ac{IDF} weights taken from table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}}).
+Let's consider an example similar to the one used for the \nameref{s:tfidf} section. We have a corpus of three documents ($d_0$ = Faustroll, $d_1$ = Gospel, and $d_2$ = Voyage) and nine terms in the vocabulary ($[k_0, \ldots, k_8]$ = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant \ac{TF}-\ac{IDF} weights taken from table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}}).
 
 \begin{conditions}
   \vec{d_0}   & (11.49,0,0,0,0,9.34,0,3.34,0) \\
@@ -315,7 +315,7 @@ Let's consider an example similar to the one used for the \nameref{s:tfidf} sect
   |\vec{d_2}| & 1.16
 \end{conditions}
 
-For this example we will use two queries: $q_0$ and $q_1$. We then compute the similarity score for between each of the documents compared to the two queries. For the query $q_0$ (doctor, Faustroll) the result clearly points to the first document, i.e. the Faustroll text. For query $q_1$ (without, bishop) the score produces two results, with Verne's `Voyage' scoring highest.
+For this example we will use two queries: $q_0$ (doctor, Faustroll) and $q_1$ (without, bishop). We then compute the similarity score for between each of the documents compared to the two queries by applying equation~\ref{eq:sim2}\sidepar{$\bm{\Sigma}$~\ref{eq:sim2}}. For the query $q_0$ the result clearly points to the first document, i.e. the Faustroll text. For query $q_1$ the score produces two results, with Verne's `Voyage' scoring highest.
 
 \begin{figure}[!h] % (here, top, bottom, page)
   \centering
@@ -360,6 +360,8 @@ For this example we will use two queries: $q_0$ and $q_1$. We then compute the s
   \end{minipage}
 \end{figure}
 
+\spirals
+
 There are several other common \ac{IR} models that aren't covered in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set {\sloppy \autocite{Miyamoto2010, Miyamoto1988, Srinivasan2001, Widyantoro2001, Miyamoto1986}} models or latent semantic indexing \autocite{Deerwester1990}, neural network models and others \autocite{Macdonald2009, Schuetze1998, Schuetze1995}.
 
 
@@ -377,7 +379,7 @@ From the user's point of view the search process can be broken down into four ac
   \item [Results evaluation] compare against \ac{IN}.
 \end{description}
 
-This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \autocite*{Marchionini1988} and they laid out a framework with the following main elements.
+This model poses problems in situations where an \ac{IN} cannot easily be articulated or in fact is not existent and the user is not looking for anything specific. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that ``the setting within which information-seeking takes place constrains the search process'' \autocite*{Marchionini1988} and they laid out a framework with the following main elements.
 
 \begin{itemize}
   \item Setting (the context of the search and external factors such as time, cost)
@@ -387,17 +389,19 @@ This model poses problems in situations where an \ac{IN} cannot easily be articu
   \item Outcomes (the assessment of the results/answers)
 \end{itemize}
 
+\spirals
+
 Searching can be thought of in two ways, `information lookup' (searching) and `exploratory search' (browsing) \autocite{DeVries1993, Marchionini2006}. A situation where an \ac{IN} cannot easily be articulated or is not existent (i.e. the user is not looking for anything specific) can be considered a typical case of exploratory search. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.
 
 Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g.\ fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require a certain extend of interpretation or prediction (e.g.\ analysis, evaluation, forecasting, transformation).
 
-With exploratory search, the user’s success in finding the right information depends a lot more on constraining factors such as those mentioned earlier and can sometimes benefit from a combination of information lookup and exploratory search \autocite{Marchionini2006}.
+With exploratory search, the user’s success in finding the right information depends a lot more on constraining factors and can sometimes benefit from a combination of information lookup and exploratory search \autocite{Marchionini2006}.
 
 \begin{quotation}
   Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
 \end{quotation}
 
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \autocite*{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see also section~\ref{s:boden}\sidepar{§~\ref{s:boden}}).
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \autocite*{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see section~\ref{s:boden}\sidepar{§~\ref{s:boden}}).
 
 % All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
@@ -405,9 +409,9 @@ De Vries called this form of browsing an ``enlargement of the problem space'', w
 \subsection{Ranking}
 \label{s:ranking}
 
-Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\sidepar{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also Web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
+Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\sidepar{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
-Ranking algorithms are the essence of any Web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as Google bombing \autocite{Nicole2010} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
+Ranking algorithms are the essence of any web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as `Google bombing' \autocite{Nicole2010} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
 
 
 \subsubsection{Algorithms}
@@ -437,7 +441,7 @@ Figure~\ref{fig:pagerank}\sidepar{\faicon{image}~\ref{fig:pagerank}} which shows
 \label{fig:pagerank}
 \end{figure}
 
-The HITS algorithm also works on the links between pages. It was first described by Kleinberg \autocite*{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS} shows the algorithm \autocite[p.471]{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
+The HITS algorithm also works on the links between pages \autocite{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS} shows the algorithm \autocite{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
 
 \begin{equation}
   \begin{split}
@@ -450,16 +454,16 @@ The HITS algorithm also works on the links between pages. It was first described
 
 Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila \autocite*{Bharat2000}. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their `hub' pages are predefined.
 
-Another algorithm is the so called Fish search algorithm \autocite*{DeBra1994, DeBra1994a, DeBra1994b}. The basic concept here is that the search starts with the search query and a seed URL as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
+Another algorithm is the so called Fish search algorithm \autocite{DeBra1994, DeBra1994a, DeBra1994b}. The basic concept here is that the search starts with the search query and a seed \ac{URL} as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. \ac{URL}s with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the `ranking' is done dynamically at query time.
 
-There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm in \autocite{Luo2005} where the authors have simply added an extra parameter to allow more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
+There are various algorithms that follow this approach. For example the shark search algorithm \autocite{Hersovici1998}. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm \autocite{Luo2005} where an extra parameter allows more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration \autocite{BastosFilho2008}. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut \autocite{Nick2001}.
 
-Other variations include the incorporation of user behaviour \autocite{Agichtein2006}, social annotations \autocite{Bao2007}, trust \autocite{Garcia-Molina2004}, query modifications \autocite{Glover2001}, topic sensitive PageRank [59] (p430) \autocite{Haveliwala2003}, folksonomies \autocite{Hotho2006}, SimRank \autocite{Jeh2002}, neural-networks \autocite{Shu1999}, and semantic Web \autocite{Widyantoro2001,Du2007,Ding2004,Kamps2010,Taye2009}.
+Other variations include the incorporation of user behaviour \autocite{Agichtein2006}, social annotations \autocite{Bao2007}, trust \autocite{Garcia-Molina2004}, query modifications \autocite{Glover2001}, topic sensitive PageRank \autocite{Haveliwala2003}, folksonomies \autocite{Hotho2006}, SimRank \autocite{Jeh2002}, neural-networks \autocite{Shu1999}, and semantic web \autocite{Widyantoro2001,Du2007,Ding2004,Kamps2010,Taye2009}.
 
 
 \subsection{Challenges}
 
-Other issues that arise when trying to search the World Wide Web were identified by Baeza-Yates and Ribeiro-Neto as follows \citeyear[p.449]{Baeza-Yates2011}.
+Other issues that arise when trying to search the \ac{WWW} were identified by Baeza-Yates and Ribeiro-Neto as follows \autocite*{Baeza-Yates2011}.
 
 \begin{itemize}
   \item Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.
@@ -470,13 +474,13 @@ Other issues that arise when trying to search the World Wide Web were identified
   \item Data is not heterogeneous. Different data types (text, images, sound, video) and different languages exist.
 \end{itemize}
 
-Since a single query for a popular word can results in millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite[p.459]{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite[p.459]{Baeza-Yates2011}. Google for example uses over 15,000 commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
+Since a single query for a popular word can results in millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite{Baeza-Yates2011}. Google for example uses over \num{15000} commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
 
 
 \section{Natural Language Processing}
 \label{s:nlp}
 
-\ac{NLP} is a discipline within computer science which is also known as follows \autocite{Jurafsky2009}.
+\acf{NLP} is a discipline within computer science which is also known as follows \autocite{Jurafsky2009}.
 
 \begin{itemize}
   \item Speech and language processing
@@ -485,14 +489,14 @@ Since a single query for a popular word can results in millions of retrieved doc
   \item Speech recognition and synthesis
 \end{itemize}
 
-Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing. For example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
+Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing.Applications are for example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
 
-There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} used for \url{pata.physics.wtf}.
+There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} (both of which were used for \url{pata.physics.wtf}).
 
 
 \subsection{Words}
 
-A lemma is a set of lexical forms that have the same stem (e.g.\ go). A word-form is the full inflected or derived form of the word (e.g.\ goes). A word type is a distinct word in a corpus (repetitions are not counted but case sensitive). A word token is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text \autocite{Manning2009}.
+A `lemma' is a set of lexical forms that have the same stem (e.g.\ go). A `word-form' is the full inflected or derived form of the word (e.g.\ goes). A `word type' is a distinct word in a corpus (repetitions are not counted but case sensitive). A `word token' is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text \autocite*{Manning2009}.
 
 \begin{description}
   \item [Tokenisation] discarding white spaces and punctuation and making every term a token
@@ -561,7 +565,7 @@ ab|cd                      & match ab or cd               \\
 
 \subsubsection{Damerau-Levensthein}
 
-The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}\sidepar{$\bm{\Sigma}$~\ref{eq:DL}})\autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
+The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}\sidepar{$\bm{\Sigma}$~\ref{eq:DL}}) \autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
 
 \begin{equation}
   d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
@@ -600,7 +604,7 @@ $1_{(a_i \neq b_j)}$ is equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise
 
 We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words \autocite{Jurafsky2009}. A 2-gram is usually called a `bigram' and a 3-gram a `trigram'.
 
-The basic way to compute the probability of an N-gram is using \ac{MLE} shown in equation~\ref{eq:mle}\sidepar{$\bm{\Sigma}$~\ref{eq:mle}} \autocite{Jurafsky2009} of a word $w_n$ given some history $w_{n-N+1}^{n-1}$ (i.e. the previous words in the sentence for example).
+A basic way to compute the probability of an N-gram is using a \ac{MLE} shown in equation~\ref{eq:mle}\sidepar{$\bm{\Sigma}$~\ref{eq:mle}} \autocite{Jurafsky2009} of a word $w_n$ given some history $w_{n-N+1}^{n-1}$ (i.e. the previous words in the sentence for example).
 
 \begin{equation}
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
@@ -610,9 +614,9 @@ The basic way to compute the probability of an N-gram is using \ac{MLE} shown in
 
 For instance, if we want to check which of two words ``shining'' and ``cold'' has a higher probability of being the next word given a history of ``the sun is'', we would need to compute $P$(shining|the sun is) and $P$(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence ``the sun is shining'' occurred in a training corpus by the number of times ``the sun is'' occurred and the same for the word ``cold''.
 
-Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain n-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
+Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain N-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
 
-One example is the so-called Laplace or add-one smoothing, which basically just adds 1 to each count. See equation~\ref{eq:padd1}\sidepar{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}. $V$ is the number of terms in the vocabulary.
+One example is the so-called `Laplace' or `add-one smoothing', which basically just adds 1 to each count. See equation~\ref{eq:padd1}\sidepar{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}. $V$ is the number of terms in the vocabulary.
 
 \begin{equation}
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
@@ -620,7 +624,7 @@ One example is the so-called Laplace or add-one smoothing, which basically just 
 \end{equation}
 % \myequations{padd1}
 
-Another example of smoothing is the so-called Good Turing discounting. It uses ``the count of things you've seen \textit{once} to help estimate the count of things you've \textit{never seen}'' \autocite[their emphasis]{Jurafsky2009}.
+Another example of smoothing is the so-called `Good Turing discounting'. It uses ``the count of things you've seen \textit{once} to help estimate the count of things you've \textit{never seen}'' \autocite[their emphasis]{Jurafsky2009}.
 
 \spirals
 
@@ -708,7 +712,7 @@ Hidden Markov or maximum entropy models can be used for sequence classification,
   The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. \sourceatright{\autocite{Jurafsky2009}}
 \end{quotation}
 
-A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\sidepar{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$, where  \autocite{Jurafsky2009}.
+A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\sidepar{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$ \autocite{Jurafsky2009}.
 
 \begin{equation}
   p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
@@ -807,7 +811,7 @@ w_i      & the weight of the feature $f_i$
 \subsubsection{Grammars}
 \label{s:grammars}
 
-A language is modelled using a grammar, specifically a Context-Free-Grammar. Such a grammar normally consists or rules and a lexicon. For example a rule could be `NP $\to$ Det Noun', where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form the noun phrases `the book' and `a book' only. Its two parse trees would then look like this (see figure~\ref{fig:trees}\sidepar{\faicon{object-group}~\ref{fig:trees}}):
+A language is modelled using a grammar, specifically a `Context-Free-Grammar'. Such a grammar normally consists or rules and a lexicon. For example a rule could be `NP $\to$ Det Noun', where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form two noun phrases `the book' and `a book' only. Its two parse trees would then look like figure~\ref{fig:trees}\sidepar{\faicon{object-group}~\ref{fig:trees}}:
 
 \begin{figure}[!htbp]
   \centering
@@ -820,11 +824,11 @@ A language is modelled using a grammar, specifically a Context-Free-Grammar. Suc
   \Tree[.NP [.Det \emph{the} ]
   [.Noun \emph{book} ]]
   \end{minipage}
-\caption[Parse trees]{Two parse trees}
+\caption[Parse trees]{Two parse trees for grammar `NP $\to$ Det Noun'}
 \label{fig:trees}
 \end{figure}
 
-Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar, a parsing algorithm should produce a parse tree for the given sentence. The parse tree for the first sentence from Faustroll is shown below, in horizontal for convenience. 
+Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar, a parsing algorithm should produce a parse tree for a given sentence. The parse tree for the first sentence from Faustroll is shown below, in horizontal format for convenience. 
 
 \begin{alltt}
 (ROOT
@@ -895,12 +899,12 @@ Parsing is the process of analysing a sentence and assigning a structure to it. 
     (. .)))
 \end{alltt}
 
-This particular tree was generated using the Stanford Parser at \url{http://nlp.stanford.edu:8080/parser/index.jsp}.
+This particular tree was generated using the Stanford Parser \autocite{Stanford2016}.
 
 
 \subsubsection{Named Entity Recognition}
 
-A named entity can be anything that can be referred to by a proper name, such as person, place or organisation names and times and amounts.
+A named entity can be anything that can be referred to by a proper name, such as person, place or organisation names and times and amounts and these entities can be appropriately tagged.
 
 Example (first sentence in Faustroll):
 
@@ -908,7 +912,7 @@ Example (first sentence in Faustroll):
   In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]$^{\text{TIME}}$, Pursuant to article [819]$^{\text{NUMBER}}$ of the [Code of Civil Procedure]$^{\text{DOCUMENT}}$ and at the request of [M. and Mme. Bonhomme (Jacques)]$^{\text{PERSON}}$, proprietors of a house situate at [Paris, 100 bis, rue Richer]$^{\text{LOCATION}}$, the aforementioned having address for service at my residence and further at the [Town Hall]$^{\text{FACILITY}}$ of [Q borough]$^{\text{LOCATION}}$.
 \end{quote}
 
-So-called gazetteers (lists of place or person names for example) can help with the detection of these named entities.
+So-called `gazetteers' (lists of place or person names for example) can help with the detection of these named entities.
 
 
 \stopcontents[chapters]
