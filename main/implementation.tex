@@ -33,10 +33,11 @@ is the young Dauphin every way complete.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
-  \includegraphics[width=\linewidth]{images/fullscreenshot}
-\caption[Screenshot of \url{pata.physics.wtf}]{Screenshot of \url{pata.physics.wtf}}
+  \includegraphics[width=0.95\linewidth]{images/fullscreenshot}
+\caption[Screenshot of \url{pata.physics.wtf}]{Screenshot of \url{pata.physics.wtf}\footnotemark}
 \label{img:fullscreenshot}
 \end{figure}
+\footnotetext{The individual letters of the title scramble into place when first loaded. Once this has happend, the title would read: `PATA.PHYSICS.SEARCH'.}
 
 \begin{wrapfigure}{o}{0.4\textwidth}
   \centering
@@ -94,15 +95,15 @@ is the young Dauphin every way complete.
   \vspace{-2cm}
 \end{wrapfigure}
 
-The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot1}\sidepar{\faicon{picture-o}~\ref{img:fullscreenshot1}}) embodies the knowledge of this doctoral research and showcases \ac{AMC} and patalgorithms. This chapter gives an overview of the structure of the website and the development process.
+The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot}\sidepar{\faicon{picture-o}~\ref{img:fullscreenshot}}) embodies the knowledge of this doctoral research and showcases \acf{AMC} and patalgorithms. This chapter gives an overview of the structure of the website and the development process.
 
 A high level view of the site would be that it is a pataphysical search engine that subverts conventional expectations by recombining literary texts into emergent user directed and ephemeral poetical structures or unpredictable spirals of pataphysicalised visual media. 
 
-It is written in \num{5} different programming languages\footnote{Python,\ac{HTML}, CSS, Jinja, JavaScript}, making calls to \num{6} external web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over \num{30} files. 
+It is written in 5 different programming languages\footnote{Python, \ac{HTML}, \ac{CSS}, Jinja, JavaScript}, making calls to 6 external web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over 30 key files. 
 
-Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not directly the case in this project).
+Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not fully the case in this project).
 
-The front-end design uses the \textbf{W3.CSS} stylesheet as a basis. The website is mostly responsive, meaning it can be viewed well on phones, tablets and desktop screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).
+The front-end design uses the \textit{W3.CSS} stylesheet \autocite{w3css} as a basis. The website is mostly responsive (see image~\ref{img:proto3screen}\sidepar{\faicon{picture-o}~\ref{img:proto3screen}}), meaning it can be viewed well on phones, tablets and desktop screens (the poems and image spirals for example unfortunately have a fixed width which does not scale down well). The site contains various scripts written in \textbf{JavaScript} (e.g. scramble letters, randomise poem, send email and tabbed content).
 
 The backend relies heavily on a \textbf{Python} framework called \textbf{Flask}. Most of the code is written in Python although some parts require a specific templating language called \textbf{Jinja} which renders content into\ac{HTML}. The application uses several \acs{API}'s (Microsoft Translator, Bing, YouTube, Flickr, Getty and WordNet) and is version controlled using \textbf{Git}.\footnote{Backend links: \url{https://www.python.org/}, \url{http://flask.pocoo.org/}, \url{http://jinja.pocoo.org/}, \url{https://git-scm.com/}}
 
@@ -755,7 +756,7 @@ def dameraulevenshtein(seq1, seq2):
 The clinamen algorithm mimics the unpredictable swerve, the smallest possible aberration that can make the greatest possible difference, or the smallest possible perturbations with the most drastic consequences. 
 
 
-\section{Result Sentences}
+\subsection{Result Sentences}
 \label{s:ressent}
 
 % {
