@@ -54,6 +54,25 @@ On the face of it this thesis might appear to argue that computers can be seen a
 %   \item Relevance opposes the creative.
 % \end{itemize}
 
+Figure~\ref{fig:patarc2} shows an abstract view of \url{pata.physics.wtf}\sidepar{\faicon{object-group}~\ref{fig:patarc2}}.
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}[node distance = 1.5cm and 2.5cm]
+    \spiral[]{center={(4.5,-2.3)}, end angle=45, end radius= 0.3, revolutions=4};
+    \node [box] (corpus) {Corpus};
+    \node [box, below = of corpus] (index) {Index};
+    \node [box, right = of index] (pata) {};
+    \node [box, above = of pata] (user) {User};
+    \draw [->] (corpus) -- node [left] {setup} (index);
+    \draw [->] (user) -- node [right] {query} (pata);
+    \draw [->] (pata) -- node [below] {patadata} (index);
+    \draw [->] (index) -- node [above = 10pt] {results} (user);
+  \end{tikzpicture}
+  \caption[Pataphysical system architecture (again)]{Pataphysical system architecture (again)}
+  \label{fig:patarc2}
+\end{figure}
+
 
 \section{Answers}
 \label{s:answers}

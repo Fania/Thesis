@@ -67,7 +67,7 @@ Precision is typically more important than recall in web search, so often evalua
 
 But for many web searches ii is not necessary to calculate the average of all results, since users don't inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first page of results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called `Precision at n' or `P@n' \autocite{Baeza-Yates2011}. So for example this could be P@5, P@10, or P@20. To compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.
 
-The \acf{TREC \autocite{Nist2016} provides large test sets of data \autocite{Trec2011} to participants and let's them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages.
+The \acf{TREC} \autocite{Nist2016} provides large test sets of data \autocite{Trec2011} to participants and let's them compare results. They have specific test sets for web search comprised of crawls of $.gov$ web pages.
 
 There are certain other factors that can be or should be evaluated when looking at a complete search system, as shown below \autocite{Baeza-Yates2011}. 
 
