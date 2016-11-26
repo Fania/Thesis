@@ -587,6 +587,26 @@
       \verb http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx
       \endverb
     \endentry
+    \entry{BingNew}{online}{}
+      \list{organization}{1}{%
+        {Microsoft}%
+      }
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{Microsoft}
+      \field{title}{Bing Image Search API}
+      \field{titleaddon}{Cognitive Services}
+      \field{urlday}{26}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb https://www.microsoft.com/cognitive-services/en-us/bing-image-search-api
+      \endverb
+    \endentry
     \entry{BingAzureAPI}{online}{}
       \list{organization}{1}{%
         {Microsoft}%
@@ -596,9 +616,9 @@
       \field{labelyear}{2012}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Microsoft}
+      \field{label}{BingAPI}
       \field{title}{{Bing Search API}}
-      \field{titleaddon}{Microsoft DataMarket}
+      \field{titleaddon}{DataMarket}
       \field{urlday}{07}
       \field{urlmonth}{08}
       \field{urlyear}{2016}
@@ -842,7 +862,7 @@
            family_i={B\bibinitperiod},
            given={Sergey},
            given_i={S\bibinitperiod}}}%
-        {{uniquename=2,hash=7ddfb5dccb95d01018c3b0724ae93a06}{%
+        {{uniquename=0,hash=7ddfb5dccb95d01018c3b0724ae93a06}{%
            family={Page},
            family_i={P\bibinitperiod},
            given={Larry},
@@ -1208,6 +1228,32 @@
       \field{year}{2007}
       \verb{url}
       \verb http://scienceblogs.com/developingintelligence/2007/03/27/why-the-brain-is-not-like-a-co/
+      \endverb
+    \endentry
+    \entry{Christian2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=ac2ec96d853eabf68942c683de0a0540}{%
+           family={Christian},
+           family_i={C\bibinitperiod},
+           given={Peter},
+           given_i={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac2ec96d853eabf68942c683de0a0540}
+      \strng{fullhash}{ac2ec96d853eabf68942c683de0a0540}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{label}{{N+7}}
+      \field{title}{{The N+7 Machine}}
+      \field{urlday}{20}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://www.spoonbill.org/n+7/
       \endverb
     \endentry
     \entry{Clark2014}{online}{}
@@ -2835,7 +2881,7 @@
       \field{labelyear}{n.d.}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Flickr}
+      \field{label}{FlickrAPI}
       \field{title}{{Getting Started}}
       \field{titleaddon}{The Flickr Developer Guide: API}
       \field{urlday}{07}
@@ -3206,14 +3252,14 @@
     \entry{VA2016}{online}{}
       \list{organization}{2}{%
         {Victoria}%
-        {Albert}%
+        {Albert Museum}%
       }
       \field{sortinit}{H}
       \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Cohen, Harold}
+      \field{label}{V \& A}
       \field{title}{Harold Cohen}
       \field{titleaddon}{Search the Collections}
       \field{urlday}{05}
@@ -3955,15 +4001,35 @@
       \field{labelyear}{n.d.}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Microsoft}
+      \field{label}{Bing}
       \field{title}{{Image Search API Reference}}
-      \field{titleaddon}{Microsoft Developer Network}
+      \field{titleaddon}{Microsoft Developer Network (MSDN)}
       \field{urlday}{07}
       \field{urlmonth}{08}
       \field{urlyear}{2016}
       \field{year}{n.d.}
       \verb{url}
       \verb https://msdn.microsoft.com/en-us/library/dn760791.aspx
+      \endverb
+    \endentry
+    \entry{GoogleTime2015}{online}{}
+      \list{organization}{1}{%
+        {Google}%
+      }
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labeltitlesource}{title}
+      \field{label}{Google}
+      \field{title}{Improve Server Response Time}
+      \field{titleaddon}{PageSpeed Tools > Insights}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://developers.google.com/speed/docs/insights/Server
       \endverb
     \endentry
     \entry{Indurkhya1997}{unpublished}{}
@@ -5467,14 +5533,14 @@
     \endentry
     \entry{Bing2016}{online}{}
       \list{organization}{1}{%
-        {Microsoft Bing}%
+        {Microsoft}%
       }
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
       \field{labelyear}{n.d.}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Microsoft}
+      \field{label}{Bing Crawlers}
       \field{title}{Meet our crawlers}
       \field{titleaddon}{Webmaster help and how-to}
       \field{urlday}{15}
@@ -5617,33 +5683,6 @@
       \verb http://regexcrossword.com/
       \endverb
     \endentry
-    \entry{Tayandyou2016}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=140864078aeca1c7c35b4beb33c53c34}{%
-           family={Microsoft},
-           family_i={M\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {Twitter}%
-      }
-      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
-      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
-      \field{sortinit}{M}
-      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
-      \field{labelyear}{2016}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Tay.AI}
-      \field{titleaddon}{@tayandyou}
-      \field{urlday}{05}
-      \field{urlmonth}{11}
-      \field{urlyear}{2016}
-      \field{year}{2016}
-      \verb{url}
-      \verb https://twitter.com/tayandyou
-      \endverb
-    \endentry
     \entry{Tay2016}{online}{}
       \list{organization}{1}{%
         {Internet Archive Wayback Machine}%
@@ -5653,8 +5692,8 @@
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Microsoft}
-      \field{title}{Microsoft: About Tay andPrivacy}
+      \field{label}{Tay.ai}
+      \field{title}{Microsoft: About Tay and Privacy}
       \field{urlday}{05}
       \field{urlmonth}{11}
       \field{urlyear}{2016}
@@ -5672,9 +5711,9 @@
       \field{labelyear}{2011}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Microsoft}
+      \field{label}{Translator}
       \field{title}{{Microsoft Translator - Text Translation}}
-      \field{titleaddon}{Microsoft DataMarket}
+      \field{titleaddon}{DataMarket}
       \field{urlday}{07}
       \field{urlmonth}{08}
       \field{urlyear}{2016}
@@ -6159,10 +6198,10 @@
     \endentry
     \entry{Brin1998}{report}{}
       \name{author}{4}{}{%
-        {{uniquename=2,hash=5ca20489809aaab392f875d6bc785086}{%
+        {{uniquename=0,hash=7ddfb5dccb95d01018c3b0724ae93a06}{%
            family={Page},
            family_i={P\bibinitperiod},
-           given={Lawrence},
+           given={Larry},
            given_i={L\bibinitperiod}}}%
         {{uniquename=0,hash=ade8269d287e9c1531e4a1cbad0b4b82}{%
            family={Brin},
@@ -6186,8 +6225,8 @@
       \list{publisher}{1}{%
         {Stanford InfoLab}%
       }
-      \strng{namehash}{07b677797f2f761de27121ff4ec8b078}
-      \strng{fullhash}{d9b2cbd8494ef6058fe2436ee7edd977}
+      \strng{namehash}{0f9de4af302478f83d2bf57278b293d7}
+      \strng{fullhash}{1207a0e28611103f51b7b8315311ad5b}
       \field{sortinit}{P}
       \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
       \field{labelyear}{1999}
@@ -6785,6 +6824,32 @@
       \verb http://www.catb.org/~esr/jargon/
       \endverb
     \endentry
+    \entry{Reitznd}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=1fc021f4fa3dc375d965f38b8ae5fe06}{%
+           family={Reitz},
+           family_i={R\bibinitperiod},
+           given={Kenneth},
+           given_i={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fc021f4fa3dc375d965f38b8ae5fe06}
+      \strng{fullhash}{1fc021f4fa3dc375d965f38b8ae5fe06}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{n.d.}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Requests}
+      \field{titleaddon}{HTTP for Humans}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{n.d.}
+      \verb{url}
+      \verb http://docs.python-requests.org/en/master/
+      \endverb
+    \endentry
     \entry{Rhodes1961}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=8e9691784598e3c254b3d45b87886757}{%
@@ -7256,7 +7321,7 @@
       \field{labelyear}{n.d.}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
-      \field{label}{Getty}
+      \field{label}{GettyAPI}
       \field{title}{{Search For Creative Images}}
       \field{titleaddon}{Getty Images API}
       \field{urlday}{07}
@@ -7547,30 +7612,6 @@
       \verb http://sophiabot.com/
       \endverb
     \endentry
-    \entry{Spoonmaster2016}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=8e47b98accd956199323065dc6bf7351}{%
-           family={Spoonmaster},
-           family_i={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{8e47b98accd956199323065dc6bf7351}
-      \strng{fullhash}{8e47b98accd956199323065dc6bf7351}
-      \field{sortinit}{S}
-      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
-      \field{labelyear}{2016}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{label}{{N+7}}
-      \field{title}{{The N+7 Machine}}
-      \field{urlday}{20}
-      \field{urlmonth}{11}
-      \field{urlyear}{2016}
-      \field{year}{2016}
-      \verb{url}
-      \verb http://www.spoonbill.org/n+7/
-      \endverb
-    \endentry
     \entry{Srinivasan2001}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=82cf99e92395928628bf3857603fb154}{%
@@ -7751,6 +7792,33 @@
       \field{pages}{321\bibrangedash 351}
       \range{pages}{31}
     \endentry
+    \entry{Tayandyou2016}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=8a3240e75f63ce748a192baf7a5089d5}{%
+           family={@tayandyou},
+           family_i={@\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Twitter}%
+      }
+      \strng{namehash}{8a3240e75f63ce748a192baf7a5089d5}
+      \strng{fullhash}{8a3240e75f63ce748a192baf7a5089d5}
+      \field{sortinit}{t}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tay.AI}
+      \field{titleaddon}{@tayandyou}
+      \field{urlday}{05}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://twitter.com/tayandyou
+      \endverb
+    \endentry
     \entry{Taye2009}{thesis}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=be520420b41783e8d7988a145c717eb8}{%
@@ -7823,6 +7891,7 @@
       \field{labelyear}{2016}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
+      \field{label}{Stanford Parser}
       \field{title}{The Stanford Parser: A statistical parser}
       \field{titleaddon}{The Stanford Natural Language Processing Group}
       \field{urlday}{22}
@@ -8336,6 +8405,35 @@
       \field{titleaddon}{OCTO report 93/02}
       \field{year}{1993}
     \endentry
+    \entry{Vykhodtsev2015}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=55198ad0798a127e44b296fdccc77ccd}{%
+           family={Vykhodtsev},
+           family_i={V\bibinitperiod},
+           given={Alexander},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{55198ad0798a127e44b296fdccc77ccd}
+      \strng{fullhash}{55198ad0798a127e44b296fdccc77ccd}
+      \field{sortinit}{V}
+      \field{sortinithash}{d18f5ce25ce0b5ca7f924e3f6c04870e}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Chrome-Load-Timer}
+      \field{titleaddon}{Google Chrome extension to measure page load time and display it in the toolbar}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://github.com/alex-vv/chrome-load-timer
+      \endverb
+    \endentry
     \entry{w3css}{online}{}
       \list{organization}{1}{%
         {W3 Schools}%
@@ -8345,6 +8443,7 @@
       \field{labelyear}{n.d.}
       \field{datelabelsource}{}
       \field{labeltitlesource}{title}
+      \field{label}{W3.CSS}
       \field{title}{W3.CSS Tutorial}
       \field{titleaddon}{Faster and Better Responsive Websites}
       \field{urlday}{23}
@@ -8493,36 +8592,9 @@
       \verb http://wordnet.princeton.edu
       \endverb
     \endentry
-    \entry{White2004}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=2,hash=0840553d8eaedcc60497b90c47784381}{%
-           family={White},
-           family_i={W\bibinitperiod},
-           given={Ryen\bibnamedelima W},
-           given_i={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{uniquename=0,hash=34443e5f53d9622a82ef394045e2db5d}{%
-           family={Marchionini},
-           family_i={M\bibinitperiod},
-           given={Gary},
-           given_i={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{ba1347d6fb97b525776a44c2e224994a}
-      \strng{fullhash}{ba1347d6fb97b525776a44c2e224994a}
-      \field{sortinit}{W}
-      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
-      \field{labelyear}{2004}
-      \field{datelabelsource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issue}{433-436}
-      \field{journaltitle}{Information Processing \& Management}
-      \field{title}{{Evaluating Exploratory Search Systems}}
-      \field{volume}{44}
-      \field{year}{2004}
-    \endentry
     \entry{White2013}{inproceedings}{}
       \name{author}{1}{}{%
-        {{uniquename=2,hash=e9980c6d3b77ce9c7a129325e2253220}{%
+        {{uniquename=0,hash=e9980c6d3b77ce9c7a129325e2253220}{%
            family={White},
            family_i={W\bibinitperiod},
            given={Ryen\bibnamedelima William},
@@ -8542,6 +8614,33 @@
       \field{booktitle}{Proceedings of the 36th International ACM SIGIR Conference on Research and Development in Information Retrieval}
       \field{title}{{Beliefs and biases in web search}}
       \field{year}{2013}
+    \endentry
+    \entry{White2004}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=e9980c6d3b77ce9c7a129325e2253220}{%
+           family={White},
+           family_i={W\bibinitperiod},
+           given={Ryen\bibnamedelima William},
+           given_i={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{uniquename=0,hash=34443e5f53d9622a82ef394045e2db5d}{%
+           family={Marchionini},
+           family_i={M\bibinitperiod},
+           given={Gary},
+           given_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{e200b7f9fd89104b4d4a009c7227eb06}
+      \strng{fullhash}{e200b7f9fd89104b4d4a009c7227eb06}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2004}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{433-436}
+      \field{journaltitle}{Information Processing \& Management}
+      \field{title}{{Evaluating Exploratory Search Systems}}
+      \field{volume}{44}
+      \field{year}{2004}
     \endentry
     \entry{Python2016}{online}{}
       \field{sortinit}{W}

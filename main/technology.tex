@@ -151,7 +151,7 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 % \myequations{sim}
 
-where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. For example, for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
+where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. For example, for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2}\sidepar{\faicon{object-group}~\ref{fig:termdocs2}} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
 
 \begin{figure}[!htbp]
 \[
@@ -317,7 +317,7 @@ Let's consider an example similar to the one used for the \nameref{s:tfidf} sect
 
 For this example we will use two queries: $q_0$ (doctor, Faustroll) and $q_1$ (without, bishop). We then compute the similarity score for between each of the documents compared to the two queries by applying equation~\ref{eq:sim2}\sidepar{$\bm{\Sigma}$~\ref{eq:sim2}}. For the query $q_0$ the result clearly points to the first document, i.e. the Faustroll text. For query $q_1$ the score produces two results, with Verne's `Voyage' scoring highest.
 
-\begin{figure}[!h] % (here, top, bottom, page)
+\begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
   \begin{minipage}[t]{.475\linewidth}
     \begin{conditions}
@@ -370,7 +370,7 @@ There are several other common \ac{IR} models that aren't covered in detail here
 
 What is actually meant by the word `searching'? Usually it implies that there is something to be found, an \ac{IN}; although that doesn't necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
 
-From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\sidepar{§~\ref{s:4stages}}\autocite{Polya1957}:
+From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\sidepar{§~\ref{s:4stages}} \autocite{Polya1957}:
 
 \begin{description}[leftmargin=5cm]
   \item [Problem identification] \acf{IN},
@@ -416,7 +416,7 @@ Ranking algorithms are the essence of any web search engine and as such guarded 
 
 \subsubsection{Algorithms}
 
-\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \autocite*{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \autocite*{Brin1998b}.
+\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \autocite*{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \autocite*{Brin1998b}\sidepar{$\bm{\Sigma}$~\ref{eq:PR}}.
 
 \begin{equation}
   PR(A) =
@@ -441,7 +441,7 @@ Figure~\ref{fig:pagerank}\sidepar{\faicon{image}~\ref{fig:pagerank}} which shows
 \label{fig:pagerank}
 \end{figure}
 
-The HITS algorithm also works on the links between pages \autocite{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS} shows the algorithm \autocite{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
+The HITS algorithm also works on the links between pages \autocite{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS}\sidepar{$\bm{\Sigma}$~\ref{eq:HITS}} shows the algorithm \autocite{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
 
 \begin{equation}
   \begin{split}
@@ -565,7 +565,7 @@ ab|cd                      & match ab or cd               \\
 
 \subsubsection{Damerau-Levensthein}
 
-The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}\sidepar{$\bm{\Sigma}$~\ref{eq:DL}}) \autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
+The Damerau–Levenshtein distance\sidepar{$\bm{\Sigma}$~\ref{eq:DL}} between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}) \autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
 
 \begin{equation}
   d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
@@ -639,7 +639,7 @@ To calculate the probability of a sequence of $n$ words ($P(w_1,w_2,\ldots,w_n)$
 \end{equation}
 % \myequations{Probw1n}
 
-Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation~\ref{eq:probw1n2}\sidepar{$\bm{\Sigma}$~\ref{eq:probw1n2}} \autocite{Jurafsky2009}).
+Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word\sidepar{$\bm{\Sigma}$~\ref{eq:probw1n2}} depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation~\ref{eq:probw1n2} \autocite{Jurafsky2009}).
 
 \begin{equation}
   P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
@@ -899,7 +899,7 @@ Parsing is the process of analysing a sentence and assigning a structure to it. 
     (. .)))
 \end{alltt}
 
-This particular tree was generated using the Stanford Parser \autocite{Stanford2016}.
+This particular tree was generated using the Stanford Parser \autocite*{Stanford2016}.
 
 
 \subsubsection{Named Entity Recognition}

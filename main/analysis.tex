@@ -420,7 +420,7 @@ There are other options of how to make this data structure. For example we could
 
 \subsection{Clinamen}
 
-The clinamen\sidepar{§~\ref{s:clinamenalgo}} function uses the Damerau-Levenshtein algorithm to create patadata\sidepar{§~\ref{app:damlev}}. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the Damerau-Levenshtein algorithm needing two words to compare with each other. It also ensures that we get real words as results and not some random gibberish.
+The clinamen\sidepar{§~\ref{s:clinamenalgo}} function uses the Damerau-Levenshtein algorithm to create pata\-data\sidepar{\faicon{code}~\ref{code:dl}}. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the Damerau-Levenshtein algorithm needing two words to compare with each other. It also ensures that we get real words as results and not some random gibberish.
 
 Currently the algorithm is set to accept terms that have a difference of 1 or 2 to the original query. We can lower this to 1 to allow fewer results or increase it to make it broader. I felt 1 or 2 was a good compromise. Only allowing 1 error would mean terms are too similar. Allowing 3 might mean they are drastically different.
 
@@ -655,7 +655,7 @@ Getty uses the \py{phrase} parameter to set the query. It only creates one patap
   \vspace{-1cm}
     \item[query] The user's search query string. The query string cannot be empty. The query string may contain Bing Advanced Operators\footnote{For example `AND', `OR', `imagesize:', `NOT', or `phrase'}. For example, to limit images to a specific domain, use the site: operator. To help improve relevance and the results, you should always include the user's query string in an insights query (see insightsToken). This parameter is supported only by the Image API; do not specify this parameter when calling the Trending Images API.
   \end{description}
-  \sourceatright{\autocite{BingAPI}\footnote{Microsoft will discontinue the current \ac{API} in December 2016. The new version is documented on \url{https://www.microsoft.com/cognitive-services/en-us/bing-image-search-api}.}}
+  \sourceatright{\autocite{BingAPI}\footnote{Microsoft will discontinue the current \ac{API} in December 2016. The new service will not be free unfortunately \autocite{BingNew}, so I will probably have to disable the Bing image search option.}}
 \end{quotation}
 
 The Bing function uses the \py{query} parameter to set the query in the same way as Getty.
@@ -670,8 +670,6 @@ The Bing function uses the \py{query} parameter to set the query in the same way
 \end{quotation}
 
 Youtube works in a similar way too. The \py{q} parameter is set to the pataphysicalised query term and one call retrieves ten results.
-
-Something else to consider is perhaps that it is not entirely clear how the internal search for each \ac{API} works. This means that there's a possibility that they do their own query expansion\sidepar{§~\ref{s:qexpansion}} in the background to find more matches.
 
 
 \subsubsection{Quota}
@@ -691,13 +689,11 @@ Each \ac{API} has a different quota for their subscription packages. At this sta
 \section{Creativity \& Intelligence}
 \label{s:theoryanalysis}
 
-A more theoretical aspect of this analysis is concerned with what was already discussed to an extent in chapter~\ref{ch:interpretation} (specifically sections~\ref{ss:anthropomorphism}, \ref{s:programmer}, \ref{s:mimicry} and \ref{s:babying}), namely the thread connecting `artificial creativity' and \acl{AI}.
+A more theoretical aspect of this analysis is concerned with what was already discussed to an extent in chapter~\ref{ch:interpretation} (specifically sections~\ref{ss:anthropomorphism}, \ref{s:programmer}, \ref{s:mimicry} and \ref{s:babying}), namely the thread connecting `artificial creativity' and \acf{AI}.
 
-To me, the question of whether computers can be intelligent and make ethical decisions is the same as asking whether a computer can be creative. A lot of the arguments for or against \ac{AI} can be applied to computer creativity.  
-
-Answering the question of whether computers can think in my view would also answer the question of whether computers can be creative.
+To me, the question of whether computers can be intelligent and make ethical decisions is the same as asking whether a computer can be creative. A lot of the arguments for or against \ac{AI} can be applied to computer creativity.   Answering the question of whether computers can think in my view would also answer the question of whether computers can be creative.
  
-Robert Horn groups the various strands of enquiry related to the question of `can computers think?' into 8 main arguments with several subquestions each \autocite*{Horn2009} (the full list of questions can be found in appendix~\ref{app:think}\sidepar{§~\ref{app:think}}). 
+Horn groups the various strands of enquiry related to the question of `can computers think?' into 8 main arguments with several subquestions each \autocite*{Horn2009} (the full list of questions can be found in appendix~\ref{s:think}\sidepar{§~\ref{s:think}}). 
 
 \begin{quotation}
   \begin{enumerate}
@@ -716,15 +712,11 @@ Robert Horn groups the various strands of enquiry related to the question of `ca
 
 \subsection{Free Will \& Surprise}
 
-As early as 1842, Ada Lovelace briefly mentioned in the annotations to her translation of Menabrea's account of Babbage's \textit{Analytical Engine} that the ``Analytical Engine has no pretensions whatever to \textit{originate} anything. It can do \textit{whatever we know how to order it} to perform'', implying that the machine cannot think by itself \autocite[her emphasis]{Menabrea1842}.
+As early as 1842, Ada Lovelace mentioned in the annotations to her translation of Menabrea's account of Babbage's \textit{Analytical Engine} that the ``Analytical Engine has no pretensions whatever to \textit{originate} anything. It can do \textit{whatever we know how to order it} to perform'', implying that the machine cannot think by itself \autocite[][her emphasis]{Menabrea1842}.
 
-Alan Turing said in his article on thinking computers that ``to behave like a brain seems to involve free will, but the behaviours of a digital computer, when it has been programmed, is completely determined'' \autocite*{Turing1951}. 
+Turing said in his article on thinking computers that ``to behave like a brain seems to involve free will, but the behaviours of a digital computer, when it has been programmed, is completely determined'' \autocite*{Turing1951}. Furthermore, in his famous article \textit{Computing Machinery and Intelligence} he mentions that a digital computer with a `random element' is ``sometimes described as having free will'' although he adds that he ``would not use this phrase'' himself \autocite*{Turing2009}. 
 
-Furthermore, in his famous article \textit{Computing Machinery and Intelligence} he mentions that a digital computer with a `random element' is ``sometimes described as having free will'' although he adds that he ``would not use this phrase'' himself \autocite*{Turing2009}. 
-
-Introducing a random element to a computer program prevents us from fully predicting the outcome---leading to us being surprised.
-
-The ability of computers to surprise their creators seems to be an indicator of intelligence. Turing suggests that ``we should be pleased when the machine surprises us, in rather the same way as one is pleased when a pupil does something which he had not been explicitly taught to do'' \autocite*{Turing1951}. 
+Introducing a random element to a computer program prevents us from fully predicting the outcome---leading to us being surprised. The ability of computers to surprise their creators seems to be an indicator of intelligence. Turing suggests that ``we should be pleased when the machine surprises us, in rather the same way as one is pleased when a pupil does something which he had not been explicitly taught to do'' \autocite*{Turing1951}. 
 
 \begin{quotation}
   If we give the machine a programme which results in its doing something interesting which we had not anticipated I should be inclined to say that the machine \textit{had} originated something, rather than to claim that its behaviour was implicit in the programme, and therefore that the originality lies entirely with us. \sourceatright{\autocite{Turing1951}} 
@@ -745,7 +737,7 @@ The ability of computers to surprise their creators seems to be an indicator of 
 % Natural intelligence is observer-independent, intrinsic, conscious!
 % Computer intelligence is observer-relative, not intrinsic
 
-Strong \ac{AI}, sometimes called \ac{AGI} or true \ac{AI}, is the idea of human-level intelligence in machines. John Searle speaks against the possibility of this using his famous Chinese Room argument amongst others. His argument breaks down into the following juxtapositions \autocite{Searle2015, Searle1990}.
+Strong \ac{AI}, sometimes called \ac{AGI} or true \ac{AI}, is the idea of human-level intelligence in machines. Searle speaks against the possibility of this using his famous `Chinese Room' argument amongst others. His argument breaks down into the following juxtapositions \autocite*{Searle1990,Searle2015}.
 
 \begin{itemize}
   \item Syntax is not semantics.
@@ -756,7 +748,7 @@ Strong \ac{AI}, sometimes called \ac{AGI} or true \ac{AI}, is the idea of human-
   \item Ontologically subjective topics (such as consciousness or creativity) can be studied in epistemically objective ways.
 \end{itemize}
 
-The Chinese Room thought experiment goes like this: Imagine a room with two holes. On one side a question written on paper in Chinese goes in and on the other side a piece of paper comes out with the correct answer to the question, also in perfect Chinese. Inside the room sits a person with a Chinese language rulebook (written in English) who processed the question simply by looking up syntax, applying rules given in the instructions book and writing down the answer which to him looks like gibberish. The question then is whether or not the person inside the room `understands' Chinese.
+The Chinese Room thought experiment goes like this: imagine a room with two holes. On one side a question written on paper in Chinese goes in and on the other side a piece of paper comes out with the correct answer to the question, also in perfect Chinese. Inside the room sits a person with a Chinese language rulebook (written completely in English) who processed the question simply by looking up syntax, applying rules given in the instructions book and writing down the answer which to him looks like gibberish. The question then is whether or not the person inside the room `understands' Chinese.
 
 Of course we could argue that it is not the person inside the room that understands Chinese but the room as a complete entity. It could be said the room does not `understand' Chinese, it `simulates' an understanding of it. Searle essentially argues that simulation cannot be considered strong \ac{AI}.
 
@@ -793,10 +785,10 @@ So, Searle argues a computer needs a semantical understanding of concepts in ord
 
 Searle defines the three main paradigms for studies relating to computers and brains as follows \autocite*{Searle1990}.
 
-\begin{description}
-  \item[Strong AI] the view that all there is to having a mind is having a program
-  \item[Weak AI] the view that brain processes (and mental processes) can be simulated computationally
-  \item[Cognitivism] the view that the brain is a digital computer
+\begin{description}[leftmargin=4cm]
+  \item[Strong AI] the view that all there is to having a mind is having a program.
+  \item[Weak AI] the view that brain processes (and mental processes) can be simulated computationally.
+  \item[Cognitivism] the view that the brain is a digital computer.
 \end{description}
 
 Semantically, a `computer' is a person or machine that computes/calculates things---so perhaps a machine's \ac{CPU} and a human's brain are more similar than appears. If a human brain enables us to compute and we interpret computing as thinking, then surely a computer can think too?
@@ -805,7 +797,7 @@ Semantically, a `computer' is a person or machine that computes/calculates thing
   Well, if computation isn’t sufficient for thinking, then what is? What is the relation between the mind and the brain, if it is not the same as the relation of the computer program to the hardware? At least the computational theory of the mind has a solution to the mind-body problem. The mind is to the brain as the computer program is to the computer hardware. If you are rejecting that solution, you owe us an alternative solution.\sourceatright{\autocite{Searle1998}}
 \end{quotation}
 
-Chris Chatham talks about ``10 important differences between brains and computers'' \autocite*{Chatham2007} which serve as a good introduction to the topic at hand.
+Chatham talks about ``10 important differences between brains and computers'' \autocite*{Chatham2007} which serve as a good introduction to the topic at hand.
 
 \begin{quotation}
   \begin{enumerate}
@@ -823,15 +815,7 @@ Chris Chatham talks about ``10 important differences between brains and computer
   \end{enumerate}
 \end{quotation}
 
-To bring this into perspective Ray Kurzweil claims the human brain is capable of $10^{16}$ operations per second \autocite*{Kurzweil2013}. Computer performance is measured in \ac{FLOPS}. The current highest ranking supercomputer\footnote{As of June 2016.}, the Chinese \textit{Sunway TaihuLight}, is capable of 93 petaflops \autocite{Fu2016,Top2016}.
-
-According to the \ac{HBP}, a mouse brain has roughly 100 million neurons---which would require a 1 petaflop supercomputer to simulate. Scaling that up to a human brain which has roughly 100 billion neurons would require computing power at the exascale ($10^18$ \ac{FLOPS}) \autocite{Walker2012}.
-
-A precurser to the \ac{HBP}, the `Blue Brain Project' is aiming to build a supercomputer capable of $10^{18}$ \ac{FLOPS} by 2023 \autocite{Kurzweil2013}.
-
-In a report to the \ac{EU} in 2012, the \ac{HBP} lists one of the main challenges for their research to be the computational power and energy consumption of the kind of supercomputer needed to simulate a human brain.
-
-The human brain consumes between 16 and 30 watts, the same as an electric light bulb \autocite{Walker2012,Jabr2012}. Supercomputers have a typical energy consumption of a maximum of 20 megawatts \autocite{Walker2012}. The \textit{Sunway TaihuLight} for example uses 15 megawatts \autocite{Fu2016}. IBM's Watson on the other hand, depends on ninety servers, each of which requires around one thousand watts (so about 90 kilowatts) \autocite{Jabr2012}.
+To bring this into perspective Kurzweil claims the human brain is capable of $10^{16}$ operations per second \autocite*{Kurzweil2013}. Computer performance is measured in \ac{FLOPS}. The current highest ranking supercomputer\footnote{As of June 2016.}, the Chinese \textit{Sunway TaihuLight}, is capable of 93 petaflops \autocite{Fu2016,Top2016}.
 
 \begin{table}[!htbp]
 \centering
@@ -849,6 +833,14 @@ exa  & E & $10^{18}$ & \num{1000000000000000000} \\
 \end{tabu}
 \end{table}
 
+According to the \ac{HBP}, a mouse brain has roughly 100 million neurons---which would require a 1 petaflop supercomputer to simulate. Scaling that up to a human brain which has roughly 100 billion neurons would require computing power at the exascale ($10^{18}$ \ac{FLOPS}) \autocite{Walker2012}.
+
+A precurser to the \ac{HBP}, the `Blue Brain Project' is aiming to build a supercomputer capable of $10^{18}$ \ac{FLOPS} by 2023 \autocite{Kurzweil2013}.
+
+In a report to the \ac{EU} in 2012, the \ac{HBP} lists one of the main challenges for their research to be the computational power and energy consumption of the kind of supercomputer needed to simulate a human brain.
+
+The human brain consumes between 16 and 30 watts, the same as an electric light bulb \autocite{Walker2012,Jabr2012}. Supercomputers have a typical energy consumption of a maximum of 20 megawatts \autocite{Walker2012}. The \textit{Sunway TaihuLight} for example uses 15 megawatts \autocite{Fu2016}. IBM's Watson on the other hand, depends on ninety servers, each of which requires around one thousand watts (so about 90 kilowatts) \autocite{Jabr2012}.
+
 The \ac{HBP} plans to build a supercomputer at the petascale with 50 petabytes of memory, 50 petaflops and less than 4 megawatts power consumption for 2017. Their long-term goal is to reach the required exascale machine with 200 petabyte memory and 1 exaflop performance for 2021 \autocite{Walker2012}.
 
 % average domestic home 11,072.4W is roughly 11kW \autocite{Gov2012}
@@ -862,7 +854,7 @@ What this comes down to is that we are several years away from even being able t
   To put this in one sentence, the solution to the traditional mind-body problem is this: Mental states are caused by neurobiological processes and are themselves realized in the system composed of the neurobiological elements.\sourceatright{\autocite{Searle1998}}
 \end{quotation}
 
-Turing once stated that ``digital computers have often been described as mechanical brains'' \autocite*{Turing1951}. Ari Schulman analysis this analogy further \autocite*{Schulman2009}.
+Turing once stated that ``digital computers have often been described as mechanical brains'' \autocite*{Turing1951}. Schulman analyses this analogy further \autocite*{Schulman2009}.
 
 \begin{quotation}
   People who believe that the mind can be replicated on a computer tend to explain the mind in terms of a computer. When theorizing about the mind, especially to outsiders but also to one another, defenders of artificial intelligence (AI) often rely on computational concepts. They regularly describe the mind and brain as the `software and hardware' of thinking, the mind as a `pattern' and the brain as a `substrate', senses as `inputs' and behaviors as `outputs', neurons as `processing units' and synapses as `circuitry', to give just a few common examples. \sourceatright{\autocite{Schulman2009}}
@@ -918,7 +910,7 @@ Leading on to the topic creativity, it is perhaps suitable to finish with a quot
 
 \subsection{Creativity}
 
-Harold Cohen created \textit{AARON}, ``perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use'', in 1973 \autocite*{Cohen2016}. \textit{AARON} is capable of composing and colouring drawings although later on Cohen took over the colouring part and let \textit{AARON} concentrate on composing and outlining the drawings. They exhibited in various galleries around the world and the Victoria and Albert museum in London has a sizable collection for instance \autocite{VA2016}.
+Harold Cohen created \textit{AARON}, ``perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use'', in 1973 \autocite{Cohen2016}. \textit{AARON} is capable of composing and colouring drawings although later on Cohen took over the colouring part and let \textit{AARON} concentrate on composing and outlining the drawings. They exhibited in various galleries around the world and the Victoria and Albert museum in London has a sizable collection for instance \autocite{VA2016}.
 
 Cohen argued that ``after decades of expert systems built to simulate human expertise, AARON has emerged as an expert in its own right'' and that he is ``significantly more inventive and infinitely more productive than [he] ever was [himself]'' \autocite*{Cohen2007}.
 
@@ -931,15 +923,18 @@ This is perhaps the opposite approach the \ac{OULIPO} has taken.
 
 \subsection{State of the Art}
 
-\ac{AI} and robotics is alluring as a research topic because it is so prevelant in Science Fiction and as such very present in media. Computer creativity, however, rarely plays a central role. We can regularly read headlines that tell us that yet another kind of \ac{AI}-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing (such as \ac{VR}) which aren't all that great in the grand scheme of things. 
+\ac{AI} and robotics is alluring as a research topic because it is so prevelant in science fiction and as such very present in media. Computer creativity, however, rarely plays a central role. We can regularly read headlines that tell us that yet another kind of \ac{AI}-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing (such as in \ac{VR}) which aren't all that great in the grand scheme of things. 
 
 Four examples I want to mention here are IBM's Watson, Microsoft's Twitter \ac{AI} chatbot Tay, Google's AlphaGo and Hanson Robotics Sophia robot.
 
-\paragraph{Watson} is a question answering expert system which famously won against human Jeopardy! champions in 2011 \autocite{IBM2016}. Information lookup is an arguably fairly easy and straightforward process within \ac{IR} and as an expert system it has had noteworthy successes \autocite{Fingas2016}. Although it has similarly received subtle criticism too, such as Randall Munroe's 2015 XKCD comic on the ``Watson Medical Algorithm'' \autocite*{Munroe2015}. Similarly, John Searle criticised Watson arguing that it is an ``ingenious program---not a computer that can think'' \autocite*{Searle2011}.
+\subsubsection{Watson} 
+Watson is a question answering expert system which famously won against human Jeopardy! champions in 2011 \autocite{IBM2016}. Information lookup is an arguably fairly easy and straightforward process within \ac{IR} and as an expert system it has had noteworthy successes \autocite{Fingas2016}. Although it has similarly received subtle criticism too, such as Randall Munroe's 2015 XKCD comic on the ``Watson Medical Algorithm'' \autocite*{Munroe2015}. Similarly, Searle criticised Watson arguing that it is an ``ingenious program---not a computer that can think'' \autocite*{Searle2011}.
 
-\paragraph{Tay} is a Twitter chatbot. It went viral in early 2016 when it was released and then taken offline again on the same day---onlt to return a few days later and have the same thing happen again. The official website is only accessible as a cached version through the Internet Archive Wayback Machine \autocite{Tay2016}, although the Twitter profile is still online, although set to private \autocite{Tayandyou2016}. Elle Hunt from the Guardian managed to summarise the event is one sentence: ``Microsoft's attempt at engaging millennials with artificial intelligence has backfired hours into its launch, with waggish Twitter users teaching its chatbot how to be racist'' \autocite{Hunt2016}. A week later it was briefly put online again but had to be stopped as it was repeatadly spamming its followers with the line ``You are too fast, please take a rest \ldots'' \autocite{Gibbs2016}.
+\subsubsection{Tay}
+Tay is a Twitter chatbot. It went viral in early 2016 when it was released and then taken offline again on the same day---onlt to return a few days later and have the same thing happen again. The official website is only accessible as a cached version through the Internet Archive Wayback Machine \autocite{Tay2016}, although the Twitter profile is still online, but set to private \autocite{Tayandyou2016}. Hunt from the \textit{Guardian} managed to summarise the event is one sentence: ``Microsoft's attempt at engaging millennials with artificial intelligence has backfired hours into its launch, with waggish Twitter users teaching its chatbot how to be racist'' \autocite*{Hunt2016}. A week later it was briefly put online again but had to be stopped as it was repeatadly spamming its followers with the line ``You are too fast, please take a rest \ldots'' \autocite{Gibbs2016}.
 
-\paragraph{AlphaGo} recently won against a human professional player in the game of Go \autocite{DeepMind2016,Hassabis2016}. 
+\subsubsection{AlphaGo}
+AlpgaGo recently won against a human professional player in the game of Go \autocite{DeepMind2016,Hassabis2016}. 
 
 \begin{quotation}
   AlphaGo combines an advanced tree search with deep neural networks. These neural networks take a description of the Go board as an input and process it through 12 different network layers containing millions of neuron-like connections. One neural network, the `policy network', selects the next move to play. The other neural network, the `value network', predicts the winner of the game. \sourceatright{\autocite{Hassabis2016}}
@@ -947,27 +942,26 @@ Four examples I want to mention here are IBM's Watson, Microsoft's Twitter \ac{A
 
 While this is surely a great example of sophisticated computer programming combined with powerful hardware, I would not consider it a breakthrough in \ac{AI}. AlphaGo is a highly specialised system with only one function: to win a Go game.
 
-\paragraph{Sophia} is an android made to look like a human female \autocite{Sophia2016,Hanson2016}. She made headlines in 2016 when she announced she will ``kill all humans''. Sche was created using ``breakthrough robotics and artificial intelligence technologies'' and her main feature appears to be the mimicing of human facial expressions. Sophia herself says she ``can serve [humans], entertain them, and even help the elderly and teach kids'' \autocite*{Sophia2016}, although how exactly she would do that is unclear. She has two mechanical arms but no legs and there is no description of what she can do with these arms.
+\subsubsection{Sophia}
+Sophia is an android made to look like a human female \autocite{Sophia2016,Hanson2016}. She\footnote{I am anthropomorphising `her' consciously here. Her website is written in first person, perhaps to make it appear like a blog written by a conscious being.} made headlines in 2016 when she announced she will ``kill all humans''. She was created using ``breakthrough robotics and artificial intelligence technologies'' and her main feature appears to be the mimicking of human facial expressions. Sophia herself says she ``can serve [humans], entertain them, and even help the elderly and teach kids'' \autocite*{Sophia2016}, although how exactly she would do that is unclear. She has two mechanical arms but no legs and there is no description of what she can do with these arms.
 
-Life-like robots like Sophia still live in the `uncanny valley'\footnote{The philosphical zombies I mentioend in chapter~\ref{ch:interpretation}\sidepar{§~\ref{ch:interpretation}} live in this uncanny valley too.}. Her voice is creepy and unhuman, her intelligence or her capabilities if understanding conversations are clearly flawed (as shown by her viral remark about supporting genocide).
+Life-like robots like Sophia still live in the `uncanny valley'\footnote{The philosphical zombies I mentioend in chapter~\ref{ch:interpretation}\sidepar{§~\ref{ch:interpretation}} live in this uncanny valley too.}. Her voice is creepy and unhuman, her intelligence or her capabilities of understanding conversations are clearly flawed (as shown by her viral remark about supporting genocide).
 
 \spirals
 
-To me it seems the real breakthrough happens when (and if) the first robots appear which aren't as big as a house, can play Go, Chess and hide-and-seek, geniunely manages to get around he uncanny valley effect, has vast knowledge in his memory for instant information lookup, can hold a normal conversation without starting a war, etc. All of the examples listed above are what I would consider expert systems. 
+To me it seems the real breakthrough happens when (and if) the first robots appear which aren't as big as a house, can play Go, Chess \textit{and} hide-and-seek, geniunely manages to get around he uncanny valley effect, has vast knowledge in his memory for instant information lookup, can hold a normal conversation without starting a war, etc. All of the examples listed above are what I would consider expert systems. 
 
-The \ac{AI} we know from science fiction is probably what we would consider \ac{AGI}. Humans can do a lot. Children aren't born with only a single function. Imagine a world where humans only have one specialism and can't do anything else. Alice is a Chess player but can't move her arms. Bob is a medical diagnosis expert but he can't hold a conversation. Movement, speech, memory---they are all vastly complex systems---not to mention creativity.
-
-Perhaps this also relates to the concepts of P and H creativity mentioned in chapter~\ref{s:pandh}\sidepar{§~\ref{s:pandh}}. The systems above, like AlphaGo, may be P-intelligent rather than H-intelligent.
+The \ac{AI} we know from science fiction is probably what we would consider \ac{AGI}. Perhaps this also relates to the concepts of P and H creativity mentioned in chapter~\ref{s:pandh}\sidepar{§~\ref{s:pandh}}. The systems above, like AlphaGo, may be P-intelligent rather than H-intelligent.
 
 
 \section{Design}
 \label{s:designanal}
 
-It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:aspirations},~\ref{ch:aspirations}). 
+It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter~\ref{ch:future}\sidepar{§~\ref{ch:future}}). 
 
 Images~\ref{img:qpoemtree}, image~\ref{img:listsourcetree} and image~\ref{img:listalgotree} seen on pages~\pageref{img:qpoemtree},\pageref{img:listsourcetree} and \pageref{img:qpoemtree} respectively, show the visual difference in design for the three different display methods for text results.
 
-The poetry\sidepar{\faicon{picture-o}~\ref{img:qpoemtree}} is compact and invites users to read all \num{14} (or less) lines. The two list styles\sidepar{\faicon{picture-o}~\ref{img:listsourcetree}~\&~\ref{img:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
+The poetry\sidepar{\faicon{picture-o}~\ref{img:qpoemtree}} is compact and invites users to read all 14 (or less) lines. The two list styles\sidepar{\faicon{picture-o}~\ref{img:listsourcetree}~\&~\ref{img:listalgotree}} are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.
 
 Personally I feel that the poetry results are automatically read with more gravity. Sorting by sources or algorithms is a game of exploration---finding the similarities within the result sets. They are different ways to view the same things and yet have a drastic influence of how the results are perceived. 
 
@@ -975,7 +969,6 @@ This also applies to the image and video search. Presenting results in spiral fo
 
 
 \section{Limiting Factors}
-
 
 \subsection{Biases}
 
@@ -1023,7 +1016,7 @@ The search results produced by \url{pata.physics.wtf} can be quite surprising so
 
 \section{Meta Analysis}
 
-The code for \url{pata.physics.wtf} and this thesis written in \LaTeX \~are both kept under git version control.
+The code for \url{pata.physics.wtf} and this thesis written in \LaTeX  and are both kept under git version control \autocite{Git2016}.
 
 \begin{quotation}
   The name `git' was given by Linus Torvalds when he wrote the very first version. He described the tool as `the stupid content tracker' and the name as (depending on your mood):
@@ -1042,7 +1035,7 @@ The code for \url{pata.physics.wtf} and this thesis written in \LaTeX \~are both
 \label{img:github}
 \end{figure}
 
-Both repositories (folders which contain the files to be monitered) are stored remotely on GitHub \autocite{GitHub2016} and synced with the local machine. Image~\ref{img:github}\sidepar{\faicon{picture-o}~\ref{img:github}} shows the contribution history from the last 17 months for both of the \url{pata.physics.wtf} code and this thesis. A darker green indicates several commits (i.e. saves) while gray indicates no commits. Each square represents a day, each colum a week (Sunday--Saturday).
+Both repositories (folders which contain the files to be monitered) are stored remotely on GitHub \autocite*{GitHub2016} and synced with the local machine. Image~\ref{img:github}\sidepar{\faicon{picture-o}~\ref{img:github}} shows the contribution history from the last 17 months for both of the \url{pata.physics.wtf} code and this thesis. A darker green indicates several commits (i.e. saves) while gray indicates no commits. Each square represents a day, each colum a week (Sunday--Saturday).
 
 The full git commit histories for both repositories are shown in appendix~\ref{app:git}\sidepar{§~\ref{app:git}}. 
 

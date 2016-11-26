@@ -48,9 +48,9 @@
 % factor=1100 - add 10% to the protrusion amount (default is 1000)
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
 
-\overfullrule=2cm
+% \overfullrule=2cm
 
-
+\usepackage[maxfloats=45]{morefloats}
 
 % \usepackage{import}
 
@@ -190,21 +190,26 @@
 \chapterstyle{fania}
 
 
-% Section Break Line
 \newcommand*\spirals{%
   \begin{center}
-    $\spiralimg\hspace{1cm}\spiralimg\hspace{1cm}\spiralimg$
+    $\textspiral\hspace{1cm}\textspiral\hspace{1cm}\textspiral$
   \end{center}}
 
 
+
+% Section Break Line
+% \newcommand*\spirals{%
+%   \begin{center}
+%     $\spiralimg\hspace{1cm}\spiralimg\hspace{1cm}\spiralimg$
+%   \end{center}}
 % SPIRAL
-\newcommand{\spiralimg}[1][]{\includegraphics[
-  height=.7\baselineskip,
-  origin=c,% For rotation purposes, rotate around centre
-  % viewport=154mm 173mm 0mm 194mm,clip,
-  #1% Any other graphicx options
-  ]{spirals}%
-}
+% \newcommand{\spiralimg}[1][]{\includegraphics[
+%   height=.7\baselineskip,
+%   origin=c,% For rotation purposes, rotate around centre
+%   % viewport=154mm 173mm 0mm 194mm,clip,
+%   #1% Any other graphicx options
+%   ]{spirals}%
+% }
 
 
 % POETRY

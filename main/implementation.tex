@@ -708,7 +708,7 @@ In simple terms, the clinamen algorithm works in two steps:
   \item get sentences from corpus that match clinamen words.
 \end{enumerate}
 
-It uses the \textit{Faustroll} \autocite{Jarry1996} as a base document and the Damerau-Levenshtein\sidepar{\faicon{code}~\ref{code:dl}} algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with 0 indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
+It uses the \textit{Faustroll} \autocite{Jarry1996} as a base document and the Damerau-Leven\-shtein\sidepar{\faicon{code}~\ref{code:dl}} algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with 0 indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -1256,7 +1256,17 @@ Source~\ref{code:qpoems}\sidepar{\faicon{code}~\ref{code:qpoems}} shows the segm
 
 Functionality for sending the currently showing poem per email is added via a button which calls a JavaScript function \py{onclick="return getContent(this)"} which then retrieves the content of each line in the poem and sends it to the body of the email. 
 
-\py{all_sens} is the pool of all sentences. It is structured as \py{[(title, (pre, word, post), algorithm), ...]}. \py{lol} is a list subdivided into partitions for each line of the sonnet. Let's say there are 350 sentences overall in \py{all_sens}. To divide them equally among the 14 lines of a sonnet, we need to create \py{lol} with 14 equal parts of 25 sentences: \py{[all_sens[0-24], all_sens[25-49], ...,  all_sens[325-349]]}.
+\py{all_sens} is the pool of all sentences. It is structured as follows.
+
+\begin{minted}{text}
+[(title, (pre, word, post), algorithm), ...]
+\end{minted}
+
+\py{lol} is a list subdivided into partitions for each line of the sonnet. Let's say there are 350 sentences overall in \py{all_sens}. To divide them equally among the 14 lines of a sonnet, we need to create \py{lol} with 14 equal parts of 25 sentences.
+
+\begin{minted}{text}
+[all_sens[0-24], all_sens[25-49], ...,  all_sens[325-349]]
+\end{minted}
 
 % \begin{minted}{text}
 %   # all_sens list:
@@ -1345,7 +1355,7 @@ Image~\ref{img:listalgotree}\sidepar{\faicon{picture-o}~\ref{img:listalgotree}} 
 
 The image and video spirals are constructed in complicated nested \ac{HTML} components. The code for generating an image spiral is shown in appendix~\ref{s:imgspiral}\sidepar{§~\ref{s:imgspiral}}. The video spiral is constructed in a similar way but directly in the \ac{HTML} file as opposed to in the JavaScript file. The video spiral is almost identical, the only difference is that only the biggest 5 videos are atually embedded as videos. The smaller 5 videos are shown as still images which link to the relevant YouTube page.
 
-Generally, the idea was taken from the pataphysical \emph{grand gidouille} (see chapter~\ref{ch:pataphysics}\sidepar{§~\ref{ch:pataphysics}}) and represented as a Fibonacci spiral. 
+Generally, the idea was taken from the pataphysical \emph{grand gidouille} (see chap\-ter~\ref{ch:pataphysics}\sidepar{§~\ref{ch:pataphysics}}) and represented as a Fibonacci spiral. 
 
 Figure~\ref{img:fibspiral}\sidepar{\faicon{object-group}~\ref{img:fibspiral}} shows a spiral created using the Flickr image search for query `blue mountains' overlaid with a white Fibonacci spiral to highlight the structure.
 
