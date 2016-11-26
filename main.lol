@@ -69,7 +69,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {11.5}{\ignorespaces Dennis' clinamen generation}}{179}{listing.caption.138}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.6}{\ignorespaces Dennis' patadata ontology}}{180}{listing.caption.141}
+\contentsline {listing}{\numberline {11.6}{\ignorespaces Dennis' patadata ontology example}}{180}{listing.caption.140}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
