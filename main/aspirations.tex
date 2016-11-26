@@ -76,6 +76,7 @@ Adding to the source of random sentences used in the top and bottom banner on th
 
 
 \section{Text}
+\label{s:textfuture}
 
 \paragraph{Result Sentences} 
 Currently the way result sentences are retrieved for the text search is based on punctuation (see chapter~\ref{s:ressent}\sidepar{§~\ref{s:ressent}}). This means once a pataphysicalised keyword has been found, the system retrieves up to \num{10} words prior until it reaches a punctuation mark and the same for after. The idea here was to get suitable sentence fragments. This could be changed to rely on \ac{POS} tags for example or simply retrieving complete sentences.
@@ -94,6 +95,7 @@ By doing \ac{POS} tagging\sidepar{§~\ref{s:pos}} with pronounciation data, we c
 
 
 \section{Pataphysicalisation}
+\label{s:pataasp}
 
 \paragraph{WordNet}
 The vocabulary in WordNet is limited. According to it's website \autocite{Princeton2010} it contains \num{117000} `synsets'\footnote{Synonyms---``words that denote the same concept and are interchangeable in many contexts''---are grouped into unordered sets called synsets.} This affects two of my algorithms (namely the Syzygy and Antinomy algorithms). See also discussion in chapter~\ref{s:analsyzygy}\sidepar{§~\ref{s:analsyzygy}}. An option might be to somehow widen the amount of word matches by including different word-types/forms and relationships, such as troponyms, homonyms and heteronyms. Using these could introduce a whole new kind of pataphysical result. 
