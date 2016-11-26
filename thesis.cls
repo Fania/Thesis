@@ -50,8 +50,10 @@
 
 % \overfullrule=2cm
 
-\usepackage[maxfloats=45]{morefloats}
-
+\usepackage[maxfloats=500]{morefloats}
+\usepackage{marginfix}
+\reversemarginpar
+% \usepackage{mparhack} % to fix sidepar on wrong side near top of pages
 % \usepackage{import}
 
 % \usepackage[T3,OT2,T1]{fontenc}
@@ -229,7 +231,7 @@
 
 % QUOTES
 
-% \usepackagee[autostyle,english=british,french=guillemets]{csquotes}
+% \usepackage[autostyle,english=british,french=guillemets]{csquotes}
 % \usepackage{dirtytalk}
 % \renewenvironment{quotation}
 %                {\list{}{\rightmargin\leftmargin}%
@@ -403,13 +405,11 @@ breaklines=true
 % TODONOTES
 
 \usepackage[colorinlistoftodos]{todonotes}
-%Place notes in left margin where there is more space
-% \reversemarginpar
 %Number the todo item according to section numbering
 % \newcommand{\ntodo}[2][]{\todo[#1]{\thesubsubsection{}. #2}}
 \presetkeys{todonotes}{backgroundcolor=blue!20!white, linecolor=black, inline}{}
 
-\usepackage{mparhack} % to fix sidepar on wrong side near top of pages
+
 % \usepackage{marginnote}
 
 % \todoin{}

@@ -38,7 +38,7 @@ be an arch.
   Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest. \sourceatright{\autocite{Baeza-Yates2011}}
 \end{quotation}
 
-In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}\sidepar{\faicon{object-group}~\ref{fig:sea}}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
+In simple terms, a typical search process can be described as follows (see figure~\ref{fig:sea}\marginpar{\faicon{object-group}~\ref{fig:sea}}). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.
 
 \begin{figure}[!htbp]
   \centering
@@ -66,7 +66,7 @@ Any \ac{IR} process is constrained by factors like subject, context, time, cost,
 
 The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \autocite*{Google2016} and the Bingbot \autocite*{Bing2016} are well-known examples.
 
-An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\sidepar{$\bm{\Sigma}$~\ref{eq:tdm}}.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginpar{$\bm{\Sigma}$~\ref{eq:tdm}}.
 
 \begin{equation}
   \bbordermatrix{~ & d_1 & d_2 \cr
@@ -77,7 +77,7 @@ An index is a list of keywords (called the dictionary or vocabulary) together wi
 \end{equation}
 % \myequations{Term-document matrix}
 
-where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustrate this with a concrete example, figure~\ref{fig:termdocs}\sidepar{\faicon{object-group}~\ref{fig:termdocs}} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}.
+where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustrate this with a concrete example, figure~\ref{fig:termdocs}\marginpar{\faicon{object-group}~\ref{fig:termdocs}} shows a \ac{TDM} for a selection of words in a corpus containing three documents\footnote{These texts are part of one of the two corpora used for \url{pata.physics.wtf}. More information about this can be found in chapters~\ref{s:faustlib} and ~\ref{s:corpora}.}.
 
 \begin{itemize}
   \item Alfred Jarry: \textit{Exploits and Opinions of Dr.\ Faustroll, $'$Pataphysician} (`Faustroll') \autocite*{Jarry1996}
@@ -113,7 +113,7 @@ where $f_{i,j}$ is the frequency of term $k_{i}$ in document $d_{j}$. To illustr
 
 % The total wordcount of the above files is as follows: Faustroll=\num{131891}, Gospel=\num{139669}, and Voyage=\num{497295}.
 
-The dictionary is usually pre-processed (see section~\ref{s:nlp})\sidepar{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{s:stopwords}.}\sidepar{§~\ref{s:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion (explained in the next paragraph).
+The dictionary is usually pre-processed (see section~\ref{s:nlp})\marginpar{§~\ref{s:nlp}} to eliminate punctuation and so-called `stop-words'\footnote{A full list of stopwords in English, French and German can be found in appendix~\ref{s:stopwords}.}\marginpar{§~\ref{s:stopwords}} (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a `controlled vocabulary', where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion (explained in the next paragraph).
 
 Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their perceived relevance or collects that kind of information through analysis of mouse clicks, eye tracking, etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by a search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decides whether or not to take the advice, or the query is modified internally without the user's knowledge. This is then called automatic query expansion.
 
@@ -151,7 +151,7 @@ One such ranking score is the Boolean model. The similarity of document $d_j$ to
 \end{equation}
 % \myequations{sim}
 
-where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. For example, for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2}\sidepar{\faicon{object-group}~\ref{fig:termdocs2}} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
+where $c(x)$ is a `conjunctive component' of $x$. A conjunctive component is one part of a declaration in \ac{DNF}. It describes which terms occur in a document and which ones do not. For example, for vocabulary $V =\{k_0,k_1,k_2\}$, if all terms occur in document $d_j$ then the conjunctive component would be $(1,1,1)$, or $(0,1,0)$ if only term $k_1$ appears in $d_j$. Let's make this clearer with a practical example. Figure~\ref{fig:termdocs2}\marginpar{\faicon{object-group}~\ref{fig:termdocs2}} (a shorter version of figure~\ref{fig:termdocs}) shows a vocabulary of 4 terms over 3 documents. 
 
 \begin{figure}[!htbp]
 \[
@@ -203,7 +203,7 @@ The \ac{IDF} $idf_i$ weight is calculated as $\log_2 (N/df_i)$, where the docume
 \end{equation}
 % \myequations{TF-IDF Ranking}
 
-where $tfidf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}} shows the following details.
+where $tfidf_{i,j}$ is the weight associated with $(k_i,d_j)$. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table~\ref{tab:tfidf}\marginpar{\faicon{table}~\ref{tab:tfidf}} shows the following details.
 
 \begin{conditions}
   k_{0}-k_{8} & [Faustroll,father,time,background,water,doctor,without,bishop,God] \\
@@ -237,12 +237,12 @@ $\bm{k_8}$ & & 0 & & 25 & 5.64 & 0 & & 123 & 7.94 & 0 & & 2 & 2 & 0 \\
 \end{tabu}
 \end{table}
 
-What stands out in table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}} is that the $tfidf_{i,j}$ function returns \num{0} quite often. This is partially due to the $idf_i$ algorithm returning \num{0} when a term appears in all documents in the corpus. In the given example this is the case a lot but in a real-world example it might not occur as much.
+What stands out in table~\ref{tab:tfidf}\marginpar{\faicon{table}~\ref{tab:tfidf}} is that the $tfidf_{i,j}$ function returns \num{0} quite often. This is partially due to the $idf_i$ algorithm returning \num{0} when a term appears in all documents in the corpus. In the given example this is the case a lot but in a real-world example it might not occur as much.
 
 
 \subsubsection{The Vector Model}
 
-The vector model allows more flexible scoring since it basically computes the `degree' of similarity between a document and a query \autocite{Baeza-Yates2011}. Each document $d_j$ in the corpus is represented by a document vector $\vec{d_j}$ in $t$-dimensional space, where $t$ is the total number of terms in the vocabulary. Figure~\ref{fig:docvect}\sidepar{\faicon{object-group}~\ref{fig:docvect}} gives an example of vector $\vec{d_j}$ for document $d_j$ in 3-dimensional space. That is, the vocabulary of this system consists of three terms $k_a$, $k_b$ and $k_c$. A similar vector $\vec{q}$ can be constructed for query $q$. Figure~\ref{fig:VM}\sidepar{\faicon{object-group}~\ref{fig:VM}} then shows the similarity between the document and the query vector as the cosine of $\theta$.
+The vector model allows more flexible scoring since it basically computes the `degree' of similarity between a document and a query \autocite{Baeza-Yates2011}. Each document $d_j$ in the corpus is represented by a document vector $\vec{d_j}$ in $t$-dimensional space, where $t$ is the total number of terms in the vocabulary. Figure~\ref{fig:docvect}\marginpar{\faicon{object-group}~\ref{fig:docvect}} gives an example of vector $\vec{d_j}$ for document $d_j$ in 3-dimensional space. That is, the vocabulary of this system consists of three terms $k_a$, $k_b$ and $k_c$. A similar vector $\vec{q}$ can be constructed for query $q$. Figure~\ref{fig:VM}\marginpar{\faicon{object-group}~\ref{fig:VM}} then shows the similarity between the document and the query vector as the cosine of $\theta$.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -292,7 +292,7 @@ The vector model allows more flexible scoring since it basically computes the `d
   \end{minipage}
 \end{figure}
 
-$\vec{d_j}$ is defined as $(w_{1,j}, w_{2,j}, \ldots, w_{t,j})$ and similarly $\vec{q}$ is defined as $(w_{1,q}, w_{2,q}, \ldots, w_{t,q})$, where $w_{i,j}$ and $w_{i,q}$ correspond to the \ac{TF}-\ac{IDF} weights per term of the relevant document or query respectively. $t$ is the total number of terms in the vocabulary. The similarity between a document $d_j$ and a query $q$ is defined in equation~\ref{eq:sim2}\sidepar{$\bm{\Sigma}$~\ref{eq:sim2}}.
+$\vec{d_j}$ is defined as $(w_{1,j}, w_{2,j}, \ldots, w_{t,j})$ and similarly $\vec{q}$ is defined as $(w_{1,q}, w_{2,q}, \ldots, w_{t,q})$, where $w_{i,j}$ and $w_{i,q}$ correspond to the \ac{TF}-\ac{IDF} weights per term of the relevant document or query respectively. $t$ is the total number of terms in the vocabulary. The similarity between a document $d_j$ and a query $q$ is defined in equation~\ref{eq:sim2}\marginpar{$\bm{\Sigma}$~\ref{eq:sim2}}.
 
 \begin{equation}
   \begin{split}
@@ -304,7 +304,7 @@ $\vec{d_j}$ is defined as $(w_{1,j}, w_{2,j}, \ldots, w_{t,j})$ and similarly $\
 \end{equation}
 % \myequations{sim2}
 
-Let's consider an example similar to the one used for the \nameref{s:tfidf} section. We have a corpus of three documents ($d_0$ = Faustroll, $d_1$ = Gospel, and $d_2$ = Voyage) and nine terms in the vocabulary ($[k_0, \ldots, k_8]$ = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant \ac{TF}-\ac{IDF} weights taken from table~\ref{tab:tfidf}\sidepar{\faicon{table}~\ref{tab:tfidf}}).
+Let's consider an example similar to the one used for the \nameref{s:tfidf} section. We have a corpus of three documents ($d_0$ = Faustroll, $d_1$ = Gospel, and $d_2$ = Voyage) and nine terms in the vocabulary ($[k_0, \ldots, k_8]$ = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant \ac{TF}-\ac{IDF} weights taken from table~\ref{tab:tfidf}\marginpar{\faicon{table}~\ref{tab:tfidf}}).
 
 \begin{conditions}
   \vec{d_0}   & (11.49,0,0,0,0,9.34,0,3.34,0) \\
@@ -315,7 +315,7 @@ Let's consider an example similar to the one used for the \nameref{s:tfidf} sect
   |\vec{d_2}| & 1.16
 \end{conditions}
 
-For this example we will use two queries: $q_0$ (doctor, Faustroll) and $q_1$ (without, bishop). We then compute the similarity score for between each of the documents compared to the two queries by applying equation~\ref{eq:sim2}\sidepar{$\bm{\Sigma}$~\ref{eq:sim2}}. For the query $q_0$ the result clearly points to the first document, i.e. the Faustroll text. For query $q_1$ the score produces two results, with Verne's `Voyage' scoring highest.
+For this example we will use two queries: $q_0$ (doctor, Faustroll) and $q_1$ (without, bishop). We then compute the similarity score for between each of the documents compared to the two queries by applying equation~\ref{eq:sim2}\marginpar{$\bm{\Sigma}$~\ref{eq:sim2}}. For the query $q_0$ the result clearly points to the first document, i.e. the Faustroll text. For query $q_1$ the score produces two results, with Verne's `Voyage' scoring highest.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -370,7 +370,7 @@ There are several other common \ac{IR} models that aren't covered in detail here
 
 What is actually meant by the word `searching'? Usually it implies that there is something to be found, an \ac{IN}; although that doesn't necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.
 
-From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\sidepar{§~\ref{s:4stages}} \autocite{Polya1957}:
+From the user's point of view the search process can be broken down into four activities \autocite{Sutcliffe1998} reminiscent of classic problem solving techniques (mentioned briefly in chapter~\ref{s:4stages})\marginpar{§~\ref{s:4stages}} \autocite{Polya1957}:
 
 \begin{description}[leftmargin=5cm]
   \item [Problem identification] \acf{IN},
@@ -401,7 +401,7 @@ With exploratory search, the user’s success in finding the right information d
   Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing. \sourceatright{\autocite{Marchionini2006}}
 \end{quotation}
 
-De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \autocite*{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see section~\ref{s:boden}\sidepar{§~\ref{s:boden}}).
+De Vries called this form of browsing an ``enlargement of the problem space'', where the problem space refers to the resources that possibly contain the answers/solutions to the \ac{IN} \autocite*{DeVries1993}. This is a somewhat similar idea to that of Boden's conceptual spaces which she called the ``territory of structural possibilities'' and exploration of that space ``exploratory creativity'' \autocite{Boden2003} (see section~\ref{s:boden}\marginpar{§~\ref{s:boden}}).
 
 % All of these ideas, however, seem to be concerned with how users interact with a search system, rather than how the system acts itself. So we need to shift our perspective and think about how a search tool can be more supportive for exploratory search directly and by what means.
 
@@ -409,14 +409,14 @@ De Vries called this form of browsing an ``enlargement of the problem space'', w
 \subsection{Ranking}
 \label{s:ranking}
 
-Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\sidepar{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
+Ranking signals, such as the weights produced by the \ac{TF}-\ac{IDF} algorithm in section~\ref{s:tfidf}\marginpar{§~\ref{s:tfidf}}, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook `like' button or the Google+ `+1' button which could be seen as direct user relevance feedback as well.
 
 Ranking algorithms are the essence of any web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as `Google bombing' \autocite{Nicole2010} for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google's PageRank algorithm that have been described and published in academic papers.
 
 
 \subsubsection{Algorithms}
 
-\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \autocite*{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \autocite*{Brin1998b}\sidepar{$\bm{\Sigma}$~\ref{eq:PR}}.
+\textit{PageRank} was developed by Larry Page and Sergey Brin as part of their Google search engine \autocite*{Brin1998b, Brin1998}. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows \autocite*{Brin1998b}\marginpar{$\bm{\Sigma}$~\ref{eq:PR}}.
 
 \begin{equation}
   PR(A) =
@@ -432,7 +432,7 @@ Ranking algorithms are the essence of any web search engine and as such guarded 
   d    & a `damping' parameter set by the system (typically 0.85) needed to deal with dead ends in the graph
 \end{conditions}
 
-Figure~\ref{fig:pagerank}\sidepar{\faicon{image}~\ref{fig:pagerank}} which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.
+Figure~\ref{fig:pagerank}\marginpar{\faicon{image}~\ref{fig:pagerank}} which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -441,7 +441,7 @@ Figure~\ref{fig:pagerank}\sidepar{\faicon{image}~\ref{fig:pagerank}} which shows
 \label{fig:pagerank}
 \end{figure}
 
-The HITS algorithm also works on the links between pages \autocite{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS}\sidepar{$\bm{\Sigma}$~\ref{eq:HITS}} shows the algorithm \autocite{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
+The HITS algorithm also works on the links between pages \autocite{Kleinberg1999, Kleinberg1999a}. HITS stands for `Hyperlink Induced Topic Search' and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called `authorities' and page with many outgoing links are called `hubs'. Equation~\ref{eq:HITS}\marginpar{$\bm{\Sigma}$~\ref{eq:HITS}} shows the algorithm \autocite{Baeza-Yates2011}, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.
 
 \begin{equation}
   \begin{split}
@@ -528,7 +528,7 @@ WordNet is a large lexical database for English, containing \num{166000} word fo
 
 Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).
 
-Appendix~\ref{app:wordnet}\sidepar{§~\ref{app:wordnet}} shows an example result produced by WordNet rendered for a web browser. 
+Appendix~\ref{app:wordnet}\marginpar{§~\ref{app:wordnet}} shows an example result produced by WordNet rendered for a web browser. 
 
 
 \subsubsection{Regular Expressions}
@@ -538,7 +538,7 @@ Regular expressions (often shortened to the term `regex') are used to search a c
 
 % Online tools such as \url{http://regexr.com/} or \url{https://regex101.com/} can help create a particular expression and test it. 
 
-Table~\ref{tab:regex}\sidepar{\faicon{table}~\ref{tab:regex}} shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used: \py{([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})}. Most modern text editors support a form of search using regex and it is often used in \ac{NLP}.
+Table~\ref{tab:regex}\marginpar{\faicon{table}~\ref{tab:regex}} shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used: \py{([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})}. Most modern text editors support a form of search using regex and it is often used in \ac{NLP}.
 
 \begin{table}[!htbp]
 \centering
@@ -565,7 +565,7 @@ ab|cd                      & match ab or cd               \\
 
 \subsubsection{Damerau-Levensthein}
 
-The Damerau–Levenshtein distance\sidepar{$\bm{\Sigma}$~\ref{eq:DL}} between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}) \autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
+The Damerau–Levenshtein distance\marginpar{$\bm{\Sigma}$~\ref{eq:DL}} between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}) \autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
 
 \begin{equation}
   d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
@@ -604,7 +604,7 @@ $1_{(a_i \neq b_j)}$ is equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise
 
 We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N-1$ words \autocite{Jurafsky2009}. A 2-gram is usually called a `bigram' and a 3-gram a `trigram'.
 
-A basic way to compute the probability of an N-gram is using a \ac{MLE} shown in equation~\ref{eq:mle}\sidepar{$\bm{\Sigma}$~\ref{eq:mle}} \autocite{Jurafsky2009} of a word $w_n$ given some history $w_{n-N+1}^{n-1}$ (i.e. the previous words in the sentence for example).
+A basic way to compute the probability of an N-gram is using a \ac{MLE} shown in equation~\ref{eq:mle}\marginpar{$\bm{\Sigma}$~\ref{eq:mle}} \autocite{Jurafsky2009} of a word $w_n$ given some history $w_{n-N+1}^{n-1}$ (i.e. the previous words in the sentence for example).
 
 \begin{equation}
   P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
@@ -616,7 +616,7 @@ For instance, if we want to check which of two words ``shining'' and ``cold'' ha
 
 Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain N-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem. 
 
-One example is the so-called `Laplace' or `add-one smoothing', which basically just adds 1 to each count. See equation~\ref{eq:padd1}\sidepar{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}. $V$ is the number of terms in the vocabulary.
+One example is the so-called `Laplace' or `add-one smoothing', which basically just adds 1 to each count. See equation~\ref{eq:padd1}\marginpar{$\bm{\Sigma}$~\ref{eq:padd1}} \autocite{Jurafsky2009}. $V$ is the number of terms in the vocabulary.
 
 \begin{equation}
   P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
@@ -628,7 +628,7 @@ Another example of smoothing is the so-called `Good Turing discounting'. It uses
 
 \spirals
 
-To calculate the probability of a sequence of $n$ words ($P(w_1,w_2,\ldots,w_n)$ or $P(w_1^n)$ for short) we can use the chain rule of probability as shown in equation~\ref{eq:probw1n}\sidepar{$\bm{\Sigma}$~\ref{eq:probw1n}} \autocite{Jurafsky2009}.
+To calculate the probability of a sequence of $n$ words ($P(w_1,w_2,\ldots,w_n)$ or $P(w_1^n)$ for short) we can use the chain rule of probability as shown in equation~\ref{eq:probw1n}\marginpar{$\bm{\Sigma}$~\ref{eq:probw1n}} \autocite{Jurafsky2009}.
 
 \begin{equation}
   \begin{split}
@@ -639,7 +639,7 @@ To calculate the probability of a sequence of $n$ words ($P(w_1,w_2,\ldots,w_n)$
 \end{equation}
 % \myequations{Probw1n}
 
-Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word\sidepar{$\bm{\Sigma}$~\ref{eq:probw1n2}} depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation~\ref{eq:probw1n2} \autocite{Jurafsky2009}).
+Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word\marginpar{$\bm{\Sigma}$~\ref{eq:probw1n2}} depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation~\ref{eq:probw1n2} \autocite{Jurafsky2009}).
 
 \begin{equation}
   P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
@@ -664,7 +664,7 @@ Instead of using the complete history of previous words when calculating the pro
   \item [Interjection] an emotional greeting or exclamation
 \end{description}
 
-More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix~\ref{s:penntreebank}\sidepar{§~\ref{s:penntreebank}}.
+More specialised sets of tags exist such as the \textit{Penn Treebank} tagset \autocite{Marcus1993} consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix~\ref{s:penntreebank}\marginpar{§~\ref{s:penntreebank}}.
 
 The process of adding tags to the words of a text is called `\ac{POS} tagging' or just `tagging'. Below, you can see an example tagged sentence\footnote{This is actually the very first sentence in Jarry's Faustroll book \autocite*{Jarry1996}.}.
 
@@ -712,7 +712,7 @@ Hidden Markov or maximum entropy models can be used for sequence classification,
   The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes. \sourceatright{\autocite{Jurafsky2009}}
 \end{quotation}
 
-A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\sidepar{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$ \autocite{Jurafsky2009}.
+A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation~\ref{eq:pcx}\marginpar{$\bm{\Sigma}$~\ref{eq:pcx}} shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$ \autocite{Jurafsky2009}.
 
 \begin{equation}
   p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
@@ -811,7 +811,7 @@ w_i      & the weight of the feature $f_i$
 \subsubsection{Grammars}
 \label{s:grammars}
 
-A language is modelled using a grammar, specifically a `Context-Free-Grammar'. Such a grammar normally consists or rules and a lexicon. For example a rule could be `NP $\to$ Det Noun', where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form two noun phrases `the book' and `a book' only. Its two parse trees would then look like figure~\ref{fig:trees}\sidepar{\faicon{object-group}~\ref{fig:trees}}:
+A language is modelled using a grammar, specifically a `Context-Free-Grammar'. Such a grammar normally consists or rules and a lexicon. For example a rule could be `NP $\to$ Det Noun', where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $\to$ a, Det $\to$ the, Noun $\to$ book. This grammar would let us form two noun phrases `the book' and `a book' only. Its two parse trees would then look like figure~\ref{fig:trees}\marginpar{\faicon{object-group}~\ref{fig:trees}}:
 
 \begin{figure}[!htbp]
   \centering
