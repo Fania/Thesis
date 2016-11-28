@@ -30,6 +30,15 @@ pdflatex --file-line-error -shell-escape main
 (Works both on Mac and Win)
 
 
+## Turn Black and White
+
+gswin32c -sOutputFile=grayscale.pdf -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH main281116.pdf 
+
+
+
+
+
+
 ## To add a word to spell check ignore
 
 ```alt + .'''
