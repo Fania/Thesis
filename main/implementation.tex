@@ -1280,17 +1280,17 @@ Functionality for sending the currently showing poem per email is added via a bu
   \begin{minted}{html+jinja}
 <div>
   {% for n in range(1, lol|length + 1) %}
-    {% set wid = [`wn', n|string]|join %}
-    {% set lid = [`lyr', n|string]|join %}
-    {% set sid = [`scrollLinks', n|string]|join %}
+    {% set wid = ["wn", n|string]|join %}
+    {% set lid = ["lyr", n|string]|join %}
+    {% set sid = ["scrollLinks", n|string]|join %}
     {% set aid = lol[n-1] %}
-    <div id=`poems'>
-      <div id=`{{wid}}' class=`wn'>
-        <div id=`{{lid}}' class=`lyr'>
-          {% for sens in aid %}<span title=`{{ sens[0] }}, {{ sens[2] }}'>{{ sens[1][0] }} <form class=`inform' action=`../textresults' method=`post'><input class=`inlink' type=`submit' name=`query' value=`{{ sens[1][1] }}' onclick=`loading();'></input></form> {{ sens[1][2] }}</span>{% endfor %}
+    <div id="poems">
+      <div id="{{wid}}" class="wn">
+        <div id="{{lid}}" class="lyr">
+          {% for sens in aid %}<span title="{{ sens[0] }}, {{ sens[2] }}">{{ sens[1][0] }} <form class="inform" action="../textresults" method="post"><input class="inlink" type="submit" name="query" value="{{ sens[1][1] }}" onclick="loading();"></input></form> {{ sens[1][2] }}</span>{% endfor %}
         </div>
       </div>
-      <div id=`{{sid}}' class=`scrollLinks'></div>
+      <div id="{{sid}}" class="scrollLinks"></div>
     </div>
   {% endfor %}
 </div>

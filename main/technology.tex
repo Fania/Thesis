@@ -538,7 +538,13 @@ Regular expressions (often shortened to the term `regex') are used to search a c
 
 % Online tools such as \url{http://regexr.com/} or \url{https://regex101.com/} can help create a particular expression and test it. 
 
-Table~\ref{tab:regex}\marginpar{\faicon{table}~\ref{tab:regex}} shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used: \py{([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})}. Most modern text editors support a form of search using regex and it is often used in \ac{NLP}.
+Table~\ref{tab:regex}\marginpar{\faicon{table}~\ref{tab:regex}} shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used:
+
+\begin{minted}{text}
+([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})
+\end{minted}
+
+Most modern text editors support a form of search using regex and it is often used in \ac{NLP}.
 
 \begin{table}[!htbp]
 \centering
