@@ -287,10 +287,10 @@ The conceptual space for \url{pata.physics.wtf} is `pataphysical searching'. The
     \node [box, below = of corpus] (index) {Index};
     \node [box, right = of index] (pata) {};
     \node [box, above = of pata] (user) {User};
-    \draw [->] (corpus) -- node [left] {setup} (index);
-    \draw [->] (user) -- node [right] {query} (pata);
-    \draw [->] (pata) -- node [below] {patadata} (index);
-    \draw [->] (index) -- node [above = 10pt] {results} (user);
+    \draw [sa] (corpus) -- node [left] {setup} (index);
+    \draw [sa] (user) -- node [right] {query} (pata);
+    \draw [sa] (pata) -- node [below] {patadata} (index);
+    \draw [sa] (index) -- node [above = 10pt] {results} (user);
   \end{tikzpicture}
   \caption[Pataphysical system architecture]{Pataphysical system architecture}
   \label{fig:patarc}

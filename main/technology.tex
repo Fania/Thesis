@@ -49,12 +49,12 @@ In simple terms, a typical search process can be described as follows (see figur
     \node [box, right = of web] (user) {User};
     \node [box, below = of user] (query) {Query};
     \node [box, below = of query] (rank) {Ranking};
-    \draw [->] (web) -- (crawl);
-    \draw [->] (crawl) -- (index);
-    \draw [->] (user) -- (query);
-    \draw [->] (index) -- (rank);
-    \draw [->] (rank) -| +(1.4,0) |- (user);
-    \draw [->] (query.west) -| +(-1,0) |- (index.north east);
+    \draw [sa] (web) -- (crawl);
+    \draw [sa] (crawl) -- (index);
+    \draw [sa] (user) -- (query);
+    \draw [sa] (index) -- (rank);
+    \draw [sa] (rank) -| +(1.4,0) |- (user);
+    \draw [sa] (query.west) -| +(-1,0) |- (index.north east);
   \end{tikzpicture}
 \caption[Search engine architecture]{Abstract search engine architecture}
 \label{fig:sea}
