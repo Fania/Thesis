@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+/*
+font-family: 'Roboto Mono', monospace;
+font-family: 'Roboto Slab', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+*/
+
+body {
+  width: 80%;
+  margin: auto;
+  font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+blockquote {
+  font-family: 'Roboto', sans-serif;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.mainnav {
+  background-color: gray;
+  position: relative;
+  padding: 10px;
+}
+
+.left {
+  position: absolute;
+}
+
+.centre {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
