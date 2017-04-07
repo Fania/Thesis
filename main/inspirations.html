@@ -5,17 +5,24 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <link href="../pandoc/htmlstyle.css" rel="stylesheet">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+    extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+  });
+  </script>
+  <script type="text/javascript" async src="path-to-mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
 <nav class="mainnav">
-  <a class="left" href="">Prev</a>
-  <a class="centre" href="">Contents</a>
-  <a class="right" href="">Next</a>
+  <a class="left" href="introduction.html">Prev</a>
+  <a class="centre" href="../front/contents.html">Contents</a>
+  <a class="right" href="methodology.html">Next</a>
 </nav>
 <nav id="TOC">
 <ul>
@@ -34,7 +41,7 @@
 </nav>
 <section id="ch:inspirations" class="level1">
 <h1><span class="header-section-number">2</span> Inspirations</h1>
-<p><br />
+<section class="poem">
 <code>With bated breath and whisp’ring humbleness,</code><br />
 <code>they did perform beyond thought’s compass,</code><br />
 <code>I speak my thought,</code><br />
@@ -51,21 +58,26 @@
 <br />
 <code>If her breath were as terrible as her terminations,</code><br />
 <code>here’s my mother’s breath up and down,</code><br />
-<code>thought is free.</code></p>
+<code>thought is free.</code>
+</section>
+
 <p>This research was heavily influenced by a few major inspirations and this chapter introduces them all.</p>
 <section id="s:surfer" class="level2">
 <h2><span class="header-section-number">2.1</span> The Syzygy Surfer</h2>
 <p>This PhD project is directly based on the <em>Syzygy Surfer</em> <span class="citation" data-cites="Hendler2011 Hendler2013">(Hendler and Hugill <a href="#ref-Hendler2011">2011</a>; Hendler and Hugill <a href="#ref-Hendler2013">2013</a>)</span>. Hendler and Hugill suggest the use of three pataphysical principles, namely clinamen, syzygy and anomaly, to create a new type of web search engine reminiscent of the experience of surfing the web using semantic web technologies. This is in contrast to current web search engines which value relevant results over creative ones.</p>
-<p>‘Surfing’ used to be a creative interaction between a user and the web of information on the Internet, but the regular use of modern search engines has changed our expectations of this sort of knowledge acquisition. It has drifted away from a learning process by exploring the web to a straightforward process of similar to looking up a word in a dictionary.</p>
+<p>‘Surfing’ used to be a creative interaction between a user and the web of information on the Internet, but the regular use of modern search engines has changed our expectations of this sort of knowledge acquisition. It has drifted away from a learning process by exploring the web to a straightforward process of Information Retrieval (IR) similar to looking up a word in a dictionary.</p>
 <blockquote>
-<p>The ambiguity of experience is the hallmark of creativity, that is captured in the essence of pataphysics. Traversing the representations of this ambiguity using algorithms inspired by the syzygy, clinamen and anomaly of pataphysics, using a panalogical mechanism applied to metadata, should be able to humanize and even poeticize the experience of searching the Web.</p>
+<p>The ambiguity of experience is the hallmark of creativity, that is captured in the essence of pataphysics. Traversing the representations of this ambiguity using algorithms inspired by the syzygy, clinamen and anomaly of pataphysics, using a panalogical mechanism applied to metadata, should be able to humanize and even poeticize the experience of searching the Web.</p><span class="blockcitation" data-cites="Hendler2013">(Hendler and Hugill <a href="#ref-Hendler2013">2013</a>)</span>
 </blockquote>
 <p>Their inspirations come from Borges <span class="citation" data-cites="Borges2000">(<a href="#ref-Borges2000">2000</a>)</span> (for the underlying poetic sense of unity), Jarry’s pataphysical principles <span class="citation" data-cites="Jarry1996">(<a href="#ref-Jarry1996">1996</a>)</span> and Minsky and Singh’s panalogies (parallel analogies—to introduce ambiguity, since it allows various descriptions of the same object) <span class="citation" data-cites="Singh2005">(<a href="#ref-Singh2005">2005</a>)</span>.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
 <p>My project has since moved on from the idea of using the semantic web to create the search tool and uses the concept of antinomy rather than anomaly as one of its three algorithms. One of my original ideas based on the <em>Syzygy Surfer</em> was to create a standard ontology of creativity using semantic web technologies. I quickly ran into the following problem though: the idea of standards is totally opposed to that of surprise - which plays a role in creativity. Pataphysics in particular is fond of breaking standards (e.g. exceptions, contradictions, etc.). But standards are a key building block of the semantic web. A common ontology of creativity might be useful in some cases but nevertheless contradicts the use of pataphysics.</p>
 </section>
 <section id="s:faustlib" class="level2">
 <h2><span class="header-section-number">2.2</span> Faustroll’s Library of Equivalent Books</h2>
-<p>The artefact created to demonstrate the search algorithms—<a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>—uses two collections of texts rather than the open web as source material. One of these corpora is based on the fictional library of ‘equivalent books’ from Alfred Jarry’s <em>Exploits and Opinions of Dr. Faustroll, <span class="math inline">′</span>Pataphysician</em> <span class="citation" data-cites="Jarry1996">(<a href="#ref-Jarry1996">1996</a>)</span></p>
+<p>The artefact created to demonstrate the search algorithms—<a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>—uses two collections of texts rather than the open web as source material. One of these corpora is based on the fictional library of ‘equivalent books’ from Alfred Jarry’s <em>Exploits and Opinions of Dr. Faustroll, <span class="math inline">′</span>Pataphysician</em> <span class="citation" data-cites="Jarry1996">(<a href="#ref-Jarry1996">1996</a>)</span></p>
 <p>The library also contains three prints (a poster of <em>Jane Avril</em> by Toulouse-Lautrec, an advert for the <em>Revue Blanche</em> by Bonnard, and a portrait of Doctor Faustroll by Aubrey Beardsley) and a picture <em>Saint Cado</em> by the Oberthuer printing house of Rennes <span class="citation" data-cites="Jarry1996">(Jarry <a href="#ref-Jarry1996">1996</a>)</span><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. It contains the following books.</p>
 <blockquote>
 <ol>
@@ -102,12 +114,14 @@
 <section id="s:queneau" class="level2">
 <h2><span class="header-section-number">2.3</span> 100.000.000.000.000 Poems</h2>
 <p>The interface design of some of my search results is directly inspired by Raymond Queneau’s <em>Cent Mille Milliards de Poèmes</em> <span class="citation" data-cites="Queneau1961">(<a href="#ref-Queneau1961">1961</a>)</span>, a prime example of Oulipian art. The book is essentially made up of pages containing one sonnet each. Each page however is split into thin strips, one for each line. This means that mathematically there are <span class="math inline">10<sup>14</sup></span> possible poems to be read by combining different lines every time. My implementation of this resulted in a sonnet, each line of which can be changed individually using mouse clicks.</p>
-<figure>
-<img src="queneau1" alt="Raymond Queneau’s Cent Mille Milliards de Poèmes" /><figcaption>Raymond Queneau’s <em>Cent Mille Milliards de Poèmes</em><span data-label="fig:queneau12"></span></figcaption>
+
+<figure class="half">
+<img src="../images/queneau1.jpg" alt="Raymond Queneau’s Cent Mille Milliards de Poèmes" /><figcaption>Raymond Queneau’s <em>Cent Mille Milliards de Poèmes</em>. Images of Queneau’s book in the Gallimard 2006 edition by Martin Pyper <span class="citation" data-cites="Pyper2010">(<a href="#ref-Pyper2010">2010</a>)</span>.<span data-label="fig:queneau12"></span></figcaption>
 </figure>
-<figure>
-<img src="queneau2" alt="Raymond Queneau’s Cent Mille Milliards de Poèmes" /><figcaption>Raymond Queneau’s <em>Cent Mille Milliards de Poèmes</em><span data-label="fig:queneau12"></span></figcaption>
+<figure class="half">
+<img src="../images/queneau2.jpg" alt="Raymond Queneau’s Cent Mille Milliards de Poèmes" /><figcaption>Raymond Queneau’s <em>Cent Mille Milliards de Poèmes</em>. Images of Queneau’s book in the Gallimard 2006 edition by Martin Pyper <span class="citation" data-cites="Pyper2010">(<a href="#ref-Pyper2010">2010</a>)</span><span data-label="fig:queneau12"></span></figcaption>
 </figure>
+
 </section>
 <section id="s:borges" class="level2">
 <h2><span class="header-section-number">2.4</span> Celestial Emporium of Benevolent Knowledge</h2>
@@ -130,18 +144,18 @@
 <li><p>those that from a long way off look like flies.</p></li>
 </ol>
 </blockquote>
-<p>Although these are obviously all perfectly valid results, it is clear that they form a more creative, even poetic, view of what an animal might be than the Oxford English dictionary’s prosaic: “a living organism which feeds on organic matter” <span class="citation" data-cites="OEDanimal">(“Animal, N.” <a href="#ref-OEDanimal">2010</a>)</span>. This poetic form of order or structure was a direct inspiration for the results generated by this project’s exploratory search tool <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>.</p>
+<p>Although these are obviously all perfectly valid results, it is clear that they form a more creative, even poetic, view of what an animal might be than the Oxford English dictionary’s prosaic: “a living organism which feeds on organic matter” <span class="citation" data-cites="OEDanimal">(“Animal, N.” <a href="#ref-OEDanimal">2010</a>)</span>. This poetic form of order or structure was a direct inspiration for the results generated by this project’s exploratory search tool <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>.</p>
 </section>
 <section id="s:yossarian" class="level2">
 <h2><span class="header-section-number">2.5</span> Metaphorical Search Engine Yossarian</h2>
 <p>Yossarian is a creative search engine which claims to return “diverse and unexpected results” <span class="citation" data-cites="Yossarian2015">(“Yossarian” <a href="#ref-Yossarian2015">2015</a>)</span>. Being a commercial product it is hard to find reliable details on precisely how their search engine works; the site seems well marketed but its functionality is shrouded in mystery.</p>
 <blockquote>
-<p>Yossarian makes the process of generating new ideas faster, while also improving its quality. This creative search engine helps people discover new perspectives, conceptual directions, creative insights, and allowing collaboration and feedback from a creative global community.</p>
+<p>Yossarian makes the process of generating new ideas faster, while also improving its quality. This creative search engine helps people discover new perspectives, conceptual directions, creative insights, and allowing collaboration and feedback from a creative global community.</p><span class="blockcitation" data-cites="Yossarian2015">(Yossarian <a href="#ref-Yossarian2015">2015</a>)</span>
 </blockquote>
 <p>They also claim to be inspired by metaphors and that generating lateral connections can diversify users’ ideas and help understand conceptual relationships between things through a, what they call, ‘creative graph’.</p>
 <p>The site started in a public alpha release in 2012. At the time, it consisted of simple image search. In December 2015 a complete re-design was released <span class="citation" data-cites="YossarianEmail">(Neeley <a href="#ref-YossarianEmail">2015</a>)</span> which turned the search engine into more of a mind-map tool.</p>
 <blockquote>
-<p>Idea Boards you can now visually jump from idea to idea and build your own custom collection of links. It’s a powerful new kind of mind map powered by search, and a radical departure from traditional search engine interfaces.</p>
+<p>Idea Boards you can now visually jump from idea to idea and build your own custom collection of links. It’s a powerful new kind of mind map powered by search, and a radical departure from traditional search engine interfaces.</p><span class="blockcitation" data-cites="YossarianEmail">(Neeley <a href="#ref-YossarianEmail">2015</a>)</span>
 </blockquote>
 <p>While they do boldly call themselves “the world’s first creative search engine” <span class="citation" data-cites="Yossarian2015">(“Yossarian” <a href="#ref-Yossarian2015">2015</a>)</span> it is impossible to know how their algorithms really work. The recently released mind map functionality brings up those ‘lateral connections’ in a relationship graph form. There is a slider that lets users adjust how creative they want their results to be—from literal to lateral.</p>
 <p>Tony Veale introduced a model, superficially similar to the Yossarian system, that allows users to formulate queries as creative metaphors using a what he calls ‘affective stereotype lexicon’ <span class="citation" data-cites="Veale2013">(<a href="#ref-Veale2013">2013</a>)</span> but he does not go into the evaluation of his model. The idea is that the search engine is capabale of understanding metaphorical queries but not that it produces metaphoric results.</p>
@@ -149,16 +163,17 @@
 <section id="s:babel" class="level2">
 <h2><span class="header-section-number">2.6</span> The Library of Babel</h2>
 <p>The <em>Library of Babel</em> is a short story by Jorge Luis Borges <span class="citation" data-cites="Borges1964">(<a href="#ref-Borges1964">1964</a>)</span>. It envisions a universe, called ‘the Library’, which is composed of “an indefinite and perhaps infinite number of hexagonal galleries” containing every possible book every conceived and not yet conceived.</p>
-<p>The specific artefact of inspiration for my project is a website implementing a miniature form of this library (<a href="libraryofbabel.info" class="uri">libraryofbabel.info</a>) created by Jonathan Basile <span class="citation" data-cites="Basile2015">(<a href="#ref-Basile2015">2015</a>)</span>. Instead of containing every single book possible, it contains every single page possible—which is, at characters per page and possible characters, still a lot.</p>
+<p>The specific artefact of inspiration for my project is a website implementing a miniature form of this library (<a href="http://libraryofbabel.info" class="uri">libraryofbabel.info</a>) created by Jonathan Basile <span class="citation" data-cites="Basile2015">(<a href="#ref-Basile2015">2015</a>)</span>. Instead of containing every single book possible, it contains every single page possible—which is, at characters per page and possible characters, still a lot.</p>
 <p>Basile claims to use a ‘pseudo-random number generating algorithm’ (combining modular arithmetic and bit-shifting operations) to produce all <span class="math inline">29<sup>3200</sup></span> pages without needing to store anything on disk.</p>
 <blockquote>
-<p>The pages of rational text which this algorithm can locate are rarer than a single grain of sand in that collection, yet intrinsically no more meaningful. […] One can find only text one has already written, and any attempt to find it in among other meaningful prose is certain to fail. The tantalizing promise of the universal library is the potential to discover what hasn’t been written, or what once was written and now is lost. But there is still no way for us to find what we don’t know how to look for. […] Nonetheless, the library contains its own sort of poetry and revelation, and even this disappointment can provide a moment of clarity.</p>
+<p>The pages of rational text which this algorithm can locate are rarer than a single grain of sand in that collection, yet intrinsically no more meaningful. […] One can find only text one has already written, and any attempt to find it in among other meaningful prose is certain to fail. The tantalizing promise of the universal library is the potential to discover what hasn’t been written, or what once was written and now is lost. But there is still no way for us to find what we don’t know how to look for. […] Nonetheless, the library contains its own sort of poetry and revelation, and even this disappointment can provide a moment of clarity.</p><span class="blockcitation" data-cites="Basile2015">(Basile <a href="#ref-Basile2015">2015</a>)</span>
 </blockquote>
 <p>It is hard to say what exactly influenced my project most. I think the idea of computationally generating this massive library is fantastic—and absurd.</p>
 </section>
+
 <section id="s:oulipo" class="level2">
 <h2><span class="header-section-number">2.7</span> Oulipo</h2>
-<p>The is a literary movement<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> from the 1960’s, originating in France as a subcommittee of the “Collège de <span class="math inline">′</span>Pataphysique”. As such it has roots in pataphysics although it eventually separated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from <span class="citation" data-cites="Mathews2005">(Mathews and Brotchie <a href="#ref-Mathews2005">2005</a>)</span>, invented and used by them are shown below (and many more can be seen in chapter [ch:pataphysics], tables [tab:oulipo1] and [tab:oulipo2]).</p>
+<p>The Ouvroir de Litterature Potentielle (OULIPO) is a literary movement<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> from the 1960’s, originating in France as a subcommittee of the “Collège de <span class="math inline">′</span>Pataphysique”. As such it has roots in pataphysics although it eventually separated and became a standalone group. Their main philosophy perhaps is to use constraints in order to enhance creative output. Some examples of techniques, taken from <span class="citation" data-cites="Mathews2005">(Mathews and Brotchie <a href="#ref-Mathews2005">2005</a>)</span>, invented and used by them are shown below (and many more can be seen in chapter [ch:pataphysics], tables [tab:oulipo1] and [tab:oulipo2]).</p>
 <dl>
 <dt>N+7</dt>
 <dd><p>Invented by Jean Lescure. It is sometimes called ‘S+7’. It’s a simple method of replacing each noun with the next seventh noun in a dictionary. For example: <em>tree</em> <span class="math inline">→</span> <em>trend</em>, <em>shoreline</em> <span class="math inline">→</span> <em>shotgun</em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
@@ -177,8 +192,15 @@
 </dd>
 </dl>
 <blockquote>
-<p>[The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to eliminate them.</p>
+<p>[The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to eliminate them.</p><span class="blockcitation" data-cites="Mathews2005">(Mathews and Brotchie <a href="#ref-Mathews2005">2005</a>)</span>
 </blockquote>
+
+<figure>
+<img src="../pandoc/oulipo.png" alt="Examples of OULIPO art" width="100%">
+<figcaption>Algol poem (left), melting snowball (middle), Matthew's algorithm (right)<span data-label="fig:oulipo"></span></figcaption>
+</figure>
+
+<!--
 <blockquote>
 <p>[]</p>
 <p>       <em>Table</em><br />
@@ -188,6 +210,7 @@ while channel not false<br />
 (if not true). End.<br />
 </p>
 </blockquote>
+
 <p><br />
 <code>    Incontrovertible</code><br />
 <code>    sadomasochistic</code><br />
@@ -206,6 +229,7 @@ while channel not false<br />
 <code>    to</code><br />
 <code>    0</code><br />
 <code>  </code></p>
+
 <p><span class="math inline">$\begin{matrix}
     \text{T}&amp;\text{I}&amp;\text{N}&amp;\text{E}\\
     \text{S}&amp;\text{A}&amp;\text{L}&amp;\text{E}\\
@@ -218,13 +242,14 @@ while channel not false<br />
     \text{E}&amp;\text{S}&amp;\text{A}&amp;\text{L}\\
     \text{L}&amp;\text{E}&amp;\text{M}&amp;\text{A}\\
     \text{I}&amp;\text{N}&amp;\text{E}&amp;\text{V}
-  \end{matrix}$</span></p>
+  \end{matrix}$</span></p>-->
+
 <p>These techniques have endless applications in as many different disciplines. The use of constraints is now a well-known approach for creative activities and has many supporters.</p>
 </section>
 <section id="s:culture" class="level2">
 <h2><span class="header-section-number">2.8</span> Coder Culture</h2>
 <p>Whether you call it “programming culture”, “coding culture”, or “hacking culture”, it is clear that the topics shared are <em>code</em> and <em>culture</em>.</p>
-<p>The programming language Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> was used for the core system behind the <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> site. The so-called <em>Zen of Python</em> is a set of guidelines for good practice in programming originally defined by Guido van Rossum—the creator of Python—who is endeeringly known as the and put into the below form by Tim Peters. This set of principles is also known as 20. The abstract reads: “Long time Pythoneer Tim Peters succinctly channels the ’s guiding principles for Python’s design into 20 aphorisms, only 19 of which have been written down” <span class="citation" data-cites="PEP20">(<a href="#ref-PEP20">2004</a>)</span>.</p>
+<p>The programming language Python<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> was used for the core system behind the <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> site. The so-called <em>Zen of Python</em> is a set of guidelines for good practice in programming originally defined by Guido van Rossum—the creator of Python—who is endeeringly known as the Benevolent Dictator For Life (BDFL) and put into the below form by Tim Peters. This set of principles is also known as PEP20. The abstract reads: “Long time Pythoneer Tim Peters succinctly channels the BDFL’s guiding principles for Python’s design into 20 aphorisms, only 19 of which have been written down” <span class="citation" data-cites="PEP20">(<a href="#ref-PEP20">2004</a>)</span>.</p>
 <blockquote>
 <p>Beautiful is better than ugly.<br />
 Explicit is better than implicit.<br />
@@ -244,9 +269,12 @@ Now is better than never.<br />
 Although never is often better than *right* now.<br />
 If the implementation is hard to explain, it’s a bad idea.<br />
 If the implementation is easy to explain, it may be a good idea.<br />
-Namespaces are one honking great idea – let’s do more of those!</p>
+Namespaces are one honking great idea – let’s do more of those!</p><span class="blockcitation" data-cites="PEP20">(Peters <a href="#ref-PEP20">2004</a>)</span>
 </blockquote>
 <p>I cannot claim to have followed each and every one of those recommendations in my coding practice (although I have certainly tried) but it has been highly influential during the writing and design of this thesis.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
 <p>The following list shows some other general programming culture references that have been inspirational in one way or another. They were interesting to me due to their underlying sense of humour which resembles that of pataphysics.</p>
 <dl>
 <dt>Jargon File</dt>
@@ -274,8 +302,17 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 <dd><p>Donald Knuth has long maintained a tradition of (a) adding easter eggs to his books on programming and (b) rewarding people for finding errors and typos in his books with fictional currency <span class="citation" data-cites="KnuthHelp">(Knuth n.d.)</span>.</p>
 </dd>
 </dl>
-<p>An example of creative code from the is reproduced in source [code:goren]. It shows highly obfuscated C code “written in hommage to Ren<span>é</span> Magritte’s picture <em>La trahison des images</em> (The Treachery of Images)” by Uri Goren in 2011. It won the ‘most artistic’ category of that year’s contest <span class="citation" data-cites="Goren2011">(Goren <a href="#ref-Goren2011">2011</a>)</span>.</p>
-<p>[fontsize=]<span>c++</span> typedef unsigned char t;t*F=“r;typedef(*H)();extern H Ar;Q(a)<span>return(a|-a)&gt;&gt;31;</span>H S(c,a)<span>return(H)(a&amp; c|(int )Ar&amp;c);</span>extern t*ist;V(t*u)<span>*u^=*u&amp;2^(*u&gt;&gt;7)*185;</span>Z(t*u,t n)<span>*u-=n;</span>e(t c,H h)<span> R(h,Q(* r^c));</span> I()<span>r=l +7-4*Q( getchar ()^*l); </span>R(H h, int c)<span>Ar=S (c,h);- main() ;</span>P()<span>r ++;</span>z() <span> O(&amp;N);</span> O(t*c)<span> printf( F,+*c); </span>T()<span>r= “This is not a function” ;</span>w(U)<span> U=Z(r,8 ); r-= Q(* r/8-4); return 0; </span>M()<span>r= ist-68; </span> h()<span>t G =r[1]-r [2]^*r; G^=30;V (&amp;G);e( 0,(O(&amp;G ),P(P(* r++)),z));</span>g()<span>M();R(h,0);</span>f()<span>P(O(r));e(’f’,g);</span>p()<span>P();e(’a’,f);</span>d()<span>P(O(r)); e(’n’,p);</span>c(u)<span>u=r[-2];T(Ar=d);R(f,Q(u^’&quot;’));</span>n()<span>e(w(O(l+*rn,0);</span>main()<span>S(Q(Ar),a)();</span>H Ar;t*ist=”Rene Magritte&quot;-(1898-1967);</p>
+<p>An example of creative code from the International Obfuscated C Code Contest (IOCCC) is reproduced in source [fig:urigoren]. It shows highly obfuscated C code “written in hommage to Ren<span>é</span> Magritte’s picture <em>La trahison des images</em> (The Treachery of Images)” by Uri Goren in 2011. It won the ‘most artistic’ category of that year’s contest <span class="citation" data-cites="Goren2011">(Goren <a href="#ref-Goren2011">2011</a>)</span>.</p>
+
+<figure>
+<img src="../pandoc/urigoren.png" alt="An example from the IOCCC" width="100%">
+<figcaption>An example entry by Uri Goren from the IOCCC contest from 2011.<span data-label="fig:urigoren"></span></figcaption>
+</figure>
+
+<!--
+<p>[fontsize=]<span>c++</span> typedef unsigned char t;t*F=“r;typedef(*H)();extern H Ar;Q(a)<span>return(a|-a)&gt;&gt;31;</span>H S(c,a)<span>return(H)(a&amp; c|(int )Ar&amp;c);</span>extern t*ist;V(t*u)<span>*u^=*u&amp;2^(*u&gt;&gt;7)*185;</span>Z(t*u,t n)<span>*u-=n;</span>e(t c,H h)<span> R(h,Q(* r^c));</span> I()<span>r=l +7-4*Q( getchar ()^*l); </span>R(H h, int c)<span>Ar=S (c,h);- main() ;</span>P()<span>r ++;</span>z() <span> O(&amp;N);</span> O(t*c)<span> printf( F,+*c); </span>T()<span>r= “This is not a function” ;</span>w(U)<span> U=Z(r,8 ); r-= Q(* r/8-4); return 0; </span>M()<span>r= ist-68; </span> h()<span>t G =r[1]-r [2]^*r; G^=30;V (&amp;G);e( 0,(O(&amp;G ),P(P(* r++)),z));</span>g()<span>M();R(h,0);</span>f()<span>P(O(r));e(’f’,g);</span>p()<span>P();e(’a’,f);</span>d()<span>P(O(r)); e(’n’,p);</span>c(u)<span>u=r[-2];T(Ar=d);R(f,Q(u^’&quot;’));</span>n()<span>e(w(O(l+*rn,0);</span>main()<span>S(Q(Ar),a)();</span>H Ar;t*ist=”Rene Magritte&quot;-(1898-1967);</p>-->
+
+
 </section>
 </section>
 <section id="bibliography" class="level1 unnumbered">
@@ -332,6 +369,9 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 <div id="ref-PEP20">
 <p>Peters, Tim. 2004. “PEP 20 — The Zen of Python.” <a href="https://www.python.org/dev/peps/pep-0020/" class="uri">https://www.python.org/dev/peps/pep-0020/</a>.</p>
 </div>
+<div id="ref-Pyper2010">
+<p>Pyper, Martin. 2010. “one hundred thousand billion poems”. ME studio. <a href="http://www.mestudio.info/2010/02/28/one-hundred-thousand-billion-poems/" class="uri">http://www.mestudio.info/2010/02/28/one-hundred-thousand-billion-poems/</a>.</p>
+</div>
 <div id="ref-StackExchangend">
 <p>“Programming Puzzles &amp; Code Golf.” n.d. StackExchange. <a href="http://codegolf.stackexchange.com/questions/tagged/code-golf" class="uri">http://codegolf.stackexchange.com/questions/tagged/code-golf</a>.</p>
 </div>
@@ -367,16 +407,16 @@ Namespaces are one honking great idea – let’s do more of those!</p>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>These images are featured on the front page of <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>—see page <a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>These images are featured on the front page of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>—see page <a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>It has since spread to other disciplines. The generic term for Oulipian groups is OUXPO (“Ouvroir d’X Potentielle”), where the X can be replaced with whatever particular subject area you like (typically in french): fine art—OUPEINPO, music—OUMUPO, etc.<a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>Generated using the <em>Spoonbill N+7 Generator</em> <span class="citation" data-cites="Christian2016">(Christian <a href="#ref-Christian2016">2016</a>)</span>.<a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p>The language was appropriately named after the British absurdist comedy group Monty Python <span class="citation" data-cites="Python2016">(“Why Is It Called Python? General Python Faq” <a href="#ref-Python2016">2016</a>)</span>. So by doing a syzygious jump it is the obvious choice of programming lanuage for this project: Pataphysics–Monty Python–Python.<a href="#fnref4">↩</a></p></li>
 </ol>
 </section>
 <nav class="mainnav">
-  <a class="left" href="">Prev</a>
-  <a class="centre" href="">Contents</a>
-  <a class="right" href="">Next</a>
+  <a class="left" href="introduction.html">Prev</a>
+  <a class="centre" href="../front/contents.html">Contents</a>
+  <a class="right" href="methodology.html">Next</a>
 </nav>
 </body>
 </html>

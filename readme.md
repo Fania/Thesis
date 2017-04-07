@@ -9,12 +9,31 @@
 
 ## HTML Conversion
 
+<img class="triplespiral" src="../images/triplespiral.png">
+
+
 ```
-pandoc title.tex -f latex -t html5 -o title.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav"
+pandoc title.tex -f latex -t html5 -o title.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
 '''
+
 ```
-pandoc introduction.tex -f latex -t html5 -o introduction.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+pandoc abstract.tex -f latex -t html5 -o abstract.html  --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
 '''
+
+```
+pandoc dedication.tex -f latex -t html5 -o dedication.html  --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
+'''
+
+```
+pandoc publications.tex -f latex -t html5 -o publications.html  --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
+'''
+
+```
+pandoc introduction.tex -f latex -t html5 -o introduction.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+
+
 ```
 pandoc inspirations.tex -f latex -t html5 -o inspirations.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=1 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''

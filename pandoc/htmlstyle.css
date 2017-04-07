@@ -10,9 +10,22 @@ font-family: 'Roboto', sans-serif;
 font-family: 'Josefin Sans', sans-serif;
 */
 
+/*
+regent grey #87939B
+bismark #476775 poem
+ivanhoe #314956 mainnav
+dark knight #1F2D35
+dark tan #956248 h3
+longitude #ABB4BE
+enigma #4E496E h1
+picton blue #5F9CCB h2
+*/
+
+
+
 body {
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  margin: 0;
   font-family: 'Roboto Slab', serif;
 }
 
@@ -22,6 +35,8 @@ h1 {
 
 blockquote {
   font-family: 'Roboto', sans-serif;
+  background-color: #ABB4BE;
+  padding: .25em .75em 1em 1.25em;
 }
 
 code {
@@ -29,9 +44,13 @@ code {
 }
 
 .mainnav {
-  background-color: gray;
+  background-color: #314956;
   position: relative;
   padding: 10px;
+}
+
+.mainnav a {
+  color: #fff;
 }
 
 .left {
@@ -49,4 +68,73 @@ code {
   position: absolute;
   right: 10px;
   top: 10px;
+}
+
+.triplespiral {
+  width: 100px;
+  margin: 10px 45%;
+}
+
+.poem {
+  padding: 20px;
+  background-color: #476775;
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+  background-color: #4E496E;
+  padding-left: 10px;
+  line-height: 3em;
+}
+
+h2 {
+  color: #fff;
+  background-color: #5F9CCB;
+  padding-left: 10px;
+  line-height: 2em;
+}
+
+h3, h3 a {
+  color: #fff;
+  background-color: #956248;
+  padding-left: 10px;
+  line-height: 1.5em;
+}
+
+p {
+  padding-left: 5px;
+}
+
+.blockcitation {
+  float: right;
+  font-size: .8em;
+  color: #87939B;
+}
+
+figure {
+  display: inline-block;
+}
+
+figure img {
+  width: 100%;
+}
+
+figcaption {
+  font-family: 'Roboto', sans-serif;
+  font-size: .8em;
+}
+
+
+@media screen and (min-width: 480px) {
+  body {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  figure.half {
+    width: 40%;
+  }
 }
