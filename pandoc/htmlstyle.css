@@ -14,7 +14,7 @@ font-family: 'Josefin Sans', sans-serif;
 regent grey #87939B
 bismark #476775 poem
 ivanhoe #314956 mainnav
-dark knight #1F2D35
+dark knight #1F2D35 dt
 dark tan #956248 h3
 longitude #ABB4BE
 enigma #4E496E h1
@@ -36,7 +36,26 @@ h1 {
 blockquote {
   font-family: 'Roboto', sans-serif;
   background-color: #ABB4BE;
-  padding: .25em .75em 1em 1.25em;
+  padding: 1em;
+  overflow: auto;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote ul{
+  margin: 0;
+}
+
+.blockcitation {
+  float: right;
+  font-size: .8em;
+  color: #87939B;
+}
+
+.blockcitation a{
+  color: #87939B;
 }
 
 code {
@@ -119,6 +138,7 @@ h2 {
   background-color: #5F9CCB;
   padding-left: 10px;
   line-height: 2em;
+  margin-top: 2em;
 }
 
 h3, h3 a {
@@ -126,16 +146,11 @@ h3, h3 a {
   background-color: #956248;
   padding-left: 10px;
   line-height: 1.5em;
+  margin-top: 2em;
 }
 
 p {
   padding-left: 5px;
-}
-
-.blockcitation {
-  float: right;
-  font-size: .8em;
-  color: #87939B;
 }
 
 figure {
@@ -155,11 +170,72 @@ toc-section-number {
   margin-right: 10px;
 }
 
+ol, ul, dl {
+  margin: 2em 2em;
+}
+
+dt {
+  font-weight: bold;
+  float: left;
+  clear: left;
+  text-align: right;
+  color: #1F2D35;
+  width: 100px;
+}
+
+dt::after {
+  content: ":";
+}
+
+dd {
+  margin-left: 110px;
+}
+
+dd p, li p {
+  margin: 0;
+}
+
+.defaultDL dt {
+  font-weight: bold;
+  color: #1F2D35;
+  width: 100%;
+  text-align: left;
+}
+
+.defaultDL dd {
+  margin-left: 20px;
+}
+
+#TOC {
+  margin-top: 1em;
+}
+
+#TOC ul {
+  margin: 0;
+}
+
+#TOC li {
+  line-height: 1.5em;
+  margin: 0;
+}
+
+ul.twocol li{
+  margin-left: 0;
+}
+
 
 @media screen and (min-width: 480px) {
   body {
     width: 80%;
     margin: auto;
+  }
+
+  ul.twocol {
+    columns: 200px 2;
+  }
+
+  ul.twocol li{
+    margin-left: 2em;
   }
 }
 

@@ -11,6 +11,10 @@
 
 <img class="triplespiral" src="../images/triplespiral.png">
 
+<figure>
+<img src="../pandoc/oulipo.png" alt="Examples of OULIPO art" width="100%">
+<figcaption>Algol poem (left), melting snowball (middle), Matthew's algorithm (right)<span data-label="fig:oulipo"></span></figcaption>
+</figure>
 
 ```
 pandoc title.tex -f latex -t html5 -o title.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
