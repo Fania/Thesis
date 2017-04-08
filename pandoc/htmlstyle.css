@@ -75,6 +75,32 @@ code {
   margin: 10px 45%;
 }
 
+.titleimg {
+  margin: 5px 0 0 0;
+  position: relative;
+}
+
+.titleimg figcaption {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 95%;
+  height: 95%;
+  opacity: 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+.titleimg figcaption:hover {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.titleimg figcaption a {
+  font-size: 2em;
+}
+
 .poem {
   padding: 20px;
   background-color: #476775;
@@ -123,6 +149,10 @@ figure img {
 figcaption {
   font-family: 'Roboto', sans-serif;
   font-size: .8em;
+}
+
+toc-section-number {
+  margin-right: 10px;
 }
 
 

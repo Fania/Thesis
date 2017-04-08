@@ -38,7 +38,9 @@ pandoc introduction.tex -f latex -t html5 -o introduction.html --toc --toc-depth
 pandoc inspirations.tex -f latex -t html5 -o inspirations.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=1 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''
 
-
+```
+pandoc methodology.tex -f latex -t html5 -o methodology.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=2 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
 
 
 link-citations
