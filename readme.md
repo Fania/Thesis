@@ -11,10 +11,13 @@
 
 <img class="triplespiral" src="../images/triplespiral.png">
 
-<figure>
-<img src="../pandoc/oulipo.png" alt="Examples of OULIPO art" width="100%">
-<figcaption>Algol poem (left), melting snowball (middle), Matthew's algorithm (right)<span data-label="fig:oulipo"></span></figcaption>
+<figure id="fig:3.2">
+<img src="../pandoc/tmpr.png" alt="Edmonds and Candy's trajectory model (TMPR)" style="max-width:500px">
+<figcaption>Figure 3.2 Edmonds and Candy's trajectory model (TMPR)</figcaption>
 </figure>
+<a href="#fig:mytmpr">Figure 3.3</a>
+
+<span class="blockcitation" data-cites="Hendler2013">(Hendler and Hugill <a href="#ref-Hendler2013">2013</a>)</span>
 
 ```
 pandoc title.tex -f latex -t html5 -o title.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
@@ -46,6 +49,9 @@ pandoc inspirations.tex -f latex -t html5 -o inspirations.html --toc --toc-depth
 pandoc methodology.tex -f latex -t html5 -o methodology.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=2 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''
 
+```
+pandoc pataphysics.tex -f latex -t html5 -o pataphysics.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=2 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
 
 link-citations
 

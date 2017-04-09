@@ -14,6 +14,7 @@ font-family: 'Josefin Sans', sans-serif;
 regent grey #87939B
 bismark #476775 poem
 ivanhoe #314956 mainnav
+woody brown #5B4646 th
 dark knight #1F2D35 dt
 dark tan #956248 h3
 longitude #ABB4BE
@@ -38,6 +39,7 @@ blockquote {
   background-color: #ABB4BE;
   padding: 1em;
   overflow: auto;
+  margin: 2em 1em;
 }
 
 blockquote p {
@@ -99,41 +101,37 @@ code {
   position: relative;
 }
 
+.titleimg img {
+  max-width: 2000px;
+}
+
 .titleimg figcaption {
-  position: absolute;
-  top: 2.5%;
-  left: 2.5%;
-  background-color: rgba(255, 255, 255, 0.7);
-  width: 95%;
-  height: 95%;
-  opacity: 0;
-  font-size: 1em;
+  font-size: .8em;
   text-align: center;
 }
 
-.titleimg figcaption:hover {
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.titleimg figcaption a {
-  font-size: 2em;
-}
-
 .poem {
+  margin: 2em 0;
   padding: 20px;
   background-color: #476775;
   color: #fff;
 }
 
-h1 {
+.partheading {
+  margin: 0;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+h1, h1 a {
   color: #fff;
   background-color: #4E496E;
   padding-left: 10px;
   line-height: 3em;
+  margin: 0;
 }
 
-h2 {
+h2, h2 a {
   color: #fff;
   background-color: #5F9CCB;
   padding-left: 10px;
@@ -154,11 +152,14 @@ p {
 }
 
 figure {
-  display: inline-block;
+  /*display: inline-block;*/
+  text-align: center;
+  margin: 2em 0;
 }
 
 figure img {
   width: 100%;
+  max-width: 500px;
 }
 
 figcaption {
@@ -224,23 +225,93 @@ ul.twocol li{
 }
 
 
+/*
+regent grey #87939B
+bismark #476775 poem
+ivanhoe #314956 mainnav
+woody brown #5B4646
+dark knight #1F2D35 dt
+dark tan #956248 h3
+longitude #ABB4BE
+enigma #4E496E h1
+picton blue #5F9CCB h2
+*/
+
+table {
+  margin-top: 2em;
+}
+
+th {
+  background-color: #5B4646;
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+
+
 @media screen and (min-width: 480px) {
   body {
     width: 80%;
     margin: auto;
   }
-
   ul.twocol {
     columns: 200px 2;
   }
-
   ul.twocol li{
     margin-left: 2em;
+  }
+  .titleimg figcaption {
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 95%;
+    height: 95%;
+    opacity: 0;
+    text-align: center;
+    font-size: 1em;
+    opacity: 0;
+  }
+  .titleimg figcaption:hover {
+    opacity: 1;
+    transition: opacity 1s;
   }
 }
 
 @media screen and (min-width: 700px) {
+  figure {
+    text-align: center;
+    margin: 2em;
+  }
   figure.half {
     width: 40%;
+    display: inline-block;
+  }
+  .titleimg figcaption {
+    font-size: 1.5em;
+    opacity: 0;
+  }
+  .titleimg figcaption:hover {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .titleimg figcaption {
+    font-size: 2em;
+    opacity: 0;
+  }
+  .titleimg figcaption:hover {
+    opacity: 1;
+    transition: opacity 1s;
   }
 }
