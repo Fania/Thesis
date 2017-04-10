@@ -152,13 +152,13 @@ p {
 }
 
 figure {
-  /*display: inline-block;*/
   text-align: center;
   margin: 2em 0;
 }
 
 figure img {
   width: 100%;
+  /*max-height: 600px;*/
   max-width: 500px;
 }
 
@@ -223,19 +223,6 @@ dd p, li p {
 ul.twocol li{
   margin-left: 0;
 }
-
-
-/*
-regent grey #87939B
-bismark #476775 poem
-ivanhoe #314956 mainnav
-woody brown #5B4646
-dark knight #1F2D35 dt
-dark tan #956248 h3
-longitude #ABB4BE
-enigma #4E496E h1
-picton blue #5F9CCB h2
-*/
 
 table {
   margin-top: 2em;
