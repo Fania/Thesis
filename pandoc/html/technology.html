@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Technology</title>
+  <link href="../htmlstyle.css" rel="stylesheet">
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]},
+											TeX:     {extensions: ["color.js"],
+																Macros:     {RR:    '{\\bf R}',
+												                     bold:  ['{\\bf #1}', 1]}
+															 }
+										 });
+	</script>
+</head>
+<body>
+<nav class="mainnav">
+  <a class="left" href="creativity.html">Prev</a>
+  <a class="centre" href="contents.html">Contents</a>
+  <a class="right" href="evaluation.html">Next</a>
+</nav>
+
+<section id="ch:technology" class="level1">
+<h1><span class="header-section-number">6</span> Technology</h1>
+
+<nav id="TOC">
+<ul>
+<li><a href="#ch:technology"><span class="toc-section-number">6</span> Technology</a><ul>
+<li><a href="#information-retrieval"><span class="toc-section-number">6.1</span> Information Retrieval</a><ul>
+<li><a href="#s:irmodels"><span class="toc-section-number">6.1.1</span> IR Models</a></li>
+<li><a href="#s:browsing"><span class="toc-section-number">6.1.2</span> Searching vs. Browsing</a></li>
+<li><a href="#s:ranking"><span class="toc-section-number">6.1.3</span> Ranking</a></li>
+<li><a href="#challenges"><span class="toc-section-number">6.1.4</span> Challenges</a></li>
+</ul></li>
+<li><a href="#s:nlp"><span class="toc-section-number">6.2</span> Natural Language Processing</a><ul>
+<li><a href="#words"><span class="toc-section-number">6.2.1</span> Words</a></li>
+<li><a href="#sequences"><span class="toc-section-number">6.2.2</span> Sequences</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#bibliography">References</a></li>
+</ul>
+</nav>
+
+<section class="poem">
+<code>Ten thousand soldiers with me I will take,</code><br />
+<code>only thus much I give your Grace to know,</code><br />
+<code>the tenth of August last this dreadful lord,</code><br />
+<code>I’ll give thee this neck.</code><br />
+<br />
+<code>He did so set his teeth and tear it,</code><br />
+<code>the circumstance I’ll tell you more at large,</code><br />
+<code>or ten times happier be it ten for one,</code><br />
+<code>if he will touch the estimate.</code><br />
+<br />
+<code>And tell me he that knows,</code><br />
+<code>a thousand knees ten thousand years together,</code><br />
+<code>stand on the dying neck.</code><br />
+<br />
+<code>Towards school with heavy looks,</code><br />
+<code>and thus do we of wisdom and of reach,</code><br />
+<code>be an arch.</code>
+</section>
+
+<section id="information-retrieval" class="level2">
+<h2><span class="header-section-number">6.1</span> Information Retrieval</h2>
+<blockquote>
+<p>Information retrieval deals with the representation, storage, organisation of, and access to information items such as documents, Web pages, online catalogs, structured and semi-structured records, multimedia objects. The representation and organisation of the information items should be such as to provide the users with easy access to information of their interest.</p><span class="blockcitation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>
+</blockquote>
+<p>In simple terms, a typical search process can be described as follows (see figure <a href="#fig:6.1">6.1</a>). A user is looking for some information so she or he types a search term or a question into the text box of a search engine. The system analyses this query and retrieves any matches from the index, which is kept up to date by a web crawler. A ranking algorithm then decides in what order to return the matching results and displays them for the user. In reality of course this process involves many more steps and level of detail, but it provides a sufficient enough overview.</p>
+
+<figure id="fig:6.1">
+<img src="../images/tradarc.png" alt="Abstract search engine architecture" style="max-width:500px">
+<figcaption>Figure 6.1 Abstract search engine architecture</figcaption>
+</figure>
+
+<p>Most big web search engines like Google, Baidu or Bing focus on usefulness and relevance of their results <span class="citation" data-cites="Google2012 Baidu2012 Microsoft2012a">(“Google Ranking” <a href="#ref-Google2012">2012</a>; “Company Overview. About Baidu” n.d.; “Bing Fact Sheet” <a href="#ref-Microsoft2012a">2012</a>)</span>. Google uses over 200 signals <span class="citation" data-cites="Google2012">(“Google Ranking” <a href="#ref-Google2012">2012</a>)</span> that influence the ranking of web pages including their original PageRank algorithm <span class="citation" data-cites="Brin1998 Brin1998b">(Page et al. <a href="#ref-Brin1998">1999</a>; Brin and Page <a href="#ref-Brin1998b">1998</a>)</span>.</p>
+<p>Any IR process is constrained by factors like subject, context, time, cost, system and user knowledge <span class="citation" data-cites="Marchionini1988">(Marchionini and Shneiderman <a href="#ref-Marchionini1988">1988</a>)</span>. Such constraints should be taken into consideration in the development of any search tool. A web crawler needs resources to crawl around the web, language barriers may exist, the body of knowledge might not be suitable for all queries, the system might not be able to cater for all types of queries (e.g. single-word vs. multi-word queries), or the user might not be able to understand the user interface, and many more. It is therefore imperative to eliminate certain constraining factors—for example by choosing a specific target audience or filtering the amount of information gathered by a crawler from web pages.</p>
+<p>The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given ‘seed’ pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot <span class="citation" data-cites="Google2016">(“Googlebot. Search Console Help” n.d.)</span> and the Bingbot <span class="citation" data-cites="Bing2016">(“Meet Our Crawlers. Webmaster Help and How-to” n.d.)</span> are well-known examples.</p>
+<p>An index is a list of keywords (called the dictionary or vocabulary) together with a list called ‘postings list’ that indicates the documents in which the terms occurs. One way to practically implement this is to create a Term-Document Matrix
+(TDM) as shown in equation <a href="#eq:6.1">6.1</a>.</p>
+
+<figure id="eq:6.1" class="equation">
+<img src="../images/tdm.png" alt="Term-Document Matrix">
+<figcaption>(6.1)</figcaption>
+</figure>
+
+<p>where <span class="math inline"><em>f</em><sub><em>i</em>, <em>j</em></sub></span> is the frequency of term <span class="math inline"><em>k</em><sub><em>i</em></sub></span> in document <span class="math inline"><em>d</em><sub><em>j</em></sub></span>. To illustrate this with a concrete example, figure [fig:termdocs] shows a for a selection of words in a corpus containing three documents<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<ul>
+<li><p>Alfred Jarry: <em>Exploits and Opinions of Dr. Faustroll, <span class="math inline">′</span>Pataphysician</em> (‘Faustroll’) <span class="citation" data-cites="Jarry1996">(<a href="#ref-Jarry1996">1996</a>)</span></p></li>
+<li><p>Saint Luke: <em>The Gospel</em> (‘Gospel’) <span class="citation" data-cites="Luke2005">(<a href="#ref-Luke2005">2005</a>)</span></p></li>
+<li><p>Jules Verne: <em>A Journey to the Centre of the Earth</em> (‘Voyage’) <span class="citation" data-cites="Verne2010">(<a href="#ref-Verne2010">2010</a>)</span></p></li>
+</ul>
+
+<figure id="fig:6.2">
+<img src="../images/exampletdm.png" alt="Example TDM for 3 documents and 9 words">
+<figcaption>Figure 6.2 Example TDM for 3 documents and 9 words</figcaption>
+</figure>
+
+<p>The dictionary is usually pre-processed (see section <a href="#s:nlp">6.2</a>) to eliminate punctuation and so-called ‘stop-words’<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> (e.g. I, a, and, be, by, for, the, on, etc.) which would be useless in everyday text search engines. For specific domains it even makes sense to build a ‘controlled vocabulary’, where only very specific terms are included (for example the index at the back of a book). This can be seen as a domain specific taxonomy and is very useful for query expansion (explained in the next paragraph).</p>
+<p>Relevance feedback is an idea of improving the search results by explicit or implicit methods. Explicit feedback asks users to rate results according to their perceived relevance or collects that kind of information through analysis of mouse clicks, eye tracking, etc. Implicit feedback occurs when external sources are consulted such as thesauri or by analysing the top results provided by a search engine. There are two ways of using this feedback. It can be displayed as a list of suggested search terms to the user and the user decides whether or not to take the advice, or the query is modified internally without the user’s knowledge. This is then called automatic query expansion.</p>
+
+<section id="s:irmodels" class="level3">
+<h3><span class="header-section-number">6.1.1</span> IR Models</h3>
+<p>There are different models for different needs, for example a multimedia system is going to be different than a text based IR system, and a web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections and paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text. Classic example models are set-theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model <span class="citation" data-cites="Brin1998">(Page et al. <a href="#ref-Brin1998">1999</a>)</span>.</p>
+<p>The notation for IR models is a quadruple <span class="math inline">[<em>D</em>, <em>Q</em>, <em>F</em>, <em>R</em>(<em>q</em><sub><em>i</em></sub>, <em>d</em><sub><em>j</em></sub>)]</span> <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a> adapted from)</span> where,</p>
+<p>
+D = the set of documents<br />
+Q = the set of queries<br />
+F = the framework e.g. sets, Boolean relations, vectors, linear algebra…<br />
+R(q_i, d_j) = the ranking function, with <span class="math inline"><em>q</em><sub><em>i</em></sub> ∈ <em>Q</em></span> and <span class="math inline"><em>d</em><sub><em>j</em></sub> ∈ <em>D</em></span><br />
+t = the number of index terms in a document collection<br />
+V = the set of all distinct index terms <span class="math inline">{<em>k</em><sub>1</sub>, …, <em>k</em><sub><em>t</em></sub>}</span> in a document collection (vocabulary)</p>
+<p>This means, given a query <span class="math inline"><em>q</em></span> and a set of documents <span class="math inline"><em>D</em></span>, we need to produce a ranking score <span class="math inline"><em>R</em>(<em>q</em>, <em>d</em><sub><em>j</em></sub>)</span> for each document <span class="math inline"><em>d</em><sub><em>j</em></sub></span> in <span class="math inline"><em>D</em></span>.</p>
+
+<section id="the-boolean-model" class="level4">
+<h4><span class="header-section-number">6.1.1.1</span> The Boolean Model</h4>
+<p>One such ranking score is the Boolean model. The similarity of document <span class="math inline"><em>d</em><sub><em>j</em></sub></span> to query <span class="math inline"><em>q</em></span> is defined as follows <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span></p>
+
+<figure id="eq:6.2" class="equation">
+<span class="math display">$$sim(d_j,q) =
+  \begin{cases}
+  1 &amp; \text{if} \ \exists \ c(q) \ | \ c(q) = c(d_j)\\
+  0 &amp; \text{otherwise}
+  \end{cases}
+  \label{eq:sim}$$</span>
+<figcaption>(6.2)</figcaption>
+</figure>
+
+<p>where <span class="math inline"><em>c</em>(<em>x</em>)</span> is a ‘conjunctive component’ of <span class="math inline"><em>x</em></span>. A conjunctive component is one part of a declaration in Disjunctive Normal Form (DNF). It describes which terms occur in a document and which ones do not. For example, for vocabulary <span class="math inline"><em>V</em> = {<em>k</em><sub>0</sub>, <em>k</em><sub>1</sub>, <em>k</em><sub>2</sub>}</span>, if all terms occur in document <span class="math inline"><em>d</em><sub><em>j</em></sub></span> then the conjunctive component would be <span class="math inline">(1, 1, 1)</span>, or <span class="math inline">(0, 1, 0)</span> if only term <span class="math inline"><em>k</em><sub>1</sub></span> appears in <span class="math inline"><em>d</em><sub><em>j</em></sub></span>. Let’s make this clearer with a practical example. Figure <a href="#fig:6.3">6.3</a> (a shorter version of figure <a href="#fig:6.2">6.2</a>) shows a vocabulary of 4 terms over 3 documents.</p>
+
+<figure id="fig:6.3">
+<img src="../images/exampletdmshort.png" alt="Example TDM for 9 words and 3 documents (short)">
+<figcaption>Figure 6.3 Example TDM for 9 words and 3 documents (short)</figcaption>
+</figure>
+
+<p>So, we have a vocabulary <span class="math inline"><em>V</em></span> of {Faustroll, time, doctor and God} and three documents <span class="math inline"><em>d</em><sub>0</sub>=</span> Faustroll, <span class="math inline"><em>d</em><sub>1</sub>=</span> Gospel and <span class="math inline"><em>d</em><sub>2</sub>=</span> Voyage. The conjunctive component for <span class="math inline"><em>d</em><sub>0</sub></span> is <span class="math inline">(1, 1, 1, 1)</span>. This is because each term in <span class="math inline"><em>V</em></span> occurs at least once. <span class="math inline"><em>c</em>(<em>d</em><sub>1</sub>)</span> and <span class="math inline"><em>c</em>(<em>d</em><sub>2</sub>)</span> are both <span class="math inline">(0, 1, 0, 1)</span> since the terms ‘Faustroll’ and ‘doctor’ do not occur in either of them.</p>
+<p>Assume we have a query <span class="math inline"><em>q</em>=</span> doctor <span class="math inline">∧</span> (Faustroll <span class="math inline">∨</span> <span class="math inline">¬</span> God). Translating this query into DNF will result in the following expression: <span class="math inline"><em>q</em><sub><em>D</em><em>N</em><em>F</em></sub> = (1, 0, 1, 1)∨(1, 1, 1, 1)∨(1, 0, 1, 0)∨(1, 1, 1, 0)∨(0, 0, 1, 0)∨(0, 1, 1, 0)</span>, where each component <span class="math inline">(<em>x</em><sub>0</sub>, <em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>3</sub>)</span> is the same as <span class="math inline">(<em>x</em><sub>0</sub> ∧ <em>x</em><sub>1</sub> ∧ <em>x</em><sub>2</sub> ∧ <em>x</em><sub>3</sub>)</span>.</p>
+<p>One of the conjunctive components in <span class="math inline"><em>q</em><sub><em>D</em><em>N</em><em>F</em></sub></span> must match a document conjunctive component in order to return a positive result. In this case <span class="math inline"><em>c</em>(<em>d</em><sub>0</sub>)</span> matches the second component in <span class="math inline"><em>q</em><sub><em>D</em><em>N</em><em>F</em></sub></span> and therefore the Faustroll document matches the query <span class="math inline"><em>q</em></span> but the other two documents do not.</p>
+<p>The Boolean model gives ‘Boolean’ results. This means something is either true or false. Sometimes things are not quite black and white though and we need to weigh the importance of words somehow.</p>
+</section>
+
+<section id="s:tfidf" class="level4">
+<h4><span class="header-section-number">6.1.1.2</span> TF-IDF</h4>
+<p>One simple method of assigning a weight to terms is the so-called Term Frequency-Inverse Document Frequency or TF-IDF for short. Given a TF of <span class="math inline"><em>t</em><em>f</em><sub><em>i</em>, <em>j</em></sub></span> and a IDF of <span class="math inline"><em>i</em><em>d</em><em>f</em><sub><em>i</em></sub></span> it is defined as <span class="math inline"><em>t</em><em>f</em><sub><em>i</em>, <em>j</em></sub> × <em>i</em><em>d</em><em>f</em><sub><em>i</em></sub></span> <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>.</p>
+<p>The <span class="math inline"><em>t</em><em>f</em><sub><em>i</em>, <em>j</em></sub></span> is calculated and normalised using a log function as: <span class="math inline">1 + log<sub>2</sub><em>f</em><sub><em>i</em>, <em>j</em></sub> if <em>f</em><sub><em>i</em>, <em>j</em></sub> &gt; 0 or 0 otherwise</span> where <span class="math inline"><em>f</em><sub><em>i</em>, <em>j</em></sub></span> is the frequency of term <span class="math inline"><em>k</em><sub><em>i</em></sub></span> in document <span class="math inline"><em>d</em><sub><em>j</em></sub></span>.</p>
+<p>The Term Frequency (TF) <span class="math inline"><em>i</em><em>d</em><em>f</em><sub><em>i</em></sub></span> weight is calculated as <span class="math inline">log<sub>2</sub>(<em>N</em>/<em>d</em><em>f</em><sub><em>i</em></sub>)</span>, where the document frequency <span class="math inline"><em>d</em><em>f</em><sub><em>i</em></sub></span> is the number of documents in a collection that contain a term <span class="math inline"><em>k</em><sub><em>i</em></sub></span> and <span class="math inline"><em>i</em><em>d</em><em>f</em><sub><em>i</em></sub></span> is the IDF of term <span class="math inline"><em>k</em><sub><em>i</em></sub></span>. The Inverse Document Frequency (IDF) more often a term occurs in different documents the lower the IDF. <span class="math inline"><em>N</em></span> is the total number of documents.</p>
+
+<figure id="eq:6.3" class="equation">
+<span class="math display">$$tfidf_{i,j} =
+  \begin{cases}
+  (1+\log_2 f_{i,j})\times \log_2\frac{N}{df_i} &amp; \text{if} \ f_{i,j} &gt; 0 \\
+  0 &amp; \text{otherwise}
+  \end{cases}
+  \label{eq:tfidfij}$$</span>
+<figcaption>(6.3)</figcaption>
+</figure>
+
+<p>where <span class="math inline"><em>t</em><em>f</em><em>i</em><em>d</em><em>f</em><sub><em>i</em>, <em>j</em></sub></span> is the weight associated with <span class="math inline">(<em>k</em><sub><em>i</em></sub>, <em>d</em><sub><em>j</em></sub>)</span>. Using this formula ensures that rare terms have a higher weight and more so if they occur a lot in one document. Table [tab:tfidf] shows the following details.</p>
+<p>k_<span>0</span>-k_<span>8</span> = [Faustroll,father,time,background,water,doctor,without,bishop,God]<br />
+d_<span>0</span>-d_<span>2</span> = [Faustroll, Gospel, Voyage] (see figure [fig:termdocs])<br />
+f_<span>i,j</span> = the frequence (count) of term <span class="math inline"><em>k</em><sub><em>i</em></sub></span> in document <span class="math inline"><em>d</em><sub><em>j</em></sub></span><br />
+tf_<span>i,j</span> = the weight<br />
+idf_<span>i</span> = the weight<br />
+tfidf_<span>i,j</span> = the - weight</p>
+
+<figure id="tab:6.1">
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th colspan="3">d<sub>0</sub></th>
+    <th colspan="3">d<sub>1</sub></th>
+    <th colspan="3">d<sub>2</sub></th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>idf</th>
+    <th>f</th>
+    <th>tf</th>
+    <th>tfidf</th>
+    <th>f</th>
+    <th>tf</th>
+    <th>tfidf</th>
+    <th>f</th>
+    <th>tf</th>
+    <th>tfidf</th>
+  </tr>
+  <tr>
+    <td>k<sub>0</sub></td>
+    <td>1.58</td>
+    <td>77</td>
+    <td>7.27</td>
+    <td>11.49</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>1</sub></td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>28</td>
+    <td>5.81</td>
+    <td>0</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>2</sub></td>
+    <td>0</td>
+    <td>34</td>
+    <td>6.09</td>
+    <td>0</td>
+    <td>16</td>
+    <td>5</td>
+    <td>0</td>
+    <td>129</td>
+    <td>8.01</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>3</sub></td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>4</sub></td>
+    <td>0</td>
+    <td>29</td>
+    <td>5.86</td>
+    <td>0</td>
+    <td>7</td>
+    <td>3.81</td>
+    <td>0</td>
+    <td>120</td>
+    <td>7.91</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>5</sub></td>
+    <td>1.58</td>
+    <td>30</td>
+    <td>5.91</td>
+    <td>9.34</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>6</sub></td>
+    <td>0</td>
+    <td>27</td>
+    <td>5.75</td>
+    <td>0</td>
+    <td>7</td>
+    <td>3.81</td>
+    <td>0</td>
+    <td>117</td>
+    <td>7.87</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>k<sub>7</sub></td>
+    <td>0.58</td>
+    <td>27</td>
+    <td>5.75</td>
+    <td>3.34</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1.16</td>
+  </tr>
+  <tr>
+    <td>k<sub>8</sub></td>
+    <td>0</td>
+    <td>25</td>
+    <td>5.64</td>
+    <td>0</td>
+    <td>123</td>
+    <td>7.94</td>
+    <td>0</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+  </tr>
+</table>
+<figcaption>Table 6.1 TF-IDF weights</figcaption>
+</figure>
+
+
+<p>What stands out in table <a href="#tab:6.1">6.1</a> is that the <span class="math inline"><em>t</em><em>f</em><em>i</em><em>d</em><em>f</em><sub><em>i</em>, <em>j</em></sub></span> function returns quite often. This is partially due to the <span class="math inline"><em>i</em><em>d</em><em>f</em><sub><em>i</em></sub></span> algorithm returning when a term appears in all documents in the corpus. In the given example this is the case a lot but in a real-world example it might not occur as much.</p>
+</section>
+
+<section id="the-vector-model" class="level4">
+<h4><span class="header-section-number">6.1.1.3</span> The Vector Model</h4>
+<p>The vector model allows more flexible scoring since it basically computes the ‘degree’ of similarity between a document and a query <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. Each document <span class="math inline"><em>d</em><sub><em>j</em></sub></span> in the corpus is represented by a document vector <span class="math inline">$\vec{d_j}$</span> in <span class="math inline"><em>t</em></span>-dimensional space, where <span class="math inline"><em>t</em></span> is the total number of terms in the vocabulary. Figure [fig:docvect] gives an example of vector <span class="math inline">$\vec{d_j}$</span> for document <span class="math inline"><em>d</em><sub><em>j</em></sub></span> in 3-dimensional space. That is, the vocabulary of this system consists of three terms <span class="math inline"><em>k</em><sub><em>a</em></sub></span>, <span class="math inline"><em>k</em><sub><em>b</em></sub></span> and <span class="math inline"><em>k</em><sub><em>c</em></sub></span>. A similar vector <span class="math inline">$\vec{q}$</span> can be constructed for query <span class="math inline"><em>q</em></span>. Figure [fig:VM] then shows the similarity between the document and the query vector as the cosine of <span class="math inline"><em>θ</em></span>.</p>
+<p>[tdplot_main_coords, axis/.style=<span>-&gt;</span>, vector/.style=<span>-stealth,thick</span>, vector guide/.style=<span>dashed,gray</span>] (O) at (0,0,0); (P) at (,,); (0,0,0) – (3,0,0) node[anchor=north east]<span><span class="math inline"><em>k</em><sub><em>a</em></sub></span></span>; (0,0,0) – (0,3,0) node[anchor=north west]<span><span class="math inline"><em>k</em><sub><em>b</em></sub></span></span>; (0,0,0) – (0,0,3) node[anchor=south]<span><span class="math inline"><em>k</em><sub><em>c</em></sub></span></span>; (O) – (P); (,,0) – (P); (P) – (0,0,); (,,0) – (0,,0); (,,0) – (0,,0); (,,0) – (,0,0); at (P)<span><span class="math inline">$\vec{d_j}$</span></span>;</p>
+<p>(0,0) – (3,0) coordinate (a) node[right] <span><span class="math inline"><em>q</em></span></span>; (0,0) – (2,2) coordinate (c) node[above right] <span><span class="math inline"><em>d</em><sub><em>j</em></sub></span></span>; (0,0) coordinate (b) node[left] ; pic[“<span class="math inline"><em>θ</em></span>”, draw=black, angle eccentricity=1.2, angle radius=1cm] <span>angle=a–b–c</span>;</p>
+<p><span class="math inline">$\vec{d_j}$</span> is defined as <span class="math inline">(<em>w</em><sub>1, <em>j</em></sub>, <em>w</em><sub>2, <em>j</em></sub>, …, <em>w</em><sub><em>t</em>, <em>j</em></sub>)</span> and similarly <span class="math inline">$\vec{q}$</span> is defined as <span class="math inline">(<em>w</em><sub>1, <em>q</em></sub>, <em>w</em><sub>2, <em>q</em></sub>, …, <em>w</em><sub><em>t</em>, <em>q</em></sub>)</span>, where <span class="math inline"><em>w</em><sub><em>i</em>, <em>j</em></sub></span> and <span class="math inline"><em>w</em><sub><em>i</em>, <em>q</em></sub></span> correspond to the - weights per term of the relevant document or query respectively. <span class="math inline"><em>t</em></span> is the total number of terms in the vocabulary. The similarity between a document <span class="math inline"><em>d</em><sub><em>j</em></sub></span> and a query <span class="math inline"><em>q</em></span> is defined in equation [eq:sim2].</p>
+<p><br /><span class="math display">$$\begin{split}
+  sim(d_j,q) &amp;= \frac{\vec{d_j} \ \cdot \ \vec{q}}{|\vec{d_j}| \times |\vec{q}|}\\
+  &amp;= \frac{\sum_{i=1}^{t}w_{i,j} \times w_{i,q}}
+  {\sqrt{\sum_{i=1}^{t}w_{i,j}^{2}} \times \sqrt{\sum_{i=1}^{t}w_{i,q}^{2}}}
+  \end{split}
+  \label{eq:sim2}$$</span><br /></p>
+<p>Let’s consider an example similar to the one used for the section. We have a corpus of three documents (<span class="math inline"><em>d</em><sub>0</sub></span> = Faustroll, <span class="math inline"><em>d</em><sub>1</sub></span> = Gospel, and <span class="math inline"><em>d</em><sub>2</sub></span> = Voyage) and nine terms in the vocabulary (<span class="math inline">[<em>k</em><sub>0</sub>, …, <em>k</em><sub>8</sub>]</span> = (Faustroll, father, time, background, water, doctor, without, bishop, God)). The document vectors and their corresponding length is given below (with the relevant - weights taken from table [tab:tfidf]).</p>
+<p>&amp; (11.49,0,0,0,0,9.34,0,3.34,0)<br />
+|| &amp; 15.18<br />
+&amp; (0,0,0,0,0,0,0,0,0)<br />
+|| &amp; 0<br />
+&amp; (0,0,0,0,0,0,0,1.16,0)<br />
+|| &amp; 1.16</p>
+<p>For this example we will use two queries: <span class="math inline"><em>q</em><sub>0</sub></span> (doctor, Faustroll) and <span class="math inline"><em>q</em><sub>1</sub></span> (without, bishop). We then compute the similarity score for between each of the documents compared to the two queries by applying equation [eq:sim2]. For the query <span class="math inline"><em>q</em><sub>0</sub></span> the result clearly points to the first document, i.e. the Faustroll text. For query <span class="math inline"><em>q</em><sub>1</sub></span> the score produces two results, with Verne’s ‘Voyage’ scoring highest.</p>
+<p>q_0 &amp; (doctor, Faustroll)<br />
+&amp; (1.58,0,0,0,0,1.58,0,0,0)<br />
+|| &amp; 2.24<br />
+sim(d_0,q_0) &amp; 0.97<br />
+sim(d_1,q_0) &amp; 0<br />
+sim(d_2,q_0) &amp; 0</p>
+<p>q_1 &amp; (without, bishop)<br />
+&amp; (0,0,0,0,0,0,0,0.58,0)<br />
+|| &amp; 0.58<br />
+sim(d_0,q_1) &amp; 0.22<br />
+sim(d_1,q_1) &amp; 0<br />
+sim(d_2,q_1) &amp; 1</p>
+<p>There are several other common models that aren’t covered in detail here. These include the probabilistic, set-based, extended Boolean and fuzzy set <span><span class="citation" data-cites="Miyamoto2010 Miyamoto1988 Srinivasan2001 Widyantoro2001 Miyamoto1986">(Miyamoto <a href="#ref-Miyamoto2010">1990</a><a href="#ref-Miyamoto2010">a</a>; Miyamoto <a href="#ref-Miyamoto1988">1990</a><a href="#ref-Miyamoto1988">b</a>; Srinivasan <a href="#ref-Srinivasan2001">2001</a>; Widyantoro and Yen <a href="#ref-Widyantoro2001">2001</a>; Miyamoto and Nakayama <a href="#ref-Miyamoto1986">1986</a>)</span></span> models or latent semantic indexing <span class="citation" data-cites="Deerwester1990">(Deerwester et al. <a href="#ref-Deerwester1990">1990</a>)</span>, neural network models and others <span class="citation" data-cites="Macdonald2009 Schuetze1998 Schuetze1995">(Macdonald <a href="#ref-Macdonald2009">2009</a>; Schütze <a href="#ref-Schuetze1998">1998</a>; Schütze and Pedersen <a href="#ref-Schuetze1995">1995</a>)</span>.</p>
+</section>
+</section>
+<section id="s:browsing" class="level3">
+<h3><span class="header-section-number">6.1.2</span> Searching vs. Browsing</h3>
+<p>What is actually meant by the word ‘searching’? Usually it implies that there is something to be found, an ; although that doesn’t necessarily mean that the searcher knows what he or she is looking for or how to conduct the search and satisfy that need.</p>
+<p>From the user’s point of view the search process can be broken down into four activities <span class="citation" data-cites="Sutcliffe1998">(Sutcliffe and Ennis <a href="#ref-Sutcliffe1998">1998</a>)</span> reminiscent of classic problem solving techniques (mentioned briefly in chapter [s:4stages]) <span class="citation" data-cites="Polya1957">(Pólya <a href="#ref-Polya1957">1957</a>)</span>:</p>
+<dl>
+<dt>Problem identification</dt>
+<dd><p>,</p>
+</dd>
+<dt>Need articulation</dt>
+<dd><p>in natural language terms,</p>
+</dd>
+<dt>Query formulation</dt>
+<dd><p>translate into query terms, and</p>
+</dd>
+<dt>Results evaluation</dt>
+<dd><p>compare against .</p>
+</dd>
+</dl>
+<p>This model poses problems in situations where an cannot easily be articulated or in fact is not existent and the user is not looking for anything specific. This is not the only constraining factor though and Marchionini and Shneiderman have pointed out that “the setting within which information-seeking takes place constrains the search process” <span class="citation" data-cites="Marchionini1988">(<a href="#ref-Marchionini1988">1988</a>)</span> and they laid out a framework with the following main elements.</p>
+<ul>
+<li><p>Setting (the context of the search and external factors such as time, cost)</p></li>
+<li><p>Task domain (the body of knowledge, the subject)</p></li>
+<li><p>Search system (the database or web search engine)</p></li>
+<li><p>User (the user’s experience)</p></li>
+<li><p>Outcomes (the assessment of the results/answers)</p></li>
+</ul>
+<p>Searching can be thought of in two ways, ‘information lookup’ (searching) and ‘exploratory search’ (browsing) <span class="citation" data-cites="DeVries1993 Marchionini2006">(Vries <a href="#ref-DeVries1993">1993</a>; Marchionini <a href="#ref-Marchionini2006">2006</a>)</span>. A situation where an cannot easily be articulated or is not existent (i.e. the user is not looking for anything specific) can be considered a typical case of exploratory search. The former can be understood as a type of simple question answering while the latter is a more general and broad knowledge acquisition process without a clear goal.</p>
+<p>Current web search engines are tailored for information lookup. They do really well in answering simple factoid questions relating to numbers, dates or names (e.g. fact retrieval, navigation, transactions, verification) but not so well in providing answers to questions that are semantically vague or require a certain extend of interpretation or prediction (e.g. analysis, evaluation, forecasting, transformation).</p>
+<p>With exploratory search, the user’s success in finding the right information depends a lot more on constraining factors and can sometimes benefit from a combination of information lookup and exploratory search <span class="citation" data-cites="Marchionini2006">(Marchionini <a href="#ref-Marchionini2006">2006</a>)</span>.</p>
+<blockquote>
+<p>Much of the search time in learning search tasks is devoted to examining and comparing results and reformulating queries to discover the boundaries of meaning for key concepts. Learning search tasks are best suited to combinations of browsing and analytical strategies, with lookup searches embedded to get one into the correct neighbourhood for exploratory browsing.</p>
+</blockquote>
+<p>De Vries called this form of browsing an “enlargement of the problem space”, where the problem space refers to the resources that possibly contain the answers/solutions to the <span class="citation" data-cites="DeVries1993">(<a href="#ref-DeVries1993">1993</a>)</span>. This is a somewhat similar idea to that of Boden’s conceptual spaces which she called the “territory of structural possibilities” and exploration of that space “exploratory creativity” <span class="citation" data-cites="Boden2003">(Boden <a href="#ref-Boden2003">2003</a>)</span> (see section [s:boden]).</p>
+</section>
+<section id="s:ranking" class="level3">
+<h3><span class="header-section-number">6.1.3</span> Ranking</h3>
+<p>Ranking signals, such as the weights produced by the - algorithm in section [s:tfidf], contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook ‘like’ button or the Google+ ‘+1’ button which could be seen as direct user relevance feedback as well.</p>
+<p>Ranking algorithms are the essence of any web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as ‘Google bombing’ <span class="citation" data-cites="Nicole2010">(Nicole <a href="#ref-Nicole2010">2010</a>)</span> for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google’s PageRank algorithm that have been described and published in academic papers.</p>
+<section id="algorithms" class="level4">
+<h4><span class="header-section-number">6.1.3.1</span> Algorithms</h4>
+<p><em>PageRank</em> was developed by Larry Page and Sergey Brin as part of their Google search engine <span class="citation" data-cites="Brin1998b Brin1998">(<a href="#ref-Brin1998b">1998</a>; <a href="#ref-Brin1998">1999</a>)</span>. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows <span class="citation" data-cites="Brin1998b">(<a href="#ref-Brin1998b">1998</a>)</span>.</p>
+<p><br /><span class="math display">$$PR(A) =
+  (1 - d) + d (\sum_{i=1}^{n} \frac{PR(T_i)}{C(T_i)})
+  \label{eq:PR}$$</span><br /></p>
+<p>A &amp; the page we want to rank and is pointed to by pages <span class="math inline"><em>T</em><sub>1</sub></span> to <span class="math inline"><em>T</em><sub><em>n</em></sub></span><br />
+n &amp; the total number of pages on the Web graph<br />
+C(A) &amp; the number of outgoing links of page <span class="math inline"><em>A</em></span><br />
+d &amp; a ‘damping’ parameter set by the system (typically 0.85) needed to deal with dead ends in the graph</p>
+<p>Figure [fig:pagerank] which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.</p>
+<figure>
+<img src="pagerank" alt="PageRank algorithm illustration (Mayhaymate 2012)" /><figcaption>PageRank algorithm illustration <span class="citation" data-cites="Wikimedia2012">(Mayhaymate <a href="#ref-Wikimedia2012">2012</a>)</span><span data-label="fig:pagerank"></span></figcaption>
+</figure>
+<p>The HITS algorithm also works on the links between pages <span class="citation" data-cites="Kleinberg1999 Kleinberg1999a">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>; Kleinberg et al. <a href="#ref-Kleinberg1999a">1999</a>)</span>. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called ‘authorities’ and page with many outgoing links are called ‘hubs’. Equation [eq:HITS] shows the algorithm <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where <span class="math inline"><em>S</em></span> is the set of pages, <span class="math inline"><em>H</em>(<em>p</em>)</span> is the hub value for page <span class="math inline"><em>p</em></span>, and <span class="math inline"><em>A</em>(<em>p</em>)</span> is the authority value for page <span class="math inline"><em>p</em></span>.</p>
+<p><br /><span class="math display">$$\begin{split}
+  H(p) &amp;= \sum_{u\in S \mid p\to u}A(u)\\
+  A(p) &amp;= \sum_{v\in S \mid v\to p}H(v)
+  \end{split}
+  \label{eq:HITS}$$</span><br /></p>
+<p>Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila <span class="citation" data-cites="Bharat2000">(<a href="#ref-Bharat2000">2000</a>)</span>. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ‘hub’ pages are predefined.</p>
+<p>Another algorithm is the so called Fish search algorithm <span class="citation" data-cites="DeBra1994 DeBra1994a DeBra1994b">(De Bra and Post <a href="#ref-DeBra1994">1994</a><a href="#ref-DeBra1994">a</a>; De Bra and Post <a href="#ref-DeBra1994a">1994</a><a href="#ref-DeBra1994a">b</a>; De Bra et al. <a href="#ref-DeBra1994b">1994</a>)</span>. The basic concept here is that the search starts with the search query and a seed as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. s with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ‘ranking’ is done dynamically at query time.</p>
+<p>There are various algorithms that follow this approach. For example the shark search algorithm <span class="citation" data-cites="Hersovici1998">(Hersovici et al. <a href="#ref-Hersovici1998">1998</a>)</span>. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm <span class="citation" data-cites="Luo2005">(Luo, Chen, and Guo <a href="#ref-Luo2005">2005</a>)</span> where an extra parameter allows more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration <span class="citation" data-cites="BastosFilho2008">(Bastos Filho et al. <a href="#ref-BastosFilho2008">2008</a>)</span>. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut <span class="citation" data-cites="Nick2001">(Nick and Themis <a href="#ref-Nick2001">2001</a>)</span>.</p>
+<p>Other variations include the incorporation of user behaviour <span class="citation" data-cites="Agichtein2006">(Agichtein, Brill, and Dumais <a href="#ref-Agichtein2006">2006</a>)</span>, social annotations <span class="citation" data-cites="Bao2007">(Bao et al. <a href="#ref-Bao2007">2007</a>)</span>, trust <span class="citation" data-cites="Garcia-Molina2004">(Gyongyi, Garcia-Molina, and Pedersen <a href="#ref-Garcia-Molina2004">2004</a>)</span>, query modifications <span class="citation" data-cites="Glover2001">(Glover et al. <a href="#ref-Glover2001">2001</a>)</span>, topic sensitive PageRank <span class="citation" data-cites="Haveliwala2003">(Haveliwala <a href="#ref-Haveliwala2003">2003</a>)</span>, folksonomies <span class="citation" data-cites="Hotho2006">(Hotho et al. <a href="#ref-Hotho2006">2006</a>)</span>, SimRank <span class="citation" data-cites="Jeh2002">(Jeh and Widom <a href="#ref-Jeh2002">2002</a>)</span>, neural-networks <span class="citation" data-cites="Shu1999">(Shu and Kak <a href="#ref-Shu1999">1999</a>)</span>, and semantic web <span class="citation" data-cites="Widyantoro2001 Du2007 Ding2004 Kamps2010 Taye2009">(Widyantoro and Yen <a href="#ref-Widyantoro2001">2001</a>; Du et al. <a href="#ref-Du2007">2007</a>; Ding et al. <a href="#ref-Ding2004">2004</a>; Kamps, Kaptein, and Koolen <a href="#ref-Kamps2010">2010</a>; Taye <a href="#ref-Taye2009">2009</a>)</span>.</p>
+</section>
+</section>
+<section id="challenges" class="level3">
+<h3><span class="header-section-number">6.1.4</span> Challenges</h3>
+<p>Other issues that arise when trying to search the were identified by Baeza-Yates and Ribeiro-Neto as follows <span class="citation" data-cites="Baeza-Yates2011">(<a href="#ref-Baeza-Yates2011">2011</a>)</span>.</p>
+<ul>
+<li><p>Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.</p></li>
+<li><p>Data is volatile. Data is deleted, changed or lost all the time so data is often out-of-date and links broken.</p></li>
+<li><p>The amount of data is massive and grows rapidly. Scaling of the search engine is an issue here.</p></li>
+<li><p>Data is often unstructured. There is no consistency of data structures.</p></li>
+<li><p>Data is of poor quality. There is no editor or censor on the Web. A lot of data is redundant too.</p></li>
+<li><p>Data is not heterogeneous. Different data types (text, images, sound, video) and different languages exist.</p></li>
+</ul>
+<p>Since a single query for a popular word can results in millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. Google for example uses over commodity-class PCs that are distributed over several data centres around the world <span class="citation" data-cites="Dean2003">(Dean, Barroso, and Hoelzle <a href="#ref-Dean2003">2003</a>)</span>.</p>
+</section>
+</section>
+<section id="s:nlp" class="level2">
+<h2><span class="header-section-number">6.2</span> Natural Language Processing</h2>
+<p>is a discipline within computer science which is also known as follows <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
+<ul>
+<li><p>Speech and language processing</p></li>
+<li><p>Human language technology</p></li>
+<li><p>Computational linguistics</p></li>
+<li><p>Speech recognition and synthesis</p></li>
+</ul>
+<p>Goals of are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing.Applications are for example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.</p>
+<p>There are many tools and libraries available for , including the Python library <span class="citation" data-cites="Bird2009 NLTK2016">(Bird, Klein, and Loper <a href="#ref-Bird2009">2009</a>; “Natural Language Toolkit. NLTK 3.0 Documentation” n.d.)</span> and WordNet <span class="citation" data-cites="Princeton2010">(“What Is Wordnet? WordNet: A Lexical Database for English” n.d.)</span> (both of which were used for <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>).</p>
+<section id="words" class="level3">
+<h3><span class="header-section-number">6.2.1</span> Words</h3>
+<p>A ‘lemma’ is a set of lexical forms that have the same stem (e.g. go). A ‘word-form’ is the full inflected or derived form of the word (e.g. goes). A ‘word type’ is a distinct word in a corpus (repetitions are not counted but case sensitive). A ‘word token’ is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text <span class="citation" data-cites="Manning2009">(<a href="#ref-Manning2009">2009</a>)</span>.</p>
+<dl>
+<dt>Tokenisation</dt>
+<dd><p>discarding white spaces and punctuation and making every term a token</p>
+</dd>
+<dt>Normalisation</dt>
+<dd><p>making sets of words with same meanings, e.g. car and automobile</p>
+</dd>
+<dt>Case-folding</dt>
+<dd><p>converting everything to lower case</p>
+</dd>
+<dt>Stemming</dt>
+<dd><p>removing word endings, e.g. connection, connecting, connected <span class="math inline">→</span> connect</p>
+</dd>
+<dt>Lemmatisation</dt>
+<dd><p>returning dictionary form of a word, e.g. went <span class="math inline">→</span> go</p>
+</dd>
+</dl>
+<section id="s:wordnet" class="level4">
+<h4><span class="header-section-number">6.2.1.1</span> WordNet</h4>
+<p>WordNet is a large lexical database for English, containing word form and sense pairs, useful for computational linguistics and <span class="citation" data-cites="Miller1995">(Miller <a href="#ref-Miller1995">1995</a>)</span>. A synset is a set of synonyms to represent a specific word sense. It is the basic building block of WordNet’s hierarchical structure of lexical relationships.</p>
+<blockquote>
+<p>Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations.</p>
+</blockquote>
+<dl>
+<dt>Synonymy</dt>
+<dd><p>(same-name) a symmetric relation between word forms</p>
+</dd>
+<dt>Antonymy</dt>
+<dd><p>(opposing-name) a symmetric relation between word forms</p>
+</dd>
+<dt>Hyponymy</dt>
+<dd><p>(sub-name) a transitive relation between synsets</p>
+</dd>
+<dt>Hypernymy</dt>
+<dd><p>(super-name) inverse of hyponymy</p>
+</dd>
+<dt>Meronymy</dt>
+<dd><p>(part-name) complex semantic relation</p>
+</dd>
+<dt>Holonymy</dt>
+<dd><p>(whole-name) inverse of meronymy</p>
+</dd>
+<dt>Troponymy</dt>
+<dd><p>(manner-name) is for verbs what hyponymy is for nouns</p>
+</dd>
+</dl>
+<p>Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).</p>
+<p>Appendix [app:wordnet] shows an example result produced by WordNet rendered for a web browser.</p>
+</section>
+<section id="s:regex" class="level4">
+<h4><span class="header-section-number">6.2.1.2</span> Regular Expressions</h4>
+<p>Regular expressions (often shortened to the term ‘regex’) are used to search a corpus of texts for the occurrence of a specific string pattern<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
+<p>Table [tab:regex] shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used:</p>
+<pre class="text"><code>([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})</code></pre>
+<p>Most modern text editors support a form of search using regex and it is often used in .</p>
+<p><span>ll</span> <strong>Command</strong> &amp; <strong>Description</strong><br />
+. &amp; any character except newline<br />
+\w \d \s &amp; word, digit, whitespace<br />
+\W \D \S &amp; not word, digit, whitespace<br />
+<span>[</span>abc<span>]</span> &amp; any of a, b, or c<br />
+<span>[</span>^abc<span>]</span> &amp; not a, b, or c<br />
+<span>[</span>a-g<span>]</span> &amp; character between a &amp; g<br />
+^abc$ &amp; start / end of the string<br />
+a* a+ a? &amp; 0 or more, 1 or more, 0 or 1<br />
+a{5} a{2,} &amp; exactly five, two or more<br />
+ab|cd &amp; match ab or cd<br />
+</p>
+</section>
+<section id="damerau-levensthein" class="level4">
+<h4><span class="header-section-number">6.2.1.3</span> Damerau-Levensthein</h4>
+<p>The Damerau–Levenshtein distance between two strings <span class="math inline"><em>a</em></span> and <span class="math inline"><em>b</em></span> is given by <span class="math inline"><em>d</em><sub><em>a</em>, <em>b</em></sub>(|<em>a</em>|,|<em>b</em>|)</span> (see equation [eq:DL]) <span class="citation" data-cites="WikipediaA Damerau1964 Levenshtein1966">(“Damerau-Levenshtein Distance” n.d.; Damerau <a href="#ref-Damerau1964">1964</a>; Levenshtein <a href="#ref-Levenshtein1966">1966</a>)</span>. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words ‘clear’ and ‘clean’ would have a distance of 1, as it takes on substitution of the letter ‘r’ to ‘n’ to change the word. A typical application would be spelling correction.</p>
+<p><br /><span class="math display">$$d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
+  \max(i,j) &amp; \textrm{if}\min(i,j)=0\\
+  \min\left\{\begin{matrix*}[l]
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
+  d_{a,b}(i-2,j-2)+1
+  \end{matrix*}\right. &amp; \textrm{if}\ i,j &gt; 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
+  \min\left\{\begin{matrix*}[l]
+  d_{a,b}(i-1,j)+1\\
+  d_{a,b}(i,j-1)+1\\
+  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
+\end{matrix*}\right. &amp; \textrm{otherwise.}
+  \end{matrix*}\right.
+  \label{eq:DL}$$</span><br /></p>
+<p><span class="math inline">1<sub>(<em>a</em><sub><em>i</em></sub> ≠ <em>b</em><sub><em>j</em></sub>)</sub></span> is equal to <span class="math inline">0</span> when <span class="math inline"><em>a</em><sub><em>i</em></sub> = <em>b</em><sub><em>j</em></sub></span> and equal to <span class="math inline">1</span> otherwise.</p>
+<ul>
+<li><p><span class="math inline"><em>d</em><sub><em>a</em>, <em>b</em></sub>(<em>i</em> − 1, <em>j</em>)+1</span> corresponds to a deletion (from a to b)</p></li>
+<li><p><span class="math inline"><em>d</em><sub><em>a</em>, <em>b</em></sub>(<em>i</em>, <em>j</em> − 1)+1</span> corresponds to an insertion (from a to b)</p></li>
+<li><p><span class="math inline"><em>d</em><sub><em>a</em>, <em>b</em></sub>(<em>i</em> − 1, <em>j</em> − 1)+1<sub>(<em>a</em><sub><em>i</em></sub> ≠ <em>b</em><sub><em>j</em></sub>)</sub></span> corresponds to a match or mismatch, depending on whether the respective symbols are the same</p></li>
+<li><p><span class="math inline"><em>d</em><sub><em>a</em>, <em>b</em></sub>(<em>i</em> − 2, <em>j</em> − 2)+1</span> corresponds to a transposition between two successive symbols</p></li>
+</ul>
+</section>
+</section>
+<section id="sequences" class="level3">
+<h3><span class="header-section-number">6.2.2</span> Sequences</h3>
+<section id="s:ngrams" class="level4">
+<h4><span class="header-section-number">6.2.2.1</span> N-Grams</h4>
+<p>We can do word prediction with probabilistic models called <span class="math inline"><em>N</em></span>-Grams. They predict the probability of the next word from the previous <span class="math inline"><em>N</em> − 1</span> words <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. A 2-gram is usually called a ‘bigram’ and a 3-gram a ‘trigram’.</p>
+<p>A basic way to compute the probability of an N-gram is using a shown in equation [eq:mle] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span> of a word <span class="math inline"><em>w</em><sub><em>n</em></sub></span> given some history <span class="math inline"><em>w</em><sub><em>n</em> − <em>N</em> + 1</sub><sup><em>n</em> − 1</sup></span> (i.e. the previous words in the sentence for example).</p>
+<p><br /><span class="math display">$$P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
+  \label{eq:mle}$$</span><br /></p>
+<p>For instance, if we want to check which of two words “shining” and “cold” has a higher probability of being the next word given a history of “the sun is”, we would need to compute <span class="math inline"><em>P</em></span>(shining|the sun is) and <span class="math inline"><em>P</em></span>(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence “the sun is shining” occurred in a training corpus by the number of times “the sun is” occurred and the same for the word “cold”.</p>
+<p>Counts (<span class="math inline"><em>C</em></span>) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain N-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem.</p>
+<p>One example is the so-called ‘Laplace’ or ‘add-one smoothing’, which basically just adds 1 to each count. See equation [eq:padd1] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. <span class="math inline"><em>V</em></span> is the number of terms in the vocabulary.</p>
+<p><br /><span class="math display">$$P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
+  \label{eq:padd1}$$</span><br /></p>
+<p>Another example of smoothing is the so-called ‘Good Turing discounting’. It uses “the count of things you’ve seen <em>once</em> to help estimate the count of things you’ve <em>never seen</em>” <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a> their emphasis)</span>.</p>
+<p>To calculate the probability of a sequence of <span class="math inline"><em>n</em></span> words (<span class="math inline"><em>P</em>(<em>w</em><sub>1</sub>, <em>w</em><sub>2</sub>, …, <em>w</em><sub><em>n</em></sub>)</span> or <span class="math inline"><em>P</em>(<em>w</em><sub>1</sub><sup><em>n</em></sup>)</span> for short) we can use the chain rule of probability as shown in equation [eq:probw1n] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
+<p><br /><span class="math display">$$\begin{split}
+  P(w_1^n) &amp;= P(w_1)P(w_2 \mid w_1)P(w_3 \mid w_1^2 ) \ldots P(w_n \mid w_1^{n-1})\\
+  &amp;= \prod_{k=1}^{n}P(w_k \mid w_1^{k-1})
+  \end{split}
+  \label{eq:probw1n}$$</span><br /></p>
+<p>Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word depends only on the previous word (or <span class="math inline"><em>n</em></span> words) is the called a Markov assumption (see equation [eq:probw1n2] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>).</p>
+<p><br /><span class="math display">$$P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
+  \label{eq:probw1n2}$$</span><br /></p>
+</section>
+<section id="s:pos" class="level4">
+<h4><span class="header-section-number">6.2.2.2</span> Part-of-Speech Tagging</h4>
+<p>are lexical tags for describing the different elements of a sentence. The eight most well-known are as follows.</p>
+<dl>
+<dt>Noun</dt>
+<dd><p>an abstract or concrete entity</p>
+</dd>
+<dt>Pronoun</dt>
+<dd><p>a substitute for a noun or noun phrase</p>
+</dd>
+<dt>Adjective</dt>
+<dd><p>a qualifier of a noun</p>
+</dd>
+<dt>Verb</dt>
+<dd><p>an action, occurrence, or state of being</p>
+</dd>
+<dt>Adverb</dt>
+<dd><p>a qualifier of an adjective, verb, or other adverb</p>
+</dd>
+<dt>Preposition</dt>
+<dd><p>an establisher of relation and context</p>
+</dd>
+<dt>Conjunction</dt>
+<dd><p>a syntactic connector</p>
+</dd>
+<dt>Interjection</dt>
+<dd><p>an emotional greeting or exclamation</p>
+</dd>
+</dl>
+<p>More specialised sets of tags exist such as the <em>Penn Treebank</em> tagset <span class="citation" data-cites="Marcus1993">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-Marcus1993">1993</a>)</span> consisting of 48 different tags, including <span class="math inline"><em>C</em><em>C</em></span> for coordinating conjunction, <span class="math inline"><em>C</em><em>D</em></span> for cardinal number, <span class="math inline"><em>N</em><em>N</em></span> for noun singular, <span class="math inline"><em>N</em><em>N</em><em>S</em></span> for noun plural, <span class="math inline"><em>N</em><em>N</em><em>P</em></span> for proper noun singular, <span class="math inline"><em>V</em><em>B</em></span> for verb base form, <span class="math inline"><em>V</em><em>B</em><em>G</em></span> for verb gerund, <span class="math inline"><em>D</em><em>T</em></span> for determiner, <span class="math inline"><em>J</em><em>J</em></span> for adjectives, etc. A full table of these 48 tags can be found in appendix [s:penntreebank].</p>
+<p>The process of adding tags to the words of a text is called ‘ tagging’ or just ‘tagging’. Below, you can see an example tagged sentence<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</p>
+<blockquote>
+<p>In/IN this/DT year/NN Eighteen/CD Hundred/CD and/CC Ninety-eight/CD,/, the/DT Eighth/CD day/NN of/IN February/NNP,/, Pursuant/JJ to/IN article/NN 819/CD of/IN the/DT Code/NN of/IN Civil/NNP Procedure/NNP and/CC at/IN the/DT request/NN of/IN M./NN and/CC Mme./NN Bonhomme/NNP (/(Jacques/NNP)/),/, proprietors/NNS of/IN a/DT house/NN situate/JJ at/IN Paris/NNP,/, 100/CD bis/NN,/, rue/NN Richer/NNP,/, the/DT aforementioned/JJ having/VBG address/NN for/IN service/NN at/IN my/PRP residence/NN and/CC further/JJ at/IN the/DT Town/NNP Hall/NNP of/IN Q/NNP borough/NN ./.</p>
+</blockquote>
+</section>
+<section id="s:maxent" class="level4">
+<h4><span class="header-section-number">6.2.2.3</span> Maximum Entropy</h4>
+<p>Hidden Markov or maximum entropy models can be used for sequence classification, e.g. part-of-speech tagging.</p>
+<blockquote>
+<p>The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes.</p>
+</blockquote>
+<p>A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation [eq:pcx] shows how to calculate the probability of an obersvation (i.e. word) <span class="math inline"><em>x</em></span> being of class <span class="math inline"><em>c</em></span> as <span class="math inline"><em>p</em>(<em>c</em>|<em>x</em>)</span> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
+<p><br /><span class="math display">$$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
+  \label{eq:pcx}$$</span><br /></p>
+<p>f_i(c,x) &amp; the feature (e.g. “this word ends in <em>-ing</em>” or “the previous word was <em>the</em>”)<br />
+w_i &amp; the weight of the feature <span class="math inline"><em>f</em><sub><em>i</em></sub></span></p>
+</section>
+<section id="s:grammars" class="level4">
+<h4><span class="header-section-number">6.2.2.4</span> Grammars</h4>
+<p>A language is modelled using a grammar, specifically a ‘Context-Free-Grammar’. Such a grammar normally consists or rules and a lexicon. For example a rule could be ‘NP <span class="math inline">→</span> Det Noun’, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det <span class="math inline">→</span> a, Det <span class="math inline">→</span> the, Noun <span class="math inline">→</span> book. This grammar would let us form two noun phrases ‘the book’ and ‘a book’ only. Its two parse trees would then look like figure [fig:trees]:</p>
+<p>Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar, a parsing algorithm should produce a parse tree for a given sentence. The parse tree for the first sentence from Faustroll is shown below, in horizontal format for convenience.</p>
+
+\begin{alltt}
+(ROOT
+  (S
+    (PP (IN In)
+      (NP (DT this) (NN year) (NNPS Eighteen) (NNP Hundred)
+        (CC and)
+        (NNP Ninety-eight)))
+    (, ,)
+    (NP
+      (NP (DT the) (JJ Eighth) (NN day))
+      (PP (IN of)
+        (NP (NNP February) (, ,) (NNP Pursuant)))
+      (PP
+        (PP (TO to)
+          (NP
+            (NP (NN article) (CD 819))
+            (PP (IN of)
+              (NP
+                (NP (DT the) (NNP Code))
+                (PP (IN of)
+                  (NP (NNP Civil) (NNP Procedure)))))))
+        (CC and)
+        (PP (IN at)
+          (NP
+            (NP (DT the) (NN request))
+            (PP (IN of)
+              (NP (NNP M.)
+                (CC and)
+                (NNP Mme) (NNP Bonhomme))))))
+      (PRN (-LRB- -LRB-)
+        (NP (NNP Jacques))
+        (-RRB- -RRB-))
+      (, ,)
+      (NP
+        (NP (NNS proprietors))
+        (PP (IN of)
+          (NP
+            (NP (DT a) (NN house) (NN situate))
+            (PP (IN at)
+              (NP (NNP Paris))))))
+      (, ,)
+      (NP (CD 100) (NN bis))
+      (, ,))
+    (VP (VBP rue)
+      (NP
+        (NP (NNP Richer))
+        (, ,)
+        (NP (DT the) (JJ aforementioned)
+          (UCP
+            (S
+              (VP (VBG having)
+                (NP
+                  (NP (NN address))
+                  (PP (IN for)
+                    (NP (NN service))))
+                (PP (IN at)
+                  (NP (PRP$ my) (NN residence)))))
+            (CC and)
+            (PP
+              (ADVP (RBR further))
+              (IN at)
+              (NP
+                (NP (DT the) (NNP Town) (NNP Hall))
+                (PP (IN of)
+                  (NP (NNP Q))))))
+          (NN borough))))
+    (. .)))
+\end{alltt}
+
+<p>This particular tree was generated using the Stanford Parser <span class="citation" data-cites="Stanford2016">(“The Stanford Parser: A Statistical Parser. the Stanford Natural Language Processing Group” <a href="#ref-Stanford2016">2016</a>)</span>.</p>
+</section>
+<section id="named-entity-recognition" class="level4">
+<h4><span class="header-section-number">6.2.2.5</span> Named Entity Recognition</h4>
+<p>A named entity can be anything that can be referred to by a proper name, such as person, place or organisation names and times and amounts and these entities can be appropriately tagged.</p>
+<p>Example (first sentence in Faustroll):</p>
+<blockquote>
+<p>In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]<span class="math inline"><em></em><sup>TIME</sup></span>, Pursuant to article [819]<span class="math inline"><em></em><sup>NUMBER</sup></span> of the [Code of Civil Procedure]<span class="math inline"><em></em><sup>DOCUMENT</sup></span> and at the request of [M. and Mme. Bonhomme (Jacques)]<span class="math inline"><em></em><sup>PERSON</sup></span>, proprietors of a house situate at [Paris, 100 bis, rue Richer]<span class="math inline"><em></em><sup>LOCATION</sup></span>, the aforementioned having address for service at my residence and further at the [Town Hall]<span class="math inline"><em></em><sup>FACILITY</sup></span> of [Q borough]<span class="math inline"><em></em><sup>LOCATION</sup></span>.</p>
+</blockquote>
+<p>So-called ‘gazetteers’ (lists of place or person names for example) can help with the detection of these named entities.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="bibliography" class="level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-Agichtein2006">
+<p>Agichtein, Eugene, Eric Brill, and Susan Dumais. 2006. “Improving web search ranking by incorporating user behavior information.” In <em>Proceedings of the 29th Annual International Acm Sigir Conference on Research an Development in Information Retrieval</em>, 19–26. Seattle, Washington, USA.</p>
+</div>
+<div id="ref-Baeza-Yates2011">
+<p>Baeza-Yates, Ricardo, and Berthier Ribeiro-Neto. 2011. <em>Modern Information Retrieval: The Concepts and Technology Behind Search</em>. Harlow, UK: Pearson Education Limited. <a href="http://www.mir2ed.org/" class="uri">http://www.mir2ed.org/</a>.</p>
+</div>
+<div id="ref-Bao2007">
+<p>Bao, Shenghua, Xiaoyuan Wu, Ben Fei, Guirong Xue, Zhong Su, and Yong Yu. 2007. “Optimizing Web Search Using Social Annotations.” In <em>Proceedings of the International World Wide Web Conference</em>, 501–10.</p>
+</div>
+<div id="ref-BastosFilho2008">
+<p>Bastos Filho, Carmelo, Fernando de Lima Neto, Anthony Lins, Antonio Nascimento, and Marilia Lima. 2008. “A novel search algorithm based on fish school behavior.” In <em>Proceedings of the Ieee International Conference on Systems, Man and Cybernetics</em>, 2646–51.</p>
+</div>
+<div id="ref-Bharat2000">
+<p>Bharat, Krishna, and George Mihaila. 2000. “Hilltop: A Search Engine based on Expert Documents.” <a href="ftp://ftp.cs.toronto.edu/csrg-technical-reports/405/hilltop.html" class="uri">ftp://ftp.cs.toronto.edu/csrg-technical-reports/405/hilltop.html</a>.</p>
+</div>
+<div id="ref-Microsoft2012a">
+<p>“Bing Fact Sheet.” 2012. Microsoft. <a href="http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx" class="uri">http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx</a>.</p>
+</div>
+<div id="ref-Bird2009">
+<p>Bird, Steven, Ewan Klein, and Edward Loper. 2009. <em>Natural Language Processing with Python</em>. Sebasopol, CA: O’Reilly Media.</p>
+</div>
+<div id="ref-Boden2003">
+<p>Boden, Margaret. 2003. <em>The Creative Mind: Myths and Mechanisms</em>. London, UK: Routledge.</p>
+</div>
+<div id="ref-Brin1998b">
+<p>Brin, Sergey, and Larry Page. 1998. “The Anatomy of a Large-Scale Hypertextual Web Search Engine.” <em>Computer Networks and ISDN Systems</em> 30 (1-7): 107–17.</p>
+</div>
+<div id="ref-Baidu2012">
+<p>“Company Overview. About Baidu.” n.d. Baidu. <a href="http://ir.baidu.com/phoenix.zhtml?c=188488\&amp;p=irol-homeprofile" class="uri">http://ir.baidu.com/phoenix.zhtml?c=188488\&amp;p=irol-homeprofile</a>.</p>
+</div>
+<div id="ref-Damerau1964">
+<p>Damerau, Fred. 1964. “A Technique for Computer Detection and Correction of Spelling Errors.” <em>Communications of the ACM</em> 7 (3): 171–76.</p>
+</div>
+<div id="ref-WikipediaA">
+<p>“Damerau-Levenshtein Distance.” n.d. Wikipedia. <a href="https://en.wikipedia.org/wiki/Damerau-Levenshtein\_distance" class="uri">https://en.wikipedia.org/wiki/Damerau-Levenshtein\_distance</a>.</p>
+</div>
+<div id="ref-DeBra1994">
+<p>De Bra, Paul, and Reinier Post. 1994a. “Information retrieval in the World-Wide Web: Making client-based searching feasible.” <em>Computer Networks and ISDN Systems</em> 27 (2): 183–92.</p>
+</div>
+<div id="ref-DeBra1994a">
+<p>———. 1994b. “Searching for Arbitrary Information in the WWW: the Fish Search for Mosaic.” <em>Mosaic: A Journal for the Interdisciplinary Study of Literature</em>.</p>
+</div>
+<div id="ref-DeBra1994b">
+<p>De Bra, Paul, Geert-jan Houben, Yoram Kornatzky, and Reinier Post. 1994. “Information Retrieval in Distributed Hypertexts.” In <em>Proceedings of the Intelligent Multimedia Information Retrieval Systems and Management Conference</em>. New York, USA.</p>
+</div>
+<div id="ref-Dean2003">
+<p>Dean, Jeffrey, Luiz Andre Barroso, and Urs Hoelzle. 2003. “Web Search for a Planet: The Google Cluster Architecture.” <em>IEEE Micro</em>, 22–28.</p>
+</div>
+<div id="ref-Deerwester1990">
+<p>Deerwester, Scott, George W Furnas, Thomas K Landauer, and Richard Harshman. 1990. “Indexing by Latent Semantic Analysis.” <em>Journal of the American Society for Information Science</em> 41 (6): 391–407.</p>
+</div>
+<div id="ref-Ding2004">
+<p>Ding, Li, Tim Finin, Anupam Joshi, Rong Pan, R. Scott, Cost Yun Peng, Pavan Reddivari, Vishal Doshi, and Joel Sachs. 2004. “Swoogle: A Semantic Web Search and Metadata Engine.” In <em>Proceedings of the 13th Acm Conference on Information and Knowledge Management</em>.</p>
+</div>
+<div id="ref-Du2007">
+<p>Du, Zhi-Qiang, Jing Hu, Hong-Xia Yi, and Jin-Zhu Hu. 2007. “The Research of the Semantic Search Engine Based on the Ontology.” In <em>International Conference on Wireless Communications, Networking and Mobile Computing</em>, 5398–5401.</p>
+</div>
+<div id="ref-Glover2001">
+<p>Glover, E.J., G.W. Flake, Steve Lawrence, W.P. Birmingham, A. Kruger, C.L. Giles, and D.M. Pennock. 2001. “Improving category specific Web search by learning query modifications.” <em>Proceedings 2001 Symposium on Applications and the Internet</em>. IEEE Computer Soc., 23–32.</p>
+</div>
+<div id="ref-Google2012">
+<p>“Google Ranking.” 2012. Google. <a href="https://www.google.com/intl/en/about/company/philosophy/" class="uri">https://www.google.com/intl/en/about/company/philosophy/</a>.</p>
+</div>
+<div id="ref-Google2016">
+<p>“Googlebot. Search Console Help.” n.d. Google. <a href="https://support.google.com/webmasters/answer/182072" class="uri">https://support.google.com/webmasters/answer/182072</a>.</p>
+</div>
+<div id="ref-Garcia-Molina2004">
+<p>Gyongyi, Zoltan, Hector Garcia-Molina, and Jan Pedersen. 2004. “Combating Web Spam with Trustrank.” Technical Report. Stanford InfoLab; Stanford. <a href="http://ilpubs.stanford.edu:8090/638/" class="uri">http://ilpubs.stanford.edu:8090/638/</a>.</p>
+</div>
+<div id="ref-Haveliwala2003">
+<p>Haveliwala, Taher H. 2003. “Topic-Sensitive PageRank: A Context Sensitive Ranking Algorithm for Web Search.” <em>IEEE Transactions on Knowledge and Data Engineering</em> 15 (4): 784–96.</p>
+</div>
+<div id="ref-Hersovici1998">
+<p>Hersovici, M, M Jacovi, Y Maarek, D Pelleg, M Shtalhaim, and S Ur. 1998. “The shark-search algorithm. An application: tailored Web site mapping.” <em>Computer Networks and ISDN Systems</em> 30 (1-7): 317–26.</p>
+</div>
+<div id="ref-Hotho2006">
+<p>Hotho, Andreas, Robert Jaeschke, Christoph Schmitz, and Gerd Stumme. 2006. “Information Retrieval in Folksonomies: Search and Ranking.” In <em>Proceedings of the 3rd European Conference on the Semantic Web: Research and Applications</em>, 411–26.</p>
+</div>
+<div id="ref-Jarry1996">
+<p>Jarry, Alfred. 1996. <em>Exploits and Opinions of Dr. Faustroll, Pataphysician</em>. Cambridge, MA, USA: Exact Change.</p>
+</div>
+<div id="ref-Jeh2002">
+<p>Jeh, Glen, and Jennifer Widom. 2002. “SimRank: A Measure of Structural Context Similarity.” In <em>Proceedings of the 8th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 538–43. Alberta, Canada.</p>
+</div>
+<div id="ref-Jurafsky2009">
+<p>Jurafsky, Daniel, and James H Martin. 2009. <em>Speech and Language Processing</em>. London: Pearson Education.</p>
+</div>
+<div id="ref-Kamps2010">
+<p>Kamps, Jaap, Rianne Kaptein, and Marijn Koolen. 2010. “Using Anchor Text , Spam Filtering and Wikipedia for Web Search and Entity Ranking.”</p>
+</div>
+<div id="ref-Kleinberg1999">
+<p>Kleinberg, Jon M. 1999. “Authoritative sources in a hyperlinked environment.” <em>Journal of the ACM</em> 46 (5): 604–32.</p>
+</div>
+<div id="ref-Kleinberg1999a">
+<p>Kleinberg, Jon M., Ravi Kumar, Prabhakar Raghavan, and Andrew S. Tomkins. 1999. “The Web as a graph: measurements, models and methods.” In <em>Proceedings of the 5th International Conference on Computing and Combinatorics</em>. Tokyo, Japan.</p>
+</div>
+<div id="ref-Levenshtein1966">
+<p>Levenshtein, Vladimir I. 1966. “Binary codes capable of correcting deletions, insertions, and reversals.” <em>Soviet Physics Doklady</em> 10 (8): 707–10.</p>
+</div>
+<div id="ref-Luo2005">
+<p>Luo, Fang-fang, Guo-long Chen, and Wen-zhong Guo. 2005. “An Improved ‘Fish-search’ Algorithm for Information Retrieval.” In <em>International Conference on Natural Language Processing and Knowledge Engineering</em>, 523–28.</p>
+</div>
+<div id="ref-Macdonald2009">
+<p>Macdonald, Craig. 2009. “The Voting Model for People Search.” <em>ACM SIGIR Forum</em> 43 (1).</p>
+</div>
+<div id="ref-Manning2009">
+<p>Manning, Christopher, Prabhakar Raghavan, and Hinrich Schuetze. 2009. <em>Introduction to Information Retrieval</em>. Cambridge University Press. <a href="http://informationretrieval.org" class="uri">http://informationretrieval.org</a>.</p>
+</div>
+<div id="ref-Marchionini2006">
+<p>Marchionini, Gary. 2006. “From finding to understanding.” <em>Communications of the ACM</em> 49 (4): 41–46.</p>
+</div>
+<div id="ref-Marchionini1988">
+<p>Marchionini, Gary, and Ben Shneiderman. 1988. “Finding facts vs. browsing knowledge in hypertext systems.” <em>Computer</em> 21 (1): 70–80.</p>
+</div>
+<div id="ref-Marcus1993">
+<p>Marcus, Mitchell P, Beatrice Santorini, and Mary Ann Marcinkiewicz. 1993. “Building a Large Annotated Corpus of English: The Penn Treebank.” <em>Computational Linguistics</em> 19 (2).</p>
+</div>
+<div id="ref-Wikimedia2012">
+<p>Mayhaymate. 2012. “File:PageRank-Hi-Res.png.” Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:PageRank-hi-res.png" class="uri">https://commons.wikimedia.org/wiki/File:PageRank-hi-res.png</a>.</p>
+</div>
+<div id="ref-Bing2016">
+<p>“Meet Our Crawlers. Webmaster Help and How-to.” n.d. Microsoft. <a href="https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0" class="uri">https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0</a>.</p>
+</div>
+<div id="ref-Michelsen2016">
+<p>Michelsen, Maria Hagsten, and Ole Bjorn Michelsen. 2016. “Regex Crossword.” RegexCrossword.com. <a href="http://regexcrossword.com/" class="uri">http://regexcrossword.com/</a>.</p>
+</div>
+<div id="ref-Miller1995">
+<p>Miller, George A. 1995. “WordNet: a lexical database for English.” <em>Communications of the ACM</em> 38 (11): 39–41. <a href="http://portal.acm.org/citation.cfm?doid=219717.219748" class="uri">http://portal.acm.org/citation.cfm?doid=219717.219748</a>.</p>
+</div>
+<div id="ref-Miyamoto2010">
+<p>Miyamoto, Sadaaki. 1990a. <em>Fuzzy Sets in Information Retrieval and Cluster Analysis. Theory and Decision Library</em>. Springer.</p>
+</div>
+<div id="ref-Miyamoto1988">
+<p>———. 1990b. “Information Retrieval based on Fuzzy Associations.” <em>Fuzzy Sets and Systems - on Fuzzy Information and Database Systems</em> 38 (2): 191–205.</p>
+</div>
+<div id="ref-Miyamoto1986">
+<p>Miyamoto, Sadaaki, and K. Nakayama. 1986. “Fuzzy Information Retrieval Based on a Fuzzy Pseudothesaurus.” <em>IEEE Transactions on Systems, Man and Cybernetics</em> 16 (2): 278–82.</p>
+</div>
+<div id="ref-NLTK2016">
+<p>“Natural Language Toolkit. NLTK 3.0 Documentation.” n.d. NLTK Project. <a href="http://www.nltk.org/" class="uri">http://www.nltk.org/</a>.</p>
+</div>
+<div id="ref-Nick2001">
+<p>Nick, Z.Z., and P. Themis. 2001. “Web Search Using a Genetic Algorithm.” <em>IEEE Internet Computing</em> 5 (2): 18–26.</p>
+</div>
+<div id="ref-Nicole2010">
+<p>Nicole. 2010. “The 10 Most Incredible Google Bombs.” searchenginepeople.com. <a href="http://www.searchenginepeople.com/blog/incredible-google-bombs.html" class="uri">http://www.searchenginepeople.com/blog/incredible-google-bombs.html</a>.</p>
+</div>
+<div id="ref-Brin1998">
+<p>Page, Larry, Sergey Brin, Rajeev Motwani, and Terry Winograd. 1999. “The Pagerank Citation Ranking: Bringing Order to the Web.” Technical Report. Stanford InfoLab; Stanford InfoLab. <a href="http://ilpubs.stanford.edu:8090/422/" class="uri">http://ilpubs.stanford.edu:8090/422/</a>.</p>
+</div>
+<div id="ref-Polya1957">
+<p>Pólya, George. 1957. <em>How to Solve It</em>. Princeton, New Jersey: Princeton University Press.</p>
+</div>
+<div id="ref-Luke2005">
+<p>Saint Luke. 2005. “The Gospel According to St. Luke.” Ebible.org. <a href="http://ebible.org/asv/Luke.htm" class="uri">http://ebible.org/asv/Luke.htm</a>.</p>
+</div>
+<div id="ref-Schuetze1998">
+<p>Schütze, Hinrich. 1998. “Automatic Word Sense Discrimination.” <em>Computational Linguistics</em> 24 (1).</p>
+</div>
+<div id="ref-Schuetze1995">
+<p>Schütze, Hinrich, and Jan Pedersen. 1995. “Information Retrieval Based on Word Senses.” In <em>Proceedings of the 4th Annual Symposium on Document Analysis and Information Retrieval</em>. Las Vegas, USA.</p>
+</div>
+<div id="ref-Shu1999">
+<p>Shu, Bo, and Subhash Kak. 1999. “A neural network-based intelligent metasearch engine.” <em>Information Sciences: Informatics and Computer Science</em> 120 (1-4): 1–11.</p>
+</div>
+<div id="ref-Srinivasan2001">
+<p>Srinivasan, P. 2001. “Vocabulary mining for information retrieval: rough sets and fuzzy sets.” <em>Information Processing and Management</em> 37 (1): 15–38.</p>
+</div>
+<div id="ref-Sutcliffe1998">
+<p>Sutcliffe, Alistrair, and Mark Ennis. 1998. “Towards a cognitive theory of information retrieval.” <em>Interacting with Computers</em> 10: 321–51.</p>
+</div>
+<div id="ref-Taye2009">
+<p>Taye, Mohammad Mustafa. 2009. “Ontology Alignment Mechanisms for Improving Web-based Searching.” PhD thesis, De Montort University.</p>
+</div>
+<div id="ref-Stanford2016">
+<p>“The Stanford Parser: A Statistical Parser. the Stanford Natural Language Processing Group.” 2016. Standford University. <a href="http://nlp.stanford.edu:8080/parser/index.jsp" class="uri">http://nlp.stanford.edu:8080/parser/index.jsp</a>.</p>
+</div>
+<div id="ref-Verne2010">
+<p>Verne, Jules. 2010. “A Journey to the Interior of the Earth.” Project Gutenberg. <a href="http://www.gutenberg.org/cache/epub/3748/pg3748-images.html" class="uri">http://www.gutenberg.org/cache/epub/3748/pg3748-images.html</a>.</p>
+</div>
+<div id="ref-DeVries1993">
+<p>Vries, Erica de. 1993. “Stretching the initial problem space for design problem solving: Browsing versus searching in network and hierarchy structures. OCTO Report 93/02.” Eindhoven University of Technology.</p>
+</div>
+<div id="ref-Princeton2010">
+<p>“What Is Wordnet? WordNet: A Lexical Database for English.” n.d. Princeton University. <a href="http://wordnet.princeton.edu" class="uri">http://wordnet.princeton.edu</a>.</p>
+</div>
+<div id="ref-Widyantoro2001">
+<p>Widyantoro, D.H., and J. Yen. 2001. “A fuzzy ontology-based abstract search engine and its user studies.” In <em>Proceedings of the 10th Ieee International Conference on Fuzzy Systems</em>, 1291–4.</p>
+</div>
+</div>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>These texts are part of one of the two corpora used for <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>. More information about this can be found in chapters [s:faustlib] and  [s:corpora].<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>A full list of stopwords in English, French and German can be found in appendix [s:stopwords].<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>There is also a Regex Crossword puzzle <span class="citation" data-cites="Michelsen2016">(Michelsen and Michelsen <a href="#ref-Michelsen2016">2016</a>)</span>.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>This is actually the very first sentence in Jarry’s Faustroll book <span class="citation" data-cites="Jarry1996">(<a href="#ref-Jarry1996">1996</a>)</span>.<a href="#fnref4">↩</a></p></li>
+</ol>
+</section>
+<nav class="mainnav">
+  <a class="left" href="creativity.html">Prev</a>
+  <a class="centre" href="contents.html">Contents</a>
+  <a class="right" href="evaluation.html">Next</a>
+</nav>
+</body>
+</html>

@@ -12,10 +12,15 @@
 <img class="triplespiral" src="../images/triplespiral.png">
 
 <figure id="fig:3.2">
-<img src="../pandoc/tmpr.png" alt="Edmonds and Candy's trajectory model (TMPR)" style="max-width:500px">
+<img src="../images/tmpr.png" alt="Edmonds and Candy's trajectory model (TMPR)">
 <figcaption>Figure 3.2 Edmonds and Candy's trajectory model (TMPR)</figcaption>
 </figure>
 <a href="#fig:mytmpr">Figure 3.3</a>
+
+<figure id="eq:6.1" class="equation">
+<img src="../images/tdm.png" alt="Term-Document Matrix">
+<figcaption>(6.1)</figcaption>
+</figure>
 
 <span class="blockcitation" data-cites="Hendler2013">(Hendler and Hugill <a href="#ref-Hendler2013">2013</a>)</span>
 
@@ -54,6 +59,13 @@ pandoc pataphysics.tex -f latex -t html5 -o pataphysics.html --toc --toc-depth=3
 ```
 pandoc creativity.tex -f latex -t html5 -o creativity.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=4 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''
+
+```
+pandoc technology.1.tex -f latex -t html5 -o technology.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=5 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+
+--mathjax
 
 link-citations
 

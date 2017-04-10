@@ -147,6 +147,14 @@ h3, h3 a {
   margin-top: 2em;
 }
 
+h4, h4 a {
+  color: #fff;
+  background-color: #ABB4BE;
+  padding-left: 10px;
+  line-height: 1.5em;
+  margin-top: 1em;
+}
+
 p {
   padding-left: 5px;
 }
@@ -165,6 +173,23 @@ figure img {
 figcaption {
   font-family: 'Roboto', sans-serif;
   font-size: .8em;
+}
+
+.equation {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.equation img {
+  width: 60%;
+}
+
+.equation figcaption {
+  position: absolute;
+  right: 10%;
+  top: 50%;
 }
 
 toc-section-number {
@@ -289,6 +314,10 @@ tr:nth-child(even) {
   .titleimg figcaption:hover {
     opacity: 1;
     transition: opacity 1s;
+  }
+  .equation img {
+    width: 40%;
+    max-width: 400px;
   }
 }
 
