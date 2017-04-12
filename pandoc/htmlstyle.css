@@ -250,12 +250,17 @@ ul.twocol li{
 }
 
 table {
+  margin: 0 auto;
   margin-top: 2em;
 }
 
 th {
   background-color: #5B4646;
   color: white;
+}
+
+th.trans {
+  background-color: white;
 }
 
 th, td {
@@ -267,6 +272,25 @@ tr:nth-child(even) {
   background-color: #f2f2f2
 }
 
+table.where {
+  margin: 0;
+  margin-top: 1em;
+}
+
+.where th {
+  background-color: white;
+  color: black;
+  font-weight: normal;
+}
+
+.where th, .where td {
+  padding: 0;
+  text-align: left;
+}
+
+.where tr:nth-child(even) {
+  background-color: white;
+}
 
 
 @media screen and (min-width: 480px) {
@@ -331,3 +355,11 @@ tr:nth-child(even) {
     transition: opacity 1s;
   }
 }
+
+
+/* Custom img widths */
+
+figure[id="fig:6.1"] img {width: 300px;}
+figure[id="eq:6.1"] img {width: 150px;}
+figure[id="fig:6.2"] img {width: 370px;}
+figure[id="fig:6.3"] img {width: 370px;}
