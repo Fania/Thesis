@@ -30,10 +30,6 @@ body {
   font-family: 'Roboto Slab', serif;
 }
 
-h1 {
-  font-family: 'Roboto', sans-serif;
-}
-
 blockquote {
   font-family: 'Roboto', sans-serif;
   background-color: #ABB4BE;
@@ -62,6 +58,11 @@ blockquote ul{
 
 code {
   font-family: 'Roboto Mono', monospace;
+}
+
+pre.text {
+  background-color: #f2f2f2;
+  padding: 5px;
 }
 
 .mainnav {
@@ -123,6 +124,10 @@ code {
   font-variant: small-caps;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
 h1, h1 a {
   color: #fff;
   background-color: #4E496E;
@@ -152,7 +157,7 @@ h4, h4 a {
   background-color: #ABB4BE;
   padding-left: 10px;
   line-height: 1.5em;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 p {
@@ -269,7 +274,7 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2
+  background-color: #f2f2f2;
 }
 
 table.where {
@@ -363,3 +368,5 @@ figure[id="fig:6.1"] img {width: 300px;}
 figure[id="eq:6.1"] img {width: 150px;}
 figure[id="fig:6.2"] img {width: 370px;}
 figure[id="fig:6.3"] img {width: 370px;}
+figure[id="eq:6.7"] img {width: 700px; max-width: 2000px;}
+figure[id="fig:6.7"] img {width: 400px;}

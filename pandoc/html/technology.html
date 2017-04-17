@@ -545,37 +545,70 @@ $$\begin{split}
 
 <section id="s:ranking" class="level3">
 <h3><span class="header-section-number">6.1.3</span> Ranking</h3>
-<p>Ranking signals, such as the weights produced by the - algorithm in section [s:tfidf], contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook ‘like’ button or the Google+ ‘+1’ button which could be seen as direct user relevance feedback as well.</p>
+<p>Ranking signals, such as the weights produced by the TF-IDF algorithm in section <a href="#s:tfidf">6.6.1.2</a>, contribute to the improvement of the ranking process. These can be content signals or structural signals. Content signals are referring to anything that is concerned with the text and content of a page. This could be simple word counts or the format of text such as headings and font weights. The structural signals are more concerned about the linked structure of pages. They look at incoming and outgoing links on pages. There are also web usage signals that can contribute to ranking algorithms such as the click-stream. This also includes things like the Facebook ‘like’ button or the Google+ ‘+1’ button which could be seen as direct user relevance feedback as well.</p>
 <p>Ranking algorithms are the essence of any web search engine and as such guarded with much secrecy. They decide which pages are listed highest in search results and if their ranking criteria were known publically, the potential for abuse (such as ‘Google bombing’ <span class="citation" data-cites="Nicole2010">(Nicole <a href="#ref-Nicole2010">2010</a>)</span> for instance) would be much higher and search results would be less trustworthy. Despite the secrecy there are some algorithms like Google’s PageRank algorithm that have been described and published in academic papers.</p>
+
 <section id="algorithms" class="level4">
 <h4><span class="header-section-number">6.1.3.1</span> Algorithms</h4>
 <p>PageRank was developed by Larry Page and Sergey Brin as part of their Google search engine <span class="citation" data-cites="Brin1998b Brin1998">(<a href="#ref-Brin1998b">1998</a>; <a href="#ref-Brin1998">1999</a>)</span>. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows <span class="citation" data-cites="Brin1998b">(<a href="#ref-Brin1998b">1998</a>)</span>.</p>
-<p><br /><span class="math display">$$PR(A) =
+
+<figure id="eq:6.5" class="equation">
+$$PR(A) =
   (1 - d) + d (\sum_{i=1}^{n} \frac{PR(T_i)}{C(T_i)})
-  \label{eq:PR}$$</span><br /></p>
-<p>A &amp; the page we want to rank and is pointed to by pages $T_1$ to $T_n$<br />
-n &amp; the total number of pages on the Web graph<br />
-C(A) &amp; the number of outgoing links of page $A</span><br />
-d &amp; a ‘damping’ parameter set by the system (typically 0.85) needed to deal with dead ends in the graph</p>
-<p>Figure [fig:pagerank] which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.</p>
-<figure>
-<img src="pagerank" alt="PageRank algorithm illustration (Mayhaymate 2012)" /><figcaption>PageRank algorithm illustration <span class="citation" data-cites="Wikimedia2012">(Mayhaymate <a href="#ref-Wikimedia2012">2012</a>)</span><span data-label="fig:pagerank"></span></figcaption>
+  \label{eq:PR}$$
+<figcaption>(6.5)</figcaption>
 </figure>
-<p>The HITS algorithm also works on the links between pages <span class="citation" data-cites="Kleinberg1999 Kleinberg1999a">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>; Kleinberg et al. <a href="#ref-Kleinberg1999a">1999</a>)</span>. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called ‘authorities’ and page with many outgoing links are called ‘hubs’. Equation [eq:HITS] shows the algorithm <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $S</span> is the set of pages, $H(p)</span> is the hub value for page $p</span>, and $A(p)</span> is the authority value for page $p</span>.</p>
-<p><br /><span class="math display">$$\begin{split}
+
+<table class="where">
+  <tr>
+    <th>$A$</th>
+    <th>=</th>
+    <th>the page we want to rank and is pointed to by pages $T_1$ to $T_n$</th>
+  </tr>
+  <tr>
+    <td>$n$</td>
+    <td>=</td>
+    <td>the total number of pages on the Web graph</td>
+  </tr>
+  <tr>
+    <td>$C(A)$</td>
+    <td>=</td>
+    <td>the number of outgoing links of page $A$</td>
+  </tr>
+  <tr>
+    <td>$d$</td>
+    <td>=</td>
+    <td>a ‘damping’ parameter set by the system (typically 0.85) needed to deal with dead ends in the graph</td>
+  </tr>
+</table>
+
+<p>Figure <a href="#fig:6.6">6.6</a> which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.</p>
+
+<figure id="fig:6.6">
+<img src="../images/pagerank.png" alt="PageRank algorithm illustration (Mayhaymate 2012)" /><figcaption>Figure 6.6 PageRank algorithm illustration <span class="citation" data-cites="Wikimedia2012">(Mayhaymate <a href="#ref-Wikimedia2012">2012</a>)</span></figcaption>
+</figure>
+
+<p>The HITS algorithm also works on the links between pages <span class="citation" data-cites="Kleinberg1999 Kleinberg1999a">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>; Kleinberg et al. <a href="#ref-Kleinberg1999a">1999</a>)</span>. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called ‘authorities’ and page with many outgoing links are called ‘hubs’. Equation <a href="#eq:HITS">6.6</a> shows the algorithm <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.</p>
+
+<figure id="eq:6.6" class="equation">
+$$\begin{split}
   H(p) &amp;= \sum_{u\in S \mid p\to u}A(u)\\
   A(p) &amp;= \sum_{v\in S \mid v\to p}H(v)
   \end{split}
-  \label{eq:HITS}$$</span><br /></p>
+  \label{eq:HITS}$$
+<figcaption>(6.6)</figcaption>
+</figure>
+
 <p>Hilltop is a similar algorithm with the difference that it operates on a specific set of expert pages as a starting point. It was defined by Bharat and Mihaila <span class="citation" data-cites="Bharat2000">(<a href="#ref-Bharat2000">2000</a>)</span>. The expert pages they refer to should have many outgoing links to non-affiliated pages on a specific topic. This set of expert pages needs to be pre-processed at the indexing stage. The authority pages they define must be linked to by one of their expert pages. The main difference to the HITS algorithm then is that their ‘hub’ pages are predefined.</p>
-<p>Another algorithm is the so called Fish search algorithm <span class="citation" data-cites="DeBra1994 DeBra1994a DeBra1994b">(De Bra and Post <a href="#ref-DeBra1994">1994</a><a href="#ref-DeBra1994">a</a>; De Bra and Post <a href="#ref-DeBra1994a">1994</a><a href="#ref-DeBra1994a">b</a>; De Bra et al. <a href="#ref-DeBra1994b">1994</a>)</span>. The basic concept here is that the search starts with the search query and a seed as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. s with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ‘ranking’ is done dynamically at query time.</p>
+<p>Another algorithm is the so called Fish search algorithm <span class="citation" data-cites="DeBra1994 DeBra1994a DeBra1994b">(De Bra and Post <a href="#ref-DeBra1994">1994</a><a href="#ref-DeBra1994">a</a>; De Bra and Post <a href="#ref-DeBra1994a">1994</a><a href="#ref-DeBra1994a">b</a>; De Bra et al. <a href="#ref-DeBra1994b">1994</a>)</span>. The basic concept here is that the search starts with the search query and a seed Uniform Resource Locator (URL) as a starting point. A list of pages is then built dynamically in order of relevance following from link to link. Each node in this directed graph is given a priority depending on whether it is judged to be relevant or not. URLs with higher priority are inserted at the front of the list while others are inserted at the back. Special here is that the ‘ranking’ is done dynamically at query time.</p>
 <p>There are various algorithms that follow this approach. For example the shark search algorithm <span class="citation" data-cites="Hersovici1998">(Hersovici et al. <a href="#ref-Hersovici1998">1998</a>)</span>. It improves the process of judging whether or not a given link is relevant or not. It uses a simple vector model with a fuzzy sort of relevance feedback. Another example is the improved fish search algorithm <span class="citation" data-cites="Luo2005">(Luo, Chen, and Guo <a href="#ref-Luo2005">2005</a>)</span> where an extra parameter allows more control over the search range and time. The Fish School Search algorithm is another approach based on the same fish inspiration <span class="citation" data-cites="BastosFilho2008">(Bastos Filho et al. <a href="#ref-BastosFilho2008">2008</a>)</span>. It uses principles from genetic algorithms and particle swarm optimization. Another genetic approach is Webnaut <span class="citation" data-cites="Nick2001">(Nick and Themis <a href="#ref-Nick2001">2001</a>)</span>.</p>
 <p>Other variations include the incorporation of user behaviour <span class="citation" data-cites="Agichtein2006">(Agichtein, Brill, and Dumais <a href="#ref-Agichtein2006">2006</a>)</span>, social annotations <span class="citation" data-cites="Bao2007">(Bao et al. <a href="#ref-Bao2007">2007</a>)</span>, trust <span class="citation" data-cites="Garcia-Molina2004">(Gyongyi, Garcia-Molina, and Pedersen <a href="#ref-Garcia-Molina2004">2004</a>)</span>, query modifications <span class="citation" data-cites="Glover2001">(Glover et al. <a href="#ref-Glover2001">2001</a>)</span>, topic sensitive PageRank <span class="citation" data-cites="Haveliwala2003">(Haveliwala <a href="#ref-Haveliwala2003">2003</a>)</span>, folksonomies <span class="citation" data-cites="Hotho2006">(Hotho et al. <a href="#ref-Hotho2006">2006</a>)</span>, SimRank <span class="citation" data-cites="Jeh2002">(Jeh and Widom <a href="#ref-Jeh2002">2002</a>)</span>, neural-networks <span class="citation" data-cites="Shu1999">(Shu and Kak <a href="#ref-Shu1999">1999</a>)</span>, and semantic web <span class="citation" data-cites="Widyantoro2001 Du2007 Ding2004 Kamps2010 Taye2009">(Widyantoro and Yen <a href="#ref-Widyantoro2001">2001</a>; Du et al. <a href="#ref-Du2007">2007</a>; Ding et al. <a href="#ref-Ding2004">2004</a>; Kamps, Kaptein, and Koolen <a href="#ref-Kamps2010">2010</a>; Taye <a href="#ref-Taye2009">2009</a>)</span>.</p>
 </section>
 </section>
+
 <section id="challenges" class="level3">
 <h3><span class="header-section-number">6.1.4</span> Challenges</h3>
-<p>Other issues that arise when trying to search the were identified by Baeza-Yates and Ribeiro-Neto as follows <span class="citation" data-cites="Baeza-Yates2011">(<a href="#ref-Baeza-Yates2011">2011</a>)</span>.</p>
+<p>Other issues that arise when trying to search the WWW were identified by Baeza-Yates and Ribeiro-Neto as follows <span class="citation" data-cites="Baeza-Yates2011">(<a href="#ref-Baeza-Yates2011">2011</a>)</span>.</p>
 <ul>
 <li><p>Data is distributed. Data is located on different computers all over the world and network traffic is not always reliable.</p></li>
 <li><p>Data is volatile. Data is deleted, changed or lost all the time so data is often out-of-date and links broken.</p></li>
@@ -587,21 +620,23 @@ d &amp; a ‘damping’ parameter set by the system (typically 0.85) needed to d
 <p>Since a single query for a popular word can results in millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. Google for example uses over commodity-class PCs that are distributed over several data centres around the world <span class="citation" data-cites="Dean2003">(Dean, Barroso, and Hoelzle <a href="#ref-Dean2003">2003</a>)</span>.</p>
 </section>
 </section>
+
 <section id="s:nlp" class="level2">
 <h2><span class="header-section-number">6.2</span> Natural Language Processing</h2>
-<p>is a discipline within computer science which is also known as follows <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
+<p>Natural Language Processing (NLP) is a discipline within computer science which is also known as follows <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
 <ul>
 <li><p>Speech and language processing</p></li>
 <li><p>Human language technology</p></li>
 <li><p>Computational linguistics</p></li>
 <li><p>Speech recognition and synthesis</p></li>
 </ul>
-<p>Goals of are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing.Applications are for example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.</p>
-<p>There are many tools and libraries available for , including the Python library <span class="citation" data-cites="Bird2009 NLTK2016">(Bird, Klein, and Loper <a href="#ref-Bird2009">2009</a>; “Natural Language Toolkit. NLTK 3.0 Documentation” n.d.)</span> and WordNet <span class="citation" data-cites="Princeton2010">(“What Is Wordnet? WordNet: A Lexical Database for English” n.d.)</span> (both of which were used for <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>).</p>
+<p>Goals of NLP are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing.Applications are for example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.</p>
+<p>There are many tools and libraries available for NLP, including the Natural Language Toolkit (NLTK) Python library <span class="citation" data-cites="Bird2009 NLTK2016">(Bird, Klein, and Loper <a href="#ref-Bird2009">2009</a>; “Natural Language Toolkit. NLTK 3.0 Documentation” n.d.)</span> and WordNet <span class="citation" data-cites="Princeton2010">(“What Is Wordnet? WordNet: A Lexical Database for English” n.d.)</span> (both of which were used for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>).</p>
+
 <section id="words" class="level3">
 <h3><span class="header-section-number">6.2.1</span> Words</h3>
 <p>A ‘lemma’ is a set of lexical forms that have the same stem (e.g. go). A ‘word-form’ is the full inflected or derived form of the word (e.g. goes). A ‘word type’ is a distinct word in a corpus (repetitions are not counted but case sensitive). A ‘word token’ is any word (repetitions are counted repeatedly). Manning et al. list the following activities related to the word processing of text <span class="citation" data-cites="Manning2009">(<a href="#ref-Manning2009">2009</a>)</span>.</p>
-<dl>
+<dl class="defaultDL">
 <dt>Tokenisation</dt>
 <dd><p>discarding white spaces and punctuation and making every term a token</p>
 </dd>
@@ -618,11 +653,12 @@ d &amp; a ‘damping’ parameter set by the system (typically 0.85) needed to d
 <dd><p>returning dictionary form of a word, e.g. went $→</span> go</p>
 </dd>
 </dl>
+
 <section id="s:wordnet" class="level4">
 <h4><span class="header-section-number">6.2.1.1</span> WordNet</h4>
-<p>WordNet is a large lexical database for English, containing word form and sense pairs, useful for computational linguistics and <span class="citation" data-cites="Miller1995">(Miller <a href="#ref-Miller1995">1995</a>)</span>. A synset is a set of synonyms to represent a specific word sense. It is the basic building block of WordNet’s hierarchical structure of lexical relationships.</p>
+<p>WordNet is a large lexical database for English, containing word form and sense pairs, useful for computational linguistics and NLP <span class="citation" data-cites="Miller1995">(Miller <a href="#ref-Miller1995">1995</a>)</span>. A synset is a set of synonyms to represent a specific word sense. It is the basic building block of WordNet’s hierarchical structure of lexical relationships.</p>
 <blockquote>
-<p>Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations.</p>
+<p>Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations.</p><span class="blockcitation" data-cites="Princeton2010">(WordNet <a href="#ref-Princeton2010">n.d.</a>)</span>
 </blockquote>
 <dl>
 <dt>Synonymy</dt>
@@ -650,79 +686,138 @@ d &amp; a ‘damping’ parameter set by the system (typically 0.85) needed to d
 <p>Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).</p>
 <p>Appendix [app:wordnet] shows an example result produced by WordNet rendered for a web browser.</p>
 </section>
+
 <section id="s:regex" class="level4">
 <h4><span class="header-section-number">6.2.1.2</span> Regular Expressions</h4>
 <p>Regular expressions (often shortened to the term ‘regex’) are used to search a corpus of texts for the occurrence of a specific string pattern<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
-<p>Table [tab:regex] shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used:</p>
+<p>Table <a href="#tab:6.2">6.2</a> shows the most common commands needed to build a regular expression. For example, to find an email address in a piece of text the following regex can be used:</p>
+
 <pre class="text"><code>([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})</code></pre>
-<p>Most modern text editors support a form of search using regex and it is often used in .</p>
-<p><span>ll</span> <strong>Command</strong> &amp; <strong>Description</strong><br />
-. &amp; any character except newline<br />
-\w \d \s &amp; word, digit, whitespace<br />
-\W \D \S &amp; not word, digit, whitespace<br />
-<span>[</span>abc<span>]</span> &amp; any of a, b, or c<br />
-<span>[</span>^abc<span>]</span> &amp; not a, b, or c<br />
-<span>[</span>a-g<span>]</span> &amp; character between a &amp; g<br />
-^abc$ &amp; start / end of the string<br />
-a* a+ a? &amp; 0 or more, 1 or more, 0 or 1<br />
-a{5} a{2,} &amp; exactly five, two or more<br />
-ab|cd &amp; match ab or cd<br />
-</p>
+
+<p>Most modern text editors support a form of search using regex and it is often used in NLP.</p>
+
+<figure id="tab:6.2">
+<table>
+  <tr>
+    <th>Command</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>.</td>
+    <td>any character except newline</td>
+  </tr>
+  <tr>
+    <td>\w \d \s</td>
+    <td>word, digit, whitespace</td>
+  </tr>
+  <tr>
+    <td>\W \D \S</td>
+    <td>not word, digit, whitespace</td>
+  </tr>
+  <tr>
+    <td>[abc]</td>
+    <td>any of a, b, or c</td>
+  </tr>
+  <tr>
+    <td>[^abc]</td>
+    <td>not a, b, or c</td>
+  </tr>
+  <tr>
+    <td>[a-g]</td>
+    <td>character between a &amp; g</td>
+  </tr>
+  <tr>
+    <td>^abc$</td>
+    <td>start / end of the string</td>
+  </tr>
+  <tr>
+    <td>a* a+ a?</td>
+    <td>0 or more, 1 or more, 0 or 1</td>
+  </tr>
+  <tr>
+    <td>a{5} a{2,}</td>
+    <td>exactly five, two or more</td>
+  </tr>
+  <tr>
+    <td>ab|cd</td>
+    <td>match ab or cd</td>
+  </tr>
+</table>
+<figcaption>Table 6.2 Regular expression syntax</figcaption>
+</figure>
+
 </section>
+
 <section id="damerau-levensthein" class="level4">
 <h4><span class="header-section-number">6.2.1.3</span> Damerau-Levensthein</h4>
-<p>The Damerau–Levenshtein distance between two strings $a</span> and $b</span> is given by $d_a, b</sub>(|a|,|b|)</span> (see equation [eq:DL]) <span class="citation" data-cites="WikipediaA Damerau1964 Levenshtein1966">(“Damerau-Levenshtein Distance” n.d.; Damerau <a href="#ref-Damerau1964">1964</a>; Levenshtein <a href="#ref-Levenshtein1966">1966</a>)</span>. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words ‘clear’ and ‘clean’ would have a distance of 1, as it takes on substitution of the letter ‘r’ to ‘n’ to change the word. A typical application would be spelling correction.</p>
-<p><br /><span class="math display">$$d_{a,b}(i,j)=\left\{\begin{matrix*}[l]
-  \max(i,j) &amp; \textrm{if}\min(i,j)=0\\
-  \min\left\{\begin{matrix*}[l]
-  d_{a,b}(i-1,j)+1\\
-  d_{a,b}(i,j-1)+1\\
-  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}\\
-  d_{a,b}(i-2,j-2)+1
-  \end{matrix*}\right. &amp; \textrm{if}\ i,j &gt; 1 \ \textrm{and}\ a_i = b_{j-1}\ \textrm{and}\ a_{i-1} = b_j\\
-  \min\left\{\begin{matrix*}[l]
-  d_{a,b}(i-1,j)+1\\
-  d_{a,b}(i,j-1)+1\\
-  d_{a,b}(i-1,j-1)+1_{a_i\neq b_j}
-\end{matrix*}\right. &amp; \textrm{otherwise.}
-  \end{matrix*}\right.
-  \label{eq:DL}$$</span><br /></p>
-<p>$1_(a_i</sub> ≠ b_j</sub>)$ is equal to $0</span> when $a_i</sub> = b_j$ and equal to $1</span> otherwise.</p>
+<p>The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a, b}(|a|,|b|)$ (see equation <a href="#eq:DL">6.2</a>) <span class="citation" data-cites="WikipediaA Damerau1964 Levenshtein1966">(“Damerau-Levenshtein Distance” n.d.; Damerau <a href="#ref-Damerau1964">1964</a>; Levenshtein <a href="#ref-Levenshtein1966">1966</a>)</span>. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words ‘clear’ and ‘clean’ would have a distance of 1, as it takes on substitution of the letter ‘r’ to ‘n’ to change the word. A typical application would be spelling correction.</p>
+
+<figure id="eq:6.7" class="equation">
+<img src="../images/dl.png" alt="Damerau-Levenshtein equation">
+<figcaption>Equation 6.7</figcaption>
+</figure>
+
+<p>$1_(a_i ≠ b_j)$ is equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.</p>
 <ul>
-<li><p>$d_a, b</sub>(i − 1, j)+1</span> corresponds to a deletion (from a to b)</p></li>
-<li><p>$d_a, b</sub>(i, j − 1)+1</span> corresponds to an insertion (from a to b)</p></li>
-<li><p>$d_a, b</sub>(i − 1, j − 1)+1_(a_i</sub> ≠ b_j</sub>)$ corresponds to a match or mismatch, depending on whether the respective symbols are the same</p></li>
-<li><p>$d_a, b</sub>(i − 2, j − 2)+1</span> corresponds to a transposition between two successive symbols</p></li>
+<li><p>$d_{a, b}(i − 1, j)+1$ corresponds to a deletion (from a to b)</p></li>
+<li><p>$d_{a, b}(i, j − 1)+1$ corresponds to an insertion (from a to b)</p></li>
+<li><p>$d_{a, b}(i − 1, j − 1)+1_(a_i ≠ b_j)$ corresponds to a match or mismatch, depending on whether the respective symbols are the same</p></li>
+<li><p>$d_{a, b}(i − 2, j − 2)+1$ corresponds to a transposition between two successive symbols</p></li>
 </ul>
 </section>
 </section>
+
 <section id="sequences" class="level3">
 <h3><span class="header-section-number">6.2.2</span> Sequences</h3>
+
 <section id="s:ngrams" class="level4">
 <h4><span class="header-section-number">6.2.2.1</span> N-Grams</h4>
-<p>We can do word prediction with probabilistic models called $N</span>-Grams. They predict the probability of the next word from the previous $N − 1</span> words <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. A 2-gram is usually called a ‘bigram’ and a 3-gram a ‘trigram’.</p>
-<p>A basic way to compute the probability of an N-gram is using a shown in equation [eq:mle] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span> of a word $w_n$ given some history $w_n − N + 1</sub><sup>n − 1</sup></span> (i.e. the previous words in the sentence for example).</p>
-<p><br /><span class="math display">$$P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
-  \label{eq:mle}$$</span><br /></p>
-<p>For instance, if we want to check which of two words “shining” and “cold” has a higher probability of being the next word given a history of “the sun is”, we would need to compute $P</span>(shining|the sun is) and $P</span>(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence “the sun is shining” occurred in a training corpus by the number of times “the sun is” occurred and the same for the word “cold”.</p>
-<p>Counts ($C</span>) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain N-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem.</p>
-<p>One example is the so-called ‘Laplace’ or ‘add-one smoothing’, which basically just adds 1 to each count. See equation [eq:padd1] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. $V</span> is the number of terms in the vocabulary.</p>
-<p><br /><span class="math display">$$P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
-  \label{eq:padd1}$$</span><br /></p>
-<p>Another example of smoothing is the so-called ‘Good Turing discounting’. It uses “the count of things you’ve seen once to help estimate the count of things you’ve never seen” <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a> their emphasis)</span>.</p>
-<p>To calculate the probability of a sequence of $n</span> words ($P(w_1</sub>, w_2</sub>, …, w_n</sub>)</span> or $P(w_1</sub><sup>n</sup>)</span> for short) we can use the chain rule of probability as shown in equation [eq:probw1n] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
-<p><br /><span class="math display">$$\begin{split}
+<p>We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N − 1$ words <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. A 2-gram is usually called a ‘bigram’ and a 3-gram a ‘trigram’.</p>
+<p>A basic way to compute the probability of an N-gram is using a Maximum Likelihood Estimation (MLE) shown in equation <a href="#eq:6.8">6.8</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span> of a word $w_n$ given some history $w_{n − N + 1}^{n − 1}$ (i.e. the previous words in the sentence for example).</p>
+
+<figure id="eq:6.8" class="equation">
+$$P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
+  \label{eq:mle}$$
+<figcaption>(6.8)</figcaption>
+</figure>
+
+<p>For instance, if we want to check which of two words “shining” and “cold” has a higher probability of being the next word given a history of “the sun is”, we would need to compute $P$(shining|the sun is) and $P$(cold|the sun is) and compare the results. To do this we would have to divide the number of times the sentence “the sun is shining” occurred in a training corpus by the number of times “the sun is” occurred and the same for the word “cold”.</p>
+<p>Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain N-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem.</p>
+<p>One example is the so-called ‘Laplace’ or ‘add-one smoothing’, which basically just adds 1 to each count. See equation <a href="#eq:6.9">6.9</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. $V$ is the number of terms in the vocabulary.</p>
+
+<figure id="eq:6.9" class="equation">
+$$P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
+  \label{eq:padd1}$$
+<figcaption>(6.9)</figcaption>
+</figure>
+
+<p>Another example of smoothing is the so-called ‘Good Turing discounting’. It uses “the count of things you’ve seen once to help estimate the count of things you’ve never seen” <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>, their emphasis)</span>.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>To calculate the probability of a sequence of $n$ words ($P(w_1, w_2, …, w_n)$ or $P(w_{1}^n)$ for short) we can use the chain rule of probability as shown in equation <a href="#eq:6.10">6.10</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
+
+<figure id="eq:6.10" class="equation">
+$$\begin{split}
   P(w_1^n) &amp;= P(w_1)P(w_2 \mid w_1)P(w_3 \mid w_1^2 ) \ldots P(w_n \mid w_1^{n-1})\\
   &amp;= \prod_{k=1}^{n}P(w_k \mid w_1^{k-1})
   \end{split}
-  \label{eq:probw1n}$$</span><br /></p>
-<p>Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word depends only on the previous word (or $n</span> words) is the called a Markov assumption (see equation [eq:probw1n2] <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>).</p>
-<p><br /><span class="math display">$$P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
-  \label{eq:probw1n2}$$</span><br /></p>
+  \label{eq:probw1n}$$
+<figcaption>(6.10)</figcaption>
+</figure>
+
+<p>Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation <a href="#eq:6.11">6.11</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>).</p>
+
+<figure id="eq:6.11" class="equation">
+$$P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
+  \label{eq:probw1n2}$$
+<figcaption>(6.11)</figcaption>
+</figure>
 </section>
+
 <section id="s:pos" class="level4">
 <h4><span class="header-section-number">6.2.2.2</span> Part-of-Speech Tagging</h4>
-<p>are lexical tags for describing the different elements of a sentence. The eight most well-known are as follows.</p>
+<p>Parts-of-Speech (POS) are lexical tags for describing the different elements of a sentence. The eight most well-known POS are as follows.</p>
 <dl>
 <dt>Noun</dt>
 <dd><p>an abstract or concrete entity</p>
@@ -749,30 +844,53 @@ ab|cd &amp; match ab or cd<br />
 <dd><p>an emotional greeting or exclamation</p>
 </dd>
 </dl>
-<p>More specialised sets of tags exist such as the Penn Treebank tagset <span class="citation" data-cites="Marcus1993">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-Marcus1993">1993</a>)</span> consisting of 48 different tags, including $CC</span> for coordinating conjunction, $CD</span> for cardinal number, $NN</span> for noun singular, $NNS</span> for noun plural, $NNP</span> for proper noun singular, $VB</span> for verb base form, $VBG</span> for verb gerund, $DT</span> for determiner, $JJ</span> for adjectives, etc. A full table of these 48 tags can be found in appendix [s:penntreebank].</p>
-<p>The process of adding tags to the words of a text is called ‘ tagging’ or just ‘tagging’. Below, you can see an example tagged sentence<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</p>
+<p>More specialised sets of tags exist such as the Penn Treebank tagset <span class="citation" data-cites="Marcus1993">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-Marcus1993">1993</a>)</span> consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix [s:penntreebank].</p>
+<p>The process of adding tags to the words of a text is called ‘POS tagging’ or just ‘tagging’. Below, you can see an example tagged sentence<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</p>
 <blockquote>
 <p>In/IN this/DT year/NN Eighteen/CD Hundred/CD and/CC Ninety-eight/CD,/, the/DT Eighth/CD day/NN of/IN February/NNP,/, Pursuant/JJ to/IN article/NN 819/CD of/IN the/DT Code/NN of/IN Civil/NNP Procedure/NNP and/CC at/IN the/DT request/NN of/IN M./NN and/CC Mme./NN Bonhomme/NNP (/(Jacques/NNP)/),/, proprietors/NNS of/IN a/DT house/NN situate/JJ at/IN Paris/NNP,/, 100/CD bis/NN,/, rue/NN Richer/NNP,/, the/DT aforementioned/JJ having/VBG address/NN for/IN service/NN at/IN my/PRP residence/NN and/CC further/JJ at/IN the/DT Town/NNP Hall/NNP of/IN Q/NNP borough/NN ./.</p>
 </blockquote>
 </section>
+
 <section id="s:maxent" class="level4">
 <h4><span class="header-section-number">6.2.2.3</span> Maximum Entropy</h4>
 <p>Hidden Markov or maximum entropy models can be used for sequence classification, e.g. part-of-speech tagging.</p>
 <blockquote>
-<p>The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes.</p>
+<p>The task of classification is to take a single observation, extract some useful features describing the observation, and then, based on these features, to classify the observation into one of a set of discrete classes.</p><span class="blockcitation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>
 </blockquote>
-<p>A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation [eq:pcx] shows how to calculate the probability of an obersvation (i.e. word) $x</span> being of class $c</span> as $p(c|x)</span> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
-<p><br /><span class="math display">$$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
-  \label{eq:pcx}$$</span><br /></p>
-<p>f_i(c,x) &amp; the feature (e.g. “this word ends in -ing” or “the previous word was the”)<br />
-w_i &amp; the weight of the feature $f_i$</p>
+<p>A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation <a href="#eq:6.12">6.12</a> shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$ <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
+
+<figure id="eq:6.12" class="equation">
+$$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
+  \label{eq:pcx}$$
+<figcaption>(6.12)</figcaption>
+</figure>
+
+<table class="where">
+  <tr>
+    <th>$f_i(c,x)$</th>
+    <th>=</th>
+    <th>the feature (e.g. “this word ends in -ing” or “the previous word was the”)</th>
+  </tr>
+  <tr>
+    <td>$w_i$</td>
+    <td>=</td>
+    <td>the weight of the feature $f_i$</td>
+  </tr>
+</table>
 </section>
+
 <section id="s:grammars" class="level4">
 <h4><span class="header-section-number">6.2.2.4</span> Grammars</h4>
-<p>A language is modelled using a grammar, specifically a ‘Context-Free-Grammar’. Such a grammar normally consists or rules and a lexicon. For example a rule could be ‘NP $→</span> Det Noun’, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $→</span> a, Det $→</span> the, Noun $→</span> book. This grammar would let us form two noun phrases ‘the book’ and ‘a book’ only. Its two parse trees would then look like figure [fig:trees]:</p>
+<p>A language is modelled using a grammar, specifically a ‘Context-Free-Grammar’. Such a grammar normally consists or rules and a lexicon. For example a rule could be ‘NP $→$ Det Noun’, where NP stands for noun phrase, Det for determiner and Noun for a noun. The corresponding lexicon would then include facts like Det $→$ a, Det $→$ the, Noun $→$ book. This grammar would let us form two noun phrases ‘the book’ and ‘a book’ only. Its two parse trees would then look like figure <a href="#fig:6.7">6.7</a>:</p>
+
+<figure id="fig:6.7">
+<img src="../images/parsetrees.png" alt="Two parse trees">
+<figcaption>Figure 6.7 Two parse trees for grammar ‘NP $→$ Det Noun’</figcaption>
+</figure>
+
 <p>Parsing is the process of analysing a sentence and assigning a structure to it. Given a grammar, a parsing algorithm should produce a parse tree for a given sentence. The parse tree for the first sentence from Faustroll is shown below, in horizontal format for convenience.</p>
 
-\begin{alltt}
+<pre class="text">
 (ROOT
   (S
     (PP (IN In)
@@ -839,7 +957,7 @@ w_i &amp; the weight of the feature $f_i$</p>
                   (NP (NNP Q))))))
           (NN borough))))
     (. .)))
-\end{alltt}
+</pre>
 
 <p>This particular tree was generated using the Stanford Parser <span class="citation" data-cites="Stanford2016">(“The Stanford Parser: A Statistical Parser. the Stanford Natural Language Processing Group” <a href="#ref-Stanford2016">2016</a>)</span>.</p>
 </section>
@@ -848,7 +966,7 @@ w_i &amp; the weight of the feature $f_i$</p>
 <p>A named entity can be anything that can be referred to by a proper name, such as person, place or organisation names and times and amounts and these entities can be appropriately tagged.</p>
 <p>Example (first sentence in Faustroll):</p>
 <blockquote>
-<p>In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]$<sup>TIME</sup></span>, Pursuant to article [819]$<sup>NUMBER</sup></span> of the [Code of Civil Procedure]$<sup>DOCUMENT</sup></span> and at the request of [M. and Mme. Bonhomme (Jacques)]$<sup>PERSON</sup></span>, proprietors of a house situate at [Paris, 100 bis, rue Richer]$<sup>LOCATION</sup></span>, the aforementioned having address for service at my residence and further at the [Town Hall]$<sup>FACILITY</sup></span> of [Q borough]$<sup>LOCATION</sup></span>.</p>
+<p>In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]<sup>TIME</sup>, Pursuant to article [819]<sup>NUMBER</sup> of the [Code of Civil Procedure]<sup>DOCUMENT</sup> and at the request of [M. and Mme. Bonhomme (Jacques)]<sup>PERSON</sup>, proprietors of a house situate at [Paris, 100 bis, rue Richer]<sup>LOCATION</sup>, the aforementioned having address for service at my residence and further at the [Town Hall]<sup>FACILITY</sup> of [Q borough]<sup>LOCATION</sup>.</p>
 </blockquote>
 <p>So-called ‘gazetteers’ (lists of place or person names for example) can help with the detection of these named entities.</p>
 </section>

@@ -64,6 +64,10 @@ pandoc creativity.tex -f latex -t html5 -o creativity.html --toc --toc-depth=3 -
 pandoc technology.1.tex -f latex -t html5 -o technology.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=5 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''
 
+```
+pandoc evaluation.tex -f latex -t html5 -o evaluation.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=6 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
 
 --mathjax
 
