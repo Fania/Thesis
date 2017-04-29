@@ -79,15 +79,22 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 <figcaption>(7.2)</figcaption>
 </figure>
 
-<p>Note the slight difference between the two. Precision tells us how many of all retrieved results were actually relevant (of course this should preferable be very high) and recall simply indicates how many of all possible relevant documents we managed to retrieve. This can be easily visualised as as shown in figure [fig:PR].</p>
-<figure>
-<img src="PRside" alt="Precision and recall (Walber 2014)" /><figcaption>Precision and recall <span class="citation" data-cites="Wikimedia2014">(Walber <a href="#ref-Wikimedia2014">2014</a>)</span><span data-label="fig:PR"></span></figcaption>
+<p>Note the slight difference between the two. Precision tells us how many of all retrieved results were actually relevant (of course this should preferable be very high) and recall simply indicates how many of all possible relevant documents we managed to retrieve. This can be easily visualised as as shown in figure <a href="#fig:7.1">7.1</a>.</p>
+
+<figure id="fig:7.1">
+<img src="../images/PRside.png" alt="Precision and recall (Walber 2014)" /><figcaption>Precision and recall <span class="citation" data-cites="Wikimedia2014">(Walber <a href="#ref-Wikimedia2014">2014</a>)</span></figcaption>
 </figure>
-<p>Precision is typically more important than recall in web search, so often evaluation is reduced to measuring the value, which can be calculated using the formula in equation [eq:MAP] <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where <span class="math inline"><em>R</em><sub><em>i</em></sub></span> is the set of results for query <span class="math inline"><em>i</em></span>, <span class="math inline"><em>P</em>(<em>R</em><sub><em>i</em></sub>[<em>k</em>])</span> is the precision value for result <span class="math inline"><em>k</em></span> for query <span class="math inline"><em>i</em></span> and <span class="math inline">|<em>R</em><sub><em>i</em></sub>|</span> is the total number of results.</p>
-<p><br /><span class="math display">$$MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
-\label{eq:MAP}$$</span><br /></p>
-<p>But for many web searches ii is not necessary to calculate the average of all results, since users don’t inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first page of results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called ‘Precision at n’ or ‘P@n’ <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. So for example this could be P@5, P@10, or P@20. To compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.</p>
-<p>The <span class="citation" data-cites="Nist2016">(“Text Retrieval Conference (Trec)” <a href="#ref-Nist2016">2016</a>)</span> provides large test sets of data <span class="citation" data-cites="Trec2011">(“TREC Web, Terabyte &amp; Blog Tracks. Web Research Collections” <a href="#ref-Trec2011">2011</a>)</span> to participants and let’s them compare results. They have specific test sets for web search comprised of crawls of <span class="math inline">.<em>g</em><em>o</em><em>v</em></span> web pages.</p>
+
+<p>Precision is typically more important than recall in web search, so often evaluation is reduced to measuring the Mean Average Precision (MAP) value, which can be calculated using the formula in equation <a href="#eq:7.3">7.3</a> <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $R_i$ is the set of results for query $i$, $P(R_i[k])$ is the precision value for result $k$ for query $i$ and $|R_i|$ is the total number of results.</p>
+
+<figure id="eq:7.3" class="equation">
+$$MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
+\label{eq:MAP}$$
+<figcaption>(7.3)</figcaption>
+</figure>
+
+<p>But for many web searches it is not necessary to calculate the average of all results, since users don’t inspect results after the first page very often and it is therefore desirable to have the highest level of precision in the first page of results maybe. For this purpose it is common to measure the average precision of web search engines after only a few documents have been seen. This is called ‘Precision at n’ or ‘P@n’ <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. So for example this could be P@5, P@10, or P@20. To compare two ranking algorithms, we would calculate P@10 for each of them over an average of 100 queries maybe and compare the results and therefore the performance of the algorithm.</p>
+<p>The Text REtrieval Conference (TREC) <span class="citation" data-cites="Nist2016">(Trec <a href="#ref-Nist2016">2016</a>)</span> provides large test sets of data <span class="citation" data-cites="Trec2011">(Trec <a href="#ref-Trec2011">2011</a>)</span> to participants and let’s them compare results. They have specific test sets for web search comprised of crawls of <span class="math inline">.<em>g</em><em>o</em><em>v</em></span> web pages.</p>
 <p>There are certain other factors that can be or should be evaluated when looking at a complete search system, as shown below <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>.</p>
 <ul>
 <li><p>Speed of crawling.</p></li>
@@ -96,17 +103,21 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 <li><p>Speed of query response.</p></li>
 <li><p>Amount of queries per given time period.</p></li>
 </ul>
-<p>Ranking is another issue that could be considered to pre-evaluate web pages at indexing time rather than query time. This was previously discussed in chapter [s:ranking].</p>
-<p>Evaluating creative search is more complex, as the notion of ‘relevance’ is very different and this will be addressed in chapter [ch:interpretation].</p>
-<p>Sawle, Raczinski and Yang <span class="citation" data-cites="Sawle2011">(<a href="#ref-Sawle2011">2011</a>)</span> discussed an initial approach to measure the creativity of search results in 2011. Based on a definition of creativity by Boden (as explained in chapter [s:boden]), we attempted to define creativity in a way which could be applied to search results and provide a simple metric to measure it. A copy of this paper can be found in appendix [app:pub].</p>
+<p>Ranking is another issue that could be considered to pre-evaluate web pages at indexing time rather than query time. This was previously discussed in chapter <a href="technology.html#s:ranking">6.1.3</a>.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>Evaluating creative search is more complex, as the notion of ‘relevance’ is very different and this will be addressed in chapter <a href="interpretation.html">9</a>.</p>
+<p>Sawle, Raczinski and Yang <span class="citation" data-cites="Sawle2011">(<a href="#ref-Sawle2011">2011</a>)</span> discussed an initial approach to measure the creativity of search results in 2011. Based on a definition of creativity by Boden (as explained in chapter <a href="creativity.html#s:boden">5.1.6</a>), we attempted to define creativity in a way which could be applied to search results and provide a simple metric to measure it. A copy of this paper can be found in appendix [app:pub].</p>
 </section>
+
 <section id="s:creattributes" class="level2">
 <h2><span class="header-section-number">7.2</span> Evaluating Creative Computers</h2>
 <p>This section moves on from evaluating search and focuses on evaluating creativity in computers.</p>
 <blockquote>
-<p>The evaluation of artificial creative systems in the direct form currently practiced is not in itself empirically well-grounded, hindering the potential for incremental development in the field.</p>
+<p>The evaluation of artificial creative systems in the direct form currently practiced is not in itself empirically well-grounded, hindering the potential for incremental development in the field.</p><span class="blockcitation" data-cites="Bown2014">(Bown <a href="#ref-Bown2014">2014</a>)</span>
 </blockquote>
-<p>Evaluating human creativity objectively seems problematic; evaluating computer creativity seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity (see section [s:humancreativity]) and directly applying them to machines (see section [s:compcreativity]) seems logical but may be the wrong (anthropomorphic) approach. Adapting Mayer’s five big questions <span class="citation" data-cites="Mayer1999">(<a href="#ref-Mayer1999">1999</a>)</span> to machines does not seem to capture the real issues at play. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of any or all of the following:</p>
+<p>Evaluating human creativity objectively seems problematic; evaluating computer creativity seems even harder. There are many debates across the disciplines involved. Taking theories on human creativity (see section <a href="creativity.html#s:humancreativity">5.1</a>) and directly applying them to machines (see section <a href="creativity.html#s:compcreativity">5.2</a>) seems logical but may be the wrong (anthropomorphic) approach. Adapting Mayer’s five big questions <span class="citation" data-cites="Mayer1999">(<a href="#ref-Mayer1999">1999</a>)</span> to machines does not seem to capture the real issues at play. Instead of asking if creativity is a property of people, products, or processes we might ask if it is a property of any or all of the following:</p>
 <ul>
 <li><p>programmers</p></li>
 <li><p>users</p></li>
@@ -121,48 +132,49 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 <li><p>web-based (e.g. is distributed and/or open to interactions, perhaps via an API)</p></li>
 </ul>
 <p>Norton, Heath and Ventura highlight the importance of dealing with ‘evaluator bias’ when using human judges for evaluating any form of creativity. They identified 5 main problems as follows <span class="citation" data-cites="Norton2015">(<a href="#ref-Norton2015">2015</a>)</span>.</p>
-<dl>
-<dt><span class="math inline">1<sup><em>s</em><em>t</em></sup></span> problem</dt>
-<dd><p>Do we assess products or processes?</p>
-</dd>
-<dt><span class="math inline">2<sup><em>n</em><em>d</em></sup></span> problem</dt>
-<dd><p>What are the measurable assessment criteria?</p>
-</dd>
-<dt><span class="math inline">3<sup><em>r</em><em>d</em></sup></span> problem</dt>
-<dd><p>How do we un-ambiguate ambigous terminology?</p>
-</dd>
-<dt><span class="math inline">4<sup><em>t</em><em>h</em></sup></span> problem</dt>
-<dd><p>Which methodology to use for the assessment?</p>
-</dd>
-<dt><span class="math inline">5<sup><em>t</em><em>h</em></sup></span> problem</dt>
-<dd><p>How do we compensate for biases?</p>
-</dd>
+<dl class="constheight">
+<dt>1<sup>st</sup> problem</dt>
+<dd>Do we assess products or processes?</dd>
+<dt>2<sup>nd</sup> problem</dt>
+<dd>What are the measurable assessment criteria?</dd>
+<dt>3<sup>rd</sup> problem</dt>
+<dd>How do we un-ambiguate ambigous terminology?</dd>
+<dt>4<sup>th</sup> problem</dt>
+<dd>Which methodology to use for the assessment?</dd>
+<dt>5<sup>th</sup> problem</dt>
+<dd>How do we compensate for biases?</dd>
 </dl>
 <p>This point is also strengthend by Lamb, Brown and Clarke, saying that “non-expert judges are very poor at using metrics to evaluate creativity” and that the criteria they tested were not “objective enough to produce trustworthy judgments” <span class="citation" data-cites="Lamb2015">(<a href="#ref-Lamb2015">2015</a>)</span>.</p>
+
 <section id="s:o-i" class="level3">
 <h3><span class="header-section-number">7.2.1</span> Output minus Input</h3>
-<p>Discussions from computational creativity often focus on very basic questions such as “whether an idea or artefact is valuable or not, and whether a system is acting creatively or not” <span class="citation" data-cites="Pease2011">(Pease and Colton <a href="#ref-Pease2011">2011</a>)</span>. Certain defining aspects of creativity, such as novelty and value (as discussed in chapter [ch:creativity]), are often used to measure the outcome of a creative process. These are highlighted throughout the following pages and further addressed in chapter [ch:interpretation].</p>
+<p>Discussions from computational creativity often focus on very basic questions such as “whether an idea or artefact is valuable or not, and whether a system is acting creatively or not” <span class="citation" data-cites="Pease2011">(Pease and Colton <a href="#ref-Pease2011">2011</a>)</span>. Certain defining aspects of creativity, such as novelty and value (as discussed in chapter <a href="creativity.html">5</a>), are often used to measure the outcome of a creative process. These are highlighted throughout the following pages and further addressed in chapter <a href="interpretation.html">9</a>.</p>
 <p>One recurring theme is the clear separation of training data input and creative output in computers. Pease, Winterstein and Colton called this principle “output minus input” <span class="citation" data-cites="Pease2001">(<a href="#ref-Pease2001">2001</a>)</span>. The output in this case is the creative product but the input is not the process. Rather, it is the ‘inspiring set’ (comprised of explicit knowledge such as a database of information and implicit knowledge input by a programmer) or training data of a piece of software.</p>
 <blockquote>
-<p>The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set.</p>
+<p>The degree of creativity in a program is partly determined by the number of novel items of value it produces. Therefore we are interested in the set of valuable items produced by the program which exclude those in the inspiring set.</p><span class="blockcitation" data-cites="Colton2001">(Colton, Pease, and Ritchie <a href="#ref-Colton2001">2001</a>)</span>
 </blockquote>
 <p>They also suggest that all creative products must be “novel and valuable” <span class="citation" data-cites="Pease2001">(Pease, Winterstein, and Colton <a href="#ref-Pease2001">2001</a>)</span> and provide several measures that take into consideration the context, complexity, archetype, surprise, perceived novelty, emotional response and aim of a product. In terms of the creative process itself they only discuss randomness as a measurable approach. Elsewhere, Pease et al discuss using serendipity as an approach <span class="citation" data-cites="Pease2013">(<a href="#ref-Pease2013">2013</a>)</span>.</p>
 <p>Graeme Ritchie supports the view that creativity in a computer system must be measured “relative to its initial state of knowledge” <span class="citation" data-cites="Ritchie2007">(<a href="#ref-Ritchie2007">2007</a>)</span>. He identifies three main criteria for creativity as “novelty, quality and typicality” <span class="citation" data-cites="Ritchie2007">(<a href="#ref-Ritchie2007">2007</a>)</span>, although he argues that “novelty and typicality may well be related, since high novelty may raise questions about, or suggest a low value for, typicality” <span class="citation" data-cites="Ritchie2001 Ritchie2007">(<a href="#ref-Ritchie2001">2001</a>; <a href="#ref-Ritchie2007">2007</a>)</span>. He proposes several evaluation criteria which fall under the following categories <span class="citation" data-cites="Ritchie2007">(<a href="#ref-Ritchie2007">2007</a>)</span>: basic success, unrestrained quality, conventional skill, unconventional skill, avoiding replication and various combinations of those. Dan Ventura later suggested the addition of “variety and efficiency” to Ritchie’s model <span class="citation" data-cites="Ventura2008">(<a href="#ref-Ventura2008">2008</a>)</span>.</p>
 <p>It should be noted that ‘output minus input’ might easily be misinterpreted as ‘product minus process’, however, that is not the case. In fact, Pease, Winterstein and Colton argue that “the process by which an item has been generated and evaluated is intuitively relevant to attributions of creativity” <span class="citation" data-cites="Pease2001">(<a href="#ref-Pease2001">2001</a>)</span>, and that “two kinds of evaluation are relevant; the evaluation of the item, and evaluation of the processes used to generate it” <span class="citation" data-cites="Pease2001">(<a href="#ref-Pease2001">2001</a>)</span>. If a machine simply copies an idea from its inspiring set then it just cannot be considered creative and needs to be disqualified so to speak.</p>
 </section>
+
 <section id="creative-tripod" class="level3">
 <h3><span class="header-section-number">7.2.2</span> Creative Tripod</h3>
 <p>Simon Colton came up with an evaluation framework called the <em>creative tripod</em>. The tripod consists of three behaviours a system or artefact should exhibit in order to be called creative. The three legs represent “skill, appreciation, and imagination” and three different entities can sit on it, namely the programmer, the computer and the consumer. Colton argues that the perception “that the software has been skillful, appreciative and imaginative, then, regardless of the behaviour of the consumer or programmer, the software should be considered creative” <span class="citation" data-cites="Colton2008 Colton2008a">(<a href="#ref-Colton2008">2008</a><a href="#ref-Colton2008">a</a>; <a href="#ref-Colton2008a">2008</a><a href="#ref-Colton2008a">b</a>)</span>. As such a product can be considered creative, if it appears to be creative. If not all three behaviours are exhibited, however, it should not be considered creative <span class="citation" data-cites="Colton2008 Colton2008a">(Colton <a href="#ref-Colton2008">2008</a><a href="#ref-Colton2008">a</a>; Colton <a href="#ref-Colton2008a">2008</a><a href="#ref-Colton2008a">b</a>)</span>.</p>
 <blockquote>
-<p>Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same.</p>
+<p>Imagine an artist missing one of skill, appreciation or imagination. Without skill, they would never produce anything. Without appreciation, they would produce things which looked awful. Without imagination, everything they produced would look the same.</p><span class="blockcitation" data-cites="Colton2008a">(Colton <a href="#ref-Colton2008a">2008</a>)</span>
 </blockquote>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
 <p>Davide Piffer suggests that there are three dimensions of human creativity that can be measured, namely “novelty, usefulness/appropriateness and impact/influence” <span class="citation" data-cites="Piffer2012">(<a href="#ref-Piffer2012">2012</a>)</span>. As an example of how this applies to measuring a person’s creativity he proposes ‘citation counts’ <span class="citation" data-cites="Piffer2012">(Piffer <a href="#ref-Piffer2012">2012</a>)</span>. While this idea works well for measuring scientific creativity maybe, he does not explain how this would apply to a visual artist for example.</p>
 </section>
+
 <section id="s:specs" class="level3">
 <h3><span class="header-section-number">7.2.3</span> SPECS</h3>
 <p>Anna Jordanous proposed 14 key components of creativity (which she calls an “ontology of creativity”) <span class="citation" data-cites="Jordanous2012">(<a href="#ref-Jordanous2012">2012</a>)</span>, from a linguistic analysis of creativity literature which identified words that appeared significantly more often in discussions of creativity compared to unrelated topics <span class="citation" data-cites="Jordanous2012">(<a href="#ref-Jordanous2012">2012</a>)</span>.</p>
 <blockquote>
-<p>The themes identified in this linguistic analysis have collectively provided a clearer “working” understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts.</p>
+<p>The themes identified in this linguistic analysis have collectively provided a clearer “working” understanding of creativity, in the form of components that collectively contribute to our understanding of what creativity is. Together these components act as building blocks for creativity, each contributing to the overall presence of creativity; individually they make creativity more tractable and easier to understand by breaking down this seemingly impenetrable concept into constituent parts.</p><span class="blockcitation" data-cites="Jordanous2012">(Jordanous and Keller <a href="#ref-Jordanous2012">2012</a>)</span>
 </blockquote>
 <p>The 14 components Jordanous collated are: <span class="citation" data-cites="Jordanous2012">(<a href="#ref-Jordanous2012">2012</a>)</span></p>
 <blockquote>
@@ -183,7 +195,8 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 <li><p>Variety, Divergence and Experimentation</p></li>
 </ol>
 </blockquote>
-<p>Jordanous also found that “evaluation of computational creativity is not being performed in a systematic or standard way” <span class="citation" data-cites="Jordanous2011">(<a href="#ref-Jordanous2011">2011</a>)</span> and proposed ‘’ <span class="citation" data-cites="Jordanous2012a">(<a href="#ref-Jordanous2012a">2012</a>)</span>:</p>
+<p>Jordanous also found that “evaluation of computational creativity is not being performed in a systematic or standard way” <span class="citation" data-cites="Jordanous2011">(<a href="#ref-Jordanous2011">2011</a>)</span> and proposed ‘Standardised
+Procedure for Evaluating Creative Systems (SPECS)’ <span class="citation" data-cites="Jordanous2012a">(<a href="#ref-Jordanous2012a">2012</a>)</span>:</p>
 <blockquote>
 <ol>
 <li><p>Identify a definition of creativity that your system should satisfy to be considered creative:</p>
@@ -211,16 +224,17 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 </ul></li>
 </ol>
 </blockquote>
-<p>The model essentially means that we cannot evaluate a creative computer system objectively, unless steps 1 and 2 are predefined and publically available for external assessors to execute step 3. Creative evaluation can therefore be seen as a move from subjectivity to objectivity, i.e. defining subjective criteria for objectively evaluating a product in terms of the initial criteria.</p>
+<p>The SPECS model essentially means that we cannot evaluate a creative computer system objectively, unless steps 1 and 2 are predefined and publically available for external assessors to execute step 3. Creative evaluation can therefore be seen as a move from subjectivity to objectivity, i.e. defining subjective criteria for objectively evaluating a product in terms of the initial criteria.
 <blockquote>
-<p>For transparent and repeatable evaluative practice, it is necessary to state clearly what standards are used for evaluation, both for appropriate evaluation of a single system and for comparison of multiple systems using common criteria.</p>
+<p>For transparent and repeatable evaluative practice, it is necessary to state clearly what standards are used for evaluation, both for appropriate evaluation of a single system and for comparison of multiple systems using common criteria.</p></p><span class="blockcitation" data-cites="Jordanous2012a">(Jordanous <a href="#ref-Jordanous2012a">2012</a>)</span>
 </blockquote>
 <p>This is further strengthened by Richard Mayer stating that we need a “clearer definition of creativity” <span class="citation" data-cites="Mayer1999">(<a href="#ref-Mayer1999">1999</a>)</span> and Linda Candy arguing for “criteria and measures [for evaluation] that are situated and domain specific” <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span>.</p>
 <p>Jordanous also defined 5 ‘meta-evaluation criteria’ of correctness, usefulness, faithfulness as a model of creativity, usability of the methodology, and generality <span class="citation" data-cites="Jordanous2014">(<a href="#ref-Jordanous2014">2014</a>)</span>.</p>
 </section>
+
 <section id="s:mmce" class="level3">
 <h3><span class="header-section-number">7.2.4</span> MMCE</h3>
-<p>Linda Candy draws inspiration for the evaluation of (interactive) creative computer systems from . The focus of evaluation in has been on usability, she says <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span>. She argues that in order to successfully evaluate an artefact, the practitioner needs to have “the necessary information including constraints on the options under consideration” <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span>.</p>
+<p>Linda Candy draws inspiration for the evaluation of (interactive) creative computer systems from Human Computer Interaction (HCI). The focus of HCI evaluation in has been on usability, she says <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span>. She argues that in order to successfully evaluate an artefact, the practitioner needs to have “the necessary information including constraints on the options under consideration” <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span>.</p>
 <p>Evaluation happens at every stage of the process (i.e. from design <span class="math inline">→</span> implementation <span class="math inline">→</span> operation). Some of the key aspects of evaluation Candy highlights are:</p>
 <ul>
 <li><p>aesthetic appreciation</p></li>
@@ -228,39 +242,13 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 <li><p>informed considerations</p></li>
 <li><p>reflective practice</p></li>
 </ul>
-<p>She goes on to introduce the (shown in figure [fig:mmce]) with four main elements of people, process, product and context <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span> similar to some of the models of creativity we have seen in chapter [ch:creativity].</p>
-<p><span>foreground</span> (0,0) circle [radius=0.75cm]; (0,0.75) to [out=0,in=90] (0.75,0); (0.75,0) to [out=-90,in=0] (0,-0.75); (0,-0.75) to [out=180,in=-90] (-0.75,0); (-0.75,0) to [out=90,in=180] (0,0.75);</p>
-<p>(3.5,0.2) – (0.2,0.2) – (0.2,3.5) to [out=0,in=90] (3.5,0.2); (1.5,1.5) node <span>Process</span>;</p>
-<p><span>background</span> (2,1) rectangle (7,4); (4.5,2.5) node [node font=,align=right]<span><strong>Evaluation-2 How?</strong><br />
-Problem finding, solution oriented,<br />
-explanatory, systematic,<br />
-practice-based, opportunistic<br />
-empirical reflective,<br />
-rules, standards</span>;</p>
-<p>(4.5,5) node [node font=,align=right]<span><strong>Interactions</strong><br />
-Working practices, interactive experiences</span>;</p>
-<p>(3.5,-0.2) – (0.2,-0.2) – (0.2,-3.5) to [out=0,in=-90] (3.5,-0.2); (1.5,-1.5) node <span>Product</span>;</p>
-<p><span>background</span> (2,-1) rectangle (7,-4); (5,-2.5) node [node font=, align=right]<span><strong>Evaluation-3 What?</strong><br />
-Novel, original, appropriate,<br />
-useful, surprising, flexible,<br />
-fluent, engaging</span>;</p>
-<p>(4,-5) node [node font=,align=right]<span><strong>Outcomes</strong><br />
-Artifacts, installations, performances, exhibitions</span>;</p>
-<p>(-0.2,-3.5) – (-0.2,-0.2) – (-3.5,-0.2) to [out=-90,in=180] (-0.2,-3.5); (-1.5,-1.5) node <span>Context</span>;</p>
-<p><span>background</span> (-2,-1) rectangle (-7,-4); (-5,-2.5) node [node font=, align=left]<span><strong>Evaluation-4 Where?</strong><br />
-Studio, living laboratory,<br />
-public space, museum,<br />
-constraints, opportunities,<br />
-acceptability, leading edge</span>;</p>
-<p>(-5.3,-5) node [node font=,align=left]<span><strong>Environment</strong><br />
-Resources, costs, tools, time</span>;</p>
-<p>(-0.2,3.5) – (-0.2,0.2) – (-3.5,0.2) to [out=90,in=180] (-0.2,3.5); (-1.5,1.5) node <span>People</span>;</p>
-<p><span>background</span> (-2,1) rectangle (-7,4); (-5,2.5) node [node font=, align=left]<span><strong>Evaluation-1 Who?</strong><br />
-Capability, characteristics,<br />
-track record, reputation,<br />
-impact, influence</span>;</p>
-<p>(-4.5,5) node [node font=,align=left]<span><strong>Creators</strong><br />
-Artists, designers, participants, performers</span>;</p>
+<p>She goes on to introduce the Multi-dimensional Model of Creativity and Evaluation (MMCE) (shown in figure <a href="#fig:7.2">7.2</a>) with four main elements of people, process, product and context <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span> similar to some of the models of creativity we have seen in chapter <a href="creativity.html">5</a>.</p>
+
+<figure id="fig:7.2">
+<img src="../images/mmce.png" alt="Candy’s Multi-dimensional Model of Creativity and Evaluation">
+<figcaption>Figure 7.2 Candy’s Multi-dimensional Model of Creativity and Evaluation</figcaption>
+</figure>
+
 <p>She proposes the following values or criteria for measurement <span class="citation" data-cites="Candy2012">(<a href="#ref-Candy2012">2012</a>)</span>.</p>
 <dl>
 <dt>People</dt>
@@ -277,53 +265,44 @@ Artists, designers, participants, performers</span>;</p>
 </dd>
 </dl>
 </section>
+
 <section id="s:csf" class="level3">
 <h3><span class="header-section-number">7.2.5</span> CSF</h3>
-<p>Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems called <span class="citation" data-cites="Wiggins2006">(<a href="#ref-Wiggins2006">2006</a>)</span> which is largely based on Boden’s theory of creativity <span class="citation" data-cites="Boden2003">(<a href="#ref-Boden2003">2003</a>)</span>. The framework uses three criteria for measuring creativity: “relevance, acceptability and quality”. Graeme Ritchie then contributed to this framework with several revisions <span class="citation" data-cites="Ritchie2012">(<a href="#ref-Ritchie2012">2012</a>)</span>.</p>
-<p>The provides a formal description for Boden’s concepts of exploratory and transformational creativity. Wiggins’s ‘R–transformation’ and ‘T–transformation’ is akin to Boden’s ‘H-creativity’ and ‘P-creativity’ respectively. To enable the transition from exploratory to transformational creativity in his framework, Wiggins introduced meta-rules which allow us to redefine our conceptual space in a new way.</p>
-<p>It is important to note here that the exploratory search in an sense (as discussed in section [s:browsing]) should not be mistaken with the topic at hand. Exploratory search (for a creative solution to a problem) in the Wiggins/Ritchie/Boden sense happens one step before transformational search. This means that we want to end up with transformational tools from this framework (rather than exploratory ones) to use in our exploratory web search system.</p>
-<p>Ritchie described the as a set of initial concepts, which create ‘further concepts one after another, thus “exploring the space”’ but also argued that a search system would practically only go through a limited number of steps and therefore proposed some changes and additions to the framework <span class="citation" data-cites="Ritchie2012">(<a href="#ref-Ritchie2012">2012</a>)</span>. He summarised Wiggins’ original as consisting of the following basic elements:</p>
+<p>Geraint Wiggins introduced a formal notation and set of rules for the description, analysis and comparison of creative systems called Creative Search Framework (CSF)<span class="citation" data-cites="Wiggins2006">(<a href="#ref-Wiggins2006">2006</a>)</span> which is largely based on Boden’s theory of creativity <span class="citation" data-cites="Boden2003">(<a href="#ref-Boden2003">2003</a>)</span>. The framework uses three criteria for measuring creativity: “relevance, acceptability and quality”. Graeme Ritchie then contributed to this framework with several revisions <span class="citation" data-cites="Ritchie2012">(<a href="#ref-Ritchie2012">2012</a>)</span>.</p>
+<p>The CSF provides a formal description for Boden’s concepts of exploratory and transformational creativity. Wiggins’s ‘R–transformation’ and ‘T–transformation’ is akin to Boden’s ‘H-creativity’ and ‘P-creativity’ respectively. To enable the transition from exploratory to transformational creativity in his framework, Wiggins introduced meta-rules which allow us to redefine our conceptual space in a new way.</p>
+<p>It is important to note here that the exploratory search in an IR sense (as discussed in section <a href="technology.html#s:browsing">6.1.2</a>) should not be mistaken with the topic at hand. Exploratory search (for a creative solution to a problem) in the Wiggins/Ritchie/Boden sense happens one step before transformational search. This means that we want to end up with transformational tools from this framework (rather than exploratory ones) to use in our exploratory web search system.</p>
+<p>Ritchie described the CSF as a set of initial concepts, which create ‘further concepts one after another, thus “exploring the space”’ but also argued that a search system would practically only go through a limited number of steps and therefore proposed some changes and additions to the framework <span class="citation" data-cites="Ritchie2012">(<a href="#ref-Ritchie2012">2012</a>)</span>. He summarised Wiggins’ original CSF as consisting of the following basic elements:</p>
 <ol>
-<li><p>the universal set of concepts <span class="math inline"><em>U</em></span>,</p></li>
-<li><p>the language for expressing the relevant mappings <span class="math inline"><em>L</em></span>,</p></li>
-<li><p>a symbolic representation of the acceptability map <span class="math inline"><em>R</em></span>,</p></li>
-<li><p>a symbolic representation of the quality mapping <span class="math inline"><em>E</em></span>,</p></li>
-<li><p>a symbolic representation of the search mechanism <span class="math inline"><em>T</em></span>,</p></li>
-<li><p>an interpreter for expressions like 3 and 4 <span class="math inline">[ ]</span>, and</p></li>
-<li><p>an interpreter for expressions like 5 <span class="math inline">⟨ ,  ,  ⟩</span>.</p></li>
+<li><p>the universal set of concepts $U$,</p></li>
+<li><p>the language for expressing the relevant mappings $L$,</p></li>
+<li><p>a symbolic representation of the acceptability map $R$,</p></li>
+<li><p>a symbolic representation of the quality mapping $E$,</p></li>
+<li><p>a symbolic representation of the search mechanism $T$,</p></li>
+<li><p>an interpreter for expressions like 3 and 4 $[ \ ]$, and</p></li>
+<li><p>an interpreter for expressions like 5 $⟨ \ ,  \ , \  ⟩$.</p></li>
 </ol>
-<p>This set of elements is described as the ‘object-level’ (enabling exploratory search). The ‘meta-level’ (enabling transformational search) has the same seven elements with one exception; the universal set of concepts <span class="math inline"><em>U</em></span> contains concepts described at the object-level. This allows transformations to happen; concepts from the object-level are searched using criteria and mechanisms (elements 2 to 5) from the meta-level, giving rise to a new and different subset of concepts to those which an object-level search would have produced.</p>
-<p>A typical search process would go as follows. We start with an initial set of concepts <span class="math inline"><em>C</em></span> that represent our conceptual space and a query. We then explore <span class="math inline"><em>C</em></span> and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden’s sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden’s transformational search) with slightly different quality criteria.</p>
-<p>Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework as shown below. For example, a system not finding any valuable concepts would be expressed as <span class="math inline">[<em>E</em>](<em>U</em>)=0</span> (in Wiggins’ original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the (see chapter [s:pataasp]).</p>
-<dl>
+<p>This set of elements is described as the ‘object-level’ (enabling exploratory search). The ‘meta-level’ (enabling transformational search) has the same seven elements with one exception; the universal set of concepts $U$ contains concepts described at the object-level. This allows transformations to happen; concepts from the object-level are searched using criteria and mechanisms (elements 2 to 5) from the meta-level, giving rise to a new and different subset of concepts to those which an object-level search would have produced.</p>
+<p>A typical search process would go as follows. We start with an initial set of concepts $C$ that represent our conceptual space and a query. We then explore $C$ and find any elements that match the query with a certain quality (norm and value criteria) in a given amount of iterations. This produces the object-level set of exploratory concepts (in Boden’s sense) which we would call the traditional search results. To get creative results we would need to apply the meta-level search (Boden’s transformational search) with slightly different quality criteria.</p>
+<p>Wiggins explained various situations of creativity not taking place (uninspiration and aberration) in terms of his framework as shown below. For example, a system not finding any valuable concepts would be expressed as $[E](U)=0$ (in Wiggins’ original notation). While this approach seems counter-intuitive and impractical, it actually provides an interesting inspiration on how to formulate some of our pataphysical concepts in terms of the CSF (see chapter <a href="aspirations.html#s:pataasp">13.4</a>).</p>
+<dl class="defaultDL">
 <dt>Hopeless Uninspiration</dt>
-<dd><p><span class="math inline"><em>V</em><sub><em>α</em></sub>(<em>X</em>)=∅</span><br />
-valued set of concepts is empty</p>
-</dd>
+<dd>$V_α(X)=∅$ (valued set of concepts is empty)</dd>
 <dt>Conceptual Uninspiration</dt>
-<dd><p><span class="math inline"><em>V</em><sub><em>α</em></sub>(<em>N</em><sub><em>α</em></sub>(<em>X</em>)) = ∅</span><br />
-no accepted concepts are valuable</p>
-</dd>
+<dd>$V_α(N_α(X)) = ∅$ (no accepted concepts are valuable)</dd>
 <dt>Generative Uninspiration</dt>
-<dd><p><span class="math inline"><em>e</em><em>l</em><em>e</em><em>m</em><em>e</em><em>n</em><em>t</em><em>s</em>(<em>A</em>)=∅</span><br />
-set of reachable concepts is empty</p>
-</dd>
+<dd>$elements(A)=∅$ (set of reachable concepts is empty)</dd>
 <dt>Aberration</dt>
-<dd><p><span class="math inline"><em>B</em></span> is the set of reachable concepts not in <span class="math inline">[<em>N</em>]<sub><em>α</em></sub>(<em>X</em>)</span> and <span class="math inline"><em>B</em> ≠ ∅</span><br />
-search goes outside normal boundaries</p>
-</dd>
+<dd>$B$ is the set of reachable concepts not in $[N]_α(X)$ and $B ≠ ∅$ (search goes outside normal boundaries)</dd>
 <dt>Perfect Aberration</dt>
-<dd><p><span class="math inline"><em>V</em><sub><em>α</em></sub>(<em>B</em>)=<em>B</em></span></p>
-</dd>
+<dd>$V_α(B)=B$</dd>
 <dt>Productive Aberration</dt>
-<dd><p><span class="math inline"><em>V</em><sub><em>α</em></sub>(<em>B</em>)≠∅</span> and <span class="math inline"><em>V</em><sub><em>α</em></sub>(<em>B</em>)≠<em>B</em></span></p>
-</dd>
+<dd>$V_α(B)≠∅$ and $V_α(B)≠B$</dd>
 <dt>Pointless Aberration</dt>
-<dd><p><span class="math inline"><em>V</em><sub><em>α</em></sub>(<em>B</em>)=∅</span></p>
-</dd>
+<dd>$V_α(B)=∅$</dd>
 </dl>
-<p>The potential of these definitions of ‘uncreativity’ is further explored in chapter [ch:future].</p>
+<p>The potential of these definitions of ‘uncreativity’ is further explored in chapter <a href="aspirations.html">13</a>.</p>
 </section>
+
 <section id="s:indcrit" class="level3">
 <h3><span class="header-section-number">7.2.6</span> Individual Criteria</h3>
 <p>Many separate attempts exist at defining an evaluation model that focuses on a single criterion for creativity.</p>
@@ -344,9 +323,9 @@ search goes outside normal boundaries</p>
 <li><p><strong>Remediation</strong> is the transformation of a creative piece already rendered into another one, re-rendered, possibly into another media.</p></li>
 </ol>
 <p>França et al. propose a system called <em>Regent-Dependent Creativity</em> (RDC) to address the “lack of domain independent metrics” and which combines “the Bayesian Surprise and Synergy to measure novelty and value, respectively ” <span class="citation" data-cites="Franca2016">(<a href="#ref-Franca2016">2016</a>)</span>.</p>
-<p>This dependency relationship is defined by a pair <span class="math inline"><em>P</em>(<em>r</em>; <em>d</em>)</span> associated with a numeric value <span class="math inline"><em>v</em></span>, where <span class="math inline"><em>r</em></span> is the regent (a feature that contributes to describing an artifact), <span class="math inline"><em>d</em></span> is the dependent (it can change the state of an attribute), and <span class="math inline"><em>v</em></span> is a value that represents the intensity of a specific pair in different contexts.</p>
+<p>This dependency relationship is defined by a pair $P(r;d)$ associated with a numeric value $v$, where $r$ is the regent (a feature that contributes to describing an artifact), $d$ is the dependent (it can change the state of an attribute), and $v$ is a value that represents the intensity of a specific pair in different contexts.</p>
 <blockquote>
-<p>For example, an artifact car can be described by a pair <span class="math inline"><em>p</em><sub><em>i</em></sub>(<em>c</em><em>o</em><em>l</em><em>o</em><em>r</em>; <em>b</em><em>l</em><em>u</em><em>e</em>)</span>, where blue changes the state of the attribute color. The same artifact could also be described by another pair <span class="math inline"><em>p</em><sub><em>i</em></sub>(<em>d</em><em>r</em><em>i</em><em>v</em><em>e</em>; <em>h</em><em>o</em><em>m</em><em>e</em>)</span>, where the dependent home connects a target to the action drive.</p>
+<p>For example, an artifact car can be described by a pair $p_i(color;blue)$, where blue changes the state of the attribute color. The same artifact could also be described by another pair $p_i(drive; home)$, where the dependent home connects a target to the action drive.</p><span class="blockcitation" data-cites="Franca2016">(França et al. <a href="#ref-Franca2016">2016</a>)</span>
 </blockquote>
 <p>Velde et al. have broken down creativity into 5 main clusters <span class="citation" data-cites="Velde2015">(<a href="#ref-Velde2015">2015</a>)</span>:</p>
 <ul>

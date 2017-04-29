@@ -17,7 +17,7 @@ ivanhoe #314956 mainnav
 woody brown #5B4646 th
 dark knight #1F2D35 dt
 dark tan #956248 h3
-longitude #ABB4BE
+longitude #ABB4BE scroll-quotes
 enigma #4E496E h1
 picton blue #5F9CCB h2
 */
@@ -29,6 +29,26 @@ body {
   margin: 0;
   font-family: 'Roboto Slab', serif;
 }
+
+.hide {
+  display: none;
+}
+
+#title h1, #title h2, #title h3 {
+  margin: 0;
+}
+
+.titletext {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  text-align: center;
+}
+
+.titleimage {
+  width: 100%;
+}
+
 
 blockquote {
   font-family: 'Roboto', sans-serif;
@@ -116,6 +136,7 @@ pre.text {
   padding: 20px;
   background-color: #476775;
   color: #fff;
+  overflow: auto;
 }
 
 .partheading {
@@ -237,6 +258,10 @@ dd p, li p {
   margin-left: 20px;
 }
 
+.constheight dd {
+  line-height: 1.6em;
+}
+
 #TOC {
   margin-top: 1em;
 }
@@ -297,6 +322,31 @@ table.where {
   background-color: white;
 }
 
+.marquee {
+  background: #ABB4BE;
+  margin: 1em 0;
+  line-height: 3em;
+  height: 3em;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.marquee p {
+  position: absolute;
+  margin: 0;
+  text-align: center;
+  padding-left: 50%;
+  animation: marquee 180s linear infinite;
+}
+@keyframes marquee {
+  0%  {
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
 
 @media screen and (min-width: 480px) {
   body {
@@ -351,13 +401,48 @@ table.where {
 }
 
 @media screen and (min-width: 1000px) {
+  .hide {
+    display: block;
+  }
   .titleimg figcaption {
-    font-size: 2em;
+    font-size: 1.5em;
     opacity: 0;
   }
   .titleimg figcaption:hover {
     opacity: 1;
     transition: opacity 1s;
+  }
+  .titletext {
+    width: 49%;
+    box-sizing: border-box;
+    margin: 5px 0 0 0;
+    text-align: center;
+    display: inline-block;
+    /*vertical-align: top;*/
+  }
+  .titletext h1 {
+    height: 360px;
+    font-size: 4em;
+    line-height: 1.75em;
+  }
+  .titletext h2 {
+    padding-top: 25px;
+    height: 100px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .titletext h3 {
+    height: 60px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .titletext nav {
+    height: 30px;
+  }
+  .titleimage {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 
