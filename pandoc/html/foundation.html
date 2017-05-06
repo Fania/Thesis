@@ -372,19 +372,26 @@
 </dd>
 </dl>
 <p>The conceptual space for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> is ‘pataphysical searching’. The constraints of this conceptual space are the pataphysical rules that apply to the data. Those rules are used to explore, combine and transform this space; providing the flexibility and freedom to find interesting results. Pataphysical algorithms, or ‘patalgorithms’ for short, implement such rules.</p>
-<p>‘Pataphysicalisation’ of data is the process of applying such patalgorithms in order to produce creative search results. This pataphysicalisation process forms a central component of the system and influences all areas of the search tool. Figure [fig:patarc] roughly demonstrates how this might work. The index is created based on the corpus, the user’s query is pataphysicalised (represented here by a spiral) and the patadata is then passed on to the index to retrieve results which are then sent back to the user.</p>
+<p>‘Pataphysicalisation’ of data is the process of applying such patalgorithms in order to produce creative search results. This pataphysicalisation process forms a central component of the system and influences all areas of the search tool. Figure <a href="#fig:8.2">8.2</a> roughly demonstrates how this might work. The index is created based on the corpus, the user’s query is pataphysicalised (represented here by a spiral) and the patadata is then passed on to the index to retrieve results which are then sent back to the user.</p>
 
-<p>; (corpus) <span>Corpus</span>; (index) <span>Index</span>; (pata) ; (user) <span>User</span>; (corpus) – node [left] <span>setup</span> (index); (user) – node [right] <span>query</span> (pata); (pata) – node [below] <span>patadata</span> (index); (index) – node [above = 10pt] <span>results</span> (user);</p>
+<figure id="fig:8.2">
+<img src="../images/fig82.png" alt="Pataphysical system architecture">
+<figcaption>Figure 8.2 Pataphysical system architecture</figcaption>
+</figure>
+
+<img class="triplespiral" src="../images/triplespiral.png">
 
 <p>In theory the concept of patadata is derived from the idea that pataphysics is to metaphysics what metaphysics is to physics (or physics <span class="math inline">→</span> metaphysics <span class="math inline">→</span> pataphysics) and therefore patadata is to metadata what metadata is to data, that is:</p>
 <p>Data <span class="math inline">→</span> metadata <span class="math inline">→</span> patadata</p>
 <blockquote>
-<p>Arguably, few other textual forms will have greater impact on the way we read, receive, search, access, use and engage with the primary materials of humanities studies than the metadata structures that organize and present that knowledge in digital form.</p>
+<p>Arguably, few other textual forms will have greater impact on the way we read, receive, search, access, use and engage with the primary materials of humanities studies than the metadata structures that organize and present that knowledge in digital form.</p><span class="blockcitation" data-cites="Drucker2009">(Drucker <a href="#ref-Drucker2009">2009</a>)</span>
 </blockquote>
 <p>Patadata will allow us to engage with digital knowledge in a more creative way. If metadata helps us organise information semantically then patadata is for organising information pataphysically. If metadata is objective then patadata is subjective.</p>
 <p>Drucker points out that “many information structures have graphical analogies and can be understood as diagrams that organise the relations of elements within the whole” <span class="citation" data-cites="Drucker2009">(<a href="#ref-Drucker2009">2009</a>)</span>. So maybe patadata could allow us to represent these graphical analogies. An alphabetical list is a typical model for representing text data sets for example. Or an otherwise ranked list, a tree structure, a matrix, a one-to-many relationship, etc. A ranked list is probably not the best way to represent search results though. Ranking itself seems unpataphysical. It contradicts the underlying philosophy, although we can argue that this contradiction in turn makes it pataphysical. Maybe this dilemma can be solved simply by adopting another type of graphical analogy to structure the results such as a tree structure instead of a ranked list.</p>
 <p>Example: Let’s say our patadata is represented by a list of keywords that each stands for a pataphysicalisation of the original query term. This list is added to each item in the index.</p>
-<p><code>Query    = </code>‘<code>Tree</code>’<br />
+
+<p>
+<code>Query    = </code>‘<code>Tree</code>’<br />
 <code>Patadata = [Tree (equivalent),  Car (opposite), Paper (antinomy),</code><br />
 <code>            Narwhal (anomaly), Book (syzygy), </code><br />
 <code>            Venus Fly Trap (clinamen)]</code><br />
@@ -392,11 +399,15 @@
 <code>Query    = </code>‘<code>Sun God Ra</code>’<br />
 <code>Patadata = [Sun God Ra (equivalent), Slave (opposite), </code><br />
 <code>            Holiday (antinomy), Blue Balloon (anomaly), </code><br />
-<code>            Pyramid (syzygy), Sphinx (clinamen)]</code></p>
-<p>In traditional web search, ranking signals contribute to the improvement of the ranking process (see chapter [s:ranking]).</p>
-<p>Ranking can be done at different stages of the search process. Depending on how the index is formatted and what information can be pre-computed at that stage, a ranking algorithm evaluates every web page for relevance and returns them in order. There exist lots of different approaches on ranking, including PageRank <span class="citation" data-cites="Brin1998">(Page et al. <a href="#ref-Brin1998">1999</a>)</span> and HITS <span class="citation" data-cites="Kleinberg1999">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>)</span>, which both analyse the link structure of the . They analyse the incoming and outgoing links on pages. PageRank for example assigns a numerical weight to each document, where each link counts as a ‘vote of support’ in a sense. It is executed at indexing time, so the ranks are stored with each page directly in the index. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and pages with many outgoing links are called hubs.</p>
+<code>            Pyramid (syzygy), Sphinx (clinamen)]</code>
+</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>In traditional web search, ranking signals contribute to the improvement of the ranking process (see chapter <a href="technology.html#s:ranking">6.1.3</a>).</p>
+<p>Ranking can be done at different stages of the search process. Depending on how the index is formatted and what information can be pre-computed at that stage, a ranking algorithm evaluates every web page for relevance and returns them in order. There exist lots of different approaches on ranking, including PageRank <span class="citation" data-cites="Brin1998">(Page et al. <a href="#ref-Brin1998">1999</a>)</span> and HITS <span class="citation" data-cites="Kleinberg1999">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>)</span>, which both analyse the link structure of the WWW. They analyse the incoming and outgoing links on pages. PageRank for example assigns a numerical weight to each document, where each link counts as a ‘vote of support’ in a sense. It is executed at indexing time, so the ranks are stored with each page directly in the index. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called authorities and pages with many outgoing links are called hubs.</p>
 <p>Given a query term <span class="math inline"><em>q</em></span>, what is considered a relevant match though? Do we simply return a list of web pages where <span class="math inline"><em>q</em></span> appears in the heading of each page? It is obviously not that easy. Several ranking signals are combined together; Google states that they use over signals including PageRank and they personalise results using signals such as the web history and location <span class="citation" data-cites="Google2012">(“Google Ranking” <a href="#ref-Google2012">2012</a>)</span>.</p>
-<p>The way ranking (if it can be called that) works in <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> is described in chapter [ch:implementation].</p>
+<p>The way ranking (if it can be called that) works in <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> is described in chapter <a href="implementation.html">10</a>.</p>
 </section>
 </section>
 </section>
