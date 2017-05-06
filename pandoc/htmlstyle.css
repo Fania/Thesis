@@ -262,6 +262,41 @@ dd p, li p {
   line-height: 1.6em;
 }
 
+.sourceCode pre code,
+.sourceCode pre .line-number {
+  display: block;
+}
+.sourceCode pre .line-number {
+  font-size: 1em;
+  line-height: 1.65em;
+  float: left;
+  margin: 0 1em 0 -1em;
+  border-right: 1px solid;
+  text-align: right;
+}
+.sourceCode pre .line-number span {
+  display: block;
+  padding: 0 .5em 0 1em;
+}
+.sourceCode pre .cl {
+  display: block;
+  clear: both;
+}
+.sourceCode figure pre {
+  text-align: left;
+  background: #ABB4BE;
+  padding: 10px;
+}
+.sourceCode figure figcaption {
+  text-align: center;
+}
+pre.text {
+  padding: 10px 20px;
+}
+pre.text span.line-number {
+  opacity: 0;
+}
+
 #TOC {
   margin-top: 1em;
 }
@@ -346,6 +381,10 @@ table.where {
   100%{
     transform: translateX(-100%);
   }
+}
+
+#bibliography {
+  margin-top: 4em;
 }
 
 @media screen and (min-width: 480px) {
@@ -457,3 +496,10 @@ figure[id="eq:6.7"] img {width: 700px; max-width: 2000px;}
 figure[id="fig:6.7"] img {width: 400px;}
 figure[id="fig:8.1"] img {width: 150px;}
 figure[id="fig:8.2"] img {width: 400px;}
+figure[id="fig:9.1"] img {width: 150px;}
+figure[id="fig:9.2"] img {width: 400px;}
+figure[id="fig:9.3"] img {width: 400px;}
+figure[id="fig:9.4"] img {width: 450px;}
+figure[id="fig:10.1"] img {width: 600px; max-width: 2000px;}
+figure[id="fig:10.2"] {width: 200px;float: right;margin: 0 0 0 10px;}
+figure[id="fig:10.3"] img {width: 500px;}

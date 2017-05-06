@@ -24,6 +24,19 @@
 
 <span class="blockcitation" data-cites="Hendler2013">(Hendler and Hugill <a href="#ref-Hendler2013">2013</a>)</span>
 
+<div class="sourceCode">
+<figure id="code:10.1">
+<pre class="sourceCode python">
+<code class="sourceCode python">library <span class="op">=</span> PlaintextCorpusReader(corpus_root, <span class="st">&#39;.*\.txt&#39;</span>)
+l_00 <span class="op">=</span> library.words(<span class="st">&#39;00.faustroll.txt&#39;</span>)
+l_01 <span class="op">=</span> library.words(<span class="st">&#39;01.poe1.txt&#39;</span>)
+...
+l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&#39;</span>)
+</code></pre>
+<figcaption>Code 10.1 – Adding text files to the corpus library</figcaption>
+</figure>
+</div>
+
 ```
 pandoc title.tex -f latex -t html5 -o title.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav"
 '''
@@ -71,6 +84,16 @@ pandoc evaluation.tex -f latex -t html5 -o evaluation.html --toc --toc-depth=3 -
 ```
 pandoc foundation.tex -f latex -t html5 -o foundation.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=7 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''
+
+```
+pandoc interpretation.tex -f latex -t html5 -o interpretation.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=8 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+```
+pandoc implementation.tex -f latex -t html5 -o implementation.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=9 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+
 
 
 

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Interpretation</title>
+  <link href="../htmlstyle.css" rel="stylesheet">
+</head>
+<body>
+<nav class="mainnav">
+  <a class="left" href="foundation.html">Prev</a>
+  <a class="centre" href="contents.html">Contents</a>
+  <a class="right" href="part4.html">Next</a>
+</nav>
+
+<section id="ch:interpretation" class="level1">
+<h1><span class="header-section-number">9</span> Interpretation</h1>
+
+<nav id="TOC">
+<ul>
+<li><a href="#ch:interpretation"><span class="toc-section-number">9</span> Interpretation</a><ul>
+<li><a href="#problems"><span class="toc-section-number">9.1</span> Problems</a><ul>
+<li><a href="#ss:anthropomorphism"><span class="toc-section-number">9.1.1</span> Anthropomorphism</a></li>
+<li><a href="#s:programmer"><span class="toc-section-number">9.1.2</span> The Programmer</a></li>
+<li><a href="#s:mimicry"><span class="toc-section-number">9.1.3</span> Mimicry</a></li>
+<li><a href="#s:babying"><span class="toc-section-number">9.1.4</span> Infantalisation</a></li>
+<li><a href="#undefinitions"><span class="toc-section-number">9.1.5</span> Undefinitions</a></li>
+</ul></li>
+<li><a href="#s:creatint"><span class="toc-section-number">9.2</span> Creative Interpretation</a><ul>
+<li><a href="#s:sec"><span class="toc-section-number">9.2.1</span> Subjective Evaluation Criteria</a></li>
+<li><a href="#s:oec"><span class="toc-section-number">9.2.2</span> Objective Evaluation Constraints</a></li>
+<li><a href="#s:framework"><span class="toc-section-number">9.2.3</span> Combined Framework</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#bibliography">References</a></li>
+</ul>
+</nav>
+
+<section class="poem">
+<code>My explanation however satisfied him,</code><br />
+<code>mistaking them for land,</code><br />
+<code>for understanding the syntax and construction of old boots,</code><br />
+<code>furnisheth the Fancy wherewith to make a representation.</code><br />
+<br />
+<code>And spin thy future with a whiter clue,</code><br />
+<code>the performance with the cord recommenced,</code><br />
+<code>I will now give an account of our interview,</code><br />
+<code>this apparatus will require some little explanation.</code><br />
+<br />
+<code>There could be no mistaking it,</code><br />
+<code>a certain twist in the formation of,</code><br />
+<code>raft is as impossible of construction as a vessel.</code><br />
+<br />
+<code>Arrests were made which promised elucidation,</code><br />
+<code>besides his version of these two already published,</code><br />
+<code>owing to some misunderstanding.</code>
+</section>
+
+<blockquote>
+<p>Interpretation is rethought through the encounter with computational methods and […] computational methods are rethought through the encounter with humanistic modes of knowing.</p><span class="blockcitation" data-cites="Burdick2012">(Burdick et al.  <a href="#ref-Burdick2012">2012</a>)</span>
+</blockquote>
+<p>Using algorithms to generate creative work is a well-established transdisciplinary practice that spans several fields. Accessible and popular coding tools such as Processing<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and openFrameworks<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, as well as the rise of so-called ‘hack spaces’ have significantly contributed to increased activity in this field. However, beyond art-technology curation and historical contextualisation, evaluation of the resulting artefacts is in its infancy, although several general models of creativity—and its evaluation—exist.</p>
+<p>There is a perceived distinction between human and computer creativity, whereas they are effectively the same thing. Computers are made and programmed by people, so it makes sense to measure the creativity of the human influence behind the machine, rather than viewing computers as truly autonomous entities.</p>
+<p>Algorithmic Meta-Creativity (AMC) is neither machine creativity nor human creativity—it is both. By acknowledging the undeniable link between computer creativity and its human influence (the machine is just a tool for the human) we enter a new realm of thought. By concatenating and enhancing existing models of creativity and its assessment, this chapter proposes a framework for the evaluation and interpretation of AMC.</p>
+<p>Although using computers to generate creative work has its roots in the 1950s <span class="citation" data-cites="Candy2011 Copeland2016">(Candy and Edmonds <a href="#ref-Candy2011">2011</a>; Copeland and Long <a href="#ref-Copeland2016">2016</a>)</span>, John Maeda’s Design By Numbers <span class="citation" data-cites="Maeda2001">(<a href="#ref-Maeda2001">2001</a>)</span> and from around 2010 a slew of similar initiatives followed Processing’s lead. However, due in part to the niche position of artists working with technology, and also because such activity was overlooked or ignored until relatively recently by arts bodies and critics, formal evaluation of the creativity in such work lagged behind.</p>
+<p>In this context humans simply use computers as tools for their creativity—no matter how autonomous the machine output may appear, or how far it travels from the original intentions of the programmer, its origins nevertheless reside in the humanly-authored code that produces the output.</p>
+<p>This is overlooked in anthropomorphic approaches that regard computers as being capable of creativity in their own right. Computer output cannot be conceptually separated from the craft/skill/intention of the programmer, even when the results are unexpected or accidental. The illusion of creativity can be produced by introducing randomness, serendipity, etc. but this is not the same as the intuitive decision-making that drives human creativity.</p>
+<p>Hypothetical ‘zombies’ (popularised by philosopher David Chalmers <span class="citation" data-cites="Chalmers1996">(<a href="#ref-Chalmers1996">1996</a>)</span>) are entities that appear identical to humans in every way but lack conscious experience. Throughout the following chapters, this term is borrowed and applied to computers which appear creative but lack real autonomous intent.</p>
+
+<section id="problems" class="level2">
+<h2><span class="header-section-number">9.1</span> Problems</h2>
+<p>Creativity and the subjective properties associated with it, lack a universally accepted definition as I have shown in chapter <a href="creativity.html#ch:creativity">5</a>.</p>
+<p>Perhaps the problem starts in the etymology of the word ‘creativity’. Still and d’Inverno discuss the two roots of the word: “one originating in the classical Latin use of the word ‘creare’ as a natural process of bringing about change, the other in Jerome’s later use in the Vulgate bible, referring to the Christian God’s creation of the world from nothing but ideas.”<span class="citation" data-cites="Still2016">(<a href="#ref-Still2016">2016</a>)</span>.</p>
+<p>As a human quality it has definitions that don’t necessarily lend themselves to be applied to computers. However, there are several important theories and evaluation frameworks concerning human and computer creativity, and these are the basis for this chapter. Some aspects, like ‘novelty’ and ‘value’, recur in many models of creativity but some, like ‘relevance’ and ‘variety’, rarely appear; while other terms are problematic when it comes to computing.</p>
+<p>Computer systems are generally evaluated against functional requirements and performance specifications, but creativity should be seen as a continuum, as there is no clear cut-off point or Boolean answer to say precisely when a person or piece of software has become creative or not.</p>
+<blockquote>
+<p>The expression of our language systems in computer code confers no semantic understanding autonomously on the computer system. The computer system only acts as a tool for transferring symbols and communicating meaning between humans.</p><span class="blockcitation" data-cites="Mcbride2012">(McBride <a href="#ref-Mcbride2012">2012</a>)</span>
+</blockquote>
+<p>True AI and true artificial creativity are equally elusive. For a computer to become truly intelligent and creative, it would need to break out of the programming procedures by which it operates. Yet it is bound to follow rules, no matter how emergent the outcome. The paradox is that it needs to recognise its constraints in order to break free from them. Yet, programmatically defining yet more rules to allow that to happen—even when those rules enable machine learning—is tautological (and pataphysical)!</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>Some of the key ideas introduced in the <a href="evaluation.html">Evaluation</a> chapter are listed here as a reminder:</p>
+<ul>
+<li><p>Output minus input (ignoring the inspiring set/training data)</p></li>
+<li><p>Creative Tripod (mimicking skill, appreciation, and imagination)</p></li>
+<li><p>Measurement of specific criteria (novelty, usefulness, quality)</p></li>
+<li><p>Measuring product, process or both</p></li>
+<li><p>Ontology of Creativity (14 key components)</p></li>
+<li><p>SPECS (define creativity, define standards, test standards against definition)</p></li>
+<li><p>MMCE (people, process, product, context)</p></li>
+<li><p>CSF (formal notation based on Boden)</p></li>
+</ul>
+
+<section id="ss:anthropomorphism" class="level3">
+<h3><span class="header-section-number">9.1.1</span> Anthropomorphism</h3>
+<blockquote>
+<p>The uncodifiable must be reduced to the codable in the robot. In reducing a complex moral decision (tacit, intuitive, deriving knowledge from maturity) to the execution of a set of coded instructions, we are throwing away vast stretches of knowledge, socialisation and learning not only built up in the individual, but also in the community and the history of that community, and replacing it with some na<span>ï</span>ve “yes” or “no” decisions.</p><span class="blockcitation" data-cites="Mcbride2012">(McBride <a href="#ref-Mcbride2012">2012</a>)</span>
+</blockquote>
+<p>McBride’s observation is echoed by Indurkhya, who argues that because computers don’t make decisions based on personal or cultural concepts (even when these are included in code), they are more likely to make connections that humans will perceive as ‘creative leaps’ <span class="citation" data-cites="Indurkhya1997">(<a href="#ref-Indurkhya1997">1997</a>)</span>. These leaps <em>appear</em> creative only because we are anthropomorphising not only the output, but in some cases even the <em>intent</em> behind it, as if this originated in the computer itself rather than as an output from algorithmic processes. This phenomenon is most apparent in the ‘uncanny valley’ created by those areas of robotics that seek to create human companions, or where the intent is to imbue the computer with a personality. This is even the case for simple web interfaces, let alone computers that might mimic human creativity:</p>
+<blockquote>
+<p>Automatic, mindless anthropomorphism is likely to be activated when anthropomorphic cues are present on the interface. […] it is noteworthy that anthropomorphic cues do not have to be fancy in order to elicit human-like attributions.</p><span class="blockcitation" data-cites="Kim2012">(Kim and Sundar <a href="#ref-Kim2012">2012</a>)</span>
+</blockquote>
+<p>The phenomenon of ascribing human qualities to non-human artefacts and machines depends on the prior associations (concept networks) humans have with certain activities, including creativity. It leads to metaphorical statements such as “this interface is friendly”, “a bug snuck into my code” or “the computer is being creative”, and appears in media article headlines such as ‘Patrick Tressets robots draw faces and doodle when bored’ <span class="citation" data-cites="Wired2011">(Brown <a href="#ref-Wired2011">2011</a>)</span>, as if there were conscious intent behind the code generating such activity in Tresset’s sketching bot <em>Paul</em>.</p>
+<p>Perhaps one of the earliest pieces of evidence for computer anthropomorphisation stems from the Copeland-Long restoration of some computer music, recorded at Alan Turing’s laboratory in Manchester in 1951 <span class="citation" data-cites="Copeland2016">(Copeland and Long <a href="#ref-Copeland2016">2016</a>)</span>. In the recording, a female voice is heard saying phrases like: “he resented it”, “he is not enjoying this” and “the machine’s obviously not in the mood” (creating a pun—as the machine is trying to play Glen Miller’s ‘In the mood’) referring to the computer in an anthropomorphic ‘he’.</p>
+</section>
+
+<section id="s:programmer" class="level3">
+<h3><span class="header-section-number">9.1.2</span> The Programmer</h3>
+<p>This tendency of anthropomorphising computers has implications for the aimed-for objectivity when evaluating certain creative computing projects, one the most well-established being Harold Cohen’s <em>AARON</em>, artist-authored software that produces an endless output of images in his own unique style. While documenting the process of coding his system, Cohen asked:</p>
+<blockquote>
+<p>How far could I justify the claim that my computer program—or any other computer program—is, in fact, creative? I’d try to address those questions if I knew what the word “creative” meant: or if I thought I knew what anyone else meant by it. […] “Creative” is a word I do my very best never to use if it can be avoided. […] AARON is an entity, not a person; and its unmistakable artistic style is a product of its entitality, if I may coin a term, not its personality.</p><span class="blockcitation" data-cites="Cohen1999">(H. Cohen <a href="#ref-Cohen1999">1999</a>)</span>
+</blockquote>
+<p>He goes on to outline four elements of <em>behaviour X</em> (his placeholder for creativity): (1) ‘emergence’ produced from the complexity of a computer program, (2) ‘awareness’ of what has emerged, (3) ‘willingness’ to act upon the implications of what has emerged, and (4) ‘knowledge’ of the kind manifest in expert systems. He identifies three of these properties as programmable (within limits), but “as to the second element, the programs awareness of properties that emerge, unbidden and unanticipated, from its actions…well, thats a problem.”, and concludes that “it may be true that the program can be written to act upon anything the programmer wants, but surely thats not the same as the individual human acting upon what he wants himself. Isnt free will of the essence when were talking about the appearance of behaviour X in people?” <span class="citation" data-cites="Cohen1999">(Cohen <a href="#ref-Cohen1999">1999</a>)</span>. In other words, a decision tree in computing is not the same as a human decision-making process. As for whether his life’s work is autonomously creative:</p>
+<blockquote>
+<p>I don’t regard AARON as being creative; and I won’t, until I see the program doing things it couldn’t have done as a direct result of what I had put into it. That isn’t currently possible, and I am unable to offer myself any assurances that it will be possible in the future. On the other hand I don’t think I’ve said anything to indicate definitively that it isn’t possible.</p><span class="blockcitation" data-cites="Cohen1999">(H. Cohen <a href="#ref-Cohen1999">1999</a>)</span>
+</blockquote>
+<p>In the same manner as in the field of computer ethics, i.e. “the ethics of the robot must be the ethics of the maker” <span class="citation" data-cites="Mcbride2012">(McBride <a href="#ref-Mcbride2012">2012</a>)</span>, the creative computer must ultimately be a product of the creativity of the programmer. To hijack Barthes’ conclusion in <em>The Death of the Author</em>: <em>the birth of the truly creative computer must be ransomed by the death of the programmer</em> <span class="citation" data-cites="Barthes1967">(adapted from Barthes <a href="#ref-Barthes1967">1967</a>)</span>—in other words, a truly creative computer must be able to act without human input, yet any computer process presumes a significant amount of human input in order to produce such so-called autonomous behaviour, so the question is whether that behaviour can ever be regarded as truly autonomous or creative—no matter how independent it appears to be.</p>
+<p>Initiatives like the Human Brain project suggest that we are far from the capacity to reproduce the level of operations necessary to even mimic a human brain “the 1 PFlop machine at the J<span>ü</span>lich Supercomputing Centre could simulate up to 100 million neurons—roughly the number found in the mouse brain.” <span class="citation" data-cites="Walker2012">(Walker <a href="#ref-Walker2012">2012</a>)</span>. And even if it were possible today to scale this up to the human brain, the end-result might still turn out to be a <em>zombie</em>. See chapter <a href="analysis.html#s:braincomp">12.3.3</a>.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>Interestingly, Mumford and Ventura argue that the idea that a “computer program can only perform tasks which the programmer knows how to perform” is a common misconception among non-specialists which “leads to a belief that if an artificial system exhibits creative behavior, it only does so because it is leveraging the programmer’s creativity” <span class="citation" data-cites="Mumford2015">(<a href="#ref-Mumford2015">2015</a>)</span>.</p>
+<blockquote>
+<p>Because computers are currently perceived as incapable of autonomy and thought, as programmers, we will be credited for and be held accountable for what our programs do.</p><span class="blockcitation" data-cites="Mumford2015">(Mumford and Ventura <a href="#ref-Mumford2015">2015</a>)</span>
+</blockquote>
+<p>They question whether it is possible to “possess all of the creative attributes typically outlined in our field (appreciation, skill, novelty, typicality, intentionality, learning, individual style, curiosity, accountability), and yet still not be creative” and also whether a machine can “be creative without being intelligent” <span class="citation" data-cites="Mumford2015">(Mumford and Ventura <a href="#ref-Mumford2015">2015</a>)</span>.</p>
+<blockquote>
+<p>Is general or strong artificial intelligence necessary before people become comfortable with ascribing creativity to a machine?</p><span class="blockcitation" data-cites="Mumford2015">(Mumford and Ventura <a href="#ref-Mumford2015">2015</a>)</span>
+</blockquote>
+<p>Oliver Bown adds to Mumford and Ventura’s point above, stating that “it is common to make the simplifying assumption that the most direct contributor to an artefact is that artefact’s sole author”, i.e. that the programmer is the only creative agent and does not include the program in itself as a contributor <span class="citation" data-cites="Bown2015">(<a href="#ref-Bown2015">2015</a>)</span>.</p>
+<p>However, of course, he adds that “all human creativity occurs in the context of networks of mutual influence, including a cumulative pool of knowledge” <span class="citation" data-cites="Bown2015">(Bown <a href="#ref-Bown2015">2015</a>)</span>. Bown goes on to propose a better formalisation of ‘creative authorship’ “such that for any artefact, a set of agents could be precisely attributed with their relative contributions to the existence of that entity” <span class="citation" data-cites="Bown2015">(<a href="#ref-Bown2015">2015</a>)</span>.</p>
+</section>
+
+<section id="s:mimicry" class="level3">
+<h3><span class="header-section-number">9.1.3</span> Mimicry</h3>
+<p>Current evaluation methodologies in creative computing disciplines have concentrated on only a handful of the facets raised in the <a href="eva;uation.html">Evaluation</a> chapter, for example studying only the creative end-product itself (out of context), only judging it by its objective novelty, assigning an arbitrary thresholds, etc. This also includes the assumption that machines ‘mimic’ humans and are therefore not judged at their full potential. For example we generally do not take into account the differences between humans and machines or, more precisely, the differences between the human brain and computer processors. In fact, it could be said that we are in danger of limiting computers in their vast potential so that they <em>appear</em> more human.</p>
+<p>True AI and artificial creativity are equally elusive. Just as the Turing Test <span class="citation" data-cites="Turing1950">(Turing <a href="#ref-Turing1950">1950</a>)</span> is flawed (because it is designed to fool humans into thinking a machine is a person, but only through mimicry), the view that something <em>is</em> creative because it <em>appears</em> creative is similarly flawed. This is the premise behind by Searle’s ‘Chinese room’ argument <span class="citation" data-cites="Searle1980">(<a href="#ref-Searle1980">1980</a>)</span> where an individual with a map of English to Chinese symbols can appear to someone outside the room to ‘know’ Chinese. By inference, just because a computer program appears to produce a creative output, this doesn’t mean that it is inherently creative—it just follows the rules that produce output from a human creation in an automated manner. To take this further, we could even state that machines programmed to mimic human creativity and produce artefacts that appear creative are—in the philosophical manner defined by Chalmers—<em>zombies</em> <span class="citation" data-cites="Chalmers1996">(<a href="#ref-Chalmers1996">1996</a>)</span>. Similarly Douglas Hofstadter argues that minds cannot be reduced to their physical building blocks (or their most basic rules) in his <em>Conversation with Einstein’s Brain</em> <span class="citation" data-cites="Hofstadter1981">(<a href="#ref-Hofstadter1981">1981</a>)</span>. This school of thought is employed to demonstrate that <em>mind</em> is not just physical <em>brain</em>. It is introduced here to argue that computers do not <em>consciously create</em> as do humans, because they are not conscious.</p>
+</section>
+
+<section id="s:babying" class="level3">
+<h3><span class="header-section-number">9.1.4</span> Infantalisation</h3>
+<p>Creativity is a transdisciplinary activity and is apparent in many diverse fields, yet it is often studied from within a single discipline within which other perspectives and theories can be overlooked. Therefore, creative evaluation is subjective, and involves an emotional component related to the satisfaction of a set of judgments. These judgments are mutable when subjected to personal, social and cultural influence, so we can only try to evaluate a creative activity objectively via approximations.</p>
+<p>Dijkstra pointed out that computer science is infantalised <span class="citation" data-cites="Dijkstra1988">(<a href="#ref-Dijkstra1988">1988</a>)</span><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> and there is a danger that the same thing is happening to creativity research. In other words, it may be an over-simplification to reduce creativity down to a four step process, or a product that is novel, valuable and of high quality. A framework that makes the evaluation of creativity appear to be a matter of checking boxes is surely missing the subjective nature of creativity. The real picture is far more interwoven and—although creativity may spring from a finite set of causes—these can interact in a complex manner that cannot be assessed so neatly.</p>
+<p>Creativity is a complex human phenomenon that is:</p>
+<ul>
+<li><p>not just thinking outside the box</p></li>
+<li><p>not just divergent thinking</p></li>
+<li><p>not just about innovation, usefulness or quality</p></li>
+<li><p>not just a ‘Eureka’ moment</p></li>
+<li><p>not just a brainstorming technique</p></li>
+<li><p>not just for geniuses</p></li>
+<li><p>not just studied in psychology</p></li>
+</ul>
+<p>This is also apparent in various studies that evaluate only one single aspect of creativity as a measure of overall creativity. Examples are summarising creativity as ‘unexpectedness’ <span class="citation" data-cites="Kazjon2014">(Kazjon and Maher <a href="#ref-Kazjon2014">2013</a>)</span> or ‘surprise’ <span class="citation" data-cites="Maher2013">(M. L. Maher, Brady, and Fisher <a href="#ref-Maher2013">2013</a>)</span>.</p>
+</section>
+
+<section id="undefinitions" class="level3">
+<h3><span class="header-section-number">9.1.5</span> Undefinitions</h3>
+<p>Jordanous found that “evaluation of computational creativity is not being performed in a systematic or standard way” <span class="citation" data-cites="Jordanous2011">(<a href="#ref-Jordanous2011">2011</a>)</span>, which further confuses the problem of objective evaluation. To remedy this she proposed ‘Standardised Procedure for Evaluating Creative Systems (SPECS)’ (see chapter <a href="evaluation.html#ch:evaluation">7</a> for more details) <span class="citation" data-cites="Jordanous2012a">(<a href="#ref-Jordanous2012a">2012</a>)</span>:</p>
+<ol>
+<li><p>Identify a definition of creativity that your system should satisfy to be considered creative.</p></li>
+<li><p>Using Step 1, clearly state what standards you use to evaluate the creativity of your system.</p></li>
+<li><p>Test your creative system against the standards stated in Step 2 and report the results.</p></li>
+</ol>
+<p>The SPECS model essentially means that we cannot evaluate a creative computer system objectively, unless steps 1 and 2 are predefined and publically available for external assessors to execute step 3. Creative evaluation can therefore be seen as a move from subjectivity to objectivity, i.e. defining subjective criteria for objectively evaluating a product in terms of the initial criteria.</p>
+<blockquote>
+<p>For transparent and repeatable evaluative practice, it is necessary to state clearly what standards are used for evaluation, both for appropriate evaluation of a single system and for comparison of multiple systems using common criteria.</p><span class="blockcitation" data-cites="Jordanous2012a">(Jordanous <a href="#ref-Jordanous2012a">2012</a>)</span>
+</blockquote>
+<p>We need a “clearer definition of creativity” <span class="citation" data-cites="Mayer1999">(Mayer <a href="#ref-Mayer1999">1999</a>)</span>, with “criteria and measures [for evaluation] that are situated and domain specific” <span class="citation" data-cites="Candy2012">(Candy <a href="#ref-Candy2012">2012</a>)</span>.</p>
+<blockquote>
+<p>[A] person’s creativity can only be assessed indirectly (for example with self report questionnaires or official external recognition) but it cannot be measured.</p><span class="blockcitation" data-cites="Piffer2012">(Piffer <a href="#ref-Piffer2012">2012</a>)</span>
+</blockquote>
+<p>Since many problems with evaluating creativity in computers (and humans alike) seem to stem from a lack of a clear relevant definition it seems logical to try and remedy this first and foremost.</p>
+</section>
+</section>
+
+<section id="s:creatint" class="level2">
+<h2><span class="header-section-number">9.2</span> Creative Interpretation</h2>
+<p>All of the theories of creativity and its evaluation mentioned above have value, but each alone may be incomplete or contain overlaps. There is a misconception that creativity can be measured objectively and quantifiably, but given the issues discussed above, it is unlikely that any system will yield truly accurate measurements in practice, even if such accuracy were possible. As Schmidhuber suggests—“any objective theory of what is good art must take the subjective observer as a parameter” <span class="citation" data-cites="Schmidhuber2006">(<a href="#ref-Schmidhuber2006">2006</a>)</span>—evaluation of creativity always happens from a subjective standpoint, originating in either the individual, or in the enveloping culture of which they are part.</p>
+<p>This thesis therefore proposes two facets of a new approach that aims to obtain a more honest measure of the subjective judgments implied when evaluating creativity:</p>
+<ol>
+<li><p>a set of scales that can be used to approximate a ‘rating’ for the creative value of an artefact,</p></li>
+<li><p>a set of criteria to be considered using the scales above,</p></li>
+<li><p>a combined framework for evaluation.</p></li>
+</ol>
+
+<section id="s:sec" class="level3">
+<h3><span class="header-section-number">9.2.1</span> Subjective Evaluation Criteria</h3>
+<p>Following Jordanous’ SPECS model, we need to state our own definition of creativity in regards to the computer system being evaluated. An overview of recurring keywords in existing approaches suggests the following distillation of seven groups:</p>
+<dl>
+<dt>Novelty</dt>
+<dd><p>originality, newness, variety, typicality, imagination, archetype, surprise</p>
+</dd>
+<dt>Value</dt>
+<dd><p>usefulness, appropriateness, appreciation, relevance, impact, influence</p>
+</dd>
+<dt>Quality</dt>
+<dd><p>skill, efficiency, competence, intellect, acceptability, complexity</p>
+</dd>
+<dt>Purpose</dt>
+<dd><p>intention, communication, evaluation, aim, independence</p>
+</dd>
+<dt>Spatial</dt>
+<dd><p>context, environment, press</p>
+</dd>
+<dt>Temporal</dt>
+<dd><p>persistence, results, development, progression, spontaneity</p>
+</dd>
+<dt>Ephemeral</dt>
+<dd><p>serendipity, randomness, uncertainty, experimentation, emotional response</p>
+</dd>
+</dl>
+<p>From these, I have derived the following — key criteria of creativity in relation to major factors — novelty, value, quality and purpose <span class="math inline">→</span> spatial, temporal and ephemeral. Table <a href="#tab:9.1">9.1</a> shows each of the seven criteria with example indicators of the two extreme ends of each scale.</p>
+
+<figure id="tab:9.1">
+<table>
+  <tr>
+    <th>Keyword</th>
+    <th>Scale</th>
+  </tr>
+  <tr>
+    <td>Novelty</td>
+    <td>Established ↔ Novel</td>
+  </tr>
+  <tr>
+    <td>Value</td>
+    <td>Playful ↔ Purposive</td>
+  </tr>
+  <tr>
+    <td>Quality</td>
+    <td>Minimal ↔ Complex</td>
+  </tr>
+  <tr>
+    <td>Purpose</td>
+    <td>Emotive ↔ Thoughtful</td>
+  </tr>
+  <tr>
+    <td>Spatial</td>
+    <td>Universal ↔ Specific</td>
+  </tr>
+  <tr>
+    <td>Temporal</td>
+    <td>Instant ↔ Persistent</td>
+  </tr>
+  <tr>
+    <td>Ephemeral</td>
+    <td>Accidental ↔ Experimental</td>
+  </tr>
+</table>
+<figcaption>Table 9.1 – Subjective scales for creativity</figcaption>
+</figure>
+</section>
+
+<section id="s:oec" class="level3">
+<h3><span class="header-section-number">9.2.2</span> Objective Evaluation Constraints</h3>
+<p>In reference to the many kinds of ‘4 P’ models of creativity and the ‘four Ps’ of Stahl’s computer ethics framework, I propose a set of evaluation constraints called the ‘5 P Model’ — product, process, people, place and purpose.</p>
+<blockquote>
+<p>One way of characterizing these processes is to use […] the four P’s, which are: product, process, purpose and people. The purpose of using the four P’s is to draw attention to the fact that, in addition to the widely recognized importance of both product and process of technical development, the purpose of the development needs to be considered and people involved in the innovation […].</p><span class="blockcitation" data-cites="Stahl2013">(Stahl, Jirotka and Eden <a href="#ref-Stahl2013">2013</a>)</span>
+</blockquote>
+<p>The ‘5 Ps’—<strong>Product, Process, Purpose, Person, Place</strong>—are all components of any creative artefact (see table <a href="#tab:9.2">9.2</a>). They are nested in a similar fashion to figure <a href="#fig:8.1">8.1</a>.</p>
+
+<figure id="fig:9.1">
+<img src="../images/fig91.png" alt="5 P model">
+<figcaption>Figure 9.1 – 5 P model</figcaption>
+</figure>
+
+<figure id="tab:9.2">
+<table>
+  <tr>
+    <th>Criteria</th>
+    <th>Note</th>
+  </tr>
+  <tr>
+    <td>Product</td>
+    <td>Algorithmic sketch, poetry, audio, interactive installation</td>
+  </tr>
+  <tr>
+    <td>Process</td>
+    <td>Procedural, Experimental, Heuristic, Systems-based</td>
+  </tr>
+  <tr>
+    <td>Purpose</td>
+    <td>Accidental, Conceptual, Interactive, Time-based</td>
+  </tr>
+  <tr>
+    <td>Person</td>
+    <td>Skill, Aesthetic values, Influences, Collaborations</td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>Culture, Social environment, Education, Peers</td>
+  </tr>
+</table>
+<figcaption>Table 9.2 – Objective criteria of creativity</figcaption>
+</figure>
+</section>
+
+<section id="s:framework" class="level3">
+<h3><span class="header-section-number">9.2.3</span> Combined Framework</h3>
+<p>The <strong>constraints</strong> listed in table <a href="#tab:9.2">9.2</a> should be considered objectively, while the <strong>criteria</strong> in table <a href="#tab:9.1">9.1</a> are judged subjectively. The set of scales is directly derived from the various frameworks for evaluating creativity reviewed in the previous sections.</p>
+<p>This evaluation framework can apply to any kind of creativity, from the traditional arts to digital works to computer creativity. Because the scale element allows for the measurement of subjective qualities, it circumvents binary yes/no or check-box approaches and therefore makes it possible to gather quantitative values from the subjective judgments involved in evaluating creativity in general.</p>
+<p>The terms on each end of the scales (as shown in table <a href="#tab:9.1">9.1</a>) are suggestions only and should not be taken as value judgments. Rather, they should be adapted for each project individually. Numeric values can be assigned to the scales if needed according to specific evaluative requirements.</p>
+
+<figure id="fig:9.2">
+<img src="../images/fig92.png" alt="Interpretation and evaluation matrix">
+<figcaption>Figure 9.2 – Interpretation and evaluation matrix</figcaption>
+</figure>
+
+<p>Figure <a href="#fig:9.2">9.2</a> shows a blank matrix to be filled by judges. The rows and columns correspond to the objective constraints discussed in section <a href="#s:oec">9.2.2</a> and the subjective criteria from section <a href="#s:sec">9.2.1</a> respectively. Scales such as the ones mentioned in table <a href="#tab:9.1">9.1</a> should be used to fill each cell of the grid.</p>
+<p>The process of evaluating or interpreting an artefact consists of three steps inspired by Jordanous’ model (see chapter <a href="evaluation.html#s:specs">7.2.3</a>) as shown below.</p>
+<dl>
+<dt>Step 1</dt>
+<dd><p>Create master matrix to measure against.</p>
+</dd>
+<dt>Step 2</dt>
+<dd><p>Fill matrix, ideally by several judges.</p>
+</dd>
+<dt>Step 3</dt>
+<dd><p>Check against matrix from step 1.</p>
+</dd>
+</dl>
+<p>This system would be useful in scenarios such as art competitions or funding bodies which have a clear outline of requirements or themes which artists address in their artefacts. Alternatively this could be used without step 1 if a more open judgement is needed. Generally, the interpretation / evaluation matrix should be able to address issues such as:</p>
+<ul>
+<li><p>The design of the product might be very innovative but the process that was used quite established and old.</p></li>
+<li><p>The person might have been a novice initially but because the time frame of the project was years (which would influence the skill of the person towards the end).</p></li>
+<li><p>The product might be interactive which triggers a lot of emergent behaviour whereas the process itself was very minimal.</p></li>
+<li><p>The place may play a specific role with the final product but not at all during the development process.</p></li>
+<li><p>The process might involve some random elements but the the concept was very purposive.</p></li>
+<li><p>The target group may have been very specific whereas the process was very generic.</p></li>
+<li><p>The process may be an established algorithm but it was used for a non-standard novel purpose.</p></li>
+</ul>
+
+<section id="an-example-application" class="level4">
+<h4><span class="header-section-number">9.2.3.1</span> An example application</h4>
+
+<figure id="fig:9.3">
+<img src="../images/fig93.png" alt="Example completed numerical matrix">
+<figcaption>Figure 9.3 – Example completed numerical matrix</figcaption>
+</figure>
+
+<p>In this section I will present an example assessment for a hypothetical piece of art. Let’s assume that the scales are represented numerically from 0 to 10 (see figure <a href="#fig:9.3">9.3</a>), although they could equally be represented by a colour spectrum from red to blue for example to remove the sense of value judgments (see figure <a href="#fig:9.4">9.4</a>), keeping in mind scales as shown in table <a href="#tab:9.1">9.1</a>.</p>
+
+<figure id="fig:9.4">
+<img src="../images/fig94.png" alt="Example completed colour matrix">
+<figcaption>Figure 9.4 – Example completed colour matrix</figcaption>
+</figure>
+
+<p>Ideally, these scales would need to be applied by several judges during the evaluation process, generating an intuitive assessment of the various values (e.g. Playful—Purposive) for each of the criteria (e.g. Product).</p>
+</section>
+</section>
+</section>
+</section>
+<section id="bibliography" class="level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-Barthes1967">
+<p>Barthes, Roland. 1967. “The Death of the Author. Aspen 5+6.” UbuWeb. <a href="http://www.ubu.com/aspen/aspen5and6/threeEssays.html/#barthes" class="uri">http://www.ubu.com/aspen/aspen5and6/threeEssays.html/#barthes</a>.</p>
+</div>
+<div id="ref-Bown2015">
+<p>Bown, Oliver. 2015. “Attributing Creative Agency: Are We Doing It Right?” In <em>Proceedings of the Sixth International Conference on Computational Creativity</em>, 17–22. Park City, Utah, USA.</p>
+</div>
+<div id="ref-Wired2011">
+<p>Brown, Mark. 2011. “Patrick Tresset’s Robots Draw Faces and Doodle When Bored.” Wired UK. <a href="http://www.wired.co.uk/news/archive/2011-06/17/sketching-robots" class="uri">http://www.wired.co.uk/news/archive/2011-06/17/sketching-robots</a>.</p>
+</div>
+<div id="ref-Candy2012">
+<p>Candy, Linda. 2012. “Evaluating Creativity.” In <em>Creativity and Rationale: Enhancing Human Experience by Design</em>, edited by J.M. Carroll. London, UK: Springer.</p>
+</div>
+<div id="ref-Candy2011">
+<p>Candy, Linda, and Ernest Edmonds, eds. 2011. <em>Interacting: Art, Research and the Creative Practitioner</em>. Faringdon, UK: Libri Publishing.</p>
+</div>
+<div id="ref-Chalmers1996">
+<p>Chalmers, David. 1996. <em>The Conscious Mind: In Search of a Fundamental Theory</em>. Oxford University Press.</p>
+</div>
+<div id="ref-Cohen1999">
+<p>Cohen, Harold. 1999. “Colouring Without Seeing: A Problem in Machine Creativity.” Kurzweil CyberArt Technologies. <a href="http://www.kurzweilcyberart.com/aaron/pdf/colouringwithoutseeing.pdf" class="uri">http://www.kurzweilcyberart.com/aaron/pdf/colouringwithoutseeing.pdf</a>.</p>
+</div>
+<div id="ref-Copeland2016">
+<p>Copeland, Jake, and Jason Long. 2016. “Restoring the First Recording of Computer Music. Sound and Vision Blog.” British Library. <a href="http://blogs.bl.uk/sound-and-vision/2016/09/restoring-the-first-recording-of-computer-music.html" class="uri">http://blogs.bl.uk/sound-and-vision/2016/09/restoring-the-first-recording-of-computer-music.html</a>.</p>
+</div>
+<div id="ref-Dijkstra1988">
+<p>Dijkstra, Edsger. 1988. “On the Cruelty of Really Teaching Computing Science.” <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html
+  ">http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html
+ </a>.</p>
+</div>
+<div id="ref-Frynd">
+<p>Fry, Ben, and Reas Casey. n.d. “Processing.” <a href="https://processing.org/" class="uri">https://processing.org/</a>.</p>
+</div>
+<div id="ref-Hofstadter1981">
+<p>Hofstadter, Douglas. 1981. “A Conversation with Einstein’s Brain.” In <em>The Mind’s I</em>, edited by Douglas Hofstadter and Daniel Dennett, 430–60. Basic Books.</p>
+</div>
+<div id="ref-Indurkhya1997">
+<p>Indurkhya, Bipin. 1997. “Computers and creativity.”</p>
+</div>
+<div id="ref-Jordanous2011">
+<p>Jordanous, Anna Katerina. 2011. “Evaluating Evaluation : Assessing Progress in Computational Creativity Research.” In <em>Proceedings of the Second International Conference on Computational Creativity</em>.</p>
+</div>
+<div id="ref-Jordanous2012a">
+<p>———. 2012. “Evaluating Computational Creativity: A Standardised Procedure for Evaluating Creative Systems and its Application.” PhD thesis, University of Sussex.</p>
+</div>
+<div id="ref-Kazjon2014">
+<p>Kazjon, Grace, and Mary Lou Maher. 2013. “What to expect when you’re expecting: The role of unexpectedness in computationally evaluating creativity.” In <em>Proceedings of the Fifth International Conference on Computational Creativity</em>, 120–28.</p>
+</div>
+<div id="ref-Liebermannd">
+<p>Lieberman, Zach, Theodore Watson, and Arturo Castro. n.d. “OpenFrameworks. an Open Source C++ Toolkit for Creative Coding.” <a href="http://openframeworks.cc/" class="uri">http://openframeworks.cc/</a>.</p>
+</div>
+<div id="ref-Maeda2001">
+<p>Maeda, John. 2001. <em>Design by Numbers</em>. MIT Press.</p>
+</div>
+<div id="ref-Maher2013">
+<p>Maher, Mary Lou, Katherine Brady, and Douglas Fisher. 2013. “Computational Models of Surprise in Evaluating Creative Design.” In <em>Proceedings of the Fourth International Conference on Computational Creativity</em>, 147–51.</p>
+</div>
+<div id="ref-Mayer1999">
+<p>Mayer, Richard E. 1999. “Fifty Years of Creativity Research.” In <em>Handbook of Creativity</em>, edited by Robert J Sternberg, 449–60. New York: Cambridge University Press.</p>
+</div>
+<div id="ref-Mcbride2012">
+<p>McBride, Neil. 2012. “A Robot Ethics: The EPSRC Principles and the Ethical Gap.” In <em>AISB / IACAP World Congress 2012 Framework for Responsible Research and Innovation in AI</em>, 10–15. July.</p>
+</div>
+<div id="ref-Mumford2015">
+<p>Mumford, Martin, and Dan Ventura. 2015. “The Man Behind the Curtain: Overcoming Skepticism About Creative Computing.” In <em>Proceedings of the Sixth International Conference on Computational Creativity</em>, 1–7.</p>
+</div>
+<div id="ref-Schmidhuber2006">
+<p>Schmidhuber, Jürgen. 2006. “Developmental robotics, optimal artificial curiosity, creativity, music, and the fine arts.” <em>Connection Science</em> 18 (2): 173–87.</p>
+</div>
+<div id="ref-Searle1980">
+<p>Searle, John. 1980. “Minds, Brains, and Programs.” <em>Behavioral and Brain Sciences</em> 3 (3): 417–57.</p>
+</div>
+<div id="ref-Still2016">
+<p>Still, Arthur, and Mark d’Inverno. 2016. “A History of Creativity for Future AI Research.” In <em>Proceedings of the Seventh International Conference on Computational Creativity</em>, 147–54.</p>
+</div>
+<div id="ref-Turing1950">
+<p>Turing, Alan. 1950. “Computing Machinery and Intelligence.” <em>Mind</em> 59: 433–60. <a href="http://loebner.net/Prizef/TuringArticle.html" class="uri">http://loebner.net/Prizef/TuringArticle.html</a>.</p>
+</div>
+<div id="ref-Walker2012">
+<p>Walker, Richard. 2012. “The Human Brain Project.” HBP-PS Consortium.</p>
+</div>
+</div>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Processing is a Java-based “flexible software sketchbook and a language for learning how to code within the context of the visual arts” <span class="citation" data-cites="Frynd">(Fry and Casey n.d.)</span>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>openFramworks is “an open source C++ toolkit designed to assist the creative process by providing a simple and intuitive framework for experimentation” <span class="citation" data-cites="Liebermannd">(Lieberman, Watson, and Castro n.d.)</span>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Interestingly he anthropomorphises computer science here—which he criticises strongly in the same article.<a href="#fnref3">↩</a></p></li>
+</ol>
+</section>
+<nav class="mainnav">
+  <a class="left" href="foundation.html">Prev</a>
+  <a class="centre" href="contents.html">Contents</a>
+  <a class="right" href="part4.html">Next</a>
+</nav>
+</body>
+</html>
