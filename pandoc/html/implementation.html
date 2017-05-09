@@ -295,12 +295,13 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 <h2><span class="header-section-number">10.2</span> Text</h2>
 <p>After the setup stage is completed and the webpage is fully loaded, user input in the form of a text query is required to trigger the three pataphysical algorithms.</p>
 <p>Image and video search do not use all three algorithms — where relevant this is highlighted in each section. Generally the following descriptions refer to the text search functionality only.</p>
-<p>Figure <a href="#fig:10.4">10.4</a> previously showed the rough sequence of events in text search and highlighted that the pataphysicalisation from query to patadata happens in the Python script file.</p>
+<p>Figure <a href="#fig:10.4">10.4</a> previously showed the rough sequence of events in text search and highlighted that the pataphysicalisation from query to patadata happens in the <code>textsurfer.py</code> Python script file.</p>
+  
 <section id="s:clinamenalgo" class="level3">
 <h3><span class="header-section-number">10.2.1</span> Clinamen</h3>
-<p>The clinamen was introduced in chapter [s:clinamen] but to briefly summarise it, it is the unpredictable swerve that Bök calls “the smallest possible aberration that can make the greatest possible difference” <span class="citation" data-cites="Bok2002">(<a href="#ref-Bok2002">2002</a>)</span>.</p>
+  <p>The clinamen was introduced in chapter <a href="pataphysics.html#s:clinamen">4.2.5</a> but to briefly summarise it, it is the unpredictable swerve that Bök calls “the smallest possible aberration that can make the greatest possible difference” <span class="citation" data-cites="Bok2002">(<a href="#ref-Bok2002">2002</a>)</span>.</p>
 <blockquote>
-<p>Like all digitally encoded information, it has unavoidably the uncomfortable property that the smallest possible perturbations —i.e. changes of a single bit— can have the most drastic consequences.</p>
+<p>Like all digitally encoded information, it has unavoidably the uncomfortable property that the smallest possible perturbations —i.e. changes of a single bit— can have the most drastic consequences.</p><span class="blockcitation" data-cites="Dijkstra1988">(Dijkstra <a href="#ref-Dijkstra1988">1988</a>)</span>
 </blockquote>
 <p>In simple terms, the clinamen algorithm works in two steps:</p>
 <ol>
@@ -308,7 +309,10 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 <li><p>get sentences from corpus that match clinamen words.</p></li>
 </ol>
 <p>It uses the <em>Faustroll</em> <span class="citation" data-cites="Jarry1996">(Jarry <a href="#ref-Jarry1996">1996</a>)</span> as a base document and the Damerau-Levenshtein algorithm <span class="citation" data-cites="Damerau1964 Levenshtein1966">(Damerau <a href="#ref-Damerau1964">1964</a>; Levenshtein <a href="#ref-Levenshtein1966">1966</a>)</span> (which measures the distance between two strings (with 0 indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = query word</span>
+  
+<div class="sourceCode">
+<figure id="code:10.3">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = query word</span>
 <span class="co"># $c$ = corpus</span>
 <span class="co"># $i$ = assigned distance</span>
 <span class="kw">def</span> clinamen(w, c, i):
@@ -316,9 +320,16 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   words <span class="op">=</span> <span class="bu">set</span>([term <span class="cf">for</span> term <span class="kw">in</span> l_00 <span class="cf">if</span> dameraulevenshtein(w, term) <span class="op">&lt;=</span> i])
   out, sources, total <span class="op">=</span> get_results(words, <span class="st">&#39;Clinamen&#39;</span>, c)
   <span class="cf">return</span> out, words, sources, total
-  </code></pre></div>
-<p>Source [code:clinamen] line 6 creates the set of clinamen words using a list comprehension. It retrieves matches from the Faustroll file with the condition that they are of Damerau-Levenshtein distance or less to the query term (see source [code:dl]). Duplicates are removed. Line 7 then makes a call to the generic function to get all relevant result sentences, the list of source files and the total number of results.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Michael Homer 2009</span>
+  </code></pre>
+<figcaption>Code 10.3 – ‘clinamen’: pataphysicalising a query term—Python</figcaption>
+</figure>
+</div>
+  
+  <p>Source <a href="#code:10.3">10.3</a> line 6 creates the set of clinamen words using a list comprehension. It retrieves matches from the Faustroll file <code>l_00</code> with the condition that they are of Damerau-Levenshtein distance <code>i</code> or less to the query term <code>w</code> (see source <a href="#code:10.4">10.4</a>). Duplicates are removed. Line 7 then makes a call to the generic <code>get_results</code> function to get all relevant result sentences, the list of source files and the total number of results.</p>
+
+<div class="sourceCode">
+<figure id="code:10.4">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Michael Homer 2009</span>
 <span class="co"># MIT license</span>
 <span class="kw">def</span> dameraulevenshtein(seq1, seq2):
   oneago <span class="op">=</span> <span class="va">None</span>
@@ -334,7 +345,11 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
         seq1[x <span class="op">-</span> <span class="dv">1</span>] <span class="op">==</span> seq2[y] <span class="kw">and</span> seq1[x] <span class="op">!=</span> seq2[y]):
           thisrow[y] <span class="op">=</span> <span class="bu">min</span>(thisrow[y], twoago[y <span class="op">-</span> <span class="dv">2</span>] <span class="op">+</span> <span class="dv">1</span>)
   <span class="cf">return</span> thisrow[<span class="bu">len</span>(seq2) <span class="op">-</span> <span class="dv">1</span>]
-  </code></pre></div>
+  </code></pre>
+<figcaption>Code 10.4 – Damerau-Levenshtein algorithm (M. Homer 2009)—Python</figcaption>
+</figure>
+</div>
+  
 <p>The clinamen algorithm mimics the unpredictable swerve, the smallest possible aberration that can make the greatest possible difference, or the smallest possible perturbations with the most drastic consequences.</p>
 </section>
 <section id="s:ressent" class="level3">
