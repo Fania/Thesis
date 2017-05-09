@@ -350,9 +350,13 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <p>The clinamen algorithm mimics the unpredictable swerve, the smallest possible aberration that can make the greatest possible difference, or the smallest possible perturbations with the most drastic consequences.</p>
 </section>
+
 <section id="s:ressent" class="level3">
 <h3><span class="header-section-number">10.2.2</span> Result Sentences</h3>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $words$ = patadata words</span>
+
+<div class="sourceCode">
+<figure id="code:10.5">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $words$ = patadata words</span>
 <span class="co"># $algo$ = name of algorithm</span>
 <span class="co"># $corp$ = name of corpus</span>
 <span class="kw">def</span> get_results(words, algo, corp):
@@ -369,10 +373,16 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
       o <span class="op">=</span> (f, pp_sent(r.lower(), e, p), algo)
       total <span class="op">+=</span> <span class="dv">1</span>
       out.add(o)
-  <span class="cf">return</span> out, sources, total
-  </code></pre></div>
-<p>The function (see source [code:getresults]) is used by all three text algorithms (clinamen, syzygy and antinomy). Given the nested structure of the indexes and , the function loops through each of the passed to it () first and then each file in . Lines 8 and 9 retrieve the dictionary of files for term from the relevant dictionary. Line 13 gets the author and full title of file and adds it to the list of sources in line 14. Line 15 makes use of another function called (see source [code:ppsent]) to get an actual sentence fragment for the current word in file , which is then added to the output. The output is structured as a triple containing the author and title, the list of resulting sentences and the name of the algorithm used.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = the word (lower case)</span>
+  <span class="cf">return</span> out, sources, total</code></pre>
+<figcaption>Code 10.5 – ‘get_results’: retrieving all sentences for a list of words—Python</figcaption>
+</figure>
+</div>
+
+<p>The <code>get_results</code> function (see source <a href="#code:10.5">10.5</a>) is used by all three text algorithms (clinamen, syzygy and antinomy). Given the nested structure of the indexes <code>l_dict</code> and <code>s_dict</code>, the function loops through each of the <code>words</code> passed to it (<code>r</code>) first and then each file in <code>files.items()</code>. Lines 8 and 9 retrieve the dictionary of files for term <code>r</code> from the relevant dictionary. Line 13 gets the author and full title of file and adds it to the list of sources in line 14. Line 15 makes use of another function called <code>pp_sent</code> (see source <a href="#code:10.6">10.6</a>) to get an actual sentence fragment for the current word <code>r</code> in file <code>e</code> , which is then added to the output. The output is structured as a triple containing the author and title, the list of resulting sentences and the name of the algorithm used.</p>
+  
+<div class="sourceCode">
+<figure id="code:10.6">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = the word (lower case)</span>
 <span class="co"># $f$ = the file</span>
 <span class="co"># $p$ = the list of positions</span>
 <span class="kw">def</span> pp_sent(w, f, p):
@@ -402,11 +412,15 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
     pre <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(ff[pos_b:pos])
     post <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(ff[pos<span class="op">+</span><span class="dv">1</span>:pos_a])
     out <span class="op">=</span> (pre, w, post)
-  <span class="cf">return</span> out
-  </code></pre></div>
-<p>In function (source [code:ppsent]) line 5 is important to note because it is a key functionality point. Even though the index files store a full list of all possible positions of a given word in each file, the function only retrieves the sentence of the very first occurrence of the word rather than each one. This decision was taken to avoid overcrowding of results for the same keyword and is further discussed in chapter [s:sents].</p>
-<p>Line 8 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 9–17 and 18–26 set the (position before) and (position after) variables respectively. These positions can be up to 10 words before and after the keyword depending on the sentence structure (punctuation marks). In line 28 the actual sentence fragment up to the keyword is retrieved, while in line 29 the fragment just after the keyword is retrieved. for example returns the list of words from position to position from file . The built-in Python function then concatenates these words into one long string separated by spaces. On line 30 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.</p>
+  <span class="cf">return</span> out</code></pre>
+<figcaption>Code 10.6 – ‘pp_sent’: retrieving one sentence—Python</figcaption>
+</figure>
+</div>
+  
+  <p>In function <code>pp_sent</code> (source <a href="#code:10.6">10.6</a>) line 5 is important to note because it is a key functionality point. Even though the index files store a full list of all possible positions of a given word in each file, the <code>pp_sent</code> function only retrieves the sentence of the very first occurrence of the word rather than each one. This decision was taken to avoid overcrowding of results for the same keyword and is further discussed in chapter <a href="analysis.html#s:sents">12.2.2</a>.</p>
+<p>Line 8 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 9–17 and 18–26 set the <code>pos_b</code> (position before) and <code>pos_a</code> (position after) variables respectively. These positions can be up to 10 words before and after the keyword <code>w</code> depending on the sentence structure (punctuation marks). In line 28 the actual sentence fragment up to the keyword is retrieved, while in line 29 the fragment just after the keyword is retrieved. <code>ff[pos_b:pos]</code> for example returns the list of words from position <code>pos_b</code> to position <code>pos</code> from file <code>ff</code>. The built-in Python <code>.join()</code> function then concatenates these words into one long string separated by spaces. On line 30 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.</p>
 </section>
+  
 <section id="s:syzygyalgo" class="level3">
 <h3><span class="header-section-number">10.2.3</span> Syzygy</h3>
 <p>The concept of the syzygy was introduced in chapter [s:syzygy] but can be roughly described as surprising and confusing. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose. In simple terms, the syzygy algorithm works in two steps:</p>
