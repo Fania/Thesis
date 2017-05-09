@@ -423,13 +423,16 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <section id="s:syzygyalgo" class="level3">
 <h3><span class="header-section-number">10.2.3</span> Syzygy</h3>
-<p>The concept of the syzygy was introduced in chapter [s:syzygy] but can be roughly described as surprising and confusing. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose. In simple terms, the syzygy algorithm works in two steps:</p>
+  <p>The concept of the syzygy was introduced in chapter <a href="pataphysics.html#s:syzygy">4.2.4</a> but can be roughly described as surprising and confusing. It originally comes from astronomy and denotes the alignment of three celestial bodies in a straight line. In a pataphysical context it is the pun. It usually describes a conjunction of things, something unexpected and surprising. Unlike serendipity, a simple chance encounter, the syzygy has a more scientific purpose. In simple terms, the syzygy algorithm works in two steps:</p>
 <ol>
 <li><p>get syzygy words based on synsets and hypo-, hyper-, holo- and meronyms from WordNet,</p></li>
 <li><p>get sentences from corpus that match syzygy words.</p></li>
 </ol>
-<p>The syzygy function makes heavy use of WordNet <span class="citation" data-cites="Miller1995">(Miller <a href="#ref-Miller1995">1995</a>)</span> through the Python library <span class="citation" data-cites="NLTK2016">(“Natural Language Toolkit. NLTK 3.0 Documentation” n.d.)</span> to find suitable results (importing it using the following command ). Specifically, as shown in source [code:syzygy], the algorithm fetches the set of synonyms (synsets) on line 5. It then loops through all individual items in the list of synonyms in line 7–20. It finds any hyponyms, hypernyms,holonyms, and meronyms for (each of which denotes some sort of relationship or membership with its parent synonym—see figure [fig:wordnet]) using the function (see lines 8, 11, 14, and 17). Line 21 makes use of the function (see source [code:getresults]) in the same was as the clinamen function does.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = word</span>
+<p>The syzygy function makes heavy use of WordNet <span class="citation" data-cites="Miller1995">(Miller <a href="#ref-Miller1995">1995</a>)</span> through the NLTK Python library <span class="citation" data-cites="NLTK2016">(“Natural Language Toolkit. NLTK 3.0 Documentation” n.d.)</span> to find suitable results (importing it using the following command <code>from nltk.corpus import wordnet as wn</code>). Specifically, as shown in source <a href="#code:10.7">10.7</a>, the algorithm fetches the set of synonyms (synsets) on line 5. It then loops through all individual items <code>wn</code> in the list of synonyms <code>wordsets</code> in line 7–20. It finds any hyponyms, hypernyms,holonyms, and meronyms for (each of which denotes some sort of relationship or membership with its parent synonym—see figure <a href="analysis.html#fig:12.3">12.3</a>) using the <code>get_nym</code> function (see lines 8, 11, 14, and 17). Line 21 makes use of the <code>get_results</code> function (see source <a href="#code:10.5">10.5</a>) in the same was as the clinamen function does.</p>
+
+<div class="sourceCode">
+<figure id="code:10.7">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = word</span>
 <span class="co"># $c$ = corpus</span>
 <span class="kw">def</span> syzygy(w, c):
   words, hypos, hypers, holos, meros <span class="op">=</span> <span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>()
@@ -450,10 +453,16 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
     words.update(meros)
     syno_len <span class="op">+=</span> <span class="dv">1</span>
   out, sources, total <span class="op">=</span> get_results(words, <span class="st">&#39;Syzygy&#39;</span>, c)
-  <span class="cf">return</span> out, words, sources, total
-  </code></pre></div>
-<p>The function in source [code:getnym] shows how the relevant ‘nyms’ are retrieved for a given synset. Line 5 initialises the variable which gets overwritten later on. Several statements separate out the code run for the different ‘nyms’. Lines 6–7 retrieves any hyponyms using ’s function . Similarly lines 8–9 retrieve hypernyms, lines 10–14 retrieve holonyms, and lines 15–19 retrieve meronyms. Finally, line 20–23 adds the contents of to the output of the function.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $nym$ = name of nym</span>
+  <span class="cf">return</span> out, words, sources, total</code></pre>
+ <figcaption>Code 10.7 – ‘syzygy’: pataphysicalising a query term—Python</figcaption>
+</figure>
+  </div>
+  
+  <p>The <code>get_nym</code> function in source <a href="#code:10.8">10.8</a> shows how the relevant ‘nyms’ are retrieved for a given synset. Line 5 initialises the variable <code>hhh</code> which gets overwritten later on. Several <code>if</code> statements separate out the code run for the different ‘nyms’. Lines 6–7 retrieves any hyponyms using NLTK’s <code>hyponyms()</code> function. Similarly lines 8–9 retrieve hypernyms, lines 10–14 retrieve holonyms, and lines 15–19 retrieve meronyms. Finally, line 20–23 adds the contents of <code>hhh</code> to the output of the function.</p>
+  
+<div class="sourceCode">
+<figure id="code:10.8">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $nym$ = name of nym</span>
 <span class="co"># $wset$ = synset</span>
 <span class="kw">def</span> get_nym(nym, wset):
   out <span class="op">=</span> []
@@ -476,18 +485,25 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
     <span class="cf">for</span> h <span class="kw">in</span> hhh:
       <span class="cf">for</span> l <span class="kw">in</span> h.lemmas():
         out.append(<span class="bu">str</span>(l.name()))
-  <span class="cf">return</span> out
-  </code></pre></div>
+  <span class="cf">return</span> out</code></pre>
+<figcaption>Code 10.8 – ‘get_nym’: retrieving hypo/hyper/holo/meronyms—Python</figcaption>
+</figure>
+</div>
+  
 <p>The syzygy algorithm mimics an alignment of three words in a line (query <span class="math inline">→</span> synonym <span class="math inline">→</span> hypo/hyper/holo/meronym).</p>
 </section>
+  
 <section id="s:antinomyalgo" class="level3">
 <h3><span class="header-section-number">10.2.4</span> Antinomy</h3>
-<p>The antimony, in a pataphysical sense, is the mutually incompatible. It was previously introduced in chapter [s:antinomy]. In simple terms, the antinomy algorithm works in two steps:</p>
+<p>The antimony, in a pataphysical sense, is the mutually incompatible. It was previously introduced in chapter <a href="pataphysics.html#s:antinomy">4.2.2</a>. In simple terms, the antinomy algorithm works in two steps:</p>
 <ol>
 <li><p>get antinomy words based on synsets and antonyms from WordNet,</p></li>
 <li><p>get sentences from corpus that match antinomy words.</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = input query term</span>
+ 
+<div class="sourceCode">
+<figure id="code:10.9">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = input query term</span>
 <span class="co"># $c$ = name of corpus</span>
 <span class="kw">def</span> antinomy(w, c):
   words <span class="op">=</span> <span class="bu">set</span>()
@@ -499,11 +515,15 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
         <span class="cf">if</span> <span class="bu">str</span>(a.name()) <span class="op">!=</span> w:
           words.add(<span class="bu">str</span>(a.name()))
   out, sources, total <span class="op">=</span> get_results(words, <span class="st">&#39;Antinomy&#39;</span>, c)
-  <span class="cf">return</span> out, words, sources, total
-  </code></pre></div>
-<p>For the antinomy I simply used WordNet’s antonyms (opposites) (source [code:antinomy]). In principle, this function is similar to the algorithm for the syzygy. It finds all antonyms through ’s function on line 7 and retrieves result sentences using the function on line 12.</p>
+  <span class="cf">return</span> out, words, sources, total</code></pre>
+<figcaption>Code 10.9 – ‘antinomy’: pataphysicalising a query term—Python</figcaption>
+</figure>
+</div>
+
+<p>For the antinomy I simply used WordNet’s antonyms (opposites) (source <a href="#code:10.9">10.9</a>). In principle, this function is similar to the algorithm for the syzygy. It finds all antonyms through NLTK’s <code>lemmas()[0].antonyms()</code> function on line 7 and retrieves result sentences using the <code>get_results</code> function on line 12.</p>
 <p>The antinomy algorithm mimics the mutually incompatible or polar opposites.</p>
 </section>
+  
 <section id="s:formalisation" class="level3">
 <h3><span class="header-section-number">10.2.5</span> Formalisation</h3>
 <p>A formal description of the <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> system in terms of an model described in chapter [s:irmodels] is unsuitable. It assumes for example the presence of some sort of ranking algorithm <span class="math inline"><em>R</em>(<em>q</em><sub><em>i</em></sub>, <em>d</em><sub><em>j</em></sub>)</span>.</p>
