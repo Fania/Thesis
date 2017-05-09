@@ -319,8 +319,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   <span class="co"># l_00 = Faustroll text</span>
   words <span class="op">=</span> <span class="bu">set</span>([term <span class="cf">for</span> term <span class="kw">in</span> l_00 <span class="cf">if</span> dameraulevenshtein(w, term) <span class="op">&lt;=</span> i])
   out, sources, total <span class="op">=</span> get_results(words, <span class="st">&#39;Clinamen&#39;</span>, c)
-  <span class="cf">return</span> out, words, sources, total
-  </code></pre>
+  <span class="cf">return</span> out, words, sources, total</code></pre>
 <figcaption>Code 10.3 – ‘clinamen’: pataphysicalising a query term—Python</figcaption>
 </figure>
 </div>
@@ -344,8 +343,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
       <span class="cf">if</span> (x <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> y <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> seq1[x] <span class="op">==</span> seq2[y <span class="op">-</span> <span class="dv">1</span>] <span class="kw">and</span>
         seq1[x <span class="op">-</span> <span class="dv">1</span>] <span class="op">==</span> seq2[y] <span class="kw">and</span> seq1[x] <span class="op">!=</span> seq2[y]):
           thisrow[y] <span class="op">=</span> <span class="bu">min</span>(thisrow[y], twoago[y <span class="op">-</span> <span class="dv">2</span>] <span class="op">+</span> <span class="dv">1</span>)
-  <span class="cf">return</span> thisrow[<span class="bu">len</span>(seq2) <span class="op">-</span> <span class="dv">1</span>]
-  </code></pre>
+  <span class="cf">return</span> thisrow[<span class="bu">len</span>(seq2) <span class="op">-</span> <span class="dv">1</span>]</code></pre>
 <figcaption>Code 10.4 – Damerau-Levenshtein algorithm (M. Homer 2009)—Python</figcaption>
 </figure>
 </div>
