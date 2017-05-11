@@ -79,6 +79,11 @@ blockquote ul{
 code {
   font-family: 'Roboto Mono', monospace;
   background-color: #f2f2f2;
+  /*white-space: pre-wrap;*/
+}
+
+.poem code {
+  background-color: #476775;
 }
 
 pre.text {
@@ -226,6 +231,12 @@ toc-section-number {
 ol, ul, dl {
   margin: 2em 2em;
 }
+ol li ol {
+  margin: 0.5em;
+}
+dd ol, dd ul {
+  margin: 0.5em;
+}
 
 dt {
   font-weight: bold;
@@ -272,15 +283,16 @@ dd p, li p {
 }
 .sourceCode pre .line-number {
   font-size: 1em;
-  line-height: 1.65em;
+  line-height: 1.68em;
   float: left;
-  margin: 0 1em 0 -1em;
-  border-right: 1px solid;
   text-align: right;
+  width: 1em;
 }
 .sourceCode pre .line-number span {
   display: block;
   padding: 0 .5em 0 1em;
+  position: relative;
+  left: -45px;
 }
 .sourceCode pre .cl {
   display: block;

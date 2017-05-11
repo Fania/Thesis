@@ -43,6 +43,16 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
   <link href="../htmlstyle.css" rel="stylesheet">
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]},
+											TeX:     {extensions: ["color.js"],
+																Macros:     {RR:    '{\\bf R}',
+												                     bold:  ['{\\bf #1}', 1]}
+															 }
+										 });
+	</script>
 </head>
 <body>
 <nav class="mainnav">
@@ -274,17 +284,8 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 <p>Using one of the terms from figure <a href="technology.html#fig:6.2">6.2</a> as an example, here are their entries in the index file (the files are represented by their number in the corpus, i.e. <code>l_00</code> is the ‘Faustroll’ file, <code>l_01</code> is the ‘Poe’ file, etc.). An excerpt from the actual <code>l_dict</code> can be found in the appendix [s:appindex].</p>
 <pre class="text"><code>{
   doctor: {
-    l_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039,
-           4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892,
-           10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 
-           15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 
-           19631, 21806, 22570, 24867],
-    l_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 
-           317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921,
-           384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 
-           454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 
-           456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 
-           458571, 458918, 458998, 459654, 459771, 490749],
+    l_00: [253, 583, 604, 606, 644, 1318, 1471, 1858, 2334, 2431, 2446, 3039, 4743, 5034, 5107, 5437, 5824, 6195, 6228, 6955, 7305, 7822, 7892, 10049, 10629, 11055, 11457, 12059, 13978, 14570, 14850, 15063, 15099, 15259, 15959, 16193, 16561, 16610, 17866, 19184, 19501, 19631, 21806, 22570, 24867],
+    l_01: [96659, 294479, 294556, 294648, 296748, 316773, 317841, 317854, 317928, 317990, 318461, 332118, 338470, 340548, 341252, 383921, 384136, 452830, 453015, 454044, 454160, 454421, 454596, 454712, 454796, 454846, 455030, 455278, 455760, 455874, 456023, 456123, 456188, 456481, 456796, 457106, 457653, 457714, 457823, 457894, 458571, 458918, 458998, 459654, 459771, 490749],
     l_02: [11476, 12098, 28151, 36270], ...
   }, ...
 }</code></pre>
@@ -324,7 +325,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 </figure>
 </div>
   
-  <p>Source <a href="#code:10.3">10.3</a> line 6 creates the set of clinamen words using a list comprehension. It retrieves matches from the Faustroll file <code>l_00</code> with the condition that they are of Damerau-Levenshtein distance <code>i</code> or less to the query term <code>w</code> (see source <a href="#code:10.4">10.4</a>). Duplicates are removed. Line 7 then makes a call to the generic <code>get_results</code> function to get all relevant result sentences, the list of source files and the total number of results.</p>
+<p>Source <a href="#code:10.3">10.3</a> line 6 creates the set of clinamen words using a list comprehension. It retrieves matches from the Faustroll file <code>l_00</code> with the condition that they are of Damerau-Levenshtein distance <code>i</code> or less to the query term <code>w</code> (see source <a href="#code:10.4">10.4</a>). Duplicates are removed. Line 7 then makes a call to the generic <code>get_results</code> function to get all relevant result sentences, the list of source files and the total number of results.</p>
 
 <div class="sourceCode">
 <figure id="code:10.4">
@@ -417,7 +418,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 </figure>
 </div>
   
-  <p>In function <code>pp_sent</code> (source <a href="#code:10.6">10.6</a>) line 5 is important to note because it is a key functionality point. Even though the index files store a full list of all possible positions of a given word in each file, the <code>pp_sent</code> function only retrieves the sentence of the very first occurrence of the word rather than each one. This decision was taken to avoid overcrowding of results for the same keyword and is further discussed in chapter <a href="analysis.html#s:sents">12.2.2</a>.</p>
+<p>In function <code>pp_sent</code> (source <a href="#code:10.6">10.6</a>) line 5 is important to note because it is a key functionality point. Even though the index files store a full list of all possible positions of a given word in each file, the <code>pp_sent</code> function only retrieves the sentence of the very first occurrence of the word rather than each one. This decision was taken to avoid overcrowding of results for the same keyword and is further discussed in chapter <a href="analysis.html#s:sents">12.2.2</a>.</p>
 <p>Line 8 creates a list of punctuation marks needed to determine a suitable sentence fragment. Lines 9–17 and 18–26 set the <code>pos_b</code> (position before) and <code>pos_a</code> (position after) variables respectively. These positions can be up to 10 words before and after the keyword <code>w</code> depending on the sentence structure (punctuation marks). In line 28 the actual sentence fragment up to the keyword is retrieved, while in line 29 the fragment just after the keyword is retrieved. <code>ff[pos_b:pos]</code> for example returns the list of words from position <code>pos_b</code> to position <code>pos</code> from file <code>ff</code>. The built-in Python <code>.join()</code> function then concatenates these words into one long string separated by spaces. On line 30 a triple containing the pre-sentence, keyword and post-sentence is set as the output and then returned.</p>
 </section>
   
@@ -458,7 +459,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 </figure>
   </div>
   
-  <p>The <code>get_nym</code> function in source <a href="#code:10.8">10.8</a> shows how the relevant ‘nyms’ are retrieved for a given synset. Line 5 initialises the variable <code>hhh</code> which gets overwritten later on. Several <code>if</code> statements separate out the code run for the different ‘nyms’. Lines 6–7 retrieves any hyponyms using NLTK’s <code>hyponyms()</code> function. Similarly lines 8–9 retrieve hypernyms, lines 10–14 retrieve holonyms, and lines 15–19 retrieve meronyms. Finally, line 20–23 adds the contents of <code>hhh</code> to the output of the function.</p>
+<p>The <code>get_nym</code> function in source <a href="#code:10.8">10.8</a> shows how the relevant ‘nyms’ are retrieved for a given synset. Line 5 initialises the variable <code>hhh</code> which gets overwritten later on. Several <code>if</code> statements separate out the code run for the different ‘nyms’. Lines 6–7 retrieves any hyponyms using NLTK’s <code>hyponyms()</code> function. Similarly lines 8–9 retrieve hypernyms, lines 10–14 retrieve holonyms, and lines 15–19 retrieve meronyms. Finally, line 20–23 adds the contents of <code>hhh</code> to the output of the function.</p>
   
 <div class="sourceCode">
 <figure id="code:10.8">
@@ -526,46 +527,121 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <section id="s:formalisation" class="level3">
 <h3><span class="header-section-number">10.2.5</span> Formalisation</h3>
-<p>A formal description of the <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> system in terms of an model described in chapter [s:irmodels] is unsuitable. It assumes for example the presence of some sort of ranking algorithm <span class="math inline"><em>R</em>(<em>q</em><sub><em>i</em></sub>, <em>d</em><sub><em>j</em></sub>)</span>.</p>
+<p>A formal description of the <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> system in terms of an IR model described in chapter <a href="technology.html#s:irmodels">6.1.1</a> is unsuitable. It assumes for example the presence of some sort of ranking algorithm $R(q_i,d_j)$.</p>
 <p>Making relevant changes (e.g. exchanging the ranking function for a pataphysicalisation function) to the specification by Baeza-Yates and Ribeiro-Neto <span class="citation" data-cites="Baeza-Yates2011">(<a href="#ref-Baeza-Yates2011">2011</a>)</span>, an approximate system description for the Faustroll corpus text search could be as follows.</p>
-<p>D &amp; the set of documents <span class="math inline">{<em>d</em><sub>1</sub>, …, <em>d</em><sub><em>m</em></sub>}</span><br />
-m &amp; the number of all documents in <span class="math inline"><em>D</em></span> (<span class="math inline">|<em>D</em>|=28</span>)<br />
-V &amp; the set of all distinct terms <span class="math inline">{<em>v</em><sub>1</sub>, …, <em>v</em><sub><em>n</em></sub>}</span> in <span class="math inline"><em>D</em></span> not including stopwords<br />
-q &amp; the user query<br />
-F &amp; the set of patalgorithms <span class="math inline">{<em>f</em><sub><em>C</em></sub>, <em>f</em><sub><em>S</em></sub>, <em>f</em><sub><em>A</em></sub>}</span><br />
-P &amp; the set of pataphysicalised query terms <span class="math inline">{<em>p</em><sub>1</sub>, …, <em>p</em><sub><em>u</em></sub>}</span><br />
-u &amp; the number of terms in <span class="math inline"><em>P</em></span><br />
-P(q) &amp; the set of patadata <span class="math inline">{<em>P</em>(<em>q</em>)<sub><em>C</em></sub> ∪ <em>P</em>(<em>q</em>)<sub><em>S</em></sub> ∪ <em>P</em>(<em>q</em>)<sub><em>A</em></sub>}</span> for query <span class="math inline"><em>q</em></span><br />
-R &amp; the set of results <span class="math inline">{<em>r</em><sub>1</sub>, …, <em>r</em><sub><em>o</em></sub>}</span><br />
-o &amp; the number of results in <span class="math inline"><em>R</em></span><br />
-R(P(q)) &amp; the set of results <span class="math inline">{<em>R</em>(<em>P</em>(<em>q</em>)<sub><em>C</em></sub>)∪<em>R</em>(<em>P</em>(<em>q</em>)<sub><em>S</em></sub>)∪<em>R</em>(<em>P</em>(<em>q</em>)<sub><em>A</em></sub>)}</span> produced by each algorithm in <span class="math inline"><em>F</em></span><br />
-r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence, <span class="math inline"><em>f</em></span>)<br />
-</p>
-<p>We can then define the three patalgorithms in a more formal way as shown in equations [eq:clinamen], [eq:syzygy], and [eq:antinomy].</p>
-<p><br /><span class="math display"><em>P</em>(<em>q</em>)<sub><em>C</em></sub> = {<em>p</em> ∈ <em>v</em><sub>0</sub> : 0 &lt; dameraulevenshtein(<em>q</em>, <em>p</em>)≤2}</span><br /></p>
-<p>in equation [eq:clinamen] is the Damerau-Levenshtein algorithm as described in section [code:dl] and <span class="math inline"><em>v</em><sub>0</sub></span> is the Faustroll text.</p>
-<p><br /><span class="math display">$$\begin{split}
-    P(q)_S &amp;= \{p \in V: p \in \text{nyms}(s), \ \forall s \in \text{synonyms}(q)\}\\
+
+<table class="where">
+  <tr>
+    <th>$D$</th>
+    <th>=</th>
+    <th>the set of documents $\{d_1, ..., d_m\}$</th>
+  </tr>
+  <tr>
+    <td>$m$</td>
+    <td>=</td>
+    <td>the number of all documents in $D$ ($|D| = 28$)</td>
+  </tr>
+  <tr>
+    <td>$V$</td>
+    <td>=</td>
+    <td>the set of all distinct terms $\{v_1, ..., v_n\}$ in $D$ not including stopwords</td>
+  </tr>
+  <tr>
+    <td>$q$</td>
+    <td>=</td>
+    <td>the user query</td>
+  </tr>
+  <tr>
+    <td>$F$</td>
+    <td>=</td>
+    <td>the set of patalgorithms $\{f_C, f_S, f_A\}$</td>
+  </tr>
+  <tr>
+    <td>$P$</td>
+    <td>=</td>
+    <td>the set of pataphysicalised query terms $\{p_1, ..., p_u\}$</td>
+  </tr>
+  <tr>
+    <td>$u$</td>
+    <td>=</td>
+    <td>the number of terms in $P$</td>
+  </tr>
+  <tr>
+    <td>$P(q)$</td>
+    <td>=</td>
+    <td>the set of patadata $\{P(q)_C \cup P(q)_S \cup P(q)_A\}$ for query $q$</td>
+  </tr>
+  <tr>
+    <td>$R$</td>
+    <td>=</td>
+    <td>the set of results $\{r_1, ..., r_o\}$</td>
+  </tr>
+  <tr>
+    <td>$o$</td>
+    <td>=</td>
+    <td>the number of results in $R$</td>
+  </tr>
+  <tr>
+    <td>$R(P(q))$</td>
+    <td>=</td>
+    <td>the set of results $\{R(P(q)_C) \cup R(P(q)_S) \cup R(P(q)_A)\}$</td>
+  </tr>
+  <tr>
+    <td>$r$</td>
+    <td>=</td>
+    <td>a result of form ($d$, sentence, $f$)</td>
+  </tr>
+</table>
+
+<p>We can then define the three patalgorithms in a more formal way as shown in equations <a href="#eq:10.1">10.1</a>, <a href="#eq:10.2">10.2</a>, and <a href="#eq:10.3">10.3</a>.</p>
+
+<figure id="eq:10.1" class="equation">
+<span class="math display">$$P(q)_C = \{p ∈ v_0 : 0 &lt; \text{dameraulevenshtein}(q, p) ≤ 2 \}$$
+<figcaption>(10.1)</figcaption>
+</figure>
+
+<p><code>dameraulevenshtein(q,p)</code> in equation <a href="#eq:10.1">10.1</a> is the Damerau-Levenshtein algorithm as described in section <a href="#code:10.4">10.4</a> and $v_0$ is the Faustroll text.</p>
+
+<figure id="eq:10.2" class="equation">
+<span class="math display">$$\begin{split}
+    P(q)_S &amp;= \{p \in V: p \in \text{nyms}(s), \ \forall \ s \in \text{synonyms}(q)\}\\
     \text{where} \ \text{nyms}(s) &amp;= \text{hypos}(s) \ \cup \ \text{hypers}(s) \ \cup \ \text{holos}(s) \ \cup \ \text{meros}(s)
   \end{split}
-  \label{eq:syzygy}$$</span><br /></p>
-<p>in equation [eq:syzygy] is the WordNet/ function to retrieve all synsets for the query <span class="math inline"><em>q</em></span> and the four ‘nym’ functions return the relevant hyponyms, hypernyms, holonyms or meronyms for each of the synonyms.</p>
-<p><br /><span class="math display"><em>P</em>(<em>q</em>)<sub><em>A</em></sub> = {<em>p</em> ∈ <em>V</em> : <em>p</em> ∈ antonyms(<em>s</em>), ∀<em>s</em> ∈ synonyms(<em>q</em>)}</span><br /></p>
-<p>Similarly, in equation [eq:antinomy] the function returns WordNet synsets for the query <span class="math inline"><em>q</em></span> and the function returns WordNet antonyms for each of the synonyms.</p>
-<p><br /><span class="math display"><em>R</em>(<em>P</em>(<em>q</em>)) = {(<em>d</em> ∈ <em>D</em>,  <em>s</em><em>e</em><em>n</em><em>t</em>(<em>p</em>)∈<em>d</em>,  <em>f</em> ∈ <em>F</em>):∀ <em>p</em> ∈ <em>P</em>(<em>q</em>)<sub><em>f</em></sub>))}</span><br /></p>
-<p>The set of results <span class="math inline"><em>R</em>(<em>P</em>(<em>q</em>))</span> can then be defined as shown in equation [eq:results]. It returns a list of triples containing the source text <span class="math inline"><em>d</em></span>, the sentence and the algorithm <span class="math inline"><em>f</em></span>. For each pataphysicalised query term <span class="math inline"><em>p</em></span> one sentence is retrieved per file <span class="math inline"><em>d</em></span>.</p>
+  \label{eq:syzygy}$$
+<figcaption>(10.2)</figcaption>
+</figure>
+
+<p><code>synonyms(q)</code> in equation <a href="#eq:10.2">10.2</a> is the WordNet/NLTK function to retrieve all synsets for the query $q$ and the four ‘nym’ functions return the relevant hyponyms, hypernyms, holonyms or meronyms for each of the synonyms.</p>
+
+<figure id="eq:10.3" class="equation">
+<span class="math display">$$P(q)A = \{p ∈ V : p ∈ \text{antonyms}(s), ∀ \ s ∈ \text{synonyms}(q)\}$$
+<figcaption>(10.3)</figcaption>
+</figure>
+
+<p>Similarly, in equation <a href="#eq:10.3">10.3</a> the <code>synonyms(q)</code> function returns WordNet synsets for the query $q$ and the <code>antonyms(q)</code> function returns WordNet antonyms for each of the synonyms.</p>
+
+<figure id="eq:10.4" class="equation">
+<span class="math display">$$R(P(q)) = \{(d ∈ D,  \text{sent}(p) ∈ d,  f ∈ F) : ∀ \ p ∈ P(q)_f))\}$$
+<figcaption>(10.4)</figcaption>
+</figure>
+
+<p>The set of results $R(P(q))$ can then be defined as shown in equation <a href="#eq:10.4">10.4</a>. It returns a list of triples containing the source text $d$, the sentence <code>sent(p)</code> and the algorithm $f$. For each pataphysicalised query term $p$ one sentence is retrieved per file $d$.</p>
 </section>
 </section>
+
 <section id="s:imgvid" class="level2">
 <h2><span class="header-section-number">10.3</span> Image &amp; Video</h2>
-<p>The image and video search of <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> both work slightly differently to the text search described in section [s:algorithms]. In simple terms, the image and video search works in three steps:</p>
+<p>The image and video search of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> both work slightly differently to the text search described in section <a href="#s:algorithms">10.2</a>. In simple terms, the image and video search works in three steps:</p>
 <ol>
 <li><p>translate query,</p></li>
 <li><p>pataphysicalise the translation,</p></li>
-<li><p>retrieve matching images/videos using calls.</p></li>
+<li><p>retrieve matching images/videos using API calls.</p></li>
 </ol>
-<p>The first step is to translate the search terms as shown in source [code:transent]. Lines 2 and 4 set up the connection to the Microsoft Translator tool <span class="citation" data-cites="TranslatorAPI">(“Microsoft Translator - Text Translation. DataMarket” <a href="#ref-TranslatorAPI">2011</a>)</span> given an ID and ‘secret’, neither of which are included here for security reasons. The query then passes through a chain (alignment) of three translations in true syzygy fashion: from English <span class="math inline">→</span> French, from French <span class="math inline">→</span> Japanese, and from Japanese <span class="math inline">→</span> English (lines 5–7). All three languages are then returned in a triple (line 8).</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $sent$ = the query string</span>
+<p>The first step is to translate the search terms as shown in source <a href="#code:10.10">10.10</a>. Lines 2 and 4 set up the API connection to the Microsoft Translator tool <span class="citation" data-cites="TranslatorAPI">(“Microsoft Translator - Text Translation. DataMarket” <a href="#ref-TranslatorAPI">2011</a>)</span> given an ID and ‘secret’, neither of which are included here for security reasons. The query <code>sent</code> then passes through a chain (alignment) of three translations in true syzygy fashion: from English <span class="math inline">→</span> French, from French <span class="math inline">→</span> Japanese, and from Japanese <span class="math inline">→</span> English (lines 5–7). All three languages are then returned in a triple (line 8).</p>
+
+<div class="sourceCode">
+<figure id="code:10.10">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $sent$ = the query string</span>
 <span class="im">from</span> microsofttranslator <span class="im">import</span> Translator
 <span class="kw">def</span> transent(sent):
   translator <span class="op">=</span> Translator(microsoft_id, microsoft_secret)
@@ -573,11 +649,17 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
   japanese <span class="op">=</span> translator.translate(french, <span class="st">&quot;ja&quot;</span>)
   patawords <span class="op">=</span> translator.translate(japanese, <span class="st">&quot;en&quot;</span>)
   translations <span class="op">=</span> (french, japanese, patawords)
-  <span class="cf">return</span> translations
-  </code></pre></div>
-<p>The next step is to pataphysicalise the translated query (see source [code:pataph]). The function transforms this translation in a process slighlty simplified from the algorithm. The decision to simplify the algorithm was made due to performance issues related to the calls that follow in the final step of the search process.</p>
-<p>In line 5 WordNet synsets are retrieved using ’s function. For each of these synsets we get a list of synonyms (line 8) which we add to the output in a normalised form (line 11) removing any underscores if there are any.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $words$ = query term(s)</span>
+  <span class="cf">return</span> translations</code></pre>
+<figcaption>Code 10.10 – ‘transent’: translating query between English-French-Japanese-English—Python</figcaption>
+</figure>
+</div>
+
+<p>The next step is to pataphysicalise the translated query (see source <a href="#code:10.11">10.11</a>). The <code>pataphysicalise</code> function transforms this translation in a process slighlty simplified from the <code>syzygy</code> algorithm. The decision to simplify the algorithm was made due to performance issues related to the API calls that follow in the final step of the search process.</p>
+<p>In line 5 WordNet synsets are retrieved using NLTK’s <code>synsets</code> function. For each of these synsets we get a list of synonyms (line 8) which we add to the output in a normalised form (line 11) removing any underscores if there are any.</p>
+
+<div class="sourceCode">
+<figure id="code:10.11">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $words$ = query term(s)</span>
 <span class="kw">def</span> pataphysicalise(words):
   sys_ws <span class="op">=</span> <span class="bu">set</span>()
   <span class="cf">for</span> word <span class="kw">in</span> words:
@@ -588,28 +670,35 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
           x <span class="op">=</span> <span class="bu">str</span>(l.name())
           o <span class="op">=</span> x.replace(<span class="st">&#39;_&#39;</span>, <span class="st">&#39; &#39;</span>)
           sys_ws.add(o)
-  <span class="cf">return</span> sys_ws
-  </code></pre></div>
-<p>Figure <a href="#fig:10.5">10.5</a> previously showed the rough sequence of events in an image and video search and highlighted that the pataphysicalisation from query to patadata happens in the Python script file while the production of results from that patadata happens in the JavaScript file.</p>
-<p>And finally, calls to the various external tools are made. This is described in section [s:api] below.</p>
+  <span class="cf">return</span> sys_ws</code></pre>
+<figcaption>Code 10.11 – ‘pataphysicalise’: pataphysicalise image and video query terms—Python</figcaption>
+</figure>
+</div>
+
+<p>Figure <a href="#fig:10.5">10.5</a> previously showed the rough sequence of events in an image and video search and highlighted that the pataphysicalisation from query to patadata happens in the <code>imagesurfer.py</code> Python script file while the production of results from that patadata happens in the <code>fania.js</code> JavaScript file.</p>
+<p>And finally, API calls to the various external tools are made. This is described in section <a href="#s:api">10.3.1</a> below.</p>
+
 <section id="s:api" class="level3">
 <h3><span class="header-section-number">10.3.1</span> REST &amp; API</h3>
-<p>The final step of the image and video search process described on page  is to retrieve matching images/videos using calls to Flickr <span class="citation" data-cites="FlickrAPI FlickrGuideAPI">(“flickr.photo.search. the App Garden” n.d.; “Getting Started. the Flickr Developer Guide: API” n.d.)</span>, Getty <span class="citation" data-cites="GettyAPI GettyOverviewAPI">(“Search for Creative Images. Getty Images Api” n.d.; “API Overview. Getty Images Api” n.d.)</span>, Bing <span class="citation" data-cites="BingAPI BingAzureAPI">(“Image Search API Reference. Microsoft Developer Network (Msdn)” n.d.; “Bing Search API. DataMarket” <a href="#ref-BingAzureAPI">2012</a>)</span>, YouTube <span class="citation" data-cites="YouTubeAPI">(“Search: list. YouTube Data Api” n.d.)</span> and Microsoft Translator <span class="citation" data-cites="TranslatorAPI">(“Microsoft Translator - Text Translation. DataMarket” <a href="#ref-TranslatorAPI">2011</a>)</span>.</p>
-<p>The patadata used to make the calls is limited to 10 keywords and uses the function , where is the set of terms obtained by pataphysicalising the query translation.</p>
-<p>A ful allows browsers (‘clients’) to communicate with a web server via methods such as GET and POST. The idea is that a given service, like the Microsoft Bing search , can be accessed in a few simple steps using <span class="citation" data-cites="JSON2016">(“Introducing Json. ECMA-404 the Json Data Interchange Standard” n.d.)</span>. These are:</p>
+<p>The final step of the image and video search process is to retrieve matching images/videos using API calls to Flickr <span class="citation" data-cites="FlickrAPI FlickrGuideAPI">(“flickr.photo.search. the App Garden” n.d.; “Getting Started. the Flickr Developer Guide: API” n.d.)</span>, Getty <span class="citation" data-cites="GettyAPI GettyOverviewAPI">(“Search for Creative Images. Getty Images Api” n.d.; “API Overview. Getty Images Api” n.d.)</span>, Bing <span class="citation" data-cites="BingAPI BingAzureAPI">(“Image Search API Reference. Microsoft Developer Network (Msdn)” n.d.; “Bing Search API. DataMarket” <a href="#ref-BingAzureAPI">2012</a>)</span>, YouTube <span class="citation" data-cites="YouTubeAPI">(“Search: list. YouTube Data Api” n.d.)</span> and Microsoft Translator <span class="citation" data-cites="TranslatorAPI">(“Microsoft Translator - Text Translation. DataMarket” <a href="#ref-TranslatorAPI">2011</a>)</span>.</p>
+<p>The patadata used to make the API calls is limited to 10 keywords and uses the function <code>random.sample(pata, 10)</code>, where <code>pata</code> is the set of terms obtained by pataphysicalising the query translation.</p>
+<p>A RESTful API allows browsers (‘clients’) to communicate with a web server via HTTP methods such as GET and POST. The idea is that a given service, like the Microsoft Bing search API, can be accessed in a few simple steps using JavaScript Object Notation (JSON) <span class="citation" data-cites="JSON2016">(“Introducing Json. ECMA-404 the Json Data Interchange Standard” n.d.)</span>. These are:</p>
 <ol>
 <li><p>for each of the 10 query terms do:</p>
 <ol>
-<li><p>construct the with the query request</p></li>
+<li><p>construct the URL with the query request</p></li>
 <li><p>setup authentication</p></li>
-<li><p>send and authentication</p></li>
-<li><p>receive response in</p></li>
-<li><p>add result to output list</p></li>
+<li><p>send URL and authentication</p></li>
+<li><p>receive response in JSON</p></li>
+<li><p>add result to output list <code>imglist</code></p></li>
 </ol></li>
 <li><p>once 10 results are reached, render results as spiral</p></li>
 </ol>
-<p>Source [code:getFlickr] shows how such an call is made using JavaScript (in this case Flickr). Source [code:imglist] below shows how 10 seperate images are collected into one results list and the function is called to render the images to the user in (see appendix [s:imgspiral] for the relevant code snippet).</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">flickrsearch</span>(patadata)<span class="op">{</span>
+<p>Source <a href="#code:10.12">10.12</a> shows how such an API call is made using JavaScript (in this case Flickr). Source <a href="#code:10.13">10.13</a> below shows how 10 seperate images are collected into one results list and the <code>createSpiral</code> function is called to render the images to the user in HTML (see appendix [s:imgspiral] for the relevant code snippet).</p>
+
+<div class="sourceCode">
+<figure id="code:10.12">
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">flickrsearch</span>(patadata)<span class="op">{</span>
   <span class="cf">for</span>(<span class="kw">var</span> x<span class="op">=</span><span class="dv">0</span><span class="op">;</span> x<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> x<span class="op">++</span>)<span class="op">{</span>
     <span class="va">$</span>.<span class="at">getJSON</span>(<span class="st">&quot;http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?&quot;</span><span class="op">,</span>
       <span class="op">{</span>
@@ -628,9 +717,14 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
       <span class="op">}</span>
     )<span class="op">;</span>
   <span class="op">}</span>
-<span class="op">};</span>
-  </code></pre></div>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> allImages <span class="op">=</span> []<span class="op">;</span>
+<span class="op">};</span></code></pre>
+<figcaption>Code 10.12 – ‘flickrsearch’: using the Flickr API to retrieve images—JavaScript</figcaption>
+</figure>
+</div>
+
+<div class="sourceCode">
+<figure id="code:10.13">
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> allImages <span class="op">=</span> []<span class="op">;</span>
 <span class="kw">function</span> <span class="at">imgList</span>(img)<span class="op">{</span>
   <span class="cf">if</span> (allImages[<span class="dv">0</span>] <span class="op">!=</span> <span class="st">&quot;&quot;</span>) <span class="op">{</span>
     <span class="va">allImages</span>.<span class="at">push</span>(img)<span class="op">;</span>
@@ -638,10 +732,17 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
   <span class="cf">if</span> (<span class="va">allImages</span>.<span class="at">length</span> <span class="op">===</span> <span class="dv">10</span>) <span class="op">{</span>
     <span class="at">createSpiral</span>(allImages)<span class="op">;</span>
   <span class="op">}</span>
-<span class="op">}</span>
-  </code></pre></div>
-<p>The Bing and Getty searches work in a similar way with one exception. Getty does not populate the output list by doing 10 individual calls but rather by adding 10 results from 1 call. This is due to a time restriction in the Getty ; it doesn not allow 10 calls in a second.</p>
-<p>An example request for the Flickr image search with the query term of ‘kittens’ and a requested response format of is this: <a href="http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?tags=kittens&amp;tagmode=all&amp;format=json" class="uri">http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?tags=kittens&amp;tagmode=all&amp;format=json</a>. Flickr will then send back the response in format. One entry of the list of results is shown below (with whitespace formatting added for convenience). The algorithm in source [code:getFlickr] only retrieves the , and (lines 12, 13, and 14) and ignores all other data fields.</p>
+<span class="op">}</span></code></pre>
+<figcaption>Code 10.13 – ‘imgList’: accumulates 10 images and calls the ‘createSpiral’ function—JavaScript</figcaption>
+</figure>
+</div>
+
+<p>The Bing and Getty searches work in a similar way with one exception. Getty does not populate the output list by doing 10 individual API calls but rather by adding 10 results from 1 call. This is due to a time restriction in the Getty API; it doesn not allow 10 calls in a second.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>An example URL request for the Flickr image search with the query term of ‘kittens’ and a requested response format of JSON is this: <a href="http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?tags=kittens&amp;tagmode=all&amp;format=json" class="uri">http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?tags=kittens&amp;tagmode=all&amp;format=json</a>. Flickr will then send back the response in JSON format. One entry of the list of results is shown below (with whitespace formatting added for convenience). The algorithm in source <a href="#code:10.12">10.12</a> only retrieves the <code>data.items[0].title</code>, <code>data.items[0].media.m</code> and <code>data.items[0].link</code> (lines 12, 13, and 14) and ignores all other data fields.</p>
+
 <pre class="text"><code>({...
   &quot;items&quot;: 
     [{
@@ -656,11 +757,18 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
       &quot;tags&quot;: &quot;&quot;
     },...]
 })</code></pre>
-<p>Once the contains 10 items it is passed to the function which renders it to . Appendix [s:bingjson] shows an example shortnened result from Bing.</p>
-<p>The video search also uses an to retrieve results. This function is written in Python and uses the <em>Requests</em> library <span class="citation" data-cites="Reitznd">(Reitz n.d.)</span> to make the calls to YouTube <span class="citation" data-cites="YouTubeAPI">(“Search: list. YouTube Data Api” n.d.)</span> as shown in source [code:videosearch].</p>
-<p>First, the query is translated using the function on line 3. Line 4 seperates the English translation into its own list which is then pataphysicalised on line 5 using the algorithm described in source [code:pataph].</p>
-<p>Lines 6–9 construct the first part of the to use for the request. Lines 10–23 then loop through each of the patadata terms generated by the function on line 5 to make a call and retrieve some video details (title, thumbnail and ID) as seen on lines 17–19. On line 20 these details are added to the output list.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> getvideos(query):
+
+<p>Once the <code>imglist</code> contains 10 items it is passed to the <code>createSpiral</code> function which renders it to HTML. Appendix [s:bingjson] shows an example shortnened JSON result from Bing.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>The video search also uses an API to retrieve results. This function is written in Python and uses the <em>Requests</em> library <span class="citation" data-cites="Reitznd">(Reitz n.d.)</span> to make the API calls to YouTube <span class="citation" data-cites="YouTubeAPI">(“Search: list. YouTube Data Api” n.d.)</span> as shown in source <a href="#code:10.14">10.14</a>.</p>
+<p>First, the query is translated using the <code>transent</code> function on line 3. Line 4 seperates the English translation into its own list <code>transplit</code> which is then pataphysicalised on line 5 using the algorithm described in source <a href="#code:10.11">10.11</a>.</p>
+<p>Lines 6–9 construct the first part of the URL to use for the Representational State Transfer (REST) request. Lines 10–23 then loop through each of the patadata terms generated by the <code>pataphysicalise</code> function on line 5 to make a call and retrieve some video details (title, thumbnail and ID) as seen on lines 17–19. On line 20 these details are added to the output list.</p>
+
+<div class="sourceCode">
+<figure id="code:10.14">
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> getvideos(query):
   out <span class="op">=</span> []
   translations <span class="op">=</span> transent(query)
   transplit <span class="op">=</span> translations[<span class="dv">2</span>].split(<span class="st">&#39; &#39;</span>)
@@ -683,18 +791,25 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
       <span class="cf">break</span>
     <span class="cf">else</span>:
       out <span class="op">=</span> []
-  <span class="cf">return</span> out, translations
-  </code></pre></div>
-<p>The video results are then also displayed in a golden spiral in the same way as the images. This is described in section [s:spiral].</p>
+  <span class="cf">return</span> out, translations</code></pre>
+<figcaption>Code 10.14 – ‘getvideos’: using the YouTube API to retrieve images—Python</figcaption>
+</figure>
+</div>
+
+<p>The video results are then also displayed in a golden spiral in the same way as the images. This is described in section <a href="#s:spiral">10.4.3</a>.</p>
 </section>
 </section>
+
 <section id="design" class="level2">
 <h2><span class="header-section-number">10.4</span> Design</h2>
-<p>Once the patalgorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja <span class="citation" data-cites="Jinja2016">(Ronacher <a href="#ref-Jinja2016">2008</a>)</span> and (with stylesheets and some JavaScript).</p>
-<p>One of the key requirements for the <em>Syzygy Surfer</em> tool was that “the user should be able to choose the techniques they use” <span class="citation" data-cites="Hendler2011">(Hendler and Hugill <a href="#ref-Hendler2011">2011</a>)</span>. This has been adopted for <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> in the sense that the user has different options for the display of results.</p>
-<figure>
-<img src="images/proto3screen" alt="Responsive design of pata.physics.wtf" /><figcaption>Responsive design of <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a><span data-label="img:proto3screen"></span></figcaption>
+<p>Once the patalgorithms have produced their respective results, the page displaying these results can be rendered. This is done using the templating language Jinja <span class="citation" data-cites="Jinja2016">(Ronacher <a href="#ref-Jinja2016">2008</a>)</span> and HTML (with CSS stylesheets and some JavaScript).</p>
+<p>One of the key requirements for the <em>Syzygy Surfer</em> tool was that “the user should be able to choose the techniques they use” <span class="citation" data-cites="Hendler2011">(Hendler and Hugill <a href="#ref-Hendler2011">2011</a>)</span>. This has been adopted for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> in the sense that the user has different options for the display of results.</p>
+
+<figure id="fig:10.6">
+<img src="../images/proto3screen.png" alt="Responsive design of pata.physics.wtf" />
+<figcaption>Figure 10.6 - Responsive design of <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a></figcaption>
 </figure>
+
 <p>The text results page has three different result styles, with ‘Poetry — Queneau’ being the default.</p>
 <dl>
 <dt>Poetry</dt>
@@ -720,16 +835,23 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
 <dd><p>Displayed as a simple list.</p>
 </dd>
 </dl>
-<p>The overal visual design is shown in image [img:proto3screen].</p>
+<p>The overal visual design is shown in image <a href="fig:10.6">10.6</a>.</p>
+
 <section id="s:poetry" class="level3">
 <h3><span class="header-section-number">10.4.1</span> Poetry</h3>
-<p>Source [code:qpoems] shows the segment of /Jinja code that renders the Queneau poetry. The code renders the 4 stanzas of the poem. This is done using two nested Jinja loops (line 2 and line 10). Line 2 loops through the (ideally) 14 lines of the poem. can be considered a masterlist of all sublists for each poem line.</p>
-<p>Functionality for sending the currently showing poem per email is added via a button which calls a JavaScript function which then retrieves the content of each line in the poem and sends it to the body of the email.</p>
-<p>is the pool of all sentences. It is structured as follows.</p>
+<p>Source <a href="code:10.15">10.15</a> shows the segment of HTML/Jinja code that renders the Queneau poetry. The code renders the 4 stanzas of the poem. This is done using two nested Jinja <code>for</code> loops (line 2 and line 10). Line 2 loops through the (ideally) 14 lines of the poem. <code>lol</code> can be considered a masterlist of all sublists for each poem line.</p>
+<p>Functionality for sending the currently showing poem per email is added via a button which calls a JavaScript function <code>onclick="return getContent(this)"</code> which then retrieves the content of each line in the poem and sends it to the body of the email.</p>
+<p><code>all_sens</code> is the pool of all sentences. It is structured as follows.</p>
+
 <pre class="text"><code>[(title, (pre, word, post), algorithm), ...]</code></pre>
-<p>is a list subdivided into partitions for each line of the sonnet. Let’s say there are 350 sentences overall in . To divide them equally among the 14 lines of a sonnet, we need to create with 14 equal parts of 25 sentences.</p>
+
+<p><code>lol</code> is a list subdivided into partitions for each line of the sonnet. Let’s say there are 350 sentences overall in <code>all_sens</code>. To divide them equally among the 14 lines of a sonnet, we need to create <code>lol</code> with 14 equal parts of 25 sentences.</p>
+
 <pre class="text"><code>[all_sens[0-24], all_sens[25-49], ...,  all_sens[325-349]]</code></pre>
-<pre class="html+jinja"><code>&lt;div&gt;
+
+<div class="sourceCode">
+<figure id="code:10.15">
+<pre class="sourceCode html+jinja"><code class="sourceCode html+jinja">&lt;div&gt;
   {% for n in range(1, lol|length + 1) %}
     {% set wid = [&quot;wn&quot;, n|string]|join %}
     {% set lid = [&quot;lyr&quot;, n|string]|join %}
@@ -744,67 +866,146 @@ r &amp; a result of form (<span class="math inline"><em>d</em></span>, sentence,
       &lt;div id=&quot;{{sid}}&quot; class=&quot;scrollLinks&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
   {% endfor %}
-&lt;/div&gt;
-  </code></pre>
-<p>Changing a line of the poem is achieved by clicking on one of the buttons on either side of the poem’s line (as shown in image [img:qpoemtree]). This will trigger a JavaScript function (based on <span class="citation" data-cites="DYNWEB2016">(“Horizontal Scrolling with Javascript” n.d.)</span>) to automatically scroll to the next sentence.</p>
-<figure>
-<img src="images/qpoemtree" alt="Example Queneau poem for query tree" /><figcaption>Example Queneau poem for query ‘tree’<span data-label="img:qpoemtree"></span></figcaption>
+&lt;/div&gt;</code></pre>
+<figcaption>Code 10.15 – Simplified HTML code for rendering Queneau style poems</figcaption>
 </figure>
-<p>Non-Queneau poems have a slightly different functionality. It is not possible to change the poem line by line but rather the whole poem can be randomised on demand. This relies on a random number generator in JavaScript. A function creates a random variable as , which can then be used to generate a new list of 14 lines for the poem randomly selected from the pool of sentences .</p>
+</div>
+
+<p>Changing a line of the poem is achieved by clicking on one of the buttons on either side of the poem’s line (as shown in image <a href="fig:10.7">10.7</a>). This will trigger a JavaScript function (based on <span class="citation" data-cites="DYNWEB2016">(“Horizontal Scrolling with Javascript” n.d.)</span>) to automatically scroll to the next sentence.</p>
+
+<figure id="fig:10.7">
+<img src="../images/qpoemtree.png" alt="Example Queneau poem for query tree" /><figcaption>Figure 10.7 - Example Queneau poem for query ‘tree’<span data-label="img:qpoemtree"></span></figcaption>
+</figure>
+
+<p>Non-Queneau poems have a slightly different functionality. It is not possible to change the poem line by line but rather the whole poem can be randomised on demand. This relies on a random number generator in JavaScript. A function <code>shufflePoem()</code> creates a random variable <code>r</code> as <code>Math.floor(Math.random() * n)</code>, which can then be used to generate a new list of 14 lines for the poem randomly selected from the pool of sentences <code>all_sens</code>.</p>
 </section>
+
 <section id="lists" class="level3">
 <h3><span class="header-section-number">10.4.2</span> Lists</h3>
-<p>The two other ways to display text results are as a list ordered by source or by patalgorithm which works in a similar way to what is described in source [code:textlists]. The code is wrapped in an unordered list tag . A Jinja loop generates the individual tags on line 4.</p>
-<p>A in is structured as . This means that to access the name of the algorithm we need to call the Jinja template , to get the first half of the sentence we need , the middle keyword (i.e. the patadata term) and the second half of the sentence .</p>
-<pre class="html+jinja"><code>&lt;ul&gt;
+<p>The two other ways to display text results are as a list ordered by source or by patalgorithm which works in a similar way to what is described in source <a href="code:10.16">10.16</a>. The code is wrapped in an HTML unordered list tag <code>&lt;ul&gt;</code>. A Jinja <code>for</code> loop generates the individual <code>&lt;li&gt;</code> tags on line 4.</p>
+<p>A <code>sens</code> in <code>all_sens</code> is structured as <code>(title, (pre, word, post), algorithm)</code>. This means that to access the name of the algorithm we need to call the Jinja template <code>{{ sens[2] }}</code>, to get the first half of the sentence we need <code>{{ sens[1][0] }}</code>, the middle keyword (i.e. the patadata term) <code>{{ sens[1][1] }}</code> and the second half of the sentence <code>{{ sens[1][2] }}</code>.</p>
+
+<div class="sourceCode">
+<figure id="code:10.16">
+<pre class="sourceCode html+jinja"><code class="sourceCode html+jinja">&lt;ul&gt;
   {% for sens in all_sens %}
     {% if file == sens[0] %}
       &lt;li title=`{{ sens[2] }}&#39;&gt;...{{ sens[1][0] }} &lt;form class=`inform&#39; action=`../textresults&#39; method=`post&#39;&gt;&lt;input class=`w3-hide&#39; type=`radio&#39; name=`corpus&#39; value=`{{ corpus }}&#39; checked&gt;&lt;input class=`inlink&#39; type=`submit&#39; name=`query&#39; value=`{{ sens[1][1] }}&#39; onclick=`loading();&#39;&gt;&lt;/input&gt;&lt;/form&gt; {{ sens[1][2] }}...&lt;/li&gt;
     {% endif %}
   {% endfor %}
-&lt;/ul&gt;
-  </code></pre>
-<p>Image [img:listsourcetree] shows a shortened example set of results for query ‘tree’ ordered by source, that is, ordered by original file.</p>
-<figure>
-<img src="images/listsourcetree" alt="Example results for query tree ordered by source" /><figcaption>Example results for query ‘tree’ ordered by source<span data-label="img:listsourcetree"></span></figcaption>
+&lt;/ul&gt;</code></pre>
+<figcaption>Code 10.16 – Simplified HTML code for rendering a list of text results by source</figcaption>
 </figure>
-<p>Image [img:listalgotree] shows a shortened example set of results for query ‘tree’ ordered by patalgorithm, that is, ordered by the algorithm which produced the patadata.</p>
-<figure>
-<img src="images/listalgotree" alt="Example results for query tree ordered by patalgorithm" /><figcaption>Example results for query ‘tree’ ordered by patalgorithm<span data-label="img:listalgotree"></span></figcaption>
+</div>
+
+<p>Image <a href="fig:10.8">10.8</a>. shows a shortened example set of results for query ‘tree’ ordered by source, that is, ordered by original file.</p>
+
+<figure id="fig:10.8">
+<img src="../images/listsourcetree.png" alt="Example results for query tree ordered by source" />
+<figcaption>Figure 10.8 - Example results for query ‘tree’ ordered by source<span data-label="img:listsourcetree"></span></figcaption>
+</figure>
+
+<p>Image <a href="fig:10.9">10.9</a> shows a shortened example set of results for query ‘tree’ ordered by patalgorithm, that is, ordered by the algorithm which produced the patadata.</p>
+
+<figure id="fig:10.9">
+<img src="../images/listalgotree.png" alt="Example results for query tree ordered by patalgorithm" />
+<figcaption>Figure 10.9 - Example results for query ‘tree’ ordered by patalgorithm<span data-label="img:listalgotree"></span></figcaption>
 </figure>
 </section>
+
 <section id="s:spiral" class="level3">
 <h3><span class="header-section-number">10.4.3</span> Spiral</h3>
-<p>The image and video spirals are constructed in complicated nested components. The code for generating an image spiral is shown in appendix [s:imgspiral]. The video spiral is constructed in a similar way but directly in the file as opposed to in the JavaScript file. The video spiral is almost identical, the only difference is the biggest 5 videos are atually embedded as videos. The smaller 5 videos are shown as still images which link to the relevant YouTube page.</p>
-<p>Generally, the idea was taken from the pataphysical <em>grand gidouille</em> (see chapter [ch:pataphysics]) and represented as a Fibonacci spiral. Figure [img:fibspiral] shows a spiral created using the Flickr image search for query ‘blue mountains’ overlaid with a white Fibonacci spiral to highlight the structure.</p>
-<p>at (-10.8,-2.7) <span><img src="images/bluemountains-flickr" title="fig:" alt="Fibonacci spiral overlaid onto an image results for query blue mountains using Flickr" width="555" height="343" /></span>;</p>
-<p>(0) at (0,0); iin <span>1,...,18</span></p>
-<p>() arc (: + 90 : /10.0pt) coordinate (i);</p>
-<p>iin <span>1,3,...,17</span> <span> () -| (i); </span> iin <span>2,4,...,16</span> <span> () |- (i); </span> (17) – (17 |- 18);</p>
+<p>The image and video spirals are constructed in complicated nested HTML components. The code for generating an image spiral is shown in appendix [s:imgspiral]. The video spiral is constructed in a similar way but directly in the HTML file as opposed to in the JavaScript file. The video spiral is almost identical, the only difference is the biggest 5 videos are atually embedded as videos. The smaller 5 videos are shown as still images which link to the relevant YouTube page.</p>
+<p>Generally, the idea was taken from the pataphysical <em>grand gidouille</em> (see chapter <a href="pataphysics.html#ch:pataphysics">4</a>) and represented as a Fibonacci spiral. Figure <a href="fig:10.10">10.10</a> shows a spiral created using the Flickr image search for query ‘blue mountains’ overlaid with a white Fibonacci spiral to highlight the structure.</p>
+
+<figure id="fig:10.10">
+<img src="../images/fig1010.png" alt="Example results for query tree ordered by patalgorithm" />
+<figcaption>Figure 10.10 - Fibonacci spiral overlaid onto an image results for query ‘blue mountains’ using Flickr</figcaption>
+</figure>
 </section>
 </section>
+
 <section id="s:prototypes" class="level2">
 <h2><span class="header-section-number">10.5</span> Prototypes</h2>
-<p>The final website <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a> went through several iterations of development since it was first conceived in 2012. This included 3 major technical updates since the first prototype and 2 new visual re-designs. Table [tab:versions] shows the main differences and similarities between the versions.</p>
-<p><span>X[l]X[l]X[l,1.2]X[l,1.5]X[l,2]</span> &amp; <strong>Version 1</strong> &amp; <strong>Version 2</strong> &amp; <strong>Version 3</strong> &amp; <strong>Version 4</strong><br />
-<strong>Language(s)</strong> &amp; Python, Django &amp; Python, Flask &amp; Python, Flask &amp; Python, Flask, JavaScript<br />
-<strong>Server</strong> &amp; Django, Heroku &amp; Flask, Mnemosyne &amp; Flask, Gunicorn, Mnemosyne &amp; Flask, Gunicorn, OVH<br />
-<strong>Features</strong> &amp; Text &amp; Text, Image, Video &amp; Text, Image, Video &amp; Text, Image, Video<br />
-<strong>Corpus</strong> &amp; Faustroll text &amp; Faustroll text &amp; Faustroll’s library &amp; Faustroll’s library and Shakespeare<br />
-<strong>API’s</strong> &amp; WordNet &amp; WordNet, Flickr, Bing, YouTube, Microsoft Translator &amp; WordNet, Bing, YouTube, Microsoft Translator &amp; WordNet, Flickr, Getty, Bing, YouTube, Microsoft Translator<br />
-<strong>Design</strong> &amp; Algorithms &amp; Algorithms, Spiral &amp; Algorithms, Source, Poetry, Spiral, List &amp; Algorithms, Source, Poetry, Spiral, List<br />
-<strong>Responsive</strong> &amp; No &amp; Yes &amp; Yes &amp; Yes<br />
-</p>
-<p>Images [img:proto1screen], [img:proto2screen] and [img:proto3screen] show the 3 main visual designs.</p>
+<p>The final website <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> went through several iterations of development since it was first conceived in 2012. This included 3 major technical updates since the first prototype and 2 new visual re-designs. Table <a href="#tab:10.1">10.1</a> shows the main differences and similarities between the versions.</p>
+
 <figure>
-<img src="images/proto1screen" alt="First version of pata.physics.wtf" /><figcaption>First version of <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a><span data-label="img:proto1screen"></span></figcaption>
+<table>
+  <tr>
+    <th class="trans"></th>
+    <th>Version 1</th>
+    <th>Version 2</th>
+    <th>Version 3</th>
+    <th>Version 4</th>
+  </tr>
+  <tr>
+    <th>Language(s)</th>
+    <td>Python, Django</td>
+    <td>Python, Flask</td>
+    <td>Python, Flask</td>
+    <td>Python, Flask, JavaScript</td>
+  </tr>
+  <tr>
+    <th>Server</th>
+    <td>Django, Heroku</td>
+    <td>Flask, Mnemosyne</td>
+    <td>Flask, Gunicorn, Mnemosyne</td>
+    <td>Flask, Gunicorn, OVH</td>
+  </tr>
+  <tr>
+    <th>Features</th>
+    <td>Text</td>
+    <td>Text, Image, Video</td>
+    <td>Text, Image, Video</td>
+    <td>Text, Image, Video</td>
+  </tr>
+  <tr>
+    <th>Corpus</th>
+    <td>Faustroll text</td>
+    <td>Faustroll text</td>
+    <td>Faustroll's library</td>
+    <td>Faustroll's library and Shakespeare</td>
+  </tr>
+  <tr>
+    <th>APIs</th>
+    <td>WordNet</td>
+    <td>WordNet, Flickr, Bing, YouTube, Microsoft Translator</td>
+    <td>WordNet, Bing, YouTube, Microsoft Translator</td>
+    <td>WordNet, Flickr, Getty, Bing, YouTube, Microsoft Translator</td>
+  </tr>
+  <tr>
+    <th>Design</th>
+    <td>Algorithms</td>
+    <td>Algorithms, Spirals</td>
+    <td>Algorithms, Source, Spirals, Poetry, Spiral, List</td>
+    <td>Algorithms, Source, Spirals, Poetry, Spiral, List</td>
+  </tr>
+  <tr>
+    <th>Responsive</th>
+    <td>No</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+</table>
+<figcaption>Table 10.1 - Comparison of different versions of pata.physics.wtf</figcaption>
 </figure>
-<figure>
-<img src="images/proto2screen" alt="Second major version of pata.physics.wtf" /><figcaption>Second major version of <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a><span data-label="img:proto2screen"></span></figcaption>
+
+<p>Images <a href="#fig:10.11">10.11</a>, <a href="#fig:10.12">10.12</a> and <a href="#fig:10.13">10.13</a> show the 3 main visual designs.</p>
+
+<figure id="fig:10.11">
+<img src="../images/proto1screen.png" alt="First version of pata.physics.wtf" />
+<figcaption>Figure 10.11 - First version of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a></figcaption>
 </figure>
-<p>The latest version, which is now live at <a href="pata.physics.wtf" class="uri">pata.physics.wtf</a>, introduced major changes to the initial setup stage of the system and a lot of the code was refactored and improved. As of the date of writing this, there were over 360 commits in the git repository since 2012. See appendix [s:gitweb].</p>
+<figure id="fig:10.12">
+<img src="../images/proto2screen.png" alt="Second major version of pata.physics.wtf" />
+<figcaption>Figure 10.12 - Second major version of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a></figcaption>
+</figure>
+
+<p>The latest version, which is now live at <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>, introduced major changes to the initial setup stage of the system and a lot of the code was refactored and improved. As of the date of writing this, there were over 360 commits in the git repository since 2012. See appendix [s:gitweb].</p>
 </section>
 </section>
+
 <section id="bibliography" class="level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
