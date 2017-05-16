@@ -585,7 +585,7 @@ $$PR(A) =
 <p>Figure <a href="#fig:6.6">6.6</a> which shows how the PageRank algorithm works. Each smiley represents a webpage. The colours are of no consequence. The smile-intensity indicates a higher rank or score. The pointy hands are hyperlinks. The yellow smiley is the happiest since it has the most incoming links from different sources with only one outgoing link. The blue one is slightly smaller and slightly less smiley even though it has the same number of incoming links as the yellow one because it has more outgoing links. The little green faces barely smile since they have no incoming links at all.</p>
 
 <figure id="fig:6.6">
-<img src="../images/pagerank.png" alt="PageRank algorithm illustration (Mayhaymate 2012)" /><figcaption>Figure 6.6 PageRank algorithm illustration <span class="citation" data-cites="Wikimedia2012">(Mayhaymate <a href="#ref-Wikimedia2012">2012</a>)</span></figcaption>
+<img src="../images/PageRank.png" alt="PageRank algorithm illustration (Mayhaymate 2012)" /><figcaption>Figure 6.6 PageRank algorithm illustration <span class="citation" data-cites="Wikimedia2012">(Mayhaymate <a href="#ref-Wikimedia2012">2012</a>)</span></figcaption>
 </figure>
 
 <p>The HITS algorithm also works on the links between pages <span class="citation" data-cites="Kleinberg1999 Kleinberg1999a">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>; Kleinberg et al. <a href="#ref-Kleinberg1999a">1999</a>)</span>. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called ‘authorities’ and page with many outgoing links are called ‘hubs’. Equation <a href="#eq:HITS">6.6</a> shows the algorithm <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.</p>
@@ -754,7 +754,7 @@ $$\begin{split}
 
 <figure id="eq:6.7" class="equation">
 <img src="../images/dl.png" alt="Damerau-Levenshtein equation">
-<figcaption>Equation 6.7</figcaption>
+<figcaption>(6.7)</figcaption>
 </figure>
 
 <p>$1_(a_i ≠ b_j)$ is equal to $0$ when $a_i = b_j$ and equal to $1$ otherwise.</p>
