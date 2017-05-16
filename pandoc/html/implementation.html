@@ -138,12 +138,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Figures <a href="#fig:10.4">10.4</a> and <a href="#fig:10.5">10.5</a> show the two main workflow scenarios of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> in the form of sequence diagrams. The columns are labeled with the main agents (this includes the user and the various main files responsible for key actions in the system). Going down vertically represents time.</p>
 <p>Figure <a href="#fig:10.4">10.4</a> demonstrates an outline of how the text search process works. A user enters a query into a search box in the <code>text.html</code> file which is rendered by the <code>textviews.py</code> file. Then it gets forwarded to the <code>textsurfer.py</code> file which then handles the pataphysicalisation process and returns patadata back to <code>textviews.py</code>. This python file then passes it on to the <code>textresults.html</code> file which retrieves and renders the results to the user. The user then has the option to randomise the results (if displayed as a poem) which is handled by the <code>fania.js</code> file. A very similar process is in place for image and video search as shown in figure  <a href="#fig:10.5">10.5</a>. The main difference is the results are retrieved in the file rather than the <code>imgresults.html</code> file.</p>
 
-<figure id="fig:10.4">
+<figure class="half" id="fig:10.4">
 <img src="../images/fig104.png" alt="Top-level overview of text search" />
 <figcaption>Figure 10.4 - Top-level overview of text search</figcaption>
 </figure>
 
-<figure id="fig:10.5">
+<figure class="half" id="fig:10.5">
 <img src="../images/fig105.png" alt="Top-level overview of image / video search" />
 <figcaption>Figure 10.5 - Top-level overview of image / video search</figcaption>
 </figure>
