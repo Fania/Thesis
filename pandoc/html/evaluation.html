@@ -82,7 +82,8 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 <p>Note the slight difference between the two. Precision tells us how many of all retrieved results were actually relevant (of course this should preferable be very high) and recall simply indicates how many of all possible relevant documents we managed to retrieve. This can be easily visualised as as shown in figure <a href="#fig:7.1">7.1</a>.</p>
 
 <figure id="fig:7.1">
-<img src="../images/PRside.png" alt="Precision and recall (Walber 2014)" /><figcaption>Precision and recall <span class="citation" data-cites="Wikimedia2014">(Walber <a href="#ref-Wikimedia2014">2014</a>)</span></figcaption>
+<img src="../images/PRside.png" alt="Precision and recall (Walber 2014)" />
+<figcaption>Figure 7.1 - Precision and recall <span class="citation" data-cites="Wikimedia2014">(Walber <a href="#ref-Wikimedia2014">2014</a>)</span></figcaption>
 </figure>
 
 <p>Precision is typically more important than recall in web search, so often evaluation is reduced to measuring the Mean Average Precision (MAP) value, which can be calculated using the formula in equation <a href="#eq:7.3">7.3</a> <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $R_i$ is the set of results for query $i$, $P(R_i[k])$ is the precision value for result $k$ for query $i$ and $|R_i|$ is the total number of results.</p>
