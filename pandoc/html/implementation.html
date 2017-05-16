@@ -262,12 +262,12 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.2">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $f$ = input text</span>
-<span class="co"># $lang$ = stopwords</span>
-<span class="co"># $dic$ = dictionary</span>
-<span class="co"># $d$ = &#39;$l$&#39; for Faustroll or &#39;$s$&#39; for Shakespeare</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># f = input text</span>
+<span class="co"># lang = stopwords</span>
+<span class="co"># dic = dictionary</span>
+<span class="co"># d = &#39;l&#39; for Faustroll or &#39;s&#39; for Shakespeare</span>
 <span class="kw">def</span> setupcorpus(f, lang, dic, d):
-  <span class="co"># $x$ = counter, $w$ = word in file $f$</span>
+  <span class="co"># x = counter, w = word in file f</span>
   <span class="cf">for</span> x, w <span class="kw">in</span> <span class="bu">enumerate</span>(f):
     <span class="cf">if</span> w.isalpha() <span class="kw">and</span> (w.lower() <span class="kw">not</span> <span class="kw">in</span> lang):
       y <span class="op">=</span> d <span class="op">+</span> <span class="st">&#39;_&#39;</span> <span class="op">+</span> (re.search(<span class="vs">r&quot;((\d\d).(\w)+.txt)&quot;</span>, f.fileid)).group(<span class="dv">2</span>)
@@ -313,9 +313,9 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <div class="sourceCode">
 <figure id="code:10.3">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = query word</span>
-<span class="co"># $c$ = corpus</span>
-<span class="co"># $i$ = assigned distance</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = query word</span>
+<span class="co"># c = corpus</span>
+<span class="co"># i = assigned distance</span>
 <span class="kw">def</span> clinamen(w, c, i):
   <span class="co"># l_00 = Faustroll text</span>
   words <span class="op">=</span> <span class="bu">set</span>([term <span class="cf">for</span> term <span class="kw">in</span> l_00 <span class="cf">if</span> dameraulevenshtein(w, term) <span class="op">&lt;=</span> i])
@@ -357,17 +357,17 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.5">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $words$ = patadata words</span>
-<span class="co"># $algo$ = name of algorithm</span>
-<span class="co"># $corp$ = name of corpus</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># words = patadata words</span>
+<span class="co"># algo = name of algorithm</span>
+<span class="co"># corp = name of corpus</span>
 <span class="kw">def</span> get_results(words, algo, corp):
   total <span class="op">=</span> <span class="dv">0</span>
   out, sources <span class="op">=</span> <span class="bu">set</span>(), <span class="bu">set</span>()
   <span class="cf">for</span> r <span class="kw">in</span> words:
     <span class="cf">if</span> corp <span class="op">==</span> <span class="st">&#39;faustroll&#39;</span>: files <span class="op">=</span> l_dict[r]
     <span class="cf">else</span>: files <span class="op">=</span> s_dict[r]
-    <span class="co"># $e$ = current file</span>
-    <span class="co"># $p$ = list of positions for term $r$ in file $e$</span>
+    <span class="co"># e = current file</span>
+    <span class="co"># p = list of positions for term $r$ in file $e$</span>
     <span class="cf">for</span> e, p <span class="kw">in</span> files.items():
       f <span class="op">=</span> get_title(e)
       sources.add(f)
@@ -383,9 +383,9 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <div class="sourceCode">
 <figure id="code:10.6">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = the word (lower case)</span>
-<span class="co"># $f$ = the file</span>
-<span class="co"># $p$ = the list of positions</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = the word (lower case)</span>
+<span class="co"># f = the file</span>
+<span class="co"># p = the list of positions</span>
 <span class="kw">def</span> pp_sent(w, f, p):
   out, pos <span class="op">=</span> [], p[<span class="dv">0</span>] <span class="co"># FIRST OCCURRENCE</span>
   ff <span class="op">=</span> <span class="bu">eval</span>(f)
@@ -433,8 +433,8 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.7">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = word</span>
-<span class="co"># $c$ = corpus</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = word</span>
+<span class="co"># c = corpus</span>
 <span class="kw">def</span> syzygy(w, c):
   words, hypos, hypers, holos, meros <span class="op">=</span> <span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>()
   wordsets <span class="op">=</span> wn.synsets(w)
@@ -463,8 +463,8 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <div class="sourceCode">
 <figure id="code:10.8">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $nym$ = name of nym</span>
-<span class="co"># $wset$ = synset</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># nym = name of nym</span>
+<span class="co"># wset = synset</span>
 <span class="kw">def</span> get_nym(nym, wset):
   out <span class="op">=</span> []
   hhh <span class="op">=</span> wset.hyponyms()
@@ -504,8 +504,8 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
  
 <div class="sourceCode">
 <figure id="code:10.9">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $w$ = input query term</span>
-<span class="co"># $c$ = name of corpus</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = input query term</span>
+<span class="co"># c = name of corpus</span>
 <span class="kw">def</span> antinomy(w, c):
   words <span class="op">=</span> <span class="bu">set</span>()
   wordsets <span class="op">=</span> wn.synsets(w)
@@ -641,7 +641,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.10">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $sent$ = the query string</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># sent = the query string</span>
 <span class="im">from</span> microsofttranslator <span class="im">import</span> Translator
 <span class="kw">def</span> transent(sent):
   translator <span class="op">=</span> Translator(microsoft_id, microsoft_secret)
@@ -659,7 +659,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.11">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># $words$ = query term(s)</span>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># words = query term(s)</span>
 <span class="kw">def</span> pataphysicalise(words):
   sys_ws <span class="op">=</span> <span class="bu">set</span>()
   <span class="cf">for</span> word <span class="kw">in</span> words:
