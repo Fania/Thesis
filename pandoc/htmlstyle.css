@@ -465,10 +465,6 @@ table.where {
     text-align: center;
     margin: 2em;
   }
-  figure.half {
-    width: 40%;
-    display: inline-block;
-  }
   .titleimg figcaption {
     font-size: 1.5em;
     opacity: 0;
@@ -486,6 +482,10 @@ table.where {
 @media screen and (min-width: 1000px) {
   .hide {
     display: block;
+  }
+  figure.half {
+    width: 40%;
+    display: inline-block;
   }
   .titleimg figcaption {
     font-size: 1.5em;
