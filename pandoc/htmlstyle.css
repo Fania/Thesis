@@ -215,6 +215,7 @@ figcaption {
   width: 100%;
   position: relative;
   overflow-x: auto;
+  padding-top: 1em;
 }
 
 .equation img {
@@ -223,8 +224,8 @@ figcaption {
 
 .equation figcaption {
   position: absolute;
-  right: 10%;
-  top: 50%;
+  left: 1em;
+  top: 0;
 }
 
 toc-section-number {
@@ -520,6 +521,11 @@ table.where {
     width: 49%;
     display: inline-block;
     vertical-align: top;
+  }
+  .equation figcaption {
+    position: absolute;
+    right: 10%;
+    top: 50%;
   }
 }
 
