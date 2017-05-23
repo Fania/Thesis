@@ -92,6 +92,11 @@ pre.text {
   padding: 5px;
 }
 
+a.uri {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .mainnav {
   background-color: #314956;
   position: relative;
@@ -526,7 +531,10 @@ table.where {
     position: absolute;
     right: 10%;
     top: 50%;
+    left: 90%;
   }
+  figure[id="fig:10.1"] img {width: 600px; max-width: 2000px;}
+  figure[id="fig:10.3"] img {width: 500px;}
 }
 
 
@@ -544,13 +552,6 @@ figure[id="fig:9.1"] img {width: 150px;}
 figure[id="fig:9.2"] img {width: 400px;}
 figure[id="fig:9.3"] img {width: 400px;}
 figure[id="fig:9.4"] img {width: 450px;}
-/*figure[id="fig:10.1"] img {width: 600px; max-width: 2000px;}*/
 figure[id="fig:10.2"] {width: 200px; float:right; margin: 0 0 0 10px;}
-/*figure[id="fig:10.3"] img {width: 500px;}*/
-
 figure[id="tab:10.1"] div {overflow-x: auto;}
 
-a.uri {
-  white-space: pre-wrap;
-  word-break: break-word;
-}
