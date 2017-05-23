@@ -79,7 +79,8 @@ blockquote ul{
 code {
   font-family: 'Roboto Mono', monospace;
   background-color: #f2f2f2;
-  white-space: pre-wrap;
+  /*white-space: pre-wrap;*/
+  overflow-x: auto;
 }
 
 .poem code {
@@ -312,6 +313,23 @@ pre.text {
 pre.text span.line-number {
   opacity: 0;
   display: none;
+}
+pre.text code {
+  white-space: pre-wrap;
+}
+.scrollbar {
+  padding-bottom: 15px;
+}
+.scrollbar::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+  border-radius: 5px;
+}
+.scrollbar::-webkit-scrollbar {
+	width: 10px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+	background-color: #4070a0;
+  border-radius: 5px;
 }
 
 #TOC {

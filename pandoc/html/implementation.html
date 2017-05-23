@@ -245,7 +245,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode">
 <figure id="code:10.1">
 <pre class="sourceCode python">
-<code class="sourceCode python">library <span class="op">=</span> PlaintextCorpusReader(corpus_root, <span class="st">&#39;.*\.txt&#39;</span>)
+<code class="sourceCode python scrollbar">library <span class="op">=</span> PlaintextCorpusReader(corpus_root, <span class="st">&#39;.*\.txt&#39;</span>)
 l_00 <span class="op">=</span> library.words(<span class="st">&#39;00.faustroll.txt&#39;</span>)
 l_01 <span class="op">=</span> library.words(<span class="st">&#39;01.poe1.txt&#39;</span>)
 ...
@@ -262,7 +262,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.2">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># f = input text</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># f = input text</span>
 <span class="co"># lang = stopwords</span>
 <span class="co"># dic = dictionary</span>
 <span class="co"># d = &#39;l&#39; for Faustroll or &#39;s&#39; for Shakespeare</span>
@@ -313,7 +313,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <div class="sourceCode">
 <figure id="code:10.3">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = query word</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># w = query word</span>
 <span class="co"># c = corpus</span>
 <span class="co"># i = assigned distance</span>
 <span class="kw">def</span> clinamen(w, c, i):
@@ -329,7 +329,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.4">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Michael Homer 2009</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># Michael Homer 2009</span>
 <span class="co"># MIT license</span>
 <span class="kw">def</span> dameraulevenshtein(seq1, seq2):
   oneago <span class="op">=</span> <span class="va">None</span>
@@ -357,7 +357,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.5">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># words = patadata words</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># words = patadata words</span>
 <span class="co"># algo = name of algorithm</span>
 <span class="co"># corp = name of corpus</span>
 <span class="kw">def</span> get_results(words, algo, corp):
@@ -383,7 +383,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <div class="sourceCode">
 <figure id="code:10.6">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = the word (lower case)</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># w = the word (lower case)</span>
 <span class="co"># f = the file</span>
 <span class="co"># p = the list of positions</span>
 <span class="kw">def</span> pp_sent(w, f, p):
@@ -433,7 +433,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.7">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = word</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># w = word</span>
 <span class="co"># c = corpus</span>
 <span class="kw">def</span> syzygy(w, c):
   words, hypos, hypers, holos, meros <span class="op">=</span> <span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>(),<span class="bu">set</span>()
@@ -463,7 +463,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
   
 <div class="sourceCode">
 <figure id="code:10.8">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># nym = name of nym</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># nym = name of nym</span>
 <span class="co"># wset = synset</span>
 <span class="kw">def</span> get_nym(nym, wset):
   out <span class="op">=</span> []
@@ -504,7 +504,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
  
 <div class="sourceCode">
 <figure id="code:10.9">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># w = input query term</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># w = input query term</span>
 <span class="co"># c = name of corpus</span>
 <span class="kw">def</span> antinomy(w, c):
   words <span class="op">=</span> <span class="bu">set</span>()
@@ -641,7 +641,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.10">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># sent = the query string</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># sent = the query string</span>
 <span class="im">from</span> microsofttranslator <span class="im">import</span> Translator
 <span class="kw">def</span> transent(sent):
   translator <span class="op">=</span> Translator(microsoft_id, microsoft_secret)
@@ -659,7 +659,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.11">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># words = query term(s)</span>
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="co"># words = query term(s)</span>
 <span class="kw">def</span> pataphysicalise(words):
   sys_ws <span class="op">=</span> <span class="bu">set</span>()
   <span class="cf">for</span> word <span class="kw">in</span> words:
@@ -768,7 +768,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.14">
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> getvideos(query):
+<pre class="sourceCode python"><code class="sourceCode python scrollbar"><span class="kw">def</span> getvideos(query):
   out <span class="op">=</span> []
   translations <span class="op">=</span> transent(query)
   transplit <span class="op">=</span> translations[<span class="dv">2</span>].split(<span class="st">&#39; &#39;</span>)

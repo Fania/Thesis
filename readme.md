@@ -27,7 +27,7 @@
 <div class="sourceCode">
 <figure id="code:10.1">
 <pre class="sourceCode python">
-<code class="sourceCode python">library <span class="op">=</span> PlaintextCorpusReader(corpus_root, <span class="st">&#39;.*\.txt&#39;</span>)
+<code class="sourceCode python scrollbar">library <span class="op">=</span> PlaintextCorpusReader(corpus_root, <span class="st">&#39;.*\.txt&#39;</span>)
 l_00 <span class="op">=</span> library.words(<span class="st">&#39;00.faustroll.txt&#39;</span>)
 l_01 <span class="op">=</span> library.words(<span class="st">&#39;01.poe1.txt&#39;</span>)
 ...
