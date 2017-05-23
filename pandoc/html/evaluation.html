@@ -68,12 +68,12 @@
 <h2><span class="header-section-number">7.1</span> Evaluating Search</h2>
 <p>Generally, computer systems are evaluated against functional requirements and performance specifications. Traditional Information Retrieval (IR) however is usually evaluated using two metrics known as precision and recall <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>. Precision is defined as the fraction of retrieved documents that are relevant, while recall is defined as the fraction of relevant documents that are retrieved.</p>
 
-<figure id="eq:7.1" class="equation">
+<figure id="eq:7.1" class="equation scrollbar">
 $$Precision = \frac{\text{relevant documents retrieved}}{\text{retrieved documents}}
   \label{eq:precision}$$
 <figcaption>(7.1)</figcaption>
 </figure>
-<figure id="eq:7.2" class="equation">
+<figure id="eq:7.2" class="equation scrollbar">
 $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 \label{eq:recall}$$
 <figcaption>(7.2)</figcaption>
@@ -88,7 +88,7 @@ $$Recall = \frac{\text{relevant documents retrieved}}{\text{relevant documents}}
 
 <p>Precision is typically more important than recall in web search, so often evaluation is reduced to measuring the Mean Average Precision (MAP) value, which can be calculated using the formula in equation <a href="#eq:7.3">7.3</a> <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $R_i$ is the set of results for query $i$, $P(R_i[k])$ is the precision value for result $k$ for query $i$ and $|R_i|$ is the total number of results.</p>
 
-<figure id="eq:7.3" class="equation">
+<figure id="eq:7.3" class="equation scrollbar">
 $$MAP_i = \frac{1}{|R_i|} \sum_{k=1}^{|R_i|} P(R_i[k])
 \label{eq:MAP}$$
 <figcaption>(7.3)</figcaption>

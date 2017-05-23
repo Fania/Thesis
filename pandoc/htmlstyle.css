@@ -120,8 +120,9 @@ pre.text {
 }
 
 .triplespiral {
-  width: 100px;
-  margin: 10px 45%;
+  width: 150px;
+  margin: 10px auto;
+  display: block;
 }
 
 .titleimg {
@@ -213,6 +214,7 @@ figcaption {
   text-align: center;
   width: 100%;
   position: relative;
+  overflow-x: auto;
 }
 
 .equation img {
@@ -316,6 +318,7 @@ pre.text span.line-number {
 }
 pre.text code {
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .scrollbar {
   padding-bottom: 15px;
@@ -535,6 +538,13 @@ figure[id="fig:9.1"] img {width: 150px;}
 figure[id="fig:9.2"] img {width: 400px;}
 figure[id="fig:9.3"] img {width: 400px;}
 figure[id="fig:9.4"] img {width: 450px;}
-figure[id="fig:10.1"] img {width: 600px; max-width: 2000px;}
-figure[id="fig:10.2"] {width: 200px;float: right;margin: 0 0 0 10px;}
-figure[id="fig:10.3"] img {width: 500px;}
+/*figure[id="fig:10.1"] img {width: 600px; max-width: 2000px;}*/
+figure[id="fig:10.2"] {width: 200px; float:right; margin: 0 0 0 10px;}
+/*figure[id="fig:10.3"] img {width: 500px;}*/
+
+figure[id="tab:10.1"] div {overflow-x: auto;}
+
+a.uri {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

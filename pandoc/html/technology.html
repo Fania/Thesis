@@ -83,7 +83,7 @@
 <p>An index is a list of keywords (called the dictionary or vocabulary) together with a list called ‘postings list’ that indicates the documents in which the terms occurs. One way to practically implement this is to create a Term-Document Matrix
 (TDM) as shown in equation <a href="#eq:6.1">6.1</a>.</p>
 
-<figure id="eq:6.1" class="equation">
+<figure id="eq:6.1" class="equation scrollbar">
 <img src="../images/tdm.png" alt="Term-Document Matrix">
 <figcaption>(6.1)</figcaption>
 </figure>
@@ -147,7 +147,7 @@
 <h4><span class="header-section-number">6.1.1.1</span> The Boolean Model</h4>
 <p>One such ranking score is the Boolean model. The similarity of document $d_j$ to query $q$ is defined as follows <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span></p>
 
-<figure id="eq:6.2" class="equation">
+<figure id="eq:6.2" class="equation scrollbar">
 <span class="math display">$$sim(d_j,q) =
   \begin{cases}
   1 &amp; \text{if} \ \exists \ c(q) \ | \ c(q) = c(d_j)\\
@@ -176,7 +176,7 @@
 <p>The Term Frequency (TF) $tf_{i, j}$ is calculated and normalised using a log function as: $1 + log_2 f_{i, j}$ if $f_{i, j} &gt; 0$ or $0$ otherwise where $f_{i, j}$ is the frequency of term $k_i$ in document $d_j$.</p>
 <p>The Inverse Document Frequency (IDF) $idf_i$ weight is calculated as $log_2 (N/df_i)$, where the document frequency $df_i$ is the number of documents in a collection that contain a term $k_i$ and $idf_i$ is the IDF of term $k_i$. The Inverse Document Frequency (IDF) more often a term occurs in different documents the lower the IDF. $N$ is the total number of documents.</p>
 
-<figure id="eq:6.3" class="equation">
+<figure id="eq:6.3" class="equation scrollbar">
 <span class="math display">$$tfidf_{i,j} =
   \begin{cases}
   (1+\log_2 f_{i,j})\times \log_2\frac{N}{df_i} &amp; \text{if} \ f_{i,j} &gt; 0 \\
@@ -383,7 +383,7 @@
 
 <p>$\vec{d_j}$ is defined as $(w_{1, j}, w_{2, j}, …, w_{t, j})$ and similarly $\vec{q}$ is defined as $(w_{1, q}, w_{2, q}, …, w_{t, q})$, where $w_{i, j}$ and $w_{i, q}$ correspond to the TF-IDF weights per term of the relevant document or query respectively. $t$ is the total number of terms in the vocabulary. The similarity between a document $d_j$ and a query $q$ is defined in equation <a href="#eq:6.4">6.4</a>.</p>
 
-<figure id="eq:6.4" class="equation">
+<figure id="eq:6.4" class="equation scrollbar">
 $$\begin{split}
   sim(d_j,q) &amp;= \frac{\vec{d_j} \ \cdot \ \vec{q}}{|\vec{d_j}| \times |\vec{q}|}\\
   &amp;= \frac{\sum_{i=1}^{t}w_{i,j} \times w_{i,q}}
@@ -552,7 +552,7 @@ $$\begin{split}
 <h4><span class="header-section-number">6.1.3.1</span> Algorithms</h4>
 <p>PageRank was developed by Larry Page and Sergey Brin as part of their Google search engine <span class="citation" data-cites="Brin1998b Brin1998">(<a href="#ref-Brin1998b">1998</a>; <a href="#ref-Brin1998">1999</a>)</span>. PageRank is a link analysis algorithm, meaning it looks at the incoming and outgoing links on pages. It assigns a numerical weight to each document, where each link counts as a vote of support in a sense. PageRank is executed at indexing time, so the ranks are stored with each page directly in the index. Brin and Page define the PageRank algorithm as follows <span class="citation" data-cites="Brin1998b">(<a href="#ref-Brin1998b">1998</a>)</span>.</p>
 
-<figure id="eq:6.5" class="equation">
+<figure id="eq:6.5" class="equation scrollbar">
 $$PR(A) =
   (1 - d) + d (\sum_{i=1}^{n} \frac{PR(T_i)}{C(T_i)})
   \label{eq:PR}$$
@@ -590,7 +590,7 @@ $$PR(A) =
 
 <p>The HITS algorithm also works on the links between pages <span class="citation" data-cites="Kleinberg1999 Kleinberg1999a">(Kleinberg <a href="#ref-Kleinberg1999">1999</a>; Kleinberg et al. <a href="#ref-Kleinberg1999a">1999</a>)</span>. HITS stands for ‘Hyperlink Induced Topic Search’ and its basic features are the use of so called hubs and authority pages. It is executed at query time. Pages that have many incoming links are called ‘authorities’ and page with many outgoing links are called ‘hubs’. Equation <a href="#eq:HITS">6.6</a> shows the algorithm <span class="citation" data-cites="Baeza-Yates2011">(Baeza-Yates and Ribeiro-Neto <a href="#ref-Baeza-Yates2011">2011</a>)</span>, where $S$ is the set of pages, $H(p)$ is the hub value for page $p$, and $A(p)$ is the authority value for page $p$.</p>
 
-<figure id="eq:6.6" class="equation">
+<figure id="eq:6.6" class="equation scrollbar">
 $$\begin{split}
   H(p) &amp;= \sum_{u\in S \mid p\to u}A(u)\\
   A(p) &amp;= \sum_{v\in S \mid v\to p}H(v)
@@ -752,7 +752,7 @@ $$\begin{split}
 <h4><span class="header-section-number">6.2.1.3</span> Damerau-Levensthein</h4>
 <p>The Damerau–Levenshtein distance between two strings $a$ and $b$ is given by $d_{a, b}(|a|,|b|)$ (see equation <a href="#eq:DL">6.2</a>) <span class="citation" data-cites="WikipediaA Damerau1964 Levenshtein1966">(“Damerau-Levenshtein Distance” n.d.; Damerau <a href="#ref-Damerau1964">1964</a>; Levenshtein <a href="#ref-Levenshtein1966">1966</a>)</span>. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words ‘clear’ and ‘clean’ would have a distance of 1, as it takes on substitution of the letter ‘r’ to ‘n’ to change the word. A typical application would be spelling correction.</p>
 
-<figure id="eq:6.7" class="equation">
+<figure id="eq:6.7" class="equation scrollbar">
 <img src="../images/dl.png" alt="Damerau-Levenshtein equation">
 <figcaption>(6.7)</figcaption>
 </figure>
@@ -775,7 +775,7 @@ $$\begin{split}
 <p>We can do word prediction with probabilistic models called $N$-Grams. They predict the probability of the next word from the previous $N − 1$ words <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. A 2-gram is usually called a ‘bigram’ and a 3-gram a ‘trigram’.</p>
 <p>A basic way to compute the probability of an N-gram is using a Maximum Likelihood Estimation (MLE) shown in equation <a href="#eq:6.8">6.8</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span> of a word $w_n$ given some history $w_{n − N + 1}^{n − 1}$ (i.e. the previous words in the sentence for example).</p>
 
-<figure id="eq:6.8" class="equation">
+<figure id="eq:6.8" class="equation scrollbar">
 $$P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})}
   \label{eq:mle}$$
 <figcaption>(6.8)</figcaption>
@@ -785,7 +785,7 @@ $$P(w_n \mid w_{n-N+1}^{n-1}) = \frac{C(w_{n-N+1}^{n-1} w_n)}{C(w_{n-N+1}^{n-1})
 <p>Counts ($C$) are normalised between 0 and 1. These probabilities are usually generated using a training corpus. These training sets are bound to have incomplete data and certain N-grams might be missed (which will result in a probability of 0). Smoothing techniques help combat this problem.</p>
 <p>One example is the so-called ‘Laplace’ or ‘add-one smoothing’, which basically just adds 1 to each count. See equation <a href="#eq:6.9">6.9</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>. $V$ is the number of terms in the vocabulary.</p>
 
-<figure id="eq:6.9" class="equation">
+<figure id="eq:6.9" class="equation scrollbar">
 $$P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
   \label{eq:padd1}$$
 <figcaption>(6.9)</figcaption>
@@ -797,7 +797,7 @@ $$P_{Add-1}(w_i \mid w_{i-1}) = \frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + V}
 
 <p>To calculate the probability of a sequence of $n$ words ($P(w_1, w_2, …, w_n)$ or $P(w_{1}^n)$ for short) we can use the chain rule of probability as shown in equation <a href="#eq:6.10">6.10</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
 
-<figure id="eq:6.10" class="equation">
+<figure id="eq:6.10" class="equation scrollbar">
 $$\begin{split}
   P(w_1^n) &amp;= P(w_1)P(w_2 \mid w_1)P(w_3 \mid w_1^2 ) \ldots P(w_n \mid w_1^{n-1})\\
   &amp;= \prod_{k=1}^{n}P(w_k \mid w_1^{k-1})
@@ -808,7 +808,7 @@ $$\begin{split}
 
 <p>Instead of using the complete history of previous words when calculating the probability of the next term, usually only the immediate predecessor is used. This assumption that the probability of a word depends only on the previous word (or $n$ words) is the called a Markov assumption (see equation <a href="#eq:6.11">6.11</a> <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>).</p>
 
-<figure id="eq:6.11" class="equation">
+<figure id="eq:6.11" class="equation scrollbar">
 $$P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
   \label{eq:probw1n2}$$
 <figcaption>(6.11)</figcaption>
@@ -859,7 +859,7 @@ $$P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
 </blockquote>
 <p>A classifier like the maximum entropy model will usually produce a probability of an observation belonging to a specific class. Equation <a href="#eq:6.12">6.12</a> shows how to calculate the probability of an obersvation (i.e. word) $x$ being of class $c$ as $p(c|x)$ <span class="citation" data-cites="Jurafsky2009">(Jurafsky and Martin <a href="#ref-Jurafsky2009">2009</a>)</span>.</p>
 
-<figure id="eq:6.12" class="equation">
+<figure id="eq:6.12" class="equation scrollbar">
 $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=0}^{N}w_{c'i}f_i(c',x))}
   \label{eq:pcx}$$
 <figcaption>(6.12)</figcaption>

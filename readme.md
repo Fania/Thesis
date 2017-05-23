@@ -17,7 +17,7 @@
 </figure>
 <a href="#fig:mytmpr">Figure 3.3</a>
 
-<figure id="eq:6.1" class="equation">
+<figure id="eq:6.1" class="equation scrollbar">
 <img src="../images/tdm.png" alt="Term-Document Matrix">
 <figcaption>(6.1)</figcaption>
 </figure>

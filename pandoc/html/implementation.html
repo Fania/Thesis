@@ -595,14 +595,14 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <p>We can then define the three patalgorithms in a more formal way as shown in equations <a href="#eq:10.1">10.1</a>, <a href="#eq:10.2">10.2</a>, and <a href="#eq:10.3">10.3</a>.</p>
 
-<figure id="eq:10.1" class="equation">
+<figure id="eq:10.1" class="equation scrollbar">
 <span class="math display">$$P(q)_C = \{p ∈ v_0 : 0 &lt; \text{dameraulevenshtein}(q, p) ≤ 2 \}$$
 <figcaption>(10.1)</figcaption>
 </figure>
 
 <p><code>dameraulevenshtein(q,p)</code> in equation <a href="#eq:10.1">10.1</a> is the Damerau-Levenshtein algorithm as described in section <a href="#code:10.4">10.4</a> and $v_0$ is the Faustroll text.</p>
 
-<figure id="eq:10.2" class="equation">
+<figure id="eq:10.2" class="equation scrollbar">
 <span class="math display">$$\begin{split}
     P(q)_S &amp;= \{p \in V: p \in \text{nyms}(s), \ \forall \ s \in \text{synonyms}(q)\}\\
     \text{where} \ \text{nyms}(s) &amp;= \text{hypos}(s) \ \cup \ \text{hypers}(s) \ \cup \ \text{holos}(s) \ \cup \ \text{meros}(s)
@@ -613,14 +613,14 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <p><code>synonyms(q)</code> in equation <a href="#eq:10.2">10.2</a> is the WordNet/NLTK function to retrieve all synsets for the query $q$ and the four ‘nym’ functions return the relevant hyponyms, hypernyms, holonyms or meronyms for each of the synonyms.</p>
 
-<figure id="eq:10.3" class="equation">
+<figure id="eq:10.3" class="equation scrollbar">
 <span class="math display">$$P(q)A = \{p ∈ V : p ∈ \text{antonyms}(s), ∀ \ s ∈ \text{synonyms}(q)\}$$
 <figcaption>(10.3)</figcaption>
 </figure>
 
 <p>Similarly, in equation <a href="#eq:10.3">10.3</a> the <code>synonyms(q)</code> function returns WordNet synsets for the query $q$ and the <code>antonyms(q)</code> function returns WordNet antonyms for each of the synonyms.</p>
 
-<figure id="eq:10.4" class="equation">
+<figure id="eq:10.4" class="equation scrollbar">
 <span class="math display">$$R(P(q)) = \{(d ∈ D,  \text{sent}(p) ∈ d,  f ∈ F) : ∀ \ p ∈ P(q)_f))\}$$
 <figcaption>(10.4)</figcaption>
 </figure>
@@ -698,7 +698,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.12">
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">flickrsearch</span>(patadata)<span class="op">{</span>
+<pre class="sourceCode javascript"><code class="sourceCode javascript scrollbar"><span class="kw">function</span> <span class="at">flickrsearch</span>(patadata)<span class="op">{</span>
   <span class="cf">for</span>(<span class="kw">var</span> x<span class="op">=</span><span class="dv">0</span><span class="op">;</span> x<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> x<span class="op">++</span>)<span class="op">{</span>
     <span class="va">$</span>.<span class="at">getJSON</span>(<span class="st">&quot;http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?&quot;</span><span class="op">,</span>
       <span class="op">{</span>
@@ -724,7 +724,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.13">
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> allImages <span class="op">=</span> []<span class="op">;</span>
+<pre class="sourceCode javascript"><code class="sourceCode javascript scrollbar"><span class="kw">var</span> allImages <span class="op">=</span> []<span class="op">;</span>
 <span class="kw">function</span> <span class="at">imgList</span>(img)<span class="op">{</span>
   <span class="cf">if</span> (allImages[<span class="dv">0</span>] <span class="op">!=</span> <span class="st">&quot;&quot;</span>) <span class="op">{</span>
     <span class="va">allImages</span>.<span class="at">push</span>(img)<span class="op">;</span>
@@ -851,7 +851,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.15">
-<pre class="sourceCode html+jinja"><code class="sourceCode html+jinja">&lt;div&gt;
+<pre class="sourceCode html+jinja"><code class="sourceCode html+jinja scrollbar">&lt;div&gt;
   {% for n in range(1, lol|length + 1) %}
     {% set wid = [&quot;wn&quot;, n|string]|join %}
     {% set lid = [&quot;lyr&quot;, n|string]|join %}
@@ -887,7 +887,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 
 <div class="sourceCode">
 <figure id="code:10.16">
-<pre class="sourceCode html+jinja"><code class="sourceCode html+jinja">&lt;ul&gt;
+<pre class="sourceCode html+jinja"><code class="sourceCode html+jinja scrollbar">&lt;ul&gt;
   {% for sens in all_sens %}
     {% if file == sens[0] %}
       &lt;li title=`{{ sens[2] }}&#39;&gt;...{{ sens[1][0] }} &lt;form class=`inform&#39; action=`../textresults&#39; method=`post&#39;&gt;&lt;input class=`w3-hide&#39; type=`radio&#39; name=`corpus&#39; value=`{{ corpus }}&#39; checked&gt;&lt;input class=`inlink&#39; type=`submit&#39; name=`query&#39; value=`{{ sens[1][1] }}&#39; onclick=`loading();&#39;&gt;&lt;/input&gt;&lt;/form&gt; {{ sens[1][2] }}...&lt;/li&gt;
@@ -929,7 +929,8 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 <h2><span class="header-section-number">10.5</span> Prototypes</h2>
 <p>The final website <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> went through several iterations of development since it was first conceived in 2012. This included 3 major technical updates since the first prototype and 2 new visual re-designs. Table <a href="#tab:10.1">10.1</a> shows the main differences and similarities between the versions.</p>
 
-<figure>
+<figure id="tab:10.1">
+<div class="scrollbar">
 <table>
   <tr>
     <th class="trans"></th>
@@ -988,6 +989,7 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
     <td>Yes</td>
   </tr>
 </table>
+</div>
 <figcaption>Table 10.1 - Comparison of different versions of pata.physics.wtf</figcaption>
 </figure>
 
