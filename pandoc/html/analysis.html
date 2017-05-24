@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Patanalysis</title>
   <link href="../htmlstyle.css" rel="stylesheet">
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]},
+											TeX:     {extensions: ["color.js"],
+																Macros:     {RR:    '{\\bf R}',
+												                     bold:  ['{\\bf #1}', 1]}
+															 }
+										 });
+	</script>
 </head>
 <body>
 <nav class="mainnav">
@@ -103,73 +113,194 @@
 </section>
 <section id="pataphysicalisation" class="level2">
 <h2><span class="header-section-number">12.2</span> Pataphysicalisation</h2>
-<p>As mentioned in chapter [s:pataputers], the internal transformation of a query term to the final results is what I called the <em>pataphysicalisation</em> process. The three pataphysical algorithms (Clinamen, Syzygy and Antinomy), or <em>patalgorithms</em>, are at the center of this process.</p>
+<p>As mentioned in chapter <a href="foundation.html#s:pataputers">8.2.2</a>, the internal transformation of a query term to the final results is what I called the <em>pataphysicalisation</em> process. The three pataphysical algorithms (Clinamen, Syzygy and Antinomy), or <em>patalgorithms</em>, are at the center of this process.</p>
 <ol>
 <li><p>User enters single query term,</p></li>
 <li><p>system transforms query term into list of pataphysicalised terms (patadata),</p></li>
 <li><p>system retrieves sentence fragments containing keywords from this list,</p></li>
 <li><p>system displays sentence fragments in various formats.</p></li>
 </ol>
-<p>It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side in table [tab:algorithmscomp].</p>
-<p><span>X[1,L]X[3,L]X[3,L]X[2,L]</span> <strong>Query</strong> &amp; <strong>Clinamen</strong> &amp; <strong>Syzygy</strong> &amp; <strong>Antinomy</strong><br />
-<strong>clear</strong> &amp; altar, leaf, pleas, cellar &amp; vanish, allow, bare, pronounce &amp; opaque<br />
-<strong>solid</strong> &amp; sound, valid, solar, slide &amp; block, form, matter, crystal, powder &amp; liquid, hollow<br />
-<strong>books</strong> &amp; boot, bones, hooks, rocks, banks &amp; dialogue, authority, record, fact &amp; —<br />
-<strong>troll</strong> &amp; grill, role, tell &amp; wheel, roll, mouth, speak &amp; —<br />
-<strong>live</strong> &amp; love, lies, river, wave, size, bite &amp; breathe, people, domicile, taste, see, be &amp; recorded, dead<br />
-</p>
+<p>It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side in table <a href="#tab:12.1">12.1</a>.</p>
+
+<figure id="tab:12.1">
+<table>
+  <tr>
+    <th>Query</th>
+    <th>Clinamen</th>
+    <th>Syzygy</th>
+    <th>Antinomy</th>
+  </tr>
+  <tr>
+    <td><b>clear</b></td>
+    <td>altar, leaf, pleas, cellar</td>
+    <td>vanish, allow, bare, pronounce</td>
+    <td>opaque</td>
+  </tr>
+  <tr>
+    <td><b>solid</b></td>
+    <td>sound, valid, solar, slide</td>
+    <td>block, form, matter, crystal, powder</td>
+    <td>liquid, hollow</td>
+  </tr>
+  <tr>
+    <td><b>books</b></td>
+    <td>boot, bones, hooks, rocks, banks</td>
+    <td>dialogue, authority, record, fact</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td><b>troll</b></td>
+    <td>grill, role, tell</td>
+    <td>wheel, roll, mouth, speak</td>
+    <td>- </td>
+  </tr>
+  <tr>
+    <td><b>live</b></td>
+    <td>love, lies, river, wave, size, bite</td>
+    <td>breathe, people, domicile, tatse, see, be</td>
+    <td>recorded, dead</td>
+  </tr>
+</table>
+<figcaption>Table 12.1 - Comparison of patalgorithms showing a selection of results for each</figcaption>
+</figure>
+
 <p>Seeing the results in a table like this gives an almost immediate idea of how each algorithm works. This is not meant to be transparent and perhaps only after knowing the ins and outs of the algorithms can one recognise how each result was found.</p>
 <p>The clinamen results show words that contain one or two spelling errors of the original query term. It is perhaps counter-intuitive to have words such as ‘altar’, ‘leaf’ and ‘cellar’ be classed as spelling errors of the word ‘clear’ but they clearly could be. Remember that a spelling error can be classed in one of four ways: (1) deletion, (2) insertion, (3) substitution and (4) transposition. So, going from ‘clear’ to ‘altar’ is an instance of two times case 3 (‘c’ is replace by ‘a’ and ‘e’ is replaced by ‘t’) and going from ‘clear’ to ‘leaf’ is an example of case 1 (‘c’ is deleted) and case 3 (‘r’ is replaced by ‘f’).</p>
 <p>Looking at the second column (the syzygy results) shows the semantic relationship between the original query term and the results. Again, this may not be immediately noticeable but certainly once you know how the process works you can recognise the common relations. This is especially evident for the antinomy algorithm which is based on opposites.</p>
-<p>However it is equally interesting to compare some full sentences. Looking at some of the poems at the beginning of each chapter shows the variety of the possible outcomes (see pages , , , , , , , , , , , , , and ). It also highlights the difference between the two corpora. Poems based on the Faustroll corpus have a very different sound and feel to it than ones based on the Shakespeare corpus.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>However it is equally interesting to compare some full sentences. Looking at some of the poems at the beginning of each chapter shows the variety of the possible outcomes. It also highlights the difference between the two corpora. Poems based on the Faustroll corpus have a very different sound and feel to it than ones based on the Shakespeare corpus.</p>
+
+<figure class="nomargins">
+<figure id="fig:12.1.a" class="half">
 <blockquote>
-<p>[] There was a period put to the Fire<br />
+There was a period put to the Fire<br />
 pink and spot<br />
 earth was flat like the floor of an Oven<br />
-as much ease as a mower doth the grass</p>
-<p>during the first period of my captivity<br />
+as much ease as a mower doth the grass<br />
+<br />
+during the first period of my captivity<br />
 room with a hard earthen floor<br />
 not within everyone’s power<br />
-or your favourite flowers died</p>
-<p>shocks lose power<br />
+or your favourite flowers died<br />
+<br />
+shocks lose power<br />
 the white daisy<br />
-after a long period</p>
-<p>poppy<br />
+after a long period<br />
+<br />
+poppy<br />
 peony<br />
-stock to all People</p>
+stock to all People
 </blockquote>
+</figure>
+<figure id="fig:12.1.b" class="half">
 <blockquote>
-<p>[] O bloody period<br />
+O bloody period<br />
 I as your lover speak<br />
 has she such power<br />
-gather those flowers</p>
-<p>thy lover<br />
+gather those flowers<br />
+<br />
+thy lover<br />
 juiced flowers<br />
 had I been any god of power<br />
-or a lover’s lute</p>
-<p>the river hath thrice flow’d<br />
+or a lover’s lute<br />
+<br />
+the river hath thrice flow’d<br />
 but sad mortality o’ersways their power<br />
-now here a period of tumultuous broils</p>
-<p>led by their master to the flow’red fields<br />
+now here a period of tumultuous broils<br />
+<br />
+led by their master to the flow’red fields<br />
 not a minister in his power<br />
-where soulds do couch on flowers</p>
+where soulds do couch on flowers<br />
 </blockquote>
+</figure>
+<figcaption class="pushup">Figure 12.1 - Comparison of Faustroll (left) versus Shakespeare (right) poetry, both for query
+term ‘flower’</figcaption>
+</figure>
+
 <p>Sometimes we can even get a general feel for the theme of the poem, as in we can recognize the connection, the relationship between the individual lines and what must be the original query term. Of course putting the poems into the chapters as they are—without specifically stating the keyword they were generated from or the corpus they are based on—makes them a bit more elusive.</p>
 <p>The different language is quite obvious. This is helped by the fact that the Shakespeare corpus is of course written by the same author<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. The Faustroll corpus contains text by over 20 different authors and in three different languages even.</p>
+
 <section id="s:numbers" class="level3">
 <h3><span class="header-section-number">12.2.1</span> Numbers</h3>
-<p>The above examples (table [tab:algorithmscomp] and figure [fig:2poems]) give a good overview of the two main factors in the pataphysicalisation process, namely the three patalgorithms and the two corpora. Both only reflect a small selection of the variety of results produced though. It is therefore quite interesting to look at some actual numbers.</p>
-<p><span>llcccc</span> <strong>Query</strong> &amp; <strong>Corpus</strong> &amp; <strong>Results</strong> &amp; <strong>Reverbs</strong> &amp; <strong>Origins</strong> &amp; <strong>Poems</strong><br />
-&amp; Faustroll &amp; &amp; &amp; &amp;<br />
-&amp; Shakespeare &amp; &amp; &amp; &amp;<br />
-&amp; Faustroll &amp; &amp; &amp; &amp;<br />
-&amp; Shakespeare &amp; &amp; &amp; &amp;<br />
-&amp; Faustroll &amp; &amp; &amp; &amp;<br />
-&amp; Shakespeare &amp; &amp; &amp; &amp;<br />
-&amp; Faustroll &amp; &amp; &amp; &amp;<br />
-&amp; Shakespeare &amp; &amp; &amp; &amp;<br />
-</p>
-<p>Table [tab:faustshake] shows a comparison of the two different corpora with four example query terms.</p>
+<p>The above examples (table <a href="#tab:12.1">12.1</a> and figure <a href="#fig:12.1">12.1</a>) give a good overview of the two main factors in the pataphysicalisation process, namely the three patalgorithms and the two corpora. Both only reflect a small selection of the variety of results produced though. It is therefore quite interesting to look at some actual numbers.</p>
+
+<figure id="tab:12.2">
+<table>
+  <tr>
+    <th>Query</th>
+    <th>Corpus</th>
+    <th>Results</th>
+    <th>Reverbs</th>
+    <th>Origins</th>
+    <th>Poems</th>
+  </tr>
+  <tr>
+    <td rowspan=2><b>flower</b></td>
+    <td>Faustroll</td>
+    <td>90</td>
+    <td>25</td>
+    <td>18</td>
+    <td>7.8 $\times 10^{10}$</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>158</td>
+    <td>15</td>
+    <td>38</td>
+    <td>3.8 $\times 10^{14}$</td>
+  </tr>
+  <tr>
+    <td rowspan=2><b>clear</b></td>
+    <td>Faustroll</td>
+    <td>542</td>
+    <td>79</td>
+    <td>23</td>
+    <td>1.3 $\times 10^{22}$</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>1445</td>
+    <td>72</td>
+    <td>38</td>
+    <td>1.5 $\times 10^{28}$</td>
+  </tr>
+  <tr>
+    <td rowspan=2><b>troll</b></td>
+    <td>Faustroll</td>
+    <td>124</td>
+    <td>16</td>
+    <td>16</td>
+    <td>4.4 $\times 10^{12}$</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>327</td>
+    <td>14</td>
+    <td>38</td>
+    <td>1.1 $\times 10^{19}$</td>
+  </tr>
+  <tr>
+    <td rowspan=2><b>fania</b></td>
+    <td>Faustroll</td>
+    <td>9</td>
+    <td>2</td>
+    <td>6</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>15</td>
+    <td>2</td>
+    <td>14</td>
+    <td>1</td>
+  </tr>
+</table>
+<figcaption>Table 12.2 – Faustroll versus Shakespeare in numbers</figcaption>
+</figure>
+
+<p>Table <a href="#tab:12.2">12.2</a> shows a comparison of the two different corpora with four example query terms.</p>
 <dl>
 <dt>Results</dt>
 <dd><p>A ‘result’ in this case is one line (a sentence fragment). This column shows the total number of results found by the three algorithms combined. Individual results appear only once but the keyword it contains can appear in several of the results.</p>
@@ -184,58 +315,209 @@ where soulds do couch on flowers</p>
 <dd><p>This refers to the total number of Queneau style poems that can be generated using the given results<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. This is calculated as the number of different options per line to the power of the number of lines.</p>
 </dd>
 </dl>
-<p>To put this into perspective, the Faustroll corpus contains a total of texts of very varied authors and different languages even. This might explain why the queries in table [tab:faustshake] have not found results in all of the texts. The query ‘clear’ found results in out of for example while the query ‘fania’ only found results in texts. The Shakespeare corpus seems much more uniform. Reverberations generally seem to find results in all source texts in the corpus apart from the query ‘fania’. This might be explained by the fact that Shakespeare wrote all of the texts himself using much of the same language and vocabulary unlike the Faustroll corpus.</p>
-<p>It is rather interesting to note that even though the Shakespeare corpus produces overall more results from more texts, the Faustroll corpus produces more reverberations per query. This might stem from the multi-author, multi-language nature of the corpus. The overall vocabulary used is much larger than the Shakespeare one (see subsections and at the end of this chapter).</p>
-<p>Regarding the final column showing the number of possible poems, let’s look at the ‘Shakespeare—clear’ row. There are 1445 results. These are spread over 14 lines, so each line has 103 options. The overall number of poems is therefore calculated as <span class="math inline">103<sup>14</sup></span> which equals (or in short).</p>
-<p>A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table [tab:algonums] shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using five example query terms (‘clear’, ‘shine’, ‘disorder’, ‘stuck’, and ‘feather’) for each of the two corpora (‘Faustroll’ and ‘Shakespeare’).</p>
-<p><span>ll|ccc|ccc|ccc|ccc</span> &amp; &amp; &amp; &amp; &amp;<br />
-&amp; <strong>Query</strong> &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp;<br />
-&amp; clear &amp; 158 &amp; 20 &amp; 13 &amp; 368 &amp; 90 &amp; 23 &amp; 16 &amp; 8 &amp; 8 &amp;<br />
-&amp; shine &amp; 228 &amp; 29 &amp; 19 &amp; 154 &amp; 61 &amp; 16 &amp; 0 &amp; 0 &amp; 0 &amp;<br />
-&amp; disorder &amp; 0 &amp; 0 &amp; 0 &amp; 159 &amp; 127 &amp; 23 &amp; 10 &amp; 2 &amp; 10 &amp;<br />
-&amp; stuck &amp; 59 &amp; 14 &amp; 13 &amp; 181 &amp; 43 &amp; 22 &amp; 11 &amp; 3 &amp; 9 &amp;<br />
-&amp; feather &amp; 78 &amp; 13 &amp; 12 &amp; 83 &amp; 37 &amp; 14 &amp; 0 &amp; 0 &amp; 0 &amp;<br />
-&amp; clear &amp; 435 &amp; 20 &amp; 38 &amp; 997 &amp; 90 &amp; 38 &amp; 13 &amp; 8 &amp; 12 &amp;<br />
-&amp; shine &amp; 575 &amp; 29 &amp; 38 &amp; 333 &amp; 61 &amp; 38 &amp; 0 &amp; 0 &amp; 0 &amp;<br />
-&amp; disorder &amp; 0 &amp; 0 &amp; 0 &amp; 326 &amp; 127 &amp; 38 &amp; 29 &amp; 2 &amp; 29 &amp;<br />
-&amp; stuck &amp; 152 &amp; 14 &amp; 37 &amp; 479 &amp; 43 &amp; 38 &amp; 34 &amp; 3 &amp; 34 &amp;<br />
-&amp; feather &amp; 217 &amp; 13 &amp; 38 &amp; 195 &amp; 37 &amp; 38 &amp; 0 &amp; 0 &amp; 0 &amp;<br />
-</p>
-<p>The first immediate observation surely must be that the Antinomy algorithm produces the fewest results, in four cases even none at all. This is caused by the fact that the Antinomy algorithm is based on semantic opposites in WordNet and some words simply do not have defined opposites. Addressing this issue was left for future work mentioned in chapter [ch:future]. On the other hand the Syzygy algorithm, which is also based on WordNet, produces most results on average.</p>
+<p>To put this into perspective, the Faustroll corpus contains a total of texts of very varied authors and different languages even. This might explain why the queries in table <a href="#tab:12.2">12.2</a> have not found results in all of the texts. The query ‘clear’ found results in out of for example while the query ‘fania’ only found results in texts. The Shakespeare corpus seems much more uniform. Reverberations generally seem to find results in all source texts in the corpus apart from the query ‘fania’. This might be explained by the fact that Shakespeare wrote all of the texts himself using much of the same language and vocabulary unlike the Faustroll corpus.</p>
+<p>It is rather interesting to note that even though the Shakespeare corpus produces overall more results from more texts, the Faustroll corpus produces more reverberations per query. This might stem from the multi-author, multi-language nature of the corpus. The overall vocabulary used is much larger than the Shakespeare one (see subsections <a href="#s:fauststats">Faustroll</a> and <a href="#s:shakestats">Shakespeare</a> at the end of this chapter).</p>
+<p>Regarding the final column showing the number of possible poems, let’s look at the ‘Shakespeare—clear’ row. There are 1445 results. These are spread over 14 lines, so each line has 103 options. The overall number of poems is therefore calculated as <span class="math inline">103<sup>14</sup></span> which equals $15125897248551112432256145169$ (or $1.5 \times 10^{28}$ in short).</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
+<p>A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table <a href="#tab:12.3">12.3</a> shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using five example query terms (‘clear’, ‘shine’, ‘disorder’, ‘stuck’, and ‘feather’) for each of the two corpora (‘Faustroll’ and ‘Shakespeare’).</p>
+
+<figure id="tab:12.3">
+<table>
+  <tr>
+    <th rowspan="2">Corpus</th>
+    <th rowspan="2">Query</th>
+    <th colspan="3">Clinamen</th>
+    <th colspan="3">Syzygy</th>
+    <th colspan="3">Antinomy</th>
+    <th rowspan="2">Total</th>
+  </tr>
+  <tr>
+    <td class="rotateS"><div>Results</div></td>
+    <td class="rotateS"><div>Reverbs</div></td>
+    <td class="rotateS"><div>Origins</div></td>
+    <td class="rotateS"><div>Results</div></td>
+    <td class="rotateS"><div>Reverbs</div></td>
+    <td class="rotateS"><div>Origins</div></td>
+    <td class="rotateS"><div>Results</div></td>
+    <td class="rotateS"><div>Reverbs</div></td>
+    <td class="rotateS"><div>Origins</div></td>
+  </tr>
+  <tr>
+    <td rowspan="5" class="rotate"><div><b>Faustroll</b></div></td>
+    <td>clear</td>
+    <td>158</td>
+    <td>20</td>
+    <td>13</td>
+    <td>368</td>
+    <td>90</td>
+    <td>23</td>
+    <td>13</td>
+    <td>8</td>
+    <td>8</td>
+    <td>542-79-23</td>
+  </tr>
+  <tr>
+    <td>shine</td>
+    <td>228</td>
+    <td>29</td>
+    <td>19</td>
+    <td>154</td>
+    <td>61</td>
+    <td>16</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>382-61-20</td>
+  </tr>
+  <tr>
+    <td>disorder</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>159</td>
+    <td>127</td>
+    <td>23</td>
+    <td>10</td>
+    <td>2</td>
+    <td>10</td>
+    <td>169-40-23</td>
+  </tr>
+  <tr>
+    <td>stuck</td>
+    <td>59</td>
+    <td>14</td>
+    <td>13</td>
+    <td>181</td>
+    <td>43</td>
+    <td>22</td>
+    <td>11</td>
+    <td>3</td>
+    <td>9</td>
+    <td>251-47-22</td>
+  </tr>
+  <tr>
+    <td>feather</td>
+    <td>78</td>
+    <td>13</td>
+    <td>12</td>
+    <td>83</td>
+    <td>37</td>
+    <td>14</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>161-29-14</td>
+  </tr>
+  <tr>
+    <td rowspan="5" class="rotate"><div><b>Shakespeare</b></div></td>
+    <td>clear</td>
+    <td>435</td>
+    <td>20</td>
+    <td>38</td>
+    <td>997</td>
+    <td>90</td>
+    <td>38</td>
+    <td>13</td>
+    <td>8</td>
+    <td>12</td>
+    <td>1445-72-38</td>
+  </tr>
+  <tr>
+    <td>shine</td>
+    <td>575</td>
+    <td>29</td>
+    <td>38</td>
+    <td>333</td>
+    <td>61</td>
+    <td>38</td>
+    <td>29</td>
+    <td>2</td>
+    <td>29</td>
+    <td>908-53-38</td>
+  </tr>
+  <tr>
+    <td>disorder</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>326</td>
+    <td>127</td>
+    <td>38</td>
+    <td>29</td>
+    <td>2</td>
+    <td>29</td>
+    <td>355-26-38</td>
+  </tr>
+  <tr>
+    <td>stuck</td>
+    <td>152</td>
+    <td>14</td>
+    <td>37</td>
+    <td>479</td>
+    <td>43</td>
+    <td>38</td>
+    <td>34</td>
+    <td>3</td>
+    <td>34</td>
+    <td>665-41-38</td>
+  </tr>
+  <tr>
+    <td>feather</td>
+    <td>217</td>
+    <td>13</td>
+    <td>38</td>
+    <td>195</td>
+    <td>37</td>
+    <td>38</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>412-25-38</td>
+  </tr>
+</table>
+<figcaption>Table 12.3 – Results-Reverberations-Origin numbers per algorithm</figcaption>
+</figure>
+
+<p>The first immediate observation surely must be that the Antinomy algorithm produces the fewest results, in four cases even none at all. This is caused by the fact that the Antinomy algorithm is based on semantic opposites in WordNet and some words simply do not have defined opposites. Addressing this issue was left for future work mentioned in chapter <a href="aspirations.html">13</a>. On the other hand the Syzygy algorithm, which is also based on WordNet, produces most results on average.</p>
 <p>The Clinamen algorithm interestingly produces a varying number of results depending on the query term. For the query ‘disorder’ no results where found in either the Faustroll or the Shakespeare corpus. This of course is rooted in the fact that no reverberations where produced during the pataphysicalisation process. Here it is important to remember that the Clinamen algorithm makes use of a base document<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. Therefore the success of the algorithm depends on the vocabulary of this base text. In this particular example this means that there was no word in the base text of one or two spelling errors to the original query of ‘disorder’.</p>
-<p>Looking at the origins column in table [tab:algonums] highlights how the Shakespeare corpus mostly produces results from each of its 38 texts. The Faustroll corpus varies a lot more. This may be due to the different languages and varying word counts of the files in the corpus.</p>
+<p>Looking at the origins column in table <a href="#tab:12.3">12.3</a> highlights how the Shakespeare corpus mostly produces results from each of its 38 texts. The Faustroll corpus varies a lot more. This may be due to the different languages and varying word counts of the files in the corpus.</p>
+
 <section id="s:fauststats" class="level4">
 <h4><span class="header-section-number">12.2.1.1</span> Faustroll</h4>
 <ul>
 <li><p>There are three empty texts (Peladan, de Chilra, de Regnier).</p></li>
-<li><p>The total number of words is . Of this, words are from English texts (70%), are French (28%) and are in German (2%).</p></li>
-<li><p>The shortest text contains words (Coleridge).</p></li>
-<li><p>The longest text contains words (Poe).</p></li>
-<li><p>The average amount of words per text is .</p></li>
-<li><p>The vocabulary of the index contains words. Of this are English terms.</p></li>
+<li><p>The total number of words is $1738461$. Of this, $1204158$ words are from English texts (70%), $497144$ are French (28%) and $37159$ are in German (2%).</p></li>
+<li><p>The shortest text contains $3853$ words (Coleridge).</p></li>
+<li><p>The longest text contains $419456$ words (Poe).</p></li>
+<li><p>The average amount of words per text is $62088$.</p></li>
+<li><p>The vocabulary of the index contains $78893$ words. Of this $49040$ are English terms.</p></li>
 </ul>
 </section>
+
 <section id="s:shakestats" class="level4">
 <h4><span class="header-section-number">12.2.1.2</span> Shakespeare</h4>
 <ul>
-<li><p>The total number of words is.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p></li>
-<li><p>The shortest text contains words (Lover’s Complaint).</p></li>
-<li><p>The longest text contains words (Hamlet).</p></li>
-<li><p>The average amount of words per text is .</p></li>
-<li><p>The vocabulary of the index contains words.</p></li>
+<li><p>The total number of words is $883460$<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>.</p></li>
+<li><p>The shortest text contains $2568$ words (Lover’s Complaint).</p></li>
+<li><p>The longest text contains $32031$ words (Hamlet).</p></li>
+<li><p>The average amount of words per text is $23249$.</p></li>
+<li><p>The vocabulary of the index contains $23398$ words.</p></li>
 </ul>
 <p>It should be noted that the index is generated based on the texts vocabulary minus stopwords. Stopwords (e.g. ‘and’, ‘or’, ‘the’, etc.) are common terms that occur frequently in use. The full list of stopwords per language can be found in appendix [s:stopwords].</p>
 </section>
 </section>
+
 <section id="s:sents" class="level3">
 <h3><span class="header-section-number">12.2.2</span> Sentences</h3>
-<p>The index stores entries in the following format (for more detail see chapter [s:index]).</p>
+<p>The index stores entries in the following format (for more detail see chapter <a href="implementation.html#s:index">10.1.2</a>).</p>
 <pre class="text"><code>{
   word1: {fileA: [pos1, pos2, ...], fileB: [pos1], ...},
   word2: {fileC: [pos1, pos2], fileK: [pos1, pos2, pos3, ...], ...},
   ...
 }</code></pre>
-<p>At the top level we have a list of words. Each word contains a list of files and each file stores a list of positions. After the pataphysicalisation process, any entries in the index that match the pataphysicalised query terms are looked up and then the corresponding sentences are retrieved to display as results. The code is set up to retrieve the first position only instead of each one, referred to as the <em>first only</em> method from now on (see source [code:ppsent]).</p>
+<p>At the top level we have a list of words. Each word contains a list of files and each file stores a list of positions. After the pataphysicalisation process, any entries in the index that match the pataphysicalised query terms are looked up and then the corresponding sentences are retrieved to display as results. The code is set up to retrieve the first position only instead of each one, referred to as the <em>first only</em> method from now on (see source <a href="implementation.html#code:10.6">10.6</a>).</p>
 <pre class="text"><code>{
   word1: {fileA: [pos1], fileB: [pos1], ...},
   word2: {fileC: [pos1], fileK: [pos1], ...},
@@ -243,9 +525,9 @@ where soulds do couch on flowers</p>
 }</code></pre>
 <p>This has two implications: (1) there is some unnecessary computation at the startup of the program when then index is generated and (2) only a fraction of the possible results are retrieved.</p>
 <p>The decision to only use one position was mainly made for performance issues. Generating the full results with each position (the <em>return all</em> method) takes a lot more time than doing it for just the first occurance. This is perhaps best understood by looking at an example.</p>
-<p>The Faustroll corpus produces results for the query ‘clear’ with only the first sentence. If we enable the retrieval of every matching sentence, the number of results increases to .</p>
+<p>The Faustroll corpus produces $542$ results for the query ‘clear’ with only the first sentence. If we enable the retrieval of every matching sentence, the number of results increases to $8751$.</p>
 <pre class="text"><code>cellar: {l_19: [4448, 18718, 68678, 110318, 192486, 267241, 352502, 352565]}</code></pre>
-<p>The above pseudocode shows an entry for the word ‘cellar’ with only the positions for the file<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. Another example of an index entry for the term ‘doctor’ can be found on page . The sentences for the above positions are shown below. Using only the first occurance (position) means the system ignores the rest.</p>
+<p>The above pseudocode shows an entry for the word ‘cellar’ with only the positions for the <code>l_19</code> file<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. Another example of an index entry for the term ‘doctor’ can be found on page 150. The sentences for the above positions are shown below. Using only the first occurance (position) means the system ignores the rest.</p>
 <dl>
 <dt>4448</dt>
 <dd><p>“rope wine is let down into a cellar”</p>
@@ -272,48 +554,131 @@ where soulds do couch on flowers</p>
 <dd><p>“and the painted cellar also”</p>
 </dd>
 </dl>
-<p>Table [tab:percent] shows some example queries for both corpora and the number of results retrieved with the first position only used (as in the live version of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>) in column 5 and on column 3 with all results retrieved. The final column shows what percentage of results are retrieved using the ‘first only’ method. The average percentage for this is about 10%.</p>
-<p><span>llccccc</span> &amp; &amp; &amp; &amp;<br />
-<strong>Query</strong> &amp; <strong>Corpus</strong> &amp; <em>Count</em> &amp; <em>Time</em> &amp; <em>Count</em> &amp; <em>Time</em> &amp; <strong>Percent</strong><br />
-&amp; Faustroll &amp; &amp; 59s &amp; &amp; 1.83s &amp; 6.19%<br />
-&amp; Shakespeare &amp; &amp; 69.2s &amp; &amp; 3.59s &amp; 12.78%<br />
-&amp; Faustroll &amp; &amp; 11.7s &amp; &amp; 0.98s &amp; 7.65%<br />
-&amp; Shakespeare &amp; &amp; 8.51s &amp; &amp; 1.07s &amp; 15.72%<br />
-&amp; Faustroll &amp; &amp; 120s &amp; &amp; 2.81s &amp; 5.54%<br />
-&amp; Shakespeare &amp; &amp; 90s &amp; &amp; 4.63s &amp; 15.58%<br />
-&amp; Faustroll &amp; &amp; 38s &amp; &amp; 1.72s &amp; 5.29%<br />
-&amp; Shakespeare &amp; &amp; 49.2s &amp; &amp; 2.09s &amp; 10.40%<br />
-</p>
-<p>Google recommends having a “response time under ms” (i.e. 0.2 seconds) <span class="citation" data-cites="GoogleTime2015">(“Improve Server Response Time. PageSpeed Tools &gt; Insights” <a href="#ref-GoogleTime2015">2015</a>)</span>. The numbers in table [tab:percent] clearly show that the ‘return all’ method is unacceptable in terms of speed performance. Using the ‘first only’ method is much closer to the recommended speed limit, although still far off. Columns 4 and 6 show the time it takes for the page to load from the user query to the display of results. The times are shown in seconds. The data for column 4 was generated using a Chrome browser plugin called <em>Load-timer</em> <span class="citation" data-cites="Vykhodtsev2015">(Vykhodtsev <a href="#ref-Vykhodtsev2015">2015</a>)</span> and the data for column 6 was generated by the Chrome <em>Developer Tools</em>.</p>
+<p>Table <a href="#tab:12.4">12.4</a> shows some example queries for both corpora and the number of results retrieved with the first position only used (as in the live version of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>) in column 5 and on column 3 with all results retrieved. The final column shows what percentage of results are retrieved using the ‘first only’ method. The average percentage for this is about 10%.</p>
+
+<figure id="tab:12.4">
+<table>
+  <tr>
+    <th rowspan="2">Query</th>
+    <th rowspan="2">Corpus</th>
+    <th colspan="2">Return all</th>
+    <th colspan="2">First only</th>
+    <th rowspan="2">Percent</th>
+  </tr>
+  <tr>
+    <td>Count</td>
+    <td>Time</td>
+    <td>Count</td>
+    <td>Time</td>
+  </tr>
+  <tr>
+    <td rowspan="2">clear</td>
+    <td>Faustroll</td>
+    <td>8751</td>
+    <td>59s</td>
+    <td>542</td>
+    <td>1.83s</td>
+    <td>6.19%</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>11304</td>
+    <td>69.2s</td>
+    <td>1445</td>
+    <td>3.59s</td>
+    <td>12.78%</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="td-dark">solution</td>
+    <td>Faustroll</td>
+    <td>693</td>
+    <td>11.7s</td>
+    <td>53</td>
+    <td>0.98s</td>
+    <td>7.65%</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>547</td>
+    <td>8.51s</td>
+    <td>86</td>
+    <td>1.07s</td>
+    <td>15.72%</td>
+  </tr>
+  <tr>
+    <td rowspan="2">form</td>
+    <td>Faustroll</td>
+    <td>19222</td>
+    <td>120s</td>
+    <td>1064</td>
+    <td>2.81s</td>
+    <td>5.54%</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>13635</td>
+    <td>90s</td>
+    <td>2125</td>
+    <td>4.63s</td>
+    <td>15.58%</td>
+  </tr>
+  <tr>
+    <td rowspan="2" class="td-dark">record</td>
+    <td>Faustroll</td>
+    <td>5199</td>
+    <td>38s</td>
+    <td>275</td>
+    <td>1.72s</td>
+    <td>5.29%</td>
+  </tr>
+  <tr>
+    <td>Shakespeare</td>
+    <td>7631</td>
+    <td>49.2s</td>
+    <td>794</td>
+    <td>2.09s</td>
+    <td>10.40%</td>
+  </tr>
+</table>
+<figcaption>Table 12.4 – Count, time and percentage of results retrieved</figcaption>
+</figure>
+
+<p>Google recommends having a “response time under 200ms” (i.e. 0.2 seconds) <span class="citation" data-cites="GoogleTime2015">(“Improve Server Response Time. PageSpeed Tools &gt; Insights” <a href="#ref-GoogleTime2015">2015</a>)</span>. The numbers in table <a href="#tab:12.4">12.4</a> clearly show that the ‘return all’ method is unacceptable in terms of speed performance. Using the ‘first only’ method is much closer to the recommended speed limit, although still far off. Columns 4 and 6 show the time it takes for the page to load from the user query to the display of results. The times are shown in seconds. The data for column 4 was generated using a Chrome browser plugin called <em>Load-timer</em> <span class="citation" data-cites="Vykhodtsev2015">(Vykhodtsev <a href="#ref-Vykhodtsev2015">2015</a>)</span> and the data for column 6 was generated by the Chrome <em>Developer Tools</em>.</p>
 </section>
+
 <section id="s:analindex" class="level3">
 <h3><span class="header-section-number">12.2.3</span> Index</h3>
 <p>The index is a central part of the <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> system. It is generated when the program/server is first started up but then cached and re-used. The initial process of going over all the text files in each corpus takes a few minutes. Of course in comparison to a full Internet crawl this is a tiny amount of data to be processed.</p>
-<p>The Faustroll corpus for example contains texts<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge’s <em>The Rime of the Ancient Mariner</em> is one poem whereas the Edgar Allan Poe file contains a collection of all of his works. The total size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into 38 individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.</p>
+<p>The Faustroll corpus for example contains 28 texts<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Individually they are small plaintext files of sizes between 24KB (Coleridge) and 2MB (Poe). This is of course caused by the nature of some of these texts. Samuel Coleridge’s <em>The Rime of the Ancient Mariner</em> is one poem whereas the Edgar Allan Poe file contains a collection of all of his works. The total size of the Faustroll corpus is 10MB. The Shakespeare corpus is much more evenly distributed as all of his works are separated out into 38 individual text files of an average size of around 150KB. The total size of the Shakespeare corpus is only 5.3MB.</p>
 <p>Now, the size of the actual index data structure is interesting. Processing the Faustroll corpus alone produced an index of 12.4MB. That’s larger than the actual size of the corpus. Remember, the index contains each word that occurs anywhere in the corpus together with the list of files it is found in and the specific locations within each text. This includes English words but also French and German terms since the Faustroll corpus is multi-lingual. The combined index is 35.2MB large.</p>
-<p>As a comparison to the 35 megabyte index generated by the system described in this thesis, and the search times mentioned in table [tab:percent], Google claims to have “well over gigabytes” of data in their index and that they’ve spent “over one million computing hours to build it” <span class="citation" data-cites="GoogleCI">(“Crawling and Indexing. Inside Search” n.d.)</span>. Similarly Google managed to retrieve about results for the query ‘clear’ in 0.85 seconds.</p>
+<p>As a comparison to the 35 megabyte index generated by the system described in this thesis, and the search times mentioned in table <a href="#tab:12.4">12.4</a>, Google claims to have “well over $100000000$ gigabytes” of data in their index and that they’ve spent “over one million computing hours to build it” <span class="citation" data-cites="GoogleCI">(“Crawling and Indexing. Inside Search” n.d.)</span>. Similarly Google managed to retrieve about $2140000000$ results for the query ‘clear’ in 0.85 seconds.</p>
 <blockquote>
 <p>The web is like an ever-growing public library with billions of books and no central filing system. Google essentially gathers the pages during the crawl process and then creates an index, so we know exactly how to look things up. Much like the index in the back of a book, the Google index includes information about words and their locations. When you search, at the most basic level, our algorithms look up your search terms in the index to find the appropriate pages.</p>
-<p>The search process gets much more complex from there. When you search for “dogs” you don’t want a page with the word “dogs” on it hundreds of times. You probably want pictures, videos or a list of breeds. Google’s indexing systems note many different aspects of pages, such as when they were published, whether they contain pictures and videos, and much more.</p>
+<p>The search process gets much more complex from there. When you search for “dogs” you don’t want a page with the word “dogs” on it hundreds of times. You probably want pictures, videos or a list of breeds. Google’s indexing systems note many different aspects of pages, such as when they were published, whether they contain pictures and videos, and much more.</p><span class="blockcitation" data-cites="GoogleCI">(“Crawling and Indexing. Inside Search” n.d.)</span>
 </blockquote>
-<p>Figure [fig:termdocs] shows some example words and how often they occur in three example files of the Faustroll corpus in the form of a (see chapter [ch:technology] for more details). Implementing the Faustroll corpus index as a properly, would result in a <span class="math inline">78893 × 28</span> matrix—the number of words (not counting duplicates) times the number of files in the corpus.</p>
+<p>Figure <a href="technology.html#fig:6.2">6.2</a> shows some example words and how often they occur in three example files of the Faustroll corpus in the form of a TDM (see chapter <a href="technology.html">6.</a> for more details). Implementing the Faustroll corpus index as a TDM properly, would result in a $78893 × 28$ matrix—the number of words (not counting duplicates) times the number of files in the corpus.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
 <p>As mentioned before, the index is structured in a double nested dictionary style list as shown below.</p>
 <pre class="text"><code>{
   word1: {fileA: [pos1, pos2, ...], fileB: [pos1], ...},
   word2: {fileC: [pos1, pos2], fileK: [pos1, pos2, pos3, ...], ...},
   ...
 }</code></pre>
-<p>There are other options of how to make this data structure. For example we could store a list of pataphysicalised query terms (<em>patadata</em>) with each word and the full sentence fragment with each position. This would allow faster retrieval at query time but would increase the time needed for the initial startup. Additionally we could store data on rhyming patterns directly in the index with each word entry. This would of course be beneficial for the implementation of a rhyming scheme for the poetry generation. See also chapter [ch:future].</p>
+<p>There are other options of how to make this data structure. For example we could store a list of pataphysicalised query terms (<em>patadata</em>) with each word and the full sentence fragment with each position. This would allow faster retrieval at query time but would increase the time needed for the initial startup. Additionally we could store data on rhyming patterns directly in the index with each word entry. This would of course be beneficial for the implementation of a rhyming scheme for the poetry generation. See also chapter <a href="aspirations.html">13</a>.</p>
 <pre class="text"><code>{
   word1: ([patadata], [rhymes], {fileA: [(pos1, sent), (pos2, sent), ...], fileB: [(pos1, sent)], ...}),
   word2: ([patadata], [rhymes], {fileC: [(pos1, sent), (pos2, sent)], fileK: [(pos1, sent), (pos2, sent), (pos3, sent), ...]), ...},
   ...
 }</code></pre>
 </section>
+
 <section id="clinamen" class="level3">
 <h3><span class="header-section-number">12.2.4</span> Clinamen</h3>
 <p>The clinamen function uses the Damerau-Levenshtein algorithm to create patadata. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the Damerau-Levenshtein algorithm needing two words to compare with each other. It also ensures that we get real words as results and not some random gibberish.</p>
 <p>Currently the algorithm is set to accept terms that have a difference of 1 or 2 to the original query. We can lower this to 1 to allow fewer results or increase it to make it broader. I felt 1 or 2 was a good compromise. Only allowing 1 error would mean terms are too similar. Allowing 3 might mean they are drastically different.</p>
+
 <section id="s:basetext" class="level4">
 <h4><span class="header-section-number">12.2.4.1</span> Changing the base text</h4>
 <p>As examples of using different base documents in the Clinamen algorithm I have used three examples.</p>
@@ -337,6 +702,7 @@ altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, 
 amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows &amp; amiss, ass, bows, boys, cost, cosy, cross, does, dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, vows &amp; ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops<br />
 </p>
 </section>
+
 <section id="s:clinerrors" class="level4">
 <h4><span class="header-section-number">12.2.4.2</span> Changing number of errors</h4>
 <p>Another key factor in how the Clinamen function works is the Damerau-Levenshtein algorithm (see source [code:dl]) integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions.</p>
@@ -349,6 +715,7 @@ moss &amp; 3 &amp; 49 &amp; 457<br />
 </p>
 </section>
 </section>
+
 <section id="s:analsyzygy" class="level3">
 <h3><span class="header-section-number">12.2.5</span> Syzygy</h3>
 <p>The syzygy function (see source [code:syzygy]) goes through the following process.</p>
@@ -396,19 +763,23 @@ seed &amp; 13 &amp; 39 &amp; 35 &amp; 0 &amp; 12<br />
 web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 </p>
 </section>
+
 <section id="antinomy" class="level3">
 <h3><span class="header-section-number">12.2.6</span> Antinomy</h3>
 <p>A similar problem arises of course with the Antinomy algorithm (see source [code:antinomy]) which relies on WordNet’s antonyms. Both table [tab:algorithmscomp] and table [tab:algonums] highlight this imbalance.</p>
 </section>
+
 <section id="s:apis" class="level3">
 <h3><span class="header-section-number">12.2.7</span> APIs</h3>
 <p>The functions—image and video search—all share one major issue. This is to do with how images and videos are retrieved from the external store. Some people tend to upload sequences of images depicting the same content from different angles or time frames with the same tags. A query for that tag then returns all of those matches even though the images are almost identical in nature. An example of this can be seen in figure [fig:imgspiralgetty]. This may have been addressed by adding checks in the code that make sure authors don’t appear twice in the results.</p>
 <p>Another way to address this was attempted by changing the query term for each image or video that is retrieved. As mentioned above, this only worked for some of the s.</p>
+
 <section id="call-structure" class="level4">
 <h4><span class="header-section-number">12.2.7.1</span> Call Structure</h4>
 <p>The text search functionality of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> is set up to only work with one <em>single query term</em>, whereas the image and video search works on <em>multiple word queries</em>. This is mainly due to the fact that the external s are already setup to allow for more than one search term. Usually they allow extra parameters to narrow down the results too. So for example we can search for “blue kitten” and the three s will return their respective results related to blue kittens. The service provided by companies in the form of s is not always free, sometimes only at a low usage quota. s are updated often and not always back-compatible, meaning out-of-date code needs to be maintained regularly to assure it works if changes to the are made.</p>
 <p>Enabling multi-word queries in my system would involve a change that would propagate through quite a bit of code. There are two main approaches this could be achieved. One would be to pataphysicalise each query term individually and combine the results found. Another approach would be to change the code to work with actual multi-word queries. The algorithms are created for single words though and rewriting them to allow for more than one word would be difficult and most of all increase the time it takes to compute patadata.</p>
 <p>The lists below show some of the key parameters related to the query for Flickr, Getty, Bing and YouTube.</p>
+
 <section id="flickr" class="level5">
 <h5><span class="header-section-number">12.2.7.1.1</span> Flickr:</h5>
 <blockquote>
@@ -430,6 +801,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <img src="bluekittenflickr" alt="Image spiral for query blue kitten—Flickr" /><figcaption>Image spiral for query ‘blue kitten’—Flickr<span data-label="fig:imgspiralflickr"></span></figcaption>
 </figure>
 </section>
+
 <section id="getty" class="level5">
 <h5><span class="header-section-number">12.2.7.1.2</span> Getty:</h5>
 <blockquote>
@@ -447,6 +819,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <img src="bluekittengetty" alt="Image spiral for query blue kitten—Getty" /><figcaption>Image spiral for query ‘blue kitten’—Getty<span data-label="fig:imgspiralgetty"></span></figcaption>
 </figure>
 </section>
+
 <section id="bing" class="level5">
 <h5><span class="header-section-number">12.2.7.1.3</span> Bing:</h5>
 <blockquote>
@@ -458,6 +831,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 </blockquote>
 <p>The Bing function uses the parameter to set the query in the same way as Getty.</p>
 </section>
+
 <section id="youtube" class="level5">
 <h5><span class="header-section-number">12.2.7.1.4</span> YouTube:</h5>
 <blockquote>
@@ -470,6 +844,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <p>Youtube works in a similar way too. The parameter is set to the pataphysicalised query term and one call retrieves ten results.</p>
 </section>
 </section>
+
 <section id="s:quota" class="level4">
 <h4><span class="header-section-number">12.2.7.2</span> Quota</h4>
 <p>Each has a different quota for their subscription packages. At this stage this is not a problem but if usage of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> were to increase by a lot then these limitations would cause issues. At that point there are two options: (1) live with these limits or (2) get funding to upgrade the subscriptions to these services.</p>
@@ -493,6 +868,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 </section>
 </section>
 </section>
+
 <section id="s:theoryanalysis" class="level2">
 <h2><span class="header-section-number">12.3</span> Creativity &amp; Intelligence</h2>
 <p>A more theoretical aspect of this analysis is concerned with what was already discussed to an extent in chapter [ch:interpretation] (specifically sections [ss:anthropomorphism], [s:programmer], [s:mimicry] and [s:babying]), namely the thread connecting ‘artificial creativity’ and .</p>
@@ -510,6 +886,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <li><p>Are thinking computers mathematically possible?</p></li>
 </ol>
 </blockquote>
+
 <section id="free-will-surprise" class="level3">
 <h3><span class="header-section-number">12.3.1</span> Free Will &amp; Surprise</h3>
 <p>As early as 1842, Ada Lovelace mentioned in the annotations to her translation of Menabrea’s account of Babbage’s <em>Analytical Engine</em> that the “Analytical Engine has no pretensions whatever to <em>originate</em> anything. It can do <em>whatever we know how to order it</em> to perform”, implying that the machine cannot think by itself <span class="citation" data-cites="Menabrea1842">(Menabrea and Lovelace <a href="#ref-Menabrea1842">1842</a> her emphasis)</span>.</p>
@@ -519,6 +896,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <p>If we give the machine a programme which results in its doing something interesting which we had not anticipated I should be inclined to say that the machine <em>had</em> originated something, rather than to claim that its behaviour was implicit in the programme, and therefore that the originality lies entirely with us.</p>
 </blockquote>
 </section>
+
 <section id="s:undersimu" class="level3">
 <h3><span class="header-section-number">12.3.2</span> Understanding &amp; Simulation</h3>
 <p>Strong , sometimes called or true , is the idea of human-level intelligence in machines. Searle speaks against the possibility of this using his famous ‘Chinese Room’ argument amongst others. His argument breaks down into the following juxtapositions <span class="citation" data-cites="Searle1990 Searle2015">(<a href="#ref-Searle1990">1990</a>; <a href="#ref-Searle2015">2015</a>)</span>.</p>
@@ -539,6 +917,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 </blockquote>
 <p>So, Searle argues a computer needs a semantical understanding of concepts in order to be considered ‘thinking’ machines.</p>
 </section>
+
 <section id="s:braincomp" class="level3">
 <h3><span class="header-section-number">12.3.3</span> Brain &amp; Computers</h3>
 <p>Searle defines the three main paradigms for studies relating to computers and brains as follows <span class="citation" data-cites="Searle1990">(<a href="#ref-Searle1990">1990</a>)</span>.</p>

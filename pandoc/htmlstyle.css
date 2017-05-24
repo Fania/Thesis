@@ -126,7 +126,7 @@ a.uri {
 
 .triplespiral {
   width: 150px;
-  margin: 10px auto;
+  margin: 2em auto;
   display: block;
 }
 
@@ -208,6 +208,10 @@ figure {
   margin: 2em 0;
 }
 
+figure.nomargins {
+  margin: 0;
+}
+
 figure img {
   width: 100%;
   /*max-height: 600px;*/
@@ -217,6 +221,12 @@ figure img {
 figcaption {
   font-family: 'Roboto', sans-serif;
   font-size: .8em;
+  padding-top: 1em;
+}
+
+figcaption.pushup {
+  position: relative; 
+  top: -40px;
 }
 
 .equation {
@@ -383,6 +393,25 @@ th, td {
 }
 
 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/*table.narrow th, table.narrow td {
+  padding: 5px;
+}*/
+
+.rotate > div {
+  transform: translate(16px,40px) rotate(270deg);
+  width: 1em;
+}
+
+.rotateS > div {
+  transform: translate(26px,22px) rotate(270deg);
+  width: 1em;
+  height: 4.5em;
+}
+
+.td-dark {
   background-color: #f2f2f2;
 }
 
@@ -558,5 +587,5 @@ figure[id="fig:9.2"] img {width: 400px;}
 figure[id="fig:9.3"] img {width: 400px;}
 figure[id="fig:9.4"] img {width: 450px;}
 figure[id="fig:10.2"] {width: 200px; float:right; margin: 0 0 0 10px;}
-figure[id="tab:10.1"] div {overflow-x: auto;}
-
+figure[id="fig:12.1.a"] {text-align: left;}
+figure[id="fig:12.1.b"] {text-align: left;}
