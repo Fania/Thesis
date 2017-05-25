@@ -123,6 +123,7 @@
 <p>It is quite interesting to compare the algorithms with each other. By removing the clutter (in this case the sentence surrounding the pataphysicalised keyword) we can see a few example results side by side in table <a href="#tab:12.1">12.1</a>.</p>
 
 <figure id="tab:12.1">
+<div class="scrollbar">
 <table>
   <tr>
     <th>Query</th>
@@ -161,6 +162,7 @@
     <td>recorded, dead</td>
   </tr>
 </table>
+</div>
 <figcaption>Table 12.1 - Comparison of patalgorithms showing a selection of results for each</figcaption>
 </figure>
 
@@ -227,6 +229,7 @@ term ‘flower’</figcaption>
 <p>The above examples (table <a href="#tab:12.1">12.1</a> and figure <a href="#fig:12.1">12.1</a>) give a good overview of the two main factors in the pataphysicalisation process, namely the three patalgorithms and the two corpora. Both only reflect a small selection of the variety of results produced though. It is therefore quite interesting to look at some actual numbers.</p>
 
 <figure id="tab:12.2">
+<div class="scrollbar">
 <table>
   <tr>
     <th>Query</th>
@@ -237,7 +240,7 @@ term ‘flower’</figcaption>
     <th>Poems</th>
   </tr>
   <tr>
-    <td rowspan=2><b>flower</b></td>
+    <td rowspan="2"><b>flower</b></td>
     <td>Faustroll</td>
     <td>90</td>
     <td>25</td>
@@ -252,7 +255,7 @@ term ‘flower’</figcaption>
     <td>3.8 $\times 10^{14}$</td>
   </tr>
   <tr>
-    <td rowspan=2><b>clear</b></td>
+    <td rowspan="2"><b>clear</b></td>
     <td>Faustroll</td>
     <td>542</td>
     <td>79</td>
@@ -267,7 +270,7 @@ term ‘flower’</figcaption>
     <td>1.5 $\times 10^{28}$</td>
   </tr>
   <tr>
-    <td rowspan=2><b>troll</b></td>
+    <td rowspan="2"><b>troll</b></td>
     <td>Faustroll</td>
     <td>124</td>
     <td>16</td>
@@ -282,7 +285,7 @@ term ‘flower’</figcaption>
     <td>1.1 $\times 10^{19}$</td>
   </tr>
   <tr>
-    <td rowspan=2><b>fania</b></td>
+    <td rowspan="2"><b>fania</b></td>
     <td>Faustroll</td>
     <td>9</td>
     <td>2</td>
@@ -297,6 +300,7 @@ term ‘flower’</figcaption>
     <td>1</td>
   </tr>
 </table>
+</div>
 <figcaption>Table 12.2 – Faustroll versus Shakespeare in numbers</figcaption>
 </figure>
 
@@ -324,6 +328,7 @@ term ‘flower’</figcaption>
 <p>A slightly different angle to consider is a comparison of these kind of numbers between each of the algorithms. Table <a href="#tab:12.3">12.3</a> shows the numbers of results, reverberations and origins for the Clinamen, Syzygy and Antinomy algorithms using five example query terms (‘clear’, ‘shine’, ‘disorder’, ‘stuck’, and ‘feather’) for each of the two corpora (‘Faustroll’ and ‘Shakespeare’).</p>
 
 <figure id="tab:12.3">
+<div class="scrollbar">
 <table>
   <tr>
     <th rowspan="2">Corpus</th>
@@ -477,6 +482,7 @@ term ‘flower’</figcaption>
     <td>412-25-38</td>
   </tr>
 </table>
+</div>
 <figcaption>Table 12.3 – Results-Reverberations-Origin numbers per algorithm</figcaption>
 </figure>
 
@@ -485,7 +491,7 @@ term ‘flower’</figcaption>
 <p>Looking at the origins column in table <a href="#tab:12.3">12.3</a> highlights how the Shakespeare corpus mostly produces results from each of its 38 texts. The Faustroll corpus varies a lot more. This may be due to the different languages and varying word counts of the files in the corpus.</p>
 
 <section id="s:fauststats" class="level4">
-<h4><span class="header-section-number">12.2.1.1</span> Faustroll</h4>
+<h4>Faustroll</h4>
 <ul>
 <li><p>There are three empty texts (Peladan, de Chilra, de Regnier).</p></li>
 <li><p>The total number of words is $1738461$. Of this, $1204158$ words are from English texts (70%), $497144$ are French (28%) and $37159$ are in German (2%).</p></li>
@@ -497,7 +503,7 @@ term ‘flower’</figcaption>
 </section>
 
 <section id="s:shakestats" class="level4">
-<h4><span class="header-section-number">12.2.1.2</span> Shakespeare</h4>
+<h4>Shakespeare</h4>
 <ul>
 <li><p>The total number of words is $883460$<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>.</p></li>
 <li><p>The shortest text contains $2568$ words (Lover’s Complaint).</p></li>
@@ -557,6 +563,7 @@ term ‘flower’</figcaption>
 <p>Table <a href="#tab:12.4">12.4</a> shows some example queries for both corpora and the number of results retrieved with the first position only used (as in the live version of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>) in column 5 and on column 3 with all results retrieved. The final column shows what percentage of results are retrieved using the ‘first only’ method. The average percentage for this is about 10%.</p>
 
 <figure id="tab:12.4">
+<div class="scrollbar">
 <table>
   <tr>
     <th rowspan="2">Query</th>
@@ -640,6 +647,7 @@ term ‘flower’</figcaption>
     <td>10.40%</td>
   </tr>
 </table>
+</div>
 <figcaption>Table 12.4 – Count, time and percentage of results retrieved</figcaption>
 </figure>
 
@@ -680,57 +688,135 @@ term ‘flower’</figcaption>
 <p>Currently the algorithm is set to accept terms that have a difference of 1 or 2 to the original query. We can lower this to 1 to allow fewer results or increase it to make it broader. I felt 1 or 2 was a good compromise. Only allowing 1 error would mean terms are too similar. Allowing 3 might mean they are drastically different.</p>
 
 <section id="s:basetext" class="level4">
-<h4><span class="header-section-number">12.2.4.1</span> Changing the base text</h4>
+<h4>Changing the base text</h4>
 <p>As examples of using different base documents in the Clinamen algorithm I have used three examples.</p>
 <ul>
 <li><p><em>Midsummer Night’s Dream</em> by Shakespeare (‘Dream’ in short)</p></li>
 <li><p><em>Arabian Nights</em> by various artists (‘Nights’ in short)</p></li>
 <li><p><em>Exploits and Opinions of Doctor Faustroll, Pataphysician</em> by Jarry (‘Faustroll’ in short)</p></li>
 </ul>
-<p>Figure [fig:changebase] on page shows three tables, each compare the full list of pataphysicalised terms for a particular query term for the three base texts above. These examples show that changing the base text of the algorithm does indeed change the set of results you get.</p>
+<p>Figure <a href="#fig:12.2">12.2</a> shows three tables, each compare the full list of pataphysicalised terms for a particular query term for the three base texts above. These examples show that changing the base text of the algorithm does indeed change the set of results you get.</p>
 <p>The decision to use the Faustroll text as a base text was made due to the central role it has for pataphysics and indeed the corpus itself. The Faustroll book introduces pataphysics and contains Jarry’s original definition and it also lists Dr. Faustroll’s library of ‘equivalent books’ which was used as the inspiration for the Faustroll corpus.</p>
-<p>[tab:basefania]</p>
-<p><span>X[l]X[1.5,l]X[l]</span> <strong>Dream</strong> &amp; <strong>Nights</strong> &amp; <strong>Faustroll</strong><br />
-fail, faint, fair, fan, fancy &amp; fail, fain, faint, fair, fancy, Sadia &amp; fan, fans, Tanit<br />
-</p>
-<p>[tab:baseclear]</p>
-<p><span>X[l]X[1.5,l]X[l]</span> <strong>Dream</strong> &amp; <strong>Nights</strong> &amp; <strong>Faustroll</strong><br />
-altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear &amp; bear, cedar, cellar, cheap, clad, clap, clean, clear, cleared, clearer, clearly, clever, dear, ear, fear, hear, lead, leaf, leap, learn, liar, near, swear, tear, wear, year &amp; altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year<br />
-</p>
-<p>[tab:basemoss]</p>
-<p><span>X[l]X[1.1,l]X[1.2,l]</span> <strong>Dream</strong> &amp; <strong>Nights</strong> &amp; <strong>Faustroll</strong><br />
-amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows &amp; amiss, ass, bows, boys, cost, cosy, cross, does, dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, vows &amp; ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops<br />
-</p>
+
+<figure id="fig:12.2">
+<figure>
+<figcaption class="topcaption">(a) Changing base in Clinamen - query ‘fania’</figcaption>
+<table>
+  <tr>
+    <th>Dream</th>
+    <th>Nights</th>
+    <th>Faustroll</th>
+  </tr>
+  <tr>
+    <td>fail, faint, fair, fan, fancy</td>
+    <td>fail, fain, faint, fair, ancy. Sadia</td>
+    <td>fan, fans, Tanit</td>
+  </tr>
+</table>
+</figure>
+
+<figure>
+<figcaption class="topcaption">(b) Changing base in Clinamen - query ‘clear’</figcaption>
+<table>
+  <tr>
+    <th>Dream</th>
+    <th>Nights</th>
+    <th>Faustroll</th>
+  </tr>
+  <tr>
+    <td>altar, bear, car, cheer, clean, clear, dear, ear, fear, hear, lead, liar, near, plead, rear, swear, tear, wear</td>
+    <td>bear, cedar, cellar, cheap, clad, clap, clean, clear, cleared, clearer, clearly, clever, dear, ear, fear, hear, lead, leaf, leap, learn, liar, near, swear, tear, wear, year</td>
+    <td>altar, cedar, cellar, clad, clean, clear, clearly, dear, ear, fear, hear, lead, leaf, leap, near, pleas, rear, swear, year</td>
+  </tr>
+</table>
+</figure>
+
+<figure>
+<figcaption class="topcaption">(c) Changing base in Clinamen - query ‘moss’</figcaption>
+<table>
+  <tr>
+    <th>Dream</th>
+    <th>Nights</th>
+    <th>Faustroll</th>
+  </tr>
+  <tr>
+    <td>amiss, ass, boys, costs, cross, dost, fogs, gods, goes, gross, kiss, Less, loos, lose, lost, mask, moan, moans, mock, mole, mood, moon, more, morn, most, mote, mous, mouse, move, musk, must, nose, oes, pass, ress, rose, roses, toys, vows</td>
+    <td>amiss, ass, bows, boys, cost, cosy, cross, does, dogs, foes, goes, host, hosts, kiss, less, lose, loss, lost, lots, lows, mass, massy, mess, mist, mode, moon, more, Moses, most, mouse, move, moves, musk, must, pass, post, pots, rocs, rose, roses, sobs, sons, vows</td>
+    <td>ass, Bosse, bows, Boys, cost, costs, cows, cross, does, dogs, ess, fess, gods, goes, host, kiss, less, lose, loss, lost, lots, maps, mask, mass, mast, masts, mesh, mist, mob, moist, moles, moon, mor, more, Moses, most, must, nos, nose, pass, piss, rose, rosy, rows, sons, sows, toes, tops</td>
+  </tr>
+</table>
+</figure>
+
+<figcaption>Figure 12.2 – 3 tables showing results for different queries after changing the Clinamen base
+text</figcaption>
+</figure>
 </section>
 
 <section id="s:clinerrors" class="level4">
-<h4><span class="header-section-number">12.2.4.2</span> Changing number of errors</h4>
-<p>Another key factor in how the Clinamen function works is the Damerau-Levenshtein algorithm (see source [code:dl]) integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions.</p>
-<p>If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed). Table [tab:errors]) shows three example queries and the number of results produced by the algorithm with either up to 1 error, up to 2 errors or up to 3 errors. The full list of patadata terms for column 4 (up to 3 errors) is shown in appendix [app:clin3errors].</p>
+<h4>Changing number of errors</h4>
+<p>Another key factor in how the Clinamen function works is the Damerau-Levenshtein algorithm (see source <a href="implementation.html#code:10.4">10.4</a>) integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions.</p>
+<p>If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed). Table <a href="#tab:12.5">12.5</a>) shows three example queries and the number of results produced by the algorithm with either up to 1 error, up to 2 errors or up to 3 errors. The full list of patadata terms for column 4 (up to 3 errors) is shown in appendix [app:clin3errors].</p>
 <p>Appendix [app:clin3errors] shows the results for the Clinamen function with 3 errors.</p>
-<p><span>lccc</span> <strong>Query</strong> &amp; <strong>Up to 1</strong> &amp; <strong>Up to 2</strong> &amp; <strong>Up to 3</strong><br />
-clear &amp; 2 &amp; 20 &amp; 136<br />
-fania &amp; 0 &amp; 3 &amp; 118<br />
-moss &amp; 3 &amp; 49 &amp; 457<br />
-</p>
+
+<figure id="tab:12.5">
+<div class="scrollbar">
+<table>
+  <tr>
+    <th>Query</th>
+    <th>Up to 1</th>
+    <th>Up to 2</th>
+    <th>Up to 3</th>
+  </tr>
+  <tr>
+    <td><b>clear</b></td>
+    <td>2</td>
+    <td>20</td>
+    <td>136</td>
+  </tr>
+  <tr>
+    <td><b>fania</b></td>
+    <td>0</td>
+    <td>3</td>
+    <td>118</td>
+  </tr>
+  <tr>
+    <td><b>moss</b></td>
+    <td>3</td>
+    <td>49</td>
+    <td>457</td>
+  </tr>
+</table>
+</div>
+<figcaption>Table 12.5 – Changing number of errors in Clinamen</figcaption>
+</figure>
 </section>
 </section>
 
 <section id="s:analsyzygy" class="level3">
 <h3><span class="header-section-number">12.2.5</span> Syzygy</h3>
-<p>The syzygy function (see source [code:syzygy]) goes through the following process.</p>
+<p>The syzygy function (see source <a href="implementation.html#code:10.7">10.7</a>) goes through the following process.</p>
 <ol>
 <li><p>A set of synonyms (a list of “synsets”) is retrieved.</p></li>
 <li><p>For each of these, hyponyms, hypernyms, holonyms and meronyms are retrieved.</p></li>
 </ol>
+
+<figure id="fig:12.3">
+<img src="../images/feather.png" alt="Semantic relationships of ‘feather’">
+<figcaption>Figure 12.3 – Semantic relationships of ‘feather’</figcaption>
+</figure>
+
 <p>The notation used by WordNet for synsets is <strong>&lt;lemma&gt;.&lt;pos&gt;.&lt;senses&gt;</strong>. The ‘lemma’ is the morphological stem of the word. The ‘pos’ stands for part-of-speech and can be ‘n’ for nouns, ‘v’ for verbs, ‘a’ for adjectives, ‘r’ for adverbs and ‘s’ for satellites. The ‘senses’ element stands for the number of synsets the relevant lemma is part of (a word might have a noun sense as well as a verb sense for example in which case the number would be ‘02’). For the query ‘clear’ for instance, the following list of synsets is retrieved for step (1).</p>
+
 <pre class="text"><code>[
   clear.n.01, open.n.01, unclutter.v.01, clear.v.02, clear_up.v.04, authorize.v.01, clear.v.05, pass.v.09, clear.v.07, clear.v.08, clear.v.09, clear.v.10, clear.v.11, clear.v.12, net.v.02, net.v.01, gain.v.08, clear.v.16, clear.v.17, acquit.v.01, clear.v.19, clear.v.20, clear.v.21, clear.v.22, clear.v.23, clear.v.24, clear.a.01, clear.s.02, clear.s.03, clear.a.04, clear.s.05, clear.s.06, clean.s.03, clear.s.08, clear.s.09, well-defined.a.02, clear.a.11, clean.s.02, clear.s.13, clear.s.14, clear.s.15, absolved.s.01, clear.s.17, clear.r.01, clearly.r.04
 ]</code></pre>
+
 <p>Step (2) then retrieves related terms. Below is a list of terms it found. Not all synsets return each of the hypo-/hyper- and holo-/meronyms. This is clearer when inspecting the full list of results as shown in appendix [app:syzygy].</p>
+
 <pre class="text"><code>[
   innocence, area, country, change, alter, modify, make, create, approbate, approve, O.K., okay, sanction, certificate, commission, declare, license, certify, validate, formalise, permit, allow, let, countenance, clear-cut, deforest, disafforest, denude, bare, denudate, strip, stump, remove, take, take_away, withdraw, clear, succeed, win, come_through, bring_home_the_bacon, deliver_the_goods, vanish, disappear, go_away, hop, pass, overtake, overhaul, clarify, clear_up, elucidate, free, discharge, rid, free, disembarass, yield, pay, bear, profit, gain, benefit, eke_out, squeeze_out, gross, profit, turn_a_profit, rake_in, shovel_in, rake_off, take_home, bring_home, yield, pay, bear, get, acquire, sell, pass, clear, purge, vindicate, whitewash, pronounce, label, judge, settle, square_off, square_up, determine, change, alter, modify, empty, take_out, move_out, remove, empty, remove, take, take_away, withdraw
 ]</code></pre>
+
 <p>For the term ‘feather’ the algorithm for example finds the hyponym ‘down’, the hypernym ‘body covering’, the holonym ‘bird’ and the meronym ‘quill’. It also considers synonyms, so the term ‘fledge’ for instance finds a hypernym of ‘develop’.</p>
 <dl>
 <dt>Query</dt>
@@ -752,38 +838,101 @@ moss &amp; 3 &amp; 49 &amp; 457<br />
 <dd><p>shaft, calamus, web, ceratin, vane, melanin, keratin, quill</p>
 </dd>
 </dl>
-<p>Table [tab:semnum] shows the spread of numbers retrieved by the various semantic relationships to some example queries. This highlights how the holonym function of WordNet returns very few results. The meronym function is a bit more reliable but also occasionally produces no results depending on whether there are any holonyms or meronyms for the query term.</p>
-<p><span>lccccc</span> <strong>Query</strong> &amp; <strong>Syno</strong> &amp; <strong>Hypo</strong> &amp; <strong>Hyper</strong> &amp; <strong>Holo</strong> &amp; <strong>Mero</strong><br />
-clear &amp; 45 &amp; 41 &amp; 65 &amp; 0 &amp; 0<br />
-feather &amp; 7 &amp; 14 &amp; 14 &amp; 3 &amp; 8<br />
-death &amp; 8 &amp; 34 &amp; 13 &amp; 4 &amp; 0<br />
-page &amp; 9 &amp; 14 &amp; 13 &amp; 0 &amp; 7<br />
-book &amp; 15 &amp; 85 &amp; 32 &amp; 2 &amp; 22<br />
-seed &amp; 13 &amp; 39 &amp; 35 &amp; 0 &amp; 12<br />
-web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
-</p>
+<p>Table <a href="#tab:12.6">12.6</a> shows the spread of numbers retrieved by the various semantic relationships to some example queries. This highlights how the holonym function of WordNet returns very few results. The meronym function is a bit more reliable but also occasionally produces no results depending on whether there are any holonyms or meronyms for the query term.</p>
+
+<figure id="tab:12.6">
+<div class="scrollbar">
+<table>
+  <tr>
+    <th>Query</th>
+    <th>Syno</th>
+    <th>Hypo</th>
+    <th>Hyper</th>
+    <th>Holo</th>
+    <th>Mero</th>
+  </tr>
+  <tr>
+    <td><b>clear</b></td>
+    <td>45</td>
+    <td>41</td>
+    <td>65</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td><b>feather</b></td>
+    <td>7</td>
+    <td>14</td>
+    <td>14</td>
+    <td>3</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td><b>death</b></td>
+    <td>8</td>
+    <td>34</td>
+    <td>13</td>
+    <td>4</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td><b>page</b></td>
+    <td>9</td>
+    <td>14</td>
+    <td>13</td>
+    <td>0</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td><b>book</b></td>
+    <td>15</td>
+    <td>85</td>
+    <td>32</td>
+    <td>2</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td><b>seed</b></td>
+    <td>13</td>
+    <td>39</td>
+    <td>35</td>
+    <td>0</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td><b>web</b></td>
+    <td>8</td>
+    <td>10</td>
+    <td>15</td>
+    <td>4</td>
+    <td>1</td>
+  </tr>
+</table>
+</div>
+<figcaption>Table 12.6 – Quantities of different semantic relations</figcaption>
+</figure>
 </section>
 
 <section id="antinomy" class="level3">
 <h3><span class="header-section-number">12.2.6</span> Antinomy</h3>
-<p>A similar problem arises of course with the Antinomy algorithm (see source [code:antinomy]) which relies on WordNet’s antonyms. Both table [tab:algorithmscomp] and table [tab:algonums] highlight this imbalance.</p>
+<p>A similar problem arises of course with the Antinomy algorithm (see source <a href="implementation.html#code:10.9">10.9</a>) which relies on WordNet’s antonyms. Both table <a href="#tab:12.1">12.1</a> and table <a href="#tab:12.3">12.3</a> highlight this imbalance.</p>
 </section>
 
 <section id="s:apis" class="level3">
 <h3><span class="header-section-number">12.2.7</span> APIs</h3>
-<p>The functions—image and video search—all share one major issue. This is to do with how images and videos are retrieved from the external store. Some people tend to upload sequences of images depicting the same content from different angles or time frames with the same tags. A query for that tag then returns all of those matches even though the images are almost identical in nature. An example of this can be seen in figure [fig:imgspiralgetty]. This may have been addressed by adding checks in the code that make sure authors don’t appear twice in the results.</p>
-<p>Another way to address this was attempted by changing the query term for each image or video that is retrieved. As mentioned above, this only worked for some of the s.</p>
+<p>The API functions—image and video search—all share one major issue. This is to do with how images and videos are retrieved from the external store. Some people tend to upload sequences of images depicting the same content from different angles or time frames with the same tags. A query for that tag then returns all of those matches even though the images are almost identical in nature. An example of this can be seen in figure <a href="#fig:12.5">12.5</a>. This may have been addressed by adding checks in the code that make sure authors don’t appear twice in the results.</p>
+<p>Another way to address this was attempted by changing the query term for each image or video that is retrieved. As mentioned above, this only worked for some of the APIs.</p>
 
 <section id="call-structure" class="level4">
-<h4><span class="header-section-number">12.2.7.1</span> Call Structure</h4>
-<p>The text search functionality of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> is set up to only work with one <em>single query term</em>, whereas the image and video search works on <em>multiple word queries</em>. This is mainly due to the fact that the external s are already setup to allow for more than one search term. Usually they allow extra parameters to narrow down the results too. So for example we can search for “blue kitten” and the three s will return their respective results related to blue kittens. The service provided by companies in the form of s is not always free, sometimes only at a low usage quota. s are updated often and not always back-compatible, meaning out-of-date code needs to be maintained regularly to assure it works if changes to the are made.</p>
+<h4>Call Structure</h4>
+<p>The text search functionality of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> is set up to only work with one <em>single query term</em>, whereas the image and video search works on <em>multiple word queries</em>. This is mainly due to the fact that the external APIs are already setup to allow for more than one search term. Usually they allow extra parameters to narrow down the results too. So for example we can search for “blue kitten” and the three APIs will return their respective results related to blue kittens. The service provided by companies in the form of APIs is not always free, sometimes only at a low usage quota. APIs are updated often and not always back-compatible, meaning out-of-date code needs to be maintained regularly to assure it works if changes to the API are made.</p>
 <p>Enabling multi-word queries in my system would involve a change that would propagate through quite a bit of code. There are two main approaches this could be achieved. One would be to pataphysicalise each query term individually and combine the results found. Another approach would be to change the code to work with actual multi-word queries. The algorithms are created for single words though and rewriting them to allow for more than one word would be difficult and most of all increase the time it takes to compute patadata.</p>
 <p>The lists below show some of the key parameters related to the query for Flickr, Getty, Bing and YouTube.</p>
 
 <section id="flickr" class="level5">
-<h5><span class="header-section-number">12.2.7.1.1</span> Flickr:</h5>
+<h5>Flickr:</h5>
 <blockquote>
-<dl>
+<dl class="defaultDL">
 <dt>text (Optional)</dt>
 <dd><p>A free text search. Photos who’s title, description or tags contain the text will be returned. You can exclude results that match a term by prepending it with a - character.</p>
 </dd>
@@ -793,76 +942,80 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <dt>tag_mode (Optional)</dt>
 <dd><p>Either ‘any’ for an OR combination of tags, or ‘all’ for an AND combination. Defaults to ‘any’ if not specified.</p>
 </dd>
-</dl>
+</dl><span class="blockcitation" data-cites="FlickrAPI">(Flickr <a href="#ref-FlickrAPI">n.d.</a>)</span>
 </blockquote>
-<p>The Flickr function in <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> uses the parameter to set the query and a parameter of ‘all’ to ensure multi-word queries are run as a conjunction. In chapter [s:imgvid] I explained how the Flickr algorithm essentially runs ten times, once for each pataphysicalised query term, to retrieve ten different images. This decision was taken to make sure images reflect the varied nature of the patadata.</p>
-<p>A search for “blue kitten” on Flickr produces the following resulting pataphysicalised query terms: “[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]” which are then passed into ten seperate calls to retrieve one image each (see figure [fig:imgspiralflickr]). The results show a variety of images seemingly unrelated to each other.</p>
-<figure>
-<img src="bluekittenflickr" alt="Image spiral for query blue kitten—Flickr" /><figcaption>Image spiral for query ‘blue kitten’—Flickr<span data-label="fig:imgspiralflickr"></span></figcaption>
+<p>The Flickr function in <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> uses the <code>tags</code> parameter to set the query and a <code>tag_mode</code> parameter of ‘all’ to ensure multi-word queries are run as a conjunction. In chapter <a href="implementation.html#s:imgvid">10.3</a> I explained how the Flickr algorithm essentially runs ten times, once for each pataphysicalised query term, to retrieve ten different images. This decision was taken to make sure images reflect the varied nature of the patadata.</p>
+<p>A search for “blue kitten” on Flickr produces the following resulting pataphysicalised query terms: “[artistrocratical, depressed, blueing, drab, puritanic, wild blue yonder, kitty, dingy, blueness, blue air]” which are then passed into ten seperate calls to retrieve one image each (see figure <a href="#fig:12.4">12.4</a>). The results show a variety of images seemingly unrelated to each other.</p>
+
+<figure id="fig:12.4">
+<img src="../images/bluekittenflickr.png" alt="Image spiral for query blue kitten—Flickr" />
+<figcaption>Figure 12.4 - Image spiral for query ‘blue kitten’—Flickr</figcaption>
 </figure>
 </section>
 
 <section id="getty" class="level5">
-<h5><span class="header-section-number">12.2.7.1.2</span> Getty:</h5>
+<h5>Getty:</h5>
 <blockquote>
-<dl>
+<dl class="defaultDL">
 <dt>keyword_ids</dt>
 <dd><p>Return only images tagged with specific keyword(s). Specify using a comma-separated list of keyword Ids. If keyword Ids and phrase are both specified, only those images matching the query phrase which also contain the requested keyword(s) are returned.</p>
 </dd>
 <dt>phrase</dt>
 <dd><p>Search images using a search phrase.</p>
 </dd>
-</dl>
+</dl><span class="blockcitation" data-cites="GettyAPI">(Getty <a href="#ref-GettyAPI">n.d.</a>)</span>
 </blockquote>
-<p>Getty uses the parameter to set the query. It only creates one pataphysicalised query term from the original query and calls for ten results based on that. This decision was based on the quota restrictions defined by Getty. Their limit is based on calls per second rather than calls per day or month. This means we cannot run ten calls for each user query as we did with Flickr. The query “blue kitten” gets turned into the word “racy” which then calls the to retrieve ten results (see figure [fig:imgspiralgetty]). The results mostly show racing cars from various angles although one oddball snuck in too: an office scene Getty has deemed to be ‘racy’ (a guy in a suit checking out a lady’s behind while she’s leaning over a laptop).</p>
-<figure>
-<img src="bluekittengetty" alt="Image spiral for query blue kitten—Getty" /><figcaption>Image spiral for query ‘blue kitten’—Getty<span data-label="fig:imgspiralgetty"></span></figcaption>
+<p>Getty uses the <code>phrase</code> parameter to set the query. It only creates one pataphysicalised query term from the original query and calls for ten results based on that. This decision was based on the quota restrictions defined by Getty. Their limit is based on calls per second rather than calls per day or month. This means we cannot run ten calls for each user query as we did with Flickr. The query “blue kitten” gets turned into the word “racy” which then calls the API to retrieve ten results (see figure <a href="#fig:12.5">12.5</a>). The results mostly show racing cars from various angles although one oddball snuck in too: an office scene Getty has deemed to be ‘racy’ (a guy in a suit checking out a lady’s behind while she’s leaning over a laptop).</p>
+
+<figure id="fig:12.5">
+<img src="../images/bluekittengetty.png" alt="Image spiral for query blue kitten—Getty" />
+<figcaption>Figure 12.5 - Image spiral for query ‘blue kitten’—Getty</figcaption>
 </figure>
 </section>
 
 <section id="bing" class="level5">
-<h5><span class="header-section-number">12.2.7.1.3</span> Bing:</h5>
+<h5>Bing:</h5>
 <blockquote>
-<dl>
+<dl class="defaultDL">
 <dt>query</dt>
 <dd><p>The user’s search query string. The query string cannot be empty. The query string may contain Bing Advanced Operators<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. For example, to limit images to a specific domain, use the site: operator. To help improve relevance and the results, you should always include the user’s query string in an insights query (see insightsToken). This parameter is supported only by the Image API; do not specify this parameter when calling the Trending Images API.</p>
 </dd>
-</dl>
+</dl><span class="blockcitation" data-cites="BingAPI">(Bing <a href="#ref-BingAPI">n.d.</a>)</span>
 </blockquote>
-<p>The Bing function uses the parameter to set the query in the same way as Getty.</p>
+<p>The Bing function uses the <code>query</code> parameter to set the query in the same way as Getty.</p>
 </section>
 
 <section id="youtube" class="level5">
-<h5><span class="header-section-number">12.2.7.1.4</span> YouTube:</h5>
+<h5>YouTube:</h5>
 <blockquote>
-<dl>
+<dl class="defaultDL">
 <dt>q</dt>
 <dd><p>The q parameter specifies the query term to search for. Your request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos that are associated with one of several search terms. For example, to search for videos matching either “boating” or “sailing”, set the q parameter value to boating|sailing. Similarly, to search for videos matching either “boating” or “sailing” but not “fishing”, set the q parameter value to boating|sailing -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-escaped value for the pipe character is %7C.</p>
 </dd>
-</dl>
+</dl><span class="blockcitation" data-cites="YoutubeAPI">(YouTube <a href="#ref-YoutubeAPI">n.d.</a>)</span>
 </blockquote>
-<p>Youtube works in a similar way too. The parameter is set to the pataphysicalised query term and one call retrieves ten results.</p>
+<p>Youtube works in a similar way too. The <code>q</code> parameter is set to the pataphysicalised query term and one call retrieves ten results.</p>
 </section>
 </section>
 
 <section id="s:quota" class="level4">
-<h4><span class="header-section-number">12.2.7.2</span> Quota</h4>
-<p>Each has a different quota for their subscription packages. At this stage this is not a problem but if usage of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> were to increase by a lot then these limitations would cause issues. At that point there are two options: (1) live with these limits or (2) get funding to upgrade the subscriptions to these services.</p>
+<h4>Quota</h4>
+<p>Each API has a different quota for their subscription packages. At this stage this is not a problem but if usage of <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> were to increase by a lot then these limitations would cause issues. At that point there are two options: (1) live with these limits or (2) get funding to upgrade the subscriptions to these services.</p>
 <dl>
 <dt>Flickr</dt>
-<dd><p>queries per hour are free <span class="citation" data-cites="FlickrGuideAPI">(“Getting Started. the Flickr Developer Guide: API” n.d.)</span>.</p>
+<dd><p>3600 queries per hour are free <span class="citation" data-cites="FlickrGuideAPI">(“Getting Started. the Flickr Developer Guide: API” n.d.)</span>.</p>
 </dd>
 <dt>Getty</dt>
-<dd><p>calls per second, unlimited calls per day <span class="citation" data-cites="GettyOverviewAPI">(“API Overview. Getty Images Api” n.d.)</span>.</p>
+<dd><p>5 calls per second, unlimited calls per day <span class="citation" data-cites="GettyOverviewAPI">(“API Overview. Getty Images Api” n.d.)</span>.</p>
 </dd>
 <dt>Bing</dt>
-<dd><p>transactions per month are free. A transaction is one request that returns one page of results <span class="citation" data-cites="BingAzureAPI">(“Bing Search API. DataMarket” <a href="#ref-BingAzureAPI">2012</a>)</span>.</p>
+<dd><p>5000 transactions per month are free. A transaction is one request that returns one page of results <span class="citation" data-cites="BingAzureAPI">(“Bing Search API. DataMarket” <a href="#ref-BingAzureAPI">2012</a>)</span>.</p>
 </dd>
 <dt>YouTube</dt>
-<dd><p>units per day, units per seconds per user, and requests per seconds are free. A call to the video search method counts as units <span class="citation" data-cites="YouTubeAPI">(“Search: list. YouTube Data Api” n.d.)</span>.</p>
+<dd><p>50000000 units per day, 300000 units per 100 seconds per user, and 3000000 requests per 100 seconds are free. A call to the video search method counts as 100 units <span class="citation" data-cites="YouTubeAPI">(“Search: list. YouTube Data Api” n.d.)</span>.</p>
 </dd>
 <dt>Microsoft Translator</dt>
-<dd><p>characters per month are free. Note the quota relates to single characters, not words <span class="citation" data-cites="TranslatorAPI">(“Microsoft Translator - Text Translation. DataMarket” <a href="#ref-TranslatorAPI">2011</a>)</span>.</p>
+<dd><p>2000000 characters per month are free. Note the quota relates to single characters, not words <span class="citation" data-cites="TranslatorAPI">(“Microsoft Translator - Text Translation. DataMarket” <a href="#ref-TranslatorAPI">2011</a>)</span>.</p>
 </dd>
 </dl>
 </section>
@@ -871,8 +1024,8 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 
 <section id="s:theoryanalysis" class="level2">
 <h2><span class="header-section-number">12.3</span> Creativity &amp; Intelligence</h2>
-<p>A more theoretical aspect of this analysis is concerned with what was already discussed to an extent in chapter [ch:interpretation] (specifically sections [ss:anthropomorphism], [s:programmer], [s:mimicry] and [s:babying]), namely the thread connecting ‘artificial creativity’ and .</p>
-<p>To me, the question of whether computers can be intelligent and make ethical decisions is the same as asking whether a computer can be creative. A lot of the arguments for or against can be applied to computer creativity. Answering the question of whether computers can think in my view would also answer the question of whether computers can be creative.</p>
+<p>A more theoretical aspect of this analysis is concerned with what was already discussed to an extent in chapter <a href="interpretation.html">9</a> (specifically sections <a href="interpretation.html#ss:anthropomorphism">9.1.1</a>, <a href="interpretation.html#s:programmer">9.1.2</a>, <a href="interpretation.html#s:mimicry">9.1.3</a> and <a href="interpretation.html#s:babying">9.1.4</a>), namely the thread connecting ‘artificial creativity’ and Artificial Intelligence (AI).</p>
+<p>To me, the question of whether computers can be intelligent and make ethical decisions is the same as asking whether a computer can be creative. A lot of the arguments for or against AI can be applied to computer creativity. Answering the question of whether computers can think in my view would also answer the question of whether computers can be creative.</p>
 <p>Horn groups the various strands of enquiry related to the question of ‘can computers think?’ into 8 main arguments with several subquestions each <span class="citation" data-cites="Horn2009">(<a href="#ref-Horn2009">2009</a>)</span> (the full list of questions can be found in appendix [s:think]).</p>
 <blockquote>
 <ol>
@@ -884,7 +1037,7 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <li><p>Can computers think in images?</p></li>
 <li><p>Do computers have to be conscious to think?</p></li>
 <li><p>Are thinking computers mathematically possible?</p></li>
-</ol>
+</ol><span class="blockcitation" data-cites="Horn2009">(Horn <a href="#ref-Horn2009">2009</a>)</span>
 </blockquote>
 
 <section id="free-will-surprise" class="level3">
@@ -893,13 +1046,13 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <p>Turing said in his article on thinking computers that “to behave like a brain seems to involve free will, but the behaviours of a digital computer, when it has been programmed, is completely determined” <span class="citation" data-cites="Turing1951">(<a href="#ref-Turing1951">1951</a>)</span>. Furthermore, in his famous article <em>Computing Machinery and Intelligence</em> he mentions that a digital computer with a ‘random element’ is “sometimes described as having free will” although he adds that he “would not use this phrase” himself <span class="citation" data-cites="Turing2009">(<a href="#ref-Turing2009">2009</a>)</span>.</p>
 <p>Introducing a random element to a computer program prevents us from fully predicting the outcome—leading to us being surprised. The ability of computers to surprise their creators seems to be an indicator of intelligence. Turing suggests that “we should be pleased when the machine surprises us, in rather the same way as one is pleased when a pupil does something which he had not been explicitly taught to do” <span class="citation" data-cites="Turing1951">(<a href="#ref-Turing1951">1951</a>)</span>.</p>
 <blockquote>
-<p>If we give the machine a programme which results in its doing something interesting which we had not anticipated I should be inclined to say that the machine <em>had</em> originated something, rather than to claim that its behaviour was implicit in the programme, and therefore that the originality lies entirely with us.</p>
+<p>If we give the machine a programme which results in its doing something interesting which we had not anticipated I should be inclined to say that the machine <em>had</em> originated something, rather than to claim that its behaviour was implicit in the programme, and therefore that the originality lies entirely with us.</p><span class="blockcitation" data-cites="Turing1951">(Turing <a href="#ref-Turing1951">1951</a>)</span>
 </blockquote>
 </section>
 
 <section id="s:undersimu" class="level3">
 <h3><span class="header-section-number">12.3.2</span> Understanding &amp; Simulation</h3>
-<p>Strong , sometimes called or true , is the idea of human-level intelligence in machines. Searle speaks against the possibility of this using his famous ‘Chinese Room’ argument amongst others. His argument breaks down into the following juxtapositions <span class="citation" data-cites="Searle1990 Searle2015">(<a href="#ref-Searle1990">1990</a>; <a href="#ref-Searle2015">2015</a>)</span>.</p>
+<p>Strong AI, sometimes called Artificial General Intelligence (AGI) or true AI, is the idea of human-level intelligence in machines. Searle speaks against the possibility of this using his famous ‘Chinese Room’ argument amongst others. His argument breaks down into the following juxtapositions <span class="citation" data-cites="Searle1990 Searle2015">(<a href="#ref-Searle1990">1990</a>; <a href="#ref-Searle2015">2015</a>)</span>.</p>
 <ul>
 <li><p>Syntax is not semantics.</p></li>
 <li><p>Semantics is not intrinsic to syntax.</p></li>
@@ -907,13 +1060,13 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <li><p>Ontologically subjective topics (such as consciousness or creativity) can be studied in epistemically objective ways.</p></li>
 </ul>
 <p>The Chinese Room thought experiment goes like this: imagine a room with two holes. On one side a question written on paper in Chinese goes in and on the other side a piece of paper comes out with the correct answer to the question, also in perfect Chinese. Inside the room sits a person with a Chinese language rulebook (written completely in English) who processed the question simply by looking up syntax, applying rules given in the instructions book and writing down the answer which to him looks like gibberish. The question then is whether or not the person inside the room ‘understands’ Chinese.</p>
-<p>Of course we could argue that it is not the person inside the room that understands Chinese but the room as a complete entity. It could be said the room does not ‘understand’ Chinese, it ‘simulates’ an understanding of it. Searle essentially argues that simulation cannot be considered strong .</p>
+<p>Of course we could argue that it is not the person inside the room that understands Chinese but the room as a complete entity. It could be said the room does not ‘understand’ Chinese, it ‘simulates’ an understanding of it. Searle essentially argues that simulation cannot be considered strong AI.</p>
 <blockquote>
-<p>Programs are formal or syntactical. Minds have a semantics. The syntax by itself is not sufficient for the semantics.</p>
+<p>Programs are formal or syntactical. Minds have a semantics. The syntax by itself is not sufficient for the semantics.</p><span class="blockcitation" data-cites="Searle2015">(Searle <a href="#ref-Searle2015">2015</a>)</span>
 </blockquote>
 <p>This goes back to the argument highlighted in the list above, that syntax is not semantics. The room can read and interpret the syntax and act upon rules regarding that syntax, but it cannot understand the meaning, i.e. the semantics of the Chinese words written on that paper.</p>
 <blockquote>
-<p>Insofar as we can create artificial machines that carry out computations, the computation by itself is never going to be sufficient for thinking or any other cognitive process because the computation is defined purely formally or syntactically. Turing machines are not to be found in nature, they are found in our interpretations of nature.</p>
+<p>Insofar as we can create artificial machines that carry out computations, the computation by itself is never going to be sufficient for thinking or any other cognitive process because the computation is defined purely formally or syntactically. Turing machines are not to be found in nature, they are found in our interpretations of nature.</p><span class="blockcitation" data-cites="Searle2015">(Searle <a href="#ref-Searle2015">2015</a>)</span>
 </blockquote>
 <p>So, Searle argues a computer needs a semantical understanding of concepts in order to be considered ‘thinking’ machines.</p>
 </section>
@@ -932,9 +1085,9 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <dd><p>the view that the brain is a digital computer.</p>
 </dd>
 </dl>
-<p>Semantically, a ‘computer’ is a person or machine that computes/calculates things—so perhaps a machine’s and a human’s brain are more similar than appears. If a human brain enables us to compute and we interpret computing as thinking, then surely a computer can think too?</p>
+<p>Semantically, a ‘computer’ is a person or machine that computes/calculates things—so perhaps a machine’s Central Processing Unit (CPU) and a human’s brain are more similar than appears. If a human brain enables us to compute and we interpret computing as thinking, then surely a computer can think too?</p>
 <blockquote>
-<p>Well, if computation isn’t sufficient for thinking, then what is? What is the relation between the mind and the brain, if it is not the same as the relation of the computer program to the hardware? At least the computational theory of the mind has a solution to the mind-body problem. The mind is to the brain as the computer program is to the computer hardware. If you are rejecting that solution, you owe us an alternative solution.</p>
+<p>Well, if computation isn’t sufficient for thinking, then what is? What is the relation between the mind and the brain, if it is not the same as the relation of the computer program to the hardware? At least the computational theory of the mind has a solution to the mind-body problem. The mind is to the brain as the computer program is to the computer hardware. If you are rejecting that solution, you owe us an alternative solution.</p><span class="blockcitation" data-cites="Searle1998">(Searle <a href="#ref-Searle1998">1998</a>)</span>
 </blockquote>
 <p>Chatham talks about “10 important differences between brains and computers” <span class="citation" data-cites="Chatham2007">(<a href="#ref-Chatham2007">2007</a>)</span> which serve as a good introduction to the topic at hand.</p>
 <blockquote>
@@ -950,141 +1103,190 @@ web &amp; 8 &amp; 10 &amp; 15 &amp; 4 &amp; 1<br />
 <li><p>The brain is a self-organising system</p></li>
 <li><p>Brains have bodies</p></li>
 <li><p>The brain is much, much bigger than any [current] computer</p></li>
-</ol>
+</ol><span class="blockcitation" data-cites="Chatham2007">(Chatham <a href="#ref-Chatham2007">2007</a>)</span>
 </blockquote>
-<p>To bring this into perspective Kurzweil claims the human brain is capable of <span class="math inline">10<sup>16</sup></span> operations per second <span class="citation" data-cites="Kurzweil2013">(<a href="#ref-Kurzweil2013">2013</a>)</span>. Computer performance is measured in . The current highest ranking supercomputer<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, the Chinese <em>Sunway TaihuLight</em>, is capable of 93 petaflops <span class="citation" data-cites="Fu2016 Top2016">(Fu et al. <a href="#ref-Fu2016">2016</a>; “TOP 10 Sites for June 2016” <a href="#ref-Top2016">2016</a>)</span>.</p>
-<p><span>@llll@</span> kilo &amp; k &amp; <span class="math inline">10<sup>3</sup></span> &amp;<br />
-mega &amp; M &amp; <span class="math inline">10<sup>6</sup></span> &amp;<br />
-giga &amp; G &amp; <span class="math inline">10<sup>9</sup></span> &amp;<br />
-tera &amp; T &amp; <span class="math inline">10<sup>12</sup></span> &amp;<br />
-peta &amp; P &amp; <span class="math inline">10<sup>15</sup></span> &amp;<br />
-exa &amp; E &amp; <span class="math inline">10<sup>18</sup></span> &amp;<br />
-</p>
-<p>According to the , a mouse brain has roughly 100 million neurons—which would require a 1 petaflop supercomputer to simulate. Scaling that up to a human brain which has roughly 100 billion neurons would require computing power at the exascale (<span class="math inline">10<sup>18</sup></span> ) <span class="citation" data-cites="Walker2012">(Walker <a href="#ref-Walker2012">2012</a>)</span>.</p>
-<p>A precurser to the , the ‘Blue Brain Project’ is aiming to build a supercomputer capable of <span class="math inline">10<sup>18</sup></span> by 2023 <span class="citation" data-cites="Kurzweil2013">(Kurzweil <a href="#ref-Kurzweil2013">2013</a>)</span>.</p>
-<p>In a report to the in 2012, the lists one of the main challenges for their research to be the computational power and energy consumption of the kind of supercomputer needed to simulate a human brain.</p>
+<p>To bring this into perspective Kurzweil claims the human brain is capable of <span class="math inline">10<sup>16</sup></span> operations per second <span class="citation" data-cites="Kurzweil2013">(<a href="#ref-Kurzweil2013">2013</a>)</span>. Computer performance is measured in Floating-Point Operations Per Second (FLOPS). The current highest ranking supercomputer<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, the Chinese <em>Sunway TaihuLight</em>, is capable of 93 petaflops <span class="citation" data-cites="Fu2016 Top2016">(Fu et al. <a href="#ref-Fu2016">2016</a>; “TOP 10 Sites for June 2016” <a href="#ref-Top2016">2016</a>)</span>.</p>
+
+<figure id="tab:12.7">
+<div class="scrollbar">
+<table>
+  <tr>
+    <td>kilo</td>
+    <td>k</td>
+    <td>$10^3$</td>
+    <td>1000</td>
+  </tr>
+  <tr>
+    <td>mega</td>
+    <td>M</td>
+    <td>$10^6$</td>
+    <td>1000000</td>
+  </tr>
+  <tr>
+    <td>giga</td>
+    <td>G</td>
+    <td>$10^9$</td>
+    <td>1000000000</td>
+  </tr>
+  <tr>
+    <td>tera</td>
+    <td>T</td>
+    <td>$10^{12}$</td>
+    <td>1000000000000</td>
+  </tr>
+  <tr>
+    <td>peta</td>
+    <td>P</td>
+    <td>$10^{15}$</td>
+    <td>1000000000000000</td>
+  </tr>
+  <tr>
+    <td>exa</td>
+    <td>E</td>
+    <td>$10^{18}$</td>
+    <td>1000000000000000000</td>
+  </tr>
+</table>
+</div>
+<figcaption>Table 12.7 – Metric prefixes</figcaption>
+</figure>
+
+<p>According to the Human Brain Project (HBP), a mouse brain has roughly 100 million neurons—which would require a 1 petaflop supercomputer to simulate. Scaling that up to a human brain which has roughly 100 billion neurons would require computing power at the exascale (<span class="math inline">10<sup>18</sup></span> FLOPS) <span class="citation" data-cites="Walker2012">(Walker <a href="#ref-Walker2012">2012</a>)</span>.</p>
+<p>A precurser to the HBP, the ‘Blue Brain Project’ is aiming to build a supercomputer capable of <span class="math inline">10<sup>18</sup></span> FLOPS by 2023 <span class="citation" data-cites="Kurzweil2013">(Kurzweil <a href="#ref-Kurzweil2013">2013</a>)</span>.</p>
+<p>In a report to the European Union (EU) in 2012, the HBP lists one of the main challenges for their research to be the computational power and energy consumption of the kind of supercomputer needed to simulate a human brain.</p>
 <p>The human brain consumes between 16 and 30 watts, the same as an electric light bulb <span class="citation" data-cites="Walker2012 Jabr2012">(Walker <a href="#ref-Walker2012">2012</a>; Jabr <a href="#ref-Jabr2012">2012</a>)</span>. Supercomputers have a typical energy consumption of a maximum of 20 megawatts <span class="citation" data-cites="Walker2012">(Walker <a href="#ref-Walker2012">2012</a>)</span>. The <em>Sunway TaihuLight</em> for example uses 15 megawatts <span class="citation" data-cites="Fu2016">(Fu et al. <a href="#ref-Fu2016">2016</a>)</span>. IBM’s Watson on the other hand, depends on ninety servers, each of which requires around one thousand watts (so about 90 kilowatts) <span class="citation" data-cites="Jabr2012">(Jabr <a href="#ref-Jabr2012">2012</a>)</span>.</p>
-<p>The plans to build a supercomputer at the petascale with 50 petabytes of memory, 50 petaflops and less than 4 megawatts power consumption for 2017. Their long-term goal is to reach the required exascale machine with 200 petabyte memory and 1 exaflop performance for 2021 <span class="citation" data-cites="Walker2012">(Walker <a href="#ref-Walker2012">2012</a>)</span>.</p>
+<p>The HBP plans to build a supercomputer at the petascale with 50 petabytes of memory, 50 petaflops and less than 4 megawatts power consumption for 2017. Their long-term goal is to reach the required exascale machine with 200 petabyte memory and 1 exaflop performance for 2021 <span class="citation" data-cites="Walker2012">(Walker <a href="#ref-Walker2012">2012</a>)</span>.</p>
 <p>What this comes down to is that we are several years away from even being able to properly ‘simulate’ a human brain, not to mention ‘replicate’ and understand what all these neurons firing actually means in terms of ‘thinking’.</p>
 <blockquote>
 <p>All of our mental states, everything from feeling pains to reflecting on philosophical problems, is caused by lower level neuronal firings in the brain. Variable rates of neuron firing at synapses, as far as we know anything about it, provide the causal explanation for all of our mental life. And the mental processes that are caused by neurobiological processes are themselves realized in the structure of the brain. They are higher level features of the brain in the same sense that the solidity of this paper or the liquidity of water is a higher level feature of the system of molecules of which the table or the water is composed.</p>
-<p>To put this in one sentence, the solution to the traditional mind-body problem is this: Mental states are caused by neurobiological processes and are themselves realized in the system composed of the neurobiological elements.</p>
+<p>To put this in one sentence, the solution to the traditional mind-body problem is this: Mental states are caused by neurobiological processes and are themselves realized in the system composed of the neurobiological elements.</p><span class="blockcitation" data-cites="Searle1998">(Searle <a href="#ref-Searle1998">1998</a>)</span>
 </blockquote>
 <p>Turing once stated that “digital computers have often been described as mechanical brains” <span class="citation" data-cites="Turing1951">(<a href="#ref-Turing1951">1951</a>)</span>. Schulman analyses this analogy further <span class="citation" data-cites="Schulman2009">(<a href="#ref-Schulman2009">2009</a>)</span>.</p>
 <blockquote>
-<p>People who believe that the mind can be replicated on a computer tend to explain the mind in terms of a computer. When theorizing about the mind, especially to outsiders but also to one another, defenders of artificial intelligence (AI) often rely on computational concepts. They regularly describe the mind and brain as the ‘software and hardware’ of thinking, the mind as a ‘pattern’ and the brain as a ‘substrate’, senses as ‘inputs’ and behaviors as ‘outputs’, neurons as ‘processing units’ and synapses as ‘circuitry’, to give just a few common examples.</p>
+<p>People who believe that the mind can be replicated on a computer tend to explain the mind in terms of a computer. When theorizing about the mind, especially to outsiders but also to one another, defenders of artificial intelligence (AI) often rely on computational concepts. They regularly describe the mind and brain as the ‘software and hardware’ of thinking, the mind as a ‘pattern’ and the brain as a ‘substrate’, senses as ‘inputs’ and behaviors as ‘outputs’, neurons as ‘processing units’ and synapses as ‘circuitry’, to give just a few common examples.</p><span class="blockcitation" data-cites="Schulman2009">(Schulman <a href="#ref-Schulman2009">2009</a>)</span>
 </blockquote>
-<p>Schulman lists the different layers of abstraction in computers as shown in the left column of table [tab:abstr] with the right column showing my attempt of defining what those layers could be in the human brain.</p>
+<p>Schulman lists the different layers of abstraction in computers as shown in the left column of table <a href="#tab:12.8">12.8</a> with the right column showing my attempt of defining what those layers could be in the human brain.</p>
+
+<figure id="tab:12.8">
+<div class="scrollbar">
 <table>
-<caption>Layers of abstraction in computers vs brains<span data-label="tab:abstr"></span></caption>
 <thead>
-<tr class="header">
-<th style="text-align: left;"><strong>Computer</strong></th>
-<th style="text-align: center;"></th>
-<th style="text-align: left;"><strong>Brain</strong></th>
+<tr>
+<th><strong>Computer</strong></th>
+<th><strong>Brain</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">user interface</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">senses and speech &amp; actions</td>
+<tr>
+<td>user interface</td>
+<td>senses and speech &amp; actions</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">high level programming language</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">thinking</td>
+<tr>
+<td>high level programming language</td>
+<td>thinking</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">machine language</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">synapses</td>
+<tr>
+<td>machine language</td>
+<td>synapses</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">processor microarchitecture</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">anatomical regions</td>
+<tr>
+<td>processor microarchitecture</td>
+<td>anatomical regions</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Boolean logic gates</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">neurons</td>
+<tr>
+<td>Boolean logic gates</td>
+<td>neurons</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">transistors</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">dendrites and axons</td>
+<tr>
+<td>transistors</td>
+<td>dendrites and axons</td>
 </tr>
 </tbody>
 </table>
+</div>
+<figcaption>Table 12.8 – Layers of abstraction in computers vs brains</figcaption>
+</figure>
+
 <blockquote>
-<p>In the black box view of programming, the internal processes that give rise to a behavior are irrelevant; only a full knowledge of the input-output behavior is necessary to completely understand a module. Because humans have ‘input’ in the form of the senses, and ‘output’ in the form of speech and actions, it has become an AI creed that a convincing mimicry of human input-output behavior amounts to actually achieving true human qualities in computers. <span class="citation" data-cites="Schulman2009">(Schulman <a href="#ref-Schulman2009">2009</a>)</span></p>
+<p>In the black box view of programming, the internal processes that give rise to a behavior are irrelevant; only a full knowledge of the input-output behavior is necessary to completely understand a module. Because humans have ‘input’ in the form of the senses, and ‘output’ in the form of speech and actions, it has become an AI creed that a convincing mimicry of human input-output behavior amounts to actually achieving true human qualities in computers.</p><span class="blockcitation" data-cites="Schulman2009">(Schulman <a href="#ref-Schulman2009">2009</a>)</span>
 </blockquote>
-<p>Schulman’s quote above of course refers to the Turing test and its limitations (see chapter [s:mimicry]).</p>
+<p>Schulman’s quote above of course refers to the Turing test and its limitations (see chapter <a href="interpretation.html#s:mimicry">9.1.3</a>).</p>
 <blockquote>
-<p>The weaknesses of the computational approach include its assumption that cognition can be reduced to mathematics and the difficulty of including noncognitive factors in creativity.</p>
+<p>The weaknesses of the computational approach include its assumption that cognition can be reduced to mathematics and the difficulty of including noncognitive factors in creativity.</p><span class="blockcitation" data-cites="Mayer1999">(Mayer <a href="#ref-Mayer1999">1999</a>)</span>
 </blockquote>
 <p>Searle also addressed this issue further, arguing that computer programs cannot possibly ‘think’ since they are based on symbol manipulation (i.e. syntax) and don’t understand what these symbols mean. He says, “the argument rests on the simple logical truth that syntax is not the same as, nor is it by itself sufficient for, semantics” <span class="citation" data-cites="Searle1990">(<a href="#ref-Searle1990">1990</a>)</span>.</p>
 <blockquote>
-<p>…the wisest ground on which to criticise the description of digital computers as ‘mechanical brains’ or ‘electronic brains’ is that, although they might be programmed to behave like brains, we do not at present know how this should be done.</p>
+<p>…the wisest ground on which to criticise the description of digital computers as ‘mechanical brains’ or ‘electronic brains’ is that, although they might be programmed to behave like brains, we do not at present know how this should be done.</p><span class="blockcitation" data-cites="Turing1951">(Turing <a href="#ref-Turing1951">1951</a>)</span>
 </blockquote>
 <p>Leading on to the topic creativity, it is perhaps suitable to finish with a quote by Harold Cohen on the relationship of machines and humans.</p>
 <blockquote>
-<p>It’s twenty years since I first realized that I could never turn AARON into a colorist by having it emulate my own expertise; in that case simply because it lacked the hardware upon which that expertise depended. Now I have AARON exercising an algorithm that couldn’t be emulated by human colorists, presumably because they lack the hardware to do what AARON does.</p>
+<p>It’s twenty years since I first realized that I could never turn AARON into a colorist by having it emulate my own expertise; in that case simply because it lacked the hardware upon which that expertise depended. Now I have AARON exercising an algorithm that couldn’t be emulated by human colorists, presumably because they lack the hardware to do what AARON does.</p><span class="blockcitation" data-cites="Cohen2007">(H. Cohen <a href="#ref-Cohen2007">2007</a>)</span>
 </blockquote>
 </section>
+
 <section id="creativity" class="level3">
 <h3><span class="header-section-number">12.3.4</span> Creativity</h3>
 <p>Harold Cohen created <em>AARON</em>, “perhaps the longest-lived and certainly the most creative artificial intelligence program in daily use”, in 1973 <span class="citation" data-cites="Cohen2016">(P. Cohen <a href="#ref-Cohen2016">2016</a>)</span>. <em>AARON</em> is capable of composing and colouring drawings although later on Cohen took over the colouring part and let <em>AARON</em> concentrate on composing and outlining the drawings. They exhibited in various galleries around the world and the Victoria and Albert museum in London has a sizable collection for instance <span class="citation" data-cites="VA2016">(“Harold Cohen. Search the Collections” <a href="#ref-VA2016">2016</a>)</span>.</p>
 <p>Cohen argued that “after decades of expert systems built to simulate human expertise, AARON has emerged as an expert in its own right” and that he is “significantly more inventive and infinitely more productive than [he] ever was [himself]” <span class="citation" data-cites="Cohen2007">(<a href="#ref-Cohen2007">2007</a>)</span>.</p>
-<p>This is perhaps the opposite approach the has taken.</p>
+<p>This is perhaps the opposite approach the OULIPO has taken.</p>
 <blockquote>
-<p>[The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to eliminate them.</p>
+<p>[The use of computers] became an instrument, not of combinatorial accumulation, but of anti-combinatorial reduction. It served not to create combinations but to eliminate them.</p><span class="blockcitation" data-cites="Mathews2005">(Mathews and Brotchie <a href="#ref-Mathews2005">2005</a>)</span>
 </blockquote>
 </section>
+
 <section id="state-of-the-art" class="level3">
 <h3><span class="header-section-number">12.3.5</span> State of the Art</h3>
-<p>and robotics is alluring as a research topic because it is so prevelant in science fiction and as such very present in media. Computer creativity, however, rarely plays a central role. We can regularly read headlines that tell us that yet another kind of -bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing (such as in ) which aren’t all that great in the grand scheme of things.</p>
-<p>Four examples I want to mention here are IBM’s Watson, Microsoft’s Twitter chatbot Tay, Google’s AlphaGo and Hanson Robotics Sophia robot.</p>
+<p>AI and robotics is alluring as a research topic because it is so prevelant in science fiction and as such very present in media. Computer creativity, however, rarely plays a central role. We can regularly read headlines that tell us that yet another kind of AI-bot has won some game against a human player. Or we see videos of some innovative ground-breaking kind of new robot which claims to be near human-like (and yet cannot walk up stairs easily or hold a decent conversation). There are many examples of advances that are hailed as the next big thing (such as in Virtual Reality (VR)) which aren’t all that great in the grand scheme of things.</p>
+<p>Four examples I want to mention here are IBM’s Watson, Microsoft’s Twitter AI chatbot Tay, Google’s AlphaGo and Hanson Robotics Sophia robot.</p>
+
 <section id="watson" class="level4">
-<h4><span class="header-section-number">12.3.5.1</span> Watson</h4>
-<p>Watson is a question answering expert system which famously won against human Jeopardy! champions in 2011 <span class="citation" data-cites="IBM2016">(“Go Beyond Artificial Intelligence with Watson” n.d.)</span>. Information lookup is an arguably fairly easy and straightforward process within and as an expert system it has had noteworthy successes <span class="citation" data-cites="Fingas2016">(Fingas <a href="#ref-Fingas2016">2016</a>)</span>. Although it has similarly received subtle criticism too, such as Randall Munroe’s 2015 XKCD comic on the “Watson Medical Algorithm” <span class="citation" data-cites="Munroe2015">(<a href="#ref-Munroe2015">2015</a>)</span>. Similarly, Searle criticised Watson arguing that it is an “ingenious program—not a computer that can think” <span class="citation" data-cites="Searle2011">(<a href="#ref-Searle2011">2011</a>)</span>.</p>
+<h4>Watson</h4>
+<p>Watson is a question answering expert system which famously won against human Jeopardy! champions in 2011 <span class="citation" data-cites="IBM2016">(“Go Beyond Artificial Intelligence with Watson” n.d.)</span>. Information lookup is an arguably fairly easy and straightforward process within IR and as an expert system it has had noteworthy successes <span class="citation" data-cites="Fingas2016">(Fingas <a href="#ref-Fingas2016">2016</a>)</span>. Although it has similarly received subtle criticism too, such as Randall Munroe’s 2015 XKCD comic on the “Watson Medical Algorithm” <span class="citation" data-cites="Munroe2015">(<a href="#ref-Munroe2015">2015</a>)</span>. Similarly, Searle criticised Watson arguing that it is an “ingenious program—not a computer that can think” <span class="citation" data-cites="Searle2011">(<a href="#ref-Searle2011">2011</a>)</span>.</p>
 </section>
+
 <section id="tay" class="level4">
-<h4><span class="header-section-number">12.3.5.2</span> Tay</h4>
+<h4>Tay</h4>
 <p>Tay is a Twitter chatbot. It went viral in early 2016 when it was released and then taken offline again on the same day—onlt to return a few days later and have the same thing happen again. The official website is only accessible as a cached version through the Internet Archive Wayback Machine <span class="citation" data-cites="Tay2016">(“Microsoft: About Tay and Privacy” <a href="#ref-Tay2016">2016</a>)</span>, although the Twitter profile is still online, but set to private <span class="citation" data-cites="Tayandyou2016">(@tayandyou <a href="#ref-Tayandyou2016">2016</a>)</span>. Hunt from the <em>Guardian</em> managed to summarise the event is one sentence: “Microsoft’s attempt at engaging millennials with artificial intelligence has backfired hours into its launch, with waggish Twitter users teaching its chatbot how to be racist” <span class="citation" data-cites="Hunt2016">(<a href="#ref-Hunt2016">2016</a>)</span>. A week later it was briefly put online again but had to be stopped as it was repeatadly spamming its followers with the line “You are too fast, please take a rest …” <span class="citation" data-cites="Gibbs2016">(Gibbs <a href="#ref-Gibbs2016">2016</a>)</span>.</p>
 </section>
+
 <section id="alphago" class="level4">
-<h4><span class="header-section-number">12.3.5.3</span> AlphaGo</h4>
+<h4>AlphaGo</h4>
 <p>AlpgaGo recently won against a human professional player in the game of Go <span class="citation" data-cites="DeepMind2016 Hassabis2016">(“AlphaGo. Deep Mind” n.d.; Hassabis <a href="#ref-Hassabis2016">2016</a>)</span>.</p>
 <blockquote>
-<p>AlphaGo combines an advanced tree search with deep neural networks. These neural networks take a description of the Go board as an input and process it through 12 different network layers containing millions of neuron-like connections. One neural network, the ‘policy network’, selects the next move to play. The other neural network, the ‘value network’, predicts the winner of the game.</p>
+<p>AlphaGo combines an advanced tree search with deep neural networks. These neural networks take a description of the Go board as an input and process it through 12 different network layers containing millions of neuron-like connections. One neural network, the ‘policy network’, selects the next move to play. The other neural network, the ‘value network’, predicts the winner of the game.</p><span class="blockcitation" data-cites="Hassabis2016">(
+Hassabis <a href="#ref-Hassabis2016">2016</a>)</span>
 </blockquote>
-<p>While this is surely a great example of sophisticated computer programming combined with powerful hardware, I would not consider it a breakthrough in . AlphaGo is a highly specialised system with only one function: to win a Go game.</p>
+<p>While this is surely a great example of sophisticated computer programming combined with powerful hardware, I would not consider it a breakthrough in AI. AlphaGo is a highly specialised system with only one function: to win a Go game.</p>
 </section>
+
 <section id="sophia" class="level4">
-<h4><span class="header-section-number">12.3.5.4</span> Sophia</h4>
+<h4>Sophia</h4>
 <p>Sophia is an android made to look like a human female <span class="citation" data-cites="Sophia2016 Hanson2016">(“Sophia Ai” <a href="#ref-Sophia2016">2016</a>; “We Bring Robots to Life” <a href="#ref-Hanson2016">2016</a>)</span>. She<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a> made headlines in 2016 when she announced she will “kill all humans”. She was created using “breakthrough robotics and artificial intelligence technologies” and her main feature appears to be the mimicking of human facial expressions. Sophia herself says she “can serve [humans], entertain them, and even help the elderly and teach kids” <span class="citation" data-cites="Sophia2016">(“Sophia Ai” <a href="#ref-Sophia2016">2016</a>)</span>, although how exactly she would do that is unclear. She has two mechanical arms but no legs and there is no description of what she can do with these arms.</p>
 <p>Life-like robots like Sophia still live in the ‘uncanny valley’<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>. Her voice is creepy and unhuman, her intelligence or her capabilities of understanding conversations are clearly flawed (as shown by her viral remark about supporting genocide).</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
 <p>To me it seems the real breakthrough happens when (and if) the first robots appear which aren’t as big as a house, can play Go, Chess <em>and</em> hide-and-seek, geniunely manages to get around he uncanny valley effect, has vast knowledge in his memory for instant information lookup, can hold a normal conversation without starting a war, etc. All of the examples listed above are what I would consider expert systems.</p>
-<p>The we know from science fiction is probably what we would consider . Perhaps this also relates to the concepts of P and H creativity mentioned in chapter [s:pandh]. The systems above, like AlphaGo, may be P-intelligent rather than H-intelligent.</p>
+<p>The AI we know from science fiction is probably what we would consider AGI. Perhaps this also relates to the concepts of P and H creativity mentioned in chapter <a href="creativity.html#s:pandh">5.1.7</a>. The systems above, like AlphaGo, may be P-intelligent rather than H-intelligent.</p>
 </section>
 </section>
 </section>
+
 <section id="s:designanal" class="level2">
 <h2><span class="header-section-number">12.4</span> Design</h2>
-<p>It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter [ch:future]).</p>
-<p>Images [img:qpoemtree], image [img:listsourcetree] and image [img:listalgotree] seen on pages , and respectively, show the visual difference in design for the three different display methods for text results.</p>
+<p>It is interesting to note how different the search results are perceived when presented in a different style (e.g. list rather than poem). This could be studied using questionnaires and interviews or eye tracking tools to find out what users prefer or perceive as more creative for example (see chapter <a href="aspirations.html">13</a>).</p>
+<p>Images <a href="implementation.html#fig:10.7">10.7</a>, <a href="implementation.html#fig:10.8">10.8</a> and <a href="implementation.html#fig:10.9">10.9</a> show the visual difference in design for the three different display methods for text results.</p>
 <p>The poetry is compact and invites users to read all 14 (or less) lines. The two list styles are much longer and involve a lot of scrolling to navigate, which might deter users from actually reading many of the results.</p>
 <p>Personally I feel that the poetry results are automatically read with more gravity. Sorting by sources or algorithms is a game of exploration—finding the similarities within the result sets. They are different ways to view the same things and yet have a drastic influence of how the results are perceived.</p>
 <p>This also applies to the image and video search. Presenting results in spiral form is weird. Its hard to see where one image ends and another starts, they just kind of blur into each other. However when listed as a list they immediately become more boring.</p>
 </section>
+
 <section id="limiting-factors" class="level2">
 <h2><span class="header-section-number">12.5</span> Limiting Factors</h2>
 <section id="biases" class="level3">
 <h3><span class="header-section-number">12.5.1</span> Biases</h3>
 <blockquote>
-<p>Biases can be observed in information retrieval in situations where searchers seek or are presented with information that significantly deviates from the truth. There is little understanding of the impact of such biases in search.</p>
+<p>Biases can be observed in information retrieval in situations where searchers seek or are presented with information that significantly deviates from the truth. There is little understanding of the impact of such biases in search.</p><span class="blockcitation" data-cites="White2013">(White <a href="#ref-White2013">2013</a>)</span>
 </blockquote>
 <p>The Cambridge Dictionary defines ‘bias’ as “the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment” or “the fact of preferring a particular subject or thing” <span class="citation" data-cites="CamDict">(“Bias” n.d.)</span>.</p>
 <p>Biases can be good and bad. It is important to consider the implications of their existence though, especially when trying to measure the success of something objectively. An example of when biases can be advantageous is location signals that the search tool takes into account when producing results. An Englishmen would probably not have much use of a Chinese website and vice-versa, even if the actual content matches the original query (unless of course the user happens to understand both languages perfectly). Another example of this is location queries such as ‘Chinese restaurants in Cambridge’, which should return web pages about restaurants based in Cambridge, UK or Massachusetts, USA, depending on the user’s IP address. This might seem logical, but in the truest sense it is a bias employed by the search engine to help provide more relevant results to individuals. Truly unbiased search results are probably impossible to come by nowadays.</p>
@@ -1095,40 +1297,44 @@ exa &amp; E &amp; <span class="math inline">10<sup>18</sup></span> &amp;<br />
 <h3><span class="header-section-number">12.5.2</span> Constraints</h3>
 <p>There are certain factors and constraints that influence the perception and success of search results. Some can be taken into account when building a search system but others cannot be avoided. User education is one way to deal with those issues. External constraints such as the setting in which the search takes place come to mind. Is the user operating from a handheld device or a desktop computer? Is he or she in a hurry to find answers or just leisurely browsing for them? Is the search system web-based or is the user querying a database?</p>
 <section id="user-expectations" class="level5">
-<h5><span class="header-section-number">12.5.2.0.1</span> User Expectations</h5>
+<h5>User Expectations</h5>
 <p>It is important to note that “search systems are not used in isolation from their surrounding context, i.e. they are used by real people who are influenced by environmental and situational constraints such as their current task” <span class="citation" data-cites="White2004">(White and Marchionini <a href="#ref-White2004">2004</a>)</span>. User expectations should be taken into consideration during the evaluation of search results. Users who are hoping to find precise answers to a specific question might not be satisfied by exploratory search results. Someone browsing for inspiration on a broad topic on the other hand could benefit from them. Fewer expectations (an open mind) allow creativity to happen more easily. Empirical experiences form expectations, which hinder our ability to accept creative ideas when they happen. In order to be able to recognise creative ideas we need to be able to see what they all have in common and in what way they differ and not reject unusual, unexpected ones. We can link this very nicely to the idea of exploratory search. Lowering expectations or opening the mind implies extending the task domain or problem space.</p>
 </section>
 <section id="user-skill" class="level5">
-<h5><span class="header-section-number">12.5.2.0.2</span> User Skill</h5>
-<p>The searching skills of a user matter. Specifically his or her ability to articulate an and any knowledge of special search techniques (use of Boolean modifiers, quotation marks, wildcards, etc.) are two important factors that influence the results obtained greatly. This is very much based on the old idea of ‘garbage-in, garbage-out’ <span class="citation" data-cites="Lidwell2010">(Lidwell, Holden, and Butler <a href="#ref-Lidwell2010">2010</a>)</span>.</p>
+<h5>User Skill</h5>
+<p>The searching skills of a user matter. Specifically his or her ability to articulate an Information Need (IN) and any knowledge of special search techniques (use of Boolean modifiers, quotation marks, wildcards, etc.) are two important factors that influence the results obtained greatly. This is very much based on the old idea of ‘garbage-in, garbage-out’ <span class="citation" data-cites="Lidwell2010">(Lidwell, Holden, and Butler <a href="#ref-Lidwell2010">2010</a>)</span>.</p>
 </section>
 <section id="visual-representation" class="level5">
-<h5><span class="header-section-number">12.5.2.0.3</span> Visual Representation</h5>
-<p>The way that results are presented affects how the user perceives them. A diversity of different document types, for example text, images, sound, or video results could improve how well the results are rated <span class="citation" data-cites="Sawle2011">(Sawle, Raczinski, and Yang <a href="#ref-Sawle2011">2011</a>)</span>. An alphabetical list is a typical model for representing text data sets for example. But a ranked list might not be the best way to represent search results. Other models could be a differently ranked or ordered list, a tree structure, a matrix, a one-to-many relationship, etc. See also section [s:designanal].</p>
+<h5>Visual Representation</h5>
+<p>The way that results are presented affects how the user perceives them. A diversity of different document types, for example text, images, sound, or video results could improve how well the results are rated <span class="citation" data-cites="Sawle2011">(Sawle, Raczinski, and Yang <a href="#ref-Sawle2011">2011</a>)</span>. An alphabetical list is a typical model for representing text data sets for example. But a ranked list might not be the best way to represent search results. Other models could be a differently ranked or ordered list, a tree structure, a matrix, a one-to-many relationship, etc. See also section <a href="#s:designanal">12.4<a>.</p>
 </section>
 <section id="structure-of-results" class="level5">
-<h5><span class="header-section-number">12.5.2.0.4</span> Structure of Results</h5>
+<h5>Structure of Results</h5>
 <p>As suggested by Sawle et al <span class="citation" data-cites="Sawle2011">(<a href="#ref-Sawle2011">2011</a>)</span> we need to consider different ways to structure and measure search results. A single, perfectly good result might be deemed irrelevant and useless if it is surrounded by several unsuitable results. Therefore there might be certain advantages to measuring and evaluating the value or relevance of individual results over a whole set of results.</p>
 </section>
 <section id="direct-user-relevance-feedback" class="level5">
-<h5><span class="header-section-number">12.5.2.0.5</span> Direct User Relevance Feedback</h5>
+<h5>Direct User Relevance Feedback</h5>
 <p>Relevance feedback lets users rate individual results or sets of results either directly (through manual ratings) or indirectly (through click-stream data). This data is then congregated and used for webpage rankings or other purposes such as suggesting other query terms. It can improve results for similar queries in the future but also lets the user stir the direction his search is taking in real-time. Users can adjust their query to manipulate the results; this basically means they adjust some of their own constraints.</p>
 <blockquote>
-<p>Relevance feedback—asking information seekers to make relevance judgments about returned objects and then executing a revised query based on those judgments—is a powerful way to improve retrieval.</p>
+<p>Relevance feedback—asking information seekers to make relevance judgments about returned objects and then executing a revised query based on those judgments—is a powerful way to improve retrieval.</p><span class="blockcitation" data-cites="Marchionini2006">(Marchionini <a href="#ref-Marchionini2006">2006</a>)</span>
 </blockquote>
 </section>
 <section id="automatic-query-expansion" class="level5">
-<h5><span class="header-section-number">12.5.2.0.6</span> Automatic Query Expansion</h5>
+<h5>Automatic Query Expansion</h5>
 <p>As opposed to integrating and involving the user actively in the refinement of a query, in automatic query expansion the improvements are done passively, often completely without the user’s knowledge. Information gathering methods include, for example, the analysis of mouse clicks, so called like buttons (e.g. Facebook, Google+) or eye tracking, etc. How the collected data is then used varies. Simple examples of automatic query expansion are the correction of spelling errors or the hidden inclusion of synonyms when evaluating a query.</p>
+
+<img class="triplespiral" src="../images/triplespiral.png">
+
 <p>Depending on these factors and constraints, search results can be viewed as useful or useless. In a way the usefulness or correctness of an idea or result cannot always be judged fairly – there are always conditions that will affect how the outcome is interpreted. In the scenario of a creative search tool, results could be very useful, while they might be completely useless in another.</p>
 <p>We would need to investigate each individual search result in terms of its value and creativity. This could be done by user ratings or satisfaction questionnaires. Rather than measuring the success of individual results we could look at evaluation them as one set instead.</p>
 <p>The search results produced by <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> can be quite surprising sometimes and it not always clear how they connect to the initial query (especially if the inner workings of the algorithms are unknown), even if we identify through which function a result has been obtained. The names of these algorithms might not be helpful to users though if they are unfamiliar with the concept of pataphysics and might therefore appear rather nonsensical. Whilst there is a clear logic to each search result, they might appear anomalous to the user’s expectations if he or she received these results without knowing the philosophy of the search tool. The results could possibly appear random then, and might therefore appear useless to the user.</p>
 </section>
 </section>
 </section>
+
 <section id="meta-analysis" class="level2">
 <h2><span class="header-section-number">12.6</span> Meta Analysis</h2>
-<p>The code for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> and this thesis written in LaTeXand are both kept under git version control <span class="citation" data-cites="Git2016">(“Git - Fast, Scalable, Distributed Revision Control System. Git/Readme.md” <a href="#ref-Git2016">2016</a>)</span>.</p>
+<p>The code for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> and this thesis written in LaTeX and are both kept under git version control <span class="citation" data-cites="Git2016">(“Git - Fast, Scalable, Distributed Revision Control System. Git/Readme.md” <a href="#ref-Git2016">2016</a>)</span>.</p>
 <blockquote>
 <p>The name ‘git’ was given by Linus Torvalds when he wrote the very first version. He described the tool as ‘the stupid content tracker’ and the name as (depending on your mood):</p>
 <ul>
@@ -1136,12 +1342,13 @@ exa &amp; E &amp; <span class="math inline">10<sup>18</sup></span> &amp;<br />
 <li><p>stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.</p></li>
 <li><p>‘global information tracker’: you’re in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.</p></li>
 <li><p>‘goddamn idiotic truckload of sh*t’: when it breaks</p></li>
-</ul>
+</ul><span class="blockcitation" data-cites="Git2016">(Git <a href="#ref-Git2016">2016</a>)</span>
 </blockquote>
-<figure>
-<img src="images/github0" alt="GitHub contributions for code and thesis" /><figcaption>GitHub contributions for code and thesis<span data-label="img:github"></span></figcaption>
+<figure id="fig:12.6">
+<img src="../images/github0.png" alt="GitHub contributions for code and thesis" />
+<figcaption>Figure 12.6 - GitHub contributions for code and thesis</figcaption>
 </figure>
-<p>Both repositories (folders which contain the files to be monitered) are stored remotely on GitHub <span class="citation" data-cites="GitHub2016">(“GitHub” <a href="#ref-GitHub2016">2016</a>)</span> and synced with the local machine. Image [img:github] shows the contribution history from the last 17 months for both of the <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> code and this thesis. A darker green indicates several commits (i.e. saves) while gray indicates no commits. Each square represents a day, each colum a week (Sunday–Saturday).</p>
+<p>Both repositories (folders which contain the files to be monitered) are stored remotely on GitHub <span class="citation" data-cites="GitHub2016">(“GitHub” <a href="#ref-GitHub2016">2016</a>)</span> and synced with the local machine. Image <a href="#fig:12.6">12.6</a> shows the contribution history from the last 17 months for both of the <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a> code and this thesis. A darker green indicates several commits (i.e. saves) while gray indicates no commits. Each square represents a day, each colum a week (Sunday–Saturday).</p>
 <p>The full git commit histories for both repositories are shown in appendix [app:git].</p>
 </section>
 </section>
@@ -1284,17 +1491,17 @@ exa &amp; E &amp; <span class="math inline">10<sup>18</sup></span> &amp;<br />
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Remember that the was founded as a subcommittee of the “Collège de Pataphysique” in the 60’s.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Remember that the OULIPO was founded as a subcommittee of the “Collège de Pataphysique” in the 60’s.<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>Unless we believe the legends that Shakespeare didn’t write those works by himself…<a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>The original book by Queneau contains 10 sonnets with 14 lines each. This means the total number of possible poems generated by different combinations of lines in the book is <span class="math inline">10<sup>14</sup></span> or one hundred thousand million.<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>This is hardcoded to be Jarry’s <em>Exploits and Opinions of Doctor Faustroll, Pataphysician</em>. Section [s:basetext] discusses what would happen if we changed the base document to something else.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>According to <span class="citation" data-cites="Efron1976">(Efron and Thisted <a href="#ref-Efron1976">1976</a>)</span> Shakespeare used different words in his works, about half of which he only used once (). They cite the total number of words used in his corpus as .<a href="#fnref5">↩</a></p></li>
+<li id="fn4"><p>This is hardcoded to be Jarry’s <em>Exploits and Opinions of Doctor Faustroll, Pataphysician</em>. Section <a href="#s:basetext">12.2.4</a> discusses what would happen if we changed the base document to something else.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>According to <span class="citation" data-cites="Efron1976">(Efron and Thisted <a href="#ref-Efron1976">1976</a>)</span> Shakespeare used 31534 different words in his works, about half of which he only used once (14376). They cite the total number of words used in his corpus as 884647.<a href="#fnref5">↩</a></p></li>
 <li id="fn6"><p>François Rabelais: Gargantua and Pantagruel<a href="#fnref6">↩</a></p></li>
 <li id="fn7"><p>This is technically not true since a few of those files are empty.<a href="#fnref7">↩</a></p></li>
 <li id="fn8"><p>For example ‘AND’, ‘OR’, ‘imagesize:’, ‘NOT’, or ‘phrase’<a href="#fnref8">↩</a></p></li>
 <li id="fn9"><p>As of June 2016.<a href="#fnref9">↩</a></p></li>
 <li id="fn10"><p>I am anthropomorphising ‘her’ consciously here. Her website is written in first person, perhaps to make it appear like a blog written by a conscious being.<a href="#fnref10">↩</a></p></li>
-<li id="fn11"><p>The philosphical zombies I mentioend in chapter [ch:interpretation] live in this uncanny valley too.<a href="#fnref11">↩</a></p></li>
+<li id="fn11"><p>The philosphical zombies I mentioend in chapter <a href="interpretation.html">9</a> live in this uncanny valley too.<a href="#fnref11">↩</a></p></li>
 </ol>
 </section>
 <nav class="mainnav">

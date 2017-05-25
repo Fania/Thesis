@@ -38,6 +38,10 @@ body {
   margin: 0;
 }
 
+#title {
+  background: #1F2D35;
+}
+
 .titletext {
   width: 100%;
   box-sizing: border-box;
@@ -47,8 +51,12 @@ body {
 
 .titleimage {
   width: 100%;
+  color: white;
 }
 
+.titleimage img {
+  max-height: 900px;
+}
 
 blockquote {
   font-family: 'Roboto', sans-serif;
@@ -58,11 +66,7 @@ blockquote {
   margin: 2em 1em;
 }
 
-blockquote p {
-  margin: 0;
-}
-
-blockquote ul{
+blockquote > p, blockquote > ul, blockquote > dl, blockquote > ol {
   margin: 0;
 }
 
@@ -142,6 +146,7 @@ a.uri {
 .titleimg figcaption {
   font-size: .8em;
   text-align: center;
+  padding: 0;
 }
 
 .poem {
@@ -400,6 +405,11 @@ tr:nth-child(even) {
   padding: 5px;
 }*/
 
+.topcaption {
+  position: relative;
+  top: 20px;
+}
+
 .rotate > div {
   transform: translate(16px,40px) rotate(270deg);
   width: 1em;
@@ -491,6 +501,9 @@ table.where {
   .titleimg figcaption:hover {
     opacity: 1;
     transition: opacity 1s;
+  }
+  .titleimage {
+    color: black;
   }
 }
 
@@ -589,3 +602,4 @@ figure[id="fig:9.4"] img {width: 450px;}
 figure[id="fig:10.2"] {width: 200px; float:right; margin: 0 0 0 10px;}
 figure[id="fig:12.1.a"] {text-align: left;}
 figure[id="fig:12.1.b"] {text-align: left;}
+figure[id="fig:14.1"] img {width: 400px;}
