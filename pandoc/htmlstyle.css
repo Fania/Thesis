@@ -542,10 +542,13 @@ table.where {
     opacity: 1;
     transition: opacity 1s;
   }
+  #title {
+    position: relative;
+  }
   .titletext {
     width: 49%;
     box-sizing: border-box;
-    margin: 5px 0 0 0;
+    margin: 5px 0 0 5px;
     text-align: center;
     display: inline-block;
     /*vertical-align: top;*/
@@ -562,12 +565,20 @@ table.where {
     line-height: 1.5em;
   }
   .titletext h3 {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 50px;
     height: 60px;
+    width: 49%;
     font-size: 1.5em;
     line-height: 1.5em;
   }
   .titletext nav {
-    height: 30px;
+    height: 45px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 5px;
+    width: 49%;
   }
   .titleimage {
     width: 49%;
@@ -583,6 +594,13 @@ table.where {
   figure[id="fig:10.1"] img {width: 600px; max-width: 2000px;}
   figure[id="fig:10.3"] img {width: 500px;}
 }
+
+@media screen and (min-width: 1000px) {
+  .titleimage img {
+    max-width: 650px;
+  }
+}
+
 
 
 /* Custom img widths */
