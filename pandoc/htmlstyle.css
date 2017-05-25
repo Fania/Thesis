@@ -348,6 +348,7 @@ pre.text code {
 }
 .scrollbar {
   padding-bottom: 15px;
+  overflow-x: auto;
 }
 .scrollbar::-webkit-scrollbar-track {
 	background-color: #F5F5F5;
