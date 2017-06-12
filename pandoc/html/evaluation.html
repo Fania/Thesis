@@ -465,4 +465,18 @@ Procedure for Evaluating Creative Systems (SPECS)’ <span class="citation" data
   <a class="right" href="part3.html">Next</a>
 </nav>
 </body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+        // iOS web app full screen hacks.
+        if(window.navigator.standalone == true) {
+                // make all link remain in web app mode.
+                $('a').click(function() {
+                        window.location = $(this).attr('href');
+            return false;
+                });
+        }
+});
+</script>
+
 </html>

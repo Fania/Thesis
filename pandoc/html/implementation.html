@@ -1214,4 +1214,17 @@ l_27 <span class="op">=</span> library.words(<span class="st">&#39;27.verne.txt&
 })();
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+        // iOS web app full screen hacks.
+        if(window.navigator.standalone == true) {
+                // make all link remain in web app mode.
+                $('a').click(function() {
+                        window.location = $(this).attr('href');
+            return false;
+                });
+        }
+});
+</script>
+
 </html>
