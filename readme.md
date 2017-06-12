@@ -109,6 +109,28 @@ pandoc aspirations.tex -f latex -t html5 -o aspirations.html --toc --toc-depth=3
 pandoc observations.tex -f latex -t html5 -o observations.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=13 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
 '''
 
+Appendix
+
+```
+pandoc random.tex -f latex -t html5 -o random.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=13 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+```
+pandoc code.tex -f latex -t html5 -o code.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=13 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+```
+pandoc wordnet.tex -f latex -t html5 -o wordnet.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=13 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+```
+pandoc git.tex -f latex -t html5 -o git.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=13 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
+```
+pandoc publications.tex -f latex -t html5 -o publications.html --toc --toc-depth=3 --number-sections --section-divs --include-in-header="../pandoc/css" --include-before-body="../pandoc/nav" --include-after-body="../pandoc/nav" --number-offset=13 --filter pandoc-citeproc --metadata link-citations="true" --metadata reference-section-title="References" --bibliography="../pandoc/htmlrefs.bib"
+'''
+
 
 --mathjax
 
