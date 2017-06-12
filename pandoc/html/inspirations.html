@@ -13,6 +13,7 @@
   
   <title>Inspirations</title>
   <link href="../htmlstyle.css" rel="stylesheet">
+  <script src="../scripts.js"></script>
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -434,18 +435,4 @@ Namespaces are one honking great idea – let’s do more of those!</p><span cla
   <a class="right" href="methodology.html">Next</a>
 </nav>
 </body>
-
-<script type="text/javascript">
-$(document).ready(function(){
-        // iOS web app full screen hacks.
-        if(window.navigator.standalone == true) {
-                // make all link remain in web app mode.
-                $('a').click(function() {
-                        window.location = $(this).attr('href');
-            return false;
-                });
-        }
-});
-</script>
-
 </html>
