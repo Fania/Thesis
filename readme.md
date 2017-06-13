@@ -11,6 +11,22 @@
 
 <img class="triplespiral" src="../images/triplespiral.png">
 
+
+<div class="sourceCode">
+<figure id="code:B.1">
+<pre class="sourceCode haskell">
+<code class="sourceCode haskell scrollbar">
+  
+</code></pre>
+<figcaption>Code B.1 – Adding text files to the corpus library</figcaption>
+</figure>
+</div>
+
+<pre class="text"><code>
+  
+</code></pre>
+
+
 <figure id="fig:3.2">
 <img src="../images/tmpr.png" alt="Edmonds and Candy's trajectory model (TMPR)">
 <figcaption>Figure 3.2 Edmonds and Candy's trajectory model (TMPR)</figcaption>

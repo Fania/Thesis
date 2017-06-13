@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../scripts.js"></script>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
+
+  <link rel="manifest" href="../manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+  <link rel="apple-touch-icon" href="../images/icon.png">
+  <meta name="apple-mobile-web-app-title" content="PataPhD">
+
+  <link rel="apple-touch-startup-image" href="../images/splashscreen.png">
+
+  <link rel="icon" href="../images/favicon.ico" />
+
+  <title>Code</title>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link href="../htmlstyle.css" rel="stylesheet">
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]},
+											TeX:     {extensions: ["color.js"],
+																Macros:     {RR:    '{\\bf R}',
+												                     bold:  ['{\\bf #1}', 1]}
+															 }
+										 });
+	</script>
+</head>
+<body>
+<nav class="mainnav">
+  <a class="left" href="random.html">Prev</a>
+  <a class="centre" href="contents.html">Contents</a>
+  <a class="right" href="wordnet.html">Next</a>
+</nav>
+
+<section id="app:code" class="level1">
+<h1><span class="header-section-number">B</span> Code</h1>
+
+<nav id="TOC">
+<ul>
+<li><a href="#app:code"><span class="toc-section-number">B</span> Code</a><ul>
+<li><a href="#s:appindex"><span class="toc-section-number">B.1</span> Index</a></li>
+<li><a href="#app:clin3errors"><span class="toc-section-number">B.2</span> Clinamen Errors</a></li>
+<li><a href="#s:appwordnet"><span class="toc-section-number">B.3</span> WordNet</a><ul>
+<li><a href="#antinomy"><span class="toc-section-number">B.3.1</span> Antinomy</a></li>
+<li><a href="#app:syzygy"><span class="toc-section-number">B.3.2</span> Syzygy</a></li>
+</ul></li>
+<li><a href="#s:bingjson"><span class="toc-section-number">B.4</span> Bing JSON Results</a></li>
+<li><a href="#random-quotes"><span class="toc-section-number">B.5</span> Random Quotes</a></li>
+<li><a href="#s:stopwords"><span class="toc-section-number">B.6</span> Stopwords</a><ul>
+<li><a href="#english"><span class="toc-section-number">B.6.1</span> English</a></li>
+<li><a href="#french"><span class="toc-section-number">B.6.2</span> French</a></li>
+<li><a href="#german"><span class="toc-section-number">B.6.3</span> German</a></li>
+</ul></li>
+<li><a href="#s:imgspiral"><span class="toc-section-number">B.7</span> Image Spiral</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<section id="s:appindex" class="level2">
+<h2><span class="header-section-number">B.1</span> Index</h2>
+<p>An example excerpt from the Faustroll index data structure.</p>
+
+<pre class="text"><code>defaultdict(<span class="fu">&lt;</span>function <span class="fu">&lt;</span>lambda<span class="fu">&gt;</span> at <span class="bn">0x101d17938</span><span class="fu">&gt;</span>, 
+  {
+    u&#39;fawn&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_17&#39;<span class="fu">:</span> [<span class="dv">101330</span>, <span class="dv">111976</span>], 
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">345609</span>], 
+        u&#39;l_01&#39;<span class="fu">:</span> [<span class="dv">92598</span>, <span class="dv">469332</span>, <span class="dv">469716</span>, <span class="dv">469757</span>, <span class="dv">469830</span>, <span class="dv">469950</span>]
+      }), 
+    u&#39;lenitives&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">121161</span>]
+      }), 
+    u&#39;malheureuses&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_06&#39;<span class="fu">:</span> [<span class="dv">18950</span>, <span class="dv">52631</span>, <span class="dv">65053</span>, <span class="dv">65792</span>, <span class="dv">79960</span>, <span class="dv">127861</span>, <span class="dv">176200</span>], 
+        u&#39;l_04&#39;<span class="fu">:</span> [<span class="dv">51545</span>, <span class="dv">93611</span>]
+      }), 
+    u&#39;nunnery&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">38182</span>, <span class="dv">160331</span>]
+      }), 
+    u&#39;nuzzing&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">147035</span>]
+      }), 
+    u&#39;huileux&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_04&#39;<span class="fu">:</span> [<span class="dv">69998</span>]
+      }), 
+    u&#39;lentuli&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">217454</span>]
+      }), 
+    u&#39;porphyrogene&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_01&#39;<span class="fu">:</span> [<span class="dv">137368</span>, <span class="dv">480308</span>]
+      }), 
+    u&#39;woods&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_14&#39;<span class="fu">:</span> [<span class="dv">16256</span>], 
+        u&#39;l_05&#39;<span class="fu">:</span> [<span class="dv">2890</span>], 
+        u&#39;l_17&#39;<span class="fu">:</span> [<span class="dv">11445</span>, <span class="dv">34923</span>, <span class="dv">48413</span>, <span class="dv">59186</span>, <span class="dv">61062</span>, <span class="dv">78084</span>, <span class="dv">78681</span>, <span class="dv">81374</span>, <span class="dv">101319</span>, <span class="dv">137624</span>], 
+        u&#39;l_10&#39;<span class="fu">:</span> [<span class="dv">12500</span>, <span class="dv">21691</span>, <span class="dv">33136</span>], 
+        u&#39;l_02&#39;<span class="fu">:</span> [<span class="dv">4596</span>, <span class="dv">6221</span>], 
+        u&#39;l_01&#39;<span class="fu">:</span> [<span class="dv">63176</span>, <span class="dv">63622</span>, <span class="dv">74535</span>, <span class="dv">74807</span>, <span class="dv">326433</span>, <span class="dv">326464</span>, <span class="dv">326472</span>, <span class="dv">419835</span>, <span class="dv">441374</span>, <span class="dv">467791</span>, <span class="dv">481003</span>, <span class="dv">481113</span>, <span class="dv">500201</span>, <span class="dv">500331</span>, <span class="dv">501595</span>], 
+        u&#39;l_27&#39;<span class="fu">:</span> [<span class="dv">60731</span>], 
+        u&#39;l_26&#39;<span class="fu">:</span> [<span class="dv">1120</span>, <span class="dv">9622</span>], 
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">149538</span>, <span class="dv">232296</span>, <span class="dv">294503</span>]
+      }), 
+    u&#39;clotted&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_17&#39;<span class="fu">:</span> [<span class="dv">92418</span>], 
+        u&#39;l_01&#39;<span class="fu">:</span> [<span class="dv">53612</span>, <span class="dv">133153</span>, <span class="dv">200952</span>, <span class="dv">241165</span>]
+      }), 
+    u&#39;spiders&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">285105</span>, <span class="dv">301556</span>], 
+        u&#39;l_00&#39;<span class="fu">:</span> [<span class="dv">3085</span>]
+      }), 
+    u&#39;hanging&#39;<span class="fu">:</span> defaultdict(<span class="fu">&lt;</span><span class="kw">type</span> <span class="ch">&#39;list&#39;</span><span class="fu">&gt;</span>, 
+      {
+        u&#39;l_17&#39;<span class="fu">:</span> [<span class="dv">84239</span>], 
+        u&#39;l_10&#39;<span class="fu">:</span> [<span class="dv">35501</span>, <span class="dv">92813</span>, <span class="dv">126657</span>], 
+        u&#39;l_02&#39;<span class="fu">:</span> [<span class="dv">6033</span>, <span class="dv">33307</span>, <span class="dv">34297</span>], 
+        u&#39;l_01&#39;<span class="fu">:</span> [<span class="dv">10317</span>, <span class="dv">102489</span>, <span class="dv">114549</span>, <span class="dv">134507</span>, <span class="dv">193056</span>, <span class="dv">210178</span>, <span class="dv">251167</span>, <span class="dv">266320</span>, <span class="dv">287765</span>, <span class="dv">311802</span>, <span class="dv">342798</span>, <span class="dv">379707</span>, <span class="dv">417326</span>, <span class="dv">417956</span>, <span class="dv">448394</span>, <span class="dv">469204</span>], 
+        u&#39;l_00&#39;<span class="fu">:</span> [<span class="dv">1831</span>, <span class="dv">5490</span>, <span class="dv">6891</span>, <span class="dv">11088</span>, <span class="dv">13846</span>], 
+        u&#39;l_27&#39;<span class="fu">:</span> [<span class="dv">19757</span>, <span class="dv">45058</span>, <span class="dv">83470</span>], 
+        u&#39;l_26&#39;<span class="fu">:</span> [<span class="dv">6500</span>], 
+        u&#39;l_19&#39;<span class="fu">:</span> [<span class="dv">8309</span>, <span class="dv">15850</span>, <span class="dv">17056</span>, <span class="dv">20629</span>, <span class="dv">25899</span>, <span class="dv">47147</span>, <span class="dv">47186</span>, <span class="dv">49544</span>, <span class="dv">108943</span>, <span class="dv">177323</span>, <span class="dv">200639</span>, <span class="dv">252551</span>, <span class="dv">334120</span>, <span class="dv">341621</span>]
+      }),
+    <span class="fu">...</span></code></pre>
+
+<div class="sourceCode">
+<figure id="code:B.1">
+<pre class="sourceCode haskell">
+<code class="sourceCode haskell scrollbar">
+  
+</code></pre>
+<figcaption>Code B.1 – Adding text files to the corpus library</figcaption>
+</figure>
+</div>
+
+<pre class="text"><code>
+  
+</code></pre>
+
+</section>
+
+<section id="app:clin3errors" class="level2">
+<h2><span class="header-section-number">B.2</span> Clinamen Errors</h2>
+<p>This section show the Clinamen function allowing up to 3 errors. See chapter <a href="analysis.html#s:clinerrors">12.2.4</a>.</p>
+<dl>
+<dt>clear</dt>
+<dd><p>afar, ahead, Alas, altar, appear, bar, beam, beard, bears, beat, beer, ble, bleed, blew, bluer, bread, break, Caesar, calvary, can, canal, care, cedar, cellar, chair, charm, cheek, chen, chere, chern, choir, clad, claim, clasp, claws, clean, clear, clearly, clerks, climb, clock, clogs, close, cloth, color, coral, crab, crap, cresc, crest, Dead, dead, dear, Dewar, ear, ears, eat, ever, far, fear, Fear, feat, flag, flat, flesh, floor, Friar, glare, Great, great, head, hear, heard, heart, heat, Her, her, idea, ideal, ideas, jar, law, lay, lead, leaf, leap, least, leave, led, lees, left, leg, legs, lent, leper, less, lest, let, mean, meat, near, oar, Ocean, Opera, over, peak, pearl, per, plat, pleas, read, Read, real, rear, sea, Sea, seat, sheer, slab, sleep, solar, speak, star, steam, sugar, swear, swears, sweat, tean, tears, their, vulgar, war, year, years, zeal</p>
+</dd>
+<dt>fania</dt>
+<dd><p>acid, aid, aim, air, an, ance, and, animae, animal, Anna, ant, anti, ants, anvil, any, axis, Baba, bank, banks, basin, cabin, can, canal, Cane, canvas, dance, Danzig, data, Denis, fa, face, faced, faces, facet, facing, fact, facts, fading, faIt, faith, fake, fall, falls, false, family, fan, fans, far, fat, fate, fauns, favor, final, find, finds, fine, finer, fins, flint, fluid, foil, francs, fruit, gain, habit, hair, hand, hands, india, Jane, Janus, Kaka, Kantian, laid, lance, land, lanes, Latin, lava, mail, main, Man, man, many, nadir, nail, nib, nil, pair, pan, Pan, Papio, papio, Paris, rang, range, rapid, said, sail, Saint, saliva, San, sand, sang, sonic, tail, Tait, Tanit, tunic, unit, vain, valid, van, vanish, vanity, vans, vina, Yan</p>
+</dd>
+<dt>moss</dt>
+<dd><p>abyss, Across, across, acts, adds, Alas, almost, also, among, amor, amore, amour, ants, apes, arms, arose, as, As, ash, ask, ass, axis, bars, base, bases, beds, best, bis, blows, Boat, boat, boats, body, bolus, bone, bones, book, books, boot, boots, bores, born, Bosse, both, bout, bow, bowl, bows, box, boy, Boys, brass, brows, bust, case, cases, cash, cast, chose, clogs, close, co, coast, coats, Code, coins, cold, come, comes, cool, copy, cords, cost, Cost, costs, cows, crass, cross, cuIs, cups, days, demons, Deus, disk, disks, Do, do, does, dogs, dome, domos, done, door, doors, douds, down, Down, dress, drops, dust, ears, ease, easy, eats, eggs, ells, else, ends, Eros, ess, est, eyes, fans, fess, fins, fish, fist, fists, foam, fog, foil, folds, foot, For, for, fore, fork, Form, form, forms, fotms, foul, four, fox, foxes, Ghost, ghosts, glass, glows, go, God, gods, goes, Gog, Gogh, gold, Gold, gong, good, goods, gown, gowns, grass, hams, has, hast, His, his, ho, Ho, holds, holes, Holy, home, Homo, hoof, hooks, hope, horn, horns, Horse, horse, horses, host, hot, hour, Hour, hours, house, houses, how, How, humors, hums, ikons, iris, irs, is, Is, Its, its, jaws, Jesus, jibs, job, John, jowls, joy, Just, just, kiosks, kiss, knows, last, laws, Lays, lees, legs, less, lest, lies, lions, lips, Lo, lobe, loins, Long, long, looks, Lord, lord, lords, lore, lose, loss, lost, Loti, lots, loud, louse, Love, love, loves, low, Loye, m, made, mail, main, make, makes, male, man, many, map, maps, mask, mass, masses, mast, masts, may, me, mean, means, meat, meet, men, mere, mesh, meshes, met, milk, mimes, mist, mite, mites, mob, moist, moles, month, months, moon, mor, more, Moses, most, motor, mount, Mour, mouth, mouths, moved, mower, Mrs, much, music, must, Must, my, nest, news, nisi, no, No, noise, non, none, noon, Nor, nor, nos, nose, Not, not, note, now, Now, nuts, o, oak, oar, oars, oc, odd, of, off, ofQ, oil, old, on, one, ones, or, orb, orms, our, out, own, pass, past, pigs, piss, Plus, Poe, poets, pole, poles, ponds, Poor, poor, pope, port, Pour, prose, Prose, rats, rays, rest, rise, rises, road, robe, robes, rock, rocks, rod, Roi, role, roll, rolls, rome, roof, room, rooms, root, rope, ropes, rose, rosy, row, rows, s, says, sc, sets, shops, smock, smoke, So, so, soft, sole, Some, some, son, songs, sons, soon, Soon, sorb, soul, souls, sows, sums, suns, tats, This, this, those, Thus, thus, tjis, to, To, toad, toads, tock, toes, told, tome, tone, toO, too, took, top, tops, tore, torn, tossed, Town, town, Tres, tres, ups, us, use, vans, vast, Was, was, wash, wasps, webs, whose, wigs, Woan, won, wont, wood, word, words, wore, Work, work, Works, works, worm, worn, wove, Yes, yolk, York, you, You, your, Your</p>
+</dd>
+</dl>
+</section>
+
+<section id="s:appwordnet" class="level2">
+<h2><span class="header-section-number">B.3</span> WordNet</h2>
+
+<section id="antinomy" class="level3">
+<h3><span class="header-section-number">B.3.1</span> Antinomy</h3>
+
+<pre class="text"><code>[
+  <span class="at">Synset</span>(<span class="st">&#39;clear.n.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;open.n.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;unclutter.v.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear_up.v.04&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;authorize.v.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.05&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;pass.v.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.07&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.10&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.11&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.12&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;net.v.02&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;net.v.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;gain.v.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.16&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.17&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;acquit.v.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.19&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.20&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.21&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.22&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.23&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.24&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.a.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.03&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.a.04&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.05&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.06&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clean.s.03&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;well-defined.a.02&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.a.11&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clean.s.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.13&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.14&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.15&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;absolved.s.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.17&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.r.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clearly.r.04&#39;</span>)
+]  
+</code></pre>
+
+<pre class="text"><code>synset item<span class="fu">:</span>clear<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+synset item<span class="fu">:</span>open<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+synset item<span class="fu">:</span>unclutter<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+antonym out<span class="fu">:</span>clutter
+antonym <span class="kw">in</span><span class="fu">:</span>clutter
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+synset item<span class="fu">:</span>clear_up<span class="fu">.</span>v<span class="fu">.</span><span class="dv">04</span>
+antonym out<span class="fu">:</span>overcast
+antonym <span class="kw">in</span><span class="fu">:</span>overcast
+synset item<span class="fu">:</span>authorize<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">05</span>
+synset item<span class="fu">:</span>pass<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">07</span>
+antonym out<span class="fu">:</span>bounce
+antonym <span class="kw">in</span><span class="fu">:</span>bounce
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">10</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">11</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">12</span>
+synset item<span class="fu">:</span>net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+synset item<span class="fu">:</span>net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+synset item<span class="fu">:</span>gain<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">16</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">17</span>
+synset item<span class="fu">:</span>acquit<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+antonym out<span class="fu">:</span>convict
+antonym <span class="kw">in</span><span class="fu">:</span>convict
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">19</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">20</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">21</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">22</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">23</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">24</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">01</span>
+antonym out<span class="fu">:</span>unclear
+antonym <span class="kw">in</span><span class="fu">:</span>unclear
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">02</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">03</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">04</span>
+antonym out<span class="fu">:</span>opaque
+antonym <span class="kw">in</span><span class="fu">:</span>opaque
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">05</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">06</span>
+synset item<span class="fu">:</span>clean<span class="fu">.</span>s<span class="fu">.</span><span class="dv">03</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">08</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">09</span>
+synset item<span class="fu">:</span>well<span class="fu">-</span>defined<span class="fu">.</span>a<span class="fu">.</span><span class="dv">02</span>
+antonym out<span class="fu">:</span>ill<span class="fu">-</span>defined
+antonym <span class="kw">in</span><span class="fu">:</span>ill<span class="fu">-</span>defined
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">11</span>
+antonym out<span class="fu">:</span>cloudy
+antonym <span class="kw">in</span><span class="fu">:</span>cloudy
+synset item<span class="fu">:</span>clean<span class="fu">.</span>s<span class="fu">.</span><span class="dv">02</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">13</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">14</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">15</span>
+synset item<span class="fu">:</span>absolved<span class="fu">.</span>s<span class="fu">.</span><span class="dv">01</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">17</span>
+synset item<span class="fu">:</span>clear<span class="fu">.</span>r<span class="fu">.</span><span class="dv">01</span>
+synset item<span class="fu">:</span>clearly<span class="fu">.</span>r<span class="fu">.</span><span class="dv">04</span></code></pre>
+</section>
+
+<section id="app:syzygy" class="level3">
+<h3><span class="header-section-number">B.3.2</span> Syzygy</h3>
+
+<pre class="text"><code>[
+  <span class="at">Synset</span>(<span class="st">&#39;clear.n.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;open.n.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;unclutter.v.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear\_up.v.04&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;authorize.v.01&#39;</span>)<span class="op">,</span>
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.05&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;pass.v.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.07&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.10&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.11&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.12&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;net.v.02&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;net.v.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;gain.v.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.16&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.17&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;acquit.v.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.19&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.20&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.21&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.22&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.23&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.24&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.a.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.03&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.a.04&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.05&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.06&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clean.s.03&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;well-defined.a.02&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.a.11&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clean.s.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.13&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.14&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.15&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;absolved.s.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.17&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.r.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clearly.r.04&#39;</span>)
+]</code></pre>
+
+<p>Step (2) then retrieves related terms. First it gets hypernyms.</p>
+
+<pre class="text"><code>synset<span class="fu">:</span> clear<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> innocence
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> open<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> area, country
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> unclutter<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> change, alter, modify
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> make, create
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear\_up<span class="fu">.</span>v<span class="fu">.</span><span class="dv">04</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> authorize<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> approbate, approve, <span class="dt">O.K</span><span class="fu">.</span>, okay, sanction, certificate, commission, declare, license, certify, validate, formalise
+hypernyms<span class="fu">:</span> permit, allow, <span class="kw">let</span>, countenance
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">05</span>
+hyponyms<span class="fu">:</span> clear<span class="fu">-</span>cut, deforest, disafforest, denude, bare, denudate, strip, stump
+hypernyms<span class="fu">:</span> remove, take, take\_away, withdraw
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> pass<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+hyponyms<span class="fu">:</span> clear
+hypernyms<span class="fu">:</span> succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">07</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> vanish, disappear, go\_away
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+hyponyms<span class="fu">:</span> hop
+hypernyms<span class="fu">:</span> pass, overtake, overhaul
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">10</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> clarify, clear\_up, elucidate
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">11</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> free, discharge
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">12</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> rid, free, disembarass
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> yield, pay, bear
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> profit, gain, benefit
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> gain<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+hyponyms<span class="fu">:</span> eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear
+hypernyms<span class="fu">:</span> get, acquire
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">16</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> sell
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">17</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> pass, clear
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> acquit<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hyponyms<span class="fu">:</span> purge, vindicate, whitewash, pronounce, label, judge
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">19</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> settle, square\_off, square\_up, determine
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">20</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> change, alter, modify
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">21</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> empty
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">22</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernym out<span class="fu">:</span>take\_out, move\_out, remove
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">23</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernym out<span class="fu">:</span>empty
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">24</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernym out<span class="fu">:</span>remove, take, take\_away, withdraw
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">02</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">03</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">04</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">05</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">06</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clean<span class="fu">.</span>s<span class="fu">.</span><span class="dv">03</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">08</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">09</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>well<span class="fu">-</span>defined<span class="fu">.</span>a<span class="fu">.</span><span class="dv">02</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">11</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clean<span class="fu">.</span>s<span class="fu">.</span><span class="dv">02</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">13</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">14</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">15</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>absolved<span class="fu">.</span>s<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">17</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clear<span class="fu">.</span>r<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span>
+
+synset item<span class="fu">:</span>clearly<span class="fu">.</span>r<span class="fu">.</span><span class="dv">04</span>
+hyponyms<span class="fu">:</span> <span class="co">---</span>
+hypernyms<span class="fu">:</span> <span class="co">---</span>
+holonyms<span class="fu">:</span> <span class="co">---</span></code></pre>
+
+<pre class="text"><code>synset<span class="fu">:</span> clear<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+hypernyms<span class="fu">:</span> innocence
+
+synset<span class="fu">:</span> open<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+hypernyms<span class="fu">:</span> area, country
+
+synset<span class="fu">:</span> unclutter<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hypernyms<span class="fu">:</span> change, alter, modify
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+hypernyms<span class="fu">:</span> make, create
+
+synset<span class="fu">:</span> authorize<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> approbate, approve, <span class="dt">O.K</span><span class="fu">.</span>, okay, sanction, certificate, commission, declare, license, certify, validate, formalise
+hypernyms<span class="fu">:</span> permit, allow, <span class="kw">let</span>, countenance
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">05</span>
+hyponyms<span class="fu">:</span> clear<span class="fu">-</span>cut, deforest, disafforest, denude, bare, denudate, strip, stump
+hypernyms<span class="fu">:</span> remove, take, take\_away, withdraw
+
+synset<span class="fu">:</span> pass<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+hyponyms<span class="fu">:</span> clear
+hypernyms<span class="fu">:</span> succeed, win, come\_through, bring\_home\_the\_bacon, deliver\_the\_goods
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+hypernyms<span class="fu">:</span> vanish, disappear, go\_away
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+hyponyms<span class="fu">:</span> hop
+hypernyms<span class="fu">:</span> pass, overtake, overhaul
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">10</span>
+hypernyms<span class="fu">:</span> clarify, clear\_up, elucidate
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">11</span>
+hypernyms<span class="fu">:</span> free, discharge
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">12</span>
+hypernyms<span class="fu">:</span> rid, free, disembarass
+
+synset<span class="fu">:</span> net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+hypernyms<span class="fu">:</span> yield, pay, bear
+
+synset<span class="fu">:</span> net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hypernyms<span class="fu">:</span> profit, gain, benefit
+
+synset<span class="fu">:</span> gain<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+hyponyms<span class="fu">:</span> eke\_out, squeeze\_out, gross, profit, turn\_a\_profit, rake\_in, shovel\_in, rake\_off, take\_home, bring\_home, yield, pay, bear
+hypernyms<span class="fu">:</span> get, acquire
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">16</span>
+hypernyms<span class="fu">:</span> sell
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">17</span>
+hypernyms<span class="fu">:</span> pass, clear
+
+synset<span class="fu">:</span> acquit<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponyms<span class="fu">:</span> purge, vindicate, whitewash, pronounce, label, judge
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">19</span>
+hypernyms<span class="fu">:</span> settle, square\_off, square\_up, determine
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">20</span>
+hypernyms<span class="fu">:</span> change, alter, modify
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">21</span>
+hypernyms<span class="fu">:</span> empty
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">22</span>
+hypernyms<span class="fu">:</span> take\_out, move\_out, remove
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">23</span>
+hypernyms<span class="fu">:</span> empty
+
+synset<span class="fu">:</span> clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">24</span>
+hypernyms<span class="fu">:</span> remove, take, take\_away, withdraw</code></pre>
+
+<pre class="text"><code>[
+  <span class="at">Synset</span>(<span class="st">&#39;clear.n.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;open.n.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;unclutter.v.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear_up.v.04&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;authorize.v.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.05&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;pass.v.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.07&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.10&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.11&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.12&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;net.v.02&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;net.v.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;gain.v.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.16&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.17&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;acquit.v.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.19&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.20&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.21&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.22&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.v.23&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.v.24&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.a.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.03&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.a.04&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.05&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.06&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clean.s.03&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.08&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.09&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;well-defined.a.02&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.a.11&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clean.s.02&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.13&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.14&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.s.15&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;absolved.s.01&#39;</span>)<span class="op">,</span> 
+  <span class="at">Synset</span>(<span class="st">&#39;clear.s.17&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clear.r.01&#39;</span>)<span class="op">,</span> <span class="at">Synset</span>(<span class="st">&#39;clearly.r.04&#39;</span>)
+]</code></pre>
+
+<pre class="text"><code>synset item<span class="fu">:</span>clear<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+hypernym out<span class="fu">:</span>innocence
+[]
+synset item<span class="fu">:</span>open<span class="fu">.</span>n<span class="fu">.</span><span class="dv">01</span>
+hypernym out<span class="fu">:</span>area
+hypernym out<span class="fu">:</span>country
+hypernym <span class="kw">in</span><span class="fu">:</span>country
+[]
+synset item<span class="fu">:</span>unclutter<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hypernym out<span class="fu">:</span>change
+hypernym <span class="kw">in</span><span class="fu">:</span>change
+hypernym out<span class="fu">:</span>alter
+hypernym out<span class="fu">:</span>modify
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+hypernym out<span class="fu">:</span>make
+hypernym <span class="kw">in</span><span class="fu">:</span>make
+hypernym out<span class="fu">:</span>create
+[]
+synset item<span class="fu">:</span>clear_up<span class="fu">.</span>v<span class="fu">.</span><span class="dv">04</span>
+[]
+synset item<span class="fu">:</span>authorize<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponym out<span class="fu">:</span>approbate
+hyponym out<span class="fu">:</span>approve
+hyponym out<span class="fu">:</span><span class="dt">O.K</span><span class="fu">.</span>
+hyponym out<span class="fu">:</span>okay
+hyponym out<span class="fu">:</span>sanction
+hyponym out<span class="fu">:</span>certificate
+hyponym <span class="kw">in</span><span class="fu">:</span>certificate
+hyponym out<span class="fu">:</span>commission
+hyponym out<span class="fu">:</span>declare
+hyponym <span class="kw">in</span><span class="fu">:</span>declare
+hyponym out<span class="fu">:</span>license
+hyponym out<span class="fu">:</span>licence
+hyponym out<span class="fu">:</span>certify
+hyponym out<span class="fu">:</span>validate
+hyponym out<span class="fu">:</span>formalize
+hyponym out<span class="fu">:</span>formalise
+hypernym out<span class="fu">:</span>permit
+hypernym <span class="kw">in</span><span class="fu">:</span>permit
+hypernym out<span class="fu">:</span>allow
+hypernym <span class="kw">in</span><span class="fu">:</span>allow
+hypernym out<span class="fu">:</span><span class="kw">let</span>
+hypernym <span class="kw">in</span><span class="fu">:</span><span class="kw">let</span>
+hypernym out<span class="fu">:</span>countenance
+hypernym <span class="kw">in</span><span class="fu">:</span>countenance
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">05</span>
+hyponym out<span class="fu">:</span>clear<span class="fu">-</span>cut
+hyponym out<span class="fu">:</span>deforest
+hyponym out<span class="fu">:</span>disforest
+hyponym out<span class="fu">:</span>disafforest
+hyponym out<span class="fu">:</span>denude
+hyponym out<span class="fu">:</span>bare
+hyponym <span class="kw">in</span><span class="fu">:</span>bare
+hyponym out<span class="fu">:</span>denudate
+hyponym out<span class="fu">:</span>strip
+hyponym out<span class="fu">:</span>stump
+hypernym out<span class="fu">:</span>remove
+hypernym out<span class="fu">:</span>take
+hypernym <span class="kw">in</span><span class="fu">:</span>take
+hypernym out<span class="fu">:</span>take_away
+hypernym out<span class="fu">:</span>withdraw
+[]
+synset item<span class="fu">:</span>pass<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+hyponym out<span class="fu">:</span>clear
+hyponym <span class="kw">in</span><span class="fu">:</span>clear
+hypernym out<span class="fu">:</span>succeed
+hypernym <span class="kw">in</span><span class="fu">:</span>succeed
+hypernym out<span class="fu">:</span>win
+hypernym out<span class="fu">:</span>come_through
+hypernym out<span class="fu">:</span>bring_home_the_bacon
+hypernym out<span class="fu">:</span>deliver_the_goods
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">07</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+hypernym out<span class="fu">:</span>vanish
+hypernym <span class="kw">in</span><span class="fu">:</span>vanish
+hypernym out<span class="fu">:</span>disappear
+hypernym out<span class="fu">:</span>go_away
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">09</span>
+hyponym out<span class="fu">:</span>hop
+hypernym out<span class="fu">:</span>pass
+hypernym <span class="kw">in</span><span class="fu">:</span>pass
+hypernym out<span class="fu">:</span>overtake
+hypernym out<span class="fu">:</span>overhaul
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">10</span>
+hypernym out<span class="fu">:</span>clarify
+hypernym out<span class="fu">:</span>clear_up
+hypernym out<span class="fu">:</span>elucidate
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">11</span>
+hypernym out<span class="fu">:</span>free
+hypernym <span class="kw">in</span><span class="fu">:</span>free
+hypernym out<span class="fu">:</span>discharge
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">12</span>
+hypernym out<span class="fu">:</span>rid
+hypernym out<span class="fu">:</span>free
+hypernym <span class="kw">in</span><span class="fu">:</span>free
+hypernym out<span class="fu">:</span>disembarrass
+[]
+synset item<span class="fu">:</span>net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">02</span>
+hypernym out<span class="fu">:</span>yield
+hypernym out<span class="fu">:</span>pay
+hypernym <span class="kw">in</span><span class="fu">:</span>pay
+hypernym out<span class="fu">:</span>bear
+[]
+synset item<span class="fu">:</span>net<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hypernym out<span class="fu">:</span>profit
+hypernym out<span class="fu">:</span>gain
+hypernym <span class="kw">in</span><span class="fu">:</span>gain
+hypernym out<span class="fu">:</span>benefit
+hypernym <span class="kw">in</span><span class="fu">:</span>benefit
+[]
+synset item<span class="fu">:</span>gain<span class="fu">.</span>v<span class="fu">.</span><span class="dv">08</span>
+hyponym out<span class="fu">:</span>eke_out
+hyponym out<span class="fu">:</span>squeeze_out
+hyponym out<span class="fu">:</span>gross
+hyponym out<span class="fu">:</span>profit
+hyponym out<span class="fu">:</span>turn_a_profit
+hyponym out<span class="fu">:</span>rake_in
+hyponym out<span class="fu">:</span>shovel_in
+hyponym out<span class="fu">:</span>rake_off
+hyponym out<span class="fu">:</span>take_home
+hyponym out<span class="fu">:</span>bring_home
+hyponym out<span class="fu">:</span>yield
+hyponym out<span class="fu">:</span>pay
+hyponym <span class="kw">in</span><span class="fu">:</span>pay
+hyponym out<span class="fu">:</span>bear
+hypernym out<span class="fu">:</span>get
+hypernym out<span class="fu">:</span>acquire
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">16</span>
+hypernym out<span class="fu">:</span>sell
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">17</span>
+hypernym out<span class="fu">:</span>pass
+hypernym <span class="kw">in</span><span class="fu">:</span>pass
+hypernym out<span class="fu">:</span>clear
+hypernym <span class="kw">in</span><span class="fu">:</span>clear
+[]
+synset item<span class="fu">:</span>acquit<span class="fu">.</span>v<span class="fu">.</span><span class="dv">01</span>
+hyponym out<span class="fu">:</span>purge
+hyponym out<span class="fu">:</span>vindicate
+hyponym out<span class="fu">:</span>whitewash
+hypernym out<span class="fu">:</span>pronounce
+hypernym <span class="kw">in</span><span class="fu">:</span>pronounce
+hypernym out<span class="fu">:</span>label
+hypernym out<span class="fu">:</span>judge
+hypernym <span class="kw">in</span><span class="fu">:</span>judge
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">19</span>
+hypernym out<span class="fu">:</span>settle
+hypernym out<span class="fu">:</span>square_off
+hypernym out<span class="fu">:</span>square_up
+hypernym out<span class="fu">:</span>determine
+hypernym <span class="kw">in</span><span class="fu">:</span>determine
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">20</span>
+hypernym out<span class="fu">:</span>change
+hypernym <span class="kw">in</span><span class="fu">:</span>change
+hypernym out<span class="fu">:</span>alter
+hypernym out<span class="fu">:</span>modify
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">21</span>
+hypernym out<span class="fu">:</span>empty
+hypernym <span class="kw">in</span><span class="fu">:</span>empty
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">22</span>
+hypernym out<span class="fu">:</span>take_out
+hypernym out<span class="fu">:</span>move_out
+hypernym out<span class="fu">:</span>remove
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">23</span>
+hypernym out<span class="fu">:</span>empty
+hypernym <span class="kw">in</span><span class="fu">:</span>empty
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>v<span class="fu">.</span><span class="dv">24</span>
+hypernym out<span class="fu">:</span>remove
+hypernym out<span class="fu">:</span>take
+hypernym <span class="kw">in</span><span class="fu">:</span>take
+hypernym out<span class="fu">:</span>take_away
+hypernym out<span class="fu">:</span>withdraw
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">01</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">02</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">03</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">04</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">05</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">06</span>
+[]
+synset item<span class="fu">:</span>clean<span class="fu">.</span>s<span class="fu">.</span><span class="dv">03</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">08</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">09</span>
+[]
+synset item<span class="fu">:</span>well<span class="fu">-</span>defined<span class="fu">.</span>a<span class="fu">.</span><span class="dv">02</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>a<span class="fu">.</span><span class="dv">11</span>
+[]
+synset item<span class="fu">:</span>clean<span class="fu">.</span>s<span class="fu">.</span><span class="dv">02</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">13</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">14</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">15</span>
+[]
+synset item<span class="fu">:</span>absolved<span class="fu">.</span>s<span class="fu">.</span><span class="dv">01</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>s<span class="fu">.</span><span class="dv">17</span>
+[]
+synset item<span class="fu">:</span>clear<span class="fu">.</span>r<span class="fu">.</span><span class="dv">01</span>
+[]
+synset item<span class="fu">:</span>clearly<span class="fu">.</span>r<span class="fu">.</span><span class="dv">04</span>
+[]
+</code></pre>
+</section>
+</section>
+
+<section id="s:bingjson" class="level2">
+<h2><span class="header-section-number">B.4</span> Bing JSON Results</h2>
+
+<pre class="text"><code><span class="fu">{</span><span class="dt">&quot;d&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;results&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+  <span class="fu">{</span> <span class="dt">&quot;__metadata&quot;</span><span class="fu">:</span>
+    <span class="fu">{</span> <span class="dt">&quot;uri&quot;</span><span class="fu">:</span> <span class="st">&quot;https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=</span><span class="ch">\u0027</span><span class="st">kittens</span><span class="ch">\u0027</span><span class="st">&amp;$skip=0&amp;$top=1&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;ImageResult&quot;</span>
+    <span class="fu">},</span>
+    <span class="dt">&quot;ID&quot;</span><span class="fu">:</span> <span class="st">&quot;e09072a2-faf3-47ac-b77d-46a8df8941aa&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;Title&quot;</span><span class="fu">:</span> <span class="st">&quot;Cute Kittens - Pictures - The Wondrous Pics&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;MediaUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;http://wondrouspics.com/wp-content/uploads/2011/12/Cute-Kitten2.jpg&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;SourceUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;http://wondrouspics.com/cute-kittens-pictures/&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;DisplayUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;wondrouspics.com/cute-kittens-pictures&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;Width&quot;</span><span class="fu">:</span> <span class="st">&quot;1440&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;Height&quot;</span><span class="fu">:</span> <span class="st">&quot;900&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;FileSize&quot;</span><span class="fu">:</span> <span class="st">&quot;238015&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;ContentType&quot;</span><span class="fu">:</span> <span class="st">&quot;image/jpeg&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;Thumbnail&quot;</span><span class="fu">:</span>
+    <span class="fu">{</span> <span class="dt">&quot;__metadata&quot;</span><span class="fu">:</span>
+      <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Bing.Thumbnail&quot;</span>
+      <span class="fu">},</span>
+      <span class="dt">&quot;MediaUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;http://ts2.mm.bing.net/th?id=OIP.M5692e5d79242507e30600fd54639316cH0&amp;pid=15.1&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;ContentType&quot;</span><span class="fu">:</span> <span class="st">&quot;image/jpg&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;Width&quot;</span><span class="fu">:</span> <span class="st">&quot;480&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;Height&quot;</span><span class="fu">:</span> <span class="st">&quot;300&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;FileSize&quot;</span><span class="fu">:</span> <span class="st">&quot;13856&quot;</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span><span class="ot">,</span>
+  <span class="ot">]</span><span class="fu">,</span>
+  <span class="dt">&quot;__next&quot;</span><span class="fu">:</span> <span class="st">&quot;https://api.datamarket.azure.com/Data.ashx/Bing/Search/Image?Query=</span><span class="ch">\u0027</span><span class="st">kittens</span><span class="ch">\u0027</span><span class="st">&amp;$skip=50&quot;</span>
+<span class="fu">}}</span>
+</code></pre>
+</section>
+
+<section id="random-quotes" class="level2">
+<h2><span class="header-section-number">B.5</span> Random Quotes</h2>
+
+<pre class="text"><code><span class="kw">def</span> getrandquote():
+  root_path <span class="op">=</span> os.path.dirname(os.path.abspath(<span class="va">__file__</span>))
+  root_path <span class="op">=</span> root_path[:<span class="op">-</span><span class="dv">4</span>]
+  corpus_root <span class="op">=</span> root_path <span class="op">+</span> <span class="st">&#39;/app/static/corpus&#39;</span>
+  path_b <span class="op">=</span> corpus_root <span class="op">+</span> <span class="st">&#39;/quotes.txt&#39;</span>
+  quotes_text <span class="op">=</span> codecs.<span class="bu">open</span>(path_b, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>)
+  quotestext <span class="op">=</span> quotes_text.readlines()
+  quotes_text.close()
+  <span class="cf">return</span> random.choice(quotestext)</code></pre>
+</section>
+
+<section id="s:stopwords" class="level2">
+<h2><span class="header-section-number">B.6</span> Stopwords</h2>
+
+<section id="english" class="level3">
+<h3><span class="header-section-number">B.6.1</span> English</h3>
+<p>i, me, my, myself, we, our, ours, ourselves, yo, your, yours, yourself, yourselves, he, him, his, himself, she, her, hers, herself, it, its, itself, they, them, their, theirs, themselves, what, which, who, whom, this, that, these, those, am, is, are, was, were, be, been, being, have, has, had, having, do, does, did, doing, a, an, the, and, but, if, or, because, as, until, while, of, at, by, for, with, about, against, between, into, through, during, before, after, above, below, to, from, up, down, in, out, on, off, over, under, again, further, then, once, here, there, when, where, why, how, all, any, both, each, few, more, most, other, some, such, no, nor, not, only, own, same, so, than, too, very, s, t, can, will, just, don, should, now</p>
+</section>
+
+<section id="french" class="level3">
+<h3><span class="header-section-number">B.6.2</span> French</h3>
+<p>a, aux, avec, ce, ces, dans, de, des, d, elle, en, et, eux, il, je, la, le, leur, lui, ma, mais, me, m<span>ê</span>me, mes, moi, mon, ne, nos, notre, nous, on, o, par, pas, pour, q, que, qui, sa, se, ses, son, sur, ta, te, tes, toi, ton, t, un, une, vos, votre, vous, <span>é</span>t<span>é</span>, <span>é</span>t<span>é</span>e, <span>é</span>t<span>é</span>es, <span>é</span>t<span>é</span>s, <span>é</span>tant, <span>é</span>tante, <span>é</span>tants, <span>é</span>tantes, suis, es, est, sommes, <span>ê</span>tes, sont, serai, seras, sera, serons, serez, seront, serais, serait, serions, seriez, seraient, <span>é</span>tais, <span>é</span>tait, <span>é</span>tions, <span>é</span>tiez, <span>é</span>taient, fus, fut, f<span>û</span>mes, f<span>û</span>tes, furent, sois, soit, soyons, soyez, soient, fusse, fusses, f<span>û</span>t, fussions, fussiez, fussent, ayant, ayante, ayantes, ayants, e, eue, eues, eus, ai, as, avons, avez, ont, aurai, auras, aura, aurons, aurez, auront, aurais, aurait, aurions, auriez, auraient, avais, avait, avions, aviez, avaient, eut, e<span>û</span>mes, e<span>û</span>tes, eurent, aie, aies, ait, ayons, ayez, aient, eusse, eusses, e<span>û</span>t, eussions, eussiez, eussent</p>
+</section>
+
+<section id="german" class="level3">
+<h3><span class="header-section-number">B.6.3</span> German</h3>
+<p>aber, alle, allem, allen, aller, alles, als, also, am, an, ander, andere, anderem, anderen, anderer, anderes, anderm, andern, anderr, anders, auch, auf, aus, bei, bin, bis, bist, da, damit, dann, der, den, des, dem, die, das, da<span>ß</span>, derselbe, derselben, denselben, desselben, demselben, dieselbe, dieselben, dasselbe, daz, dein, deine, deinem, deinen, deiner, deines, denn, derer, dessen, dich, dir, d, dies, diese, diesem, diesen, dieser, dieses, doch, dort, durch, ein, eine, einem, einen, einer, eines, einig, einige, einigem, einigen, einiger, einiges, einmal, er, ihn, ihm, es, etwas, euer, eure, eurem, euren, eurer, eures, f<span>ü</span>r, gegen, gewesen, hab, habe, haben, hat, hatte, hatten, hier, hin, hinter, ich, mich, mir, ihr, ihre, ihrem, ihren, ihrer, ihres, euch, im, in, indem, ins, ist, jede, jedem, jeden, jeder, jedes, jene, jenem, jenen, jener, jenes, jetzt, kann, kein, keine, keinem, keinen, keiner, keines, k<span>ö</span>nnen, k<span>ö</span>nnte, machen, man, manche, manchem, manchen, mancher, manches, mein, meine, meinem, meinen, meiner, meines, mit, muss, musste, nach, nicht, nichts, noch, nun, nur, ob, oder, ohne, sehr, sein, seine, seinem, seinen, seiner, seines, selbst, sich, sie, ihnen, sind, so, solche, solchem, solchen, solcher, solches, soll, sollte, sondern, sonst, <span>ü</span>ber, um, und, uns, unse, unsem, unsen, unser, unses, unter, viel, vom, von, vor, w<span>ä</span>hrend, war, waren, warst, was, weg, weil, weiter, welche, welchem, welchen, welcher, welches, wenn, werde, werden, wie, wieder, will, wir, wird, wirst, wo, wollen, wollte, w<span>ü</span>rde, w<span>ü</span>rden, z, zum, zur, zwar, zwischen</p>
+</section>
+</section>
+
+<section id="s:imgspiral" class="level2">
+<h2><span class="header-section-number">B.7</span> Image Spiral</h2>
+
+<pre class="text"><code><span class="kw">function</span> <span class="at">createSpiral</span>(imglist)<span class="op">{</span>
+  <span class="cf">if</span> (<span class="va">imglist</span>.<span class="at">length</span> <span class="op">===</span> <span class="dv">10</span>)<span class="op">{</span>
+    <span class="kw">var</span> spiral_code <span class="op">=</span> <span class="st">&#39; \</span>
+<span class="st">    &lt;div class=&quot;spouter&quot;&gt; \</span>
+<span class="st">      &lt;div class=&quot;spleft&quot;&gt; \</span>
+<span class="st">        &lt;div class=&quot;spltop&quot;&gt; \</span>
+<span class="st">          &lt;div class=&quot;spltleft&quot;&gt; \</span>
+<span class="st">            &lt;a id=&quot;a3&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">3</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img3&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">3</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">3</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39; --- &#39;</span><span class="op">+</span>imglist[<span class="dv">3</span>][<span class="dv">3</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;210&quot; width=&quot;210&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">          &lt;/div&gt; \</span>
+<span class="st">          &lt;div class=&quot;spltright&quot;&gt; \</span>
+<span class="st">            &lt;div class=&quot;spltrtop&quot;&gt; \</span>
+<span class="st">              &lt;a id=&quot;a8&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">8</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img8&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">8</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">8</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;130&quot; width=&quot;130&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">            &lt;/div&gt; \</span>
+<span class="st">            &lt;div class=&quot;spltrbottom&quot;&gt; \</span>
+<span class="st">              &lt;div class=&quot;spltrbleft&quot;&gt; \</span>
+<span class="st">                &lt;div class=&quot;spltrbltop&quot;&gt; \</span>
+<span class="st">                  &lt;div class=&quot;spltrbltleft&quot;&gt; \</span>
+<span class="st">                    &lt;a id=&quot;a0&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">0</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img0&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">0</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">0</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;30&quot; width=&quot;30&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">                  &lt;/div&gt; \</span>
+<span class="st">                  &lt;div class=&quot;spltrbltright&quot;&gt; \</span>
+<span class="st">                    &lt;div class=&quot;spltrbltrtop&quot;&gt; \</span>
+<span class="st">                      &lt;a id=&quot;a1&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">1</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img1&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">1</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">1</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;20&quot; width=&quot;20&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">                    &lt;/div&gt; \</span>
+<span class="st">                    &lt;div class=&quot;spltrbltrbottom&quot;&gt; \</span>
+<span class="st">                      &lt;div class=&quot;spltrbltrbleft&quot;&gt; \</span>
+<span class="st">                        &lt;a id=&quot;a5&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">5</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img5&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">5</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">5</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;10&quot; width=&quot;10&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">                      &lt;/div&gt; \</span>
+<span class="st">                      &lt;div class=&quot;spltrbltrbright&quot;&gt; \</span>
+<span class="st">                        &lt;a id=&quot;a6&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">6</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img6&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">6</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">6</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;10&quot; width=&quot;10&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">                      &lt;/div&gt; \</span>
+<span class="st">                    &lt;/div&gt; \</span>
+<span class="st">                  &lt;/div&gt; \</span>
+<span class="st">                &lt;/div&gt; \</span>
+<span class="st">                &lt;div class=&quot;spltrblbottom&quot;&gt; \</span>
+<span class="st">                  &lt;a id=&quot;a7&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">7</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img7&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">7</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">7</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;50&quot; width=&quot;50&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">                &lt;/div&gt; \</span>
+<span class="st">              &lt;/div&gt; \</span>
+<span class="st">              &lt;div class=&quot;spltrbright&quot;&gt; \</span>
+<span class="st">                &lt;a id=&quot;a2&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">2</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img2&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">2</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">2</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;80&quot; width=&quot;80&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">              &lt;/div&gt; \</span>
+<span class="st">            &lt;/div&gt; \</span>
+<span class="st">          &lt;/div&gt; \</span>
+<span class="st">        &lt;/div&gt; \</span>
+<span class="st">        &lt;div class=&quot;splbottom&quot;&gt; \</span>
+<span class="st">          &lt;a id=&quot;a9&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">9</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img9&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">9</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">9</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;340&quot; width=&quot;340&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">        &lt;/div&gt; \</span>
+<span class="st">      &lt;/div&gt; \</span>
+<span class="st">      &lt;div class=&quot;spright&quot;&gt; \</span>
+<span class="st">        &lt;a id=&quot;a4&quot; class=&quot;spimg&quot; href=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">4</span>][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot; &gt;&lt;img id=&quot;img4&quot; src=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">4</span>][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; title=&quot;&#39;</span><span class="op">+</span>imglist[<span class="dv">4</span>][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; height=&quot;550&quot; width=&quot;550&quot;/&gt;&lt;/a&gt; \</span>
+<span class="st">      &lt;/div&gt; \</span>
+<span class="st">    &lt;/div&gt; \</span>
+<span class="st">    &#39;</span><span class="op">;</span>
+    <span class="kw">var</span> list_code <span class="op">=</span> []<span class="op">;</span>
+    <span class="cf">for</span> (i <span class="kw">in</span> imglist) <span class="op">{</span>
+      <span class="kw">var</span> img <span class="op">=</span> <span class="st">&#39; \</span>
+<span class="st">        &lt;div class=&quot;w3-col s12 m6 l3 w3-padding&quot;&gt; \</span>
+<span class="st">          &lt;a href=&quot;&#39;</span><span class="op">+</span>imglist[i][<span class="dv">2</span>]<span class="op">+</span><span class="st">&#39;&quot;&gt; \</span>
+<span class="st">            &lt;img src=&quot;&#39;</span><span class="op">+</span>imglist[i][<span class="dv">1</span>]<span class="op">+</span><span class="st">&#39;&quot; \</span>
+<span class="st">            title=&quot;&#39;</span><span class="op">+</span>imglist[i][<span class="dv">0</span>]<span class="op">+</span><span class="st">&#39;&quot; style=&quot;width:100%&quot;&gt; \</span>
+<span class="st">          &lt;/a&gt; \</span>
+<span class="st">        &lt;/div&gt; \</span>
+<span class="st">      &#39;</span><span class="op">;</span>
+      <span class="va">list_code</span>.<span class="at">push</span>(img)<span class="op">;</span>
+    <span class="op">}</span> <span class="co">// end for</span>
+    <span class="at">$</span>(<span class="st">&#39;#img_spiral_div&#39;</span>).<span class="at">html</span>(spiral_code)<span class="op">;</span>
+    <span class="at">$</span>(<span class="st">&#39;#img_list_div&#39;</span>).<span class="at">html</span>(list_code)<span class="op">;</span>
+  <span class="op">}</span> <span class="co">// end if</span>
+  <span class="cf">else</span><span class="op">{</span>
+    <span class="co">// console.log(&quot;inside else&quot;);</span>
+    <span class="at">$</span>(<span class="st">&#39;.img_empty&#39;</span>).<span class="at">wrap</span>(<span class="st">&quot;&lt;div&gt;Not enough results found.&lt;/div&gt;&quot;</span>)<span class="op">;</span>
+  <span class="op">}</span> <span class="co">// end else</span>
+<span class="op">}</span></code></pre>
+
+</section>
+</section>
+<nav class="mainnav">
+  <a class="left" href="random.html">Prev</a>
+  <a class="centre" href="contents.html">Contents</a>
+  <a class="right" href="wordnet.html">Next</a>
+</nav>
+</body>
+
+<script>
+(function() {
+    var pre = document.getElementsByTagName('pre'),
+        pl = pre.length;
+    for (var i = 0; i < pl; i++) {
+        pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+        var num = pre[i].innerHTML.split(/\n/).length;
+        for (var j = 0; j < num; j++) {
+            var line_num = pre[i].getElementsByTagName('span')[0];
+            line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+        }
+    }
+})();
+</script>
+
+</html>
