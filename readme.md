@@ -23,9 +23,20 @@
 </div>
 
 <pre class="text"><code>
-  
 </code></pre>
 
+<figure id="tab:12.1">
+<div class="scrollbar">
+<table>
+</table>
+</div>
+<figcaption>Table 12.1 - Comparison of patalgorithms showing a selection of results for each</figcaption>
+</figure>
+
+<figure id="eq:10.1" class="equation scrollbar">
+<span class="math display">
+<figcaption>(10.1)</figcaption>
+</figure>
 
 <figure id="fig:3.2">
 <img src="../images/tmpr.png" alt="Edmonds and Candy's trajectory model (TMPR)">

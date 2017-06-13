@@ -169,7 +169,7 @@
 
 <figure id="fig:6.3">
 <img src="../images/exampletdmshort.png" alt="Example TDM for 9 words and 3 documents (short)">
-<figcaption>Figure 6.3 Example TDM for 9 words and 3 documents (short)</figcaption>
+<figcaption>Figure 6.3 - Example TDM for 9 words and 3 documents (short)</figcaption>
 </figure>
 
 <p>So, we have a vocabulary $V$ of {Faustroll, time, doctor and God} and three documents $d_0=$ Faustroll, $d_1=$ Gospel and $d_2=$ Voyage. The conjunctive component for $d_0$ is $(1, 1, 1, 1)$. This is because each term in $V$ occurs at least once. $c(d_1)$ and $c(d_2)$ are both $(0, 1, 0, 1)$ since the terms ‘Faustroll’ and ‘doctor’ do not occur in either of them.</p>
@@ -230,6 +230,7 @@
 </table>
 
 <figure id="tab:6.1">
+<div class="scrollbar">
 <table>
   <tr>
     <th class="trans"></th>
@@ -369,6 +370,7 @@
     <td>0</td>
   </tr>
 </table>
+</div>
 <figcaption>Table 6.1 TF-IDF weights</figcaption>
 </figure>
 
@@ -655,10 +657,10 @@ $$\begin{split}
 <dd><p>converting everything to lower case</p>
 </dd>
 <dt>Stemming</dt>
-<dd><p>removing word endings, e.g. connection, connecting, connected $→</span> connect</p>
+<dd><p>removing word endings, e.g. connection, connecting, connected →</span> connect</p>
 </dd>
 <dt>Lemmatisation</dt>
-<dd><p>returning dictionary form of a word, e.g. went $→</span> go</p>
+<dd><p>returning dictionary form of a word, e.g. went →</span> go</p>
 </dd>
 </dl>
 
@@ -692,7 +694,7 @@ $$\begin{split}
 </dd>
 </dl>
 <p>Other relations not used by WordNet are homonymy (same spelling but different sound and meaning) and heteronymy (same sound but different spelling), homography (same sound and spelling) and heterography (different sound and spelling).</p>
-<p>Appendix [app:wordnet] shows an example result produced by WordNet rendered for a web browser.</p>
+<p>Appendix <a href="wordnet.html">C</a> shows an example result produced by WordNet rendered for a web browser.</p>
 </section>
 
 <section id="s:regex" class="level4">
@@ -705,6 +707,7 @@ $$\begin{split}
 <p>Most modern text editors support a form of search using regex and it is often used in NLP.</p>
 
 <figure id="tab:6.2">
+<div class="scrollbar">
 <table>
   <tr>
     <th>Command</th>
@@ -751,7 +754,8 @@ $$\begin{split}
     <td>match ab or cd</td>
   </tr>
 </table>
-<figcaption>Table 6.2 Regular expression syntax</figcaption>
+</div>
+<figcaption>Table 6.2 - Regular expression syntax</figcaption>
 </figure>
 
 </section>
@@ -854,9 +858,7 @@ $$P(w_1^n) = \prod_{k=1}^{n}P(w_k \mid w_{k-1})
 </dl>
 <p>More specialised sets of tags exist such as the Penn Treebank tagset <span class="citation" data-cites="Marcus1993">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-Marcus1993">1993</a>)</span> consisting of 48 different tags, including $CC$ for coordinating conjunction, $CD$ for cardinal number, $NN$ for noun singular, $NNS$ for noun plural, $NNP$ for proper noun singular, $VB$ for verb base form, $VBG$ for verb gerund, $DT$ for determiner, $JJ$ for adjectives, etc. A full table of these 48 tags can be found in appendix [s:penntreebank].</p>
 <p>The process of adding tags to the words of a text is called ‘POS tagging’ or just ‘tagging’. Below, you can see an example tagged sentence<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.</p>
-<blockquote>
-<p>In/IN this/DT year/NN Eighteen/CD Hundred/CD and/CC Ninety-eight/CD,/, the/DT Eighth/CD day/NN of/IN February/NNP,/, Pursuant/JJ to/IN article/NN 819/CD of/IN the/DT Code/NN of/IN Civil/NNP Procedure/NNP and/CC at/IN the/DT request/NN of/IN M./NN and/CC Mme./NN Bonhomme/NNP (/(Jacques/NNP)/),/, proprietors/NNS of/IN a/DT house/NN situate/JJ at/IN Paris/NNP,/, 100/CD bis/NN,/, rue/NN Richer/NNP,/, the/DT aforementioned/JJ having/VBG address/NN for/IN service/NN at/IN my/PRP residence/NN and/CC further/JJ at/IN the/DT Town/NNP Hall/NNP of/IN Q/NNP borough/NN ./.</p>
-</blockquote>
+<pre class="text"><code>In/IN this/DT year/NN Eighteen/CD Hundred/CD and/CC Ninety-eight/CD,/, the/DT Eighth/CD day/NN of/IN February/NNP,/, Pursuant/JJ to/IN article/NN 819/CD of/IN the/DT Code/NN of/IN Civil/NNP Procedure/NNP and/CC at/IN the/DT request/NN of/IN M./NN and/CC Mme./NN Bonhomme/NNP (/(Jacques/NNP)/),/, proprietors/NNS of/IN a/DT house/NN situate/JJ at/IN Paris/NNP,/, 100/CD bis/NN,/, rue/NN Richer/NNP,/, the/DT aforementioned/JJ having/VBG address/NN for/IN service/NN at/IN my/PRP residence/NN and/CC further/JJ at/IN the/DT Town/NNP Hall/NNP of/IN Q/NNP borough/NN ./.</code></pre>
 </section>
 
 <section id="s:maxent" class="level4">
@@ -973,14 +975,14 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <h4>Named Entity Recognition</h4>
 <p>A named entity can be anything that can be referred to by a proper name, such as person, place or organisation names and times and amounts and these entities can be appropriately tagged.</p>
 <p>Example (first sentence in Faustroll):</p>
-<blockquote>
-<p>In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]<sup>TIME</sup>, Pursuant to article [819]<sup>NUMBER</sup> of the [Code of Civil Procedure]<sup>DOCUMENT</sup> and at the request of [M. and Mme. Bonhomme (Jacques)]<sup>PERSON</sup>, proprietors of a house situate at [Paris, 100 bis, rue Richer]<sup>LOCATION</sup>, the aforementioned having address for service at my residence and further at the [Town Hall]<sup>FACILITY</sup> of [Q borough]<sup>LOCATION</sup>.</p>
-</blockquote>
+<pre class="text"><code>In this [year Eighteen Hundred and Ninety-eight, the Eighth day of February]<sup>TIME</sup>, Pursuant to article [819]<sup>NUMBER</sup> of the [Code of Civil Procedure]<sup>DOCUMENT</sup> and at the request of [M. and Mme. Bonhomme (Jacques)]<sup>PERSON</sup>, proprietors of a house situate at [Paris, 100 bis, rue Richer]<sup>LOCATION</sup>, the aforementioned having address for service at my residence and further at the [Town Hall]<sup>FACILITY</sup> of [Q borough]<sup>LOCATION</sup>.</code></pre>
+
 <p>So-called ‘gazetteers’ (lists of place or person names for example) can help with the detection of these named entities.</p>
 </section>
 </section>
 </section>
 </section>
+
 <section id="bibliography" class="level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
@@ -988,7 +990,7 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Agichtein, Eugene, Eric Brill, and Susan Dumais. 2006. “Improving web search ranking by incorporating user behavior information.” In Proceedings of the 29th Annual International Acm Sigir Conference on Research an Development in Information Retrieval, 19–26. Seattle, Washington, USA.</p>
 </div>
 <div id="ref-Baeza-Yates2011">
-<p>Baeza-Yates, Ricardo, and Berthier Ribeiro-Neto. 2011. Modern Information Retrieval: The Concepts and Technology Behind Search. Harlow, UK: Pearson Education Limited. <a href="http://www.mir2ed.org/" class="uri">http://www.mir2ed.org/</a>.</p>
+<p>Baeza-Yates, Ricardo, and Berthier Ribeiro-Neto. 2011. Modern Information Retrieval: The Concepts and Technology Behind Search. Harlow, UK: Pearson Education Limited. <a href="http://www.mir2ed.org/" class="uri">link</a>.</p>
 </div>
 <div id="ref-Bao2007">
 <p>Bao, Shenghua, Xiaoyuan Wu, Ben Fei, Guirong Xue, Zhong Su, and Yong Yu. 2007. “Optimizing Web Search Using Social Annotations.” In Proceedings of the International World Wide Web Conference, 501–10.</p>
@@ -997,10 +999,10 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Bastos Filho, Carmelo, Fernando de Lima Neto, Anthony Lins, Antonio Nascimento, and Marilia Lima. 2008. “A novel search algorithm based on fish school behavior.” In Proceedings of the Ieee International Conference on Systems, Man and Cybernetics, 2646–51.</p>
 </div>
 <div id="ref-Bharat2000">
-<p>Bharat, Krishna, and George Mihaila. 2000. “Hilltop: A Search Engine based on Expert Documents.” <a href="ftp://ftp.cs.toronto.edu/csrg-technical-reports/405/hilltop.html" class="uri">ftp://ftp.cs.toronto.edu/csrg-technical-reports/405/hilltop.html</a>.</p>
+<p>Bharat, Krishna, and George Mihaila. 2000. “Hilltop: A Search Engine based on Expert Documents.” <a href="ftp://ftp.cs.toronto.edu/csrg-technical-reports/405/hilltop.html" class="uri">link</a>.</p>
 </div>
 <div id="ref-Microsoft2012a">
-<p>“Bing Fact Sheet.” 2012. Microsoft. <a href="http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx" class="uri">http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx</a>.</p>
+<p>“Bing Fact Sheet.” 2012. Microsoft. <a href="http://www.microsoft.com/en-us/news/download/presskits/bing/docs/MSBingAll-UpFS.docx" class="uri">link</a>.</p>
 </div>
 <div id="ref-Bird2009">
 <p>Bird, Steven, Ewan Klein, and Edward Loper. 2009. Natural Language Processing with Python. Sebasopol, CA: O’Reilly Media.</p>
@@ -1012,13 +1014,13 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Brin, Sergey, and Larry Page. 1998. “The Anatomy of a Large-Scale Hypertextual Web Search Engine.” Computer Networks and ISDN Systems 30 (1-7): 107–17.</p>
 </div>
 <div id="ref-Baidu2012">
-<p>“Company Overview. About Baidu.” n.d. Baidu. <a href="http://ir.baidu.com/phoenix.zhtml?c=188488\&amp;p=irol-homeprofile" class="uri">http://ir.baidu.com/phoenix.zhtml?c=188488\&amp;p=irol-homeprofile</a>.</p>
+<p>“Company Overview. About Baidu.” n.d. Baidu. <a href="http://ir.baidu.com/phoenix.zhtml?c=188488\&amp;p=irol-homeprofile" class="uri">link</a>.</p>
 </div>
 <div id="ref-Damerau1964">
 <p>Damerau, Fred. 1964. “A Technique for Computer Detection and Correction of Spelling Errors.” Communications of the ACM 7 (3): 171–76.</p>
 </div>
 <div id="ref-WikipediaA">
-<p>“Damerau-Levenshtein Distance.” n.d. Wikipedia. <a href="https://en.wikipedia.org/wiki/Damerau-Levenshtein\_distance" class="uri">https://en.wikipedia.org/wiki/Damerau-Levenshtein\_distance</a>.</p>
+<p>“Damerau-Levenshtein Distance.” n.d. Wikipedia. <a href="https://en.wikipedia.org/wiki/Damerau-Levenshtein\_distance" class="uri">link</a>.</p>
 </div>
 <div id="ref-DeBra1994">
 <p>De Bra, Paul, and Reinier Post. 1994a. “Information retrieval in the World-Wide Web: Making client-based searching feasible.” Computer Networks and ISDN Systems 27 (2): 183–92.</p>
@@ -1045,13 +1047,13 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Glover, E.J., G.W. Flake, Steve Lawrence, W.P. Birmingham, A. Kruger, C.L. Giles, and D.M. Pennock. 2001. “Improving category specific Web search by learning query modifications.” Proceedings 2001 Symposium on Applications and the Internet. IEEE Computer Soc., 23–32.</p>
 </div>
 <div id="ref-Google2012">
-<p>“Google Ranking.” 2012. Google. <a href="https://www.google.com/intl/en/about/company/philosophy/" class="uri">https://www.google.com/intl/en/about/company/philosophy/</a>.</p>
+<p>“Google Ranking.” 2012. Google. <a href="https://www.google.com/intl/en/about/company/philosophy/" class="uri">link</a>.</p>
 </div>
 <div id="ref-Google2016">
-<p>“Googlebot. Search Console Help.” n.d. Google. <a href="https://support.google.com/webmasters/answer/182072" class="uri">https://support.google.com/webmasters/answer/182072</a>.</p>
+<p>“Googlebot. Search Console Help.” n.d. Google. <a href="https://support.google.com/webmasters/answer/182072" class="uri">link</a>.</p>
 </div>
 <div id="ref-Garcia-Molina2004">
-<p>Gyongyi, Zoltan, Hector Garcia-Molina, and Jan Pedersen. 2004. “Combating Web Spam with Trustrank.” Technical Report. Stanford InfoLab; Stanford. <a href="http://ilpubs.stanford.edu:8090/638/" class="uri">http://ilpubs.stanford.edu:8090/638/</a>.</p>
+<p>Gyongyi, Zoltan, Hector Garcia-Molina, and Jan Pedersen. 2004. “Combating Web Spam with Trustrank.” Technical Report. Stanford InfoLab; Stanford. <a href="http://ilpubs.stanford.edu:8090/638/" class="uri">link</a>.</p>
 </div>
 <div id="ref-Haveliwala2003">
 <p>Haveliwala, Taher H. 2003. “Topic-Sensitive PageRank: A Context Sensitive Ranking Algorithm for Web Search.” IEEE Transactions on Knowledge and Data Engineering 15 (4): 784–96.</p>
@@ -1090,7 +1092,7 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Macdonald, Craig. 2009. “The Voting Model for People Search.” ACM SIGIR Forum 43 (1).</p>
 </div>
 <div id="ref-Manning2009">
-<p>Manning, Christopher, Prabhakar Raghavan, and Hinrich Schuetze. 2009. Introduction to Information Retrieval. Cambridge University Press. <a href="http://informationretrieval.org" class="uri">http://informationretrieval.org</a>.</p>
+<p>Manning, Christopher, Prabhakar Raghavan, and Hinrich Schuetze. 2009. Introduction to Information Retrieval. Cambridge University Press. <a href="http://informationretrieval.org" class="uri">link</a>.</p>
 </div>
 <div id="ref-Marchionini2006">
 <p>Marchionini, Gary. 2006. “From finding to understanding.” Communications of the ACM 49 (4): 41–46.</p>
@@ -1102,16 +1104,16 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Marcus, Mitchell P, Beatrice Santorini, and Mary Ann Marcinkiewicz. 1993. “Building a Large Annotated Corpus of English: The Penn Treebank.” Computational Linguistics 19 (2).</p>
 </div>
 <div id="ref-Wikimedia2012">
-<p>Mayhaymate. 2012. “File:PageRank-Hi-Res.png.” Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:PageRank-hi-res.png" class="uri">https://commons.wikimedia.org/wiki/File:PageRank-hi-res.png</a>.</p>
+<p>Mayhaymate. 2012. “File:PageRank-Hi-Res.png.” Wikimedia Commons. <a href="https://commons.wikimedia.org/wiki/File:PageRank-hi-res.png" class="uri">link</a>.</p>
 </div>
 <div id="ref-Bing2016">
-<p>“Meet Our Crawlers. Webmaster Help and How-to.” n.d. Microsoft. <a href="https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0" class="uri">https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0</a>.</p>
+<p>“Meet Our Crawlers. Webmaster Help and How-to.” n.d. Microsoft. <a href="https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0" class="uri">link</a>.</p>
 </div>
 <div id="ref-Michelsen2016">
-<p>Michelsen, Maria Hagsten, and Ole Bjorn Michelsen. 2016. “Regex Crossword.” RegexCrossword.com. <a href="http://regexcrossword.com/" class="uri">http://regexcrossword.com/</a>.</p>
+<p>Michelsen, Maria Hagsten, and Ole Bjorn Michelsen. 2016. “Regex Crossword.” RegexCrossword.com. <a href="http://regexcrossword.com/" class="uri">link</a>.</p>
 </div>
 <div id="ref-Miller1995">
-<p>Miller, George A. 1995. “WordNet: a lexical database for English.” Communications of the ACM 38 (11): 39–41. <a href="http://portal.acm.org/citation.cfm?doid=219717.219748" class="uri">http://portal.acm.org/citation.cfm?doid=219717.219748</a>.</p>
+<p>Miller, George A. 1995. “WordNet: a lexical database for English.” Communications of the ACM 38 (11): 39–41. <a href="http://portal.acm.org/citation.cfm?doid=219717.219748" class="uri">link</a>.</p>
 </div>
 <div id="ref-Miyamoto2010">
 <p>Miyamoto, Sadaaki. 1990a. Fuzzy Sets in Information Retrieval and Cluster Analysis. Theory and Decision Library. Springer.</p>
@@ -1123,22 +1125,22 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Miyamoto, Sadaaki, and K. Nakayama. 1986. “Fuzzy Information Retrieval Based on a Fuzzy Pseudothesaurus.” IEEE Transactions on Systems, Man and Cybernetics 16 (2): 278–82.</p>
 </div>
 <div id="ref-NLTK2016">
-<p>“Natural Language Toolkit. NLTK 3.0 Documentation.” n.d. NLTK Project. <a href="http://www.nltk.org/" class="uri">http://www.nltk.org/</a>.</p>
+<p>“Natural Language Toolkit. NLTK 3.0 Documentation.” n.d. NLTK Project. <a href="http://www.nltk.org/" class="uri">link</a>.</p>
 </div>
 <div id="ref-Nick2001">
 <p>Nick, Z.Z., and P. Themis. 2001. “Web Search Using a Genetic Algorithm.” IEEE Internet Computing 5 (2): 18–26.</p>
 </div>
 <div id="ref-Nicole2010">
-<p>Nicole. 2010. “The 10 Most Incredible Google Bombs.” searchenginepeople.com. <a href="http://www.searchenginepeople.com/blog/incredible-google-bombs.html" class="uri">http://www.searchenginepeople.com/blog/incredible-google-bombs.html</a>.</p>
+<p>Nicole. 2010. “The 10 Most Incredible Google Bombs.” searchenginepeople.com. <a href="http://www.searchenginepeople.com/blog/incredible-google-bombs.html" class="uri">link</a>.</p>
 </div>
 <div id="ref-Brin1998">
-<p>Page, Larry, Sergey Brin, Rajeev Motwani, and Terry Winograd. 1999. “The Pagerank Citation Ranking: Bringing Order to the Web.” Technical Report. Stanford InfoLab; Stanford InfoLab. <a href="http://ilpubs.stanford.edu:8090/422/" class="uri">http://ilpubs.stanford.edu:8090/422/</a>.</p>
+<p>Page, Larry, Sergey Brin, Rajeev Motwani, and Terry Winograd. 1999. “The Pagerank Citation Ranking: Bringing Order to the Web.” Technical Report. Stanford InfoLab; Stanford InfoLab. <a href="http://ilpubs.stanford.edu:8090/422/" class="uri">link</a>.</p>
 </div>
 <div id="ref-Polya1957">
 <p>Pólya, George. 1957. How to Solve It. Princeton, New Jersey: Princeton University Press.</p>
 </div>
 <div id="ref-Luke2005">
-<p>Saint Luke. 2005. “The Gospel According to St. Luke.” Ebible.org. <a href="http://ebible.org/asv/Luke.htm" class="uri">http://ebible.org/asv/Luke.htm</a>.</p>
+<p>Saint Luke. 2005. “The Gospel According to St. Luke.” Ebible.org. <a href="http://ebible.org/asv/Luke.htm" class="uri">link</a>.</p>
 </div>
 <div id="ref-Schuetze1998">
 <p>Schütze, Hinrich. 1998. “Automatic Word Sense Discrimination.” Computational Linguistics 24 (1).</p>
@@ -1159,16 +1161,16 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <p>Taye, Mohammad Mustafa. 2009. “Ontology Alignment Mechanisms for Improving Web-based Searching.” PhD thesis, De Montort University.</p>
 </div>
 <div id="ref-Stanford2016">
-<p>“The Stanford Parser: A Statistical Parser. the Stanford Natural Language Processing Group.” 2016. Standford University. <a href="http://nlp.stanford.edu:8080/parser/index.jsp" class="uri">http://nlp.stanford.edu:8080/parser/index.jsp</a>.</p>
+<p>“The Stanford Parser: A Statistical Parser. the Stanford Natural Language Processing Group.” 2016. Standford University. <a href="http://nlp.stanford.edu:8080/parser/index.jsp" class="uri">link</a>.</p>
 </div>
 <div id="ref-Verne2010">
-<p>Verne, Jules. 2010. “A Journey to the Interior of the Earth.” Project Gutenberg. <a href="http://www.gutenberg.org/cache/epub/3748/pg3748-images.html" class="uri">http://www.gutenberg.org/cache/epub/3748/pg3748-images.html</a>.</p>
+<p>Verne, Jules. 2010. “A Journey to the Interior of the Earth.” Project Gutenberg. <a href="http://www.gutenberg.org/cache/epub/3748/pg3748-images.html" class="uri">link</a>.</p>
 </div>
 <div id="ref-DeVries1993">
 <p>Vries, Erica de. 1993. “Stretching the initial problem space for design problem solving: Browsing versus searching in network and hierarchy structures. OCTO Report 93/02.” Eindhoven University of Technology.</p>
 </div>
 <div id="ref-Princeton2010">
-<p>“What Is Wordnet? WordNet: A Lexical Database for English.” n.d. Princeton University. <a href="http://wordnet.princeton.edu" class="uri">http://wordnet.princeton.edu</a>.</p>
+<p>“What Is Wordnet? WordNet: A Lexical Database for English.” n.d. Princeton University. <a href="http://wordnet.princeton.edu" class="uri">link</a>.</p>
 </div>
 <div id="ref-Widyantoro2001">
 <p>Widyantoro, D.H., and J. Yen. 2001. “A fuzzy ontology-based abstract search engine and its user studies.” In Proceedings of the 10th Ieee International Conference on Fuzzy Systems, 1291–4.</p>
@@ -1178,8 +1180,8 @@ $$p(c|x) = \frac{\exp(\sum_{i=0}^{N}w_{ci}f_i(c,x))}{\sum_{c'\in C}\exp(\sum_{i=
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>These texts are part of one of the two corpora used for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>. More information about this can be found in chapters [s:faustlib] and  [s:corpora].<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>A full list of stopwords in English, French and German can be found in appendix [s:stopwords].<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>These texts are part of one of the two corpora used for <a href="http://pata.physics.wtf" class="uri">pata.physics.wtf</a>. More information about this can be found in chapters <a href="inspirations.html#s:faustlib">2.2</a> and <a href="implementation.html#s:corpora">10.1.1</a>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>A full list of stopwords in English, French and German can be found in appendix <a href="code.html#s:stopwords">B.6</a>.<a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>There is also a Regex Crossword puzzle <span class="citation" data-cites="Michelsen2016">(Michelsen and Michelsen <a href="#ref-Michelsen2016">2016</a>)</span>.<a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p>This is actually the very first sentence in Jarry’s Faustroll book <span class="citation" data-cites="Jarry1996">(<a href="#ref-Jarry1996">1996</a>)</span>.<a href="#fnref4">↩</a></p></li>
 </ol>
