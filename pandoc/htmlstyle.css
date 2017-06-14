@@ -58,6 +58,15 @@ body {
   max-height: 900px;
 }
 
+.backtotop a {
+  color: #314956;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2em;
+  text-decoration: none;
+}
+
 blockquote {
   font-family: 'Roboto', sans-serif;
   background-color: #ABB4BE;
@@ -512,6 +521,10 @@ table.where {
   body {
     width: 80%;
     margin: auto;
+  }
+  .backtotop a {
+    bottom: 20px;
+    right: 7.5%;
   }
   ol, ul, dl {
     margin: 2em 2em;
