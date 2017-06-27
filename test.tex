@@ -5,10 +5,31 @@
 \author{Fania Raczinski}
 \date{March 2015}
 
+% Test
+
 \begin{document}
 
+% \pagestyle{empty}
+% \todototoc
+% \setcounter{tocdepth}{1}  % needed to display the todos
+% \listoftodos[List of Todos]
+% \clearpage
+\pagestyle{empty}
+
 \include{front/title}
-\include{front/art}
+
+\pagestyle{fania}
+
+% FRONT
+\frontmatter
+\pagestyle{fania}
+
+\phantomsection
+\addcontentsline{toc}{part}{\texorpdfstring{PREFACE}{Preface}}
+\partimage[width=\textwidth]{spiral_pre.pdf}
+\part{\texorpdfstring{PRE\scalebox{2.5}{\smiley{}}}{Preface}}
+\include{front/abstract}
 \include{front/dedication}
+\include{front/publications}
 
 \end{document}

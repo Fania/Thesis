@@ -29,7 +29,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {10.2}{\ignorespaces `setupcorpus' function---Python}}{150}{listing.caption.109}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.3}{\ignorespaces `clinamen' function---Python}}{151}{listing.caption.110}
+\contentsline {listing}{\numberline {10.3}{\ignorespaces `clinamen' function---Python}}{152}{listing.caption.110}
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {10.4}{\ignorespaces `dameraulevenshtein' function---Python}}{152}{listing.caption.111}
 \defcounter {refsection}{0}\relax 
@@ -53,23 +53,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {10.14}{\ignorespaces `getvideos' function---Python}}{163}{listing.caption.123}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.15}{\ignorespaces HTML for Queneau style poems}}{165}{listing.caption.125}
+\contentsline {listing}{\numberline {10.15}{\ignorespaces HTML for Queneau style poems}}{165}{listing.caption.126}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {10.16}{\ignorespaces HTML for results by source}}{167}{listing.caption.127}
+\contentsline {listing}{\numberline {10.16}{\ignorespaces HTML for results by source}}{167}{listing.caption.128}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.1}{\ignorespaces Dennis' synonym generation}}{175}{listing.caption.134}
+\contentsline {listing}{\numberline {11.1}{\ignorespaces Dennis' synonym generation}}{175}{listing.caption.135}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.2}{\ignorespaces Dennis' antonym generation}}{176}{listing.caption.135}
+\contentsline {listing}{\numberline {11.2}{\ignorespaces Dennis' antonym generation}}{176}{listing.caption.136}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.3}{\ignorespaces Dennis' anomaly generation}}{176}{listing.caption.136}
+\contentsline {listing}{\numberline {11.3}{\ignorespaces Dennis' anomaly generation}}{176}{listing.caption.137}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.4}{\ignorespaces Dennis' syzygy generation}}{176}{listing.caption.137}
+\contentsline {listing}{\numberline {11.4}{\ignorespaces Dennis' syzygy generation}}{176}{listing.caption.138}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.5}{\ignorespaces Dennis' clinamen generation}}{177}{listing.caption.138}
+\contentsline {listing}{\numberline {11.5}{\ignorespaces Dennis' clinamen generation}}{177}{listing.caption.139}
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {11.6}{\ignorespaces Dennis' patadata ontology example}}{178}{listing.caption.140}
+\contentsline {listing}{\numberline {11.6}{\ignorespaces Dennis' patadata ontology example}}{178}{listing.caption.141}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

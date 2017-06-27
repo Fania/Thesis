@@ -99,7 +99,7 @@ The website \url{http://pata.physics.wtf} (see image~\ref{img:fullscreenshot}\ma
 
 A high level view of the site would be that it is a pataphysical search engine that subverts conventional expectations by recombining literary texts into emergent user directed and ephemeral poetical structures or unpredictable spirals of pataphysicalised visual media. 
 
-It is written in 5 different programming languages\footnote{Python, \ac{HTML}, \ac{CSS}, Jinja, JavaScript}, making calls to 6 external web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over 30 key files. 
+It is written in 5 different programming languages\footnote{Python, \acs{HTML}, \acs{CSS}, Jinja, JavaScript}, making calls to 6 external web services\footnote{Microsoft Translate, WordNet, Bing, Getty, Flickr and YouTube}, in a total of over \num{3000} lines of code\footnote{\num{2864} lines of code, \num{489} lines of comments - as of 08 Dec 2015} spread over 30 key files. 
 
 Typically, software development is divided into so-called front- and back-ends. The front-end includes web design and web development and is meant to provide an interface for the end-user to communicate with the back-end which involves a server, an application and a database (although this is not fully the case in this project).
 
@@ -640,7 +640,7 @@ The \py{setupcorpus} function (see source~\ref{code:setupcorpus}\marginpar{\faic
 dict = dictionary { dictionary { list [ ] } }
 \end{minted}
 
-A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \emph{key: value} pairs. The \py{dict} used here is a dictionary where each key has another dictionary as it's value. Each nested dictionary has a list as the value for each key.
+A dictionary in Python is what is known as an `associative array' in other languages. Essentially they are unordered sets of \emph{key: value} pairs. The \py{dict} used here is a dictionary where each key has another dictionary as its value. Each nested dictionary has a list as the value for each key.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -708,7 +708,7 @@ In simple terms, the clinamen algorithm works in two steps:
   \item get sentences from corpus that match clinamen words.
 \end{enumerate}
 
-It uses the \textit{Faustroll} \autocite{Jarry1996} as a base document and the Damerau-Leven\-shtein\marginpar{\faicon{code}~\ref{code:dl}} algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with 0 indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling errors in them.
+It uses the \textit{Faustroll} \autocite{Jarry1996} as a base document and the Damerau-Leven\-shtein\marginpar{\faicon{code}~\ref{code:dl}} algorithm \autocite{Damerau1964, Levenshtein1966} (which measures the distance between two strings (with 0 indicating equality) to find words that are similar but not quite the same. The distance is calculated using insertion, deletion, substitution of a single character, or transposition of two adjacent characters. This means that we are basically forcing the program to return matches that are of distance two or one, meaning they have two or one spelling `errors'\footnote{It is perhaps misleading to call them errors as they are grammatically correct terms of course, so I am using the word alterations instead.} or alterations in them.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -842,7 +842,7 @@ The concept of the syzygy was introduced in chapter~\ref{s:syzygy}\marginpar{§~
   \item get sentences from corpus that match syzygy words.
 \end{enumerate}
 
-The syzygy function makes heavy use of WordNet \autocite{Miller1995} through the \ac{NLTK} Python library \autocite{NLTK2016} to find suitable results (importing it using the following command \py{from nltk.corpus import wordnet as wn}). Specifically, as shown in source~\ref{code:syzygy}\marginpar{\faicon{code}~\ref{code:syzygy}}, the algorithm fetches the set of synonyms (synsets) on line 5. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 7--20. It finds any hyponyms, hypernyms,holonyms, and meronyms for \py{ws} (each of which denotes some sort of relationship\marginpar{\faicon{object-group}~\ref{fig:wordnet}} or membership with its parent synonym---see figure~\ref{fig:wordnet}) using the \py{get_nym}\marginpar{\faicon{code}~\ref{code:getnym}} function (see lines 8, 11, 14, and 17). Line 21 makes use of the \py{get_results} function (see source~\ref{code:getresults}\marginpar{\faicon{code}~\ref{code:getresults}}) in the same was as the clinamen function does.
+The syzygy function makes heavy use of WordNet \autocite{Miller1995} through the \ac{NLTK} Python library \autocite{NLTK2016} to find suitable results (importing it using the following command \py{from nltk.corpus import wordnet as wn}). Specifically, as shown in source~\ref{code:syzygy}\marginpar{\faicon{code}~\ref{code:syzygy}}, the algorithm fetches the set of synonyms (synsets) on line 5. It then loops through all individual items \py{ws} in the list of synonyms \py{wordsets} in line 7--20. It finds any hyponyms, hypernyms, holonyms, and meronyms for \py{ws} (each of which denotes some sort of relationship\marginpar{\faicon{object-group}~\ref{fig:wordnet}} or membership with its parent synonym---see figure~\ref{fig:wordnet}) using the \py{get_nym}\marginpar{\faicon{code}~\ref{code:getnym}} function (see lines 8, 11, 14, and 17). Line 21 makes use of the \py{get_results} function (see source~\ref{code:getresults}\marginpar{\faicon{code}~\ref{code:getresults}}) in the same way as the clinamen function does.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -873,7 +873,7 @@ def syzygy(w, c):
 \label{code:syzygy}
 \end{listing}
 
-The \py{get_nym} function in source~\ref{code:getnym}\marginpar{\faicon{code}~\ref{code:getnym}} shows how the relevant `nyms' are retrieved for a given synset. Line 5 initialises the variable \py{hhh} which gets overwritten later on. Several \py{if} statements separate out the code run for the different `nyms'. Lines 6--7 retrieves any hyponyms using \ac{NLTK}'s \py{hyponyms()} function . Similarly lines 8--9 retrieve hypernyms, lines 10--14 retrieve holonyms, and lines 15--19 retrieve meronyms. Finally, line 20--23 adds the contents of \py{hhh} to the output of the function.
+The \py{get_nym} function in source~\ref{code:getnym}\marginpar{\faicon{code}~\ref{code:getnym}} shows how the relevant `nyms' are retrieved for a given synset. Line 5 initialises the variable \py{hhh} which gets overwritten later on. Several \py{if} statements separate out the code run for the different `nyms'. Lines 6--7 retrieves any hyponyms using \ac{NLTK}'s \py{hyponyms()} function. Similarly lines 8--9 retrieve hypernyms, lines 10--14 retrieve holonyms, and lines 15--19 retrieve meronyms. Finally, line 20--23 adds the contents of \py{hhh} to the output of the function.
 
 \begin{listing}[!htbp] % (here, top, bottom, page)
   \begin{minted}{python}
@@ -912,7 +912,7 @@ The syzygy algorithm mimics an alignment of three words in a line (query $\to$ s
 \subsection{Antinomy}
 \label{s:antinomyalgo}
 
-The antimony, in a pataphysical sense, is the mutually incompatible. It was previously introduced in chapter~\ref{s:antinomy}\marginpar{§~\ref{s:antinomy}}. In simple terms, the antinomy algorithm works in two steps:
+The antinomy, in a pataphysical sense, is the mutually incompatible. It was previously introduced in chapter~\ref{s:antinomy}\marginpar{§~\ref{s:antinomy}}. In simple terms, the antinomy algorithm works in two steps:
 
 \begin{enumerate}
   \item get antinomy words based on synsets and antonyms from WordNet,
@@ -1146,7 +1146,7 @@ function imgList(img){
 \label{code:imglist}
 \end{listing}
 
-The Bing and Getty searches work in a similar way with one exception. Getty does not populate the output list by doing 10 individual \ac{API} calls but rather by adding 10 results from 1 call. This is due to a time restriction in the Getty \ac{API}; it doesn not allow 10 calls in a second.
+The Bing and Getty searches work in a similar way with one exception. Getty does not populate the output list by doing 10 individual \ac{API} calls but rather by adding 10 results from 1 call. This is due to a time restriction in the Getty \ac{API}; it does not allow 10 calls in a second.
 
 \spirals
 
@@ -1176,7 +1176,7 @@ Once the \py{imglist} contains 10 items it is passed to the \py{createSpiral} fu
 
 The video search also uses an \ac{API} to retrieve results. This function is written in Python and uses the \textit{Requests} library \autocite{Reitznd} to make the \ac{API} calls to YouTube \autocite{YouTubeAPI} as shown in source~\ref{code:videosearch}\marginpar{\faicon{code}~\ref{code:videosearch}}.
 
-First, the query is translated using the \py{transent} function\marginpar{\faicon{code}~\ref{code:transent}} on line 3. Line 4 seperates the English translation into its own list \py{transplit} which is then pataphysicalised on line 5 using the algorithm described in source~\ref{code:pataph}\marginpar{\faicon{code}~\ref{code:pataph}}.
+First, the query is translated using the \py{transent} function\marginpar{\faicon{code}~\ref{code:transent}} on line 3. Line 4 separates the English translation into its own list \py{transplit} which is then pataphysicalised on line 5 using the algorithm described in source~\ref{code:pataph}\marginpar{\faicon{code}~\ref{code:pataph}}.
 
 Lines 6--9 construct the first part of the \ac{URL} to use for the \ac{REST} request. Lines 10--23 then loop through each of the patadata terms generated by the \py{pataphysicalise} function on line 5 to make a call and retrieve some video details (title, thumbnail and ID) as seen on lines 17--19. On line 20 these details are added to the output list. 
 
@@ -1340,7 +1340,7 @@ Image~\ref{img:listsourcetree}\marginpar{\faicon{picture-o}~\ref{img:listsourcet
 \label{img:listsourcetree}
 \end{figure}
 
-Image~\ref{img:listalgotree}\marginpar{\faicon{picture-o}~\ref{img:listalgotree}} shows a shortened example set of results for query `tree' ordered by patalgorithm, that is, ordered by the algorithm which produced the patadata.
+Figure~\ref{img:listalgotree}\marginpar{\faicon{picture-o}~\ref{img:listalgotree}} shows a shortened example set of results for query `tree' ordered by patalgorithm, that is, ordered by the algorithm which produced the patadata.
 
 \begin{figure}[!htbp] % (here, top, bottom, page)
   \centering
@@ -1353,7 +1353,7 @@ Image~\ref{img:listalgotree}\marginpar{\faicon{picture-o}~\ref{img:listalgotree}
 \subsection{Spiral}
 \label{s:spiral}
 
-The image and video spirals are constructed in complicated nested \ac{HTML} components. The code for generating an image spiral is shown in appendix~\ref{s:imgspiral}\marginpar{§~\ref{s:imgspiral}}. The video spiral is constructed in a similar way but directly in the \ac{HTML} file as opposed to in the JavaScript file. The video spiral is almost identical, the only difference is the biggest 5 videos are atually embedded as videos. The smaller 5 videos are shown as still images which link to the relevant YouTube page.
+The image and video spirals are constructed in complicated nested \ac{HTML} components. The code for generating an image spiral is shown in appendix~\ref{s:imgspiral}\marginpar{§~\ref{s:imgspiral}}. The video spiral is constructed in a similar way but directly in the \ac{HTML} file as opposed to in the JavaScript file. The video spiral is almost identical, the only difference is the biggest 5 videos are actually embedded as videos. The smaller 5 videos are shown as still images which link to the relevant YouTube page.
 
 Generally, the idea was taken from the pataphysical \emph{grand gidouille} (see chap\-ter~\ref{ch:pataphysics}\marginpar{§~\ref{ch:pataphysics}}) and represented as a Fibonacci spiral. Figure~\ref{img:fibspiral}\marginpar{\faicon{object-group}~\ref{img:fibspiral}} shows a spiral created using the Flickr image search for query `blue mountains' overlaid with a white Fibonacci spiral to highlight the structure.
 
@@ -1409,15 +1409,15 @@ The final website \url{pata.physics.wtf} went through several iterations of deve
   \label{tab:versions}
   \begin{tabu}{X[l]X[l]X[l,1.2]X[l,1.5]X[l,2]}
   \toprule
-  & \textbf{Version 1} & \textbf{Version 2} & \textbf{Version 3} & \textbf{Version 4} \\ 
+  & \textbf{Version 1} & \textbf{Version 2} & \textbf{Version 3} & \textbf{Version 4} \\
   \midrule
   \textbf{Language(s)} & Python, Django & Python, Flask & Python, Flask & Python, Flask, JavaScript \\
   \textbf{Server} & Django, Heroku & Flask, Mnemosyne & Flask, Gunicorn, Mnemosyne & Flask, Gunicorn, OVH \\
   \textbf{Features} & Text & Text, Image, Video & Text, Image, Video & Text, Image, Video \\
   \textbf{Corpus} & Faustroll text & Faustroll text & Faustroll's library & Faustroll's library and Shakespeare \\
-  \textbf{API's} & WordNet & WordNet, Flickr, Bing, YouTube, Microsoft Translator & WordNet, Bing, YouTube, Microsoft Translator & WordNet, Flickr, Getty, Bing, YouTube, Microsoft Translator \\
-  \textbf{Design} & Algorithms & Algorithms, Spiral & Algorithms, Source, Poetry, Spiral, List & Algorithms, Source, Poetry, Spiral, List \\ 
-  \textbf{Responsive} & No & Yes & Yes & Yes \\ 
+  \textbf{APIs} & WordNet & WordNet, Flickr, Bing, YouTube, Microsoft Translator & WordNet, Bing, YouTube, Microsoft Translator & WordNet, Flickr, Getty, Bing, YouTube, Microsoft Translator \\
+  \textbf{Design} & Algorithms & Algorithms, Spiral & Algorithms, Source, Poetry, Spiral, List & Algorithms, Source, Poetry, Spiral, List \\
+  \textbf{Responsive} & No & Yes & Yes & Yes \\
   \bottomrule
   \end{tabu}
 \end{table}

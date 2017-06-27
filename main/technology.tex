@@ -66,7 +66,7 @@ Any \ac{IR} process is constrained by factors like subject, context, time, cost,
 
 The crawler, sometimes called spider, indexer or bot, is a program that processes and archives information about every available webpage it can find. It does this by looking at given `seed' pages and searching them for hyperlinks. It then follows all of these links and repeats the process over and over. The Googlebot \autocite*{Google2016} and the Bingbot \autocite*{Bing2016} are well-known examples.
 
-An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occurs. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginpar{$\bm{\Sigma}$~\ref{eq:tdm}}.
+An index is a list of keywords (called the dictionary or vocabulary) together with a list called `postings list' that indicates the documents in which the terms occur. One way to practically implement this is to create a \ac{TDM} as shown in equation~\ref{eq:tdm}\marginpar{$\bm{\Sigma}$~\ref{eq:tdm}}.
 
 \begin{equation}
   \bbordermatrix{~ & d_1 & d_2 \cr
@@ -123,7 +123,7 @@ Relevance feedback is an idea of improving the search results by explicit or imp
 
 There are different models for different needs, for example a multimedia system is going to be different than a text based \ac{IR} system, and a web based system is going to be different than an offline database system. Even within one such category there could more than one model. Take text based search systems for example. Text can be unstructured or semi-structured. Web pages are typically semi-structured. They contain a title, different sections and paragraphs and so on. An unstructured page would have no such differentiations but only contain simple text.  Classic example models are set-theoretic, algebraic and probabilistic. The PageRank algorithm by Google is a link-based retrieval model \autocite{Brin1998}.
 
-The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[adapted from]{Baeza-Yates2011} where,
+The notation for \ac{IR} models is a quadruple $[D,Q,F,R(q_i, d_j)]$ \autocite[adapted from][]{Baeza-Yates2011} where,
 
 \begin{conditions}
   D           & the set of documents \\
@@ -474,7 +474,7 @@ Other issues that arise when trying to search the \ac{WWW} were identified by Ba
   \item Data is not heterogeneous. Different data types (text, images, sound, video) and different languages exist.
 \end{itemize}
 
-Since a single query for a popular word can results in millions of retrieved documents from the index, search engine usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite{Baeza-Yates2011}. Google for example uses over \num{15000} commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
+Since a single query for a popular word can results in millions of retrieved documents from the index, search engines usually adopt a lazy strategy, meaning that they only actually retrieve the first few pages of results and only compute the rest when needed \autocite{Baeza-Yates2011}. To handle the vast amounts of space needed to store the index, big search engines use a massive parallel and cluster-based architecture \autocite{Baeza-Yates2011}. Google for example uses over \num{15000} commodity-class PCs that are distributed over several data centres around the world \autocite{Dean2003}.
 
 
 \section{Natural Language Processing}
@@ -489,7 +489,7 @@ Since a single query for a popular word can results in millions of retrieved doc
   \item Speech recognition and synthesis
 \end{itemize}
 
-Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing.Applications are for example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
+Goals of \ac{NLP} are to get computers to perform useful tasks involving human language such as enabling human-machine communication, improving human-human communication, and text and speech processing. Applications are for example machine translation, automatic speech recognition, natural language understanding, word sense disambiguation, spelling correction, and grammar checking.
 
 There are many tools and libraries available for \ac{NLP}, including the \ac{NLTK} Python library \autocite{Bird2009, NLTK2016} and WordNet \autocite{Princeton2010} (both of which were used for \url{pata.physics.wtf}).
 
@@ -569,7 +569,7 @@ ab|cd                      & match ab or cd               \\
 \end{table}
 
 
-\subsubsection{Damerau-Levensthein}
+\subsubsection{Damerau-Levenshtein}
 
 The Damerau–Levenshtein distance\marginpar{$\bm{\Sigma}$~\ref{eq:DL}} between two strings $a$ and $b$ is given by $d_{a,b}(|a|,|b|)$ (see equation~\ref{eq:DL}) \autocite{WikipediaA, Damerau1964, Levenshtein1966}. The distance indicates the number of operations (insertion, deletion, substitution or transposition) it takes to change one string to the other. For example, the words `clear' and `clean' would have a distance of 1, as it takes on substitution of the letter `r' to `n' to change the word. A typical application would be spelling correction. 
 
