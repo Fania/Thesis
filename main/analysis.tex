@@ -499,7 +499,7 @@ The decision to use the Faustroll text as a base text was made due to the centra
 \subsubsection{Changing number of errors}
 \label{s:clinerrors}
 
-Another key factor in how the Clinamen function works is the Damerau-Leven\-shtein algorithm (see source~\ref{code:dl})\marginpar{§~\ref{code:dl}} integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions. 
+Another key factor in how the Clinamen function works is the Damerau-Leven\-shtein algorithm (see source~\ref{code:dl})\marginpar{\faicon{code}~\ref{code:dl}} integration. The algorithm works by comparing two words and calculating the difference between them. A difference is counted the sum of (1) deletions, (2) insertions, (3) substitutions and (4) transpositions. 
 
 If we decrease or increase the number of errors allowed we get drastically different results. The Clinamen algorithm of \url{pata.physics.wtf} uses up to 2 errors, as this was considered a reasonable amount of results (trading variety for speed). Table~\ref{tab:errors})\marginpar{\faicon{table}~\ref{tab:errors}} shows three example queries and the number of results produced by the algorithm with either up to 1 error, up to 2 errors or up to 3 errors. The full list of patadata terms for column 4 (up to 3 errors) is shown in appendix~\ref{app:clin3errors}.
 
