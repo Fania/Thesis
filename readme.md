@@ -1,6 +1,16 @@
 # Readme
 
 
+## Corrections TODO
+
+- [ ] Audio Stuff in aspirations
+- [ ] individual chapter maps
+- [ ] add stops to map
+- [ ] readme file in appendix
+- [ ] ask GSO about CD?
+
+
+
 ## Pre-requistites
 
 - (Mac) MacTex

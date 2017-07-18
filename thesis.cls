@@ -560,6 +560,29 @@ breaklines=true
 \definecolor{gray}{rgb}{0.5, 0.5, 0.5}
 
 
+\definecolor{intro}{rgb}{0.33,0.78,0.91}
+\definecolor{inspi}{rgb}{0.67,0.53,0.87}
+\definecolor{metho}{rgb}{0,0.34,0.83}
+\definecolor{pata}{rgb}{1,0.5,0.90}
+\definecolor{creat}{rgb}{1,0.8,0}
+\definecolor{tech}{rgb}{1,0.4,0}
+\definecolor{eval}{rgb}{0.13,0.4,0.47}
+\definecolor{found}{rgb}{0.67,0,0.53}
+\definecolor{inter}{rgb}{0.4,0,1}
+\definecolor{imple}{rgb}{0,0.5,0.4}
+\definecolor{appli}{rgb}{0.16,0.16,0.47}
+\definecolor{anal}{rgb}{1,0,0.33}
+\definecolor{aspi}{rgb}{0.53,0.67,0}
+\definecolor{outro}{rgb}{0,0.5,0.7}
+\definecolor{appA}{rgb}{0.67,0.67,1}
+\definecolor{appB}{rgb}{0.53,0.8,0.87}
+\definecolor{appC}{rgb}{0.5,0.7,1}
+\definecolor{appD}{rgb}{0.69,0.78,0.91}
+\definecolor{appE}{rgb}{0.53,0.87,0.8}
+\definecolor{water}{rgb}{0.74,0.83,0.9}
+\definecolor{topic}{rgb}{0.93,0.93,0.93}
+
+
 % CODE
 
 \usepackage[chapter,newfloat]{minted}
@@ -984,7 +1007,7 @@ breaklines=true
   {caption} % for subtables, minipages etc
 \usepackage{subcaption} % for subtables, subfigures
 \usepackage{changepage} % for indenting paragraphs or whatever
-
+\DeclareCaptionLabelFormat{blank}{}
 
 % memoir style for captions
 \captionnamefont{\sffamily\footnotesize}
