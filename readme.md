@@ -8,7 +8,7 @@
 - [ ] add stops to map
 - [ ] readme file in appendix
 - [ ] ask GSO about CD?
-
+- [ ] include reference to Pip Greasley 4K Opera
 
 
 ## Pre-requistites
