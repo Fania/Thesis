@@ -583,6 +583,105 @@ breaklines=true
 \definecolor{topic}{rgb}{0.93,0.93,0.93}
 
 
+% LEGEND FOR MAPS
+
+\newcommand{\intro}{%
+  \begin{tikzpicture}[]
+  \fill[intro] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\inspi}{%
+  \begin{tikzpicture}[]
+  \fill[inspi] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\metho}{%
+  \begin{tikzpicture}[]
+  \fill[metho] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\pata}{%
+  \begin{tikzpicture}[]
+  \fill[pata] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\creat}{%
+  \begin{tikzpicture}[]
+  \fill[creat] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\tech}{%
+  \begin{tikzpicture}[]
+  \fill[tech] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\eval}{%
+  \begin{tikzpicture}[]
+  \fill[eval] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\found}{%
+  \begin{tikzpicture}[]
+  \fill[found] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\inter}{%
+  \begin{tikzpicture}[]
+  \fill[inter] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\imple}{%
+  \begin{tikzpicture}[]
+  \fill[imple] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\appli}{%
+  \begin{tikzpicture}[]
+  \fill[appli] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\anal}{%
+  \begin{tikzpicture}[]
+  \fill[anal] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\aspi}{%
+  \begin{tikzpicture}[]
+  \fill[aspi] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\outro}{%
+  \begin{tikzpicture}[]
+  \fill[outro] (0,0) circle (5pt);
+  \end{tikzpicture}%
+}
+\newcommand{\appa}{%
+  \begin{tikzpicture}[scale=0.3]
+  \fill[appA] (0,0) rectangle (1,1);
+  \end{tikzpicture}%
+}
+\newcommand{\appb}{%
+  \begin{tikzpicture}[scale=0.3]
+  \fill[appB] (0,0) rectangle (1,1);
+  \end{tikzpicture}%
+}
+\newcommand{\appc}{%
+  \begin{tikzpicture}[scale=0.3]
+  \fill[appC] (0,0) rectangle (1,1);
+  \end{tikzpicture}%
+}
+\newcommand{\appd}{%
+  \begin{tikzpicture}[scale=0.3]
+  \fill[appD] (0,0) rectangle (1,1);
+  \end{tikzpicture}%
+}
+\newcommand{\appe}{%
+  \begin{tikzpicture}[scale=0.3]
+  \fill[appE] (0,0) rectangle (1,1);
+  \end{tikzpicture}%
+}
+
+
 % CODE
 
 \usepackage[chapter,newfloat]{minted}
