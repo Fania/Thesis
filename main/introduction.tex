@@ -28,26 +28,6 @@ as any person at all conversant with authorship may satisfy himself at.
 \end{alltt}
 
 \newpage
-\begin{figure}[!htbp]
-\centering
-  \includegraphics{intro.pdf}
-\end{figure}
-
-\vfill
-
-{\sffamily 
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-}
-
-\begin{figure}[!htbp]
-\centering
-  \includegraphics[width=\textwidth]{legend.pdf}
-\end{figure}
-
-
-\newpage
 % {\Large\sffamily\scshape\textbf{1.0 \quad Introduction Contents}}
 % \vspace{0.5cm}
 \minicontents
@@ -235,7 +215,7 @@ This thesis was written in \LaTeX. It was first drafted in March 2015 and comple
 
 The following page (figure~\ref{map} on page~\pageref{map}) shows a map for this thesis, with one coloured line for each chapter and a river or lake for each appendix. This is directly modeled on the Metro map for Paris; in fact, the condensed Paris metro \autocite{ParisMetro} has 14 numbered lines (1--14) and 5 additional alphabetical lines (A--E) which correspond perfectly to the structure of my thesis.
 
-\begin{figure}
+\begin{figure}[!htbp]
   \centering
   \begin{tikzpicture}
   \fill[intro] (0,9.75) rectangle (1.5,10.25);
@@ -330,16 +310,33 @@ Rivers and lakes represent the appendices.
 
 \spirals
 
-In addition to the map shown on page~\pageref{map} there are individual line maps at the beginning of each chapter. These show the interchanges to other lines, giving a rough overview of which other chapters relate to the content of the current chapter in one way or other. Again, this is not in order of chapter sections and subsections.
+In addition to the map shown on page~\pageref{map} there are individual line maps at the end of each chapter. These can be found in sections called by names inspired by a chapter within Jarry's Faustroll novel: \textit{From Paris to Paris by Sea} \autocite*{Jarry1996}. The line maps show the interchanges to other lines, giving a rough overview of which other chapters relate to the content of the current chapter in one way or other. Again, this is not in order of chapter sections and subsections.
 
-\clearpage
-\begin{figure}[!htbp]
+
+\section{From the Introduction to Paris by Sea}
+
+\vspace{1cm}
+\begin{figure}[!htb]
+\centering
+  \includegraphics{intro.pdf}
+\end{figure}
+
+{\sffamily 
+
+The first chapter serves as an introduction to the thesis and as such leads into the most important topics (\nameref{ch:pataphysics} \pata, \nameref{ch:creativity} \creat, \nameref{ch:technology} \tech, \nameref{ch:evaluation} \eval) and their interplay (see \nameref{ch:foundations} \found, \nameref{ch:interpretation} \inter). More on the pataphysical algorithms (`Contributions I') can be found in chapter~\ref{ch:pataphysics} \pata~ (for literary context), \ref{ch:technology} \tech~ (for technical background information) and~\ref{ch:implementation} \imple~ (for detailed technical descriptions of the algorithms and how they were incorporated into \url{pata.physics.wtf}). More details about the evaluation/interpretation framework (`Contributions II'---including the subjective criteria and objective constraints) can be found in chapter~\ref{ch:interpretation} \inter. The transdisciplinary methodology employed in this project is described in chapter~\ref{ch:methodology} \metho, and the key inspirations (Jarry, Borges, Queneau) and others are elaborated in chapter~\ref{ch:inspirations} \inspi. The \nameref{ch:analysis} chapter \anal~ goes into an analysis of the various theoretical and practical aspects of this thesis. Appendix~\ref{app:pub} \appe~ shows copies of all published papers in full. These are also summarised in the \nameref{ch:applications} chapter--section~\ref{s:public} \appli. Potential future work is discussed in chapter~\ref{ch:future} \aspi~ and the conclusion chapter (§~\ref{ch:observations}) \outro~ provides answers to the research questions posed here.
+}
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[width=\textwidth]{legend.pdf}
+\end{figure}
+
+\begin{figure}[!p]
 \centering
   \includegraphics[width=\linewidth]{map}
 \captionsetup{textformat=empty,labelformat=blank}
 \caption[Thesis Map]{Thesis Map}
 \label{map}
 \end{figure}
-
 
 \stopcontents[chapters]

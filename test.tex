@@ -48,25 +48,19 @@ as any person at all conversant with authorship may satisfy himself at.
 \end{alltt}
 
 \newpage
+\section{From the Introduction to Paris by Sea}
 
-% \begin{figure}[!htbp]
-% \vspace{3cm}
-% \centering
-%   \def\svgwidth{\textwidth}
-%   \input{images/pata.pdf_tex}
-% \vspace{2cm}
-% \end{figure}
+\vspace{1cm}
 \begin{figure}[!htbp]
 \centering
-  \includegraphics[width=\textwidth]{imple.pdf}
+  \includegraphics{intro.pdf}
 \end{figure}
 
 \vfill
 
 {\sffamily 
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
+
+The first chapter serves as an introduction to the thesis and as such leads into the most important topics (pataphysics \pata, creativity \creat, technology \tech, evaluation \eval) and their interplay (see foundations \found, interpretation \inter) which resulted in the artefact \url{pata.physics.wtf} \imple. The concept of \acf{AMC} is explained and the main original contributions to knowledge are highlighted. More on the pataphysical algorithms (`Contributions I') can be found in chapter~\ref{ch:pataphysics} \pata~ (for literary context of the concepts which inspired the algorithms), \ref{ch:technology} \tech~ (for technical background information) and~\ref{ch:implementation} \imple~ (for detailed technical descriptions of the algorithms and how they were incorporated into the creative search tool \url{pata.physics.wtf}). More details about the evaluation/interpretation framework (`Contributions II'---including the subjective criteria and objective constraints) can be found in chapter~\ref{ch:interpretation} \inter. The transdisciplinary methodology employed in this project is described in chapter~\ref{ch:methodology} \metho, and the key inspirations (Jarry, Borges, Queneau) and others are elaborated in chapter~\ref{ch:insporations} \inspi. The \nameref{ch:analysis} chapter \anal~ goes into an analysis of the various theoretical and practical aspects of this thesis. Appendix~\ref{app:pub} \appe~ shows copies of all published papers in full. These are also summarised in the \nameref{ch:applications} chapter--section~\ref{s:public} \appli. Any future work is discussed in chapter~\ref{ch:future} \aspi~ and the conclusion chapter (§~\ref{ch:outroduction}) \outro~ provides answers to the research questions introduced here.
 }
 
 \begin{figure}[!htbp]
@@ -76,123 +70,44 @@ Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hel
 
 
 
+\newpage
+\section{From the Inspirations to Paris by Sea}
 
+\vspace{1cm}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics{inspi.pdf}
+\end{figure}
+
+\vfill
+
+{\sffamily 
+
+The inspirations referenced in this chapter have influenced many aspects of this project. The Syzygy Surfer by Hendler and Hugill \autocite*{Hendler2011, Hendler2013} for instance forms the basis for all of the research covered in this thesis and is also mentioned in chapter~\ref{ch:creativity} \creat, \ref{ch:pataphysics} \pata, and \ref{ch:implementation} \imple. The \ac{oulipo} is also covered in these chapters. These influences in general have already been introduced in the \nameref{ch:introduction} \intro. Faustroll's `library of equivalent books' in Jarry's novel ``The Exploits and Opinions of Dr. Faustroll, Pataphysician'' \autocite*{Jarry1996} forms a key element in two main features of \url{pata.physics.wtf}, namely one of the two corpora (the other one being the Shakespeare corpus) introduced in section~\ref{s:corpora} \imple~ and the base text used in the clinamen algorithm (see section~\ref{s:clinamenalgo}) \imple. The literary context for the novel, the character and library are discussed in chapter~\ref{ch:pataphysics} \pata. The two corpora mentioned above are also further covered in the \nameref{ch:analysis} chapter \anal, for example: comparing the search results produced by the two different corpora (see tables~\ref{tab:faustshake} and \ref{tab:algonums} and also section~\ref{s:analindex}), and changing the base text in the clinamen algorithm (section~\ref{s:basetext}).
+}
+
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[width=\textwidth]{legend.pdf}
+\end{figure}
 
 
 \newpage
-% {\Large\sffamily\scshape\textbf{1.0 \quad Introduction Contents}}
-% \vspace{0.5cm}
-\minicontents
-\spirals
 
-\section{Thesis Map}
+\section{From Pataphysics to Paris by Sea}
 
-The following page (figure~\ref{map} on page~\pageref{map}) shows a map for this thesis, with one coloured line for each chapter and a river or lake for each appendix. This is directly modeled on the Metro map for Paris; in fact, the condensed Paris metro \autocite{ParisMetro} has 14 numbered lines (1--14) and 5 additional alphabetical lines (A--E) which correspond perfectly to the structure of my thesis.
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-  \fill[intro] (0,9.75) rectangle (1.5,10.25);
-  \draw (2,10) node[anchor=west] {1. Introduction};
-
-  \fill[inspi] (0,9) rectangle (1.5,9.5);
-  \draw (2,9.25) node[anchor=west] {2. Inspirations};
-
-  \fill[metho] (0,8.25) rectangle (1.5,8.75);
-  \draw (2,8.5) node[anchor=west] {3. Methodology};
-
-  \fill[pata] (0,7.5) rectangle (1.5,8);
-  \draw (2,7.75) node[anchor=west] {4. Pataphysics};
-
-  \fill[creat] (0,6.75) rectangle (1.5,7.25);
-  \draw (2,7) node[anchor=west] {5. Creativity};
-
-  \fill[tech] (0,6) rectangle (1.5,6.5);
-  \draw (2,6.25) node[anchor=west] {6. Technology};
-
-  \fill[eval] (0,5.25) rectangle (1.5,5.75);
-  \draw (2,5.5) node[anchor=west] {7. Evaluation};
-
-  \fill[found] (0,4.5) rectangle (1.5,5);
-  \draw (2,4.75) node[anchor=west] {8. Foundations};
-
-  \fill[inter] (0,3.75) rectangle (1.5,4.25);
-  \draw (2,4) node[anchor=west] {9. Interpretation};
-
-  \fill[imple] (0,3) rectangle (1.5,3.5);
-  \draw (2,3.25) node[anchor=west] {10. Implementation};
-
-  \fill[appli] (0,2.25) rectangle (1.5,2.75);
-  \draw (2,2.5) node[anchor=west] {11. Applications};
-
-  \fill[anal] (0,1.5) rectangle (1.5,2);
-  \draw (2,1.75) node[anchor=west] {12. Patanalysis};
-
-  \fill[aspi] (0,0.75) rectangle (1.5,1.25);
-  \draw (2,1) node[anchor=west] {13. Aspirations};
-
-  \fill[outro] (0,0) rectangle (1.5,0.5);
-  \draw (2,0.25) node[anchor=west] {14. Outroduction};
-  
-  
-  \fill[appA,opacity=0.25] (7,9.75) rectangle (8.5,10.25);
-  \draw (9,10) node[anchor=west] {A. Random};
-  
-  \fill[appB,opacity=0.3] (7,9) rectangle (8.5,9.5);
-  \draw (9,9.25) node[anchor=west] {B. Code};
-
-  \fill[appC,opacity=0.4] (7,8.25) rectangle (8.5,8.75);
-  \draw (9,8.5) node[anchor=west] {C. WordNet};
-
-  \fill[appD,opacity=0.25] (7,7.5) rectangle (8.5,8);
-  \draw (9,7.75) node[anchor=west] {D. Git History};
-
-  \fill[appE,opacity=0.4] (7,6.75) rectangle (8.5,7.25);
-  \draw (9,7) node[anchor=west] {E. Publications};
-  
-  
-  \draw[line width=2.5pt] (7.75,5.5) circle (8.5pt);
-  \draw (9,5.5) node[anchor=west] {Interchange};
-  
-  \filldraw[line width=2.5pt, fill=water, rotate around={45:(7.75,4.75)}] (7.5,4.5) rectangle (8,5);
-  \draw (9,4.75) node[anchor=west] {Harbour};
-  
-  \fill[metho] (7.6,4) rectangle (8,4.2);
-  \draw (9,4) node[anchor=west] {Station};
-
-
-  \fill[topic] (7,2.5) rectangle (8.5,3);
-  \draw (9,2.75) node[anchor=west] {Topic Cluster};
-  \end{tikzpicture}
+\begin{figure}[!htb]
+\centering
+  \includegraphics{pata.pdf}
 \end{figure}
 
-There is no particular order to stations of a line, i.e. they do not correspond to the order of sections within chapters. Rather, they are more losely based on the content discussed in each chapter. Interchanges indicate where one line overlaps with another line, meaning the content discussed in the relevant chapter is related. Not all interchanges have labels --- in this case they just highlight a more general relationship. Practically, most of the stations and intersections directly represent the margin notes presented in the thesis document.
+{\sffamily 
+A lot of what is covered in this chapter is used in the \nameref{ch:implementation} \imple~ and \nameref{ch:inspirations} \inspi~ chapters. Some of it also relates to chapter~\ref{ch:creativity} \creat, such as the \ac{OULIPO}. This chapter contains descriptions for each of the pataphysical concepts used to inspire the algorithms for \url{pata.physics.wtf} (clinamen §~\ref{s:clinamen}, syzygy §~\ref{s:syzygy} and antinomy §~\ref{s:antinomy}). This is part of the pataphysicalisation process described in section~\ref{s:algorithms} \imple. Possible adaptations to this process are described in chapter~\ref{ch:future} \aspi, a thorough analysis of the algorithms is conducted in chapter~\ref{ch:analysis} anal (specifically section~\ref{s:pataphyanalysis}), and details on how they have been used by others (Dennis \autocite*{Dennis2016} and Hugill et al. \autocite*{Hugill2014a}) are given in chapter~\ref{ch:applications} \appli. Appendix~\ref{app:random} \appa~ includes a list of Jarry's written work. 
+}
 
-Large clusters of interchanges have been highlighted by topic clusters in light grey with appropriate labels. These clearly show the core themes covered in this thesis.
-
-\begin{description}
-  \item [Patalgorithms] This cluster contains stations related to the artefact pata.physics.wtf and the pataphysicalisation process (including the pataphysical algorithms).
-  \item [Evaluation Framework] This cluster is related to the evaluation/interpretation framework developed in chapter~\ref{ch:interpretation}.
-  \item [Creativity \& Computers] Here, we find stations for disciplines such as creative computing and computational creativity, but also creative search evaluation, browsing, ranking and transdisciplinarity. 
-  \item [Creativity \& Pataphysics] This group contains interchanges on topics such as speculative computing and comparisons between pataphysics and creativity.
-  \item [Creativity \& Intelligence] Here, we have stations on the relationship between \acs{AI}, computer ethics, and artificial creativity. Turing features heavily in this group, with his famous Turing test, and Searle with his Chinese Room.
-  \item [Inspirations] This cluster mainly features the various key inspirations for this project, such as the Syzygy Surfer, Jarry's Faustroll, Borge's Chinese Encyclopaedia, and Raymond Queneau's `Cent Mille Milliards de Poèmes'.
-  \item [Boden] This cluster is a reference point to the strong influence by Margaret Boden's theory of creativity on this thesis, which is used prominently in research on creative computing and computational creativity.
-\end{description}
-
-Rivers and lakes represent the appendices. 
-
-\spirals
-
-In addition to the map shown on page~\pageref{map} there are individual line maps at the beginning of each chapter. These show the interchanges to other lines, giving a rough overview of which other chapters relate to the content of the current chapter in one way or other. Again, this is not in order of chapter sections and subsections.
-
-\clearpage
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
 \centering
-  \includegraphics[width=\linewidth]{map}
-\captionsetup{textformat=empty,labelformat=blank}
-\caption[Thesis Map]{Thesis Map}
-\label{map}
+  \includegraphics[width=\textwidth]{legend.pdf}
 \end{figure}
 
 \stopcontents[chapters]
