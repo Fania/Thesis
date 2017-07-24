@@ -439,6 +439,7 @@ There are other options of how to make this data structure. For example we could
 
 
 \subsection{Clinamen}
+\label{s:clinanal}
 
 The clinamen\marginpar{§~\ref{s:clinamenalgo}} function uses the Damerau-Levenshtein algorithm to create pata\-data\marginpar{\faicon{code}~\ref{code:dl}}. It also uses the Faustroll text. The way this works is as follows. If the query term is a spelling error of size 1 or 2 of a term in the vocabulary within the faustroll text then it is included in the list of resulting terms. The logic behind this is due to the Damerau-Levenshtein algorithm needing two words to compare with each other. It also ensures that we get real words as results and not some random gibberish.
 
