@@ -28,25 +28,6 @@ I will pull down my barns.
 \end{alltt}
 
 \newpage
-\begin{figure}[!htbp]
-\centering
-  \includegraphics{aspi.pdf}
-\end{figure}
-
-\vfill
-
-{\sffamily 
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-Hello World \intro, test vlah blah dhfsdhf sdifh sohdsld hf sdfh h ghdls hg. Hello World \intro, whats up \inspi~ and helllo to you too \appa~ test,. ksjdfkj sdkjgh  ksdhg sdjfh sdjfh ksdfjhsdkfhskh kgh kjhfdg kjhgfhjfh sjueyuh tyb jjhg.
-}
-
-\begin{figure}[!htbp]
-\centering
-  \includegraphics[width=\textwidth]{legend.pdf}
-\end{figure}
-
-\newpage
 \minicontents
 \spirals
 
@@ -59,6 +40,7 @@ Here, in this chapter I will lay out some of the potential further work for this
 
 
 \section{Performance}
+\label{s:performance}
 
 \paragraph{Startup} 
 The website can be slow to load. Currently speed performance was not a priority during development. In fact it is not built for speed from the ground up. Each time the server restarts, the indexing process takes place from scratch (see chapter~\ref{s:setup}\marginpar{§~\ref{s:setup}}). This takes time. Google and other big web search engines do this continuously in the background to keep data up to date. The index\marginpar{§~\ref{s:index}} is currently cached after startup but perhaps preprocessing it and storing it more permanently in a database would help speed up the start. However this may not be necessary, as it only affects the server startup.
@@ -74,6 +56,7 @@ At the moment images are retrieved at one specified size through the various \ac
 
 
 \section{Design}
+\label{s:designaspi}
 
 \paragraph{Responsive Spirals} 
 Currently the image and video spirals (see chapter~\ref{s:imgvid}\marginpar{§~\ref{s:imgvid}}) are fixed size. This means that when the webpage is resized the spiral stays the same size and is left-aligned on the page. Ideally it would be better to scale the spiral with the width of the browser page. This could be achieved using percentage widths, although it would require a lot of work to adapt the current code for the spirals (see chapter~\ref{s:imgspiral}\marginpar{§~\ref{s:imgspiral}}).
@@ -213,6 +196,7 @@ Syzygy 2 & $SYZ(X) = S'(X) \text{ where } S_{obj} \rightarrow S^{meta} \rightarr
 
 
 \section{Extensions}
+\label{s:extensions}
 
 \paragraph{Additional APIs} 
 Currently 5 \ac{API}s\footnote{Flickr, Getty, Bing, MicrosoftTranslator and YouTube} are used in \url{pata.physics.wtf}. This could be increased to include more varied sources of data. Sites like Flickr are heavily based on user tags (`folksonomies') which can be unreliable and a bit random at times. Possible additional \ac{API}s to consider would be Instagram, Imgur, Facebook, Google Image Search, DeviantArt, Pinterest, Vimeo, Twitter, SoundCloud, etc.
@@ -237,6 +221,7 @@ To study the effects of using different styles of presenting the same results, a
 
 
 \section{Audio}
+\label{s:audio}
 
 It would be nice to include audio search using an \ac{API} such as SoundCloud. Technically the pataphysicalisation could work similar to the image and video searches, meaning it would be based on user tags. One idea would be to work with audio waves directly although this needs to be explored further first.
 
@@ -252,5 +237,19 @@ john cage 4'33''
 
 andrew hugill
 
+
+\section{From the Aspirations to Paris by Sea}
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics{aspi.pdf}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[width=\textwidth]{legend.pdf}
+\end{figure}
 
 \stopcontents[chapters]
