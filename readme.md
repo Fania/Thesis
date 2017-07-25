@@ -9,7 +9,7 @@
 - [ ] readme file in appendix
 - [ ] ask GSO about CD?
 - [ ] include reference to Pip Greasley 4K Opera
-
+- [ ] change colours for lines (3-14-9, 10-7, 12-6-4)
 
 ## Pre-requistites
 
