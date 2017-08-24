@@ -4,10 +4,11 @@
 ## Corrections TODO
 
 - [ ] Audio Stuff in aspirations
-- [ ] individual chapter maps
+- [x] individual chapter maps
 - [ ] add stops to map
 - [ ] readme file in appendix
-- [ ] ask GSO about CD?
+- [x] ask GSO about CD?
+- [ ] make github repo public (redact readme)
 - [ ] include reference to Pip Greasley 4K Opera
 - [ ] change colours for lines (3-14-9, 10-7, 12-6-4)
 
