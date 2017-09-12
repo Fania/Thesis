@@ -852,7 +852,7 @@ breaklines=true
 \usepackage{qtree}
 \usepackage{mathtools}
 \usepackage{tikz-3dplot} 
-% \usepackage{pgfplots}
+\usepackage{pgfplots}
 
 % TIKZ SPIRAL
 % USAGE:
