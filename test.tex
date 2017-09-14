@@ -16,51 +16,34 @@ Within the manipluation category, (different representations of) sounds are pata
 \begin{figure}[!htbp]
 \centering
   \includegraphics[width=\linewidth]{simplewave.pdf}
-\caption[Sound wave of \textit{La Chanson Du D{\'e}cervelage}]{Sound wave of \textit{La Chanson Du D{\'e}cervelage} \autocite[][Track 1]{UbuWebPata}}
+\caption[Sound wave of \textit{La Chanson Du D{\'e}cervelage}]{Sound wave of \textit{La Chanson Du D{\'e}cervelage} \autocite[][Track 1]{UbuWebPata} (generated using \autocite{Heesakkersnd})}
 \end{figure}
 
-``Cymbalum Pataphysicum Classiques Pataphysics 01 La Chanson Du Decervelage''
-Tracks 1 and 5 were recorded on 6 January 1951 at the studio of Mr. Gruber, boulevard Pasteur in Reims.
-in \autocite[][Track 1]{UbuWebPata}
+Various tools might be useful for these sorts of manipulations, including the \textit{Web Audio API} by the \ac{W3C} \autocite{Adenot2017}. It includes ``capabilities found in modern game audio engines as well as some of the mixing, processing, and filtering tasks that are found in modern desktop audio production applications'' \autocite*{Adenot2017}. An example of using this API to synthesise sounds is described in \autocite{Misuary2016}. Other \ac{API}s such as SoundCloud \autocite{soundcloud} might be helpful as well. 
+
+Another approach altogether could be to play with \ac{MIDI} \autocite{midind} but this needs to be explored a lot further.
 
 
+\subsubsection{Search}
+
+Similar to the image and video search of \url{pata.physics.wtf}, audio search could be based on tags provided through an \ac{API} such as FreeSound \autocite{freesoundnd}. 
+
+\begin{quotation}
+  The query does a weighted search over some sound properties including sound tags, the sound name, its description, pack name and the sound id. Therefore, searching for query=123 will find you sounds with id 1234, sounds that have 1234 in the description, in the tags, etc. \sourceatright{\autocite{freesoundnd}}
+\end{quotation}
+
+The search would work in a similar way then. Section~\ref{s:imgvid}\marginpar{§~\ref{s:imgvid}} specifies that we (1) translate query, (2) pataphysicalise the translation, and (3) retrieve matching images/videos using \ac{API} calls.
+
+So, say the user query is `rumbling', that would be translated to `grondant' (French for `growling') and `\begin{CJK}{UTF8}{min}お叱り\end{CJK}' (Japanese for `scold') and finally the English `scolding'. From this we then produce a list of 10 patadata (`[berate, chide, call on the carpet, chiding, rag, lambast, bawl out, tongue-lashing, grouch, scold]') by pataphysicalising this translated term. This patadata is then used to actually retrieve sound files through an \ac{API}.
+
+Issues that can arise with the use of external \ac{API}s and folksonomy (user generated tags) have already been mentioned in section~\ref{s:apis} and~\ref{s:imgalgoimprovs}\marginpar{§~\ref{s:apis}}. With sound files specifically perhaps tags might be very subjective. This may or may not be useful in a pataphysical context of course.
 
 
-- change pitch, compressing?, change of wave form/type (from sine wave to square wave), MIDI,  
+\subsubsection{Composition}
+\label{s:composition}
+
+- pata constraints to composition
 
 
-
-
-The Web Audio API does ``include the capabilities found in modern game audio engines as well as some of the mixing, processing, and filtering tasks that are found in modern desktop audio production applications'' \autocite{Adenot2017}.
-
-an example of using this API to synthesise sounds is described by Misuary \autocite{Misuary2016}
-
-
-
-\autocite{soundcloud}
-
-\begin{tikzpicture}[samples=200, domain=0:5*360]
-  \begin{axis}[
-    width=10cm, height=4cm,
-    enlarge x limits=false,
-    xtick=\empty,
-    axis lines*=middle,
-    hide y axis
-  ]
-  \addplot [no markers, smooth] {sin(x)+rand*2};
-  \end{axis}
-\end{tikzpicture}
-
-\begin{tikzpicture}[samples=200, domain=0:5*360]
-  \begin{axis}[
-    width=10cm, height=4cm,
-    enlarge x limits=false,
-    xtick=\empty,
-    axis lines*=middle,
-    hide y axis
-  ]
-  \addplot [no markers, smooth] {sin(x)+rand*2};
-  \end{axis}
-\end{tikzpicture}
 
 \end{document}
