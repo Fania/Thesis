@@ -9,6 +9,39 @@
 \section{Website Repository}
 \label{s:gitweb}
 
+The sourcecode for \url{pata.physics.wtf} is avalibale on GitHub at \url{https://github.com/Fania/pata.physics.wtf}. It is highly recommended to view the project through a web browser at the address \url{http://pata.physics.wtf}. It is possible though of course to install from source, at your own risk. This will involve installing the necessary programming environment, tools and dependencies. Depending on your operating system the below instructions might vary. 
+
+The first step is to download the sourcecode from GitHub. At the above link, you should see a green button on the right hand side which says ``Clone or download'' --- click this and select ``Download ZIP''. Save this somewhere suitable and unzip the repository. Then open a terminal window in this directory.
+
+Virtualenv (a tool to create isolated Python environments) is recommended but not required. If you don't want to use it, skip steps 1, 2 and 3.
+
+\begin{enumerate}
+  \item install Python 2.7 from \url{https://www.python.org/downloads/}
+  \item install Virtualenv from \url{https://virtualenv.pypa.io/en/stable/}
+  \item create a virtual environment using \py{virtualenv venv}
+  \item activate virtual environment using \py{venv\scripts\activate}
+  \item install dependencies \py{pip install -r requirements.txt}
+\end{enumerate}
+
+To run and stop the software:
+
+\begin{enumerate}
+  \item activate virtual environment using \py{venv\scripts\activate}
+  \item start project server using \py{python live.py}
+  \item open browser on 127.0.0.1:5000
+  \item enjoy the site
+  \item stop project server by pressing \py{Ctrl + c}
+  \item deactivate virtual env using \py{deactivate}
+\end{enumerate}
+
+You can also start a Gunicorn production server with this command: \py{gunicorn -c guni.py wsgi:app}, which starts the site on 127.0.0.1:8000.
+
+\spirals
+
+For the purpose of publishing the sourcecode on GitHub, I have chosen the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-nc/4.0/} or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+\spirals
+
 \begin{minted}{haskell}
 * 0fbbfcd  |  Sat 15 Oct 2016  (HEAD -> master, origin/master, origin/HEAD) |  Deleted local log
 * 504bcfa  |  Sat 15 Oct 2016  |  Added meta description
