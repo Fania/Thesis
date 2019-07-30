@@ -1,0 +1,547 @@
+input {
+  margin-right: 1.5em;
+}
+
+#test-svg {
+  border: 1px solid black;
+}
+
+h1 {
+  font-variant: small-caps;
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  /* max-width: 100%; */
+  /* max-height: 85vh; */
+  /* border: 1px solid black; */
+}
+
+/*
+all lines (incl. labels): 
+#lines
+
+just the lines:
+[id$="line-group"]
+
+*/
+
+
+/* UTILITY */
+
+.hide {
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.hide p input {
+  margin: 0;
+}
+
+.centerorigin {
+  transform-origin: 50% 50%;
+}
+
+.dim {
+  opacity: 0.2;
+  transition: 3s;
+}
+
+.undimtext {
+  fill: #000000;
+}
+
+.dimtext {
+  fill: #eeeeee;
+  transition: 3s;
+}
+
+
+
+/* ends in */
+[class$='label'] {
+  /* visibility: hidden; */
+}
+
+/* shared stations? */
+
+/* #introduction-line-group, #introduction-1-labels, */
+/* #inspirations-line-group, #inspirations-2-labels, */
+/* #methodology-line-group, #methodology-3-labels, */
+/* #technology-line-group, #technology-6-labels, */
+/* #evaluation-line-group, #evaluation-7-labels, */
+/* #patanalysis-line-group, #patanalysis-12-labels, */
+/* [id$="line-group"], */
+/* #appendices, */
+/* #topic-clusters, */
+.old-line
+{
+  visibility: hidden;
+}
+
+
+
+/* TOPIC CLUSTERS */
+.cluster-rect {
+  fill: #ececec;
+}
+.cluster-text {
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-weight: bold;
+  fill: #ececec;
+}
+
+/* APPENDICES */
+.appendix-river {
+  fill: none;
+  stroke-width: 14.17322922;
+  stroke-linecap: square;
+}
+.appendix-lake {
+  stroke-width: 14.17322922;
+}
+.appendix-text {
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-weight: bold;
+  font-size: 12.50000095px;
+  fill: #ffffff;
+}
+.appendix-port {
+  fill: #b1d7ff;
+  stroke: #000007;
+  transform-origin: 50% 50%;
+}
+
+/* HOVER OVER EFFECTS */
+/* .highlight:hover, .highlight-group:hover path, .highlight-river:hover path {
+  stroke: #000000;
+}
+.highlight-group:hover text {
+  fill: #000000;
+}
+.highlight-river:hover text, .highlight-lake:hover text {
+  fill: #ffffff;
+}
+.highlight-lake:hover path {
+  stroke: #000000;
+  fill: #000000;
+} */
+
+/* CHAPTER LINES */
+.line {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.old-line {
+  fill: none;
+  stroke-width: 32.67607117;
+  stroke-linecap: round;
+}
+.line-name {
+  font-weight: bold;
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-size: 7.5px;
+  line-height: 1.25;
+}
+.station-label {
+  font-size: 7.5px;
+  line-height: 0.80000001;
+  font-family: 'Bookman Old Style', serif;
+  z-index: 1000;
+}
+/* .station-rect {
+  width: 1.3436904;
+  height: 2.2674296;
+} */
+
+/* EXCHANGES */
+/* starts in */
+[class^='exchange'] {
+  /* visibility: hidden; */
+}
+
+
+
+/* SHAPES */
+.shape-circle {
+  fill: #ffffff; 
+  stroke: #000000;
+}
+
+
+body#coverpage {
+  width: 100%;
+  /* margin: auto; */
+}
+
+
+
+
+
+header {
+  margin: .5em 0 0 0;
+  text-align: center;
+}
+header h1, header h2, header h3, header h3 a, header p a {
+  font-variant: small-caps;
+  margin: 0;
+  line-height: 1.2em;
+  height: inherit;
+  background: white;
+  color: black;
+  display: inline-block;
+}
+header h2, header h3, header p {
+  margin-bottom: .5em;
+  font-size: 1em;
+}
+a[href*="FR-thesis-small.pdf"] {
+  margin-right: 1em;
+}
+
+body {
+  position: relative;
+}
+
+details {
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#stacked_bar_chart {
+  margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+#map-svg {
+  margin: 1em auto;
+  width: 100%;
+  /* display: block; */
+  /* display: flex; */
+  /* min-width: 100%;
+  min-height: 100%; */
+}
+/* @media only screen and (max-width: 300px) {
+  #map-svg {
+    margin: 1em auto;
+    display: flex;
+    width: 100%;
+  }
+} */
+/* @media only screen and (min-width: 300px) {
+  #map-svg {
+    margin: 1em auto;
+    display: flex;
+    width: 200px;
+  }
+} */
+/* @media only screen and (min-width: 400px) {
+  #map-svg {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  #map-svg {
+    width: 400px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  #map-svg {
+    width: 500px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  #map-svg {
+    width: 600px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #map-svg {
+    width: 700px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #map-svg {
+    width: 800px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #map-svg {
+    width: 900px;
+  }
+} */
+@media only screen and (min-width: 900px) {
+  footer {
+    float: right;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  body#coverpage {
+    width: 80%;
+    margin: auto;
+  }
+  #map-svg {
+    margin: 1em auto;
+    display: flex;
+    width: 900px;
+  }
+}
+
+
+
+
+
+
+
+
+/* STACKED BAR CHART */
+
+
+a {
+  height: 50px;
+  display: block;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+.chart {
+  /* max-width: 90%; */
+  /* margin: 0 auto; */
+  transform: rotate(-90deg);
+  transform-origin: 10% 90%;
+}
+
+.bar {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+}
+.chunk {
+  height: 50px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.x-chunk {
+  height: 20px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  width: 0.970873786%;
+  background-color: black;
+}
+#preface {
+  width: 5.339805825%;
+  background-color: #956248;
+}
+#part1 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#introduction {
+  width: 2.912621359%;
+  background-color: #54c6e9;
+}
+#inspirations {
+  width: 2.912621359%;
+  background-color: #aa87de;
+}
+#methodology {
+  width: 3.398058252%;
+  background-color: #0055d4;
+}
+#part2 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#pataphysics {
+  width: 3.883495146%;
+  background-color: #ff80e5;
+}
+#creativity {
+  width: 5.339805825%;
+  background-color: #ffcc00;
+}
+#technology {
+  width: 5.825242718%;
+  background-color: #ff6600;
+}
+#evaluation {
+  width: 3.398058252%;
+  background-color: #216778;
+}
+#interlude1 {
+  width: 0.485436893%;
+  background-color: white;
+}
+#part3 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#foundations {
+  width: 3.398058252%;
+  background-color: #aa0088;
+}
+#interpretation {
+  width: 3.883495146%;
+  background-color: #6600ff;
+}
+#part4 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#implementation {
+  width: 7.766990291%;
+  background-color: #008066;
+}
+#application {
+  width: 2.912621359%;
+  background-color: #292a78;
+}
+#interlude2 {
+  width: 0.485436893%;
+  background-color: white;
+}
+#part5 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#patanalysis {
+  width: 9.223300971%;
+  background-color: #ff0053;
+}
+#aspirations {
+  width: 3.883495146%;
+  background-color: #88aa00;
+}
+#part6 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#outroduction {
+  width: 0.970873786%;
+  background-color: #0080b3;
+}
+#references {
+  width: 5.825242718%;
+  background-color: #956248;
+}
+#interlude3 {
+  width: 0.485436893%;
+  background-color: white;
+}
+#part7 {
+  width: 0.485436893%;
+  background-color: black;
+}
+#appendixA {
+  width: 2.912621359%;
+  background-color: #aaaaff;
+}
+#appendixB {
+  width: 3.883495146%;
+  background-color: #87cdde;
+}
+#appendixC {
+  width: 0.970873786%;
+  background-color: #80b3ff;
+}
+#appendixD {
+  width: 3.883495146%;
+  background-color: #afc6e9;
+}
+#appendixE {
+  width: 11.16504854%;
+  background-color: #87decd;
+}
+#kthxbye {
+  width: 0.485436893%;
+  background-color: black;
+}
+
+
+#x-title {
+  width: 0.970874%;
+  background-color: black;
+}
+#x-preface {
+  width: 5.339806%;
+  background-color: #956248;
+}
+#x-part1 {
+  width: 9.708737864%;
+  background-color: #558bde;
+}
+#x-part2 {
+  width: 18.93203883%;
+  background-color: #c88657;
+}
+#x-interlude1 {
+  width: 0.485436893%;
+  background-color: white;
+}
+#x-part3 {
+  width: 7.766990291%;
+  background-color: #8800c4;
+}
+#x-part4 {
+  width: 11.16504854%;
+  background-color: #15556f;
+}
+#x-interlude2 {
+  width: 0.485436893%;
+  background-color: white;
+}
+#x-part5 {
+  width: 13.59223301%;
+  background-color: #c4552a;
+}
+#x-part6 {
+  width: 1.45631068%;
+  background-color: #0080b3;
+}
+#x-references {
+  width: 5.825242718%;
+  background-color: #956248;
+}
+#x-interlude3 {
+  width: 0.485436893%;
+  background-color: white;
+}
+#x-part7 {
+  width: 23.30097087%;
+  background-color: #95c3ea;
+}
+#x-kthxbye {
+  width: 0.485437%;
+  background-color: black;
+}
