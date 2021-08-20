@@ -50,6 +50,7 @@
 
 % \overfullrule=2cm
 
+\usepackage{float}
 \usepackage[maxfloats=500]{morefloats}
 \usepackage{marginfix}
 \reversemarginpar
