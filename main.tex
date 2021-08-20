@@ -157,6 +157,11 @@
 \phantomsection
 % \addcontentsline{toc}{chapter}{References}
 % \bibliography{back/bib} % NATBIB
+% the following two lines are needed so that Bibliography 
+% is promoted to root level of pdf hierarchy
+% and not part of the previous part as a "chapter"
+\bookmarksetup{startatroot}
+\addtocontents{toc}{\bigskip}
 \printbibliography % BIBLATEX
 \clearpage
 

@@ -1,15 +1,67 @@
-[2] Config.pm:343> INFO - This is Biber 2.5
-[4] Config.pm:346> INFO - Logfile is 'main.blg'
-[274] biber-MSWIN32:290> INFO - === 
-[476] Biber.pm:351> INFO - Reading 'main.bcf'
-[1143] Biber.pm:776> INFO - Found 344 citekeys in bib section 0
-[1185] Biber.pm:3493> INFO - Processing section 0
-[1241] Biber.pm:3657> INFO - Looking for bibtex format file 'back/refs.bib' for section 0
-[1298] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[1354] bibtex.pm:1048> INFO - Found BibTeX data source 'back/refs.bib'
-[5672] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[5672] UCollate.pm:66> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[5672] Biber.pm:3306> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-UK'
-[5673] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-UK'
-[7831] bbl.pm:526> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[7974] bbl.pm:619> INFO - Output to main.bbl
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'main.blg'
+[119] biber-MSWIN32:340> INFO - === 
+[160] Biber.pm:415> INFO - Reading 'main.bcf'
+[643] Biber.pm:952> INFO - Found 344 citekeys in bib section 0
+[661] Biber.pm:4340> INFO - Processing section 0
+[673] Biber.pm:4531> INFO - Looking for bibtex format file 'back/refs.bib' for section 0
+[729] bibtex.pm:1689> INFO - LaTeX decoding ...
+[1090] bibtex.pm:1494> INFO - Found BibTeX data source 'back/refs.bib'
+[1200] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'StackExchangend' is not an integer - this will probably not sort properly.
+[1202] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'StackBowlnd' is not an integer - this will probably not sort properly.
+[1206] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Broukhis' is not an integer - this will probably not sort properly.
+[1210] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'RedditGlitch' is not an integer - this will probably not sort properly.
+[1213] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Wolfnd' is not an integer - this will probably not sort properly.
+[1216] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'KnuthHelp' is not an integer - this will probably not sort properly.
+[1239] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Standford2016' is not an integer - this will probably not sort properly.
+[1314] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Corlissnd' is not an integer - this will probably not sort properly.
+[1407] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'IJoCCnd' is not an integer - this will probably not sort properly.
+[1408] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'ISCC2016' is not an integer - this will probably not sort properly.
+[1409] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'ICCC2017' is not an integer - this will probably not sort properly.
+[1411] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Coltonnd' is not an integer - this will probably not sort properly.
+[1412] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'kurzweilcyberartnd' is not an integer - this will probably not sort properly.
+[1436] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Baidu2012' is not an integer - this will probably not sort properly.
+[1448] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Google2016' is not an integer - this will probably not sort properly.
+[1449] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Bing2016' is not an integer - this will probably not sort properly.
+[1600] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'NLTK2016' is not an integer - this will probably not sort properly.
+[1601] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Princeton2010' is not an integer - this will probably not sort properly.
+[1612] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'WikipediaA' is not an integer - this will probably not sort properly.
+[1726] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Burnham2015' is not an integer - this will probably not sort properly.
+[1749] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Frynd' is not an integer - this will probably not sort properly.
+[1753] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Liebermannd' is not an integer - this will probably not sort properly.
+[1802] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'w3css' is not an integer - this will probably not sort properly.
+[1803] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'pythonmain' is not an integer - this will probably not sort properly.
+[1806] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Ronacher2016' is not an integer - this will probably not sort properly.
+[1810] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'BingAPI' is not an integer - this will probably not sort properly.
+[1810] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'YouTubeAPI' is not an integer - this will probably not sort properly.
+[1811] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'FlickrAPI' is not an integer - this will probably not sort properly.
+[1812] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'GettyAPI' is not an integer - this will probably not sort properly.
+[1814] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Gunicorn2016' is not an integer - this will probably not sort properly.
+[1851] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Kahn2016' is not an integer - this will probably not sort properly.
+[1900] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'FlickrGuideAPI' is not an integer - this will probably not sort properly.
+[1900] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'GettyOverviewAPI' is not an integer - this will probably not sort properly.
+[1902] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'JSON2016' is not an integer - this will probably not sort properly.
+[1904] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Reitznd' is not an integer - this will probably not sort properly.
+[1905] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'DYNWEB2016' is not an integer - this will probably not sort properly.
+[1917] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Mahogany2016' is not an integer - this will probably not sort properly.
+[1944] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'GoogleCI' is not an integer - this will probably not sort properly.
+[1945] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'BingNew' is not an integer - this will probably not sort properly.
+[1992] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'IBM2016' is not an integer - this will probably not sort properly.
+[2008] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'DeepMind2016' is not an integer - this will probably not sort properly.
+[2014] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'CamDict' is not an integer - this will probably not sort properly.
+[2049] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'UbuWeb' is not an integer - this will probably not sort properly.
+[2050] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'UbuWebUseless' is not an integer - this will probably not sort properly.
+[2051] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'UbuWebPata' is not an integer - this will probably not sort properly.
+[2074] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Heesakkersnd' is not an integer - this will probably not sort properly.
+[2081] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'soundcloud' is not an integer - this will probably not sort properly.
+[2081] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'midind' is not an integer - this will probably not sort properly.
+[2082] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'freesoundnd' is not an integer - this will probably not sort properly.
+[2085] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'Aldenhovelnd' is not an integer - this will probably not sort properly.
+[2098] Utils.pm:395> WARN - legacy year field 'n.d.' in entry 'WikiJarry2016' is not an integer - this will probably not sort properly.
+[2508] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2508] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2508] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-UK'
+[2508] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-UK'
+[2820] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2982] bbl.pm:757> INFO - Output to main.bbl
+[2983] Biber.pm:128> INFO - WARNINGS: 51

@@ -1262,11 +1262,12 @@ breaklines=true
             citecolor=green,
             linkcolor=blue,
             pdftex,
-            bookmarks=false,
+            bookmarks=true,
             pdfauthor={Fania Raczinski},
             pdftitle={PhD Thesis},
             pdfsubject={Algorithmic Meta-Creativity},
             pdfkeywords={Pataphysics, Creative Computing, Interdisciplinary Research}]{hyperref}
+\usepackage{bookmark}
 
 
 % GLOSSARY & ACRONYMS
