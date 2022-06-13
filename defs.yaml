@@ -1,0 +1,23 @@
+
+from: latex
+to: html5 
+
+include-in-header: css
+include-before-body: nav+arrow
+include-after-body: nav
+
+css: htmlstyle.css
+
+citeproc: true
+reference-links: true
+
+metadata:
+  lang: en-GB
+  bibliography: htmlrefs.bib
+
+cite-method: biblatex
+
+listings: true
+
+html-math-method:
+  method: mathjax
