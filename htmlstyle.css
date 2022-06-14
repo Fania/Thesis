@@ -424,15 +424,15 @@ pre.text code {
   border-radius: 5px;
 }
 
-#TOC {
+.TOC {
   margin-top: 1em;
 }
 
-#TOC ul {
+.TOC ul {
   margin: 0;
 }
 
-#TOC li {
+.TOC li {
   line-height: 1.5em;
   margin: 0;
 }
@@ -652,9 +652,13 @@ table.where {
   }
 }
 
-#bibliography {
-  margin-top: 4em;
+.csl-entry {
+  margin: 1em 0;
 }
+
+
+
+
 
 @media screen and (min-width: 480px) {
   body {
