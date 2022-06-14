@@ -297,6 +297,24 @@ ol ol ul, ol ul, ul ul {
   padding: 0;
 }*/
 
+.fa {
+  width: 1em;
+  height: 1em;
+  padding: 5px;
+  stroke: #1F2D35;
+  fill: #1F2D35;
+}
+
+.testfa {
+  border: 1px solid black;
+  width: 300px;
+  transform: scale(0.1);
+  fill:#1F2D35;
+}
+.testfa path {
+  transform: translate(-256.6798px, -531.7963px);
+}
+
 dt {
   font-weight: bold;
   float: left;
@@ -304,10 +322,19 @@ dt {
   text-align: right;
   color: #1F2D35;
   width: 100px;
+  height: 1em;
 }
 
 dt::after {
   content: ":";
+}
+
+dt.fix::after {
+  position: relative;
+  top: -8px;
+}
+dt img {
+  padding-right: 3px;
 }
 
 dd {
@@ -316,6 +343,10 @@ dd {
 
 dd p, li p {
   margin: 0;
+}
+
+dt img {
+  width: 1em;
 }
 
 .defaultDL dt {
@@ -453,6 +484,107 @@ tr:last-child td{
 /*table.narrow th, table.narrow td {
   padding: 5px;
 }*/
+
+.thesismaptable td {
+  min-width: 80px;
+}
+.thesismaptable td img {
+  padding-left: 40%;
+  height: 1em;
+}
+.thesismaptable th, .thesismaptable td {
+  padding: 5px;
+}
+.thesismaptable .interchange, 
+.thesismaptable .harbour, 
+.thesismaptable .station {
+  padding: 0;
+}
+.thesismaptable .interchange img, 
+.thesismaptable .harbour img, 
+.thesismaptable .station img {
+  height: 1.5em;
+}
+.thesismaptable tr:nth-child(even) {
+  background-color: white;
+}
+.thesismaptable tr:last-child td{
+  border: none;
+}
+
+
+.introduction {
+  background: #54c7e8;
+}
+.inspirations {
+  background: #ab87de;
+}
+.methodology {
+  background: #0057d4;
+}
+.pataphysics {
+  background: #ff80e6;
+}
+.creativity {
+  background: #ffcc00;
+}
+.technology {
+  background: #ff6600;
+}
+.evaluation {
+  background: #216678;
+}
+.foundations {
+  background: #ab0087;
+}
+.interpretations {
+  background: #6600ff;
+}
+.implementation {
+  background: #008066;
+}
+.applications {
+  background: #292978;
+}
+.patanalysis {
+  background: #ff0054;
+}
+.aspirations {
+  background: #87ab00;
+}
+.outroduction {
+  background: #0080b3;
+}
+.random {
+  background: #ababff;
+}
+.code {
+  background: #87ccde;
+}
+.wordnet {
+  background: #80b3ff;
+}
+.githistory {
+  background: #b0c7e8;
+}
+.publications {
+  background: #87decc;
+}
+.topiccluster {
+  background: #ededed;
+}
+
+.tubeline {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#map {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
 
 .topcaption {
   position: relative;
