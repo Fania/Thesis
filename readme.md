@@ -29,9 +29,14 @@ pandoc -f latex -t html5 --biblatex --citeproc -H css -B nav -A nav--bibliograph
 
 Use defaults yaml file instead:
 
+add number-offset with relevant number x=(n-1) where n is the chapter
+--number-offset=x
+
+
 
 pandoc --defaults defs.yaml -o new/abstract.html abstract.tex -M title='TL;DR'
 pandoc --defaults defs.yaml -o new/dedication.html dedication.tex -M title='Acknowledgments'
 pandoc --defaults defs.yaml -o new/publications.html publications.tex -M title='Publications'
 pandoc --defaults main.yaml -o new/introduction.html introduction.tex -M title='Introduction'
-pandoc --defaults main.yaml -o new/inspirations.html inspirations.tex -M title='Inspirations'
+pandoc --defaults main.yaml -o new/inspirations.html inspirations.tex -M title='Inspirations' --number-offset=1
+pandoc --defaults main.yaml -o new/methodology.html methodology.tex -M title='Methodology' --number-offset=2
