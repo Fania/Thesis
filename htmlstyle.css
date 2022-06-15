@@ -3,6 +3,30 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
+:root {
+  --intoduction: #54c7e8;
+  --inspirations: #ab87de;
+  --methodology: #0057d4;
+  --pataphysics: #ff80e6;
+  --creativity: #ffcc00;
+  --technology: #ff6600;
+  --evaluation: #216678;
+  --foundations: #ab0087;
+  --interpretations: #6600ff;
+  --implementation: #008066;
+  --applications: #292978;
+  --patanalysis: #ff0054;
+  --aspirations: #87ab00;
+  --outroduction: #0080b3;
+  --random: #ababff;
+  --code: #87ccde;
+  --wordnet: #80b3ff;
+  --githistory: #b0c7e8;
+  --publications: #87decc;
+  --topiccluster: #ededed;
+}
+
+
 /*
 font-family: 'Roboto Mono', monospace;
 font-family: 'Roboto Slab', serif;
@@ -514,64 +538,64 @@ tr:last-child td{
 
 
 .introduction {
-  background: #54c7e8;
+  background: var(--intoduction);
 }
 .inspirations {
-  background: #ab87de;
+  background: var(--inspirations);
 }
 .methodology {
-  background: #0057d4;
+  background: var(--methodology);
 }
 .pataphysics {
-  background: #ff80e6;
+  background: var(--pataphysics);
 }
 .creativity {
-  background: #ffcc00;
+  background: var(--creativity);
 }
 .technology {
-  background: #ff6600;
+  background: var(--technology);
 }
 .evaluation {
-  background: #216678;
+  background: var(--evaluation);
 }
 .foundations {
-  background: #ab0087;
+  background: var(--foundations);
 }
 .interpretations {
-  background: #6600ff;
+  background: var(--interpretations);
 }
 .implementation {
-  background: #008066;
+  background: var(--implementation);
 }
 .applications {
-  background: #292978;
+  background: var(--applications);
 }
 .patanalysis {
-  background: #ff0054;
+  background: var(--patanalysis);
 }
 .aspirations {
-  background: #87ab00;
+  background: var(--aspirations);
 }
 .outroduction {
-  background: #0080b3;
+  background: var(--outroduction);
 }
 .random {
-  background: #ababff;
+  background: var(--random);
 }
 .code {
-  background: #87ccde;
+  background: var(--code);
 }
 .wordnet {
-  background: #80b3ff;
+  background: var(--wordnet);
 }
 .githistory {
-  background: #b0c7e8;
+  background: var(--githistory);
 }
 .publications {
-  background: #87decc;
+  background: var(--publications);
 }
 .topiccluster {
-  background: #ededed;
+  background: var(--topiccluster);
 }
 
 .tubeline {
@@ -656,7 +680,13 @@ table.where {
   margin: 1em 0;
 }
 
-
+.tubecircle + span {
+  display: inline-block;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  margin-left: 5px;
+}
 
 
 
