@@ -141,7 +141,6 @@ code {
   bottom: -30px;
 }
 
-
 pre.text {
   background-color: #f2f2f2;
   padding: 5px;
@@ -704,12 +703,30 @@ table.where {
   margin-left: 5px;
 }
 
+p {
+  position: relative;
+}
+.marginnote {
+  display: none;
+  width: 80px;
+}
+.marginnote .fa {
+  padding: 0;
+  position: relative;
+  top: 2px;
+}
 
 
 @media screen and (min-width: 480px) {
   body {
     width: 80%;
     margin: auto;
+  }
+  .marginnote {
+    display: block;
+    position: absolute;
+    left: 2px;
+    text-align: left;
   }
   .backtotop a {
     bottom: 32px;
@@ -762,11 +779,18 @@ table.where {
     width: 40%;
     max-width: 400px;
   }
+  .marginnote {
+    left: 1em;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .hide {
     display: block;
+  }
+  .marginnote {
+    left: 3em;
+    /* text-align: right; */
   }
   figure.half {
     width: 40%;
