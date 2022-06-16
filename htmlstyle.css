@@ -133,7 +133,10 @@ code {
 }
 .oulipo {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  flex-direction: column;
   margin: 20px 0 50px 0;
 }
 .oulipo figcaption {
@@ -611,7 +614,8 @@ tr:last-child td{
 }
 
 .tubeline {
-  width: 100%;
+  width: 80%;
+  max-width: 800px;
   display: block;
   margin: 0 auto;
 }
@@ -689,7 +693,7 @@ table.where {
 }
 
 #refs{
-  margin-top: 2em;
+  margin-top: 3em;
 }
 .csl-entry {
   margin: 1em 0;
@@ -716,6 +720,17 @@ p {
   top: 2px;
 }
 
+.urigoren {
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+}
+.urigoren pre {
+  margin: 0;
+}
+.urigoren pre code {
+  padding: 0 !important;
+}
 
 @media screen and (min-width: 480px) {
   body {
@@ -763,6 +778,9 @@ p {
 }
 
 @media screen and (min-width: 700px) {
+  .oulipo {
+    flex-direction: row;
+  }
   figure {
     text-align: center;
     margin: 2em;

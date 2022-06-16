@@ -55,3 +55,10 @@ Section:
 Thesis Part:
 <img class="fa" src="../images/spirals.png" alt="spiral">
 
+
+## Syntax Highlighting
+
+<!-- <link rel="stylesheet" href="../meta/styles/atom-one-light.min.css"> -->
+<link rel="stylesheet" href="../meta/styles/base16/unikitty-light.min.css">
+<script src="../meta/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
